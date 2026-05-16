@@ -1,0 +1,312 @@
+{
+  "Hero": {
+    "eyebrow": "REKAYASA PRODUK AI",
+    "title_main": "Kami membangun perangkat lunak yang",
+    "title_accent": "memecahkan hambatan",
+    "description": "Kami membangun infrastruktur AI produksi untuk perusahaan pasar menengah berbasis di Eropa dan AS. Delapan minggu, lingkup tetap, tim ramping.",
+    "cta_diagnostic": "Mulai dengan Diagnostik",
+    "cta_meet": "Temui Kami",
+    "stat_diagnostic": "DIAGNOSTIK → TINGKAT PEMBANGUNAN",
+    "stat_deliverable": "MENUJU PENGIRIMAN PERTAMA",
+    "stat_production": "MENUJU PRODUKSI",
+    "weeks": "minggu",
+    "words": [
+      "hambatan operasional.",
+      "pekerjaan manual.",
+      "silo data.",
+      "proses yang lambat."
+    ]
+  },
+  "Header": {
+    "nav": {
+      "how-we-work": "Cara kerja kami",
+      "methodology": "Metodologi",
+      "work": "Karya",
+      "pricing": "Harga",
+      "foundation": "Fondasi"
+    },
+    "cta": "Mulai Diagnostik"
+  },
+  "HowWeWork": {
+    "eyebrow": "01 · CARA KERJA KAMI",
+    "title": "Satu pod mengalahkan satu rekrutmen, setiap saat.",
+    "col_metric": "METRIK",
+    "col_inhouse": "REKRUT INTERNAL",
+    "col_pod": "POD PRIONATION",
+    "rows": [
+      {
+        "label": "Waktu ke nilai",
+        "them": "4–6 bulan untuk rekrut & orientasi",
+        "us": "8 minggu ke produksi"
+      },
+      {
+        "label": "Biaya (pengiriman pertama)",
+        "them": "€120–180K/tahun all-in",
+        "us": "€25–55K tetap per proyek"
+      },
+      {
+        "label": "Yang Anda dapatkan",
+        "them": "Satu orang",
+        "us": "Satu pod, 2–3 Insinyur Produk AI"
+      },
+      {
+        "label": "Risiko lingkup",
+        "them": "Perubahan terus-menerus tanpa batas",
+        "us": "Kontrak lingkup ketat dari Hari 1"
+      },
+      {
+        "label": "Biaya retainer",
+        "them": "≈ satu insinyur/tahun = €120K+",
+        "us": "€4–9K/bulan untuk seluruh pod"
+      },
+      {
+        "label": "Risiko",
+        "them": "Rekrutan buruk = 6 bulan + €50K terbuang",
+        "us": "Bisa keluar setelah Diagnostik"
+      }
+    ]
+  },
+  "Methodology": {
+    "label": "METODOLOGI",
+    "title": "DISIPLIN REKAYASA AI NATIVE.",
+    "link": "Prinsip rekayasa",
+    "coming_soon": "Segera Hadir",
+    "principles": [
+      {
+        "title": "Evaluasi sebelum fitur.",
+        "body": "Kami menulis rangkaian tes sebelum menulis prompt. AI produksi tanpa evaluasi adalah demo yang menunggu untuk gagal."
+      },
+      {
+        "title": "Telemetri dari hari pertama.",
+        "body": "Data produksi mendorong iterasi berikutnya. 'Model salah' tidak dapat difalsifikasi tanpa instrumentasi, jadi kami instrumentasi terlebih dahulu."
+      },
+      {
+        "title": "Infrastruktur yang dimiliki.",
+        "body": "Anda memegang kuncinya: kode, hosting, data, model. Nilai kami ada pada disiplin pembangunan, bukan penguncian infrastruktur."
+      },
+      {
+        "title": "Konsultasi AI",
+        "body": "Dapatkan pratinjau diagnostik yang dihasilkan AI dalam hitungan menit. Dua jalur: intake terstruktur atau chat dengan AI kami.",
+        "cta": "Beri tahu saya saat aktif"
+      }
+    ]
+  },
+  "SelectedWork": {
+    "label": "KARYA TERPILIH",
+    "title": "TRANSFORMASI OPERASIONAL YANG TERBUKTI.",
+    "link": "Lihat arsip",
+    "view_project": "LIHAT PROYEK",
+    "cases": [
+      {
+        "name": "EPIDOM",
+        "geo": "🇫🇷 PRANCIS · EROPA",
+        "tag": "F&B · MANAJEMEN INVENTARIS",
+        "year": "2026",
+        "body": "Mengembangkan sistem manajemen inventaris bar kue untuk operator F&B Eropa. Dirancang untuk pelacakan multi-lokasi, menggantikan proses manual dengan solusi digital terpusat."
+      },
+      {
+        "name": "EXPEDITOO",
+        "geo": "🇫🇷 PRANCIS · EROPA",
+        "tag": "LOGISTIK · MARKETPLACE",
+        "year": "2025",
+        "body": "Membangun marketplace logistik dan lelang yang menggabungkan mekanik penawaran dan pelacakan pengiriman dalam satu aplikasi."
+      },
+      {
+        "name": "The Lead Agent",
+        "geo": "🇦🇺 AUSTRALIA",
+        "tag": "PROPERTI · GENERASI PROSPEK",
+        "year": "2026",
+        "body": "Membangun platform lengkap untuk generasi prospek dan pengaturan janji untuk agen properti Australia."
+      }
+    ]
+  },
+  "Pricing": {
+    "eyebrow": "04 · HARGA",
+    "title": "Lingkup tetap, tanpa kejutan.",
+    "most_popular": "Paling Populer",
+    "express_title": "Situs Express",
+    "express_badge": "BARU",
+    "express_desc": "Situs Next.js 3 halaman, formulir kontak, SEO, deploy Vercel, {days} hari kerja.",
+    "express_days": "5",
+    "express_base": "dasar",
+    "express_cta": "Lihat Express",
+    "plans": [
+      {
+        "name": "Diagnostik",
+        "label": "SKU 1",
+        "price": "5–7K",
+        "period": "tetap · 2 minggu",
+        "desc": "Petakan hambatan. Dapatkan spesifikasi pembangunan. Tanda tangan tanpa pengadaan.",
+        "cta": "Mulai Diagnostik",
+        "features": [
+          "Embedment dengan ops & engineering",
+          "Pengguna target + inventaris data",
+          "Desain arsitektur sistem",
+          "Kriteria evaluasi + proyeksi ROI",
+          "Rencana pembangunan 8 minggu",
+          "Dokumen 15–25 halaman + readout 90 menit"
+        ]
+      },
+      {
+        "name": "Build",
+        "label": "SKU 2",
+        "price": "25–55K",
+        "period": "tetap · 8 minggu",
+        "desc": "Kirim AI ke produksi. Lingkup tetap, dilindungi oleh kontrak Diagnostik.",
+        "cta": "Mulai sekarang",
+        "features": [
+          "2–3 Insinyur Produk AI",
+          "Perangkat lunak yang di-deploy ke produksi",
+          "Harness evaluasi + suite regresi",
+          "Telemetri & monitoring",
+          "Runbook + dokumentasi serah terima",
+          "Garansi pasca-peluncuran 4 minggu"
+        ]
+      },
+      {
+        "name": "Retainer",
+        "label": "SKU 3",
+        "price": "4–9K",
+        "period": "/bulan · min. 6 bulan",
+        "desc": "Akses pod berkelanjutan. Satu-satunya SKU yang terus berkembang.",
+        "cta": "Diskusikan retainer",
+        "features": [
+          "Pemeliharaan suite evaluasi",
+          "Deteksi drift",
+          "Pembaruan prompt & model",
+          "1 fitur baru dikirim/bulan",
+          "Tinjauan bisnis kuartalan",
+          "Pelacakan ROI berkelanjutan"
+        ]
+      }
+    ]
+  },
+  "Foundation": {
+    "label": "FONDASI",
+    "title": "TALENTA GLOBAL, AKAR INDONESIA.",
+    "powered_by": "Didukung oleh LinkedIn",
+    "pod_title": "Pod Pengiriman",
+    "pod_role": "REKAYASA PRODUK AI",
+    "pod_desc": "Unit fleksibel 2–3 Insinyur Produk AI. Pakar domain yang dikonversi menjadi operator AI native, menghasilkan infrastruktur siap produksi dari ujung ke ujung.",
+    "team": [
+      {
+        "pixel": "PERAN · PENDIRI / CEO",
+        "name": "Darwin Prayoga",
+        "role": "Pendiri & CEO",
+        "bio": "Teknolog dan arsitek produk Indonesia. Mantan pemimpin di beberapa startup pertumbuhan tinggi di Asia Tenggara. Mengorkestrasikan transformasi PRIONATION, memiliki visi dan strategi produk."
+      },
+      {
+        "pixel": "PERAN · CRO",
+        "name": "Evan Cao",
+        "role": "Chief Revenue Officer",
+        "bio": "Operator berbasis di Paris dan pendiri Epidom. Ahli dalam ekspansi pasar menengah Eropa dan kemitraan strategis. Menjembatani kesenjangan antara pengiriman Asia dan permintaan Eropa."
+      }
+    ]
+  },
+  "Engage": {
+    "label": "HUBUNGI KAMI",
+    "title": "SELESAIKAN HAMBATAN ANDA HARI INI.",
+    "tab_meet": "Temui Kami",
+    "tab_diagnostic": "Diagnostik",
+    "tab_careers": "Karir",
+    "mobile_titles": {
+      "careers": "Bergabung dengan Pod",
+      "meet": "Jadwalkan Panggilan",
+      "diagnostic": "Mulai Diagnostik"
+    },
+    "mobile_descs": {
+      "careers": "Kami selalu mencari operator AI native untuk bergabung dengan jaringan global kami.",
+      "meet": "Pesan percakapan 30 menit untuk mendiskusikan hambatan operasional Anda.",
+      "diagnostic": "Tentukan proyek transformasi AI pertama Anda dengan Diagnostik 2 minggu."
+    },
+    "mobile_ctas": {
+      "careers": "Lamar Sekarang",
+      "meet": "Buka Kalender",
+      "diagnostic": "Mulai Intake"
+    },
+    "modal_form": "FORMULIR",
+    "diagnostic": {
+      "fields_count": "10",
+      "response": "DALAM 24 JAM",
+      "email_label": "EMAIL",
+      "step1_label": "DATA PERUSAHAAN",
+      "step2_label": "KONTEKS HAMBATAN",
+      "fields": {
+        "company": "Nama perusahaan + situs web",
+        "yourName": "Nama Anda + peran",
+        "email": "Email",
+        "basedIn": "Di mana Anda berbasis?",
+        "stage": "Tahap perusahaan",
+        "bottleneck": "Hambatan operasional, jelaskan dalam 2–3 kalimat",
+        "triedSoFar": "Apa yang sudah Anda coba sejauh ini?",
+        "whyNow": "Mengapa ini penting sekarang?",
+        "budget": "Apakah Anda memiliki anggaran untuk Diagnostik 2 minggu dalam kisaran €5–7K?",
+        "startWindow": "Jendela mulai yang ideal",
+        "source": "Bagaimana Anda mendengar tentang kami?"
+      },
+      "placeholders": {
+        "company": "mis. Acme Logistics, acme.fr",
+        "yourName": "mis. Budi Santoso, COO",
+        "email": "budi@perusahaan.com",
+        "basedIn": "Kota, negara",
+        "stage": "Pilih kisaran pendapatan",
+        "bottleneck": "Proses ops manual apa yang tumbuh linear dengan pendapatan, di mana pengetahuan terkunci, atau di mana volume melampaui batasnya. (min. 100 karakter)",
+        "triedSoFar": "Peralatan internal, SaaS siap pakai, konsultan, apa yang telah dicoba dan di mana kegagalannya.",
+        "whyNow": "Target pertumbuhan, tekanan margin, risiko orang kunci, integrasi mendatang, apa yang membuat ini waktu yang tepat.",
+        "source": "Referensi, pencarian, media sosial, semuanya dihitung."
+      },
+      "optional": "opsional",
+      "continue": "Lanjutkan",
+      "back": "Kembali",
+      "submit": "Buka percakapan",
+      "sending": "Mengirim…",
+      "error_email": "Masukkan alamat email yang valid.",
+      "error_bottleneck_short": "Butuh lebih banyak konteks, {count}/100 karakter.",
+      "error_bottleneck_empty": "Mohon jelaskan hambatannya.",
+      "ai_label": "LEBIH SUKA BERBICARA DENGAN AI DULU?",
+      "ai_desc": "Konsultasi AI diluncurkan Agustus 2026.",
+      "email_us": "ATAU EMAIL KAMI"
+    },
+    "success": {
+      "title": "Terima kasih. Kami merespons dalam 24 jam.",
+      "desc": "Kami telah mencatat intake Anda. Tunggu catatan singkat dengan dua atau tiga pertanyaan lebih tajam, kemudian percakapan 30 menit untuk memastikan apakah Diagnostik adalah langkah berikut yang tepat.",
+      "stat1_label": "RESPONS",
+      "stat1_value": "DALAM 24 JAM",
+      "stat2_label": "SELANJUTNYA",
+      "stat2_value": "PANGGILAN 30 MENIT",
+      "stat3_label": "HASIL",
+      "stat3_value": "DIAGNOSTIC FIT?",
+      "reset": "Kirim intake lainnya"
+    }
+  },
+  "Footer": {
+    "title": "Kami membangun produk infrastruktur.",
+    "description": "PRIONATION.io mengirimkan produk AI produksi untuk perusahaan pasar menengah berbasis di Eropa dan AS. Lingkup tetap, harga tetap, tim ramping. 8 minggu dari tanda tangan hingga pengiriman.",
+    "labels": {
+      "product": "PRODUK",
+      "resources": "SUMBER DAYA",
+      "connect": "HUBUNGI KAMI",
+      "use_cases": "KASUS PENGGUNAAN",
+      "delivered": "TERKIRIM"
+    },
+    "nav": {
+      "how_we_work": "Cara kerja kami",
+      "methodology": "Metodologi",
+      "selected_work": "Karya terpilih",
+      "pricing": "Harga",
+      "foundation": "Fondasi",
+      "meet_us": "Temui Kami",
+      "diagnostic_form": "Formulir Diagnostik",
+      "careers": "Karir",
+      "location": "Berlokasi · Bali, ID",
+      "response": "RESPONS DALAM 24 JAM"
+    },
+    "copyright": "© 2026 PRIORITY FOUNDATION",
+    "managed": "// DIKELOLA SECARA REMOTE",
+    "taglines": [
+      "Kontrol atas ketergantungan.",
+      "Daya ungkit atas tenaga kerja.",
+      "Sistem atas eksekusi manual."
+    ]
+  }
+}

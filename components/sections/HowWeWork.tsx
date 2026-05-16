@@ -1,81 +1,66 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 import { Dot } from "../ui/Atoms";
-
-const compareRows = [
-  {
-    label: "Time to value",
-    them: "4–6 months to hire + ramp",
-    us: "8 weeks to production",
-    highlight: true,
-  },
-  {
-    label: "Cost (first deliverable)",
-    them: "€120–180K/year fully loaded",
-    us: "€25–55K fixed per project",
-  },
-  {
-    label: "What you get",
-    them: "One person",
-    us: "A pod — 2–3 AI Product Engineers",
-    highlight: true,
-  },
-  {
-    label: "Scope risk",
-    them: "Unlimited ongoing changes",
-    us: "Tight scope contract from Day 1",
-  },
-  {
-    label: "Retainer cost",
-    them: "≈ one engineer/year = €120K+",
-    us: "€4–9K/month for the full pod",
-    highlight: true,
-  },
-  {
-    label: "Risk",
-    them: "Bad hire = 6 months + €50K wasted",
-    us: "Walk away after Diagnostic",
-  },
-];
+import { staggerNormal, slideInLeft, fadeUp } from "@/lib/motion";
 
 export function HowWeWork() {
+  const t = useTranslations("HowWeWork");
+  const rows = t.raw("rows") as { label: string; them: string; us: string }[];
+  const highlights = [true, false, true, false, true, false];
+
   return (
     <section
       id="how-we-work"
       className="px-page-x py-[120px] border-y border-line bg-[radial-gradient(circle_at_50%_50%,rgba(88,101,242,0.05)_0%,transparent_70%)]"
     >
       <div className="max-w-[1100px] mx-auto">
-        <div className="flex flex-col items-center text-center mb-16">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          className="flex flex-col items-center text-center mb-16"
+        >
           <div className="text-muted font-pixel text-[10px] tracking-[0.15em] mb-4 flex items-center gap-2.5 uppercase">
             <Dot className="shadow-[0_0_10px_var(--c-accent)]" />
-            01 · HOW WE WORK
+            {t("eyebrow")}
           </div>
           <h3 className="font-sans font-extrabold text-[clamp(32px,4.2vw,54px)] leading-[1.02] tracking-[-0.03em] m-0 text-white uppercase">
-            A pod beats a hire — every time.
+            {t("title")}
           </h3>
-        </div>
+        </motion.div>
 
-        <div className="bg-card border border-line-soft rounded-[28px] overflow-hidden shadow-2xl">
-          {/* Header */}
-          <div className="grid grid-cols-[1.1fr_1fr_1fr] bg-card-soft border-b border-line-soft">
+        <motion.div
+          variants={staggerNormal}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="bg-card border border-line-soft rounded-[28px] overflow-hidden shadow-2xl"
+        >
+          {/* Header row */}
+          <motion.div
+            variants={fadeUp}
+            className="grid grid-cols-[1.1fr_1fr_1fr] bg-card-soft border-b border-line-soft"
+          >
             <div className="p-3 md:p-6 lg:px-8 flex items-center justify-center md:justify-start">
-              <span className="md:hidden font-pixel text-[7px] text-muted tracking-widest">METRIC</span>
+              <span className="md:hidden font-pixel text-[7px] text-muted tracking-widest">{t("col_metric")}</span>
             </div>
             <div className="p-3 md:p-6 lg:px-8 border-l border-line-soft font-pixel text-[8px] md:text-[10px] tracking-[0.12em] text-muted uppercase text-center md:text-left">
-              IN-HOUSE HIRE
+              {t("col_inhouse")}
             </div>
             <div className="p-3 md:p-6 lg:px-8 border-l border-line-soft font-pixel text-[8px] md:text-[10px] tracking-[0.12em] text-accent uppercase text-center md:text-left">
-              PRIONATION POD
+              {t("col_pod")}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Rows */}
-          {compareRows.map((r, i) => (
-            <div
+          {rows.map((r, i) => (
+            <motion.div
               key={i}
-              className={`grid grid-cols-[1.1fr_1fr_1fr] border-b border-line-soft last:border-0 ${
-                r.highlight ? "bg-white/[0.02]" : ""
-              }`}
+              variants={slideInLeft}
+              transition={{ delay: i * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className={`grid grid-cols-[1.1fr_1fr_1fr] border-b border-line-soft last:border-0 ${highlights[i] ? "bg-white/[0.02]" : ""}`}
             >
               <div className="p-3 md:p-6 lg:px-8 text-[10px] md:text-[14px] font-sans font-medium text-soft flex items-center leading-tight">
                 {r.label}
@@ -83,18 +68,12 @@ export function HowWeWork() {
               <div className="p-3 md:p-6 lg:px-8 border-l border-line-soft text-[10px] md:text-[14px] text-red-400/80 flex items-center leading-tight">
                 {r.them}
               </div>
-              <div
-                className={`p-3 md:p-6 lg:px-8 border-l border-line-soft text-[10px] md:text-[14px] flex items-center leading-tight ${
-                  r.highlight
-                    ? "text-accent font-bold"
-                    : "text-green-400/90 font-semibold"
-                }`}
-              >
+              <div className={`p-3 md:p-6 lg:px-8 border-l border-line-soft text-[10px] md:text-[14px] flex items-center leading-tight ${highlights[i] ? "text-accent font-bold" : "text-green-400/90 font-semibold"}`}>
                 {r.us}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

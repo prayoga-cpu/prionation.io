@@ -12,7 +12,7 @@ export function MeetUsTab() {
   );
   const [loading, setLoading] = useState(false);
   const [timezone, setTimezone] = useState("");
-  
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -30,19 +30,19 @@ export function MeetUsTab() {
   const dates = useMemo(() => {
     const year = currentMonth.getFullYear();
     const month = currentMonth.getMonth();
-    
+
     // First day of the month
     const firstDayOfMonth = new Date(year, month, 1);
     // Last day of the month
     const lastDayOfMonth = new Date(year, month + 1, 0);
-    
+
     // Get day of week for first day (0 is Sunday)
-    let startDay = firstDayOfMonth.getDay(); 
+    let startDay = firstDayOfMonth.getDay();
     // Adjust to Monday-start (0 is Monday, 6 is Sunday)
     startDay = startDay === 0 ? 6 : startDay - 1;
 
     const days = [];
-    
+
     // Previous month padding
     for (let i = 0; i < startDay; i++) {
       days.push({ empty: true, date: 0, active: false });
@@ -71,21 +71,29 @@ export function MeetUsTab() {
   });
 
   const nextMonth = () => {
-    setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1));
+    setCurrentMonth(
+      new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1),
+    );
   };
 
   const prevMonth = () => {
     const now = new Date();
-    if (currentMonth.getMonth() === now.getMonth() && currentMonth.getFullYear() === now.getFullYear()) return;
-    setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1));
+    if (
+      currentMonth.getMonth() === now.getMonth() &&
+      currentMonth.getFullYear() === now.getFullYear()
+    )
+      return;
+    setCurrentMonth(
+      new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1),
+    );
   };
 
   const timezones = [
-    { label: "WIB (Jakarta) — GMT+7", value: "Asia/Jakarta" },
-    { label: "SGT (Singapore) — GMT+8", value: "Asia/Singapore" },
-    { label: "CET (Paris) — GMT+1", value: "Europe/Paris" },
-    { label: "GMT (London) — GMT+0", value: "Europe/London" },
-    { label: "EST (New York) — GMT-5", value: "America/New_York" },
+    { label: "WIB (Jakarta), GMT+7", value: "Asia/Jakarta" },
+    { label: "SGT (Singapore), GMT+8", value: "Asia/Singapore" },
+    { label: "CET (Paris), GMT+1", value: "Europe/Paris" },
+    { label: "GMT (London), GMT+0", value: "Europe/London" },
+    { label: "EST (New York), GMT-5", value: "America/New_York" },
   ];
 
   const times = ["09:00 AM", "09:30 AM", "11:00 AM", "02:00 PM", "04:30 PM"];
@@ -189,35 +197,42 @@ export function MeetUsTab() {
                   </button>
                 </div>
               </div>
-              <div className="overflow-x-auto pb-4 -mx-2 px-2 scrollbar-hide">
-                <div className="min-w-[340px]">
-                  <div className="grid grid-cols-7 gap-2 text-center mb-3">
-                    {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => (
-                      <div
-                        key={day}
-                        className="font-pixel text-[8px] tracking-[0.05em] text-muted uppercase"
-                      >
-                        {day}
-                      </div>
-                    ))}
+              <div className="overflow-hidden pb-4">
+                <div className="w-full">
+                  <div className="grid grid-cols-7 gap-1 sm:gap-2 text-center mb-3">
+                    {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map(
+                      (day) => (
+                        <div
+                          key={day}
+                          className="font-pixel text-[7px] sm:text-[8px] tracking-[0.05em] text-muted uppercase"
+                        >
+                          {day}
+                        </div>
+                      ),
+                    )}
                   </div>
-                  <div className="grid grid-cols-7 gap-2">
+                  <div className="grid grid-cols-7 gap-1 sm:gap-2">
                     {dates.map((d, i) => {
-                      if (d.empty) return <div key={`empty-${i}`} className="aspect-square" />;
-                      
+                      if (d.empty)
+                        return (
+                          <div key={`empty-${i}`} className="aspect-square" />
+                        );
+
                       const isSelected =
                         selectedDate?.toDateString() ===
                         d.dateObj?.toDateString();
                       return (
                         <button
                           key={`date-${i}`}
-                          onClick={() => d.active && d.dateObj && setSelectedDate(d.dateObj)}
+                          onClick={() =>
+                            d.active && d.dateObj && setSelectedDate(d.dateObj)
+                          }
                           disabled={!d.active}
-                          className={`aspect-square rounded-xl flex items-center justify-center font-sans text-[13px] font-medium transition-all duration-fast ${
+                          className={`aspect-square rounded-lg sm:rounded-xl flex items-center justify-center font-sans text-[11px] sm:text-[13px] font-medium transition-all duration-fast ${
                             !d.active
                               ? "text-muted opacity-20 cursor-not-allowed bg-white/[0.02]"
                               : isSelected
-                                ? "bg-accent text-white"
+                                ? "bg-accent text-white shadow-[0_0_15px_rgba(235,69,159,0.4)]"
                                 : "text-white bg-white/5 hover:bg-white/10"
                           }`}
                         >
@@ -306,7 +321,8 @@ export function MeetUsTab() {
                   value={formData.fullName}
                   onChange={(e) => {
                     setFormData({ ...formData, fullName: e.target.value });
-                    if (errors.fullName) setErrors({ ...errors, fullName: false });
+                    if (errors.fullName)
+                      setErrors({ ...errors, fullName: false });
                   }}
                   placeholder="e.g. John Doe"
                   className={`w-full bg-transparent text-white font-sans text-[15px] py-3 border-0 border-b rounded-none outline-none focus:border-accent transition-colors ${errors.fullName ? "border-accent" : "border-line-soft"}`}
@@ -346,7 +362,12 @@ export function MeetUsTab() {
                     <input
                       type="text"
                       value={formData.countryCode}
-                      onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          countryCode: e.target.value,
+                        })
+                      }
                       className="w-16 bg-transparent text-white font-sans text-[15px] py-3 border-0 border-b border-line-soft outline-none focus:border-accent transition-colors text-center"
                     />
                   </div>
@@ -355,7 +376,8 @@ export function MeetUsTab() {
                     value={formData.whatsapp}
                     onChange={(e) => {
                       setFormData({ ...formData, whatsapp: e.target.value });
-                      if (errors.whatsapp) setErrors({ ...errors, whatsapp: false });
+                      if (errors.whatsapp)
+                        setErrors({ ...errors, whatsapp: false });
                     }}
                     placeholder="812 3456 7890"
                     className={`flex-1 bg-transparent text-white font-sans text-[15px] py-3 border-0 border-b rounded-none outline-none focus:border-accent transition-colors ${errors.whatsapp ? "border-accent" : "border-line-soft"}`}
@@ -388,7 +410,11 @@ export function MeetUsTab() {
               className="bg-transparent text-muted text-[11px] font-sans outline-none border-0 cursor-pointer hover:text-white transition-colors"
             >
               {timezones.map((tz) => (
-                <option key={tz.value} value={tz.value} className="bg-[#08090d]">
+                <option
+                  key={tz.value}
+                  value={tz.value}
+                  className="bg-[#08090d]"
+                >
                   {tz.label}
                 </option>
               ))}

@@ -1,15 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/routing";
+import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "./icons";
-
-const NAV_ITEMS: [string, string][] = [
-  ["how-we-work", "How we work"],
-  ["methodology", "Methodology"],
-  ["selected-work", "Work"],
-  ["pricing", "Pricing"],
-  ["foundation", "Foundation"],
-];
+import {
+  staggerFast,
+  fadeUp,
+  slideDown,
+  slideRight,
+  backdrop,
+} from "@/lib/motion";
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -92,9 +94,56 @@ function Wordmark() {
   );
 }
 
+function LocaleSwitcher() {
+  const [isPending, startTransition] = useTransition();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const locales = [
+    { code: "en", label: "EN" },
+    { code: "fr", label: "FR" },
+    { code: "id", label: "ID" },
+  ];
+
+  const onLocaleChange = (newLocale: string) => {
+    startTransition(() => {
+      router.replace(pathname, { locale: newLocale });
+    });
+  };
+
+  return (
+    <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1 w-fit">
+      {locales.map((loc) => (
+        <button
+          key={loc.code}
+          onClick={() => onLocaleChange(loc.code)}
+          disabled={isPending || locale === loc.code}
+          className={`text-[10px] font-pixel px-3 py-1.5 min-w-[38px] rounded-full transition-all ${
+            locale === loc.code
+              ? "bg-accent text-white shadow-[0_0_12px_rgba(235,69,159,0.4)]"
+              : "text-muted hover:text-white hover:bg-white/5"
+          } disabled:cursor-default`}
+        >
+          {loc.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 export function Header() {
+  const t = useTranslations("Header");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const NAV_ITEMS: [string, string][] = [
+    ["how-we-work", t("nav.how-we-work")],
+    ["methodology", t("nav.methodology")],
+    ["selected-work", t("nav.work")],
+    ["pricing", t("nav.pricing")],
+    ["foundation", t("nav.foundation")],
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -115,77 +164,148 @@ export function Header() {
     setTimeout(() => scrollTo(id), 30);
   };
 
-  const navBaseClasses =
-    "fixed top-0 w-full z-50 flex items-center justify-between px-page-x py-[14px] backdrop-blur-[8px] transition-colors duration-normal shadow-md";
   const navScrollClasses = scrolled
     ? "bg-[linear-gradient(180deg,rgba(8,9,13,0.85),rgba(8,9,13,0.5)_20%,transparent)] border-transparent"
     : "bg-transparent border-transparent";
 
   return (
     <>
-      <header className={`${navBaseClasses} ${navScrollClasses}`}>
-        <Wordmark />
-        <nav className="hidden lg:flex gap-7 text-[13px] text-soft">
+      {/* Header bar, slides down from top on mount */}
+      <motion.header
+        variants={slideDown}
+        initial="hidden"
+        animate="visible"
+        className={`fixed top-0 w-full z-50 flex items-center justify-between px-page-x py-[14px] backdrop-blur-[8px] transition-colors duration-normal shadow-md ${navScrollClasses}`}
+      >
+        {/* Left: Wordmark */}
+        <div className="flex items-center min-w-[140px]">
+          <Wordmark />
+        </div>
+
+        {/* Center: Navigation */}
+        <motion.nav
+          variants={staggerFast}
+          initial="hidden"
+          animate="visible"
+          className="hidden lg:flex absolute left-1/2 -translate-x-1/2 gap-7 text-[13px] text-soft items-center"
+        >
           {NAV_ITEMS.map(([id, label]) => (
-            <a
+            <motion.a
               key={id}
+              variants={fadeUp}
               href={`#${id}`}
               onClick={(e) => {
                 e.preventDefault();
                 go(id);
               }}
               className="transition-colors duration-fast hover:text-white"
+              whileHover={{ y: -1 }}
+              transition={{ duration: 0.15 }}
             >
               {label}
-            </a>
+            </motion.a>
           ))}
-        </nav>
-        <a
-          href="#engage?tab=diagnostic"
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.hash = "engage?tab=diagnostic";
-            go("engage");
-          }}
-          className="hidden lg:inline-flex items-center gap-2 px-4 py-[9px] rounded-full bg-white text-[#08090d] font-semibold text-[13px] transition-all duration-fast hover:scale-[1.03] hover:bg-[#e6e6f0]"
-        >
-          Start a Diagnostic <span className="text-[12px] opacity-80">→</span>
-        </a>
-        <button
-          className="lg:hidden inline-flex bg-transparent text-white border-0 p-1.5 cursor-pointer"
-          onClick={() => setMobileOpen((o) => !o)}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          <Icon name={mobileOpen ? "x" : "menu"} size={22} />
-        </button>
-      </header>
+        </motion.nav>
 
-      {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-bg px-page-x pt-[80px] pb-[40px] flex flex-col">
-          <nav className="flex flex-col gap-1">
-            {NAV_ITEMS.map(([id, label]) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  go(id);
-                }}
-                className="py-[18px] text-[22px] font-semibold text-white border-b border-line"
-              >
-                {label}
-              </a>
-            ))}
-            <button
-              onClick={() => go("engage")}
-              className="mt-7 self-start inline-flex items-center gap-2.5 px-[22px] py-[13px] rounded-full font-sans font-semibold text-sm cursor-pointer transition-all duration-fast whitespace-nowrap hover:-translate-y-[1px] active:translate-y-0 active:scale-[0.99] bg-white text-[#08090d] hover:bg-[#e6e6f0]"
-            >
-              Start a Diagnostic{" "}
-              <span className="text-[12px] opacity-80">→</span>
-            </button>
-          </nav>
+        {/* Right: Actions */}
+        <div className="flex items-center gap-4">
+          <div className="hidden lg:block">
+            <LocaleSwitcher />
+          </div>
+          <motion.a
+            href="#engage?tab=diagnostic"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.hash = "engage?tab=diagnostic";
+              go("engage");
+            }}
+            className="hidden lg:inline-flex items-center gap-2 px-4 py-[9px] rounded-full bg-white text-[#08090d] font-semibold text-[13px] transition-all duration-fast hover:bg-[#e6e6f0]"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            {t("cta")} <span className="text-[12px] opacity-80">→</span>
+          </motion.a>
+          <button
+            className="lg:hidden inline-flex bg-transparent text-white border-0 p-1.5 cursor-pointer"
+            onClick={() => setMobileOpen((o) => !o)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          >
+            <Icon name={mobileOpen ? "x" : "menu"} size={22} />
+          </button>
         </div>
-      )}
+      </motion.header>
+
+      {/* Mobile nav drawer, spring slide from right */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              key="mobile-backdrop"
+              variants={backdrop}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="fixed inset-0 z-[38] bg-black/40"
+              onClick={() => setMobileOpen(false)}
+            />
+
+            {/* Drawer */}
+            <motion.div
+              key="mobile-drawer"
+              variants={slideRight}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="fixed inset-0 z-40 bg-bg px-page-x pt-[100px] pb-[40px] flex flex-col"
+            >
+              {/* Locale Switcher */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                transition={{ delay: 0.08 }}
+                className="mb-8"
+              >
+                <LocaleSwitcher />
+              </motion.div>
+
+              {/* Nav links stagger */}
+              <motion.nav
+                variants={staggerFast}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col gap-1"
+              >
+                {NAV_ITEMS.map(([id, label]) => (
+                  <motion.a
+                    key={id}
+                    variants={fadeUp}
+                    href={`#${id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      go(id);
+                    }}
+                    className="py-[18px] text-[22px] font-semibold text-white border-b border-line"
+                    whileTap={{ x: 4 }}
+                  >
+                    {label}
+                  </motion.a>
+                ))}
+                <motion.button
+                  variants={fadeUp}
+                  onClick={() => go("engage")}
+                  className="mt-7 self-start inline-flex items-center gap-2.5 px-[22px] py-[13px] rounded-full font-sans font-semibold text-sm cursor-pointer bg-white text-[#08090d] hover:bg-[#e6e6f0] transition-colors"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  {t("cta")} <span className="text-[12px] opacity-80">→</span>
+                </motion.button>
+              </motion.nav>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }

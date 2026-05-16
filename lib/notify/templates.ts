@@ -1,18 +1,23 @@
-import { resend, FROM, TO } from './resend';
-import type { IntakePayload, BookingPayload, CareerPayload, WaitlistPayload } from '@/lib/forms/types';
+import { resend, FROM, TO } from "./resend";
+import type {
+  IntakePayload,
+  BookingPayload,
+  CareerPayload,
+  WaitlistPayload,
+} from "@/lib/forms/types";
 
-// ─── design tokens (email-safe, all inline — no CSS vars) ──────────────────
+// ─── design tokens (email-safe, all inline, no CSS vars) ──────────────────
 const T = {
-  bg:        '#08090d',
-  card:      '#0c0d12',
-  cardSoft:  '#11131a',
-  line:      '#1c1d22',
-  muted:     '#73767d',
-  soft:      '#babbbe',
-  white:     '#ffffff',
-  accent:    '#5865f2',
-  accentDim: 'rgba(88,101,242,0.12)',
-  accentBdr: 'rgba(88,101,242,0.3)',
+  bg: "#08090d",
+  card: "#0c0d12",
+  cardSoft: "#11131a",
+  line: "#1c1d22",
+  muted: "#73767d",
+  soft: "#babbbe",
+  white: "#ffffff",
+  accent: "#5865f2",
+  accentDim: "rgba(88,101,242,0.12)",
+  accentBdr: "rgba(88,101,242,0.3)",
 };
 
 // ─── primitives ────────────────────────────────────────────────────────────
@@ -155,69 +160,76 @@ function shell(badge: string, cardRows: string) {
 // ─── plain-text fallback builder ───────────────────────────────────────────
 
 function txt(lines: string[]) {
-  return lines.join('\n');
+  return lines.join("\n");
 }
 
 // ─── 4 notification functions ──────────────────────────────────────────────
 
 export async function sendIntakeNotification(p: IntakePayload) {
-  const html = shell('[INTAKE]', `
-    ${sectionHead('Lead')}
-    ${field('Company', p.company, true)}
-    ${field('Contact', `${p.yourName} · ${p.email}`)}
-    ${field('Location', p.basedIn)}
+  const html = shell(
+    "[INTAKE]",
+    `
+    ${sectionHead("Lead")}
+    ${field("Company", p.company, true)}
+    ${field("Contact", `${p.yourName} · ${p.email}`)}
+    ${field("Location", p.basedIn)}
     ${divider()}
-    ${sectionHead('Qualification')}
-    ${field('Revenue Stage', p.stage)}
-    ${field('Budget', p.budget)}
-    ${field('Start Window', p.startWindow)}
-    ${field('Source', p.source || 'n/a')}
+    ${sectionHead("Qualification")}
+    ${field("Revenue Stage", p.stage)}
+    ${field("Budget", p.budget)}
+    ${field("Start Window", p.startWindow)}
+    ${field("Source", p.source || "n/a")}
     ${divider()}
-    ${sectionHead('Context')}
-    ${blockField('Bottleneck', p.bottleneck)}
-    ${blockField('Why Now', p.whyNow)}
-    ${p.triedSoFar ? blockField('Tried So Far', p.triedSoFar) : ''}
-    ${ctaBtn('Open in Notion', `https://notion.so/${process.env.NOTION_DB_INTAKE}`)}
-  `);
+    ${sectionHead("Context")}
+    ${blockField("Bottleneck", p.bottleneck)}
+    ${blockField("Why Now", p.whyNow)}
+    ${p.triedSoFar ? blockField("Tried So Far", p.triedSoFar) : ""}
+    ${ctaBtn("Open in Notion", `https://notion.so/${process.env.NOTION_DB_INTAKE}`)}
+  `,
+  );
 
   return resend.emails.send({
     from: FROM,
     to: TO,
-    subject: `[Intake] ${p.company} — ${p.stage}`,
+    subject: `[Intake] ${p.company}, ${p.stage}`,
     html,
     text: txt([
-      'New diagnostic intake submission.',
-      '',
+      "New diagnostic intake submission.",
+      "",
       `Company: ${p.company}`,
       `Lead: ${p.yourName} <${p.email}>`,
       `Location: ${p.basedIn}`,
       `Revenue: ${p.stage}`,
       `Budget: ${p.budget}`,
       `Start: ${p.startWindow}`,
-      '',
-      'Bottleneck:', p.bottleneck,
-      '',
-      'Why now:', p.whyNow,
-      '',
-      `Tried so far: ${p.triedSoFar || 'n/a'}`,
-      `Source: ${p.source || 'n/a'}`,
-      '',
+      "",
+      "Bottleneck:",
+      p.bottleneck,
+      "",
+      "Why now:",
+      p.whyNow,
+      "",
+      `Tried so far: ${p.triedSoFar || "n/a"}`,
+      `Source: ${p.source || "n/a"}`,
+      "",
       `Open in Notion: https://notion.so/${process.env.NOTION_DB_INTAKE}`,
     ]),
   });
 }
 
 export async function sendBookingNotification(p: BookingPayload) {
-  const html = shell('[BOOKING]', `
-    ${sectionHead('Request')}
-    ${field('Name', p.fullName, true)}
-    ${field('Email', p.email)}
-    ${field('WhatsApp', `${p.countryCode}${p.whatsapp}`)}
+  const html = shell(
+    "[BOOKING]",
+    `
+    ${sectionHead("Request")}
+    ${field("Name", p.fullName, true)}
+    ${field("Email", p.email)}
+    ${field("WhatsApp", `${p.countryCode}${p.whatsapp}`)}
     ${divider()}
-    ${sectionHead('Session')}
-    ${field('Date', p.selectedDate)}
-    ${field('Time', p.selectedTime)}
-    ${field('Timezone', p.timezone)}
+    ${sectionHead("Session")}
+    ${field("Date", p.selectedDate)}
+    ${field("Time", p.selectedTime)}
+    ${field("Timezone", p.timezone)}
     <tr>
       <td colspan="2" style="padding:16px 0 0;">
         <div style="background:${T.accentDim};border:1px solid ${T.accentBdr};border-radius:10px;padding:14px 16px;">
@@ -225,51 +237,55 @@ export async function sendBookingNotification(p: BookingPayload) {
         </div>
       </td>
     </tr>
-  `);
+  `,
+  );
 
   return resend.emails.send({
     from: FROM,
     to: TO,
-    subject: `[Booking] ${p.fullName} — ${p.selectedDate} ${p.selectedTime}`,
+    subject: `[Booking] ${p.fullName}, ${p.selectedDate} ${p.selectedTime}`,
     html,
     text: txt([
-      'New booking request.',
-      '',
+      "New booking request.",
+      "",
       `Name: ${p.fullName} <${p.email}>`,
       `WhatsApp: ${p.countryCode}${p.whatsapp}`,
       `When: ${p.selectedDate} at ${p.selectedTime} (${p.timezone})`,
-      '',
-      'Action: confirm by replying or messaging WhatsApp.',
+      "",
+      "Action: confirm by replying or messaging WhatsApp.",
     ]),
   });
 }
 
 export async function sendCareerNotification(p: CareerPayload) {
-  const html = shell('[CAREER]', `
-    ${sectionHead('Applicant')}
-    ${field('Name', p.fullName, true)}
-    ${field('Email', p.email)}
-    ${field('Position', p.position)}
-    ${field('Location', p.basedIn)}
+  const html = shell(
+    "[CAREER]",
+    `
+    ${sectionHead("Applicant")}
+    ${field("Name", p.fullName, true)}
+    ${field("Email", p.email)}
+    ${field("Position", p.position)}
+    ${field("Location", p.basedIn)}
     ${divider()}
-    ${sectionHead('Links')}
-    ${field('LinkedIn', `<a href="${p.linkedin}" style="color:${T.accent};">${p.linkedin}</a>`)}
-    ${p.portfolio ? field('Portfolio', `<a href="${p.portfolio}" style="color:${T.accent};">${p.portfolio}</a>`) : ''}
-    ${field('CV / Resume', `<a href="${p.cvUrl}" style="color:${T.accent};">Download CV →</a>`)}
-  `);
+    ${sectionHead("Links")}
+    ${field("LinkedIn", `<a href="${p.linkedin}" style="color:${T.accent};">${p.linkedin}</a>`)}
+    ${p.portfolio ? field("Portfolio", `<a href="${p.portfolio}" style="color:${T.accent};">${p.portfolio}</a>`) : ""}
+    ${field("CV / Resume", `<a href="${p.cvUrl}" style="color:${T.accent};">Download CV →</a>`)}
+  `,
+  );
 
   return resend.emails.send({
     from: FROM,
     to: TO,
-    subject: `[Career] ${p.fullName} — ${p.position}`,
+    subject: `[Career] ${p.fullName}, ${p.position}`,
     html,
     text: txt([
-      'New career application.',
-      '',
+      "New career application.",
+      "",
       `Applicant: ${p.fullName} <${p.email}>`,
       `Position: ${p.position}`,
       `LinkedIn: ${p.linkedin}`,
-      `Portfolio: ${p.portfolio || 'n/a'}`,
+      `Portfolio: ${p.portfolio || "n/a"}`,
       `Location: ${p.basedIn}`,
       `CV: ${p.cvUrl}`,
     ]),
@@ -277,10 +293,12 @@ export async function sendCareerNotification(p: CareerPayload) {
 }
 
 export async function sendWaitlistNotification(p: WaitlistPayload) {
-  const html = shell('[WAITLIST]', `
-    ${sectionHead('Signup')}
-    ${field('Email', p.email, true)}
-    ${field('Feature', p.sourceFeature)}
+  const html = shell(
+    "[WAITLIST]",
+    `
+    ${sectionHead("Signup")}
+    ${field("Email", p.email, true)}
+    ${field("Feature", p.sourceFeature)}
     <tr>
       <td colspan="2" style="padding:16px 0 0;">
         <div style="background:${T.accentDim};border:1px solid ${T.accentBdr};border-radius:10px;padding:14px 16px;">
@@ -288,12 +306,13 @@ export async function sendWaitlistNotification(p: WaitlistPayload) {
         </div>
       </td>
     </tr>
-  `);
+  `,
+  );
 
   return resend.emails.send({
     from: FROM,
     to: TO,
-    subject: `[Waitlist] ${p.email} — ${p.sourceFeature}`,
+    subject: `[Waitlist] ${p.email}, ${p.sourceFeature}`,
     html,
     text: `${p.email} signed up for ${p.sourceFeature} waitlist.`,
   });
@@ -302,26 +321,28 @@ export async function sendWaitlistNotification(p: WaitlistPayload) {
 // ─── 4 submitter confirmation functions ────────────────────────────────────
 
 export async function sendIntakeConfirmation(p: IntakePayload) {
-  const html = shell('[RECEIVED]', `
-    ${sectionHead('Thank you')}
+  const html = shell(
+    "[RECEIVED]",
+    `
+    ${sectionHead("Thank you")}
     <tr>
       <td colspan="2" style="padding:0 0 20px;">
         <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:15px;color:${T.white};line-height:1.6;">
-          Hi <strong>${p.yourName}</strong> — we've received your diagnostic submission for <strong style="color:${T.accent};">${p.company}</strong>.
+          Hi <strong>${p.yourName}</strong>, we've received your diagnostic submission for <strong style="color:${T.accent};">${p.company}</strong>.
         </p>
       </td>
     </tr>
     <tr>
       <td colspan="2" style="padding:0 0 20px;">
         <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:13px;color:${T.soft};line-height:1.7;">
-          We review every submission personally. If there's a strong fit, you'll hear from us within <strong style="color:${T.white};">24 hours</strong> — directly from the founder, not a template.
+          We review every submission personally. If there's a strong fit, you'll hear from us within <strong style="color:${T.white};">24 hours</strong>, directly from the founder, not a template.
         </p>
       </td>
     </tr>
     ${divider()}
-    ${field('Submitted for', p.company)}
-    ${field('Revenue stage', p.stage)}
-    ${field('Start window', p.startWindow)}
+    ${field("Submitted for", p.company)}
+    ${field("Revenue stage", p.stage)}
+    ${field("Start window", p.startWindow)}
     <tr>
       <td colspan="2" style="padding:16px 0 0;">
         <div style="background:${T.accentDim};border:1px solid ${T.accentBdr};border-radius:10px;padding:14px 16px;">
@@ -329,38 +350,41 @@ export async function sendIntakeConfirmation(p: IntakePayload) {
         </div>
       </td>
     </tr>
-  `);
+  `,
+  );
 
   return resend.emails.send({
     from: FROM,
     to: p.email,
-    subject: `We received your Diagnostic — PRIONATION.io`,
+    subject: `We received your Diagnostic, PRIONATION.io`,
     html,
     text: txt([
       `Hi ${p.yourName},`,
-      '',
+      "",
       `We've received your diagnostic submission for ${p.company}.`,
-      '',
-      'We review every submission personally. If there\'s a strong fit, you\'ll hear from us within 24 hours — directly from the founder, not a template.',
-      '',
+      "",
+      "We review every submission personally. If there's a strong fit, you'll hear from us within 24 hours, directly from the founder, not a template.",
+      "",
       `Submitted for: ${p.company}`,
       `Revenue stage: ${p.stage}`,
       `Start window: ${p.startWindow}`,
-      '',
-      'Questions? Reply to this email or reach us at consult@prionation.io',
-      '',
-      '— PRIONATION.io',
+      "",
+      "Questions? Reply to this email or reach us at consult@prionation.io",
+      "",
+      "— PRIONATION.io",
     ]),
   });
 }
 
 export async function sendBookingConfirmation(p: BookingPayload) {
-  const html = shell('[CONFIRMED]', `
-    ${sectionHead('Request received')}
+  const html = shell(
+    "[CONFIRMED]",
+    `
+    ${sectionHead("Request received")}
     <tr>
       <td colspan="2" style="padding:0 0 20px;">
         <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:15px;color:${T.white};line-height:1.6;">
-          Hi <strong>${p.fullName}</strong> — your meeting request is in.
+          Hi <strong>${p.fullName}</strong>, your meeting request is in.
         </p>
       </td>
     </tr>
@@ -372,9 +396,9 @@ export async function sendBookingConfirmation(p: BookingPayload) {
       </td>
     </tr>
     ${divider()}
-    ${field('Date', p.selectedDate)}
-    ${field('Time', `${p.selectedTime} (${p.timezone})`)}
-    ${field('WhatsApp', `${p.countryCode}${p.whatsapp}`)}
+    ${field("Date", p.selectedDate)}
+    ${field("Time", `${p.selectedTime} (${p.timezone})`)}
+    ${field("WhatsApp", `${p.countryCode}${p.whatsapp}`)}
     <tr>
       <td colspan="2" style="padding:16px 0 0;">
         <div style="background:${T.accentDim};border:1px solid ${T.accentBdr};border-radius:10px;padding:14px 16px;">
@@ -382,96 +406,102 @@ export async function sendBookingConfirmation(p: BookingPayload) {
         </div>
       </td>
     </tr>
-  `);
+  `,
+  );
 
   return resend.emails.send({
     from: FROM,
     to: p.email,
-    subject: `Booking request received — ${p.selectedDate} ${p.selectedTime}`,
+    subject: `Booking request received, ${p.selectedDate} ${p.selectedTime}`,
     html,
     text: txt([
       `Hi ${p.fullName},`,
-      '',
-      'Your meeting request is in.',
-      '',
+      "",
+      "Your meeting request is in.",
+      "",
       `Date: ${p.selectedDate} at ${p.selectedTime} (${p.timezone})`,
-      '',
-      'We\'ll confirm your session shortly. If the time needs adjusting, we\'ll reach out via email or WhatsApp.',
-      '',
-      '— PRIONATION.io',
+      "",
+      "We'll confirm your session shortly. If the time needs adjusting, we'll reach out via email or WhatsApp.",
+      "",
+      "— PRIONATION.io",
     ]),
   });
 }
 
 export async function sendCareerConfirmation(p: CareerPayload) {
-  const html = shell('[RECEIVED]', `
-    ${sectionHead('Application received')}
+  const html = shell(
+    "[RECEIVED]",
+    `
+    ${sectionHead("Application received")}
     <tr>
       <td colspan="2" style="padding:0 0 20px;">
         <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:15px;color:${T.white};line-height:1.6;">
-          Hi <strong>${p.fullName}</strong> — we've received your application for <strong style="color:${T.accent};">${p.position}</strong>.
+          Hi <strong>${p.fullName}</strong>, we've received your application for <strong style="color:${T.accent};">${p.position}</strong>.
         </p>
       </td>
     </tr>
     <tr>
       <td colspan="2" style="padding:0 0 20px;">
         <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:13px;color:${T.soft};line-height:1.7;">
-          We review every application personally — no ATS, no automated screening. If there's a strong fit, we'll reach out directly to set up a conversation.
+          We review every application personally, no ATS, no automated screening. If there's a strong fit, we'll reach out directly to set up a conversation.
         </p>
       </td>
     </tr>
     ${divider()}
-    ${field('Position', p.position)}
-    ${field('Location', p.basedIn)}
-    ${field('LinkedIn', `<a href="${p.linkedin}" style="color:${T.accent};">${p.linkedin}</a>`)}
+    ${field("Position", p.position)}
+    ${field("Location", p.basedIn)}
+    ${field("LinkedIn", `<a href="${p.linkedin}" style="color:${T.accent};">${p.linkedin}</a>`)}
     <tr>
       <td colspan="2" style="padding:16px 0 0;">
         <div style="background:${T.accentDim};border:1px solid ${T.accentBdr};border-radius:10px;padding:14px 16px;">
-          <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:12px;color:${T.muted};line-height:1.6;">Questions? Reply to this email — it reaches the founding team directly.</p>
+          <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:12px;color:${T.muted};line-height:1.6;">Questions? Reply to this email, it reaches the founding team directly.</p>
         </div>
       </td>
     </tr>
-  `);
+  `,
+  );
 
   return resend.emails.send({
     from: FROM,
     to: p.email,
-    subject: `Application received — ${p.position} · PRIONATION.io`,
+    subject: `Application received, ${p.position} · PRIONATION.io`,
     html,
     text: txt([
       `Hi ${p.fullName},`,
-      '',
+      "",
       `We've received your application for ${p.position}.`,
-      '',
-      'We review every application personally — no ATS, no automated screening. If there\'s a strong fit, we\'ll reach out directly.',
-      '',
+      "",
+      "We review every application personally, no ATS, no automated screening. If there's a strong fit, we'll reach out directly.",
+      "",
       `Position: ${p.position}`,
       `Location: ${p.basedIn}`,
-      '',
-      '— PRIONATION.io',
+      "",
+      "— PRIONATION.io",
     ]),
   });
 }
 
 export async function sendWaitlistConfirmation(p: WaitlistPayload) {
-  const html = shell ('[WAITLISTED]', `
+  const html = shell(
+    "[WAITLISTED]",
+    `
     ${sectionHead("You're in")}
     <tr>
       <td colspan="2" style="padding:0 0 20px;">
         <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:15px;color:${T.white};line-height:1.6;">
-          <strong>${p.email}</strong> — you're on the <strong style="color:${T.accent};">${p.sourceFeature}</strong> waitlist.
+          <strong>${p.email}</strong>, you're on the <strong style="color:${T.accent};">${p.sourceFeature}</strong> waitlist.
         </p>
       </td>
     </tr>
     <tr>
       <td colspan="2" style="padding:0 0 20px;">
         <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:13px;color:${T.soft};line-height:1.7;">
-          We'll notify you personally when it launches — no bulk blast, just a direct message when it's ready for you.
+          We'll notify you personally when it launches, no bulk blast, just a direct message when it's ready for you.
         </p>
       </td>
     </tr>
     ${divider()}
-    ${field('Feature', p.sourceFeature)}
+    ${field("Feature", p.sourceFeature)}
     <tr>
       <td colspan="2" style="padding:16px 0 0;">
         <div style="background:${T.accentDim};border:1px solid ${T.accentBdr};border-radius:10px;padding:14px 16px;">
@@ -479,21 +509,22 @@ export async function sendWaitlistConfirmation(p: WaitlistPayload) {
         </div>
       </td>
     </tr>
-  `);
+  `,
+  );
 
   return resend.emails.send({
     from: FROM,
     to: p.email,
-    subject: `You're on the waitlist — ${p.sourceFeature} · PRIONATION.io`,
+    subject: `You're on the waitlist, ${p.sourceFeature} · PRIONATION.io`,
     html,
     text: txt([
       `You're on the ${p.sourceFeature} waitlist.`,
-      '',
-      'We\'ll notify you personally when it launches — no bulk blast, just a direct message when it\'s ready.',
-      '',
-      'Want to remove yourself? Reply to this email.',
-      '',
-      '— PRIONATION.io',
+      "",
+      "We'll notify you personally when it launches, no bulk blast, just a direct message when it's ready.",
+      "",
+      "Want to remove yourself? Reply to this email.",
+      "",
+      "— PRIONATION.io",
     ]),
   });
 }

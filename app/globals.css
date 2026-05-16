@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ============================================================
-   PRIONATION design system — tokens
+   PRIONATION design system, tokens
    ============================================================ */
 :root {
   /* Surfaces */
@@ -16,13 +16,13 @@
   --c-soft: #babbbe;
   --c-fg: #ffffff;
 
-  /* Accent — blurple default */
+  /* Accent, blurple default */
   --c-accent: #5865f2;
   --c-accent-glow: rgba(88, 101, 242, 0.55);
   --c-accent-10: #5865f21a;
   --c-accent-30: #5865f24d;
 
-  /* Fonts — wired to next/font CSS variables */
+  /* Fonts, wired to next/font CSS variables */
   --font-sans: var(--font-rubik, "Rubik"), system-ui, sans-serif;
   --font-pixel: var(--font-press-start-2p, "Press Start 2P"), monospace;
   --font-display: var(--font-black-han-sans, "Black Han Sans"), sans-serif;
@@ -89,4 +89,90 @@ select option {
   mask-composite: exclude;
   pointer-events: none;
   z-index: 5;
+}
+
+/* ─── Animation keyframes ──────────────────────────────────────────────────── */
+
+@keyframes pn-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Rotating shimmer for featured card border */
+@keyframes pn-shimmer {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+/* Scroll-progress bar accent shadow pulse */
+@keyframes pn-glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 8px 1px var(--c-accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 18px 3px var(--c-accent-glow);
+  }
+}
+
+/* Legacy fade class, used by AppShell IntersectionObserver fallback */
+[data-fade] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-fade].pn-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Shimmer featured card border */
+.pn-shimmer-border {
+  position: relative;
+}
+.pn-shimmer-border::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    270deg,
+    var(--c-accent),
+    rgba(235, 69, 159, 0.6),
+    var(--c-accent),
+    rgba(88, 101, 242, 0.4)
+  );
+  background-size: 400% 400%;
+  animation: pn-shimmer 3s ease infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.pn-shimmer-border:hover::after {
+  opacity: 1;
+}
+
+/* Cursor glow */
+.pn-cursor-glow {
+  pointer-events: none;
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--c-accent-glow) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: screen;
 }

@@ -1,0 +1,312 @@
+{
+  "Hero": {
+    "eyebrow": "INGÉNIERIE DE PRODUITS IA",
+    "title_main": "Nous construisons des logiciels qui",
+    "title_accent": "brisent les",
+    "description": "Nous construisons une infrastructure IA de production pour les entreprises du marché intermédiaire basées en Europe et aux États-Unis. Huit semaines, périmètre fixe, équipes agiles.",
+    "cta_diagnostic": "Commencer par un Diagnostic",
+    "cta_meet": "Rencontrez-nous",
+    "stat_diagnostic": "DIAGNOSTIC → TAUX DE CONSTRUCTION",
+    "stat_deliverable": "AU PREMIER LIVRABLE",
+    "stat_production": "À LA PRODUCTION",
+    "weeks": "semaines",
+    "words": [
+      "goulots d'étranglement.",
+      "travail manuel.",
+      "silos de données.",
+      "processus lents."
+    ]
+  },
+  "Header": {
+    "nav": {
+      "how-we-work": "Comment nous travaillons",
+      "methodology": "Méthodologie",
+      "work": "Projets",
+      "pricing": "Tarification",
+      "foundation": "Équipe"
+    },
+    "cta": "Démarrer un Diagnostic"
+  },
+  "HowWeWork": {
+    "eyebrow": "01 · COMMENT NOUS TRAVAILLONS",
+    "title": "Une équipe surpasse un recrutement, à chaque fois.",
+    "col_metric": "MÉTRIQUE",
+    "col_inhouse": "RECRUTEMENT INTERNE",
+    "col_pod": "POD PRIONATION",
+    "rows": [
+      {
+        "label": "Délai de valeur",
+        "them": "4 à 6 mois pour recruter et former",
+        "us": "8 semaines en production"
+      },
+      {
+        "label": "Coût (premier livrable)",
+        "them": "120 000–180 000 €/an tout compris",
+        "us": "25 000–55 000 € fixe par projet"
+      },
+      {
+        "label": "Ce que vous obtenez",
+        "them": "Une seule personne",
+        "us": "Un pod, 2–3 ingénieurs produit IA"
+      },
+      {
+        "label": "Risque de périmètre",
+        "them": "Modifications continues illimitées",
+        "us": "Contrat à périmètre fixe dès le Jour 1"
+      },
+      {
+        "label": "Coût de retainer",
+        "them": "≈ un ingénieur/an = 120 000 € +",
+        "us": "4 000–9 000 €/mois pour l'équipe complète"
+      },
+      {
+        "label": "Risque",
+        "them": "Mauvais recrutement = 6 mois + 50 000 € perdus",
+        "us": "Partir après le Diagnostic"
+      }
+    ]
+  },
+  "Methodology": {
+    "label": "MÉTHODOLOGIE",
+    "title": "DISCIPLINE D'INGÉNIERIE IA NATIVE.",
+    "link": "Principes d'ingénierie",
+    "coming_soon": "Bientôt disponible",
+    "principles": [
+      {
+        "title": "Les évaluations avant les fonctionnalités.",
+        "body": "Nous écrivons la suite de tests avant d'écrire le prompt. L'IA de production sans évaluations est une démo qui attend d'échouer."
+      },
+      {
+        "title": "La télémétrie dès le premier jour.",
+        "body": "Les données de production guident l'itération suivante. « Le modèle est incorrect » est infalsifiable sans instrumentation, nous instrumentons donc en premier."
+      },
+      {
+        "title": "Infrastructure maîtrisée.",
+        "body": "Vous détenez les clés : code, hébergement, données, modèles. Notre valeur réside dans la discipline de construction, pas dans le verrouillage d'infrastructure."
+      },
+      {
+        "title": "Consultation IA",
+        "body": "Obtenez un aperçu diagnostique généré par IA en quelques minutes. Deux voies : saisie structurée ou chat avec notre IA.",
+        "cta": "Notifiez-moi à la mise en ligne"
+      }
+    ]
+  },
+  "SelectedWork": {
+    "label": "TRAVAUX SÉLECTIONNÉS",
+    "title": "TRANSFORMATIONS OPÉRATIONNELLES ÉPROUVÉES.",
+    "link": "Voir les archives",
+    "view_project": "VOIR LE PROJET",
+    "cases": [
+      {
+        "name": "EPIDOM",
+        "geo": "🇫🇷 FRANCE · EUROPE",
+        "tag": "F&B · GESTION DES STOCKS",
+        "year": "2026",
+        "body": "Développement d'un système de gestion des stocks pour un opérateur F&B européen. Conçu pour le suivi multi-sites, il remplace les processus manuels par une solution numérique centralisée."
+      },
+      {
+        "name": "EXPEDITOO",
+        "geo": "🇫🇷 FRANCE · EUROPE",
+        "tag": "LOGISTIQUE · MARKETPLACE",
+        "year": "2025",
+        "body": "Développement d'une marketplace logistique et d'enchères combinant mécanique d'enchères et suivi des expéditions dans une seule application."
+      },
+      {
+        "name": "The Lead Agent",
+        "geo": "🇦🇺 AUSTRALIE",
+        "tag": "IMMOBILIER · GÉNÉRATION DE LEADS",
+        "year": "2026",
+        "body": "Création d'une plateforme complète de génération de leads et de prise de rendez-vous pour une agence immobilière australienne."
+      }
+    ]
+  },
+  "Pricing": {
+    "eyebrow": "04 · TARIFICATION",
+    "title": "Périmètre fixe, zéro surprise.",
+    "most_popular": "Le Plus Populaire",
+    "express_title": "Site Express",
+    "express_badge": "NOUVEAU",
+    "express_desc": "Site Next.js 3 pages, formulaire de contact, SEO, déploiement Vercel, {days} jours ouvrés.",
+    "express_days": "5",
+    "express_base": "base",
+    "express_cta": "Voir Express",
+    "plans": [
+      {
+        "name": "Diagnostic",
+        "label": "SKU 1",
+        "price": "5–7K",
+        "period": "fixe · 2 semaines",
+        "desc": "Cartographiez le goulot d'étranglement. Obtenez le cahier des charges. Signez sans appel d'offres.",
+        "cta": "Démarrer le Diagnostic",
+        "features": [
+          "Immersion avec les ops & l'ingénierie",
+          "Utilisateurs cibles + inventaire des données",
+          "Conception de l'architecture système",
+          "Critères d'évaluation + projection ROI",
+          "Plan de construction sur 8 semaines",
+          "Doc 15–25 pages + restitution de 90 min"
+        ]
+      },
+      {
+        "name": "Build",
+        "label": "SKU 2",
+        "price": "25–55K",
+        "period": "fixe · 8 semaines",
+        "desc": "Livrez de l'IA en production. Périmètre fixe, protégé par le contrat Diagnostic.",
+        "cta": "Commencer",
+        "features": [
+          "2–3 ingénieurs produit IA",
+          "Logiciel déployé en production",
+          "Harnais d'évaluation + suite de régression",
+          "Télémétrie & monitoring",
+          "Runbook + documentation de passation",
+          "Garantie post-lancement de 4 semaines"
+        ]
+      },
+      {
+        "name": "Retainer",
+        "label": "SKU 3",
+        "price": "4–9K",
+        "period": "/mois · min. 6 mois",
+        "desc": "Accès pod continu. Le seul SKU qui s'accumule.",
+        "cta": "Parler d'un retainer",
+        "features": [
+          "Maintenance de la suite d'évaluation",
+          "Détection de dérive",
+          "Mises à jour des prompts & modèles",
+          "1 nouvelle fonctionnalité/mois",
+          "Revues trimestrielles",
+          "Suivi continu du ROI"
+        ]
+      }
+    ]
+  },
+  "Foundation": {
+    "label": "LA FONDATION",
+    "title": "TALENT MONDIAL, RACINES INDONÉSIENNES.",
+    "powered_by": "Propulsé par LinkedIn",
+    "pod_title": "Le Pod de Livraison",
+    "pod_role": "INGÉNIERIE PRODUIT IA",
+    "pod_desc": "Une unité flexible de 2–3 ingénieurs produit IA. Des experts métier reconvertis en opérateurs IA natifs, livrant une infrastructure prête pour la production de bout en bout.",
+    "team": [
+      {
+        "pixel": "RÔLE · FONDATEUR / PDG",
+        "name": "Darwin Prayoga",
+        "role": "Fondateur & PDG",
+        "bio": "Technologue et architecte produit indonésien. Ancien responsable de plusieurs startups à forte croissance en Asie du Sud-Est. Orchestre la transformation PRIONATION, propriétaire de la vision et de la stratégie produit."
+      },
+      {
+        "pixel": "RÔLE · DRC",
+        "name": "Evan Cao",
+        "role": "Directeur des Revenus",
+        "bio": "Opérateur basé à Paris et fondateur d'Epidom. Expert en expansion sur le marché intermédiaire européen et en partenariats stratégiques. Pont entre la livraison asiatique et la demande européenne."
+      }
+    ]
+  },
+  "Engage": {
+    "label": "NOUS CONTACTER",
+    "title": "RÉSOLVEZ VOTRE GOULOT D'ÉTRANGLEMENT AUJOURD'HUI.",
+    "tab_meet": "Rencontrez-nous",
+    "tab_diagnostic": "Diagnostic",
+    "tab_careers": "Carrières",
+    "mobile_titles": {
+      "careers": "Rejoindre le Pod",
+      "meet": "Planifier un appel",
+      "diagnostic": "Démarrer un Diagnostic"
+    },
+    "mobile_descs": {
+      "careers": "Nous recherchons toujours des opérateurs IA natifs pour rejoindre notre réseau mondial.",
+      "meet": "Réservez une conversation de 30 minutes pour discuter de vos goulots d'étranglement opérationnels.",
+      "diagnostic": "Définissez votre premier projet de transformation IA avec un Diagnostic de 2 semaines."
+    },
+    "mobile_ctas": {
+      "careers": "Postuler",
+      "meet": "Ouvrir le Calendrier",
+      "diagnostic": "Démarrer la Saisie"
+    },
+    "modal_form": "FORMULAIRE",
+    "diagnostic": {
+      "fields_count": "10",
+      "response": "SOUS 24H",
+      "email_label": "EMAIL",
+      "step1_label": "INFORMATIONS ENTREPRISE",
+      "step2_label": "CONTEXTE DU GOULOT",
+      "fields": {
+        "company": "Nom de l'entreprise + site web",
+        "yourName": "Votre nom + rôle",
+        "email": "Email",
+        "basedIn": "Où êtes-vous basé·e ?",
+        "stage": "Stade de l'entreprise",
+        "bottleneck": "Le goulot d'étranglement opérationnel, décrivez en 2–3 phrases",
+        "triedSoFar": "Qu'avez-vous essayé jusqu'à présent ?",
+        "whyNow": "Pourquoi est-ce important maintenant ?",
+        "budget": "Avez-vous un budget pour un Diagnostic de 2 semaines dans la fourchette 5 000–7 000 € ?",
+        "startWindow": "Fenêtre de démarrage idéale",
+        "source": "Comment avez-vous entendu parler de nous ?"
+      },
+      "placeholders": {
+        "company": "ex. Acme Logistics, acme.fr",
+        "yourName": "ex. Marie Dupont, COO",
+        "email": "marie@acme.fr",
+        "basedIn": "Ville, pays",
+        "stage": "Sélectionner la tranche de revenus",
+        "bottleneck": "Quel processus opérationnel manuel évolue linéairement avec les revenus, où les connaissances sont cloisonnées, ou où le volume fait craquer les coutures. (min. 100 caractères)",
+        "triedSoFar": "Outils internes, SaaS, consultants, ce qui a été essayé et où cela a échoué.",
+        "whyNow": "Objectif de croissance, pression sur les marges, risque de personne clé, intégration à venir.",
+        "source": "Référence, recherche, réseaux sociaux, tout compte."
+      },
+      "optional": "optionnel",
+      "continue": "Continuer",
+      "back": "Retour",
+      "submit": "Ouvrir une conversation",
+      "sending": "Envoi en cours…",
+      "error_email": "Veuillez entrer une adresse email valide.",
+      "error_bottleneck_short": "Un peu plus de contexte, s'il vous plaît, {count}/100 caractères.",
+      "error_bottleneck_empty": "Veuillez décrire le goulot d'étranglement.",
+      "ai_label": "PRÉFÉREZ PARLER À L'IA D'ABORD ?",
+      "ai_desc": "Consultation IA disponible en août 2026.",
+      "email_us": "OU ENVOYEZ-NOUS UN EMAIL"
+    },
+    "success": {
+      "title": "Merci. Nous répondons dans les 24 heures.",
+      "desc": "Nous avons enregistré votre saisie. Attendez-vous à une brève note avec deux ou trois questions plus précises, puis une conversation de 30 minutes pour confirmer si un Diagnostic est la prochaine étape appropriée.",
+      "stat1_label": "RÉPONSE",
+      "stat1_value": "SOUS 24H",
+      "stat2_label": "SUITE",
+      "stat2_value": "APPEL 30 MIN",
+      "stat3_label": "RÉSULTAT",
+      "stat3_value": "DIAGNOSTIC FIT ?",
+      "reset": "Soumettre une autre saisie"
+    }
+  },
+  "Footer": {
+    "title": "Nous construisons le produit d'infrastructure.",
+    "description": "PRIONATION.io livre des produits d'IA de production pour les entreprises du marché intermédiaire basées en Europe et aux États-Unis. Périmètre fixe, prix fixe, équipes agiles. 8 semaines de la signature à la livraison.",
+    "labels": {
+      "product": "PRODUIT",
+      "resources": "RESSOURCES",
+      "connect": "NOUS CONTACTER",
+      "use_cases": "CAS D'UTILISATION",
+      "delivered": "LIVRÉ"
+    },
+    "nav": {
+      "how_we_work": "Comment nous travaillons",
+      "methodology": "Méthodologie",
+      "selected_work": "Travaux sélectionnés",
+      "pricing": "Tarification",
+      "foundation": "La fondation",
+      "meet_us": "Rencontrez-nous",
+      "diagnostic_form": "Formulaire Diagnostic",
+      "careers": "Carrières",
+      "location": "Situé · Bali, ID",
+      "response": "RÉPONSE SOUS 24H"
+    },
+    "copyright": "© 2026 PRIORITY FOUNDATION",
+    "managed": "// GÉRÉ À DISTANCE",
+    "taglines": [
+      "Contrôle sur la dépendance.",
+      "Effet de levier sur le travail.",
+      "Systèmes sur l'exécution manuelle."
+    ]
+  }
+}

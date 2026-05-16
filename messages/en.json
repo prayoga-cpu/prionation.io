@@ -1,0 +1,307 @@
+{
+  "Hero": {
+    "eyebrow": "AI PRODUCT ENGINEERING",
+    "title_main": "We build software that",
+    "title_accent": "break operational",
+    "description": "We build production AI infrastructure for European and US-Based mid-market companies. Eight weeks, fixed scope, lean pods.",
+    "cta_diagnostic": "Start with a Diagnostic",
+    "cta_meet": "Meet Us",
+    "stat_diagnostic": "DIAGNOSTIC → BUILD RATE",
+    "stat_deliverable": "TO FIRST DELIVERABLE",
+    "stat_production": "TO PRODUCTION",
+    "weeks": "weeks",
+    "words": ["bottlenecks.", "manual work.", "data silos.", "slow processes."]
+  },
+  "Header": {
+    "nav": {
+      "how-we-work": "How we work",
+      "methodology": "Methodology",
+      "work": "Work",
+      "pricing": "Pricing",
+      "foundation": "Foundation"
+    },
+    "cta": "Start a Diagnostic"
+  },
+  "HowWeWork": {
+    "eyebrow": "01 · HOW WE WORK",
+    "title": "A pod beats a hire, every time.",
+    "col_metric": "METRIC",
+    "col_inhouse": "IN-HOUSE HIRE",
+    "col_pod": "PRIONATION POD",
+    "rows": [
+      {
+        "label": "Time to value",
+        "them": "4–6 months to hire + ramp",
+        "us": "8 weeks to production"
+      },
+      {
+        "label": "Cost (first deliverable)",
+        "them": "€120–180K/year fully loaded",
+        "us": "€25–55K fixed per project"
+      },
+      {
+        "label": "What you get",
+        "them": "One person",
+        "us": "A pod, 2–3 AI Product Engineers"
+      },
+      {
+        "label": "Scope risk",
+        "them": "Unlimited ongoing changes",
+        "us": "Tight scope contract from Day 1"
+      },
+      {
+        "label": "Retainer cost",
+        "them": "≈ one engineer/year = €120K+",
+        "us": "€4–9K/month for the full pod"
+      },
+      {
+        "label": "Risk",
+        "them": "Bad hire = 6 months + €50K wasted",
+        "us": "Walk away after Diagnostic"
+      }
+    ]
+  },
+  "Methodology": {
+    "label": "METHODOLOGY",
+    "title": "AI NATIVE ENGINEERING DISCIPLINE.",
+    "link": "Engineering principles",
+    "coming_soon": "Coming Soon",
+    "principles": [
+      {
+        "title": "Evals before features.",
+        "body": "We write the test suite before we write the prompt. Production AI without evals is a demo waiting to fail."
+      },
+      {
+        "title": "Telemetry from day one.",
+        "body": "Production data drives the next iteration. \"The model is wrong\" is unfalsifiable without instrumentation, so we instrument first."
+      },
+      {
+        "title": "Owned infrastructure.",
+        "body": "You hold the keys: code, hosting, data, models. Our value is the build discipline, not infrastructure lock-in."
+      },
+      {
+        "title": "AI Consultation",
+        "body": "Get a free AI-generated diagnostic preview in minutes. Two paths: structured intake or chat with our AI.",
+        "cta": "Notify me when live"
+      }
+    ]
+  },
+  "SelectedWork": {
+    "label": "SELECTED WORK",
+    "title": "PROVEN OPERATIONAL TRANSFORMATIONS.",
+    "link": "View archive",
+    "view_project": "VIEW PROJECT",
+    "cases": [
+      {
+        "name": "EPIDOM",
+        "geo": "🇫🇷 FRANCE · EUROPE",
+        "tag": "F&B · INVENTORY MGMT",
+        "year": "2026",
+        "body": "Developed a cookie bar inventory management system for a European F&B operator. Designed for multi-location tracking, the system replaced manual processes with a centralized digital solution, cutting operational overhead."
+      },
+      {
+        "name": "EXPEDITOO",
+        "geo": "🇫🇷 FRANCE · EUROPE",
+        "tag": "LOGISTICS · MARKETPLACE",
+        "year": "2025",
+        "body": "Engineered a logistics and auction marketplace combining bidding mechanics and shipment tracking into a single application. Demonstrates full-stack capability across complex business logic."
+      },
+      {
+        "name": "The Lead Agent",
+        "geo": "🇦🇺 AUSTRALIA",
+        "tag": "REAL ESTATE · LEAD GEN",
+        "year": "2026",
+        "body": "Built a full lead generation and appointment-setting platform for a real estate agency. Delivered a client-facing web system that automates pipeline management for ambitious estate agents operating across AU."
+      }
+    ]
+  },
+  "Pricing": {
+    "eyebrow": "04 · PRICING",
+    "title": "Fixed scope, zero surprises.",
+    "most_popular": "Most Popular",
+    "express_title": "Express Site",
+    "express_badge": "NEW",
+    "express_desc": "3-page Next.js site, contact form, SEO, Vercel deploy, {days} business days.",
+    "express_days": "5",
+    "express_base": "base",
+    "express_cta": "See Express",
+    "plans": [
+      {
+        "name": "Diagnostic",
+        "label": "SKU 1",
+        "price": "5–7K",
+        "period": "fixed · 2 weeks",
+        "desc": "Map the bottleneck. Get the build spec. Sign without procurement.",
+        "cta": "Start the Diagnostic",
+        "features": [
+          "Embed with ops & engineering",
+          "Target users + data inventory",
+          "System architecture design",
+          "Eval criteria + ROI projection",
+          "8-week build plan",
+          "15–25 page doc + 90-min readout"
+        ]
+      },
+      {
+        "name": "Build",
+        "label": "SKU 2",
+        "price": "25–55K",
+        "period": "fixed · 8 weeks",
+        "desc": "Ship production AI. Fixed scope, protected by the Diagnostic contract.",
+        "cta": "Get started",
+        "features": [
+          "2–3 AI Product Engineers",
+          "Production-deployed software",
+          "Eval harness + regression suite",
+          "Telemetry & monitoring",
+          "Runbook + handoff documentation",
+          "4-week post-launch warranty"
+        ]
+      },
+      {
+        "name": "Retainer",
+        "label": "SKU 3",
+        "price": "4–9K",
+        "period": "/month · min. 6 months",
+        "desc": "Ongoing pod access. The only SKU that compounds.",
+        "cta": "Talk about a retainer",
+        "features": [
+          "Eval suite maintenance",
+          "Drift detection",
+          "Prompt & model upgrades",
+          "1 new feature shipped/month",
+          "Quarterly business reviews",
+          "Continuous ROI tracking"
+        ]
+      }
+    ]
+  },
+  "Foundation": {
+    "label": "THE FOUNDATION",
+    "title": "GLOBAL TALENT, INDONESIAN ROOTS.",
+    "powered_by": "Powered by LinkedIn",
+    "pod_title": "The Delivery Pod",
+    "pod_role": "AI PRODUCT ENGINEERING",
+    "pod_desc": "A flexible unit of 2–3 AI Product Engineers. Domain experts converted into AI-native operators, shipping production-ready infrastructure end-to-end.",
+    "team": [
+      {
+        "pixel": "ROLE · FOUNDER / CEO",
+        "name": "Darwin Prayoga",
+        "role": "Founder & CEO",
+        "bio": "Indonesian technologist and product architect. Former lead at several high-growth startups across SEA. Orchestrates the PRIONATION transformation, owning vision and product strategy."
+      },
+      {
+        "pixel": "ROLE · CRO",
+        "name": "Evan Cao",
+        "role": "Chief Revenue Officer",
+        "bio": "Paris-based operator and founder of Epidom. Expert in European mid-market expansion and strategic partnerships. Bridging the gap between Asian delivery and European demand."
+      }
+    ]
+  },
+  "Engage": {
+    "label": "CONNECT US",
+    "title": "SOLVE YOUR BOTTLENECK TODAY.",
+    "tab_meet": "Meet Us",
+    "tab_diagnostic": "Diagnostic",
+    "tab_careers": "Careers",
+    "mobile_titles": {
+      "careers": "Join the Pod",
+      "meet": "Schedule a Call",
+      "diagnostic": "Start a Diagnostic"
+    },
+    "mobile_descs": {
+      "careers": "We're always looking for AI-native operators to join our global network.",
+      "meet": "Book a 30-minute conversation to discuss your operational bottlenecks.",
+      "diagnostic": "Scope your first AI transformation project with a 2-week Diagnostic."
+    },
+    "mobile_ctas": {
+      "careers": "Apply Now",
+      "meet": "Open Calendar",
+      "diagnostic": "Start Intake"
+    },
+    "modal_form": "FORM",
+    "diagnostic": {
+      "fields_count": "10",
+      "response": "WITHIN 24H",
+      "email_label": "EMAIL",
+      "step1_label": "COMPANY BASICS",
+      "step2_label": "BOTTLENECK CONTEXT",
+      "fields": {
+        "company": "Company name + website",
+        "yourName": "Your name + role",
+        "email": "Email",
+        "basedIn": "Where are you based?",
+        "stage": "Company stage",
+        "bottleneck": "The operational bottleneck, describe in 2–3 sentences",
+        "triedSoFar": "What have you tried so far?",
+        "whyNow": "Why does this matter now?",
+        "budget": "Are you budgeted for a 2-week paid Diagnostic in the €5–7K range?",
+        "startWindow": "Ideal start window",
+        "source": "How did you hear about us?"
+      },
+      "placeholders": {
+        "company": "e.g. Acme Logistics, acme.fr",
+        "yourName": "e.g. Marie Dupont, COO",
+        "email": "marie@acme.fr",
+        "basedIn": "City, country",
+        "stage": "Select revenue band",
+        "bottleneck": "What manual ops process scales linearly with revenue, where knowledge is trapped, or where volume breaks the seams. (min. 100 characters)",
+        "triedSoFar": "Internal tooling, off-the-shelf SaaS, consultants, what's been tried and where it fell short.",
+        "whyNow": "Growth target, margin pressure, key-person risk, upcoming integration, what makes this the right window.",
+        "source": "Referral, search, social, anything counts."
+      },
+      "optional": "optional",
+      "continue": "Continue",
+      "back": "Back",
+      "submit": "Open a conversation",
+      "sending": "Sending…",
+      "error_email": "Please enter a valid email address.",
+      "error_bottleneck_short": "A bit more context, please, {count}/100 characters.",
+      "error_bottleneck_empty": "Please describe the bottleneck.",
+      "ai_label": "PREFER TO TALK TO AI FIRST?",
+      "ai_desc": "AI Consultation launching August 2026.",
+      "email_us": "OR EMAIL US"
+    },
+    "success": {
+      "title": "Thanks. We respond within 24 hours.",
+      "desc": "We've logged your intake. Expect a short note with two or three sharper questions, then a 30-minute conversation to confirm whether a Diagnostic is the right next step.",
+      "stat1_label": "RESPONSE",
+      "stat1_value": "WITHIN 24H",
+      "stat2_label": "NEXT",
+      "stat2_value": "30-MIN CALL",
+      "stat3_label": "OUTCOME",
+      "stat3_value": "DIAGNOSTIC FIT?",
+      "reset": "Submit another intake"
+    }
+  },
+  "Footer": {
+    "title": "We build the infrastructure product.",
+    "description": "PRIONATION.io ships production AI products for European and US-Based mid-market companies. Fixed-scope, fixed-price, lean pods. 8 weeks from signed to shipped.",
+    "labels": {
+      "product": "PRODUCT",
+      "resources": "RESOURCES",
+      "connect": "CONNECT US",
+      "use_cases": "USE CASES",
+      "delivered": "DELIVERED"
+    },
+    "nav": {
+      "how_we_work": "How we work",
+      "methodology": "Methodology",
+      "selected_work": "Selected work",
+      "pricing": "Pricing",
+      "foundation": "The foundation",
+      "meet_us": "Meet Us",
+      "diagnostic_form": "Diagnostic Form",
+      "careers": "Careers",
+      "location": "Located · Bali, ID",
+      "response": "RESPONSE WITHIN 24H"
+    },
+    "copyright": "© 2026 PRIORITY FOUNDATION",
+    "managed": "// MANAGED REMOTELY",
+    "taglines": [
+      "Control over dependency.",
+      "Leverage over labor.",
+      "Systems over manual execution."
+    ]
+  }
+}
