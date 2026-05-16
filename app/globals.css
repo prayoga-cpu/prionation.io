@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   PRIONATION design system — tokens
+   ============================================================ */
+:root {
+  /* Surfaces */
+  --c-bg: #08090d;
+  --c-card: #0c0d12;
+  --c-card-soft: #11131a;
+  --c-line: #1c1d22;
+  --c-line-soft: #36383d;
+  --c-muted: #73767d;
+  --c-soft: #babbbe;
+  --c-fg: #ffffff;
+
+  /* Accent — blurple default */
+  --c-accent: #5865f2;
+  --c-accent-glow: rgba(88, 101, 242, 0.55);
+  --c-accent-10: #5865f21a;
+  --c-accent-30: #5865f24d;
+
+  /* Fonts — wired to next/font CSS variables */
+  --font-sans: var(--font-rubik, "Rubik"), system-ui, sans-serif;
+  --font-pixel: var(--font-press-start-2p, "Press Start 2P"), monospace;
+  --font-display: var(--font-black-han-sans, "Black Han Sans"), sans-serif;
+  --font-serif: var(--font-bitter, "Bitter"), Georgia, serif;
+
+  /* Layout */
+  --page-x: clamp(20px, 4vw, 56px);
+  --max-w: 1280px;
+
+  /* Motion */
+  --motion-fast: 100ms;
+  --motion-normal: 200ms;
+  --motion-slow: 300ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+select option {
+  background: var(--c-card);
+  color: var(--c-fg);
+}
+
+/* Shining-border ring */
+.pn-ring-wrap {
+  position: relative;
+  isolation: isolate;
+}
+.pn-ring-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.1) 35%,
+    rgba(255, 255, 255, 0.04) 70%,
+    rgba(255, 255, 255, 0.22) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 5;
+}
