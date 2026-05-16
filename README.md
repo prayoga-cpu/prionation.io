@@ -1,22 +1,91 @@
-# CODING AGENTS: READ THIS FIRST
+# PRIONATION.io
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+![PRIONATION](public/favicon.ico) <!-- Placeholder for actual logo if available -->
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+**Accelerating AI Transformation & Custom Software Development.**
 
-## What you should do — IMPORTANT
+PRIONATION is a premium AI product engineering agency that bridges the gap between Asian execution speed and global design standards. We specialize in transforming complex business challenges into high-performance digital products.
 
-**Read `prionation-io-landing-page/project/PRIONATION Landing.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## 🚀 Project Overview
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+This repository contains the official landing page and intake engine for PRIONATION.io. Built with a focus on high-fidelity design, performance, and seamless user experience.
 
-## About the design files
+### Key Features
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+- **Diagnostic Intake Engine**: A multi-step intelligent form that evaluates business needs and provides immediate engagement paths.
+- **Dynamic Booking System**: Integrated scheduling with timezone support and WhatsApp-ready communication fields.
+- **Careers Portal**: A dedicated interface for global talent to join the PRIONATION delivery pod.
+- **Interactive "How We Work"**: A visual breakdown of our methodology—from Diagnostic to Production.
+- **Premium Design System**: 
+  - Dark-mode first aesthetic.
+  - Custom typography (Black Han Sans & Inter).
+  - Glassmorphic UI components.
+  - Responsive layouts for desktop and mobile.
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+## 🛠 Tech Stack
 
-## Bundle contents
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **Library**: [React 19](https://reactjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Forms & Validation**: Controlled React state with Zod-ready API routes.
+- **Deployment**: Optimized for Vercel.
 
-- `prionation-io-landing-page/README.md` — this file
-- `prionation-io-landing-page/project/` — the `PRIONATION.io | Landing Page` project files (HTML prototypes, assets, components)
+## 📁 Project Structure
+
+```bash
+├── app/              # Next.js App Router (Pages & API)
+├── components/       # UI Component Library
+│   ├── sections/     # Modular Page Sections (Hero, Engage, Foundation, etc.)
+│   ├── ui/           # Atomic UI Elements (Buttons, Cards, Inputs)
+│   └── icons/        # Custom SVG Icon Set
+├── public/           # Static Assets (Images, Fonts, Favicons)
+├── lib/              # Utility Functions & Shared Logic
+└── tailwind.config.ts # Design Tokens & Theme Configuration
+```
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+- Node.js 18.x or higher
+- npm or pnpm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:prayoga-cpu/prionation.io.git
+   cd prionation.io
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🚢 Deployment
+
+The project is configured for seamless deployment on Vercel. 
+
+1. Push your changes to the `main` branch.
+2. Connect your GitHub repository to Vercel.
+3. Environment variables (if any) should be configured in the Vercel dashboard.
+
+## 🤝 The Foundation
+
+- **Darwin Prayoga** — Founder & CEO (Indonesian Tech Architect)
+- **Evan Cao** — Chief Revenue Officer (Paris-based Operator)
+- **The Delivery Pod** — Our specialized AI Product Engineering unit.
+
+---
+
+Built with precision by **PRIONATION**. 
+© 2026 PRIONATION.io. All rights reserved.
