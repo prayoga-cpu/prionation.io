@@ -49,22 +49,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 5. Upsert, skip if email already exists (no duplicates)
-    // SDK v5: databases.query → dataSources.query with data_source_id
-    const existing = await notion.dataSources.query({
-      data_source_id: DB.WAITLIST,
-      filter: {
-        property: "Email",
-        title: { equals: parsed.data.email },
-      },
-      page_size: 1,
-    });
-
-    if (existing.results.length > 0) {
-      return NextResponse.json({ success: true, existing: true });
-    }
-
-    // 6. Write to PN_Waitlist
+    // 5. Write to PN_Waitlist (rate limit above handles repeat abuse)
     await notion.pages.create({
       parent: { database_id: DB.WAITLIST },
       properties: waitlistToNotionProperties(parsed.data),
