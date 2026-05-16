@@ -11,5 +11,6 @@ const limiters: Record<string, Ratelimit> = {
 };
 
 export async function rateLimit(form: keyof typeof limiters, ip: string) {
+  if (process.env.SECURITY_ENABLED === 'false') return { success: true };
   return limiters[form].limit(`${form}:${ip}`);
 }

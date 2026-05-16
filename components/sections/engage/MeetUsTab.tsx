@@ -6,6 +6,7 @@ import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
 
 const isDev = process.env.NODE_ENV !== "production";
+const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
 
 export function MeetUsTab() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -17,7 +18,7 @@ export function MeetUsTab() {
   const [apiError, setApiError] = useState("");
   const [timezone, setTimezone] = useState("");
   const [honeypot, setHoneypot] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState(isDev ? "dev-bypass" : "");
+  const [turnstileToken, setTurnstileToken] = useState(!securityEnabled || isDev ? "dev-bypass" : "");
   const turnstileRef = useRef<TurnstileInstance>(null);
 
   const [formData, setFormData] = useState({
@@ -450,7 +451,7 @@ export function MeetUsTab() {
               )}
 
               <div className="mt-4 flex items-center gap-4">
-                {!isDev && (
+                {securityEnabled && !isDev && (
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
@@ -461,7 +462,7 @@ export function MeetUsTab() {
                 <Btn
                   variant="primary"
                   onClick={confirmBooking}
-                  disabled={loading || (!isDev && !turnstileToken)}
+                  disabled={loading || (securityEnabled && !isDev && !turnstileToken)}
                 >
                   {loading ? "Scheduling..." : "Schedule Event"}
                 </Btn>

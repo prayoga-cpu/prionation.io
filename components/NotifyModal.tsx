@@ -8,6 +8,7 @@ import { Btn, Eyebrow } from "./ui/Atoms";
 import { scaleIn, backdrop } from "@/lib/motion";
 
 const isDev = process.env.NODE_ENV !== "production";
+const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
 
 export function NotifyModal({ onClose }: { onClose: () => void }) {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
   const [done, setDone] = useState(false);
   const [loading, setLoading] = useState(false);
   const [honeypot, setHoneypot] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState(isDev ? "dev-bypass" : "");
+  const [turnstileToken, setTurnstileToken] = useState(!securityEnabled || isDev ? "dev-bypass" : "");
   const turnstileRef = useRef<TurnstileInstance>(null);
 
   useEffect(() => {
@@ -145,7 +146,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
                 </div>
               )}
 
-              {!isDev && (
+              {securityEnabled && !isDev && (
                 <Turnstile
                   ref={turnstileRef}
                   siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
@@ -156,7 +157,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
 
               <div className="mt-6 flex justify-end gap-3 relative z-20">
                 <Btn variant="text" onClick={onClose}>Cancel</Btn>
-                <Btn variant="primary" onClick={submit} disabled={loading || (!isDev && !turnstileToken)}>
+                <Btn variant="primary" onClick={submit} disabled={loading || (securityEnabled && !isDev && !turnstileToken)}>
                   {loading ? "Sending…" : <>Notify me <span className="text-[12px] opacity-80">→</span></>}
                 </Btn>
               </div>

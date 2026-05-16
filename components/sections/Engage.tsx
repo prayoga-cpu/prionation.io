@@ -12,6 +12,7 @@ import { CareersTab } from "./engage/CareersTab";
 import { slideUp, backdrop, fadeUp, fadeIn } from "@/lib/motion";
 
 const isDev = process.env.NODE_ENV !== "production";
+const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
 
 type Tab = "Meet Us" | "Diagnostic" | "Careers";
 
@@ -124,7 +125,7 @@ export function Engage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [honeypot, setHoneypot] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState(isDev ? "dev-bypass" : "");
+  const [turnstileToken, setTurnstileToken] = useState(!securityEnabled || isDev ? "dev-bypass" : "");
   const turnstileRef = useRef<TurnstileInstance>(null);
 
   // Locale-specific option lists (kept in English for form value consistency)
@@ -469,7 +470,7 @@ function DiagnosticContent({
           </Btn>
         ) : (
           <>
-            {!isDev && (
+            {securityEnabled && !isDev && (
               <Turnstile
                 ref={turnstileRef}
                 siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
@@ -477,7 +478,7 @@ function DiagnosticContent({
                 onSuccess={(token) => setTurnstileToken(token)}
               />
             )}
-            <Btn variant="primary" onClick={submit} disabled={loading || (!isDev && !turnstileToken)}>
+            <Btn variant="primary" onClick={submit} disabled={loading || (securityEnabled && !isDev && !turnstileToken)}>
               {loading ? td("sending") : <>{td("submit")} <span className="text-[12px] opacity-80">→</span></>}
             </Btn>
           </>

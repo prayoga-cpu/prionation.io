@@ -6,6 +6,7 @@ import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
 
 const isDev = process.env.NODE_ENV !== "production";
+const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
 
 type CareerForm = {
   fullName: string;
@@ -91,7 +92,7 @@ export function CareersTab() {
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState("");
   const [honeypot, setHoneypot] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState(isDev ? "dev-bypass" : "");
+  const [turnstileToken, setTurnstileToken] = useState(!securityEnabled || isDev ? "dev-bypass" : "");
   const turnstileRef = useRef<TurnstileInstance>(null);
 
   const u = (k: keyof CareerForm, v: CareerForm[keyof CareerForm]) => {
@@ -317,7 +318,7 @@ export function CareersTab() {
             </div>
           )}
 
-          {!isDev && (
+          {securityEnabled && !isDev && (
             <Turnstile
               ref={turnstileRef}
               siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
@@ -329,7 +330,7 @@ export function CareersTab() {
           <Btn
             variant="primary"
             onClick={submit}
-            disabled={loading || (!isDev && !turnstileToken)}
+            disabled={loading || (securityEnabled && !isDev && !turnstileToken)}
             className="w-full justify-center"
           >
             {loading ? "Sending…" : <>Submit application <span className="text-[12px] opacity-80">→</span></>}
