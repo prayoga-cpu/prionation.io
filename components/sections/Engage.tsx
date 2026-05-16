@@ -1,14 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "../icons";
 import { SectionHead, Btn } from "../ui/Atoms";
 import { MeetUsTab } from "./engage/MeetUsTab";
 import { CareersTab } from "./engage/CareersTab";
 import { slideUp, backdrop, fadeUp, fadeIn } from "@/lib/motion";
+
+const isDev = process.env.NODE_ENV !== "production";
 
 type Tab = "Meet Us" | "Diagnostic" | "Careers";
 
@@ -120,6 +123,9 @@ export function Engage() {
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState(isDev ? "dev-bypass" : "");
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   // Locale-specific option lists (kept in English for form value consistency)
   const STAGE  = ["<€1M revenue", "€1–5M", "€5–50M", "€50M+", "Not disclosed"];
@@ -165,19 +171,34 @@ export function Engage() {
     if (!validate(REQUIRED)) return;
     setLoading(true);
     try {
-      await fetch("/api/intake", {
+      const res = await fetch("/api/forms/intake", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ type: "intake", ...form, turnstileToken, honeypot }),
       });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrors((e) => ({ ...e, _api: true } as typeof e));
+        console.error("[intake] submit error", data.error);
+        turnstileRef.current?.reset();
+        setTurnstileToken(isDev ? "dev-bypass" : "");
+        return;
+      }
       setSubmitted(true);
+    } catch (err) {
+      console.error("[intake] network error", err);
+      turnstileRef.current?.reset();
+      setTurnstileToken(isDev ? "dev-bypass" : "");
     } finally {
       setLoading(false);
     }
   };
 
   const ts = useTranslations("Engage.success");
-  const diagnosticProps = { step, setStep, form, u, errors, validate, loading, submit, STAGE, BUDGET, WINDOW };
+  const diagnosticProps = {
+    step, setStep, form, u, errors, validate, loading, submit, STAGE, BUDGET, WINDOW,
+    honeypot, setHoneypot, turnstileToken, setTurnstileToken, turnstileRef,
+  };
 
   if (submitted) {
     return (
@@ -316,6 +337,7 @@ export function Engage() {
 
 function DiagnosticContent({
   step, setStep, form, u, errors, validate, loading, submit, STAGE, BUDGET, WINDOW,
+  honeypot, setHoneypot, turnstileToken, setTurnstileToken, turnstileRef,
 }: {
   step: number; setStep: (s: number) => void; form: FormState;
   u: (k: keyof FormState, v: string) => void;
@@ -323,6 +345,9 @@ function DiagnosticContent({
   validate: (fields: (keyof FormState)[]) => boolean;
   loading: boolean; submit: () => void;
   STAGE: string[]; BUDGET: string[]; WINDOW: string[];
+  honeypot: string; setHoneypot: (v: string) => void;
+  turnstileToken: string; setTurnstileToken: (v: string) => void;
+  turnstileRef: React.RefObject<import("@marsidev/react-turnstile").TurnstileInstance | null>;
 }) {
   const td = useTranslations("Engage.diagnostic");
   const optLabel = td("optional");
@@ -419,6 +444,18 @@ function DiagnosticContent({
         </motion.div>
       </AnimatePresence>
 
+      {/* Honeypot */}
+      <input
+        type="text"
+        name="_hp"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ display: "none" }}
+      />
+
       {/* Navigation */}
       <div className="flex items-center gap-4 flex-wrap relative z-20">
         {step === 2 && (
@@ -431,9 +468,19 @@ function DiagnosticContent({
             {td("continue")} <span className="text-[12px] opacity-80">→</span>
           </Btn>
         ) : (
-          <Btn variant="primary" onClick={submit}>
-            {loading ? td("sending") : <>{td("submit")} <span className="text-[12px] opacity-80">→</span></>}
-          </Btn>
+          <>
+            {!isDev && (
+              <Turnstile
+                ref={turnstileRef}
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                options={{ size: "invisible" }}
+                onSuccess={(token) => setTurnstileToken(token)}
+              />
+            )}
+            <Btn variant="primary" onClick={submit} disabled={loading || (!isDev && !turnstileToken)}>
+              {loading ? td("sending") : <>{td("submit")} <span className="text-[12px] opacity-80">→</span></>}
+            </Btn>
+          </>
         )}
       </div>
 

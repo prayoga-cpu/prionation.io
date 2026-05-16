@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
+
+const isDev = process.env.NODE_ENV !== "production";
 
 type CareerForm = {
   fullName: string;
@@ -75,7 +78,7 @@ function FSelect({ value, onChange, options, error, placeholder }: {
 
 function FFile({ onChange, error }: { onChange: (f: File | null) => void; error?: boolean }) {
   return (
-    <input type="file" onChange={(e) => onChange(e.target.files?.[0] || null)}
+    <input type="file" accept="application/pdf" onChange={(e) => onChange(e.target.files?.[0] || null)}
       className={`w-full bg-transparent text-muted font-sans text-[13px] py-3 border-0 border-b rounded-none outline-none transition-colors duration-fast focus:border-accent relative z-20 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[11px] file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20 cursor-pointer ${error ? "border-accent" : "border-line-soft"}`}
     />
   );
@@ -86,6 +89,10 @@ export function CareersTab() {
   const [errors, setErrors] = useState<Partial<Record<keyof CareerForm, boolean>>>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState(isDev ? "dev-bypass" : "");
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const u = (k: keyof CareerForm, v: CareerForm[keyof CareerForm]) => {
     setForm((f) => ({ ...f, [k]: v }));
@@ -94,11 +101,8 @@ export function CareersTab() {
 
   const validate = () => {
     const errs: Partial<Record<keyof CareerForm, boolean>> = {};
-    
-    // Email regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // URL regex
-    const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+    const urlRegex = /^https?:\/\/.+/;
 
     for (const k of REQUIRED) {
       const val = form[k];
@@ -117,11 +121,72 @@ export function CareersTab() {
 
   const submit = async () => {
     if (!validate()) return;
+    if (!form.cv) return;
+    setApiError("");
     setLoading(true);
     try {
-      // Simulate API call for static form
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // 1. Get signed upload URL from our server
+      const uploadRes = await fetch("/api/upload/cv", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fileName: form.cv.name,
+          contentType: form.cv.type || "application/pdf",
+          fileSize: form.cv.size,
+        }),
+      });
+
+      if (!uploadRes.ok) {
+        const data = await uploadRes.json().catch(() => ({}));
+        setApiError(data.error ?? "CV upload failed. Please try again.");
+        return;
+      }
+
+      const { uploadUrl, accessUrl } = await uploadRes.json();
+
+      // 2. PUT the file directly to Supabase
+      const putRes = await fetch(uploadUrl, {
+        method: "PUT",
+        headers: { "Content-Type": form.cv.type || "application/pdf" },
+        body: form.cv,
+      });
+
+      if (!putRes.ok) {
+        setApiError("CV upload to storage failed. Please try again.");
+        return;
+      }
+
+      // 3. Submit career form with the access URL
+      const careerRes = await fetch("/api/forms/career", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "career",
+          fullName: form.fullName,
+          email: form.email,
+          linkedin: form.linkedin,
+          position: form.position,
+          portfolio: form.portfolio || undefined,
+          basedIn: form.basedIn,
+          cvUrl: accessUrl,
+          turnstileToken,
+          honeypot,
+        }),
+      });
+
+      if (!careerRes.ok) {
+        const data = await careerRes.json().catch(() => ({}));
+        setApiError(data.error ?? "Submission failed. Please try again.");
+        turnstileRef.current?.reset();
+        setTurnstileToken(isDev ? "dev-bypass" : "");
+        return;
+      }
+
       setSubmitted(true);
+    } catch {
+      setApiError("Network error. Please try again.");
+      turnstileRef.current?.reset();
+      setTurnstileToken(isDev ? "dev-bypass" : "");
     } finally {
       setLoading(false);
     }
@@ -146,7 +211,7 @@ export function CareersTab() {
           <span>LOCATION · <b className="text-white font-normal">REMOTE-FIRST</b></span>
         </div>
         <button className="mt-8 bg-transparent border-0 p-0 cursor-pointer text-soft font-sans font-semibold text-[13px] inline-flex items-center gap-2 hover:text-white relative z-20"
-          onClick={() => { setSubmitted(false); setForm(EMPTY); }}>
+          onClick={() => { setSubmitted(false); setForm(EMPTY); setApiError(""); }}>
           Submit another application <span aria-hidden="true" className="text-[12px] opacity-80">→</span>
         </button>
       </div>
@@ -163,7 +228,7 @@ export function CareersTab() {
         <p className="text-soft text-[13px] md:text-[15px] leading-[1.6] max-w-[48ch] mb-6 md:mb-10">
           In this foundation we do AI transformation on the talent role and wider position. We don&apos;t hire for traditional roles. We convert domain experts into AI-native operators.
         </p>
- 
+
         {/* Table View of Positions */}
         <div className="border border-line-soft rounded-xl overflow-hidden bg-card-soft w-full">
           <table className="w-full text-left border-collapse">
@@ -197,6 +262,19 @@ export function CareersTab() {
       <div className="relative z-20 w-full">
         <div className="bg-card-soft border border-line-soft rounded-2xl p-5 md:p-8 w-full">
           <h4 className="font-sans font-bold text-white text-[16px] md:text-[18px] mb-6 md:mb-8">Submit Application</h4>
+
+          {/* Honeypot */}
+          <input
+            type="text"
+            name="_hp"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ display: "none" }}
+          />
+
           <div className="grid gap-5 md:gap-7 mb-8 md:mb-10">
             <div>
               <FLabel n="01">Full name</FLabel>
@@ -213,7 +291,10 @@ export function CareersTab() {
             <div>
               <FLabel n="04">Position of interest</FLabel>
               <FSelect value={form.position} onChange={(v) => u("position", v)}
-                options={POSITIONS.filter((p) => p.open).map((p) => p.role)}
+                options={[
+                  ...POSITIONS.filter((p) => p.open).map((p) => p.role),
+                  "Open Application",
+                ]}
                 placeholder="Select a position" error={errors.position} />
             </div>
             <div>
@@ -225,12 +306,32 @@ export function CareersTab() {
               <FInput value={form.basedIn} onChange={(v) => u("basedIn", v)} placeholder="City, country" error={errors.basedIn} />
             </div>
             <div>
-              <FLabel n="07">Upload CV</FLabel>
+              <FLabel n="07">Upload CV (PDF, max 5 MB)</FLabel>
               <FFile onChange={(f) => u("cv", f)} error={errors.cv} />
             </div>
           </div>
 
-          <Btn variant="primary" onClick={submit} disabled={loading} className="w-full justify-center">
+          {apiError && (
+            <div className="mb-5 font-pixel text-[9px] tracking-[0.14em] text-accent uppercase relative z-20">
+              {apiError}
+            </div>
+          )}
+
+          {!isDev && (
+            <Turnstile
+              ref={turnstileRef}
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+              options={{ size: "invisible" }}
+              onSuccess={(token) => setTurnstileToken(token)}
+            />
+          )}
+
+          <Btn
+            variant="primary"
+            onClick={submit}
+            disabled={loading || (!isDev && !turnstileToken)}
+            className="w-full justify-center"
+          >
             {loading ? "Sending…" : <>Submit application <span className="text-[12px] opacity-80">→</span></>}
           </Btn>
         </div>

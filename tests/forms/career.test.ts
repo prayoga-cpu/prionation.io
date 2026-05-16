@@ -6,7 +6,7 @@ const VALID_BASE = {
   fullName: 'Rina Kusuma',
   email: 'rina@gmail.com',
   linkedin: 'https://linkedin.com/in/rinakusuma',
-  position: 'AI Product Engineer (Mid)' as const,
+  position: 'AI Product Engineer' as const,
   portfolio: 'https://rinakusuma.dev',
   basedIn: 'Jakarta, Indonesia',
   cvUrl: 'https://xusfkhhytwrlolugvbws.supabase.co/storage/v1/object/sign/prionation-careers/cvs/rina.pdf',
@@ -49,9 +49,10 @@ describe('careerSchema', () => {
 
   it('accepts all valid position values', () => {
     const positions = [
-      'AI Product Engineer (Junior)',
-      'AI Product Engineer (Mid)',
-      'AI Product Engineer (Senior)',
+      'AI Product Engineer',
+      'AI Growth Operator',
+      'AI Experience Designer',
+      'AI Delivery Lead',
       'Open Application',
     ] as const;
     for (const position of positions) {

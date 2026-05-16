@@ -1,8 +1,11 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
+
+const isDev = process.env.NODE_ENV !== "production";
 
 export function MeetUsTab() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -11,7 +14,11 @@ export function MeetUsTab() {
     "calendar",
   );
   const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState("");
   const [timezone, setTimezone] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState(isDev ? "dev-bypass" : "");
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -31,24 +38,18 @@ export function MeetUsTab() {
     const year = currentMonth.getFullYear();
     const month = currentMonth.getMonth();
 
-    // First day of the month
     const firstDayOfMonth = new Date(year, month, 1);
-    // Last day of the month
     const lastDayOfMonth = new Date(year, month + 1, 0);
 
-    // Get day of week for first day (0 is Sunday)
     let startDay = firstDayOfMonth.getDay();
-    // Adjust to Monday-start (0 is Monday, 6 is Sunday)
     startDay = startDay === 0 ? 6 : startDay - 1;
 
     const days = [];
 
-    // Previous month padding
     for (let i = 0; i < startDay; i++) {
       days.push({ empty: true, date: 0, active: false });
     }
 
-    // Current month days
     for (let i = 1; i <= lastDayOfMonth.getDate(); i++) {
       const d = new Date(year, month, i);
       const isPast = d.setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0);
@@ -112,10 +113,48 @@ export function MeetUsTab() {
 
   const confirmBooking = async () => {
     if (!validateForm()) return;
+    if (!selectedDate || !selectedTime) return;
+    setApiError("");
     setLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setLoading(false);
-    setStep("confirmed");
+    try {
+      // Format date as YYYY-MM-DD
+      const isoDate = selectedDate.toISOString().slice(0, 10);
+      // Strip non-digits from WhatsApp
+      const whatsappDigits = formData.whatsapp.replace(/\D/g, "");
+
+      const res = await fetch("/api/forms/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "booking",
+          fullName: formData.fullName,
+          email: formData.email,
+          countryCode: formData.countryCode,
+          whatsapp: whatsappDigits,
+          selectedDate: isoDate,
+          selectedTime,
+          timezone,
+          turnstileToken,
+          honeypot,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setApiError(data.error ?? "Submission failed. Please try again.");
+        turnstileRef.current?.reset();
+        setTurnstileToken(isDev ? "dev-bypass" : "");
+        return;
+      }
+
+      setStep("confirmed");
+    } catch {
+      setApiError("Network error. Please try again.");
+      turnstileRef.current?.reset();
+      setTurnstileToken(isDev ? "dev-bypass" : "");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (step === "confirmed") {
@@ -145,6 +184,7 @@ export function MeetUsTab() {
               whatsapp: "",
             });
             setErrors({});
+            setApiError("");
           }}
         >
           Book another session{" "}
@@ -290,6 +330,7 @@ export function MeetUsTab() {
               onClick={() => {
                 setStep("calendar");
                 setErrors({});
+                setApiError("");
               }}
               className="text-muted text-[13px] hover:text-white transition-colors mb-6 flex items-center gap-2"
             >
@@ -310,6 +351,18 @@ export function MeetUsTab() {
                 : ""}{" "}
               at {selectedTime} (30 mins)
             </div>
+
+            {/* Honeypot */}
+            <input
+              type="text"
+              name="_hp"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ display: "none" }}
+            />
 
             <div className="flex flex-col gap-5">
               <div>
@@ -389,8 +442,27 @@ export function MeetUsTab() {
                   </div>
                 )}
               </div>
-              <div className="mt-4">
-                <Btn variant="primary" onClick={confirmBooking}>
+
+              {apiError && (
+                <div className="font-pixel text-[9px] tracking-[0.14em] text-accent uppercase">
+                  {apiError}
+                </div>
+              )}
+
+              <div className="mt-4 flex items-center gap-4">
+                {!isDev && (
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    options={{ size: "invisible" }}
+                    onSuccess={(token) => setTurnstileToken(token)}
+                  />
+                )}
+                <Btn
+                  variant="primary"
+                  onClick={confirmBooking}
+                  disabled={loading || (!isDev && !turnstileToken)}
+                >
                   {loading ? "Scheduling..." : "Schedule Event"}
                 </Btn>
               </div>

@@ -1,23 +1,29 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "./icons";
 import { Btn, Eyebrow } from "./ui/Atoms";
 import { scaleIn, backdrop } from "@/lib/motion";
 
+const isDev = process.env.NODE_ENV !== "production";
+
 export function NotifyModal({ onClose }: { onClose: () => void }) {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
+  const [apiError, setApiError] = useState("");
   const [done, setDone] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState(isDev ? "dev-bypass" : "");
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
-  // Lock body scroll while open
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = ""; };
   }, []);
 
-  // Close on Escape key
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
     window.addEventListener("keydown", onKey);
@@ -27,11 +33,38 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
   const validateEmail = (e: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 
-  const submit = () => {
+  const submit = async () => {
     if (!validateEmail(email)) { setError(true); return; }
     setError(false);
-    console.log("AI Consultation notify signup:", email);
-    setDone(true);
+    setApiError("");
+    setLoading(true);
+    try {
+      const res = await fetch("/api/forms/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "waitlist",
+          email,
+          sourceFeature: "AI Consultation",
+          turnstileToken,
+          honeypot,
+        }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setApiError(data.error ?? "Submission failed. Please try again.");
+        turnstileRef.current?.reset();
+        setTurnstileToken(isDev ? "dev-bypass" : "");
+        return;
+      }
+      setDone(true);
+    } catch {
+      setApiError("Network error. Please try again.");
+      turnstileRef.current?.reset();
+      setTurnstileToken(isDev ? "dev-bypass" : "");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -75,6 +108,18 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
             </button>
           </div>
 
+          {/* Honeypot */}
+          <input
+            type="text"
+            name="_hp"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ display: "none" }}
+          />
+
           {!done ? (
             <>
               <p className="text-soft text-[14px] leading-[1.6] mb-5 mx-0 mt-0 relative z-20">
@@ -84,7 +129,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
               <input
                 type="email"
                 value={email}
-                onChange={(e) => { setEmail(e.target.value); if (error) setError(false); }}
+                onChange={(e) => { setEmail(e.target.value); if (error) setError(false); if (apiError) setApiError(""); }}
                 placeholder="you@company.com"
                 className={`w-full bg-transparent text-white font-sans text-[15px] py-3 border-0 border-b rounded-none outline-none transition-colors duration-fast placeholder:text-muted focus:border-accent relative z-20 ${error ? "border-accent" : "border-line-soft"}`}
                 onKeyDown={(e) => e.key === "Enter" && submit()}
@@ -94,10 +139,25 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
                   Please enter a valid email address.
                 </div>
               )}
+              {apiError && (
+                <div className="mt-2 font-pixel text-[9px] tracking-[0.14em] text-accent uppercase relative z-20">
+                  {apiError}
+                </div>
+              )}
+
+              {!isDev && (
+                <Turnstile
+                  ref={turnstileRef}
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                  options={{ size: "invisible" }}
+                  onSuccess={(token) => setTurnstileToken(token)}
+                />
+              )}
+
               <div className="mt-6 flex justify-end gap-3 relative z-20">
                 <Btn variant="text" onClick={onClose}>Cancel</Btn>
-                <Btn variant="primary" onClick={submit}>
-                  Notify me <span className="text-[12px] opacity-80">→</span>
+                <Btn variant="primary" onClick={submit} disabled={loading || (!isDev && !turnstileToken)}>
+                  {loading ? "Sending…" : <>Notify me <span className="text-[12px] opacity-80">→</span></>}
                 </Btn>
               </div>
             </>
