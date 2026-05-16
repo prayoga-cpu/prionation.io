@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bitter } from "next/font/google";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const rubik = localFont({
@@ -70,7 +71,10 @@ export default function RootLayout({
       lang="en"
       className={`${rubik.variable} ${pressStart2P.variable} ${blackHanSans.variable} ${bitter.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
