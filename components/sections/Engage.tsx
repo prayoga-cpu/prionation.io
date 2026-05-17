@@ -164,6 +164,7 @@ export function Engage() {
     }
     if (fields.includes("email") && form.email && !emailRegex.test(form.email)) errs.email = true;
     if (fields.includes("bottleneck") && form.bottleneck && form.bottleneck.length < 100) errs.bottleneck = true;
+    if (fields.includes("whyNow") && form.whyNow && form.whyNow.length < 20) errs.whyNow = true;
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -180,7 +181,7 @@ export function Engage() {
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         setErrors((e) => ({ ...e, _api: true } as typeof e));
-        console.error("[intake] submit error", data.error, data.issues);
+        console.error("[intake] submit error", data.error, data.issues?.map((i: { path: string[]; message: string }) => `${i.path.join(".")}: ${i.message}`));
         turnstileRef.current?.reset();
         setTurnstileToken(isDev ? "dev-bypass" : "");
         return;
@@ -398,6 +399,13 @@ function DiagnosticContent({
       <div>
         <FLabel n="07" optionalLabel={optLabel}>{td("fields.whyNow")}</FLabel>
         <FArea value={form.whyNow} onChange={(v) => u("whyNow", v)} placeholder={td("placeholders.whyNow")} error={errors.whyNow} />
+        {errors.whyNow && (
+          <div className="mt-2 font-pixel text-[9px] tracking-[0.14em] text-accent uppercase relative z-20">
+            {form.whyNow.length > 0 && form.whyNow.length < 20
+              ? td("error_whynow_short", { count: form.whyNow.length })
+              : td("error_whynow_empty")}
+          </div>
+        )}
       </div>
       <div>
         <FLabel n="08" optionalLabel={optLabel}>{td("fields.budget")}</FLabel>

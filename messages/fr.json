@@ -264,6 +264,8 @@
       "error_email": "Veuillez entrer une adresse email valide.",
       "error_bottleneck_short": "Un peu plus de contexte, s'il vous plaît, {count}/100 caractères.",
       "error_bottleneck_empty": "Veuillez décrire le goulot d'étranglement.",
+      "error_whynow_short": "Continuez, {count}/20 caractères minimum.",
+      "error_whynow_empty": "Expliquez pourquoi c'est important maintenant.",
       "ai_label": "PRÉFÉREZ PARLER À L'IA D'ABORD ?",
       "ai_desc": "Consultation IA disponible en août 2026.",
       "email_us": "OU ENVOYEZ-NOUS UN EMAIL"

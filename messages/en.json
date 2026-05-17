@@ -259,6 +259,8 @@
       "error_email": "Please enter a valid email address.",
       "error_bottleneck_short": "A bit more context, please, {count}/100 characters.",
       "error_bottleneck_empty": "Please describe the bottleneck.",
+      "error_whynow_short": "Keep going, {count}/20 characters minimum.",
+      "error_whynow_empty": "Please explain why this matters now.",
       "ai_label": "PREFER TO TALK TO AI FIRST?",
       "ai_desc": "AI Consultation launching August 2026.",
       "email_us": "OR EMAIL US"

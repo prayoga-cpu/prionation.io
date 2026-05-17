@@ -264,6 +264,8 @@
       "error_email": "Masukkan alamat email yang valid.",
       "error_bottleneck_short": "Butuh lebih banyak konteks, {count}/100 karakter.",
       "error_bottleneck_empty": "Mohon jelaskan hambatannya.",
+      "error_whynow_short": "Lanjutkan, {count}/20 karakter minimum.",
+      "error_whynow_empty": "Jelaskan mengapa ini penting sekarang.",
       "ai_label": "LEBIH SUKA BERBICARA DENGAN AI DULU?",
       "ai_desc": "Konsultasi AI diluncurkan Agustus 2026.",
       "email_us": "ATAU EMAIL KAMI"
