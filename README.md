@@ -1,4 +1,4 @@
-# PRIONATION.io — v3.1
+# PRIONATION.io — v.3.1.0
 
 **AI Product Engineering · Fixed scope · 8 weeks to production.**
 
@@ -13,7 +13,7 @@ The official marketing site and intake engine for PRIONATION.io — built to the
 ### Features
 
 - **Form integration backend** — 4 fully wired forms (Diagnostic, Booking, Career, Waitlist) with Notion DB writes, Resend email notifications, rate limiting, Turnstile bot protection, and honeypot spam detection
-- **Framer Motion animation system** — staggered hero reveals, scroll-triggered section reveals, spring-based modal transitions, number-scramble stat counters, tab crossfade, and mobile drawer animations
+- **Framer Motion animation system** — staggered hero reveals, infinite mobile native-scroll carousels, spring-based modal transitions, number-scramble stat counters, tab crossfade, and mobile drawer animations
 - **Full i18n (EN / FR / ID)** — 130 translation keys across 8 sections via `next-intl`; every string in every component is locale-driven
 - **Diagnostic intake engine** — 2-step multi-field form with Zod validation, disqualification logic, Sales Pipeline auto-sync, and confirmation emails
 - **Dynamic booking system** — Calendar picker with timezone detection, WhatsApp field, and Notion booking record
@@ -27,21 +27,21 @@ The official marketing site and intake engine for PRIONATION.io — built to the
 
 ## Tech stack
 
-| Layer | Choice |
-|---|---|
-| Framework | Next.js 15 (App Router, Turbopack) |
-| UI | React 19 |
-| Animation | Framer Motion |
-| Styling | Vanilla CSS + custom design tokens |
-| i18n | next-intl (EN · FR · ID) |
-| Validation | Zod v4 |
-| Database | Notion (`@notionhq/client` v5) |
-| Email | Resend v6 |
-| File storage | Supabase Storage (CV uploads) |
-| Rate limiting | Upstash Redis (sliding window) |
-| Bot protection | Cloudflare Turnstile (invisible) |
-| Testing | Vitest (48 schema tests) |
-| Deployment | Vercel |
+| Layer          | Choice                             |
+| -------------- | ---------------------------------- |
+| Framework      | Next.js 15 (App Router, Turbopack) |
+| UI             | React 19                           |
+| Animation      | Framer Motion                      |
+| Styling        | Vanilla CSS + custom design tokens |
+| i18n           | next-intl (EN · FR · ID)           |
+| Validation     | Zod v4                             |
+| Database       | Notion (`@notionhq/client` v5)     |
+| Email          | Resend v6                          |
+| File storage   | Supabase Storage (CV uploads)      |
+| Rate limiting  | Upstash Redis (sliding window)     |
+| Bot protection | Cloudflare Turnstile (invisible)   |
+| Testing        | Vitest (48 schema tests)           |
+| Deployment     | Vercel                             |
 
 ---
 
@@ -172,12 +172,12 @@ Each of the 5 databases must be individually connected to the "Prionation Websit
 
 ## Form pipelines
 
-| Form | Endpoint | Notion DB | Emails sent |
-|---|---|---|---|
-| Diagnostic | `POST /api/forms/intake` | PN_Intake + PN_Sales_Pipeline | Team notify + submitter confirm |
-| Booking | `POST /api/forms/booking` | PN_Bookings | Team notify + submitter confirm |
-| Career | `POST /api/forms/career` | PN_Careers | Team notify + submitter confirm |
-| Waitlist | `POST /api/forms/waitlist` | PN_Waitlist | Team notify + submitter confirm |
+| Form       | Endpoint                   | Notion DB                     | Emails sent                     |
+| ---------- | -------------------------- | ----------------------------- | ------------------------------- |
+| Diagnostic | `POST /api/forms/intake`   | PN_Intake + PN_Sales_Pipeline | Team notify + submitter confirm |
+| Booking    | `POST /api/forms/booking`  | PN_Bookings                   | Team notify + submitter confirm |
+| Career     | `POST /api/forms/career`   | PN_Careers                    | Team notify + submitter confirm |
+| Waitlist   | `POST /api/forms/waitlist` | PN_Waitlist                   | Team notify + submitter confirm |
 
 CV upload flow (Career form): browser → `POST /api/upload/cv` → Supabase signed URL → browser `PUT` to Supabase → `cvUrl` sent with career form payload.
 
@@ -185,11 +185,11 @@ CV upload flow (Career form): browser → `POST /api/upload/cv` → Supabase sig
 
 ## The Foundation
 
-| Name | Role |
-|---|---|
-| Darwin Prayoga | Founder & CEO — Indonesian tech architect |
-| Evan Cao | Chief Revenue Officer — Paris-based operator |
-| The Delivery Pod | 2–3 AI Product Engineers per engagement |
+| Name             | Role                                         |
+| ---------------- | -------------------------------------------- |
+| Darwin Prayoga   | Founder & CEO — Indonesian tech architect    |
+| Evan Cao         | Chief Revenue Officer — Paris-based operator |
+| The Delivery Pod | 2–3 AI Product Engineers per engagement      |
 
 ---
 

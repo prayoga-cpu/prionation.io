@@ -19,15 +19,15 @@ function Principle({
   comingSoon?: boolean; cta?: string; onNotify?: () => void;
 }) {
   return (
-    <div className={`bg-card p-[32px_28px] flex flex-col gap-3 min-h-[320px] relative transition-colors duration-fast hover:bg-card-soft ${comingSoon ? "!bg-transparent border border-dashed border-line-soft -m-[1px] opacity-85" : ""}`}>
+    <div className={`bg-card p-5 md:p-[32px_28px] flex flex-col gap-2 md:gap-3 min-h-[240px] md:min-h-[320px] relative transition-colors duration-fast hover:bg-card-soft ${comingSoon ? "!bg-transparent border border-dashed border-line-soft -m-[1px] opacity-85" : ""}`}>
       <div className="flex items-center justify-between">
-        <span className="text-accent font-pixel text-[10px] tracking-[0.14em]">/{n}</span>
+        <span className="text-accent font-pixel text-[9px] md:text-[10px] tracking-[0.14em]">/{n}</span>
       </div>
-      <div className="mt-1 w-9 h-9 rounded-lg bg-accent-10 text-accent inline-flex items-center justify-center border border-accent-30">
-        <Icon name={icon} size={18} />
+      <div className="mt-1 w-8 h-8 md:w-9 md:h-9 rounded-lg bg-accent-10 text-accent inline-flex items-center justify-center border border-accent-30">
+        <Icon name={icon} size={18} className="w-4 h-4 md:w-[18px] md:h-[18px]" />
       </div>
-      <h3 className="font-sans font-extrabold text-[24px] tracking-[-0.02em] text-white mt-3 mb-0">{title}</h3>
-      <p className="text-muted text-sm leading-[1.6] mt-1 mb-0">{body}</p>
+      <h3 className="font-sans font-extrabold text-[16px] md:text-[24px] tracking-[-0.02em] leading-tight text-white mt-2 md:mt-3 mb-0">{title}</h3>
+      <p className="text-muted text-[12px] md:text-sm leading-[1.5] md:leading-[1.6] mt-1 mb-0">{body}</p>
       {comingSoon && (
         <button
           onClick={onNotify}
@@ -60,7 +60,7 @@ export function Methodology({ onNotify }: { onNotify: () => void }) {
           title={t("title")}
           link={t("link")}
         />
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[1px] bg-line rounded-[24px] overflow-hidden pn-ring-wrap border border-line">
+        <div className="mt-10 md:mt-14 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[1px] bg-line rounded-[16px] md:rounded-[24px] overflow-hidden pn-ring-wrap border border-line">
           {principles.map((p, i) => (
             <Principle
               key={i}

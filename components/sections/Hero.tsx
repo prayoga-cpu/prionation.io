@@ -49,14 +49,14 @@ function AnimatedStat({
     <motion.div
       ref={ref}
       variants={fadeUp}
-      className="flex flex-col items-center gap-1.5 shrink-0 scale-[0.8] md:scale-100 origin-center"
+      className="flex flex-col items-center gap-1 shrink-0 origin-center"
     >
       <div className="flex items-baseline gap-1 md:gap-2">
-        <span className="font-pixel text-[24px] md:text-[28px] leading-none text-white tabular-nums">
+        <span className="font-pixel text-sm md:text-[28px] leading-none text-white tabular-nums">
           {display}
         </span>
       </div>
-      <span className="font-pixel text-[7.5px] md:text-[9px] tracking-[0.1em] md:tracking-[0.15em] text-muted uppercase text-center whitespace-nowrap">
+      <span className="font-pixel text-[7px] md:text-[9px] tracking-[0.05em] md:tracking-[0.15em] text-muted uppercase text-center whitespace-nowrap">
         {label}
       </span>
     </motion.div>
@@ -147,7 +147,7 @@ export function Hero() {
         {/* Stats row */}
         <motion.div
           variants={staggerFast}
-          className="mt-[60px] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 w-full max-w-[90vw] md:max-w-none"
+          className="mt-[40px] md:mt-[60px] flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 w-full max-w-[90vw] md:max-w-none"
         >
           {/* Build Rate ≥60% */}
           <div className="order-1 md:order-3">
@@ -160,7 +160,7 @@ export function Hero() {
           </div>
 
           {/* Deliverables & Production */}
-          <div className="order-2 flex flex-row items-center justify-center gap-8 md:gap-16 w-full md:w-auto">
+          <div className="order-2 flex flex-row items-center justify-center gap-4 sm:gap-8 md:gap-16 w-full md:w-auto">
             <AnimatedStat
               target={2}
               suffix={` ${t("weeks")}`}

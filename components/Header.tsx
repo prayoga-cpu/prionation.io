@@ -4,7 +4,7 @@ import { useState, useEffect, useTransition } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
 import { motion, AnimatePresence } from "framer-motion";
-import { Icon } from "./icons";
+
 import {
   staggerFast,
   fadeUp,
@@ -225,12 +225,47 @@ export function Header() {
           >
             {t("cta")} <span className="text-[12px] opacity-80">→</span>
           </motion.a>
+          {/* Webflow-style animated hamburger */}
           <button
-            className="lg:hidden inline-flex bg-transparent text-white border-0 p-1.5 cursor-pointer"
+            className="lg:hidden inline-flex items-center justify-center bg-transparent border-0 p-1.5 cursor-pointer w-9 h-9"
             onClick={() => setMobileOpen((o) => !o)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
-            <Icon name={mobileOpen ? "x" : "menu"} size={22} />
+            <div className="relative flex flex-col justify-center items-center w-[22px] h-[16px]">
+              {/* Top line */}
+              <span
+                className="absolute block w-full h-[1.5px] bg-white rounded-full origin-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                style={
+                  mobileOpen
+                    ? { transform: "translate3d(0,180%,0) rotateZ(-45deg)" }
+                    : {
+                        transform: "translate3d(0,0%,0) rotateZ(0deg)",
+                        top: "0px",
+                      }
+                }
+              />
+              {/* Middle line */}
+              <span
+                className="absolute block w-[70%] right-0 h-[1.5px] bg-white rounded-full origin-right transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                style={
+                  mobileOpen
+                    ? { transform: "translate3d(120%,0,0)", opacity: 0 }
+                    : { transform: "translate3d(0%,0,0)", opacity: 1 }
+                }
+              />
+              {/* Bottom line */}
+              <span
+                className="absolute block w-full h-[1.5px] bg-white rounded-full origin-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                style={
+                  mobileOpen
+                    ? { transform: "translate3d(0,-175%,0) rotateZ(45deg)" }
+                    : {
+                        transform: "translate3d(0,0%,0) rotateZ(0deg)",
+                        bottom: "0px",
+                      }
+                }
+              />
+            </div>
           </button>
         </div>
       </motion.header>
@@ -250,14 +285,14 @@ export function Header() {
               onClick={() => setMobileOpen(false)}
             />
 
-            {/* Drawer */}
+            {/* Drawer — 70% width from right, 30% left for tap-to-dismiss */}
             <motion.div
               key="mobile-drawer"
               variants={slideRight}
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed inset-0 z-40 bg-bg px-page-x pt-[100px] pb-[40px] flex flex-col"
+              className="fixed top-0 right-0 bottom-0 z-40 w-[70%] bg-bg px-6 pt-[100px] pb-[40px] flex flex-col shadow-[-8px_0_40px_rgba(0,0,0,0.5)]"
             >
               {/* Locale Switcher */}
               <motion.div

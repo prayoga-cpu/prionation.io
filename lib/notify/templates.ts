@@ -1,4 +1,4 @@
-import { resend, FROM, TO } from "./resend";
+import { resend, FROM, FROM_NOTIFY, TO } from "./resend";
 import type {
   IntakePayload,
   BookingPayload,
@@ -189,7 +189,7 @@ export async function sendIntakeNotification(p: IntakePayload) {
   );
 
   return resend.emails.send({
-    from: FROM,
+    from: FROM_NOTIFY,
     to: TO,
     subject: `[Intake] ${p.company}, ${p.stage}`,
     html,
@@ -241,7 +241,7 @@ export async function sendBookingNotification(p: BookingPayload) {
   );
 
   return resend.emails.send({
-    from: FROM,
+    from: FROM_NOTIFY,
     to: TO,
     subject: `[Booking] ${p.fullName}, ${p.selectedDate} ${p.selectedTime}`,
     html,
@@ -275,7 +275,7 @@ export async function sendCareerNotification(p: CareerPayload) {
   );
 
   return resend.emails.send({
-    from: FROM,
+    from: FROM_NOTIFY,
     to: TO,
     subject: `[Career] ${p.fullName}, ${p.position}`,
     html,
@@ -310,7 +310,7 @@ export async function sendWaitlistNotification(p: WaitlistPayload) {
   );
 
   return resend.emails.send({
-    from: FROM,
+    from: FROM_NOTIFY,
     to: TO,
     subject: `[Waitlist] ${p.email}, ${p.sourceFeature}`,
     html,
