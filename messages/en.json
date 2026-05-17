@@ -82,7 +82,8 @@
       {
         "title": "AI Consultation",
         "body": "Get a free AI-generated diagnostic preview in minutes. Two paths: structured intake or chat with our AI.",
-        "cta": "Notify me when live"
+        "cta": "Notify me when live",
+        "cta_mobile": "Notify me"
       }
     ]
   },

@@ -87,7 +87,8 @@
       {
         "title": "Consultation IA",
         "body": "Obtenez un aperçu diagnostique généré par IA en quelques minutes. Deux voies : saisie structurée ou chat avec notre IA.",
-        "cta": "Notifiez-moi à la mise en ligne"
+        "cta": "Notifiez-moi à la mise en ligne",
+        "cta_mobile": "Notifiez-moi"
       }
     ]
   },

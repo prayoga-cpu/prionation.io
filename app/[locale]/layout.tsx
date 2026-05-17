@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bitter } from "next/font/google";
 import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
@@ -63,6 +63,13 @@ export const metadata: Metadata = {
   title: "PRIONATION.io | AI products that break operational bottlenecks.",
   description:
     "PRIONATION.io builds production AI infrastructure for European and US-Based mid-market companies. 8 weeks, fixed scope, lean pods.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default async function RootLayout({

@@ -87,7 +87,8 @@
       {
         "title": "Konsultasi AI",
         "body": "Dapatkan pratinjau diagnostik yang dihasilkan AI dalam hitungan menit. Dua jalur: intake terstruktur atau chat dengan AI kami.",
-        "cta": "Beri tahu saya saat aktif"
+        "cta": "Beri tahu saya saat aktif",
+        "cta_mobile": "Beri tahu saya"
       }
     ]
   },

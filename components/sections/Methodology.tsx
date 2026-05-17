@@ -8,15 +8,16 @@ type PrincipleData = {
   title: string;
   body: string;
   cta?: string;
+  cta_mobile?: string;
 };
 
 const ICONS = ["check-circle", "activity", "key", "sparkles"];
 
 function Principle({
-  n, title, body, icon, comingSoon, cta, onNotify,
+  n, title, body, icon, comingSoon, cta, ctaMobile, onNotify,
 }: {
   n: string; title: string; body: string; icon: string;
-  comingSoon?: boolean; cta?: string; onNotify?: () => void;
+  comingSoon?: boolean; cta?: string; ctaMobile?: string; onNotify?: () => void;
 }) {
   return (
     <div className={`bg-card p-5 md:p-[32px_28px] flex flex-col gap-2 md:gap-3 min-h-[240px] md:min-h-[320px] relative transition-colors duration-fast hover:bg-card-soft ${comingSoon ? "!bg-transparent border border-dashed border-line-soft -m-[1px] opacity-85" : ""}`}>
@@ -33,11 +34,12 @@ function Principle({
           onClick={onNotify}
           className="mt-auto self-start bg-transparent border-0 p-0 text-accent font-sans font-semibold text-[13px] inline-flex items-center gap-2 cursor-pointer"
         >
-          {cta} <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+          <span className="hidden md:inline">{cta}</span>
+          <span className="inline md:hidden">{ctaMobile || cta}</span> <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
         </button>
       )}
       {comingSoon && (
-        <span className="absolute top-[18px] right-[18px] font-pixel text-[8px] tracking-[0.14em] text-accent bg-accent-10 border border-accent-30 px-2 py-1.5 rounded-md uppercase">
+        <span className="absolute top-[18px] right-[18px] font-pixel text-[6px] md:text-[8px] tracking-[0.14em] text-accent bg-accent-10 border border-accent-30 px-1.5 py-1 md:px-2 md:py-1.5 rounded-md uppercase">
           Coming Soon
         </span>
       )}
@@ -70,6 +72,7 @@ export function Methodology({ onNotify }: { onNotify: () => void }) {
               body={p.body}
               comingSoon={i === 3}
               cta={p.cta}
+              ctaMobile={p.cta_mobile}
               onNotify={i === 3 ? onNotify : undefined}
             />
           ))}
