@@ -33,14 +33,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Could not create upload URL' }, { status: 500 });
     }
 
-    // Pre-create a signed access URL valid for 7 days (stored in Notion)
-    const { data: accessData } = await supabase.storage
+    // Get a public URL for the CV (bucket must be public in Supabase)
+    const { data: urlData } = supabase.storage
       .from(CV_BUCKET)
-      .createSignedUrl(path, 7 * 24 * 3600);
+      .getPublicUrl(path);
 
     return NextResponse.json({
       uploadUrl: uploadData.signedUrl,
-      accessUrl: accessData?.signedUrl ?? '',
+      accessUrl: urlData.publicUrl,
     });
   } catch (err) {
     console.error('[upload/cv] error', err);
