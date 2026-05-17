@@ -1,4 +1,4 @@
-import { resend, FROM, FROM_NOTIFY, TO } from "./resend";
+import { resend, FROM, FROM_NOTIFY, REPLY_TO, TO } from "./resend";
 import type {
   IntakePayload,
   BookingPayload,
@@ -191,6 +191,7 @@ export async function sendIntakeNotification(p: IntakePayload) {
   return resend.emails.send({
     from: FROM_NOTIFY,
     to: TO,
+    replyTo: REPLY_TO,
     subject: `[Intake] ${p.company}, ${p.stage}`,
     html,
     text: txt([
@@ -243,6 +244,7 @@ export async function sendBookingNotification(p: BookingPayload) {
   return resend.emails.send({
     from: FROM_NOTIFY,
     to: TO,
+    replyTo: REPLY_TO,
     subject: `[Booking] ${p.fullName}, ${p.selectedDate} ${p.selectedTime}`,
     html,
     text: txt([
@@ -277,6 +279,7 @@ export async function sendCareerNotification(p: CareerPayload) {
   return resend.emails.send({
     from: FROM_NOTIFY,
     to: TO,
+    replyTo: REPLY_TO,
     subject: `[Career] ${p.fullName}, ${p.position}`,
     html,
     text: txt([
@@ -312,6 +315,7 @@ export async function sendWaitlistNotification(p: WaitlistPayload) {
   return resend.emails.send({
     from: FROM_NOTIFY,
     to: TO,
+    replyTo: REPLY_TO,
     subject: `[Waitlist] ${p.email}, ${p.sourceFeature}`,
     html,
     text: `${p.email} signed up for ${p.sourceFeature} waitlist.`,
@@ -356,7 +360,9 @@ export async function sendIntakeConfirmation(p: IntakePayload) {
   return resend.emails.send({
     from: FROM,
     to: p.email,
+    replyTo: REPLY_TO,
     subject: `We received your Diagnostic, PRIONATION.io`,
+    headers: { 'List-Unsubscribe': `<mailto:${REPLY_TO}?subject=Unsubscribe>` },
     html,
     text: txt([
       `Hi ${p.yourName},`,
@@ -412,7 +418,9 @@ export async function sendBookingConfirmation(p: BookingPayload) {
   return resend.emails.send({
     from: FROM,
     to: p.email,
+    replyTo: REPLY_TO,
     subject: `Booking request received, ${p.selectedDate} ${p.selectedTime}`,
+    headers: { 'List-Unsubscribe': `<mailto:${REPLY_TO}?subject=Unsubscribe>` },
     html,
     text: txt([
       `Hi ${p.fullName},`,
@@ -464,7 +472,9 @@ export async function sendCareerConfirmation(p: CareerPayload) {
   return resend.emails.send({
     from: FROM,
     to: p.email,
+    replyTo: REPLY_TO,
     subject: `Application received, ${p.position} · PRIONATION.io`,
+    headers: { 'List-Unsubscribe': `<mailto:${REPLY_TO}?subject=Unsubscribe>` },
     html,
     text: txt([
       `Hi ${p.fullName},`,
@@ -515,7 +525,9 @@ export async function sendWaitlistConfirmation(p: WaitlistPayload) {
   return resend.emails.send({
     from: FROM,
     to: p.email,
+    replyTo: REPLY_TO,
     subject: `You're on the waitlist, ${p.sourceFeature} · PRIONATION.io`,
+    headers: { 'List-Unsubscribe': `<mailto:${REPLY_TO}?subject=Unsubscribe>` },
     html,
     text: txt([
       `You're on the ${p.sourceFeature} waitlist.`,
