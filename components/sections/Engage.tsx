@@ -180,7 +180,7 @@ export function Engage() {
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         setErrors((e) => ({ ...e, _api: true } as typeof e));
-        console.error("[intake] submit error", data.error);
+        console.error("[intake] submit error", data.error, data.issues);
         turnstileRef.current?.reset();
         setTurnstileToken(isDev ? "dev-bypass" : "");
         return;
@@ -476,6 +476,8 @@ function DiagnosticContent({
                 siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                 options={{ size: "invisible" }}
                 onSuccess={(token) => setTurnstileToken(token)}
+                onError={() => { console.warn("[turnstile] error"); setTurnstileToken(""); }}
+                onExpire={() => { turnstileRef.current?.reset(); setTurnstileToken(""); }}
               />
             )}
             <Btn variant="primary" onClick={submit} disabled={loading || (securityEnabled && !isDev && !turnstileToken)}>

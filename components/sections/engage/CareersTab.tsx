@@ -145,6 +145,11 @@ export function CareersTab() {
 
       const { uploadUrl, accessUrl } = await uploadRes.json();
 
+      if (!accessUrl) {
+        setApiError("Failed to prepare CV storage. Please try again.");
+        return;
+      }
+
       // 2. PUT the file directly to Supabase
       const putRes = await fetch(uploadUrl, {
         method: "PUT",
@@ -177,6 +182,7 @@ export function CareersTab() {
 
       if (!careerRes.ok) {
         const data = await careerRes.json().catch(() => ({}));
+        console.error("[career] submit error", data.error, data.issues);
         setApiError(data.error ?? "Submission failed. Please try again.");
         turnstileRef.current?.reset();
         setTurnstileToken(isDev ? "dev-bypass" : "");
@@ -324,6 +330,8 @@ export function CareersTab() {
               siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
               options={{ size: "invisible" }}
               onSuccess={(token) => setTurnstileToken(token)}
+              onError={() => { console.warn("[turnstile] error"); setTurnstileToken(""); }}
+              onExpire={() => { turnstileRef.current?.reset(); setTurnstileToken(""); }}
             />
           )}
 
