@@ -29,7 +29,7 @@ The official marketing site and intake engine for PRIONATION.io — built to the
 
 | Layer          | Choice                             |
 | -------------- | ---------------------------------- |
-| Framework      | Next.js 15 (App Router, Turbopack) |
+| Framework      | Next.js 16 (App Router, Turbopack) |
 | UI             | React 19                           |
 | Animation      | Framer Motion                      |
 | Styling        | Vanilla CSS + custom design tokens |
@@ -60,8 +60,10 @@ The official marketing site and intake engine for PRIONATION.io — built to the
 ├── components/
 │   ├── sections/              # Hero, HowWeWork, Methodology, SelectedWork,
 │   │                          #   Pricing, Foundation, Engage, SiteFooter
-│   ├── sections/engage/       # MeetUsTab, CareersTab sub-components
-│   ├── ui/                    # Atoms, ScrollProgress, Typewriter
+│   ├── sections/engage/       # MeetUsTab, CareersTab, DiagnosticForm sub-components
+│   ├── sections/site-footer/  # FooterColumns sub-component
+│   ├── ui/                    # Button, Typography, SectionHead, Atoms (barrel export),
+│   │                          #   ScrollProgress, Typewriter
 │   ├── icons/                 # Custom SVG icon set
 │   └── NotifyModal.tsx        # Waitlist modal
 ├── lib/
