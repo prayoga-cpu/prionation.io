@@ -34,6 +34,8 @@ export function Engage() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Client-only flag gating the portal render below; document.body is unavailable during SSR.
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time mount flag, the extra render is intentional
     setMounted(true);
     const handleHash = () => {
       const hash = window.location.hash;

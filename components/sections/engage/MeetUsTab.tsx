@@ -30,6 +30,8 @@ export function MeetUsTab() {
   const [errors, setErrors] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
+    // Default the timezone select to the visitor's local zone after mount to avoid an SSR hydration mismatch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time client-only initialization
     setTimezone(Intl.DateTimeFormat().resolvedOptions().timeZone);
   }, []);
 
