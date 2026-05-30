@@ -21,6 +21,7 @@ function PersonCard({
           src={`/images/team/${member.name.split(" ")[0].toLowerCase()}.jpeg`}
           alt={member.name}
           fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
           className="object-cover transition-transform duration-slow group-hover:scale-105"
         />
         <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
