@@ -41,7 +41,7 @@ function CaseTile({
         <span className="text-muted font-pixel text-[8px] md:text-[9px] tracking-[0.15em]">{c.year}</span>
       </div>
       <div className="rounded-xl flex-1 min-h-[160px] relative overflow-hidden bg-card-soft border border-line-soft">
-        <Image src={img} alt={c.name} fill className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+        <Image src={img} alt={c.name} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 z-10" />
       </div>
       <div className="flex flex-col gap-1.5">

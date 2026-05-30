@@ -55,12 +55,12 @@ const waitlist = {
   turnstileToken: "t",
 };
 
-// Every PII / contact / free-text value that must never reach Discord.
-const PII = [
-  intake.yourName, intake.email, intake.bottleneck, intake.whyNow, intake.triedSoFar,
-  booking.fullName, booking.email, booking.countryCode, booking.whatsapp,
-  career.fullName, career.email, career.linkedin, career.portfolio, career.cvUrl,
-  waitlist.email,
+// Full submission details that should now be mirrored into the Discord message.
+const DETAILS = [
+  intake.company, intake.yourName, intake.email, intake.bottleneck, intake.whyNow, intake.budget,
+  booking.fullName, booking.email, booking.whatsapp, booking.selectedDate, booking.timezone,
+  career.fullName, career.email, career.position, career.linkedin, career.cvUrl,
+  waitlist.email, waitlist.sourceFeature,
 ];
 
 let fetchMock: ReturnType<typeof vi.fn>;
@@ -94,7 +94,7 @@ describe("discord notifications", () => {
     }
   });
 
-  it("never includes PII in the payload sent to Discord", async () => {
+  it("includes full submission details mirroring the email", async () => {
     vi.stubEnv("DISCORD_WEBHOOK_URL", WEBHOOK);
 
     await sendIntakeToDiscord(intake);
@@ -103,8 +103,8 @@ describe("discord notifications", () => {
     await sendWaitlistToDiscord(waitlist);
 
     const allBodies = fetchMock.mock.calls.map(([, init]) => init.body as string).join("\n");
-    for (const secret of PII) {
-      expect(allBodies).not.toContain(secret);
+    for (const detail of DETAILS) {
+      expect(allBodies).toContain(detail);
     }
   });
 
