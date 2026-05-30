@@ -311,5 +311,43 @@
       "Daya ungkit atas tenaga kerja.",
       "Sistem atas eksekusi manual."
     ]
+  },
+  "Tldr": {
+    "label": "Ringkasan",
+    "summary": "PRIONATION.io membangun infrastruktur AI produksi untuk perusahaan mid-market di Eropa dan Amerika Serikat (pendapatan €5–50 jt). Ruang lingkup tetap. Harga tetap. Pod ramping. 8 minggu dari tanda tangan hingga rilis. Mulai dari €5.000 untuk Diagnostic 2 minggu."
+  },
+  "Faq": {
+    "label": "FAQ",
+    "title": "Pertanyaan umum",
+    "items": [
+      {
+        "q": "Apa itu rekayasa produk AI untuk perusahaan mid-market?",
+        "a": "Rekayasa produk AI adalah praktik membangun infrastruktur AI produksi — bukan proof-of-concept — yang beroperasi di dalam alur kerja bisnis nyata. Untuk perusahaan mid-market (pendapatan €5–50 jt), ini berarti merilis produk AI yang menggantikan operasi manual dalam jangka waktu tetap 8 minggu, dengan eval yang menentukan 'selesai' dan klien yang memiliki seluruh kode dan infrastruktur."
+      },
+      {
+        "q": "Berapa biaya proyek build AI untuk perusahaan €10–50 jt?",
+        "a": "Proyek build AI PRIONATION berkisar €25.000–55.000 untuk build produksi 8 minggu. Prosesnya dimulai dengan Diagnostic 2 minggu seharga €5.000–7.000 untuk memetakan hambatan dan memastikan ruang lingkup. Lebih dari 60% Diagnostic berlanjut ke Build. Akses pod berkelanjutan berkisar €4.000–9.000/bulan."
+      },
+      {
+        "q": "Apa arti 'klien memiliki infrastruktur' dalam praktiknya?",
+        "a": "Di akhir setiap proyek, klien memegang repositori GitHub, kredensial infrastruktur cloud, akun penyedia model, dan seluruh data telemetri. PRIONATION mengirim ke lingkungan klien sejak hari pertama. Saat retainer berakhir, klien tetap berjalan secara mandiri."
+      },
+      {
+        "q": "Apa bedanya pod ramping dengan merekrut insinyur AI?",
+        "a": "Pod PRIONATION beranggotakan 3 orang berbiaya €25.000–55.000 per proyek, merilis dalam 8 minggu, dan dilengkapi eval, telemetri, serta garansi 4 minggu. Merekrut satu insinyur AI berbiaya €150.000–250.000/tahun secara penuh (gaji + tunjangan + rekrutmen), butuh 3–6 bulan untuk siap, dan membawa risiko kualitas rekrutmen yang signifikan. Pod adalah jalur minim risiko hingga kapabilitas rekayasa AI internal berkembang."
+      },
+      {
+        "q": "Apa itu PRIONATION Diagnostic?",
+        "a": "Diagnostic adalah proyek ruang lingkup tetap selama 2 minggu seharga €5.000–7.000. Diagnostic memetakan satu hambatan operasional dengan ROI tertinggi, menentukan ruang lingkup build AI, menghasilkan spesifikasi suite eval, dan menyampaikan proposal arsitektur yang siap produksi. Ini adalah titik masuk wajib sebelum setiap Build."
+      },
+      {
+        "q": "Bagaimana PRIONATION menangani konsultasi AI untuk perusahaan Eropa?",
+        "a": "PRIONATION melayani perusahaan mid-market berbasis di UE dari struktur remote-first (kantor pusat di Bali, CRO di Paris). Semua proyek ditagih dalam EUR. Infrastruktur klien tetap berada pada hosting yang patuh UE bila diperlukan. Fondasi ini beroperasi dalam bahasa Inggris dan Prancis."
+      },
+      {
+        "q": "Apa itu garansi pasca-peluncuran?",
+        "a": "Setiap Build mencakup garansi pasca-peluncuran selama 4 minggu. Jika performa produksi turun di bawah ambang eval yang ditentukan di awal build, PRIONATION memperbaikinya tanpa biaya tambahan."
+      }
+    ]
   }
 }

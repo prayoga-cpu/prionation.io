@@ -311,5 +311,43 @@
       "Effet de levier sur le travail.",
       "Systèmes sur l'exécution manuelle."
     ]
+  },
+  "Tldr": {
+    "label": "Résumé",
+    "summary": "PRIONATION.io construit une infrastructure IA de production pour les entreprises mid-market européennes et américaines (5–50 M€ de chiffre d'affaires). Périmètre fixe. Prix fixe. Pods réduits. 8 semaines entre la signature et la livraison. À partir de 5 000 € pour un Diagnostic de 2 semaines."
+  },
+  "Faq": {
+    "label": "FAQ",
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "q": "Qu'est-ce que l'ingénierie produit IA pour les entreprises mid-market ?",
+        "a": "L'ingénierie produit IA consiste à construire une infrastructure IA de production — pas des preuves de concept — qui opère au sein de véritables flux métier. Pour les entreprises mid-market (5–50 M€ de chiffre d'affaires), cela signifie livrer des produits IA qui remplacent les opérations manuelles dans un délai fixe de 8 semaines, avec des evals qui définissent le « terminé » et des clients qui possèdent l'intégralité du code et de l'infrastructure."
+      },
+      {
+        "q": "Combien coûte un projet de build IA pour une entreprise de 10–50 M€ ?",
+        "a": "Les projets de build IA de PRIONATION coûtent de 25 000 à 55 000 € pour un build de production de 8 semaines. Le processus commence par un Diagnostic de 2 semaines à 5 000–7 000 € pour cartographier le goulot d'étranglement et confirmer le périmètre. Plus de 60 % des Diagnostics débouchent sur un Build. L'accès continu au pod coûte de 4 000 à 9 000 €/mois."
+      },
+      {
+        "q": "Que signifie concrètement « le client possède l'infrastructure » ?",
+        "a": "À la fin de chaque mission, le client détient le dépôt GitHub, les accès à l'infrastructure cloud, les comptes des fournisseurs de modèles et l'ensemble des données de télémétrie. PRIONATION livre dans l'environnement du client dès le premier jour. À la fin du retainer, le client continue à opérer en toute autonomie."
+      },
+      {
+        "q": "En quoi un pod réduit diffère-t-il de l'embauche d'un ingénieur IA ?",
+        "a": "Un pod PRIONATION de 3 personnes coûte de 25 000 à 55 000 € par projet, livre en 8 semaines et inclut des evals, de la télémétrie et une garantie de 4 semaines. L'embauche d'un seul ingénieur IA coûte de 150 000 à 250 000 €/an en coût complet (salaire + charges + recrutement), nécessite 3 à 6 mois de montée en compétence et comporte un risque important sur la qualité du recrutement. Le pod est la voie sécurisée tant que la capacité interne en ingénierie IA n'est pas à l'échelle."
+      },
+      {
+        "q": "Qu'est-ce que le Diagnostic PRIONATION ?",
+        "a": "Le Diagnostic est une mission à périmètre fixe de 2 semaines à 5 000–7 000 €. Il cartographie le goulot d'étranglement opérationnel au ROI le plus élevé, définit le périmètre du build IA, produit la spécification de la suite d'evals et livre une proposition d'architecture prête pour la production. C'est le point d'entrée obligatoire avant tout Build."
+      },
+      {
+        "q": "Comment PRIONATION gère-t-il le conseil en IA pour les entreprises européennes ?",
+        "a": "PRIONATION sert les entreprises mid-market basées dans l'UE depuis une structure remote-first (siège à Bali, CRO à Paris). Toutes les missions sont facturées en euros. L'infrastructure client reste sur un hébergement conforme à l'UE lorsque cela est requis. La fondation opère en anglais et en français."
+      },
+      {
+        "q": "Qu'est-ce que la garantie post-lancement ?",
+        "a": "Chaque Build inclut une garantie post-lancement de 4 semaines. Si les performances en production tombent en dessous des seuils d'evals définis au début du build, PRIONATION les corrige sans frais supplémentaires."
+      }
+    ]
   }
 }

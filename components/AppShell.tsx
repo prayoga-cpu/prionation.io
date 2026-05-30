@@ -11,6 +11,7 @@ import { SelectedWork } from "./sections/SelectedWork";
 import { Pricing } from "./sections/Pricing";
 import { Foundation } from "./sections/Foundation";
 import { Engage } from "./sections/Engage";
+import { Faq } from "./sections/Faq";
 import { SiteFooter } from "./sections/SiteFooter";
 import { ScrollProgress } from "./ui/ScrollProgress";
 import { fadeUp } from "@/lib/motion";
@@ -88,6 +89,9 @@ export default function AppShell() {
         </FadeSection>
         <FadeSection>
           <Engage />
+        </FadeSection>
+        <FadeSection>
+          <Faq />
         </FadeSection>
       </main>
       <SiteFooter />

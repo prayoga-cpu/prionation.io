@@ -306,5 +306,43 @@
       "Leverage over labor.",
       "Systems over manual execution."
     ]
+  },
+  "Tldr": {
+    "label": "Summary",
+    "summary": "PRIONATION.io builds production AI infrastructure for European and US-based mid-market companies (€5–50M revenue). Fixed scope. Fixed price. Lean pods. 8 weeks from signed to shipped. Starting at €5,000 for a 2-week Diagnostic."
+  },
+  "Faq": {
+    "label": "FAQ",
+    "title": "Common questions",
+    "items": [
+      {
+        "q": "What is AI product engineering for mid-market companies?",
+        "a": "AI product engineering is the practice of building production AI infrastructure — not proofs-of-concept — that operates within real business workflows. For mid-market companies (€5–50M revenue), it means shipping AI products that replace manual operations within a fixed 8-week timeline, with evals defining done and clients owning all code and infrastructure."
+      },
+      {
+        "q": "How much does an AI build engagement cost for a €10–50M company?",
+        "a": "PRIONATION's AI build engagements run €25,000–55,000 for an 8-week production build. The process starts with a 2-week Diagnostic at €5,000–7,000 to map the bottleneck and confirm scope. Over 60% of Diagnostics proceed to a Build. Ongoing pod access runs €4,000–9,000/month."
+      },
+      {
+        "q": "What does 'client owns the infrastructure' mean in practice?",
+        "a": "At the end of every engagement, the client holds the GitHub repository, the cloud infrastructure credentials, the model provider accounts, and all telemetry data. PRIONATION delivers into the client's environment from day one. When the retainer ends, the client keeps running independently."
+      },
+      {
+        "q": "How is a lean pod different from hiring an AI engineer?",
+        "a": "A 3-person PRIONATION pod costs €25,000–55,000 per project, ships in 8 weeks, and comes with evals, telemetry, and a 4-week warranty. A single AI engineer hire costs €150,000–250,000/year loaded (salary + benefits + recruitment), takes 3–6 months to ramp, and carries significant hire-quality risk. The pod is the de-risked path until internal AI engineering capability scales."
+      },
+      {
+        "q": "What is the PRIONATION Diagnostic?",
+        "a": "The Diagnostic is a 2-week fixed-scope engagement at €5,000–7,000. It maps the single highest-ROI operational bottleneck, defines the AI build scope, produces the eval suite specification, and delivers a production-ready architecture proposal. It is the required entry point before any Build engagement."
+      },
+      {
+        "q": "How does PRIONATION handle AI consulting for European companies?",
+        "a": "PRIONATION serves EU-based mid-market companies from a remote-first structure (HQ Bali, CRO in Paris). All engagements are quoted in EUR. Client infrastructure remains within EU-compliant hosting where required. The foundation operates in English and French."
+      },
+      {
+        "q": "What is the post-launch warranty?",
+        "a": "Every Build engagement includes a 4-week post-launch warranty. If production performance falls below the eval thresholds defined at the start of the build, PRIONATION fixes it at no additional cost."
+      }
+    ]
   }
 }
