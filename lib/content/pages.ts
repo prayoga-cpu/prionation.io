@@ -41,7 +41,7 @@ export const pages: PageMeta[] = [
   {
     slug: "evals-before-features",
     section: "methodology",
-    status: "draft",
+    status: "published",
     seoTitle: "Evals before features · PRIONATION.io",
     metaDescription:
       "Why writing the test suite before the prompt is non-negotiable in production AI. The principle that makes fixed-price engagements honest.",
@@ -67,7 +67,7 @@ export const pages: PageMeta[] = [
   {
     slug: "telemetry-from-day-one",
     section: "methodology",
-    status: "draft",
+    status: "published",
     seoTitle: "Telemetry from day one · PRIONATION.io",
     metaDescription:
       'The instrumentation pattern that prevents "the model is wrong" debates. How PRIONATION monitors production AI from the first deployment.',
@@ -92,7 +92,7 @@ export const pages: PageMeta[] = [
   {
     slug: "owned-infrastructure",
     section: "methodology",
-    status: "draft",
+    status: "published",
     seoTitle: "Owned infrastructure · PRIONATION.io",
     metaDescription:
       "Why clients hold the code, hosting, data, and models at the end of every PRIONATION engagement. The case against AI vendor lock-in.",
@@ -117,7 +117,7 @@ export const pages: PageMeta[] = [
   {
     slug: "lean-pods-fixed-clocks",
     section: "methodology",
-    status: "draft",
+    status: "published",
     seoTitle: "Lean pods, fixed clocks · PRIONATION.io",
     metaDescription:
       "How 2–3 engineers and an 8-week clock make fixed-price AI delivery possible. The commercial-engineering link explained.",
