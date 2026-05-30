@@ -4,7 +4,33 @@ Deferred follow-ups. The technical SEO **code** is done and build-verified
 (commits `c415260` P0+P1, `c75c8b3` GEO). What remains needs brand assets,
 external accounts, or is optional polish.
 
-Source: _[PRIONATION] Dev Implementation Guide, 31-05-2026_.
+Source: _[PRIONATION] Dev Implementation Guide, 31-05-2026_ and
+_[PRIONATION] Sitemap Documentation, 31-05-2026_.
+
+---
+
+## Content cluster system (Sitemap Documentation)
+
+Infrastructure is built: `lib/content/pages.ts` (manifest, source of truth),
+sitemap auto-publishing, manifest-wired footer, and a proven page template.
+
+- [x] Manifest + sitemap wiring + robots Amazonbot (`0bab960`)
+- [x] **Cluster anchor page** built as the reusable template — trilingual,
+  Article + FAQPage schema, sub-page chrome, sitemap (`fc0cf83`). This is the
+  pattern to copy for every cluster page.
+- [ ] **15 remaining cluster pages** (all `status:"draft"` in the manifest).
+  To publish each: add a `<Section>` namespace to `messages/{en,fr,id}.json`,
+  create `app/[locale]/<section>/[slug]/page.tsx` (mirror the anchor route),
+  flip `status` to `"published"` + set dates in `lib/content/pages.ts`. It then
+  auto-joins the sitemap + footer.
+  - [ ] Methodology ×4, Frameworks ×3, Guides ×3 — evergreen/definitional;
+    can be authored without client data.
+  - [ ] **Showcases ×3 + Intelligence ×2 — BLOCKED on your first-party data**
+    (real Epidom / Expeditoo / The Lead Agent metrics, eval scores, ROI). Will
+    not be fabricated.
+- [ ] Transparency page (Phase 3) — needs the build-in-public stats.
+- [ ] Per-page content depth: the anchor is ~1,200 words (tight). The doc
+  targets 2,500–3,500; expand if desired.
 
 ---
 
