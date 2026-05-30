@@ -18,16 +18,17 @@ sitemap auto-publishing, manifest-wired footer, and a proven page template.
 - [x] **Cluster anchor page** built as the reusable template — trilingual,
   Article + FAQPage schema, sub-page chrome, sitemap (`fc0cf83`). This is the
   pattern to copy for every cluster page.
-- [ ] **15 remaining cluster pages** (all `status:"draft"` in the manifest).
-  To publish each: add a `<Section>` namespace to `messages/{en,fr,id}.json`,
-  create `app/[locale]/<section>/[slug]/page.tsx` (mirror the anchor route),
-  flip `status` to `"published"` + set dates in `lib/content/pages.ts`. It then
-  auto-joins the sitemap + footer.
-  - [ ] Methodology ×4, Frameworks ×3, Guides ×3 — evergreen/definitional;
-    can be authored without client data.
-  - [ ] **Showcases ×3 + Intelligence ×2 — BLOCKED on your first-party data**
-    (real Epidom / Expeditoo / The Lead Agent metrics, eval scores, ROI). Will
-    not be fabricated.
+The system is generalized: routes + `ContentArticle` + `meta.ts` are reusable.
+To publish a page now: add its content to `lib/content/text/{en,fr,id}.ts` under
+the section, then flip `status` to `"published"` in `lib/content/pages.ts`. It
+auto-joins the sitemap + footer. The 5 dynamic routes already exist.
+
+- [x] **Methodology ×4** published (trilingual) — `0fb2ae1`.
+- [ ] **Frameworks ×3** — evergreen; can be authored without client data.
+- [ ] **Guides ×3** — evergreen; can be authored without client data.
+- [ ] **Showcases ×3 + Intelligence ×2** — being authored WITHOUT client metrics
+  for SEO (per decision: structure + transferable content now, real Epidom /
+  Expeditoo / The Lead Agent numbers layered in later). No fabricated figures.
 - [ ] Transparency page (Phase 3) — needs the build-in-public stats.
 - [ ] Per-page content depth: the anchor is ~1,200 words (tight). The doc
   targets 2,500–3,500; expand if desired.
