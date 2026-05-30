@@ -1,10 +1,13 @@
-import AppShell from '@/components/AppShell';
+import { setRequestLocale } from "next-intl/server";
+import AppShell from "@/components/AppShell";
 
 export default async function Home({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  await params; // We don't use it yet but it's good to await it
+  const { locale } = await params;
+  // Enable static rendering for this locale (faster TTFB).
+  setRequestLocale(locale);
   return <AppShell />;
 }

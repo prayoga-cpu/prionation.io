@@ -2,11 +2,24 @@ import type { Metadata, Viewport } from "next";
 import { Bitter } from "next/font/google";
 import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Analytics } from "@vercel/analytics/react";
+import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
+import { OrganizationSchema, ServiceSchema } from "@/components/JsonLd";
 import "../globals.css";
+
+// Open Graph locale codes per supported language.
+const OG_LOCALE: Record<string, string> = {
+  en: "en_US",
+  fr: "fr_FR",
+  id: "id_ID",
+};
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 const rubik = localFont({
   src: [
@@ -59,11 +72,49 @@ const bitter = Bitter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "PRIONATION.io | AI products that break operational bottlenecks.",
-  description:
-    "PRIONATION.io builds production AI infrastructure for European and US-Based mid-market companies. 8 weeks, fixed scope, lean pods.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const canonical = `${SITE_URL}/${locale}`;
+  const title = "AI Product Engineering · PRIONATION.io";
+  const description =
+    "Production AI infrastructure for EU and US mid-market companies. Fixed scope. Fixed price. 8 weeks to production. Starting at €5,000.";
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: { default: title, template: "%s · PRIONATION.io" },
+    description,
+    alternates: {
+      canonical,
+      languages: {
+        en: `${SITE_URL}/en`,
+        fr: `${SITE_URL}/fr`,
+        id: `${SITE_URL}/id`,
+        "x-default": `${SITE_URL}/en`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: SITE_NAME,
+      locale: OG_LOCALE[locale] ?? "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+    },
+  };
+}
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -86,6 +137,9 @@ export default async function RootLayout({
     notFound();
   }
 
+  // Enable static rendering for this locale (faster TTFB — served from the edge).
+  setRequestLocale(locale);
+
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
@@ -96,6 +150,8 @@ export default async function RootLayout({
       className={`${rubik.variable} ${pressStart2P.variable} ${blackHanSans.variable} ${bitter.variable}`}
     >
       <body suppressHydrationWarning>
+        <OrganizationSchema />
+        <ServiceSchema />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

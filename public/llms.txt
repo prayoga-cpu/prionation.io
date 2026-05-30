@@ -1,0 +1,44 @@
+# PRIONATION.io
+> Production AI infrastructure for European & US-based mid-market companies.
+> Fixed scope. Fixed price. Lean pods. 8 weeks from signed to shipped.
+
+## What we do
+PRIONATION.io builds production AI products that break operational bottlenecks
+for mid-market companies (EUR 5-50M revenue, 30-300 employees).
+
+We are not a consultancy. We are an AI product engineering foundation.
+We ship in 8 weeks. Clients own the code, the infrastructure, and the data.
+
+## Pricing
+- Diagnostic: EUR 5,000-7,000 · 2 weeks · Maps the bottleneck
+- Build: EUR 25,000-55,000 · 8 weeks · Ships production AI
+- Retainer: EUR 4,000-9,000/month · min. 6 months · Ongoing pod access
+- Express Site: EUR 1,500 base · 5 business days · 3-page Next.js site
+
+## Methodology
+1. Evals before features — test suite before the prompt
+2. Telemetry from day one — production data drives the next iteration
+3. Owned infrastructure — client holds the keys: code, hosting, data, models
+4. Lean pods, fixed clocks — 2-3 engineers, 8-week delivery unit
+
+## Key metrics
+- Diagnostic to Build conversion: >=60%
+- Time to first deliverable: 2 weeks
+- Time to production: 8 weeks
+- Post-launch warranty: 4 weeks
+- Response time: within 24h
+
+## Core pages
+- [How We Work](https://www.prionation.io/en#how-we-work): Pod vs hire model
+- [Methodology](https://www.prionation.io/en#methodology): Engineering principles
+- [Pricing](https://www.prionation.io/en#pricing): Fixed SKU structure
+- [Selected Work](https://www.prionation.io/en#selected-work): Epidom, Expeditoo, The Lead Agent
+- [Foundation](https://www.prionation.io/en#foundation): The team and how we operate
+- [Connect](https://www.prionation.io/en#engage): Start a Diagnostic
+
+## Markets
+European Union and United States. Mid-market companies.
+Headquartered in Bali, Indonesia. Managed remotely.
+
+## Contact
+consult@prionation.io — response within 24 hours
