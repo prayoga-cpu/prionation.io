@@ -1,35 +1,108 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/routing";
 import { Dot } from "../../ui/Atoms";
+import { getPublishedPages, type PageSection } from "@/lib/content/pages";
+
+const LINK_CLS = "text-[13px] text-muted hover:text-white transition-colors";
+const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
+
+// Title-case a slug for a footer label (used for published cluster pages).
+function labelFromSlug(slug: string) {
+  return slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+// On the homepage, section links scroll in-page; on any other route they
+// navigate back to the homepage anchor. Declared at module scope so they are
+// stable components, not recreated each render.
+function SectionLink({
+  isHome,
+  id,
+  children,
+}: {
+  isHome: boolean;
+  id: string;
+  children: React.ReactNode;
+}) {
+  if (isHome) {
+    return (
+      <a href={`#${id}`} className={LINK_CLS}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={`/#${id}`} className={LINK_CLS}>
+      {children}
+    </Link>
+  );
+}
+
+function EngageLink({
+  isHome,
+  tab,
+  children,
+}: {
+  isHome: boolean;
+  tab: string;
+  children: React.ReactNode;
+}) {
+  if (isHome) {
+    return (
+      <a
+        href={`#engage?tab=${tab}`}
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.hash = `engage?tab=${tab}`;
+          document.getElementById("engage")?.scrollIntoView({ behavior: "smooth" });
+        }}
+        className={LINK_CLS}
+      >
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href="/#engage" className={LINK_CLS}>
+      {children}
+    </Link>
+  );
+}
+
+// Published cluster pages for a section (manifest-driven; empty until pages ship).
+function publishedLinks(section: PageSection) {
+  return getPublishedPages(section).map((p) => (
+    <li key={p.slug}>
+      <Link href={`/${section}/${p.slug}`} className={LINK_CLS}>
+        {labelFromSlug(p.slug)}
+      </Link>
+    </li>
+  ));
+}
 
 export function FooterColumns() {
   const t = useTranslations("Footer");
+  const isHome = usePathname() === "/";
+
+  const showcaseLinks = publishedLinks("showcases");
+  const intelligenceLinks = publishedLinks("intelligence");
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-8">
-      {/* Row 1 */}
+      {/* Product */}
       <div>
         <h4 className="m-[0_0_16px] font-sans font-bold text-[12px] text-white tracking-[0.06em] uppercase flex items-center gap-2.5">
           <Dot className="shadow-[0_0_10px_var(--c-accent)]" />
           {t("labels.product")}
         </h4>
         <ul className="list-none p-0 m-0 flex flex-col gap-2">
-          <li>
-            <a href="#how-we-work" className="text-[13px] text-muted hover:text-white transition-colors">
-              SKU 01 · Diagnostic
-            </a>
-          </li>
-          <li>
-            <a href="#how-we-work" className="text-[13px] text-muted hover:text-white transition-colors">
-              SKU 02 · Build
-            </a>
-          </li>
-          <li>
-            <a href="#how-we-work" className="text-[13px] text-muted hover:text-white transition-colors">
-              SKU 03 · Retainer
-            </a>
-          </li>
+          <li><SectionLink isHome={isHome} id="how-we-work">SKU 01 · Diagnostic</SectionLink></li>
+          <li><SectionLink isHome={isHome} id="how-we-work">SKU 02 · Build</SectionLink></li>
+          <li><SectionLink isHome={isHome} id="how-we-work">SKU 03 · Retainer</SectionLink></li>
           <li className="flex items-center gap-1.5">
             <span className="text-[13px] text-muted">Express Site</span>
             <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase"> soon</span>
@@ -41,6 +114,7 @@ export function FooterColumns() {
         </ul>
       </div>
 
+      {/* Resources */}
       <div>
         <h4 className="m-[0_0_16px] font-sans font-bold text-[12px] text-white tracking-[0.06em] uppercase flex items-center gap-2.5">
           <Dot className="shadow-[0_0_10px_var(--c-accent)]" />
@@ -48,85 +122,35 @@ export function FooterColumns() {
         </h4>
         <ul className="list-none p-0 m-0 flex flex-col gap-2">
           <li>
-            <a href="#how-we-work" className="text-[13px] text-muted hover:text-white transition-colors">
-              {t("nav.how_we_work")}
-            </a>
+            <Link href={ANCHOR_PATH} className={LINK_CLS}>
+              AI Product Engineering
+            </Link>
           </li>
-          <li>
-            <a href="#methodology" className="text-[13px] text-muted hover:text-white transition-colors">
-              {t("nav.methodology")}
-            </a>
-          </li>
-          <li>
-            <a href="#selected-work" className="text-[13px] text-muted hover:text-white transition-colors">
-              {t("nav.selected_work")}
-            </a>
-          </li>
-          <li>
-            <a href="#pricing" className="text-[13px] text-muted hover:text-white transition-colors">
-              {t("nav.pricing")}
-            </a>
-          </li>
-          <li>
-            <a href="#foundation" className="text-[13px] text-muted hover:text-white transition-colors">
-              {t("nav.foundation")}
-            </a>
-          </li>
+          <li><SectionLink isHome={isHome} id="how-we-work">{t("nav.how_we_work")}</SectionLink></li>
+          <li><SectionLink isHome={isHome} id="methodology">{t("nav.methodology")}</SectionLink></li>
+          <li><SectionLink isHome={isHome} id="selected-work">{t("nav.selected_work")}</SectionLink></li>
+          <li><SectionLink isHome={isHome} id="pricing">{t("nav.pricing")}</SectionLink></li>
+          <li><SectionLink isHome={isHome} id="foundation">{t("nav.foundation")}</SectionLink></li>
         </ul>
       </div>
 
+      {/* Connect */}
       <div>
         <h4 className="m-[0_0_16px] font-sans font-bold text-[12px] text-white tracking-[0.06em] uppercase flex items-center gap-2.5">
           <Dot className="shadow-[0_0_10px_var(--c-accent)]" />
           {t("labels.connect")}
         </h4>
         <ul className="list-none p-0 m-0 flex flex-col gap-2">
+          <li><EngageLink isHome={isHome} tab="meet">{t("nav.meet_us")}</EngageLink></li>
+          <li><EngageLink isHome={isHome} tab="diagnostic">{t("nav.diagnostic_form")}</EngageLink></li>
+          <li><EngageLink isHome={isHome} tab="careers">{t("nav.careers")}</EngageLink></li>
           <li>
-            <a
-              href="#engage?tab=meet"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.hash = "engage?tab=meet";
-                document.getElementById("engage")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="text-[13px] text-muted hover:text-white transition-colors"
-            >
-              {t("nav.meet_us")}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#engage?tab=diagnostic"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.hash = "engage?tab=diagnostic";
-                document.getElementById("engage")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="text-[13px] text-muted hover:text-white transition-colors"
-            >
-              {t("nav.diagnostic_form")}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#engage?tab=careers"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.hash = "engage?tab=careers";
-                document.getElementById("engage")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="text-[13px] text-muted hover:text-white transition-colors"
-            >
-              {t("nav.careers")}
-            </a>
-          </li>
-          <li>
-            <a href="mailto:consult@prionation.io" className="text-[13px] text-muted hover:text-white transition-colors">
+            <a href="mailto:consult@prionation.io" className={LINK_CLS}>
               consult@prionation.io
             </a>
           </li>
           <li>
-            <a href="https://maps.app.goo.gl/Dyu3N2rVPCw8UdGx9" className="text-[13px] text-muted hover:text-white transition-colors">
+            <a href="https://maps.app.goo.gl/Dyu3N2rVPCw8UdGx9" className={LINK_CLS}>
               {t("nav.location")}
             </a>
             <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase"> map</span>
@@ -137,45 +161,46 @@ export function FooterColumns() {
         </ul>
       </div>
 
-      {/* Row 2 */}
+      {/* Use Cases */}
       <div>
         <h4 className="m-[0_0_16px] font-sans font-bold text-[12px] text-white tracking-[0.06em] uppercase flex items-center gap-2.5">
           <Dot className="shadow-[0_0_10px_var(--c-accent)]" />
           {t("labels.use_cases")}
         </h4>
         <ul className="list-none p-0 m-0 flex flex-col gap-2">
-          <li className="flex items-center gap-1.5">
-            <span className="text-[13px] text-muted">Foundation Stats</span>
-            <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase"> soon</span>
-          </li>
-          <li className="flex items-center gap-1.5">
-            <span className="text-[13px] text-muted">Intelligence Briefings</span>
-            <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase"> soon</span>
-          </li>
+          {intelligenceLinks.length > 0 ? (
+            intelligenceLinks
+          ) : (
+            <>
+              <li className="flex items-center gap-1.5">
+                <span className="text-[13px] text-muted">Foundation Stats</span>
+                <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase"> soon</span>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <span className="text-[13px] text-muted">Intelligence Briefings</span>
+                <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase"> soon</span>
+              </li>
+            </>
+          )}
         </ul>
       </div>
 
+      {/* Delivered */}
       <div>
         <h4 className="m-[0_0_16px] font-sans font-bold text-[12px] text-white tracking-[0.06em] uppercase flex items-center gap-2.5">
           <Dot className="shadow-[0_0_10px_var(--c-accent)]" />
           {t("labels.delivered")}
         </h4>
         <ul className="list-none p-0 m-0 flex flex-col gap-2">
-          <li>
-            <a href="#selected-work" className="text-[13px] text-muted hover:text-white transition-colors">
-              Epidom
-            </a>
-          </li>
-          <li>
-            <a href="#selected-work" className="text-[13px] text-muted hover:text-white transition-colors">
-              Expeditoo
-            </a>
-          </li>
-          <li>
-            <a href="#selected-work" className="text-[13px] text-muted hover:text-white transition-colors">
-              The Lead Agent
-            </a>
-          </li>
+          {showcaseLinks.length > 0 ? (
+            showcaseLinks
+          ) : (
+            <>
+              <li><SectionLink isHome={isHome} id="selected-work">Epidom</SectionLink></li>
+              <li><SectionLink isHome={isHome} id="selected-work">Expeditoo</SectionLink></li>
+              <li><SectionLink isHome={isHome} id="selected-work">The Lead Agent</SectionLink></li>
+            </>
+          )}
         </ul>
       </div>
     </div>

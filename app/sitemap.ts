@@ -33,6 +33,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1.0,
   }));
 
+  // Topical cluster anchor — a live standalone page.
+  const anchor = localize(
+    "/ai-product-engineering-for-mid-market-companies",
+  ).map((entry) => ({
+    ...entry,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.95,
+  }));
+
   const clusterPages = getPublishedPages().flatMap((page) =>
     localize(`/${page.section}/${page.slug}`).map((entry) => ({
       ...entry,
@@ -42,5 +52,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...homepage, ...clusterPages];
+  return [...homepage, ...anchor, ...clusterPages];
 }

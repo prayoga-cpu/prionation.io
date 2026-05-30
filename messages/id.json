@@ -349,5 +349,105 @@
         "a": "Setiap Build mencakup garansi pasca-peluncuran selama 4 minggu. Jika performa produksi turun di bawah ambang eval yang ditentukan di awal build, PRIONATION memperbaikinya tanpa biaya tambahan."
       }
     ]
+  },
+  "Anchor": {
+    "seoTitle": "Rekayasa Produk AI untuk Mid-Market · PRIONATION",
+    "metaDescription": "Apa arti rekayasa produk AI bagi perusahaan €5–50 jt: build ruang lingkup tetap, infrastruktur yang dimiliki, eval sejak hari pertama. Panduan lengkap PRIONATION.",
+    "badge": "Panduan topik",
+    "backToHome": "← Kembali ke beranda",
+    "tldr": "Rekayasa produk AI adalah praktik membangun infrastruktur AI produksi — perangkat lunak yang berjalan di dalam operasi bisnis nyata — bukan presentasi atau proof-of-concept. Untuk perusahaan mid-market di Eropa dan Amerika Serikat (pendapatan €5–50 jt), PRIONATION mengirimkannya dengan ruang lingkup tetap, harga tetap, dan dalam 8 minggu, lalu menyerahkan setiap baris kode, setiap kredensial, dan seluruh data di akhir. Proyek dimulai dengan Diagnostic dua minggu seharga €5.000.",
+    "h1": "Rekayasa produk AI untuk perusahaan mid-market",
+    "intro": [
+      "Sebagian besar perusahaan mid-market tidak butuh satu lagi presentasi strategi AI. Mereka butuh sistem yang berfungsi, yang menghilangkan satu hambatan operasional spesifik dan terus berjalan setelah para konsultan pergi. Itulah yang diberikan rekayasa produk AI, dan ini disiplin yang berbeda dari konsultasi.",
+      "Halaman ini menjelaskan apa arti rekayasa produk AI bagi perusahaan €5–50 jt, mengapa segmen ini kurang terlayani, bagaimana PRIONATION membangun, dan apa yang benar-benar Anda miliki saat proyek berakhir."
+    ],
+    "sections": [
+      {
+        "id": "what-it-means",
+        "h2": "Apa arti rekayasa produk AI sebenarnya",
+        "body": [
+          "Rekayasa produk AI memperlakukan fitur AI seperti tim perangkat lunak serius memperlakukan sistem produksi mana pun: dispesifikasikan, diuji terhadap kriteria terukur, diinstrumentasi, di-deploy ke dalam alur kerja nyata, dan dipelihara. Hasilnya adalah perangkat lunak yang berjalan, bukan rekomendasi.",
+          "Ini kebalikan dari proyek konsultasi AI biasa, yang berakhir dengan dokumen strategi dan pilot yang tidak pernah mencapai produksi. Firma penasihat dibayar untuk pendapatnya. Fondasi rekayasa produk dibayar untuk sistem yang berfungsi di produksi, diukur terhadap kriteria yang disepakati sebelum build dimulai."
+        ]
+      },
+      {
+        "id": "mid-market-gap",
+        "h2": "Kesenjangan AI mid-market",
+        "body": [
+          "Perusahaan dengan pendapatan €5–50 jt berada di celah. Mereka terlalu kecil untuk praktik AI enterprise dari konsultan besar, yang proyeknya dimulai dari ratusan ribu euro dan mengandaikan tim internal khusus. Mereka terlalu kompleks untuk SaaS siap pakai, yang menyelesaikan 80% generik dan membiarkan hambatan operasional — 20% spesifik yang benar-benar memakan biaya — tak tersentuh.",
+          "Akibatnya, pekerjaan AI dengan daya ungkit tertinggi bagi operator mid-market biasanya tidak terselesaikan. PRIONATION hadir untuk menutup celah itu: praktik rekayasa setara enterprise, dikirim dengan ruang lingkup dan harga yang bisa dikomitmenkan perusahaan mid-market."
+        ]
+      },
+      {
+        "id": "how-we-build",
+        "h2": "Bagaimana PRIONATION membangun",
+        "body": [
+          "Setiap proyek berjalan di atas empat prinsip: eval sebelum fitur (suite uji ditulis sebelum prompt), telemetri sejak hari pertama (data produksi memandu setiap iterasi), infrastruktur yang dimiliki klien (klien memegang kunci), dan pod ramping berjam tetap (dua hingga tiga insinyur, satu unit pengiriman delapan minggu). Bersama-sama, itulah yang membuat harga tetap menjadi jujur.",
+          "Jalur komersial mencerminkan rekayasanya. Diagnostic dua minggu memetakan hambatan dengan ROI tertinggi dan menentukan ruang lingkup build. Build delapan minggu mengirimkan sistem produksi. Retainer opsional menjaga pod tetap tersedia sesudahnya."
+        ]
+      },
+      {
+        "id": "what-it-breaks",
+        "h2": "Apa yang dibuka AI produksi",
+        "body": [
+          "AI layak hadir ketika menghilangkan kendala operasional yang terukur, bukan ketika sekadar menarik. Dalam praktiknya, hambatan terbagi dalam tiga kategori: alur logistik dan operasi, generasi dan kualifikasi lead, serta proses back-office internal yang membengkak seiring jumlah karyawan.",
+          "Karya pilihan PRIONATION mencakup operasi logistik, marketplace logistik, dan kualifikasi lead real estate. Masing-masing dimulai sebagai hambatan spesifik dan mahal, lalu berakhir sebagai sistem berjalan yang dimiliki klien."
+        ]
+      },
+      {
+        "id": "what-you-own",
+        "h2": "Apa yang Anda miliki di akhir",
+        "body": [
+          "Kendali atas ketergantungan adalah prinsip inti. Saat serah terima, klien memegang repositori GitHub, kredensial infrastruktur cloud, akun penyedia model, dan seluruh data telemetri. PRIONATION membangun di dalam lingkungan klien sejak hari pertama, sehingga tidak ada migrasi dan tidak ada keterkuncian vendor.",
+          "Saat retainer berakhir, klien tetap mengoperasikan sistem secara mandiri. Kebalikannya — vendor yang memegang infrastruktur dan menyewakannya kembali — justru mode kegagalan yang dicegah prinsip ini."
+        ]
+      },
+      {
+        "id": "pricing",
+        "h2": "Harga dan jadwal",
+        "body": [
+          "Proyek ditagih dalam euro, dengan ruang lingkup dan harga tetap. Diagnostic €5.000–7.000 selama dua minggu. Build €25.000–55.000 selama delapan minggu. Retainer €4.000–9.000 per bulan, minimum enam bulan. Situs Express tiga halaman tersedia mulai €1.500. Lebih dari 60% Diagnostic berlanjut ke Build.",
+          "Diagnostic adalah titik masuk wajib. Itulah yang memungkinkan PRIONATION menetapkan harga tetap pada Build dengan percaya diri: ruang lingkup dipetakan dan kriteria eval disepakati sebelum siapa pun berkomitmen pada angka."
+        ]
+      },
+      {
+        "id": "is-it-right",
+        "h2": "Apakah PRIONATION cocok untuk perusahaan Anda?",
+        "body": [
+          "PRIONATION cocok ketika Anda punya hambatan operasional yang spesifik dan mahal, kepemimpinan yang bersedia berkomitmen pada build delapan minggu, dan preferensi untuk memiliki hasilnya alih-alih menyewanya. Tidak cocok jika Anda butuh proyek riset terbuka atau penyediaan tenaga kerja.",
+          "Jika ragu, Diagnostic dirancang untuk menjawab persis pertanyaan itu dalam dua minggu, dengan biaya rendah dan tanpa kewajiban melanjutkan."
+        ]
+      }
+    ],
+    "faqTitle": "Pertanyaan yang sering diajukan",
+    "faq": [
+      {
+        "q": "Apa itu rekayasa produk AI?",
+        "a": "Praktik membangun infrastruktur AI produksi — perangkat lunak yang berjalan di dalam alur kerja bisnis nyata — dengan suite uji ditulis sebelum build, telemetri penuh, dan klien memiliki seluruh kode dan infrastruktur. Hasilnya sistem yang berjalan, bukan dokumen strategi."
+      },
+      {
+        "q": "Apa bedanya dengan konsultasi AI?",
+        "a": "Konsultasi dibayar untuk nasihat dan biasanya berakhir dengan presentasi dan pilot. Rekayasa produk AI dibayar untuk sistem produksi yang berfungsi, diukur terhadap kriteria yang disepakati sebelum build. PRIONATION adalah fondasi rekayasa produk, bukan firma penasihat."
+      },
+      {
+        "q": "Apa saja yang termasuk dalam Diagnostic?",
+        "a": "Proyek ruang lingkup tetap dua minggu (€5.000–7.000) yang memetakan hambatan ROI tertinggi, menentukan ruang lingkup build, menghasilkan spesifikasi suite eval, dan menyampaikan proposal arsitektur siap produksi. Ini titik masuk wajib sebelum setiap Build."
+      },
+      {
+        "q": "Berapa biayanya?",
+        "a": "Diagnostic €5.000–7.000, Build €25.000–55.000, Retainer €4.000–9.000/bulan (minimum enam bulan), situs Express mulai €1.500. Semua ditagih dalam euro, ruang lingkup dan harga tetap."
+      },
+      {
+        "q": "Siapa yang memiliki kodenya?",
+        "a": "Klien. Di akhir setiap proyek, Anda memegang repositori, kredensial infrastruktur, akun penyedia model, dan seluruh data telemetri. PRIONATION membangun di dalam lingkungan Anda, jadi tidak ada keterkuncian."
+      },
+      {
+        "q": "Apa yang terjadi setelah delapan minggu?",
+        "a": "Setiap Build mencakup garansi pasca-peluncuran empat minggu terhadap ambang eval yang ditetapkan di awal. Setelah itu, Retainer opsional menjaga pod tetap tersedia, atau Anda mengoperasikan sistem sepenuhnya sendiri."
+      }
+    ],
+    "ctaTitle": "Mulai dengan Diagnostic",
+    "ctaBody": "Dua minggu. €5.000. Hambatan yang terpetakan dan rencana siap produksi — tanpa kewajiban melanjutkan ke Build.",
+    "ctaButton": "Mulai Diagnostic"
   }
 }

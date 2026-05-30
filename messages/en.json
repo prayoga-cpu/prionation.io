@@ -344,5 +344,105 @@
         "a": "Every Build engagement includes a 4-week post-launch warranty. If production performance falls below the eval thresholds defined at the start of the build, PRIONATION fixes it at no additional cost."
       }
     ]
+  },
+  "Anchor": {
+    "seoTitle": "AI Product Engineering for Mid-Market Companies · PRIONATION.io",
+    "metaDescription": "What AI product engineering means for €5–50M companies: fixed-scope builds, owned infrastructure, and evals from day one. PRIONATION's complete guide.",
+    "badge": "Topical guide",
+    "backToHome": "← Back to home",
+    "tldr": "AI product engineering is the practice of building production AI infrastructure — software that runs inside real business operations — rather than slide decks or proofs-of-concept. For European and US mid-market companies (€5–50M revenue), PRIONATION ships it on a fixed scope, a fixed price, and an 8-week clock, and hands over every line of code, every credential, and all the data at the end. Engagements start with a €5,000 two-week Diagnostic.",
+    "h1": "AI product engineering for mid-market companies",
+    "intro": [
+      "Most mid-market companies don't need another AI strategy deck. They need a working system that removes a specific operational bottleneck and keeps running after the consultants leave. That is what AI product engineering delivers, and it is a different discipline from advisory consulting.",
+      "This page explains what AI product engineering means for a €5–50M company, why this tier is underserved, how PRIONATION builds, and what you actually own when the engagement ends."
+    ],
+    "sections": [
+      {
+        "id": "what-it-means",
+        "h2": "What AI product engineering actually means",
+        "body": [
+          "AI product engineering treats an AI feature the way a serious software team treats any production system: it is specified, tested against measurable criteria, instrumented, deployed into the real workflow, and maintained. The deliverable is running software, not recommendations.",
+          "This is the opposite of the typical AI consulting engagement, which ends with a strategy document and a pilot that never reaches production. An advisory firm is paid for its opinion. A product engineering foundation is paid for a system that works in production, measured against criteria agreed before the build starts."
+        ]
+      },
+      {
+        "id": "mid-market-gap",
+        "h2": "The mid-market AI gap",
+        "body": [
+          "Companies between €5M and €50M in revenue sit in a gap. They are too small for the enterprise AI practices of the large consultancies, whose engagements start in the hundreds of thousands and assume a dedicated internal team. They are too complex for off-the-shelf SaaS, which solves the generic 80% and leaves the operational bottleneck — the specific 20% that actually costs money — untouched.",
+          "The result is that the highest-leverage AI work for a mid-market operator usually goes undone. PRIONATION exists to close that gap: enterprise-grade engineering practice, delivered at a scope and price a mid-market company can commit to."
+        ]
+      },
+      {
+        "id": "how-we-build",
+        "h2": "How PRIONATION builds",
+        "body": [
+          "Every engagement runs on four principles: evals before features (the test suite is written before the prompt), telemetry from day one (production data drives every iteration), owned infrastructure (the client holds the keys), and lean pods on fixed clocks (two to three engineers, an eight-week delivery unit). Together they are what make a fixed price honest.",
+          "The commercial path mirrors the engineering. A two-week Diagnostic maps the single highest-ROI bottleneck and defines the build scope. The eight-week Build ships the production system. An optional Retainer keeps a pod available afterwards."
+        ]
+      },
+      {
+        "id": "what-it-breaks",
+        "h2": "What production AI breaks",
+        "body": [
+          "AI earns its place when it removes a measurable operational constraint, not when it is interesting. In practice the bottlenecks fall into three categories: logistics and operations workflows, lead generation and qualification, and internal back-office processes that scale with headcount.",
+          "PRIONATION's selected work spans logistics operations, a logistics marketplace, and real-estate lead qualification. Each started as a specific, expensive bottleneck and ended as a running system the client owns."
+        ]
+      },
+      {
+        "id": "what-you-own",
+        "h2": "What you own at the end",
+        "body": [
+          "Control over dependency is the core principle. At handover the client holds the GitHub repository, the cloud infrastructure credentials, the model-provider accounts, and all telemetry data. PRIONATION builds inside the client's environment from day one, so there is no migration and no lock-in.",
+          "When a retainer ends, the client keeps operating the system independently. The opposite — a vendor who holds the infrastructure and rents it back — is the failure mode this principle is designed to prevent."
+        ]
+      },
+      {
+        "id": "pricing",
+        "h2": "Pricing and timelines",
+        "body": [
+          "Engagements are quoted in euros, with fixed scope and fixed price. The Diagnostic is €5,000–7,000 over two weeks. The Build is €25,000–55,000 over eight weeks. The Retainer is €4,000–9,000 per month with a six-month minimum. A three-page Express Site is available from €1,500. Over 60% of Diagnostics proceed to a Build.",
+          "The Diagnostic is the required entry point. It is what lets PRIONATION quote a fixed price on the Build with confidence — the scope is mapped and the eval criteria are agreed before anyone commits to a number."
+        ]
+      },
+      {
+        "id": "is-it-right",
+        "h2": "Is PRIONATION right for your company?",
+        "body": [
+          "PRIONATION is a fit when you have a specific, costly operational bottleneck, leadership willing to commit to an eight-week build, and a preference for owning the result over renting it. It is not a fit if you need an open-ended research engagement or a staff-augmentation body-shop.",
+          "If you are not sure, the Diagnostic is designed to answer exactly that question in two weeks, at low cost and with no obligation to proceed."
+        ]
+      }
+    ],
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "What is AI product engineering?",
+        "a": "It is the practice of building production AI infrastructure — software that runs inside real business workflows — with the test suite written before the build, full telemetry, and the client owning all code and infrastructure. The output is a running system, not a strategy document."
+      },
+      {
+        "q": "How is it different from AI consulting?",
+        "a": "Consulting is paid for advice and usually ends with a deck and a pilot. AI product engineering is paid for a working production system, measured against criteria agreed before the build. PRIONATION is a product engineering foundation, not an advisory firm."
+      },
+      {
+        "q": "What does the Diagnostic include?",
+        "a": "A two-week, fixed-scope engagement (€5,000–7,000) that maps the highest-ROI operational bottleneck, defines the build scope, produces the eval-suite specification, and delivers a production-ready architecture proposal. It is the required entry point before any Build."
+      },
+      {
+        "q": "How much does it cost?",
+        "a": "Diagnostic €5,000–7,000, Build €25,000–55,000, Retainer €4,000–9,000/month (six-month minimum), Express Site from €1,500. All quoted in euros, fixed scope and fixed price."
+      },
+      {
+        "q": "Who owns the code?",
+        "a": "The client. At the end of every engagement you hold the repository, the infrastructure credentials, the model-provider accounts, and all telemetry data. PRIONATION builds inside your environment, so there is no lock-in."
+      },
+      {
+        "q": "What happens after the eight weeks?",
+        "a": "Every Build includes a four-week post-launch warranty against the eval thresholds set at the start. After that, an optional Retainer keeps a pod available, or you operate the system entirely on your own."
+      }
+    ],
+    "ctaTitle": "Start with a Diagnostic",
+    "ctaBody": "Two weeks. €5,000. A mapped bottleneck and a production-ready plan — with no obligation to proceed to a Build.",
+    "ctaButton": "Start a Diagnostic"
   }
 }

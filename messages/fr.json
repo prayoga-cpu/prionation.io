@@ -349,5 +349,105 @@
         "a": "Chaque Build inclut une garantie post-lancement de 4 semaines. Si les performances en production tombent en dessous des seuils d'evals définis au début du build, PRIONATION les corrige sans frais supplémentaires."
       }
     ]
+  },
+  "Anchor": {
+    "seoTitle": "Ingénierie produit IA pour le mid-market · PRIONATION",
+    "metaDescription": "Ce que l'ingénierie produit IA signifie pour les entreprises de 5–50 M€ : périmètre fixe, infrastructure possédée, evals dès le premier jour. Le guide PRIONATION.",
+    "badge": "Guide thématique",
+    "backToHome": "← Retour à l'accueil",
+    "tldr": "L'ingénierie produit IA consiste à construire une infrastructure IA de production — des logiciels qui tournent au cœur des opérations réelles de l'entreprise — plutôt que des présentations ou des preuves de concept. Pour les entreprises mid-market européennes et américaines (5–50 M€ de chiffre d'affaires), PRIONATION la livre à périmètre fixe, prix fixe et en 8 semaines, et remet à la fin chaque ligne de code, chaque accès et l'ensemble des données. Les missions commencent par un Diagnostic de deux semaines à 5 000 €.",
+    "h1": "L'ingénierie produit IA pour les entreprises mid-market",
+    "intro": [
+      "La plupart des entreprises mid-market n'ont pas besoin d'une présentation stratégique de plus sur l'IA. Elles ont besoin d'un système qui fonctionne, qui supprime un goulot d'étranglement opérationnel précis et qui continue de tourner une fois les consultants partis. C'est ce que livre l'ingénierie produit IA, et c'est une discipline différente du conseil.",
+      "Cette page explique ce que signifie l'ingénierie produit IA pour une entreprise de 5–50 M€, pourquoi ce segment est mal servi, comment PRIONATION construit, et ce que vous possédez réellement à la fin de la mission."
+    ],
+    "sections": [
+      {
+        "id": "what-it-means",
+        "h2": "Ce que signifie réellement l'ingénierie produit IA",
+        "body": [
+          "L'ingénierie produit IA traite une fonctionnalité d'IA comme une équipe logicielle sérieuse traite tout système de production : elle est spécifiée, testée selon des critères mesurables, instrumentée, déployée dans le flux de travail réel et maintenue. Le livrable est un logiciel qui tourne, pas des recommandations.",
+          "C'est l'inverse de la mission de conseil en IA classique, qui se termine par un document stratégique et un pilote qui n'atteint jamais la production. Un cabinet de conseil est payé pour son avis. Une fondation d'ingénierie produit est payée pour un système qui fonctionne en production, mesuré selon des critères convenus avant le début du build."
+        ]
+      },
+      {
+        "id": "mid-market-gap",
+        "h2": "Le fossé IA du mid-market",
+        "body": [
+          "Les entreprises entre 5 et 50 M€ de chiffre d'affaires se trouvent dans un angle mort. Elles sont trop petites pour les pratiques IA grands comptes des grands cabinets, dont les missions démarrent à plusieurs centaines de milliers d'euros et supposent une équipe interne dédiée. Elles sont trop complexes pour les SaaS prêts à l'emploi, qui résolvent les 80 % génériques et laissent intact le goulot d'étranglement opérationnel — les 20 % spécifiques qui coûtent réellement de l'argent.",
+          "Résultat : le travail d'IA à plus fort levier pour un opérateur mid-market reste le plus souvent inachevé. PRIONATION existe pour combler ce fossé : une pratique d'ingénierie de niveau grand compte, livrée à un périmètre et un prix qu'une entreprise mid-market peut engager."
+        ]
+      },
+      {
+        "id": "how-we-build",
+        "h2": "Comment PRIONATION construit",
+        "body": [
+          "Chaque mission repose sur quatre principes : les evals avant les fonctionnalités (la suite de tests est écrite avant le prompt), la télémétrie dès le premier jour (les données de production guident chaque itération), l'infrastructure possédée (le client détient les clés), et des pods réduits à horloge fixe (deux à trois ingénieurs, une unité de livraison de huit semaines). Ensemble, ils sont ce qui rend un prix fixe honnête.",
+          "Le parcours commercial reflète l'ingénierie. Un Diagnostic de deux semaines cartographie le goulot d'étranglement au ROI le plus élevé et définit le périmètre du build. Le Build de huit semaines livre le système de production. Un Retainer optionnel maintient ensuite un pod disponible."
+        ]
+      },
+      {
+        "id": "what-it-breaks",
+        "h2": "Ce que l'IA de production débloque",
+        "body": [
+          "L'IA gagne sa place lorsqu'elle supprime une contrainte opérationnelle mesurable, pas lorsqu'elle est intéressante. En pratique, les goulots d'étranglement se répartissent en trois catégories : les flux logistiques et opérationnels, la génération et la qualification de leads, et les processus internes qui croissent avec les effectifs.",
+          "Les réalisations de PRIONATION couvrent des opérations logistiques, une marketplace logistique et la qualification de leads immobiliers. Chacune a commencé comme un goulot d'étranglement précis et coûteux et s'est terminée comme un système en fonctionnement que le client possède."
+        ]
+      },
+      {
+        "id": "what-you-own",
+        "h2": "Ce que vous possédez à la fin",
+        "body": [
+          "Le contrôle plutôt que la dépendance est le principe central. À la remise, le client détient le dépôt GitHub, les accès à l'infrastructure cloud, les comptes des fournisseurs de modèles et l'ensemble des données de télémétrie. PRIONATION construit dans l'environnement du client dès le premier jour : ni migration, ni enfermement propriétaire.",
+          "À la fin d'un retainer, le client continue d'exploiter le système de façon autonome. L'inverse — un prestataire qui détient l'infrastructure et la loue en retour — est précisément le mode d'échec que ce principe vise à empêcher."
+        ]
+      },
+      {
+        "id": "pricing",
+        "h2": "Tarifs et délais",
+        "body": [
+          "Les missions sont facturées en euros, à périmètre et prix fixes. Le Diagnostic coûte 5 000–7 000 € sur deux semaines. Le Build coûte 25 000–55 000 € sur huit semaines. Le Retainer coûte 4 000–9 000 € par mois, avec un minimum de six mois. Un site Express de trois pages est disponible à partir de 1 500 €. Plus de 60 % des Diagnostics débouchent sur un Build.",
+          "Le Diagnostic est le point d'entrée obligatoire. C'est lui qui permet à PRIONATION d'annoncer un prix fixe sur le Build en toute confiance : le périmètre est cartographié et les critères d'evals sont convenus avant que quiconque s'engage sur un chiffre."
+        ]
+      },
+      {
+        "id": "is-it-right",
+        "h2": "PRIONATION est-il fait pour votre entreprise ?",
+        "body": [
+          "PRIONATION convient lorsque vous avez un goulot d'étranglement opérationnel précis et coûteux, une direction prête à s'engager sur un build de huit semaines, et une préférence pour posséder le résultat plutôt que le louer. Ce n'est pas adapté si vous cherchez une mission de recherche ouverte ou de la régie de personnel.",
+          "En cas de doute, le Diagnostic est conçu pour répondre exactement à cette question en deux semaines, à faible coût et sans obligation de poursuivre."
+        ]
+      }
+    ],
+    "faqTitle": "Questions fréquentes",
+    "faq": [
+      {
+        "q": "Qu'est-ce que l'ingénierie produit IA ?",
+        "a": "C'est la pratique consistant à construire une infrastructure IA de production — des logiciels qui tournent au cœur des flux métier réels — avec la suite de tests écrite avant le build, une télémétrie complète, et le client qui possède tout le code et l'infrastructure. Le résultat est un système qui fonctionne, pas un document stratégique."
+      },
+      {
+        "q": "En quoi est-ce différent du conseil en IA ?",
+        "a": "Le conseil est payé pour un avis et se termine généralement par une présentation et un pilote. L'ingénierie produit IA est payée pour un système de production qui fonctionne, mesuré selon des critères convenus avant le build. PRIONATION est une fondation d'ingénierie produit, pas un cabinet de conseil."
+      },
+      {
+        "q": "Que comprend le Diagnostic ?",
+        "a": "Une mission à périmètre fixe de deux semaines (5 000–7 000 €) qui cartographie le goulot d'étranglement au ROI le plus élevé, définit le périmètre du build, produit la spécification de la suite d'evals et livre une proposition d'architecture prête pour la production. C'est le point d'entrée obligatoire avant tout Build."
+      },
+      {
+        "q": "Combien cela coûte-t-il ?",
+        "a": "Diagnostic 5 000–7 000 €, Build 25 000–55 000 €, Retainer 4 000–9 000 €/mois (minimum six mois), site Express à partir de 1 500 €. Tout est facturé en euros, à périmètre et prix fixes."
+      },
+      {
+        "q": "À qui appartient le code ?",
+        "a": "Au client. À la fin de chaque mission, vous détenez le dépôt, les accès à l'infrastructure, les comptes des fournisseurs de modèles et l'ensemble des données de télémétrie. PRIONATION construit dans votre environnement, donc aucun enfermement propriétaire."
+      },
+      {
+        "q": "Que se passe-t-il après les huit semaines ?",
+        "a": "Chaque Build inclut une garantie post-lancement de quatre semaines sur les seuils d'evals définis au départ. Ensuite, un Retainer optionnel maintient un pod disponible, ou vous exploitez le système entièrement par vous-même."
+      }
+    ],
+    "ctaTitle": "Commencez par un Diagnostic",
+    "ctaBody": "Deux semaines. 5 000 €. Un goulot d'étranglement cartographié et un plan prêt pour la production — sans obligation de poursuivre vers un Build.",
+    "ctaButton": "Démarrer un Diagnostic"
   }
 }
