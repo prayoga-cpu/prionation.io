@@ -1,25 +1,46 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/seo/site";
+import { getPublishedPages } from "@/lib/content/pages";
 
-// The site is a single page per locale (sections are in-page hash anchors, which
-// are not separate URLs). The sitemap therefore lists the three localized home
-// URLs with hreflang alternates. Add real cluster/showcase routes here only once
-// they ship and return 200 — never list URLs that 404.
+// Build a localized sitemap entry (one per locale) with hreflang alternates.
+function localize(path: string) {
+  const languages = Object.fromEntries(
+    routing.locales.map((l) => [l, `${SITE_URL}/${l}${path}`]),
+  );
+  return routing.locales.map((locale) => ({
+    url: `${SITE_URL}/${locale}${path}`,
+    alternates: {
+      languages: {
+        ...languages,
+        "x-default": `${SITE_URL}/${routing.defaultLocale}${path}`,
+      },
+    },
+  }));
+}
+
+// The homepage is live in all three locales. Cluster pages
+// (/<section>/<slug>) are pulled from the content manifest and only appear once
+// their status flips to "published" — drafts never reach the sitemap, so no
+// 404s are submitted. Hash anchors are in-page, not separate URLs.
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  const languages = Object.fromEntries(
-    routing.locales.map((l) => [l, `${SITE_URL}/${l}`]),
+  const homepage = localize("").map((entry) => ({
+    ...entry,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 1.0,
+  }));
+
+  const clusterPages = getPublishedPages().flatMap((page) =>
+    localize(`/${page.section}/${page.slug}`).map((entry) => ({
+      ...entry,
+      lastModified: page.updatedAt ? new Date(page.updatedAt) : lastModified,
+      changeFrequency: page.changeFreq,
+      priority: page.sitemapPriority,
+    })),
   );
 
-  return routing.locales.map((locale) => ({
-    url: `${SITE_URL}/${locale}`,
-    lastModified,
-    changeFrequency: "weekly",
-    priority: 1.0,
-    alternates: {
-      languages: { ...languages, "x-default": `${SITE_URL}/${routing.defaultLocale}` },
-    },
-  }));
+  return [...homepage, ...clusterPages];
 }

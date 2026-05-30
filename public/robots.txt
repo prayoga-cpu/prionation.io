@@ -18,4 +18,7 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+User-agent: Amazonbot
+Allow: /
+
 Sitemap: https://www.prionation.io/sitemap.xml
