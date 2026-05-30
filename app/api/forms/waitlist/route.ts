@@ -9,6 +9,7 @@ import {
   sendWaitlistNotification,
   sendWaitlistConfirmation,
 } from "@/lib/notify/templates";
+import { sendWaitlistToDiscord } from "@/lib/notify/discord";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -61,6 +62,9 @@ export async function POST(req: NextRequest) {
     );
     sendWaitlistConfirmation(parsed.data).catch((e) =>
       console.error("[waitlist] Confirmation failed", e),
+    );
+    sendWaitlistToDiscord(parsed.data).catch((e) =>
+      console.error("[waitlist] Discord notification failed", e),
     );
 
     return NextResponse.json({ success: true });

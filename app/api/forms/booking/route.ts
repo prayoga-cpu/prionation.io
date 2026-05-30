@@ -6,6 +6,7 @@ import { DB } from '@/lib/notion/databases';
 import { rateLimit } from '@/lib/security/rate-limit';
 import { verifyTurnstile } from '@/lib/security/turnstile';
 import { sendBookingNotification, sendBookingConfirmation } from '@/lib/notify/templates';
+import { sendBookingToDiscord } from '@/lib/notify/discord';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -55,6 +56,9 @@ export async function POST(req: NextRequest) {
     );
     sendBookingConfirmation(parsed.data).catch((e) =>
       console.error('[booking] Confirmation failed', e)
+    );
+    sendBookingToDiscord(parsed.data).catch((e) =>
+      console.error('[booking] Discord notification failed', e)
     );
 
     return NextResponse.json({ success: true });

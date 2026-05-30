@@ -9,6 +9,7 @@ import {
   sendIntakeNotification,
   sendIntakeConfirmation,
 } from "@/lib/notify/templates";
+import { sendIntakeToDiscord } from "@/lib/notify/discord";
 import { syncIntakeToSalesPipeline } from "@/lib/notion/sync";
 import { evaluateDisqualification } from "@/lib/forms/disqualification";
 
@@ -98,6 +99,9 @@ export async function POST(req: NextRequest) {
     );
     sendIntakeConfirmation(parsed.data).catch((e) =>
       console.error("[intake] Confirmation failed", e),
+    );
+    sendIntakeToDiscord(parsed.data).catch((e) =>
+      console.error("[intake] Discord notification failed", e),
     );
 
     return NextResponse.json({ success: true });

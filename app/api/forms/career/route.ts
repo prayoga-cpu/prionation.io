@@ -6,6 +6,7 @@ import { DB } from '@/lib/notion/databases';
 import { rateLimit } from '@/lib/security/rate-limit';
 import { verifyTurnstile } from '@/lib/security/turnstile';
 import { sendCareerNotification, sendCareerConfirmation } from '@/lib/notify/templates';
+import { sendCareerToDiscord } from '@/lib/notify/discord';
 import { CV_MAX_BYTES } from '@/lib/storage/supabase';
 
 export const runtime = 'nodejs';
@@ -75,6 +76,9 @@ export async function POST(req: NextRequest) {
     );
     sendCareerConfirmation(parsed.data).catch((e) =>
       console.error('[career] Confirmation failed', e)
+    );
+    sendCareerToDiscord(parsed.data).catch((e) =>
+      console.error('[career] Discord notification failed', e)
     );
 
     return NextResponse.json({ success: true });
