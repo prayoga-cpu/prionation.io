@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { getPublishedPages, type PageMeta, type PageSection } from "@/lib/content/pages";
@@ -21,12 +20,13 @@ const SECTION_META: Record<PageSection, { label: string; desc: string }> = {
 };
 
 const ALL_SECTIONS: PageSection[] = ["methodology", "showcases", "frameworks", "guides", "intelligence"];
+const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
 
 function FeaturedCard({ page, section }: { page: PageMeta; section: PageSection }) {
   return (
     <Link
       href={`/${section}/${page.slug}`}
-      className="group col-span-full bg-card border border-line-soft rounded-[24px] p-7 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 transition-colors duration-fast hover:bg-card-soft hover:border-soft hover:shadow-[0_16px_48px_rgba(0,0,0,0.4)]"
+      className="group bg-card border border-line-soft rounded-[24px] p-7 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10 transition-colors duration-fast hover:bg-card-soft hover:border-soft hover:shadow-[0_16px_48px_rgba(0,0,0,0.4)]"
     >
       <div className="flex flex-col gap-4 flex-1 min-w-0">
         <div className="flex items-center gap-3">
@@ -37,7 +37,7 @@ function FeaturedCard({ page, section }: { page: PageMeta; section: PageSection 
             {page.audience} · featured
           </span>
         </div>
-        <h2 className="font-sans font-extrabold text-white text-[clamp(22px,2.8vw,34px)] leading-[1.1] tracking-[-0.02em] group-hover:text-accent transition-colors">
+        <h2 className="font-sans font-extrabold text-white text-[clamp(20px,2.6vw,32px)] leading-[1.1] tracking-[-0.02em] group-hover:text-accent transition-colors">
           {page.seoTitle.split("·")[0].trim()}
         </h2>
         <p className="text-soft text-[15px] leading-[1.7] max-w-[55ch]">
@@ -48,10 +48,10 @@ function FeaturedCard({ page, section }: { page: PageMeta; section: PageSection 
         </div>
       </div>
 
-      {/* Keywords as decorative chips */}
-      <div className="flex flex-col justify-center gap-2 shrink-0 max-w-[220px]">
+      {/* Tier-1 keywords as decorative chips */}
+      <div className="flex flex-col justify-center gap-2 shrink-0 max-w-[200px]">
         {page.tier1Keywords.map((kw, i) => (
-          <span key={i} className="font-pixel text-[8px] tracking-[0.1em] text-muted border border-line-soft rounded-lg px-3 py-2 leading-snug">
+          <span key={i} className="font-pixel text-[7px] tracking-[0.1em] text-muted border border-line-soft rounded-lg px-3 py-2 leading-snug">
             {kw}
           </span>
         ))}
@@ -96,28 +96,22 @@ export function SectionIndex({
   pages: PageMeta[];
 }) {
   const common = useTranslations("Pages.common");
-  const [query, setQuery] = useState("");
-
-  const filtered = useMemo(() => {
-    if (!query.trim()) return pages;
-    const q = query.toLowerCase();
-    return pages.filter(
-      (p) =>
-        p.seoTitle.toLowerCase().includes(q) ||
-        p.metaDescription.toLowerCase().includes(q),
-    );
-  }, [pages, query]);
-
-  const [featured, ...rest] = filtered;
+  const [featured, ...rest] = pages;
   const meta = SECTION_META[section];
   const otherSections = ALL_SECTIONS.filter((s) => s !== section);
 
   return (
-    <main className="relative px-page-x pt-[140px] pb-[120px]">
+    <main className="relative px-page-x pt-[130px] pb-[120px]">
       <div className="max-w-max-w mx-auto">
-        <Link href="/" className="inline-block text-muted text-[13px] hover:text-white transition-colors mb-8">
-          {common("backToHome")}
-        </Link>
+
+        {/* Breadcrumb: Home / AI Product Engineering / Section */}
+        <nav className="flex items-center gap-1.5 text-[12px] text-muted mb-10 font-sans flex-wrap" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <span className="opacity-40">/</span>
+          <Link href={ANCHOR_PATH} className="hover:text-white transition-colors">AI Product Engineering</Link>
+          <span className="opacity-40">/</span>
+          <span className="text-soft">{meta.label}</span>
+        </nav>
 
         {/* Header */}
         <div className="font-pixel text-[10px] tracking-[0.15em] text-accent uppercase mb-4">
@@ -126,31 +120,13 @@ export function SectionIndex({
         <h1 className="font-sans font-extrabold text-[clamp(32px,4.5vw,60px)] leading-[1.03] tracking-[-0.03em] text-white mb-4">
           {meta.label}
         </h1>
-        <p className="text-soft text-[16px] leading-[1.7] max-w-[52ch] mb-10">
+        <p className="text-soft text-[16px] leading-[1.7] max-w-[52ch] mb-14">
           {meta.desc}
         </p>
 
-        {/* Search bar */}
-        <div className="relative max-w-[480px] mb-14">
-          <svg
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-muted pointer-events-none"
-            width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-          >
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search articles..."
-            className="w-full bg-card border border-line-soft rounded-full pl-11 pr-5 py-3 text-[14px] text-white placeholder:text-muted outline-none focus:border-accent/60 focus:bg-card-soft transition-all"
-          />
-        </div>
-
-        {filtered.length === 0 ? (
+        {pages.length === 0 ? (
           <div className="border border-dashed border-line-soft rounded-[20px] p-12 text-center text-muted text-[14px]">
-            No articles match &ldquo;{query}&rdquo;.
+            No articles published yet. Check back soon.
           </div>
         ) : (
           <>
@@ -168,7 +144,7 @@ export function SectionIndex({
             {rest.length > 0 && (
               <div className="mb-16">
                 <div className="font-pixel text-[9px] tracking-[0.18em] text-muted uppercase mb-5">
-                  {pages.length - 1} more {pages.length - 1 === 1 ? "article" : "articles"}
+                  {rest.length} more {rest.length === 1 ? "article" : "articles"}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                   {rest.map((p) => (
@@ -215,10 +191,7 @@ export function SectionIndex({
           <p className="text-soft text-[14px] leading-[1.7] max-w-[48ch] mx-auto mb-7">
             {common("ctaBody")}
           </p>
-          <Link
-            href="/#engage"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-white font-sans font-semibold text-[14px] hover:bg-accent/90 transition-colors"
-          >
+          <Link href="/#engage" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-white font-sans font-semibold text-[14px] hover:bg-accent/90 transition-colors">
             {common("ctaButton")} <span className="text-[12px] opacity-80">→</span>
           </Link>
         </div>

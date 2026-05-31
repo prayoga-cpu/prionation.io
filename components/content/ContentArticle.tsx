@@ -6,7 +6,7 @@ import { Icon } from "../icons";
 import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
 import type { PageSection, SchemaType } from "@/lib/content/pages";
 import type { RelatedLink } from "@/lib/content/meta";
-import { FloatingShare } from "./FloatingShare";
+import { FloatingShareDesktop, FloatingShareMobile } from "./FloatingShare";
 import { ArticleSidebar } from "./ArticleSidebar";
 
 type Section = { h2: string; body: string[] };
@@ -19,6 +19,8 @@ const SECTION_LABEL: Record<PageSection, string> = {
   guides:       "Guides",
   intelligence: "Intelligence",
 };
+
+const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
 
 function slugify(text: string) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -71,37 +73,34 @@ export function ContentArticle({
     })),
   };
 
+  const shortTitle = h1.split("·")[0].split(":")[0].trim();
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      {/* Outer padded container */}
       <div className="px-page-x pt-[130px] pb-[120px]">
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-[12px] text-muted mb-10 font-sans" aria-label="Breadcrumb">
+        {/* 4-level breadcrumb: Home / AI Product Engineering / Section / Title */}
+        <nav className="flex items-center flex-wrap gap-1.5 text-[12px] text-muted mb-10 font-sans" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <span className="opacity-40">/</span>
+          <Link href={ANCHOR_PATH} className="hover:text-white transition-colors">AI Product Engineering</Link>
           <span className="opacity-40">/</span>
           <Link href={`/${section}`} className="hover:text-white transition-colors capitalize">
             {SECTION_LABEL[section]}
           </Link>
           <span className="opacity-40">/</span>
-          <span className="text-soft truncate max-w-[30ch]">{h1.split("·")[0].split(":")[0].trim()}</span>
+          <span className="text-soft truncate max-w-[28ch]">{shortTitle}</span>
         </nav>
 
-        {/* 3-column layout: share | content | sidebar */}
+        {/* 3-column: desktop share | article | sidebar */}
         <div className="flex gap-10 xl:gap-14 max-w-[1280px] mx-auto">
 
-          {/* Left: floating share */}
-          <FloatingShare title={h1} />
+          {/* Left: desktop-only sticky share */}
+          <FloatingShareDesktop title={h1} />
 
-          {/* Center: main article */}
+          {/* Center: article body */}
           <article className="flex-1 min-w-0 max-w-[740px]">
             <div className="font-pixel text-[10px] tracking-[0.15em] text-accent uppercase mb-4">
               {t("badge")}
@@ -111,32 +110,23 @@ export function ContentArticle({
               {h1}
             </h1>
 
-            {/* Mobile share bar */}
-            <FloatingShare title={h1} />
+            {/* Mobile-only inline share bar */}
+            <FloatingShareMobile title={h1} />
 
             {/* TL;DR */}
-            <div
-              role="note"
-              aria-label="Summary"
-              className="bg-card border border-line-soft rounded-[20px] p-6 md:p-7 mb-12"
-            >
+            <div role="note" aria-label="Summary" className="bg-card border border-line-soft rounded-[20px] p-6 md:p-7 mb-12">
               <div className="font-pixel text-[8px] tracking-[0.15em] text-muted uppercase mb-2">TL;DR</div>
-              <p className="text-soft text-[15px] md:text-[16px] leading-[1.7]">
-                {t("tldr")}
-              </p>
+              <p className="text-soft text-[15px] md:text-[16px] leading-[1.7]">{t("tldr")}</p>
             </div>
 
-            {/* Inline anchor nav (table of contents) */}
+            {/* Inline table of contents */}
             {sections.length > 2 && (
               <nav className="border border-line-soft rounded-2xl p-5 mb-12 bg-card/40" aria-label="On this page">
                 <div className="font-pixel text-[8px] tracking-[0.15em] text-muted uppercase mb-3">On this page</div>
                 <ol className="flex flex-col gap-2">
                   {sections.map((s, i) => (
                     <li key={i}>
-                      <a
-                        href={`#${slugify(s.h2)}`}
-                        className="flex items-center gap-2 text-[13px] text-soft hover:text-white transition-colors group"
-                      >
+                      <a href={`#${slugify(s.h2)}`} className="flex items-center gap-2 text-[13px] text-soft hover:text-white transition-colors group">
                         <span className="font-pixel text-[8px] text-muted group-hover:text-accent transition-colors">
                           {String(i + 1).padStart(2, "0")}
                         </span>
@@ -148,12 +138,10 @@ export function ContentArticle({
               </nav>
             )}
 
-            {/* Intro paragraphs */}
+            {/* Intro */}
             <div className="flex flex-col gap-5 mb-14">
               {intro.map((p, i) => (
-                <p key={i} className="text-soft text-[16px] leading-[1.8]">
-                  {p}
-                </p>
+                <p key={i} className="text-soft text-[16px] leading-[1.8]">{p}</p>
               ))}
             </div>
 
@@ -166,9 +154,7 @@ export function ContentArticle({
                   </h2>
                   <div className="flex flex-col gap-4">
                     {s.body.map((p, i) => (
-                      <p key={i} className="text-soft text-[16px] leading-[1.8]">
-                        {p}
-                      </p>
+                      <p key={i} className="text-soft text-[16px] leading-[1.8]">{p}</p>
                     ))}
                   </div>
                 </section>
@@ -179,11 +165,7 @@ export function ContentArticle({
             {related.length > 0 && (
               <div className="mt-14 flex flex-wrap gap-3">
                 {related.map((r) => (
-                  <Link
-                    key={r.href}
-                    href={r.href}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-line-soft text-soft text-[13px] hover:text-white hover:border-soft transition-colors"
-                  >
+                  <Link key={r.href} href={r.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-line-soft text-soft text-[13px] hover:text-white hover:border-soft transition-colors">
                     {r.label} <span aria-hidden="true">→</span>
                   </Link>
                 ))}
@@ -197,21 +179,12 @@ export function ContentArticle({
               </h2>
               <div className="flex flex-col gap-3">
                 {faq.map((f, i) => (
-                  <details
-                    key={i}
-                    className="group bg-card border border-line-soft rounded-2xl px-6 py-5 transition-colors duration-fast hover:border-soft open:border-accent/40"
-                  >
+                  <details key={i} className="group bg-card border border-line-soft rounded-2xl px-6 py-5 transition-colors duration-fast hover:border-soft open:border-accent/40">
                     <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-sans font-semibold text-white text-[15px] md:text-[16px] leading-snug">
                       {f.q}
-                      <Icon
-                        name="chevron-down"
-                        size={18}
-                        className="shrink-0 text-muted transition-transform duration-fast group-open:rotate-180 group-open:text-accent"
-                      />
+                      <Icon name="chevron-down" size={18} className="shrink-0 text-muted transition-transform duration-fast group-open:rotate-180 group-open:text-accent" />
                     </summary>
-                    <p className="text-soft text-[14px] md:text-[15px] leading-[1.7] mt-4">
-                      {f.a}
-                    </p>
+                    <p className="text-soft text-[14px] md:text-[15px] leading-[1.7] mt-4">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -225,10 +198,7 @@ export function ContentArticle({
               <p className="text-soft text-[14px] leading-[1.7] max-w-[48ch] mx-auto mb-7">
                 {common("ctaBody")}
               </p>
-              <Link
-                href="/#engage"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-white font-sans font-semibold text-[14px] hover:bg-accent/90 transition-colors"
-              >
+              <Link href="/#engage" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-white font-sans font-semibold text-[14px] hover:bg-accent/90 transition-colors">
                 {common("ctaButton")} <span className="text-[12px] opacity-80">→</span>
               </Link>
             </div>

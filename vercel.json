@@ -1,6 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "regions": ["iad1", "cdg1", "sin1"],
   "headers": [
     {
       "source": "/((?!api/).*)",

@@ -35,15 +35,18 @@ function LinkIcon() {
   );
 }
 
-export function FloatingShare({ title }: { title: string }) {
+// Shared hook — reads window.location.href once on mount (SSR-safe).
+function usePageUrl() {
   const [url, setUrl] = useState("");
-  const [copied, setCopied] = useState(false);
-
-  // Sets URL once on mount — window is not available during SSR, so this must
-  // run client-side only. The setState-in-effect lint rule does not apply here.
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setUrl(window.location.href); }, []);
+  return url;
+}
 
+// Desktop-only: sticky left column icons. Renders nothing on mobile.
+export function FloatingShareDesktop({ title }: { title: string }) {
+  const url = usePageUrl();
+  const [copied, setCopied] = useState(false);
   const encoded = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
 
@@ -58,75 +61,70 @@ export function FloatingShare({ title }: { title: string }) {
     "w-9 h-9 rounded-xl flex items-center justify-center text-muted hover:text-white hover:bg-white/10 transition-all duration-fast";
 
   return (
-    <>
-      {/* Desktop: sticky left column */}
-      <aside className="hidden lg:flex flex-col items-center gap-2 sticky top-[140px] self-start pt-2">
-        <span className="font-pixel text-[7px] tracking-[0.2em] text-muted uppercase mb-1 rotate-0">
-          Share
-        </span>
-        <a
-          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encoded}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Share on LinkedIn"
-          className={BTN}
-        >
-          <LinkedInIcon />
-        </a>
-        <a
-          href={`https://twitter.com/intent/tweet?url=${encoded}&text=${encodedTitle}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Share on X"
-          className={BTN}
-        >
-          <XIcon />
-        </a>
-        <a
-          href={`https://wa.me/?text=${encodedTitle}%20${encoded}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Share on WhatsApp"
-          className={BTN}
-        >
-          <WhatsAppIcon />
-        </a>
-        <button onClick={handleCopy} aria-label="Copy link" className={BTN}>
-          {copied ? (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-          ) : (
-            <LinkIcon />
-          )}
-        </button>
-      </aside>
+    <aside className="hidden lg:flex flex-col items-center gap-2 sticky top-[140px] self-start pt-2 shrink-0">
+      <span className="font-pixel text-[7px] tracking-[0.2em] text-muted uppercase mb-1">
+        Share
+      </span>
+      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encoded}`} target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn" className={BTN}>
+        <LinkedInIcon />
+      </a>
+      <a href={`https://twitter.com/intent/tweet?url=${encoded}&text=${encodedTitle}`} target="_blank" rel="noopener noreferrer" aria-label="Share on X" className={BTN}>
+        <XIcon />
+      </a>
+      <a href={`https://wa.me/?text=${encodedTitle}%20${encoded}`} target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp" className={BTN}>
+        <WhatsAppIcon />
+      </a>
+      <button onClick={handleCopy} aria-label="Copy link" className={BTN}>
+        {copied ? (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        ) : (
+          <LinkIcon />
+        )}
+      </button>
+    </aside>
+  );
+}
 
-      {/* Mobile: inline bar below title */}
-      <div className="flex lg:hidden items-center gap-2 mb-8 mt-[-16px]">
-        <span className="font-pixel text-[8px] tracking-[0.15em] text-muted uppercase mr-1">
-          Share:
-        </span>
-        {[
-          { href: `https://www.linkedin.com/sharing/share-offsite/?url=${encoded}`, icon: <LinkedInIcon />, label: "LinkedIn" },
-          { href: `https://twitter.com/intent/tweet?url=${encoded}&text=${encodedTitle}`, icon: <XIcon />, label: "X" },
-          { href: `https://wa.me/?text=${encodedTitle}%20${encoded}`, icon: <WhatsAppIcon />, label: "WhatsApp" },
-        ].map(({ href, icon, label }) => (
-          <a
-            key={label}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Share on ${label}`}
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-muted hover:text-white hover:bg-white/10 transition-all border border-line-soft"
-          >
-            {icon}
-          </a>
-        ))}
-        <button onClick={handleCopy} className="w-8 h-8 rounded-lg flex items-center justify-center text-muted hover:text-white hover:bg-white/10 transition-all border border-line-soft" aria-label="Copy link">
-          {copied ? <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg> : <LinkIcon />}
-        </button>
-      </div>
-    </>
+// Mobile-only: inline bar, renders below the article title on small screens.
+export function FloatingShareMobile({ title }: { title: string }) {
+  const url = usePageUrl();
+  const [copied, setCopied] = useState(false);
+  const encoded = encodeURIComponent(url);
+  const encodedTitle = encodeURIComponent(title);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    });
+  };
+
+  const BTN =
+    "w-8 h-8 rounded-lg flex items-center justify-center text-muted hover:text-white hover:bg-white/10 transition-all border border-line-soft";
+
+  return (
+    <div className="flex lg:hidden items-center gap-2 mb-8">
+      <span className="font-pixel text-[8px] tracking-[0.15em] text-muted uppercase mr-1">Share:</span>
+      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encoded}`} target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn" className={BTN}>
+        <LinkedInIcon />
+      </a>
+      <a href={`https://twitter.com/intent/tweet?url=${encoded}&text=${encodedTitle}`} target="_blank" rel="noopener noreferrer" aria-label="Share on X" className={BTN}>
+        <XIcon />
+      </a>
+      <a href={`https://wa.me/?text=${encodedTitle}%20${encoded}`} target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp" className={BTN}>
+        <WhatsAppIcon />
+      </a>
+      <button onClick={handleCopy} aria-label="Copy link" className={BTN}>
+        {copied ? (
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        ) : (
+          <LinkIcon />
+        )}
+      </button>
+    </div>
   );
 }
