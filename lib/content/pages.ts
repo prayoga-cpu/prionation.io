@@ -145,7 +145,7 @@ export const pages: PageMeta[] = [
   {
     slug: "epidom-logistics-france",
     section: "showcases",
-    status: "draft",
+    status: "published",
     seoTitle: "Epidom — logistics AI, France · PRIONATION",
     metaDescription:
       "How PRIONATION shipped production AI into Epidom's logistics operations in 8 weeks. Bottleneck, build, result, and the transferable lesson.",
@@ -170,7 +170,7 @@ export const pages: PageMeta[] = [
   {
     slug: "expeditoo-marketplace-france",
     section: "showcases",
-    status: "draft",
+    status: "published",
     seoTitle: "Expeditoo — marketplace AI, France · PRIONATION",
     metaDescription:
       "Building AI for a logistics marketplace: matching, cold start, two-sided data. What PRIONATION shipped for Expeditoo and what it proved.",
@@ -195,7 +195,7 @@ export const pages: PageMeta[] = [
   {
     slug: "lead-agent-real-estate-australia",
     section: "showcases",
-    status: "draft",
+    status: "published",
     seoTitle: "The Lead Agent — real estate AI, Australia · PRIONATION",
     metaDescription:
       "How PRIONATION built AI lead qualification for The Lead Agent in Australia. Conversion lift, time per qualified lead, and what AI can't fix in sales.",

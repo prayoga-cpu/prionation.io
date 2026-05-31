@@ -704,4 +704,204 @@ export const pagesFr: LocalePages = {
       ],
     },
   },
+
+  showcases: {
+    "epidom-logistics-france": {
+      navLabel: "Epidom",
+      seoTitle: "Epidom — opérations d'inventaire, France · PRIONATION",
+      metaDescription:
+        "Comment PRIONATION a remplacé le suivi d'inventaire manuel multi-sites par un système de production centralisé pour Epidom, un opérateur F&B européen — et la leçon transférable.",
+      badge: "Réalisation · 🇫🇷 France · F&B",
+      tldr: "Epidom, un opérateur F&B européen, gérait son inventaire multi-sites par des processus manuels qui ne passaient pas à l'échelle. PRIONATION a construit un système de production centralisé pour suivre l'inventaire entre les sites et réduire la charge opérationnelle de le faire à la main. Voici le profil de la mission et la leçon transférable pour les opérateurs multi-sites.",
+      h1: "Epidom : centraliser les opérations d'inventaire multi-sites",
+      intro: [
+        "Epidom est un opérateur européen de l'agroalimentaire qui gère son inventaire sur plusieurs sites. Comme la plupart des opérateurs multi-sites, sa contrainte n'était pas la stratégie — c'était le processus manuel et fragmenté pour garder le stock visible et exact partout à la fois.",
+        "Cette page profile la mission : le goulot d'étranglement opérationnel, l'approche de build de PRIONATION, ce qui a changé, et la leçon qui se transfère à toute opération multi-sites. Les résultats chiffrés seront publiés à mesure qu'ils sont finalisés.",
+      ],
+      sections: [
+        {
+          h2: "Le goulot d'étranglement",
+          body: [
+            "L'inventaire multi-sites fait à la main échoue de façon prévisible : chaque site garde sa propre vue, les chiffres dérivent, et les réconcilier consomme un temps qui croît avec chaque nouveau site. Le coût n'est pas un grand échec mais une taxe opérationnelle constante — surcharge, ruptures de stock, et décisions prises sur des données périmées.",
+            "Pour Epidom, le goulot était exactement cela : un processus de suivi manuel et multi-sites qui ne pouvait suivre le rythme de l'opération.",
+          ],
+        },
+        {
+          h2: "Comment PRIONATION a abordé le build",
+          body: [
+            "Le travail a suivi la méthode standard : cartographier l'opération avant de construire, définir en termes mesurables ce qu'est une vue d'inventaire correcte et à jour, et construire le plus petit système de production qui la délivre — un suivi centralisé qui remplace le processus manuel au lieu de s'y superposer.",
+            "Comme pour chaque mission, le système a été construit pour être possédé et exploité par le client, afin que la capacité reste en interne après livraison.",
+          ],
+        },
+        {
+          h2: "Ce qui a changé",
+          body: [
+            "Le processus manuel, site par site, a été remplacé par un système centralisé unique, supprimant la charge de réconciliation et donnant à l'opération une vue exacte de l'inventaire entre les sites. Selon le résumé public du projet, cela a réduit la charge opérationnelle.",
+            "Les métriques détaillées avant/après sont en préparation pour publication et apparaîtront ici et sur la page de transparence.",
+          ],
+        },
+        {
+          h2: "La leçon transférable",
+          body: [
+            "La leçon se généralise à tout opérateur multi-sites : le premier build au ROI le plus élevé est rarement le plus spectaculaire — c'est celui qui supprime la taxe de réconciliation manuelle qui croît avec chaque site. Centralisez d'abord la source de vérité ; tout le reste se compose à partir de là.",
+            "Si votre opération gère des chiffres critiques dans des tableurs que chaque site maintient séparément, c'est généralement le goulot à cartographier en premier.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Qu'a construit PRIONATION pour Epidom ?",
+          a: "Un système de gestion d'inventaire centralisé pour un opérateur F&B européen, conçu pour le suivi multi-sites, remplaçant les processus manuels par un système de production unique qui a réduit la charge opérationnelle.",
+        },
+        {
+          q: "Quel secteur et quel marché est Epidom ?",
+          a: "Agroalimentaire, opérant en France et en Europe. La mission portait sur les opérations d'inventaire multi-sites.",
+        },
+        {
+          q: "Où sont les résultats et métriques détaillés ?",
+          a: "Les résultats chiffrés avant/après sont en préparation et seront publiés ici et sur la page de transparence. Ce profil décrit la mission et la leçon transférable.",
+        },
+        {
+          q: "Quelle est la leçon transférable pour d'autres opérateurs ?",
+          a: "Pour les opérations multi-sites, le premier build au ROI le plus élevé est généralement celui qui supprime la taxe de réconciliation manuelle qui croît avec chaque site — centralisez la source de vérité avant tout.",
+        },
+        {
+          q: "Comment démarrerait un build similaire ?",
+          a: "Par un Diagnostic de deux semaines qui cartographie le goulot opérationnel et définit la cible mesurable avant de construire le moindre système.",
+        },
+      ],
+    },
+
+    "expeditoo-marketplace-france": {
+      navLabel: "Expeditoo",
+      seoTitle: "Expeditoo — marketplace logistique, France · PRIONATION",
+      metaDescription:
+        "Comment PRIONATION a conçu une marketplace logistique et d'enchères pour Expeditoo — combinant enchères et suivi d'expédition dans un seul système de production — et la leçon transférable.",
+      badge: "Réalisation · 🇫🇷 France · Marketplace",
+      tldr: "Expeditoo avait besoin d'une seule application combinant des enchères de type vente aux enchères avec le suivi d'expédition — deux systèmes complexes que la plupart des équipes construisent séparément. PRIONATION les a conçus en une seule marketplace de production. Cette page profile la mission et la leçon pour les opérateurs de plateformes à deux faces.",
+      h1: "Expeditoo : une marketplace logistique avec enchères et suivi dans un seul système",
+      intro: [
+        "Expeditoo est une marketplace logistique française qui combine la mécanique d'enchères avec le suivi d'expédition. Le difficile dans une telle plateforme n'est aucune des deux fonctionnalités seule — c'est de faire fonctionner enchères et suivi opérationnel comme un seul système cohérent plutôt que deux assemblés.",
+        "Cette page profile la mission : le goulot, l'approche de build, et la leçon transférable pour quiconque construit une plateforme logistique à deux faces. Les résultats chiffrés sont publiés une fois finalisés.",
+      ],
+      sections: [
+        {
+          h2: "Le goulot d'étranglement",
+          body: [
+            "Une marketplace logistique porte une complexité à deux faces : une couche d'enchères où le prix se découvre, et une couche opérationnelle où les expéditions sont suivies jusqu'à leur terme. Construites séparément, les deux divergent — la marketplace promet ce que l'opérationnel ne peut livrer de façon fiable, et les données ne concordent jamais.",
+            "Pour Expeditoo, le défi était de les unifier en une seule application avec une logique métier cohérente des deux côtés.",
+          ],
+        },
+        {
+          h2: "Comment PRIONATION a abordé le build",
+          body: [
+            "L'approche a été de traiter enchères et suivi comme un seul domaine avec une seule source de vérité, pas deux intégrations. Cela signifie définir d'abord le modèle de données partagé, puis construire les flux d'enchères et de suivi par-dessus pour qu'ils restent cohérents par construction.",
+            "Le résultat a été livré comme un système de production que le client possède — full-stack, gérant la logique métier complexe qu'exige une plateforme logistique à deux faces.",
+          ],
+        },
+        {
+          h2: "Ce qui a changé",
+          body: [
+            "Au lieu de deux systèmes à réconcilier, Expeditoo exploite une seule application où une enchère et l'expédition qu'elle produit partagent le même enregistrement. Le résumé public du projet le décrit comme démontrant une capacité full-stack à travers une logique métier complexe.",
+            "Les métriques opérationnelles sont en préparation pour publication et apparaîtront ici et sur la page de transparence.",
+          ],
+        },
+        {
+          h2: "La leçon transférable",
+          body: [
+            "Pour les plateformes à deux faces, la leçon est structurelle : modélisez le domaine partagé avant de construire l'un ou l'autre côté. L'essentiel de la douleur des marketplaces vient d'un système d'enchères et d'un système d'opérations construits séparément et n'ayant jamais convenu des données. Une seule source de vérité supprime toute une catégorie de problèmes ultérieurs.",
+            "Si les deux faces de votre plateforme se disputent sur ce qui s'est passé, le correctif est généralement en amont dans le modèle de données, pas dans l'une ou l'autre fonctionnalité.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Qu'a construit PRIONATION pour Expeditoo ?",
+          a: "Une marketplace logistique et d'enchères combinant la mécanique d'enchères et le suivi d'expédition en une seule application de production avec une logique métier cohérente des deux côtés.",
+        },
+        {
+          q: "Qu'est-ce qui rend une marketplace logistique difficile à construire ?",
+          a: "La complexité à deux faces : une couche d'enchères et une couche de suivi opérationnel qui, construites séparément, divergent. Le difficile est d'en faire un seul système cohérent avec une source de vérité partagée.",
+        },
+        {
+          q: "Où sont les métriques détaillées ?",
+          a: "Les résultats opérationnels sont en préparation et seront publiés ici et sur la page de transparence. Ce profil décrit la mission et la leçon transférable.",
+        },
+        {
+          q: "Quelle est la leçon transférable ?",
+          a: "Pour toute plateforme à deux faces, modélisez le domaine partagé avant de construire l'un ou l'autre côté — l'essentiel de la douleur des marketplaces vient de deux systèmes qui n'ont jamais convenu des données.",
+        },
+        {
+          q: "Comment démarrerait un build similaire ?",
+          a: "Par un Diagnostic de deux semaines pour cartographier le domaine et définir le modèle de données partagé avant de construire la moindre fonctionnalité.",
+        },
+      ],
+    },
+
+    "lead-agent-real-estate-australia": {
+      navLabel: "The Lead Agent",
+      seoTitle: "The Lead Agent — génération de leads immobiliers, Australie · PRIONATION",
+      metaDescription:
+        "Comment PRIONATION a construit une plateforme de génération de leads et de prise de rendez-vous pour The Lead Agent, automatisant la gestion du pipeline pour les agents immobiliers australiens — et la leçon transférable.",
+      badge: "Réalisation · 🇦🇺 Australie · Immobilier",
+      tldr: "The Lead Agent, une opération immobilière australienne, gérait la génération de leads et la prise de rendez-vous par un travail de pipeline manuel qui plafonnait le nombre d'agents qu'elle pouvait soutenir. PRIONATION a construit une plateforme de production qui automatise le pipeline. Cette page profile la mission et la leçon pour les opérateurs orientés vente.",
+      h1: "The Lead Agent : automatiser le pipeline de leads immobiliers",
+      intro: [
+        "The Lead Agent est une opération immobilière australienne dont la croissance était limitée par le travail manuel de génération, de qualification et de prise de rendez-vous des leads. Dans les entreprises orientées vente, ce travail de pipeline est à la fois essentiel et la première chose qui cesse de passer à l'échelle.",
+        "Cette page profile la mission : le goulot, le build, et la leçon transférable pour tout opérateur dont la croissance est bridée par une gestion manuelle du pipeline. Les résultats chiffrés sont publiés une fois finalisés.",
+      ],
+      sections: [
+        {
+          h2: "Le goulot d'étranglement",
+          body: [
+            "La génération de leads et la prise de rendez-vous faites à la main ont un plafond dur : chaque agent supplémentaire multiplie la coordination manuelle, et la qualité chute précisément quand le volume monte. La contrainte n'est pas l'effort — c'est que le pipeline ne passe pas à l'échelle sans système pour le faire tourner.",
+            "Pour The Lead Agent, le goulot était ce pipeline manuel, qui plafonnait le nombre d'agents ambitieux que l'opération pouvait soutenir à la fois.",
+          ],
+        },
+        {
+          h2: "Comment PRIONATION a abordé le build",
+          body: [
+            "Le build a ciblé le pipeline comme l'opération, pas la génération de leads comme une fonctionnalité : une plateforme web orientée client qui automatise la gestion du pipeline de bout en bout, pour que la coordination autrefois manuelle devienne systématique. La cible a été définie avant le build — à quoi ressemble un pipeline correctement géré — et le système construit pour la délivrer.",
+            "Elle a été livrée comme une plateforme de production que le client possède et exploite sur le marché australien.",
+          ],
+        },
+        {
+          h2: "Ce qui a changé",
+          body: [
+            "La coordination manuelle du pipeline a été remplacée par une plateforme qui l'automatise, augmentant le nombre d'agents que l'opération peut soutenir sans hausse proportionnelle du travail manuel. Le résumé public du projet décrit une plateforme complète de génération de leads et de prise de rendez-vous qui automatise la gestion du pipeline.",
+            "Les métriques de conversion et de débit sont en préparation pour publication et apparaîtront ici et sur la page de transparence.",
+          ],
+        },
+        {
+          h2: "La leçon transférable",
+          body: [
+            "La leçon pour les opérateurs orientés vente : le goulot est généralement le pipeline, pas les leads. Générer plus de leads dans un pipeline manuel ne fait que déplacer le goulot en aval. Automatiser la coordination — qualification et prise de rendez-vous — est ce qui augmente réellement la capacité.",
+            "Et il y a une limite honnête : un système relève le plafond sur le volume et la cohérence du pipeline, mais il ne remplace pas le jugement d'un bon agent. Le gain est de supprimer la coordination manuelle, pas la relation humaine.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Qu'a construit PRIONATION pour The Lead Agent ?",
+          a: "Une plateforme complète de génération de leads et de prise de rendez-vous — un système web orienté client qui automatise la gestion du pipeline pour les agents immobiliers opérant à travers l'Australie.",
+        },
+        {
+          q: "Quel était le goulot opérationnel ?",
+          a: "Une génération de leads et une prise de rendez-vous manuelles qui ne passaient pas à l'échelle : chaque agent supplémentaire multipliait la coordination manuelle, plafonnant le nombre que l'opération pouvait soutenir.",
+        },
+        {
+          q: "Où sont les métriques de conversion détaillées ?",
+          a: "Les résultats de conversion et de débit sont en préparation et seront publiés ici et sur la page de transparence. Ce profil décrit la mission et la leçon transférable.",
+        },
+        {
+          q: "Quelle est la leçon transférable pour les équipes de vente ?",
+          a: "Le goulot est généralement le pipeline, pas les leads. Automatiser la qualification et la prise de rendez-vous augmente la capacité ; générer plus de leads dans un pipeline manuel ne fait que déplacer le goulot en aval.",
+        },
+        {
+          q: "Qu'est-ce que l'automatisation ne peut pas corriger ici ?",
+          a: "Elle relève le plafond sur le volume et la cohérence du pipeline mais ne remplace pas le jugement d'un bon agent. Le gain est de supprimer la coordination manuelle, pas la relation humaine.",
+        },
+      ],
+    },
+  },
 };

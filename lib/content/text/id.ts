@@ -704,4 +704,204 @@ export const pagesId: LocalePages = {
       ],
     },
   },
+
+  showcases: {
+    "epidom-logistics-france": {
+      navLabel: "Epidom",
+      seoTitle: "Epidom — operasi inventaris, Prancis · PRIONATION",
+      metaDescription:
+        "Bagaimana PRIONATION mengganti pelacakan inventaris manual multi-lokasi dengan sistem produksi terpusat untuk Epidom, operator F&B Eropa — dan pelajaran yang dapat dialihkan.",
+      badge: "Showcase · 🇫🇷 Prancis · F&B",
+      tldr: "Epidom, operator F&B Eropa, menjalankan inventaris multi-lokasi dengan proses manual yang tak menskala. PRIONATION membangun sistem produksi terpusat untuk melacak inventaris antar lokasi dan memangkas beban operasional melakukannya secara manual. Ini profil proyek dan pelajaran yang dapat dialihkan untuk operator multi-lokasi.",
+      h1: "Epidom: memusatkan operasi inventaris multi-lokasi",
+      intro: [
+        "Epidom adalah operator makanan dan minuman Eropa yang menjalankan inventaris di banyak lokasi. Seperti kebanyakan operator multi-lokasi, kendalanya bukan strategi — melainkan proses manual dan terfragmentasi untuk menjaga stok terlihat dan akurat di semua tempat sekaligus.",
+        "Halaman ini memprofilkan proyek: hambatan operasional, bagaimana PRIONATION membangun, apa yang berubah, dan pelajaran yang dialihkan ke operasi multi-lokasi mana pun. Hasil terkuantifikasi akan dipublikasikan begitu difinalkan.",
+      ],
+      sections: [
+        {
+          h2: "Hambatan",
+          body: [
+            "Inventaris multi-lokasi yang dikerjakan manual gagal dengan cara yang dapat diprediksi: tiap lokasi punya pandangannya sendiri, angka-angka menyimpang, dan merekonsiliasinya menghabiskan waktu yang membengkak seiring tiap lokasi baru. Biayanya bukan satu kegagalan besar melainkan pajak operasional konstan — beban, kehabisan stok, dan keputusan atas data usang.",
+            "Bagi Epidom, hambatannya persis ini: proses pelacakan manual multi-lokasi yang tak bisa mengimbangi laju operasi.",
+          ],
+        },
+        {
+          h2: "Bagaimana PRIONATION membangun",
+          body: [
+            "Pekerjaan mengikuti metode standar: memetakan operasi sebelum membangun, mendefinisikan apa arti pandangan inventaris yang benar dan terkini secara terukur, dan membangun sistem produksi terkecil yang memberikannya — pelacakan terpusat yang menggantikan proses manual alih-alih menumpuk di atasnya.",
+            "Seperti tiap proyek, sistem dibangun untuk dimiliki dan dioperasikan klien, sehingga kapabilitasnya tetap internal setelah pengiriman.",
+          ],
+        },
+        {
+          h2: "Apa yang berubah",
+          body: [
+            "Proses manual per lokasi diganti satu sistem terpusat, menghapus beban rekonsiliasi dan memberi operasi satu pandangan akurat atas inventaris antar lokasi. Dalam kata-kata ringkasan proyek publik, ia memangkas beban operasional.",
+            "Metrik sebelum-sesudah yang terperinci sedang disiapkan untuk publikasi dan akan muncul di sini dan di halaman transparansi.",
+          ],
+        },
+        {
+          h2: "Pelajaran yang dapat dialihkan",
+          body: [
+            "Pelajaran ini berlaku umum untuk operator multi-lokasi mana pun: build pertama dengan ROI tertinggi jarang yang mencolok — melainkan yang menghapus pajak rekonsiliasi manual yang tumbuh seiring tiap lokasi. Pusatkan sumber kebenaran dulu; selebihnya berlipat dari situ.",
+            "Jika operasi Anda menjalankan angka kritis di spreadsheet yang dipelihara terpisah tiap lokasi, itu biasanya hambatan yang layak dipetakan pertama.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Apa yang dibangun PRIONATION untuk Epidom?",
+          a: "Sistem manajemen inventaris terpusat untuk operator F&B Eropa, dirancang untuk pelacakan multi-lokasi, mengganti proses manual dengan satu sistem produksi yang memangkas beban operasional.",
+        },
+        {
+          q: "Industri dan pasar apa Epidom?",
+          a: "Makanan dan minuman, beroperasi di Prancis dan Eropa. Proyek ini menangani operasi inventaris multi-lokasi.",
+        },
+        {
+          q: "Di mana hasil dan metrik terperinci?",
+          a: "Hasil terkuantifikasi sebelum-sesudah sedang disiapkan dan akan dipublikasikan di sini dan di halaman transparansi. Profil ini menjelaskan proyek dan pelajaran yang dapat dialihkan.",
+        },
+        {
+          q: "Apa pelajaran yang dapat dialihkan untuk operator lain?",
+          a: "Untuk operasi multi-lokasi, build pertama dengan ROI tertinggi biasanya yang menghapus pajak rekonsiliasi manual yang tumbuh seiring tiap lokasi — pusatkan sumber kebenaran sebelum apa pun.",
+        },
+        {
+          q: "Bagaimana build serupa dimulai?",
+          a: "Dengan Diagnostic dua minggu yang memetakan hambatan operasional dan mendefinisikan target terukur sebelum sistem apa pun dibangun.",
+        },
+      ],
+    },
+
+    "expeditoo-marketplace-france": {
+      navLabel: "Expeditoo",
+      seoTitle: "Expeditoo — marketplace logistik, Prancis · PRIONATION",
+      metaDescription:
+        "Bagaimana PRIONATION merekayasa marketplace logistik dan lelang untuk Expeditoo — menggabungkan penawaran dan pelacakan pengiriman dalam satu sistem produksi — dan pelajaran yang dapat dialihkan.",
+      badge: "Showcase · 🇫🇷 Prancis · Marketplace",
+      tldr: "Expeditoo butuh satu aplikasi yang menggabungkan penawaran ala lelang dengan pelacakan pengiriman — dua sistem kompleks yang kebanyakan tim bangun terpisah. PRIONATION merekayasanya menjadi satu marketplace produksi. Halaman ini memprofilkan proyek dan pelajaran bagi operator platform dua sisi.",
+      h1: "Expeditoo: marketplace logistik dengan penawaran dan pelacakan dalam satu sistem",
+      intro: [
+        "Expeditoo adalah marketplace logistik Prancis yang menggabungkan mekanika lelang dengan pelacakan pengiriman. Bagian sulit dari platform seperti itu bukan salah satu fitur saja — melainkan membuat penawaran dan pelacakan operasional bekerja sebagai satu sistem koheren alih-alih dua yang ditempel.",
+        "Halaman ini memprofilkan proyek: hambatan, pendekatan build, dan pelajaran yang dapat dialihkan bagi siapa pun yang membangun platform logistik dua sisi. Hasil terkuantifikasi dipublikasikan setelah difinalkan.",
+      ],
+      sections: [
+        {
+          h2: "Hambatan",
+          body: [
+            "Marketplace logistik membawa kompleksitas dua sisi: lapisan penawaran tempat harga ditemukan, dan lapisan operasional tempat pengiriman dilacak hingga selesai. Dibangun terpisah, keduanya menyimpang — marketplace menjanjikan apa yang tak bisa diberikan operasi dengan andal, dan datanya tak pernah cocok.",
+            "Bagi Expeditoo, tantangannya menyatukannya menjadi satu aplikasi dengan logika bisnis konsisten di kedua sisi.",
+          ],
+        },
+        {
+          h2: "Bagaimana PRIONATION membangun",
+          body: [
+            "Pendekatannya memperlakukan penawaran dan pelacakan sebagai satu domain dengan satu sumber kebenaran, bukan dua integrasi. Itu berarti mendefinisikan model data bersama dulu, lalu membangun alur penawaran dan pelacakan di atasnya agar konsisten secara konstruksi.",
+            "Hasilnya dikirim sebagai sistem produksi yang dimiliki klien — full-stack, menangani logika bisnis kompleks yang dibutuhkan platform logistik dua sisi.",
+          ],
+        },
+        {
+          h2: "Apa yang berubah",
+          body: [
+            "Alih-alih dua sistem untuk direkonsiliasi, Expeditoo menjalankan satu aplikasi tempat sebuah penawaran dan pengiriman yang dihasilkannya berbagi catatan yang sama. Ringkasan proyek publik menggambarkannya sebagai menunjukkan kapabilitas full-stack pada logika bisnis kompleks.",
+            "Metrik operasional sedang disiapkan untuk publikasi dan akan muncul di sini dan di halaman transparansi.",
+          ],
+        },
+        {
+          h2: "Pelajaran yang dapat dialihkan",
+          body: [
+            "Untuk platform dua sisi, pelajarannya struktural: modelkan domain bersama sebelum membangun salah satu sisi. Sebagian besar kepedihan marketplace berasal dari sistem penawaran dan sistem operasi yang dibangun terpisah dan tak pernah menyepakati data. Satu sumber kebenaran menghapus seluruh kategori masalah di kemudian hari.",
+            "Jika dua sisi platform Anda berdebat tentang apa yang terjadi, perbaikannya biasanya di hulu pada model data, bukan di salah satu fitur.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Apa yang dibangun PRIONATION untuk Expeditoo?",
+          a: "Marketplace logistik dan lelang yang menggabungkan mekanika penawaran dan pelacakan pengiriman menjadi satu aplikasi produksi dengan logika bisnis konsisten di kedua sisi.",
+        },
+        {
+          q: "Apa yang membuat marketplace logistik sulit dibangun?",
+          a: "Kompleksitas dua sisi: lapisan penawaran dan lapisan pelacakan operasional yang, jika dibangun terpisah, menyimpang. Bagian sulitnya membuat keduanya satu sistem koheren dengan sumber kebenaran bersama.",
+        },
+        {
+          q: "Di mana metrik terperinci?",
+          a: "Hasil operasional sedang disiapkan dan akan dipublikasikan di sini dan di halaman transparansi. Profil ini menjelaskan proyek dan pelajaran yang dapat dialihkan.",
+        },
+        {
+          q: "Apa pelajaran yang dapat dialihkan?",
+          a: "Untuk platform dua sisi mana pun, modelkan domain bersama sebelum membangun salah satu sisi — sebagian besar kepedihan marketplace berasal dari dua sistem yang tak pernah menyepakati data.",
+        },
+        {
+          q: "Bagaimana build serupa dimulai?",
+          a: "Dengan Diagnostic dua minggu untuk memetakan domain dan mendefinisikan model data bersama sebelum fitur apa pun dibangun.",
+        },
+      ],
+    },
+
+    "lead-agent-real-estate-australia": {
+      navLabel: "The Lead Agent",
+      seoTitle: "The Lead Agent — lead gen real estate, Australia · PRIONATION",
+      metaDescription:
+        "Bagaimana PRIONATION membangun platform generasi lead dan penjadwalan janji untuk The Lead Agent, mengotomatiskan manajemen pipeline bagi agen properti Australia — dan pelajaran yang dapat dialihkan.",
+      badge: "Showcase · 🇦🇺 Australia · Real estate",
+      tldr: "The Lead Agent, operasi real estate Australia, menjalankan generasi lead dan penjadwalan janji lewat pekerjaan pipeline manual yang membatasi berapa banyak agen yang bisa didukung. PRIONATION membangun platform produksi yang mengotomatiskan pipeline. Halaman ini memprofilkan proyek dan pelajaran bagi operator yang digerakkan penjualan.",
+      h1: "The Lead Agent: mengotomatiskan pipeline lead real estate",
+      intro: [
+        "The Lead Agent adalah operasi real estate Australia yang pertumbuhannya dibatasi oleh pekerjaan manual menghasilkan, mengkualifikasi, dan menjadwalkan lead. Dalam bisnis yang digerakkan penjualan, pekerjaan pipeline ini sekaligus esensial dan hal pertama yang gagal menskala.",
+        "Halaman ini memprofilkan proyek: hambatan, build, dan pelajaran yang dapat dialihkan bagi operator mana pun yang pertumbuhannya dibatasi manajemen pipeline manual. Hasil terkuantifikasi dipublikasikan setelah difinalkan.",
+      ],
+      sections: [
+        {
+          h2: "Hambatan",
+          body: [
+            "Generasi lead dan penjadwalan janji yang dikerjakan manual punya plafon keras: tiap agen tambahan melipatgandakan koordinasi manual, dan kualitas merosot persis saat volume naik. Kendalanya bukan usaha — melainkan pipeline tak menskala tanpa sistem untuk menjalankannya.",
+            "Bagi The Lead Agent, hambatannya pipeline manual ini, yang membatasi berapa banyak agen ambisius yang bisa didukung operasi sekaligus.",
+          ],
+        },
+        {
+          h2: "Bagaimana PRIONATION membangun",
+          body: [
+            "Build menargetkan pipeline sebagai operasi, bukan generasi lead sebagai fitur: platform web menghadap klien yang mengotomatiskan manajemen pipeline ujung ke ujung, sehingga koordinasi yang manual menjadi sistematis. Targetnya didefinisikan sebelum build — seperti apa pipeline yang dikelola dengan benar — dan sistemnya dibangun untuk memberikannya.",
+            "Ia dikirim sebagai platform produksi yang dimiliki dan dioperasikan klien di seluruh pasar Australia.",
+          ],
+        },
+        {
+          h2: "Apa yang berubah",
+          body: [
+            "Koordinasi pipeline manual diganti platform yang mengotomatiskannya, menaikkan jumlah agen yang bisa didukung operasi tanpa kenaikan kerja manual yang proporsional. Ringkasan proyek publik menggambarkan platform generasi lead dan penjadwalan janji lengkap yang mengotomatiskan manajemen pipeline.",
+            "Metrik konversi dan throughput sedang disiapkan untuk publikasi dan akan muncul di sini dan di halaman transparansi.",
+          ],
+        },
+        {
+          h2: "Pelajaran yang dapat dialihkan",
+          body: [
+            "Pelajaran bagi operator yang digerakkan penjualan: hambatannya biasanya pipeline, bukan lead-nya. Menghasilkan lebih banyak lead ke pipeline manual hanya memindahkan hambatan ke hilir. Mengotomatiskan koordinasi — kualifikasi dan penjadwalan — yang benar-benar menaikkan kapasitas.",
+            "Dan ada batas yang jujur: sistem menaikkan plafon volume dan konsistensi pipeline, tetapi tak menggantikan pertimbangan agen yang baik. Kemenangannya menghapus koordinasi manual, bukan hubungan manusia.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Apa yang dibangun PRIONATION untuk The Lead Agent?",
+          a: "Platform generasi lead dan penjadwalan janji lengkap — sistem web menghadap klien yang mengotomatiskan manajemen pipeline bagi agen properti yang beroperasi di seluruh Australia.",
+        },
+        {
+          q: "Apa hambatan operasionalnya?",
+          a: "Generasi lead dan penjadwalan janji manual yang tak menskala: tiap agen tambahan melipatgandakan koordinasi manual, membatasi berapa banyak yang bisa didukung operasi.",
+        },
+        {
+          q: "Di mana metrik konversi terperinci?",
+          a: "Hasil konversi dan throughput sedang disiapkan dan akan dipublikasikan di sini dan di halaman transparansi. Profil ini menjelaskan proyek dan pelajaran yang dapat dialihkan.",
+        },
+        {
+          q: "Apa pelajaran yang dapat dialihkan untuk tim penjualan?",
+          a: "Hambatannya biasanya pipeline, bukan lead. Mengotomatiskan kualifikasi dan penjadwalan menaikkan kapasitas; menghasilkan lebih banyak lead ke pipeline manual hanya memindahkan hambatan ke hilir.",
+        },
+        {
+          q: "Apa yang tak bisa diperbaiki otomatisasi di sini?",
+          a: "Ia menaikkan plafon volume dan konsistensi pipeline tetapi tak menggantikan pertimbangan agen yang baik. Kemenangannya menghapus koordinasi manual, bukan hubungan manusia.",
+        },
+      ],
+    },
+  },
 };

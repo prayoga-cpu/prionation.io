@@ -704,4 +704,204 @@ export const pagesEn: LocalePages = {
       ],
     },
   },
+
+  showcases: {
+    "epidom-logistics-france": {
+      navLabel: "Epidom",
+      seoTitle: "Epidom — inventory operations, France · PRIONATION",
+      metaDescription:
+        "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
+      badge: "Showcase · 🇫🇷 France · F&B",
+      tldr: "Epidom, a European F&B operator, ran multi-location inventory on manual processes that did not scale. PRIONATION built a centralised production system to track inventory across locations and cut the operational overhead of doing it by hand. This is the profile of the engagement and the transferable lesson for multi-site operators.",
+      h1: "Epidom: centralising multi-location inventory operations",
+      intro: [
+        "Epidom is a European food-and-beverage operator running inventory across multiple locations. Like most multi-site operators, its constraint was not strategy — it was the manual, fragmented process of keeping stock visible and accurate everywhere at once.",
+        "This page profiles the engagement: the operational bottleneck, how PRIONATION approached the build, what changed, and the lesson that transfers to any multi-location operation. Quantified results will be published as they are finalised.",
+      ],
+      sections: [
+        {
+          h2: "The bottleneck",
+          body: [
+            "Multi-location inventory done manually fails in a predictable way: each site keeps its own view, the numbers drift, and reconciling them consumes time that scales with every new location. The cost is not one big failure but a constant operational tax — overhead, stockouts, and decisions made on stale data.",
+            "For Epidom the bottleneck was exactly this: a manual, multi-location tracking process that could not keep pace with the operation.",
+          ],
+        },
+        {
+          h2: "How PRIONATION approached the build",
+          body: [
+            "The work followed the standard method: map the operation before building, define what a correct, current inventory view means in measurable terms, and build the smallest production system that delivers it — centralised tracking that replaces the manual process rather than layering on top of it.",
+            "As with every engagement, the system was built to be owned and operated by the client, so the capability stays in-house after delivery.",
+          ],
+        },
+        {
+          h2: "What it changed",
+          body: [
+            "The manual, per-location process was replaced by a single centralised system, removing the reconciliation overhead and giving the operation one accurate view of inventory across sites. In the words of the public project summary, it cut operational overhead.",
+            "The detailed before-and-after metrics are being prepared for publication and will appear here and on the transparency page.",
+          ],
+        },
+        {
+          h2: "The transferable lesson",
+          body: [
+            "The lesson generalises to any multi-site operator: the highest-ROI first build is rarely the flashy one — it is the one that removes the manual reconciliation tax that grows with every location. Centralise the source of truth first; everything else compounds from there.",
+            "If your operation runs critical numbers in spreadsheets that each location maintains separately, that is usually the bottleneck worth mapping first.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "What did PRIONATION build for Epidom?",
+          a: "A centralised inventory management system for a European F&B operator, designed for multi-location tracking, replacing manual processes with a single production system that cut operational overhead.",
+        },
+        {
+          q: "What industry and market is Epidom?",
+          a: "Food and beverage, operating in France and Europe. The engagement addressed multi-location inventory operations.",
+        },
+        {
+          q: "Where are the detailed results and metrics?",
+          a: "Quantified before-and-after results are being prepared and will be published here and on the transparency page. This profile describes the engagement and the transferable lesson.",
+        },
+        {
+          q: "What is the transferable lesson for other operators?",
+          a: "For multi-site operations, the first build with the highest ROI is usually the one that removes the manual reconciliation tax that grows with every location — centralise the source of truth before anything else.",
+        },
+        {
+          q: "How would a similar build start?",
+          a: "With a two-week Diagnostic that maps the operational bottleneck and defines the measurable target before any system is built.",
+        },
+      ],
+    },
+
+    "expeditoo-marketplace-france": {
+      navLabel: "Expeditoo",
+      seoTitle: "Expeditoo — logistics marketplace, France · PRIONATION",
+      metaDescription:
+        "How PRIONATION engineered a logistics and auction marketplace for Expeditoo — combining bidding and shipment tracking in one production system — and the transferable lesson.",
+      badge: "Showcase · 🇫🇷 France · Marketplace",
+      tldr: "Expeditoo needed a single application that combined auction-style bidding with shipment tracking — two complex systems most teams build separately. PRIONATION engineered them into one production marketplace. This page profiles the engagement and the lesson it holds for two-sided platform operators.",
+      h1: "Expeditoo: a logistics marketplace with bidding and tracking in one system",
+      intro: [
+        "Expeditoo is a French logistics marketplace that combines auction mechanics with shipment tracking. The hard part of such a platform is not either feature alone — it is making bidding and operational tracking work as one coherent system rather than two bolted together.",
+        "This page profiles the engagement: the bottleneck, the build approach, and the transferable lesson for anyone building a two-sided logistics platform. Quantified results publish as finalised.",
+      ],
+      sections: [
+        {
+          h2: "The bottleneck",
+          body: [
+            "A logistics marketplace carries two-sided complexity: a bidding layer where price is discovered, and an operational layer where shipments are tracked to completion. Built separately, the two drift apart — the marketplace promises what operations cannot reliably deliver, and the data never lines up.",
+            "For Expeditoo the challenge was unifying these into a single application with consistent business logic across both.",
+          ],
+        },
+        {
+          h2: "How PRIONATION approached the build",
+          body: [
+            "The approach was to treat bidding and tracking as one domain with one source of truth, not two integrations. That means defining the shared data model first, then building the bidding and tracking flows on top of it so they stay consistent by construction.",
+            "The result was delivered as a production system the client owns — full-stack, handling the complex business logic a two-sided logistics platform requires.",
+          ],
+        },
+        {
+          h2: "What it changed",
+          body: [
+            "Instead of two systems to reconcile, Expeditoo runs one application where a bid and the shipment it produces share the same record. The public project summary describes it as demonstrating full-stack capability across complex business logic.",
+            "Operational metrics are being prepared for publication and will appear here and on the transparency page.",
+          ],
+        },
+        {
+          h2: "The transferable lesson",
+          body: [
+            "For two-sided platforms the lesson is structural: model the shared domain before building either side. Most marketplace pain comes from a bidding system and an operations system that were built separately and never agreed on the data. One source of truth removes a whole category of later problems.",
+            "If your platform's two sides argue about what happened, the fix is usually upstream in the data model, not in either feature.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "What did PRIONATION build for Expeditoo?",
+          a: "A logistics and auction marketplace combining bidding mechanics and shipment tracking into a single production application with consistent business logic across both sides.",
+        },
+        {
+          q: "What makes a logistics marketplace hard to build?",
+          a: "Two-sided complexity: a bidding layer and an operational tracking layer that, built separately, drift apart. The hard part is making them one coherent system with a shared source of truth.",
+        },
+        {
+          q: "Where are the detailed metrics?",
+          a: "Operational results are being prepared and will be published here and on the transparency page. This profile describes the engagement and the transferable lesson.",
+        },
+        {
+          q: "What is the transferable lesson?",
+          a: "For any two-sided platform, model the shared domain before building either side — most marketplace pain comes from two systems that never agreed on the data.",
+        },
+        {
+          q: "How would a similar build start?",
+          a: "With a two-week Diagnostic to map the domain and define the shared data model before any feature is built.",
+        },
+      ],
+    },
+
+    "lead-agent-real-estate-australia": {
+      navLabel: "The Lead Agent",
+      seoTitle: "The Lead Agent — real estate lead gen, Australia · PRIONATION",
+      metaDescription:
+        "How PRIONATION built a lead generation and appointment-setting platform for The Lead Agent, automating pipeline management for Australian estate agents — and the transferable lesson.",
+      badge: "Showcase · 🇦🇺 Australia · Real estate",
+      tldr: "The Lead Agent, an Australian real estate operation, ran lead generation and appointment setting through manual pipeline work that capped how many agents it could support. PRIONATION built a production platform that automates the pipeline. This page profiles the engagement and the lesson for sales-driven operators.",
+      h1: "The Lead Agent: automating the real estate lead pipeline",
+      intro: [
+        "The Lead Agent is an Australian real estate operation whose growth was limited by the manual work of generating, qualifying, and booking leads. In sales-driven businesses this pipeline work is both essential and the first thing that fails to scale.",
+        "This page profiles the engagement: the bottleneck, the build, and the transferable lesson for any operator whose growth is gated by manual pipeline management. Quantified results publish as finalised.",
+      ],
+      sections: [
+        {
+          h2: "The bottleneck",
+          body: [
+            "Lead generation and appointment setting done by hand has a hard ceiling: every additional agent multiplies the manual coordination, and quality slips exactly when volume rises. The constraint is not effort — it is that the pipeline does not scale without a system to run it.",
+            "For The Lead Agent the bottleneck was this manual pipeline, which capped how many ambitious agents the operation could support at once.",
+          ],
+        },
+        {
+          h2: "How PRIONATION approached the build",
+          body: [
+            "The build targeted the pipeline as the operation, not lead generation as a feature: a client-facing web platform that automates pipeline management end to end, so coordination that was manual becomes systematic. The target was defined before the build — what a correctly managed pipeline looks like — and the system built to deliver it.",
+            "It was delivered as a production platform the client owns and operates across the Australian market.",
+          ],
+        },
+        {
+          h2: "What it changed",
+          body: [
+            "Manual pipeline coordination was replaced by a platform that automates it, raising the number of agents the operation can support without a proportional rise in manual work. The public project summary describes a full lead generation and appointment-setting platform that automates pipeline management.",
+            "Conversion and throughput metrics are being prepared for publication and will appear here and on the transparency page.",
+          ],
+        },
+        {
+          h2: "The transferable lesson",
+          body: [
+            "The lesson for sales-driven operators: the bottleneck is usually the pipeline, not the leads. Generating more leads into a manual pipeline just moves the bottleneck downstream. Automating the coordination — qualification and booking — is what actually raises capacity.",
+            "And there is an honest limit: a system raises the ceiling on pipeline volume and consistency, but it does not replace the judgement of a good agent. The win is removing the manual coordination, not the human relationship.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "What did PRIONATION build for The Lead Agent?",
+          a: "A full lead generation and appointment-setting platform — a client-facing web system that automates pipeline management for estate agents operating across Australia.",
+        },
+        {
+          q: "What was the operational bottleneck?",
+          a: "Manual lead generation and appointment setting that did not scale: every additional agent multiplied the manual coordination, capping how many the operation could support.",
+        },
+        {
+          q: "Where are the detailed conversion metrics?",
+          a: "Conversion and throughput results are being prepared and will be published here and on the transparency page. This profile describes the engagement and the transferable lesson.",
+        },
+        {
+          q: "What is the transferable lesson for sales teams?",
+          a: "The bottleneck is usually the pipeline, not the leads. Automating qualification and booking raises capacity; generating more leads into a manual pipeline just moves the bottleneck downstream.",
+        },
+        {
+          q: "What can't automation fix here?",
+          a: "It raises the ceiling on pipeline volume and consistency but does not replace a good agent's judgement. The win is removing manual coordination, not the human relationship.",
+        },
+      ],
+    },
+  },
 };
