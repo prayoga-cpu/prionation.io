@@ -904,4 +904,138 @@ export const pagesEn: LocalePages = {
       ],
     },
   },
+
+  intelligence: {
+    "ai-bottlenecks-mid-market-logistics": {
+      navLabel: "AI bottlenecks in logistics",
+      seoTitle: "AI bottlenecks in mid-market logistics · PRIONATION",
+      metaDescription:
+        "The operational bottlenecks AI consistently breaks in mid-market logistics — and the ones it can't — drawn from PRIONATION's logistics engagements.",
+      badge: "Intelligence · Logistics",
+      tldr: "In mid-market logistics, AI earns its place against a few recurring operational bottlenecks: fragmented visibility across sites and systems, manual coordination that does not scale, and decisions made on stale data. This briefing names those patterns, the architecture that addresses each, and the limits — drawn from PRIONATION's work in logistics operations and marketplaces.",
+      h1: "AI bottlenecks in mid-market logistics: what actually breaks",
+      intro: [
+        "Logistics is where operational bottlenecks are most visible, because the cost of a manual process compounds with every shipment, site, and counterparty. Mid-market operators feel this acutely: too large for spreadsheets, too specific for generic SaaS.",
+        "This briefing is a first-party view of the patterns AI consistently breaks in mid-market logistics — and the ones it does not. It draws on PRIONATION's engagements in logistics operations and marketplaces.",
+      ],
+      sections: [
+        {
+          h2: "What we see across logistics engagements",
+          body: [
+            "The same constraints recur regardless of the specific operation: visibility is fragmented across sites and tools, coordination that worked at small scale becomes a manual tax as volume grows, and the data that decisions depend on is often stale by the time it is used. None of these is a strategy problem; all of them are operational.",
+            "The common thread is that the bottleneck is rarely the absence of information — it is that the information is scattered, manual to reconcile, and late.",
+          ],
+        },
+        {
+          h2: "The patterns AI breaks",
+          body: [
+            "Three patterns recur. Fragmented visibility yields to a centralised source of truth — the single highest-leverage first build, because every downstream decision improves once the data is unified. Manual coordination yields to systematic automation of the repetitive steps, removing the tax that grows with volume. And stale-data decisions yield to instrumentation that surfaces the current state continuously rather than in periodic manual pulls.",
+            "In each case the architecture is unglamorous and specific: model the domain, centralise the truth, automate the repetitive coordination, and instrument what matters. The win comes from doing this against the one workflow that costs the most, not from a broad platform.",
+          ],
+        },
+        {
+          h2: "What AI cannot fix in logistics",
+          body: [
+            "AI does not fix a broken physical process, a counterparty who will not share data, or an operation that has not decided what 'correct' means. It removes the manual tax around a process; it does not invent the process. Where the constraint is physical or organisational, software makes it visible but cannot resolve it.",
+            "This is the honest limit: AI in logistics is leverage on a sound operation, not a substitute for one. The Diagnostic exists partly to tell operators when the bottleneck is not one AI should touch.",
+          ],
+        },
+        {
+          h2: "The transferable framework",
+          body: [
+            "For a mid-market logistics operator, the order of operations is consistent: centralise the source of truth first, automate the highest-volume manual coordination second, instrument for current-state decisions third. Each step de-risks the next, and each is bounded enough to ship in weeks.",
+            "The mistake is starting with the visible symptom — a dashboard, a forecast — before the underlying data is unified. Sequence matters more than ambition.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "What operational bottlenecks does AI break in logistics?",
+          a: "Fragmented visibility across sites and tools, manual coordination that does not scale with volume, and decisions made on stale data. Each yields to a specific, unglamorous architecture rather than a broad platform.",
+        },
+        {
+          q: "What is the highest-ROI first AI build in logistics?",
+          a: "Usually centralising the source of truth. Fragmented data is the root constraint, and every downstream decision improves once it is unified — which is why it comes first.",
+        },
+        {
+          q: "What can't AI fix in logistics operations?",
+          a: "A broken physical process, a counterparty who won't share data, or an operation that hasn't defined what 'correct' means. AI removes the manual tax around a sound process; it does not invent the process.",
+        },
+        {
+          q: "Is this based on real engagements?",
+          a: "Yes — it is a first-party view drawn from PRIONATION's logistics operations and marketplace work. Detailed per-engagement metrics are published on the showcase and transparency pages as they are finalised.",
+        },
+        {
+          q: "Where should a logistics operator start?",
+          a: "With a two-week Diagnostic that identifies which bottleneck is both highest-cost and appropriate for AI — and, just as importantly, which are not.",
+        },
+      ],
+    },
+
+    "ai-lead-generation-mid-market": {
+      navLabel: "AI for lead generation",
+      seoTitle: "AI for mid-market lead generation · PRIONATION",
+      metaDescription:
+        "What actually works when AI meets mid-market lead generation — and what it can't fix — drawn from PRIONATION's lead-gen engagement.",
+      badge: "Intelligence · Lead generation",
+      tldr: "In mid-market lead generation, AI's real leverage is on the pipeline — qualification and coordination — not on manufacturing more leads. The bottleneck is almost always the manual work between a lead and a booked conversation. This briefing names what works, what doesn't, and the transferable framework, drawn from PRIONATION's lead-gen work.",
+      h1: "AI for mid-market lead generation: what actually works",
+      intro: [
+        "Most lead-generation AI is sold as a way to produce more leads. In mid-market operations the real constraint is rarely lead volume — it is the manual pipeline that turns a lead into a qualified, booked conversation, which does not scale with headcount.",
+        "This briefing is a first-party view of where AI actually helps in mid-market lead generation, and where it does not. It draws on PRIONATION's work building a lead pipeline platform.",
+      ],
+      sections: [
+        {
+          h2: "What we see in lead-gen engagements",
+          body: [
+            "The recurring pattern is that the bottleneck sits after the lead, not before it. Teams can generate or buy leads; what caps growth is the manual coordination of qualifying them, routing them, and booking the conversation — work that multiplies with every agent and degrades when volume spikes.",
+            "More leads into that manual pipeline do not raise output; they raise the backlog. The constraint is throughput, not supply.",
+          ],
+        },
+        {
+          h2: "What AI actually does well here",
+          body: [
+            "AI's leverage is on the repetitive judgement and coordination in the pipeline: qualifying against consistent criteria, prioritising, drafting first-touch responses, and automating the scheduling handoffs. Done well, this raises the number of leads a given team can convert without a proportional rise in manual work.",
+            "The effective build targets the pipeline as a system — consistent qualification and automated coordination — rather than a single clever model bolted onto a manual process.",
+          ],
+        },
+        {
+          h2: "What AI cannot fix in lead generation",
+          body: [
+            "AI does not close deals, build trust, or replace the judgement of a strong agent in a real conversation. It raises the ceiling on how many qualified conversations reach a human; it does not have the conversation. Treating it as a salesperson rather than a pipeline is the common, expensive mistake.",
+            "It also cannot fix a weak offer or a list of poorly matched leads. Automating coordination around a bad-fit pipeline just produces bad-fit meetings faster.",
+          ],
+        },
+        {
+          h2: "The transferable framework",
+          body: [
+            "The framework for sales-driven operators: fix the pipeline before the supply. Map where leads stall between arrival and a booked conversation, automate that coordination, and keep the human where judgement matters — the conversation itself. Measure throughput of qualified conversations, not raw lead count.",
+            "Volume is a vanity metric if the pipeline cannot convert it. Capacity to convert is the number that moves the business.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Does AI generate more leads?",
+          a: "It can, but that is rarely the bottleneck in mid-market operations. The real leverage is on the pipeline — qualification and coordination — which is what actually caps how many leads a team can convert.",
+        },
+        {
+          q: "What does AI do well in lead generation?",
+          a: "Repetitive judgement and coordination: qualifying against consistent criteria, prioritising, drafting first-touch responses, and automating scheduling handoffs — raising conversion capacity without a proportional rise in manual work.",
+        },
+        {
+          q: "What can't AI fix in lead gen?",
+          a: "It does not close deals, build trust, or replace a strong agent in a real conversation. It also cannot fix a weak offer or poorly matched leads — automating a bad-fit pipeline just produces bad-fit meetings faster.",
+        },
+        {
+          q: "What should we measure?",
+          a: "Throughput of qualified conversations, not raw lead count. Volume is a vanity metric if the pipeline cannot convert it; capacity to convert is what moves the business.",
+        },
+        {
+          q: "Is this based on a real engagement?",
+          a: "Yes — a first-party view drawn from PRIONATION's lead-pipeline work. Per-engagement metrics are published on the showcase and transparency pages as finalised.",
+        },
+      ],
+    },
+  },
 };

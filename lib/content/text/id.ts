@@ -904,4 +904,138 @@ export const pagesId: LocalePages = {
       ],
     },
   },
+
+  intelligence: {
+    "ai-bottlenecks-mid-market-logistics": {
+      navLabel: "Hambatan AI di logistik",
+      seoTitle: "Hambatan AI di logistik mid-market · PRIONATION",
+      metaDescription:
+        "Hambatan operasional yang secara konsisten dibuka AI di logistik mid-market — dan yang tak bisa — diambil dari proyek logistik PRIONATION.",
+      badge: "Intelligence · Logistik",
+      tldr: "Di logistik mid-market, AI berperan melawan beberapa hambatan operasional yang berulang: visibilitas terfragmentasi antar lokasi dan sistem, koordinasi manual yang tak menskala, dan keputusan atas data usang. Briefing ini menamai pola-pola itu, arsitektur yang menangani masing-masing, dan batasnya — diambil dari pekerjaan PRIONATION di operasi logistik dan marketplace.",
+      h1: "Hambatan AI di logistik mid-market: apa yang sebenarnya rusak",
+      intro: [
+        "Logistik adalah tempat hambatan operasional paling terlihat, karena biaya proses manual berlipat di tiap pengiriman, lokasi, dan mitra. Operator mid-market merasakannya tajam: terlalu besar untuk spreadsheet, terlalu spesifik untuk SaaS generik.",
+        "Briefing ini pandangan langsung atas pola yang secara konsisten dibuka AI di logistik mid-market — dan yang tidak. Ia diambil dari proyek PRIONATION di operasi logistik dan marketplace.",
+      ],
+      sections: [
+        {
+          h2: "Apa yang kami lihat di proyek logistik",
+          body: [
+            "Kendala yang sama berulang apa pun operasinya: visibilitas terfragmentasi antar lokasi dan alat, koordinasi yang dulu berhasil di skala kecil menjadi pajak manual saat volume tumbuh, dan data yang menjadi sandaran keputusan sering usang saat dipakai. Tak satu pun masalah strategi; semuanya operasional.",
+            "Benang merahnya: hambatannya jarang ketiadaan informasi — melainkan informasi yang tersebar, manual untuk direkonsiliasi, dan terlambat.",
+          ],
+        },
+        {
+          h2: "Pola yang dibuka AI",
+          body: [
+            "Tiga pola berulang. Visibilitas terfragmentasi luruh ke sumber kebenaran terpusat — build pertama dengan daya ungkit tertinggi, karena tiap keputusan hilir membaik begitu data disatukan. Koordinasi manual luruh ke otomatisasi sistematis langkah berulang, menghapus pajak yang tumbuh seiring volume. Dan keputusan atas data usang luruh ke instrumentasi yang memunculkan keadaan terkini terus-menerus alih-alih tarikan manual berkala.",
+            "Dalam tiap kasus, arsitekturnya tak glamor dan spesifik: modelkan domain, pusatkan kebenaran, otomatiskan koordinasi berulang, dan instrumentasikan yang penting. Kemenangannya datang dari melakukannya pada satu alur kerja yang paling mahal, bukan dari platform yang luas.",
+          ],
+        },
+        {
+          h2: "Apa yang tak bisa diperbaiki AI di logistik",
+          body: [
+            "AI tak memperbaiki proses fisik yang rusak, mitra yang menolak berbagi data, atau operasi yang belum memutuskan apa arti 'benar'. Ia menghapus pajak manual di sekitar proses; ia tak menciptakan proses. Di mana kendalanya fisik atau organisasional, perangkat lunak membuatnya terlihat tetapi tak menyelesaikannya.",
+            "Inilah batas yang jujur: AI di logistik adalah daya ungkit pada operasi yang sehat, bukan pengganti. Diagnostic ada sebagian untuk memberi tahu operator kapan hambatan bukan yang seharusnya disentuh AI.",
+          ],
+        },
+        {
+          h2: "Kerangka yang dapat dialihkan",
+          body: [
+            "Untuk operator logistik mid-market, urutan operasinya konsisten: pusatkan sumber kebenaran dulu, otomatiskan koordinasi manual bervolume tertinggi kedua, instrumentasikan untuk keputusan keadaan terkini ketiga. Tiap langkah mengurangi risiko langkah berikutnya, dan masing-masing cukup berbatas untuk dikirim dalam hitungan minggu.",
+            "Kesalahannya memulai dari gejala yang terlihat — dasbor, prakiraan — sebelum data yang mendasari disatukan. Urutan lebih penting daripada ambisi.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Hambatan operasional apa yang dibuka AI di logistik?",
+          a: "Visibilitas terfragmentasi antar lokasi dan alat, koordinasi manual yang tak menskala dengan volume, dan keputusan atas data usang. Masing-masing luruh ke arsitektur spesifik dan tak glamor alih-alih platform luas.",
+        },
+        {
+          q: "Apa build AI pertama dengan ROI tertinggi di logistik?",
+          a: "Biasanya memusatkan sumber kebenaran. Data terfragmentasi adalah kendala akar, dan tiap keputusan hilir membaik begitu disatukan — itulah mengapa ia lebih dulu.",
+        },
+        {
+          q: "Apa yang tak bisa diperbaiki AI di operasi logistik?",
+          a: "Proses fisik yang rusak, mitra yang tak berbagi data, atau operasi yang belum mendefinisikan 'benar'. AI menghapus pajak manual di sekitar proses yang sehat; ia tak menciptakan prosesnya.",
+        },
+        {
+          q: "Apakah ini berdasarkan proyek nyata?",
+          a: "Ya — pandangan langsung dari pekerjaan operasi logistik dan marketplace PRIONATION. Metrik terperinci per proyek dipublikasikan di halaman showcase dan transparansi saat difinalkan.",
+        },
+        {
+          q: "Di mana operator logistik harus memulai?",
+          a: "Dengan Diagnostic dua minggu yang mengidentifikasi hambatan mana yang sekaligus paling mahal dan cocok untuk AI — dan, sama pentingnya, mana yang tidak.",
+        },
+      ],
+    },
+
+    "ai-lead-generation-mid-market": {
+      navLabel: "AI untuk generasi lead",
+      seoTitle: "AI untuk generasi lead mid-market · PRIONATION",
+      metaDescription:
+        "Apa yang sebenarnya berhasil saat AI bertemu generasi lead mid-market — dan apa yang tak bisa diperbaikinya — diambil dari proyek lead-gen PRIONATION.",
+      badge: "Intelligence · Generasi lead",
+      tldr: "Di generasi lead mid-market, daya ungkit nyata AI ada pada pipeline — kualifikasi dan koordinasi — bukan memproduksi lebih banyak lead. Hambatannya hampir selalu pekerjaan manual antara sebuah lead dan percakapan yang terjadwal. Briefing ini menamai apa yang berhasil, apa yang tidak, dan kerangka yang dapat dialihkan, diambil dari pekerjaan lead-gen PRIONATION.",
+      h1: "AI untuk generasi lead mid-market: apa yang sebenarnya berhasil",
+      intro: [
+        "Sebagian besar AI generasi lead dijual sebagai cara memproduksi lebih banyak lead. Dalam operasi mid-market, kendala nyatanya jarang volume lead — melainkan pipeline manual yang mengubah lead menjadi percakapan yang terkualifikasi dan terjadwal, yang tak menskala dengan jumlah karyawan.",
+        "Briefing ini pandangan langsung tentang di mana AI benar-benar membantu di generasi lead mid-market, dan di mana tidak. Ia diambil dari pekerjaan PRIONATION membangun platform pipeline lead.",
+      ],
+      sections: [
+        {
+          h2: "Apa yang kami lihat di proyek lead-gen",
+          body: [
+            "Pola berulangnya: hambatannya ada setelah lead, bukan sebelumnya. Tim bisa menghasilkan atau membeli lead; yang membatasi pertumbuhan adalah koordinasi manual untuk mengkualifikasi, mengarahkan, dan menjadwalkan percakapan — pekerjaan yang berlipat dengan tiap agen dan merosot saat volume melonjak.",
+            "Lebih banyak lead ke pipeline manual itu tak menaikkan keluaran; ia menaikkan tumpukan. Kendalanya throughput, bukan pasokan.",
+          ],
+        },
+        {
+          h2: "Apa yang dilakukan AI dengan baik di sini",
+          body: [
+            "Daya ungkit AI ada pada pertimbangan berulang dan koordinasi di pipeline: mengkualifikasi terhadap kriteria konsisten, memprioritaskan, mendraf respons sentuhan pertama, dan mengotomatiskan serah terima penjadwalan. Dilakukan dengan baik, ini menaikkan jumlah lead yang bisa dikonversi tim tertentu tanpa kenaikan kerja manual yang proporsional.",
+            "Build yang efektif menargetkan pipeline sebagai sistem — kualifikasi konsisten dan koordinasi otomatis — alih-alih satu model cerdas yang ditempel pada proses manual.",
+          ],
+        },
+        {
+          h2: "Apa yang tak bisa diperbaiki AI di generasi lead",
+          body: [
+            "AI tak menutup kesepakatan, membangun kepercayaan, atau menggantikan pertimbangan agen kuat dalam percakapan nyata. Ia menaikkan plafon berapa banyak percakapan terkualifikasi yang mencapai manusia; ia tak melakukan percakapannya. Memperlakukannya sebagai tenaga penjual alih-alih pipeline adalah kesalahan umum yang mahal.",
+            "Ia juga tak bisa memperbaiki penawaran lemah atau daftar lead yang buruk kecocokannya. Mengotomatiskan koordinasi di sekitar pipeline yang buruk kecocokannya hanya memproduksi pertemuan buruk kecocokan lebih cepat.",
+          ],
+        },
+        {
+          h2: "Kerangka yang dapat dialihkan",
+          body: [
+            "Kerangka untuk operator yang digerakkan penjualan: perbaiki pipeline sebelum pasokan. Petakan di mana lead macet antara kedatangan dan percakapan terjadwal, otomatiskan koordinasi itu, dan jaga manusia di tempat pertimbangan penting — percakapan itu sendiri. Ukur throughput percakapan terkualifikasi, bukan jumlah lead mentah.",
+            "Volume adalah metrik kesombongan jika pipeline tak bisa mengonversinya. Kapasitas mengonversi adalah angka yang menggerakkan bisnis.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Apakah AI menghasilkan lebih banyak lead?",
+          a: "Bisa, tetapi itu jarang hambatannya di mid-market. Daya ungkit nyatanya ada pada pipeline — kualifikasi dan koordinasi — yang membatasi berapa banyak lead yang bisa dikonversi tim.",
+        },
+        {
+          q: "Apa yang dilakukan AI dengan baik di generasi lead?",
+          a: "Pertimbangan berulang dan koordinasi: mengkualifikasi terhadap kriteria konsisten, memprioritaskan, mendraf respons sentuhan pertama, dan mengotomatiskan serah terima penjadwalan — menaikkan kapasitas konversi tanpa kenaikan kerja manual yang proporsional.",
+        },
+        {
+          q: "Apa yang tak bisa diperbaiki AI di lead-gen?",
+          a: "Ia tak menutup kesepakatan, membangun kepercayaan, atau menggantikan agen kuat dalam percakapan nyata. Ia juga tak bisa memperbaiki penawaran lemah atau lead yang buruk kecocokannya — mengotomatiskan pipeline yang buruk kecocokannya hanya memproduksi pertemuan buruk kecocokan lebih cepat.",
+        },
+        {
+          q: "Apa yang harus diukur?",
+          a: "Throughput percakapan terkualifikasi, bukan jumlah lead mentah. Volume adalah metrik kesombongan jika pipeline tak bisa mengonversinya; kapasitas mengonversi yang menggerakkan bisnis.",
+        },
+        {
+          q: "Apakah ini berdasarkan proyek nyata?",
+          a: "Ya — pandangan langsung dari pekerjaan pipeline lead PRIONATION. Metrik per proyek dipublikasikan di halaman showcase dan transparansi saat difinalkan.",
+        },
+      ],
+    },
+  },
 };

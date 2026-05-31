@@ -376,7 +376,7 @@ export const pages: PageMeta[] = [
   {
     slug: "ai-bottlenecks-mid-market-logistics",
     section: "intelligence",
-    status: "draft",
+    status: "published",
     seoTitle: "AI bottlenecks in mid-market logistics · PRIONATION",
     metaDescription:
       "The 4 operational bottlenecks AI consistently breaks in mid-market logistics. First-party observations from the Epidom and Expeditoo engagements.",
@@ -401,7 +401,7 @@ export const pages: PageMeta[] = [
   {
     slug: "ai-lead-generation-mid-market",
     section: "intelligence",
-    status: "draft",
+    status: "published",
     seoTitle: "AI for mid-market lead generation · PRIONATION",
     metaDescription:
       "What actually works when AI meets lead generation at the mid-market level. First-party observations from The Lead Agent engagement.",

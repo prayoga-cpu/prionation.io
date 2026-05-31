@@ -904,4 +904,138 @@ export const pagesFr: LocalePages = {
       ],
     },
   },
+
+  intelligence: {
+    "ai-bottlenecks-mid-market-logistics": {
+      navLabel: "Goulots IA en logistique",
+      seoTitle: "Goulots d'étranglement IA en logistique mid-market · PRIONATION",
+      metaDescription:
+        "Les goulots opérationnels que l'IA brise systématiquement en logistique mid-market — et ceux qu'elle ne peut pas — issus des missions logistiques de PRIONATION.",
+      badge: "Intelligence · Logistique",
+      tldr: "En logistique mid-market, l'IA gagne sa place contre quelques goulots opérationnels récurrents : visibilité fragmentée entre sites et systèmes, coordination manuelle qui ne passe pas à l'échelle, et décisions prises sur des données périmées. Cette note nomme ces schémas, l'architecture qui répond à chacun, et les limites — issues du travail de PRIONATION en opérations logistiques et marketplaces.",
+      h1: "Goulots d'étranglement IA en logistique mid-market : ce qui casse vraiment",
+      intro: [
+        "La logistique est là où les goulots opérationnels sont les plus visibles, car le coût d'un processus manuel se compose à chaque expédition, site et contrepartie. Les opérateurs mid-market le ressentent vivement : trop grands pour les tableurs, trop spécifiques pour le SaaS générique.",
+        "Cette note est une vue de première main des schémas que l'IA brise systématiquement en logistique mid-market — et de ceux qu'elle ne brise pas. Elle s'appuie sur les missions de PRIONATION en opérations logistiques et marketplaces.",
+      ],
+      sections: [
+        {
+          h2: "Ce que l'on voit dans les missions logistiques",
+          body: [
+            "Les mêmes contraintes reviennent quelle que soit l'opération : la visibilité est fragmentée entre sites et outils, la coordination qui marchait à petite échelle devient une taxe manuelle à mesure que le volume croît, et les données dont dépendent les décisions sont souvent périmées au moment de leur usage. Aucune n'est un problème de stratégie ; toutes sont opérationnelles.",
+            "Le fil commun : le goulot est rarement l'absence d'information — c'est que l'information est éparpillée, manuelle à réconcilier, et tardive.",
+          ],
+        },
+        {
+          h2: "Les schémas que l'IA brise",
+          body: [
+            "Trois schémas reviennent. La visibilité fragmentée cède à une source de vérité centralisée — le premier build à plus fort levier, car chaque décision en aval s'améliore une fois les données unifiées. La coordination manuelle cède à l'automatisation systématique des étapes répétitives, supprimant la taxe qui croît avec le volume. Et les décisions sur données périmées cèdent à une instrumentation qui fait apparaître l'état courant en continu plutôt que par relevés manuels périodiques.",
+            "Dans chaque cas, l'architecture est ingrate et spécifique : modéliser le domaine, centraliser la vérité, automatiser la coordination répétitive, et instrumenter ce qui compte. Le gain vient de le faire sur le flux qui coûte le plus, pas d'une plateforme large.",
+          ],
+        },
+        {
+          h2: "Ce que l'IA ne peut pas corriger en logistique",
+          body: [
+            "L'IA ne corrige pas un processus physique cassé, une contrepartie qui refuse de partager ses données, ou une opération qui n'a pas décidé ce que « correct » signifie. Elle supprime la taxe manuelle autour d'un processus ; elle n'invente pas le processus. Là où la contrainte est physique ou organisationnelle, le logiciel la rend visible mais ne la résout pas.",
+            "C'est la limite honnête : l'IA en logistique est un levier sur une opération saine, pas un substitut. Le Diagnostic existe en partie pour dire aux opérateurs quand le goulot n'est pas de ceux que l'IA devrait toucher.",
+          ],
+        },
+        {
+          h2: "Le cadre transférable",
+          body: [
+            "Pour un opérateur logistique mid-market, l'ordre des opérations est constant : centraliser d'abord la source de vérité, automatiser ensuite la coordination manuelle au plus fort volume, instrumenter en troisième pour des décisions sur l'état courant. Chaque étape dérisque la suivante, et chacune est assez bornée pour être livrée en quelques semaines.",
+            "L'erreur est de commencer par le symptôme visible — un tableau de bord, une prévision — avant que les données sous-jacentes soient unifiées. L'ordre compte plus que l'ambition.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Quels goulots opérationnels l'IA brise-t-elle en logistique ?",
+          a: "La visibilité fragmentée entre sites et outils, la coordination manuelle qui ne passe pas à l'échelle, et les décisions sur données périmées. Chacun cède à une architecture spécifique et ingrate plutôt qu'à une plateforme large.",
+        },
+        {
+          q: "Quel est le premier build IA au ROI le plus élevé en logistique ?",
+          a: "Généralement centraliser la source de vérité. Les données fragmentées sont la contrainte racine, et chaque décision en aval s'améliore une fois unifiées — d'où la priorité.",
+        },
+        {
+          q: "Que ne peut pas corriger l'IA en logistique ?",
+          a: "Un processus physique cassé, une contrepartie qui ne partage pas ses données, ou une opération qui n'a pas défini « correct ». L'IA supprime la taxe manuelle autour d'un processus sain ; elle n'invente pas le processus.",
+        },
+        {
+          q: "Est-ce basé sur des missions réelles ?",
+          a: "Oui — une vue de première main issue des opérations logistiques et marketplaces de PRIONATION. Les métriques détaillées par mission sont publiées sur les pages de réalisation et de transparence à mesure qu'elles sont finalisées.",
+        },
+        {
+          q: "Par où un opérateur logistique doit-il commencer ?",
+          a: "Par un Diagnostic de deux semaines qui identifie quel goulot est à la fois le plus coûteux et adapté à l'IA — et, tout aussi important, lesquels ne le sont pas.",
+        },
+      ],
+    },
+
+    "ai-lead-generation-mid-market": {
+      navLabel: "IA pour la génération de leads",
+      seoTitle: "IA pour la génération de leads mid-market · PRIONATION",
+      metaDescription:
+        "Ce qui fonctionne vraiment quand l'IA rencontre la génération de leads mid-market — et ce qu'elle ne peut pas corriger — issu de la mission lead-gen de PRIONATION.",
+      badge: "Intelligence · Génération de leads",
+      tldr: "En génération de leads mid-market, le vrai levier de l'IA est le pipeline — qualification et coordination — pas la fabrication de plus de leads. Le goulot est presque toujours le travail manuel entre un lead et une conversation prise. Cette note nomme ce qui marche, ce qui ne marche pas, et le cadre transférable, issu du travail lead-gen de PRIONATION.",
+      h1: "IA pour la génération de leads mid-market : ce qui fonctionne vraiment",
+      intro: [
+        "La plupart des IA de génération de leads sont vendues comme un moyen de produire plus de leads. Dans les opérations mid-market, la vraie contrainte est rarement le volume de leads — c'est le pipeline manuel qui transforme un lead en conversation qualifiée et prise, qui ne passe pas à l'échelle avec les effectifs.",
+        "Cette note est une vue de première main de là où l'IA aide vraiment en génération de leads mid-market, et de là où elle n'aide pas. Elle s'appuie sur le travail de PRIONATION pour construire une plateforme de pipeline de leads.",
+      ],
+      sections: [
+        {
+          h2: "Ce que l'on voit dans les missions lead-gen",
+          body: [
+            "Le schéma récurrent : le goulot se situe après le lead, pas avant. Les équipes peuvent générer ou acheter des leads ; ce qui plafonne la croissance, c'est la coordination manuelle pour les qualifier, les router et prendre la conversation — un travail qui se multiplie avec chaque agent et se dégrade quand le volume monte.",
+            "Plus de leads dans ce pipeline manuel n'augmentent pas la production ; ils augmentent l'arriéré. La contrainte est le débit, pas l'offre.",
+          ],
+        },
+        {
+          h2: "Ce que l'IA fait bien ici",
+          body: [
+            "Le levier de l'IA porte sur le jugement répétitif et la coordination du pipeline : qualifier selon des critères constants, prioriser, rédiger les premières réponses, et automatiser les transferts de prise de rendez-vous. Bien fait, cela augmente le nombre de leads qu'une équipe donnée peut convertir sans hausse proportionnelle du travail manuel.",
+            "Le build efficace cible le pipeline comme un système — qualification constante et coordination automatisée — plutôt qu'un seul modèle astucieux greffé sur un processus manuel.",
+          ],
+        },
+        {
+          h2: "Ce que l'IA ne peut pas corriger en génération de leads",
+          body: [
+            "L'IA ne conclut pas les affaires, ne bâtit pas la confiance, et ne remplace pas le jugement d'un bon agent dans une vraie conversation. Elle relève le plafond du nombre de conversations qualifiées qui atteignent un humain ; elle n'a pas la conversation. La traiter comme un commercial plutôt que comme un pipeline est l'erreur courante et coûteuse.",
+            "Elle ne peut pas non plus corriger une offre faible ou une liste de leads mal ciblés. Automatiser la coordination autour d'un pipeline mal ajusté ne fait que produire plus vite des rendez-vous mal ajustés.",
+          ],
+        },
+        {
+          h2: "Le cadre transférable",
+          body: [
+            "Le cadre pour les opérateurs orientés vente : corrigez le pipeline avant l'offre. Cartographiez où les leads stagnent entre l'arrivée et une conversation prise, automatisez cette coordination, et gardez l'humain là où le jugement compte — la conversation elle-même. Mesurez le débit de conversations qualifiées, pas le nombre brut de leads.",
+            "Le volume est une métrique de vanité si le pipeline ne peut le convertir. La capacité à convertir est le chiffre qui fait bouger l'entreprise.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "L'IA génère-t-elle plus de leads ?",
+          a: "Elle le peut, mais c'est rarement le goulot en mid-market. Le vrai levier porte sur le pipeline — qualification et coordination — qui plafonne le nombre de leads qu'une équipe peut convertir.",
+        },
+        {
+          q: "Que fait bien l'IA en génération de leads ?",
+          a: "Le jugement répétitif et la coordination : qualifier selon des critères constants, prioriser, rédiger les premières réponses, et automatiser les transferts de prise de rendez-vous — augmentant la capacité de conversion sans hausse proportionnelle du travail manuel.",
+        },
+        {
+          q: "Que ne peut pas corriger l'IA en lead-gen ?",
+          a: "Elle ne conclut pas les affaires, ne bâtit pas la confiance, et ne remplace pas un bon agent dans une vraie conversation. Elle ne peut pas non plus corriger une offre faible ou des leads mal ciblés — automatiser un pipeline mal ajusté produit juste plus vite des rendez-vous mal ajustés.",
+        },
+        {
+          q: "Que faut-il mesurer ?",
+          a: "Le débit de conversations qualifiées, pas le nombre brut de leads. Le volume est une métrique de vanité si le pipeline ne peut le convertir ; la capacité à convertir est ce qui fait bouger l'entreprise.",
+        },
+        {
+          q: "Est-ce basé sur une mission réelle ?",
+          a: "Oui — une vue de première main issue du travail de pipeline de leads de PRIONATION. Les métriques par mission sont publiées sur les pages de réalisation et de transparence une fois finalisées.",
+        },
+      ],
+    },
+  },
 };
