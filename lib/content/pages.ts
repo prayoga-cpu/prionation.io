@@ -299,7 +299,7 @@ export const pages: PageMeta[] = [
   {
     slug: "ai-consulting-cost-mid-market-companies",
     section: "guides",
-    status: "draft",
+    status: "published",
     seoTitle: "AI consulting cost for mid-market companies",
     metaDescription:
       "What AI engagements cost for €5–50M companies. Diagnostic €5–7K, Build €25–55K, Retainer €4–9K/month. Honest breakdown of all three pricing models.",
@@ -324,7 +324,7 @@ export const pages: PageMeta[] = [
   {
     slug: "scoping-ai-build-engagement",
     section: "guides",
-    status: "draft",
+    status: "published",
     seoTitle: "How to scope an AI build engagement · PRIONATION",
     metaDescription:
       "The 6 components every AI scope document needs before talking to a vendor. Good and bad examples for each. How to avoid the scoping mistakes that kill projects.",
@@ -349,7 +349,7 @@ export const pages: PageMeta[] = [
   {
     slug: "fixed-price-vs-hourly-ai-consulting",
     section: "guides",
-    status: "draft",
+    status: "published",
     seoTitle: "Fixed-price vs hourly AI consulting · PRIONATION",
     metaDescription:
       "The 4 AI consulting pricing models and the structural incentive each creates for the vendor. Why PRIONATION's fixed-price model only works because of the methodology.",

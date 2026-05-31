@@ -504,4 +504,204 @@ export const pagesFr: LocalePages = {
       ],
     },
   },
+
+  guides: {
+    "ai-consulting-cost-mid-market-companies": {
+      navLabel: "Coût du conseil en IA",
+      seoTitle: "Coût du conseil en IA pour le mid-market · PRIONATION",
+      metaDescription:
+        "Ce que coûtent réellement les missions IA pour les entreprises de 5–50 M€ — Diagnostic, Build et Retainer, les trois modèles comparés, et où se cachent les coûts.",
+      badge: "Guide · Tarifs",
+      tldr: "Pour une entreprise mid-market, les missions IA coûtent typiquement 5 000–7 000 € pour un Diagnostic de deux semaines, 25 000–55 000 € pour un Build de huit semaines, et 4 000–9 000 €/mois pour un Retainer. Le chiffre qui compte plus que le prix affiché est le modèle de tarification, car il détermine qui porte le risque quand le travail s'avère plus difficile que prévu.",
+      h1: "Coût du conseil en IA pour les entreprises mid-market",
+      intro: [
+        "La réponse honnête à « combien coûte le conseil en IA ? » pour une entreprise de 5–50 M€ est une fourchette — et un avertissement : la fourchette est la partie la moins importante. La façon dont le travail est facturé compte plus que le chiffre, car elle décide qui absorbe la variance inévitable.",
+        "Ce guide donne les vrais chiffres, compare les trois modèles de tarification et nomme les coûts que les prestataires ont tendance à taire au départ.",
+      ],
+      sections: [
+        {
+          h2: "Les vrais chiffres",
+          body: [
+            "La structure de PRIONATION est fixe et publique : un Diagnostic à 5 000–7 000 € sur deux semaines cartographie le goulot et fixe le périmètre ; un Build à 25 000–55 000 € sur huit semaines livre le système de production ; un Retainer à 4 000–9 000 €/mois maintient un pod disponible ensuite, avec un minimum de six mois. Un site Express de trois pages démarre à 1 500 €.",
+            "Plus de 60 % des Diagnostics débouchent sur un Build — un chiffre qui ne tient que parce que le Diagnostic est cadré pour qualifier le travail, pas pour vendre l'étape suivante à tout prix.",
+          ],
+        },
+        {
+          h2: "Les trois modèles de tarification",
+          body: [
+            "Le travail IA se vend de trois façons. L'horaire ou la régie reporte tout le risque d'imprévisibilité sur vous — le compteur tourne, que le travail converge ou non. Le périmètre fixe chiffre un résultat défini, donc le prestataire porte la variance. Le Retainer achète une capacité continue à un tarif mensuel prévisible.",
+            "Le point structurel : la régie récompense le prestataire quand le travail dure plus longtemps. Le périmètre fixe ne fonctionne que si le prestataire a une méthode qui élimine la variance — c'est pourquoi prix fixe et méthodologie sont inséparables.",
+          ],
+        },
+        {
+          h2: "Où se cachent les coûts cachés",
+          body: [
+            "Les coûts que les prestataires minimisent sont la montée en compétence, l'intégration et l'enfermement. La montée en compétence, ce sont les semaines facturées pendant qu'une équipe apprend votre domaine. L'intégration, c'est le travail ingrat de connexion à vos vrais systèmes, souvent cadré vaguement et facturé à mesure qu'il s'étend. L'enfermement, c'est le coût différé d'un système que vous ne pouvez ni exploiter ni quitter sans le prestataire.",
+            "Une mission à périmètre fixe avec infrastructure possédée élimine les trois : montée en compétence et intégration sont dans le prix fixe, et il n'y a rien dont s'enfermer puisque vous détenez tout.",
+          ],
+        },
+        {
+          h2: "Comment budgéter",
+          body: [
+            "Budgétez d'abord le Diagnostic — il est petit, et c'est lui qui rend le prix du Build fiable. Traitez tout prestataire qui chiffre un prix de Build fixe sans étape de cadrage comme devinant, ou prévoyant de facturer la différence plus tard.",
+            "Pour le coût total de possession, comptez ce que vous gardez : avec une infrastructure possédée, le Build est un actif que votre équipe peut exploiter, pas un abonnement au système d'autrui.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Combien coûte le conseil en IA pour une entreprise mid-market ?",
+          a: "Typiquement 5 000–7 000 € pour un Diagnostic de deux semaines, 25 000–55 000 € pour un Build de huit semaines, et 4 000–9 000 €/mois pour un Retainer. Tout à périmètre fixe, prix fixe, facturé en euros.",
+        },
+        {
+          q: "Pourquoi le modèle de tarification importe-t-il plus que le prix ?",
+          a: "Parce qu'il décide qui porte le risque quand le travail est plus dur que prévu. La régie met ce risque sur vous et récompense le prestataire qui prend plus de temps ; le périmètre fixe le met sur le prestataire, mais ne fonctionne qu'avec une vraie méthode.",
+        },
+        {
+          q: "Quels sont les coûts cachés des missions IA ?",
+          a: "La montée en compétence (semaines facturées pendant l'apprentissage), l'intégration (travail de connexion cadré vaguement qui s'étend) et l'enfermement (un système que vous ne pouvez exploiter ni quitter). Le périmètre fixe avec infrastructure possédée élimine les trois.",
+        },
+        {
+          q: "Pourquoi commencer par un Diagnostic ?",
+          a: "Parce qu'il rend le prix du Build fiable. Un prix de Build fixe chiffré sans étape de cadrage est une supposition. Le Diagnostic cartographie le goulot et fixe les critères d'evals sur lesquels le prix repose.",
+        },
+        {
+          q: "Que peut-on annuler, et quelle est la garantie ?",
+          a: "Le Diagnostic n'oblige pas à poursuivre vers un Build. Chaque Build inclut une garantie post-lancement de quatre semaines sur les seuils d'evals convenus ; le Retainer a un minimum de six mois et est sinon continu.",
+        },
+      ],
+    },
+
+    "scoping-ai-build-engagement": {
+      navLabel: "Cadrer un build IA",
+      seoTitle: "Comment cadrer un build IA · PRIONATION",
+      metaDescription:
+        "Les six composants que tout document de périmètre IA doit contenir avant de parler à un prestataire — avec bons et mauvais exemples — et les erreurs de cadrage qui tuent les projets.",
+      badge: "Guide · Cadrage",
+      tldr: "Un bon périmètre IA a six composants : la cible de flux de travail, la métrique de succès, un inventaire des données, les points d'intégration, les contraintes et un repère de calendrier. La plupart des projets IA échoués étaient sous-cadrés sur l'un d'eux avant la signature. Ce guide montre à quoi ressemblent le bon et le mauvais pour chacun.",
+      h1: "Comment cadrer un build IA",
+      intro: [
+        "Le meilleur prédicteur de la réussite d'un build IA est la qualité du périmètre écrit avant son démarrage. Un périmètre vague n'est pas un problème de paperasse — c'est le mécanisme par lequel les budgets doublent et les calendriers dérapent.",
+        "Ce guide décompose le périmètre en six composants, avec un bon et un mauvais exemple pour chacun, afin de tester un périmètre avant de vous engager.",
+      ],
+      sections: [
+        {
+          h2: "Pourquoi le périmètre décide du résultat",
+          body: [
+            "Le travail IA comporte plus d'incertitude inhérente que le logiciel ordinaire, donc un périmètre flou se compose plus vite. Quand « construire un assistant IA » est le périmètre, chaque partie comble les vides avec une hypothèse différente, et l'écart devient un litige dès l'arrivée de la facture.",
+            "Un bon périmètre n'élimine pas l'incertitude ; il la localise. Il dit exactement ce qui est construit, comment le succès est mesuré, et ce qui est explicitement hors champ — pour que les inconnues restantes soient petites et nommées.",
+          ],
+        },
+        {
+          h2: "Les six composants",
+          body: [
+            "1) Cible de flux — l'opération précise modifiée, pas une capacité. 2) Métrique de succès — une définition mesurable du terminé. 3) Inventaire des données — quelles données existent, où et dans quel état. 4) Points d'intégration — les systèmes exacts à connecter. 5) Contraintes — résidence des données, latence, budget, non-négociables. 6) Repère de calendrier — une date fixe qui rythme le travail.",
+            "Chacun correspond à du concret : la métrique de succès devient la suite d'evals ; l'inventaire des données détermine la faisabilité ; les points d'intégration sont là où se cache l'essentiel du coût caché.",
+          ],
+        },
+        {
+          h2: "Bon périmètre vs mauvais périmètre",
+          body: [
+            "Mauvais : « Utiliser l'IA pour améliorer le support client. » Bon : « Rédiger les premières réponses pour les tickets de facturation, notées sur un jeu de référence de 200 tickets, intégrées à notre service d'assistance, sans que les données client ne quittent notre cloud, en production en huit semaines. » Le second est constructible et chiffrable ; le premier est une invitation à facturer à l'heure.",
+            "Le test de toute ligne de périmètre : deux prestataires la chiffreraient-ils pareil ? Sinon, la ligne est trop vague pour s'y engager.",
+          ],
+        },
+        {
+          h2: "Les erreurs qui tuent les projets",
+          body: [
+            "Les erreurs de cadrage fatales sont : définir une capacité au lieu d'un flux ; laisser le succès indéfini ; découvrir après signature que les données sont inutilisables ; et traiter l'intégration comme un détail. Chacune transforme une mission fixe en mission ouverte.",
+            "Un Diagnostic existe pour produire exactement ce périmètre — mais vous pouvez en faire une grande part vous-même d'abord, et arriver à la conversation avec les inconnues déjà réduites.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Que doit contenir un document de périmètre IA ?",
+          a: "Six composants : la cible de flux, une métrique de succès mesurable, un inventaire des données, les points d'intégration, les contraintes (résidence, latence, budget) et un repère de calendrier. Chacun élimine une classe de litige ultérieur.",
+        },
+        {
+          q: "À quoi ressemble un bon périmètre IA ?",
+          a: "Précis et testable : le flux exact, une définition mesurable du terminé, les systèmes à intégrer, les contraintes de données et une date fixe. Le test : deux prestataires le chiffreraient-ils à l'identique ?",
+        },
+        {
+          q: "Quelle est l'erreur de cadrage la plus courante ?",
+          a: "Définir une capacité (« utiliser l'IA pour le support ») au lieu d'un flux (« rédiger les premières réponses des tickets de facturation, notées sur un jeu de référence »). Les capacités ne se chiffrent ni ne se terminent ; les flux, oui.",
+        },
+        {
+          q: "Quel est le lien entre le périmètre et la suite d'evals ?",
+          a: "La métrique de succès du périmètre devient la suite d'evals. Un périmètre sans critère de succès mesurable ne peut produire d'evals, d'où des projets ouverts et contestés.",
+        },
+        {
+          q: "Le Diagnostic peut-il faire le cadrage pour nous ?",
+          a: "Oui — produire ce périmètre est exactement ce que livre le Diagnostic de deux semaines. Faire le travail préparatoire vous-même d'abord rend le Diagnostic plus rapide et le Build qui en résulte moins cher.",
+        },
+      ],
+    },
+
+    "fixed-price-vs-hourly-ai-consulting": {
+      navLabel: "Prix fixe vs horaire",
+      seoTitle: "Prix fixe vs horaire en conseil IA · PRIONATION",
+      metaDescription:
+        "Les quatre modèles de tarification IA, l'incitation que chacun crée pour le prestataire, et pourquoi le prix fixe en IA ne fonctionne que quand la méthodologie élimine la variance.",
+      badge: "Guide · Modèles de prix",
+      tldr: "Il y a quatre façons de payer le travail IA — horaire, périmètre fixe, par jalons et retainer — et chacune crée une incitation différente pour le prestataire. L'horaire récompense la lenteur ; le périmètre fixe récompense l'efficacité mais ne fonctionne qu'avec une vraie méthode. Choisir le modèle, c'est en réalité choisir quel intérêt est aligné avec le fait de terminer.",
+      h1: "Prix fixe vs horaire en conseil IA : quel modèle vous protège",
+      intro: [
+        "La plupart des acheteurs comparent les prestataires IA sur le taux et les compétences. La comparaison la plus importante est le modèle de tarification, car le modèle décide si le prestataire profite de terminer ou de continuer.",
+        "Ce guide expose les quatre modèles, l'incitation que chacun intègre, et pourquoi un prix fixe n'est digne de confiance que lorsqu'il y a une méthodologie derrière.",
+      ],
+      sections: [
+        {
+          h2: "Les quatre modèles",
+          body: [
+            "L'horaire / régie facture le temps passé, quel que soit le résultat. Le périmètre fixe chiffre un livrable défini pour un prix fixe. Le modèle par jalons lie le paiement à des livrables échelonnés. Le retainer achète une capacité continue contre un forfait mensuel.",
+            "Chacun est légitime dans le bon contexte. L'erreur est de choisir un modèle sans voir l'incitation qu'il crée — car cette incitation façonne chaque décision du prestataire une fois le travail lancé.",
+          ],
+        },
+        {
+          h2: "L'incitation que chacun crée",
+          body: [
+            "L'horaire récompense le prestataire quand le travail dure plus longtemps — non par malhonnêteté, mais parce que le compteur et l'intérêt vont dans le même sens. Le périmètre fixe récompense l'efficacité : le prestataire garde le gain de terminer vite, donc son intérêt s'aligne avec le vôtre. Les jalons alignent le paiement sur l'avancement mais peuvent fragmenter un système en morceaux démontrables. Le retainer récompense une relation stable mais peut dériver sans mesure de valeur.",
+            "La question à poser à tout prestataire est simple : sous votre modèle, gagnez-vous plus en terminant ou en continuant ?",
+          ],
+        },
+        {
+          h2: "Pourquoi le prix fixe en IA est différent",
+          body: [
+            "Le prix fixe est le modèle le plus aligné avec l'acheteur — mais c'est aussi celui que la plupart des prestataires ne peuvent honnêtement offrir en IA, car le travail IA comporte une variance qu'un prix fixe doit absorber. Offert sans méthode, un prix fixe est soit lourdement gonflé, soit discrètement abandonné dès que le travail devient difficile.",
+            "C'est pourquoi PRIONATION couple le prix fixe aux evals, à la télémétrie et à l'infrastructure possédée. La méthodologie élimine la variance qui rendrait sinon un prix fixe imprudent — et le Diagnostic obligatoire est là où cette variance est mesurée avant qu'un chiffre soit donné.",
+          ],
+        },
+        {
+          h2: "Comment choisir",
+          body: [
+            "Préférez le périmètre fixe pour un build défini, et exigez de voir la méthode qui le rend sûr — une étape de cadrage, une définition du terminé basée sur les evals, et une garantie. Utilisez un retainer pour un travail réellement continu, cadré sur la télémétrie. Méfiez-vous de l'horaire pour tout ce qui peut être défini, et d'un prix fixe offert sans aucune étape de cadrage.",
+            "Le bon modèle est celui sous lequel le prestataire ne gagne que lorsque vous gagnez.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Prix fixe ou horaire, lequel est meilleur pour l'IA ?",
+          a: "Le périmètre fixe est plus aligné avec l'acheteur car le prestataire garde le gain de terminer vite. Mais il n'est digne de confiance qu'avec une vraie méthode derrière ; sans elle, un prix fixe est gonflé ou discrètement abandonné quand le travail devient difficile.",
+        },
+        {
+          q: "Pourquoi la plupart des prestataires facturent-ils à l'heure en IA ?",
+          a: "Parce que le travail IA comporte de la variance, et l'horaire reporte ce risque sur le client. C'est le choix sûr pour un prestataire sans méthodologie pour éliminer la variance — mais il récompense le prestataire qui prend plus de temps.",
+        },
+        {
+          q: "Comment un prix fixe peut-il être honnête pour un travail IA imprévisible ?",
+          a: "Seulement si une méthodologie élimine d'abord l'imprévisibilité. Les evals définissent le terminé, la télémétrie rend l'itération mesurable, l'infrastructure possédée prévient les surprises d'intégration, et un Diagnostic mesure la variance avant que le prix soit fixé.",
+        },
+        {
+          q: "À quoi sert la tarification par jalons ?",
+          a: "À lier le paiement à une livraison échelonnée sur des programmes plus grands. Le risque est de fragmenter un système en morceaux démontrables qui ne forment pas un résultat de production cohérent ; les jalons doivent donc être définis sur des résultats réels.",
+        },
+        {
+          q: "Que dois-je demander à un prestataire sur les prix ?",
+          a: "Une question : sous votre modèle, gagnez-vous plus en terminant ou en continuant ? Puis demandez à voir la méthode — étape de cadrage, définition du terminé basée sur les evals, et garantie — qui rend un prix fixe sûr.",
+        },
+      ],
+    },
+  },
 };

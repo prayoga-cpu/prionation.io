@@ -504,4 +504,204 @@ export const pagesId: LocalePages = {
       ],
     },
   },
+
+  guides: {
+    "ai-consulting-cost-mid-market-companies": {
+      navLabel: "Biaya konsultasi AI",
+      seoTitle: "Biaya konsultasi AI untuk mid-market · PRIONATION",
+      metaDescription:
+        "Berapa biaya sebenarnya proyek AI untuk perusahaan €5–50 jt — harga Diagnostic, Build, dan Retainer, tiga model dibandingkan, dan di mana biaya tersembunyi berada.",
+      badge: "Panduan · Harga",
+      tldr: "Untuk perusahaan mid-market, proyek AI biasanya berkisar €5.000–7.000 untuk Diagnostic dua minggu, €25.000–55.000 untuk Build delapan minggu, dan €4.000–9.000/bulan untuk Retainer. Angka yang lebih penting daripada harga utama adalah model penetapan harga, karena ia menentukan siapa yang menanggung risiko saat pekerjaan ternyata lebih sulit dari perkiraan.",
+      h1: "Biaya konsultasi AI untuk perusahaan mid-market",
+      intro: [
+        "Jawaban jujur atas 'berapa biaya konsultasi AI?' untuk perusahaan €5–50 jt adalah sebuah rentang — dengan peringatan bahwa rentang itu bagian yang paling tidak penting. Bagaimana pekerjaan ditagih lebih penting daripada angkanya, karena itu menentukan siapa menyerap variansi yang tak terhindarkan.",
+        "Panduan ini memberi angka nyata, membandingkan tiga model penetapan harga, dan menyebut biaya yang cenderung tak disebut vendor di muka.",
+      ],
+      sections: [
+        {
+          h2: "Angka nyata",
+          body: [
+            "Struktur PRIONATION tetap dan terbuka: Diagnostic €5.000–7.000 selama dua minggu memetakan hambatan dan menetapkan ruang lingkup; Build €25.000–55.000 selama delapan minggu mengirim sistem produksi; Retainer €4.000–9.000/bulan menjaga pod tersedia sesudahnya, dengan minimum enam bulan. Situs Express tiga halaman mulai €1.500.",
+            "Lebih dari 60% Diagnostic berlanjut ke Build — angka yang hanya bertahan karena Diagnostic dilingkupi untuk mengkualifikasi pekerjaan, bukan menjual tahap berikutnya apa pun caranya.",
+          ],
+        },
+        {
+          h2: "Tiga model penetapan harga",
+          body: [
+            "Pekerjaan AI dijual dengan tiga cara. Per jam atau time-and-materials menggeser seluruh risiko ketidakpastian ke Anda — meterannya berjalan entah pekerjaan konvergen atau tidak. Ruang lingkup tetap menetapkan harga hasil yang terdefinisi, jadi vendor menanggung variansi. Retainer membeli kapasitas berkelanjutan dengan tarif bulanan yang terprediksi.",
+            "Poin strukturalnya: time-and-materials memberi imbalan vendor saat pekerjaan lebih lama. Ruang lingkup tetap hanya berhasil jika vendor punya metode yang menghapus variansi — itulah mengapa harga tetap dan metodologi tak terpisahkan.",
+          ],
+        },
+        {
+          h2: "Di mana biaya tersembunyi berada",
+          body: [
+            "Biaya yang diremehkan vendor adalah adaptasi, integrasi, dan keterkuncian. Adaptasi adalah minggu-minggu yang ditagih saat tim mempelajari domain Anda. Integrasi adalah pekerjaan tak glamor menghubungkan ke sistem nyata Anda, sering dilingkupi kabur dan ditagih saat membengkak. Keterkuncian adalah biaya tertunda dari sistem yang tak bisa Anda operasikan atau tinggalkan tanpa vendor.",
+            "Proyek ruang lingkup tetap dengan infrastruktur yang dimiliki menghapus ketiganya: adaptasi dan integrasi ada di dalam harga tetap, dan tak ada yang mengunci karena Anda memegang segalanya.",
+          ],
+        },
+        {
+          h2: "Cara menganggarkan",
+          body: [
+            "Anggarkan Diagnostic dulu — ia kecil, dan itulah yang membuat harga Build andal. Anggap vendor mana pun yang menetapkan harga Build tetap tanpa langkah pelingkupan sebagai menebak, atau berniat menagih selisihnya nanti.",
+            "Untuk total biaya kepemilikan, hitung apa yang Anda simpan: dengan infrastruktur yang dimiliki, Build adalah aset modal yang bisa dijalankan tim Anda, bukan langganan sistem milik orang lain.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Berapa biaya konsultasi AI untuk perusahaan mid-market?",
+          a: "Biasanya €5.000–7.000 untuk Diagnostic dua minggu, €25.000–55.000 untuk Build delapan minggu, dan €4.000–9.000/bulan untuk Retainer. Semua ruang lingkup tetap, harga tetap, ditagih dalam euro.",
+        },
+        {
+          q: "Mengapa model penetapan harga lebih penting daripada harganya?",
+          a: "Karena ia menentukan siapa menanggung risiko saat pekerjaan lebih sulit dari perkiraan. Time-and-materials menaruh risiko itu pada Anda dan memberi imbalan vendor yang lebih lama; ruang lingkup tetap menaruhnya pada vendor, tetapi hanya berhasil dengan metode nyata.",
+        },
+        {
+          q: "Apa biaya tersembunyi dalam proyek AI?",
+          a: "Adaptasi (minggu yang ditagih saat tim belajar domain Anda), integrasi (pekerjaan penghubungan yang dilingkupi kabur dan membengkak), dan keterkuncian (sistem yang tak bisa Anda operasikan atau tinggalkan). Ruang lingkup tetap dengan infrastruktur yang dimiliki menghapus ketiganya.",
+        },
+        {
+          q: "Mengapa mulai dengan Diagnostic?",
+          a: "Karena ia membuat harga Build andal. Harga Build tetap yang ditetapkan tanpa langkah pelingkupan adalah tebakan. Diagnostic memetakan hambatan dan menetapkan kriteria eval yang menjadi dasar harga.",
+        },
+        {
+          q: "Apa yang bisa dibatalkan, dan bagaimana garansinya?",
+          a: "Diagnostic tak mewajibkan melanjutkan ke Build. Setiap Build mencakup garansi pasca-peluncuran empat minggu terhadap ambang eval yang disepakati; Retainer punya minimum enam bulan dan selain itu berkelanjutan.",
+        },
+      ],
+    },
+
+    "scoping-ai-build-engagement": {
+      navLabel: "Melingkupi build AI",
+      seoTitle: "Cara melingkupi build AI · PRIONATION",
+      metaDescription:
+        "Enam komponen yang harus dimiliki setiap dokumen ruang lingkup AI sebelum bicara dengan vendor — dengan contoh baik dan buruk — serta kesalahan pelingkupan yang membunuh proyek.",
+      badge: "Panduan · Pelingkupan",
+      tldr: "Ruang lingkup AI yang baik punya enam komponen: target alur kerja, metrik sukses, inventaris data, titik integrasi, batasan, dan jangkar jadwal. Sebagian besar proyek AI yang gagal kurang dilingkupi pada salah satunya sebelum kontrak ditandatangani. Panduan ini menunjukkan seperti apa yang baik dan buruk untuk masing-masing.",
+      h1: "Cara melingkupi build AI",
+      intro: [
+        "Prediktor terbesar apakah build AI berhasil adalah mutu ruang lingkup yang ditulis sebelum ia mulai. Ruang lingkup kabur bukan masalah administrasi — ia mekanisme yang membuat anggaran berlipat dan jadwal meleset.",
+        "Panduan ini memecah ruang lingkup menjadi enam komponen, dengan contoh baik dan buruk untuk masing-masing, agar Anda bisa menguji ruang lingkup sebelum berkomitmen.",
+      ],
+      sections: [
+        {
+          h2: "Mengapa ruang lingkup menentukan hasil",
+          body: [
+            "Pekerjaan AI punya lebih banyak ketidakpastian bawaan daripada perangkat lunak biasa, jadi ruang lingkup longgar berlipat lebih cepat. Saat 'bangun asisten AI' menjadi ruang lingkupnya, tiap pihak mengisi celah dengan asumsi berbeda, dan celah itu menjadi sengketa begitu tagihan tiba.",
+            "Ruang lingkup yang baik tidak menghapus ketidakpastian; ia melokalisasinya. Ia menyatakan persis apa yang dibangun, bagaimana sukses diukur, dan apa yang secara eksplisit di luar batas — agar ketidakpastian yang tersisa kecil dan bernama.",
+          ],
+        },
+        {
+          h2: "Enam komponen",
+          body: [
+            "1) Target alur kerja — operasi spesifik yang diubah, bukan kapabilitas. 2) Metrik sukses — definisi 'selesai' yang terukur. 3) Inventaris data — data apa yang ada, di mana, dan dalam keadaan apa. 4) Titik integrasi — sistem persis yang dihubungkan. 5) Batasan — residensi data, latensi, anggaran, hal yang tak bisa ditawar. 6) Jangkar jadwal — tanggal tetap yang menjadi irama kerja.",
+            "Masing-masing memetakan ke sesuatu yang konkret: metrik sukses menjadi suite eval; inventaris data menentukan kelayakan; titik integrasi adalah tempat sebagian besar biaya tersembunyi berada.",
+          ],
+        },
+        {
+          h2: "Ruang lingkup baik vs buruk",
+          body: [
+            "Buruk: 'Gunakan AI untuk meningkatkan dukungan pelanggan.' Baik: 'Draf balasan pertama untuk tiket penagihan, dinilai terhadap golden set 200 tiket, terintegrasi dengan help desk kami, tanpa data pelanggan keluar cloud kami, tayang dalam delapan minggu.' Yang kedua dapat dibangun dan dihargai; yang pertama undangan untuk menagih per jam.",
+            "Uji untuk tiap baris ruang lingkup: apakah dua vendor akan menghargainya sama. Jika tidak, barisnya terlalu kabur untuk dikomitmenkan.",
+          ],
+        },
+        {
+          h2: "Kesalahan yang membunuh proyek",
+          body: [
+            "Kesalahan pelingkupan yang fatal: mendefinisikan kapabilitas alih-alih alur kerja; membiarkan sukses tak terdefinisi; menemukan data tak terpakai setelah tanda tangan; dan menganggap integrasi sebagai detail. Masing-masing mengubah proyek tetap menjadi terbuka.",
+            "Diagnostic ada untuk menghasilkan persis ruang lingkup ini — tetapi Anda bisa mengerjakan sebagian besarnya sendiri dulu, dan tiba di percakapan dengan ketidakpastian sudah dipersempit.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Apa yang harus ada dalam dokumen ruang lingkup AI?",
+          a: "Enam komponen: target alur kerja, metrik sukses terukur, inventaris data, titik integrasi, batasan (residensi, latensi, anggaran), dan jangkar jadwal. Masing-masing menghapus satu kelas sengketa di kemudian hari.",
+        },
+        {
+          q: "Seperti apa ruang lingkup AI yang baik?",
+          a: "Spesifik dan dapat diuji: alur kerja persis, definisi 'selesai' yang terukur, sistem yang diintegrasikan, batasan data, dan tanggal tetap. Ujinya: apakah dua vendor akan menghargainya identik.",
+        },
+        {
+          q: "Apa kesalahan pelingkupan paling umum?",
+          a: "Mendefinisikan kapabilitas ('gunakan AI untuk dukungan') alih-alih alur kerja ('draf balasan pertama tiket penagihan, dinilai terhadap golden set'). Kapabilitas tak bisa dihargai atau diselesaikan; alur kerja bisa.",
+        },
+        {
+          q: "Bagaimana ruang lingkup terkait suite eval?",
+          a: "Metrik sukses dalam ruang lingkup menjadi suite eval. Ruang lingkup tanpa kriteria sukses terukur tak bisa menghasilkan eval, itulah mengapa proyek semacam itu berakhir terbuka dan disengketakan.",
+        },
+        {
+          q: "Bisakah Diagnostic melakukan pelingkupan untuk kami?",
+          a: "Ya — menghasilkan ruang lingkup ini persis yang diberikan Diagnostic dua minggu. Mengerjakan dasarnya sendiri dulu membuat Diagnostic lebih cepat dan Build yang dihasilkan lebih murah.",
+        },
+      ],
+    },
+
+    "fixed-price-vs-hourly-ai-consulting": {
+      navLabel: "Harga tetap vs per jam",
+      seoTitle: "Harga tetap vs per jam konsultasi AI · PRIONATION",
+      metaDescription:
+        "Empat model penetapan harga AI, insentif yang diciptakan masing-masing bagi vendor, dan mengapa harga tetap AI hanya berhasil saat metodologi menghapus variansi.",
+      badge: "Panduan · Model harga",
+      tldr: "Ada empat cara membayar pekerjaan AI — per jam, ruang lingkup tetap, berbasis milestone, dan retainer — dan masing-masing menciptakan insentif berbeda bagi vendor. Per jam memberi imbalan kelambatan; ruang lingkup tetap memberi imbalan efisiensi tetapi hanya berhasil dengan metode nyata. Memilih model sebenarnya memilih kepentingan siapa yang selaras dengan menyelesaikan.",
+      h1: "Harga tetap vs per jam konsultasi AI: model mana yang melindungi Anda",
+      intro: [
+        "Sebagian besar pembeli membandingkan vendor AI pada tarif dan kapabilitas. Perbandingan yang lebih penting adalah model penetapan harga, karena model menentukan apakah vendor untung dari menyelesaikan atau dari melanjutkan.",
+        "Panduan ini memaparkan empat model, insentif yang dibangun masing-masing, dan mengapa harga tetap hanya tepercaya saat ada metodologi di baliknya.",
+      ],
+      sections: [
+        {
+          h2: "Empat model",
+          body: [
+            "Per jam / time-and-materials menagih waktu yang dihabiskan, tanpa memandang hasil. Ruang lingkup tetap menetapkan harga deliverable terdefinisi untuk harga tetap. Berbasis milestone mengikat pembayaran ke deliverable bertahap. Retainer membeli kapasitas berkelanjutan dengan biaya bulanan tetap.",
+            "Masing-masing sah dalam konteks yang tepat. Kesalahannya memilih model tanpa melihat insentif yang diciptakannya — karena insentif itu membentuk setiap keputusan vendor begitu pekerjaan berjalan.",
+          ],
+        },
+        {
+          h2: "Insentif yang diciptakan masing-masing",
+          body: [
+            "Per jam memberi imbalan vendor saat pekerjaan lebih lama — bukan karena ketidakjujuran, tetapi karena meteran dan kepentingan berjalan searah. Ruang lingkup tetap memberi imbalan efisiensi: vendor menyimpan keuntungan menyelesaikan cepat, jadi kepentingannya selaras dengan Anda. Berbasis milestone menyelaraskan pembayaran dengan kemajuan tetapi bisa memecah sistem menjadi potongan yang bisa didemokan. Retainer memberi imbalan hubungan stabil tetapi bisa menyimpang tanpa ukuran nilai.",
+            "Pertanyaan untuk setiap vendor sederhana: di bawah model Anda, apakah Anda untung lebih banyak dengan menyelesaikan atau dengan melanjutkan?",
+          ],
+        },
+        {
+          h2: "Mengapa harga tetap AI berbeda",
+          body: [
+            "Harga tetap adalah model yang paling selaras dengan pembeli — tetapi juga yang paling tak bisa ditawarkan jujur oleh sebagian besar vendor untuk AI, karena pekerjaan AI membawa variansi yang harus diserap harga tetap. Ditawarkan tanpa metode, harga tetap entah dilebihkan banyak atau diam-diam ditinggalkan begitu pekerjaan menyulitkan.",
+            "Itulah mengapa PRIONATION memasangkan harga tetap dengan eval, telemetri, dan infrastruktur yang dimiliki. Metodologi menghapus variansi yang jika tidak akan membuat harga tetap sembrono — dan Diagnostic wajib adalah tempat variansi itu diukur sebelum sebuah angka diberikan.",
+          ],
+        },
+        {
+          h2: "Cara memilih",
+          body: [
+            "Utamakan ruang lingkup tetap untuk build terdefinisi, dan bersikeras melihat metode yang membuatnya aman — langkah pelingkupan, definisi 'selesai' berbasis eval, dan garansi. Gunakan retainer untuk pekerjaan yang benar-benar berkelanjutan, dilingkupi terhadap telemetri. Berhati-hatilah dengan per jam untuk apa pun yang bisa didefinisikan, dan dengan harga tetap yang ditawarkan tanpa langkah pelingkupan sama sekali.",
+            "Model yang tepat adalah yang membuat vendor hanya menang ketika Anda menang.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Harga tetap atau per jam, mana yang lebih baik untuk AI?",
+          a: "Ruang lingkup tetap lebih selaras dengan pembeli karena vendor menyimpan keuntungan menyelesaikan cepat. Tetapi ia hanya tepercaya dengan metode nyata di baliknya; tanpa itu, harga tetap dilebihkan atau diam-diam ditinggalkan saat pekerjaan menyulitkan.",
+        },
+        {
+          q: "Mengapa sebagian besar vendor menagih per jam untuk AI?",
+          a: "Karena pekerjaan AI membawa variansi, dan per jam menggeser risiko itu ke klien. Itu pilihan aman bagi vendor tanpa metodologi untuk menghapus variansi — tetapi memberi imbalan vendor yang lebih lama.",
+        },
+        {
+          q: "Bagaimana harga tetap bisa jujur untuk pekerjaan AI yang tak terprediksi?",
+          a: "Hanya jika metodologi menghapus ketidakterprediksian dulu. Eval mendefinisikan selesai, telemetri membuat iterasi terukur, infrastruktur yang dimiliki mencegah kejutan integrasi, dan Diagnostic mengukur variansi sebelum harga ditetapkan.",
+        },
+        {
+          q: "Untuk apa penetapan harga berbasis milestone?",
+          a: "Mengikat pembayaran ke pengiriman bertahap pada program lebih besar. Risikonya memecah sistem menjadi potongan yang bisa didemokan yang tak menjumlah menjadi hasil produksi yang koheren, jadi milestone harus didefinisikan terhadap hasil nyata.",
+        },
+        {
+          q: "Apa yang harus saya tanyakan ke vendor soal harga?",
+          a: "Satu pertanyaan: di bawah model Anda, apakah Anda untung lebih banyak dengan menyelesaikan atau melanjutkan? Lalu minta lihat metodenya — langkah pelingkupan, definisi 'selesai' berbasis eval, dan garansi — yang membuat harga tetap aman.",
+        },
+      ],
+    },
+  },
 };

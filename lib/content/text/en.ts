@@ -504,4 +504,204 @@ export const pagesEn: LocalePages = {
       ],
     },
   },
+
+  guides: {
+    "ai-consulting-cost-mid-market-companies": {
+      navLabel: "AI consulting cost",
+      seoTitle: "AI consulting cost for mid-market companies",
+      metaDescription:
+        "What AI engagements actually cost for €5–50M companies — Diagnostic, Build, and Retainer pricing, the three models compared, and where the hidden costs hide.",
+      badge: "Guide · Pricing",
+      tldr: "For a mid-market company, AI engagements typically run €5,000–7,000 for a two-week Diagnostic, €25,000–55,000 for an eight-week Build, and €4,000–9,000/month for an ongoing Retainer. The number that matters more than the headline price is the pricing model, because it determines who carries the risk when the work turns out to be harder than expected.",
+      h1: "AI consulting cost for mid-market companies",
+      intro: [
+        "The honest answer to 'what does AI consulting cost?' for a €5–50M company is a range — and a warning that the range is the least important part. How the work is priced matters more than the number, because it decides who absorbs the inevitable variance.",
+        "This guide gives the real figures, compares the three pricing models, and names the costs that vendors tend not to mention upfront.",
+      ],
+      sections: [
+        {
+          h2: "The real figures",
+          body: [
+            "PRIONATION's structure is fixed and public: a Diagnostic at €5,000–7,000 over two weeks maps the bottleneck and sets the scope; a Build at €25,000–55,000 over eight weeks ships the production system; a Retainer at €4,000–9,000/month keeps a pod available afterwards, with a six-month minimum. A three-page Express Site starts at €1,500.",
+            "More than 60% of Diagnostics proceed to a Build — a number that only holds because the Diagnostic is scoped to qualify the work, not to sell the next stage regardless.",
+          ],
+        },
+        {
+          h2: "The three pricing models",
+          body: [
+            "AI work is sold three ways. Hourly or time-and-materials shifts all the risk of unpredictability onto you — the meter runs whether or not the work converges. Fixed-scope prices a defined outcome, so the vendor carries the variance. Retainer buys ongoing capacity at a predictable monthly rate.",
+            "The structural point: time-and-materials rewards the vendor for the work taking longer. Fixed scope only works if the vendor has a method that removes variance — which is why fixed price and methodology are inseparable.",
+          ],
+        },
+        {
+          h2: "Where the hidden costs hide",
+          body: [
+            "The costs vendors underplay are ramp, integration, and lock-in. Ramp is the weeks billed while a team learns your domain. Integration is the unglamorous work of connecting to your real systems, often scoped vaguely and billed as it expands. Lock-in is the deferred cost of a system you cannot operate or leave without the vendor.",
+            "A fixed-scope engagement with owned infrastructure removes all three: ramp and integration are inside the fixed price, and there is nothing to be locked into because you hold everything.",
+          ],
+        },
+        {
+          h2: "How to budget",
+          body: [
+            "Budget the Diagnostic first — it is small, and it is what makes the Build price reliable. Treat any vendor who quotes a fixed Build price without a scoping step as either guessing or planning to bill the difference later.",
+            "For total cost of ownership, count what you keep: with owned infrastructure the Build is a capital asset your team can run, not a subscription to someone else's system.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "How much does AI consulting cost for a mid-market company?",
+          a: "Typically €5,000–7,000 for a two-week Diagnostic, €25,000–55,000 for an eight-week Build, and €4,000–9,000/month for an ongoing Retainer. All fixed scope, fixed price, quoted in euros.",
+        },
+        {
+          q: "Why is the pricing model more important than the price?",
+          a: "Because it decides who carries the risk when work is harder than expected. Time-and-materials puts that risk on you and rewards the vendor for taking longer; fixed scope puts it on the vendor, but only works with a real method.",
+        },
+        {
+          q: "What are the hidden costs in AI engagements?",
+          a: "Ramp (weeks billed while a team learns your domain), integration (vaguely scoped connection work that expands), and lock-in (a system you cannot operate or leave). Fixed scope with owned infrastructure removes all three.",
+        },
+        {
+          q: "Why start with a Diagnostic?",
+          a: "Because it makes the Build price reliable. A fixed Build price quoted without a scoping step is a guess. The Diagnostic maps the bottleneck and sets the eval criteria the price is based on.",
+        },
+        {
+          q: "What can we cancel, and what's the warranty?",
+          a: "The Diagnostic carries no obligation to proceed to a Build. Each Build includes a four-week post-launch warranty against the agreed eval thresholds; the Retainer has a six-month minimum and is otherwise ongoing.",
+        },
+      ],
+    },
+
+    "scoping-ai-build-engagement": {
+      navLabel: "Scoping an AI build",
+      seoTitle: "How to scope an AI build engagement · PRIONATION",
+      metaDescription:
+        "The six components every AI scope document needs before you talk to a vendor — with good and bad examples — and the scoping mistakes that kill projects.",
+      badge: "Guide · Scoping",
+      tldr: "A good AI scope has six components: the workflow target, the success metric, a data inventory, the integration points, the constraints, and a timeline anchor. Most failed AI projects were under-scoped on one of these before the contract was signed. This guide shows what good and bad look like for each.",
+      h1: "How to scope an AI build engagement",
+      intro: [
+        "The single biggest predictor of whether an AI build succeeds is the quality of the scope written before it starts. Vague scope is not a paperwork problem — it is the mechanism by which budgets double and timelines slip.",
+        "This guide breaks scope into six components, with a good and a bad example for each, so you can pressure-test a scope before committing.",
+      ],
+      sections: [
+        {
+          h2: "Why scope decides the outcome",
+          body: [
+            "AI work has more inherent uncertainty than ordinary software, so loose scope compounds faster. When 'build an AI assistant' is the scope, every party fills the gaps with a different assumption, and the gap becomes a dispute the moment the bill arrives.",
+            "Good scope does not eliminate uncertainty; it locates it. It says exactly what is being built, how success is measured, and what is explicitly out of bounds — so the unknowns that remain are small and named.",
+          ],
+        },
+        {
+          h2: "The six components",
+          body: [
+            "1) Workflow target — the specific operation being changed, not a capability. 2) Success metric — a measurable definition of done. 3) Data inventory — what data exists, where, and in what state. 4) Integration points — the exact systems to connect to. 5) Constraints — data residency, latency, budget, non-negotiables. 6) Timeline anchor — a fixed date the work is paced against.",
+            "Each maps to something concrete: the success metric becomes the eval suite; the data inventory determines feasibility; the integration points are where most hidden cost lives.",
+          ],
+        },
+        {
+          h2: "Good scope vs bad scope",
+          body: [
+            "Bad: 'Use AI to improve customer support.' Good: 'Draft first-response replies for billing tickets, scored against a 200-ticket golden set, integrated with our help desk, with no customer data leaving our cloud, live in eight weeks.' The second is buildable and quotable; the first is an invitation to bill by the hour.",
+            "The test for any scope line is whether two vendors would price it the same. If they would not, the line is too vague to commit to.",
+          ],
+        },
+        {
+          h2: "The mistakes that kill projects",
+          body: [
+            "The fatal scoping mistakes are: defining a capability instead of a workflow; leaving success undefined; discovering the data is unusable after signing; and treating integration as a detail. Each one converts a fixed engagement into an open-ended one.",
+            "A Diagnostic exists to produce exactly this scope — but you can do much of it yourself first, and arrive at the conversation with the unknowns already narrowed.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "What should an AI scope document include?",
+          a: "Six components: the workflow target, a measurable success metric, a data inventory, the integration points, the constraints (residency, latency, budget), and a timeline anchor. Each removes a class of later dispute.",
+        },
+        {
+          q: "What does a good AI scope look like?",
+          a: "Specific and testable: the exact workflow, a measurable definition of done, the systems to integrate, the data constraints, and a fixed date. The test is whether two vendors would price it identically.",
+        },
+        {
+          q: "What's the most common scoping mistake?",
+          a: "Defining a capability ('use AI for support') instead of a workflow ('draft first replies for billing tickets, scored against a golden set'). Capabilities cannot be priced or finished; workflows can.",
+        },
+        {
+          q: "How does scope relate to the eval suite?",
+          a: "The success metric in the scope becomes the eval suite. A scope with no measurable success criterion cannot produce evals, which is why such projects end up open-ended and disputed.",
+        },
+        {
+          q: "Can the Diagnostic do the scoping for us?",
+          a: "Yes — producing this scope is exactly what the two-week Diagnostic delivers. Doing the groundwork yourself first makes the Diagnostic faster and the resulting Build cheaper.",
+        },
+      ],
+    },
+
+    "fixed-price-vs-hourly-ai-consulting": {
+      navLabel: "Fixed-price vs hourly",
+      seoTitle: "Fixed-price vs hourly AI consulting · PRIONATION",
+      metaDescription:
+        "The four AI pricing models, the incentive each creates for the vendor, and why fixed-price AI only works when the methodology removes the variance.",
+      badge: "Guide · Pricing models",
+      tldr: "There are four ways to pay for AI work — hourly, fixed-scope, milestone-based, and retainer — and each creates a different incentive for the vendor. Hourly rewards slowness; fixed-scope rewards efficiency but only works with a real method. Choosing the model is really choosing whose interest is aligned with finishing.",
+      h1: "Fixed-price vs hourly AI consulting: which model protects you",
+      intro: [
+        "Most buyers compare AI vendors on rate and capability. The more important comparison is the pricing model, because the model decides whether the vendor profits from finishing or from continuing.",
+        "This guide lays out the four models, the incentive each one builds in, and why a fixed price is only trustworthy when there is a methodology behind it.",
+      ],
+      sections: [
+        {
+          h2: "The four models",
+          body: [
+            "Hourly / time-and-materials bills for time spent, regardless of outcome. Fixed-scope prices a defined deliverable for a set price. Milestone-based ties payment to staged deliverables. Retainer buys ongoing capacity for a flat monthly fee.",
+            "Each is legitimate in the right context. The mistake is choosing a model without seeing the incentive it creates — because that incentive shapes the vendor's every decision once the work is underway.",
+          ],
+        },
+        {
+          h2: "The incentive each creates",
+          body: [
+            "Hourly rewards the vendor when work takes longer — not through dishonesty, but because the meter and the interest run the same direction. Fixed-scope rewards efficiency: the vendor keeps the upside of finishing fast, so their interest aligns with yours. Milestone-based aligns payment with progress but can fragment a system into demo-able pieces. Retainer rewards a steady relationship but can drift without a measure of value.",
+            "The question to ask any vendor is simple: under your model, do you earn more by finishing or by continuing?",
+          ],
+        },
+        {
+          h2: "Why fixed-price AI is different",
+          body: [
+            "Fixed price is the model most aligned with the buyer — but it is also the one most vendors cannot honestly offer for AI, because AI work carries variance that a fixed price has to absorb. Offered without a method, a fixed price is either padded heavily or quietly abandoned the moment the work gets hard.",
+            "This is why PRIONATION couples fixed price to evals, telemetry, and owned infrastructure. The methodology removes the variance that would otherwise make a fixed price reckless — and the mandatory Diagnostic is where that variance is measured before a number is given.",
+          ],
+        },
+        {
+          h2: "How to choose",
+          body: [
+            "Prefer fixed-scope for a defined build, and insist on seeing the method that makes it safe — a scoping step, an eval-based definition of done, and a warranty. Use a retainer for genuinely ongoing work, scoped against telemetry. Be cautious of hourly for anything that can be defined, and of a fixed price offered with no scoping step at all.",
+            "The right model is the one under which the vendor only wins when you do.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Is fixed-price or hourly better for AI work?",
+          a: "Fixed-scope is more aligned with the buyer because the vendor keeps the upside of finishing fast. But it is only trustworthy with a real method behind it; without one, a fixed price is padded or quietly abandoned when the work gets hard.",
+        },
+        {
+          q: "Why do most vendors charge hourly for AI?",
+          a: "Because AI work carries variance, and hourly shifts that risk onto the client. It is the safe choice for a vendor without a methodology to remove the variance — but it rewards the vendor for taking longer.",
+        },
+        {
+          q: "How can a fixed price be honest for unpredictable AI work?",
+          a: "Only if a methodology removes the unpredictability first. Evals define done, telemetry makes iteration measurable, owned infrastructure prevents integration surprises, and a Diagnostic measures the variance before the price is set.",
+        },
+        {
+          q: "What is milestone-based pricing good for?",
+          a: "Tying payment to staged delivery on larger programmes. The risk is fragmenting a system into demo-able pieces that do not add up to a coherent production result, so milestones must be defined against real outcomes.",
+        },
+        {
+          q: "What should I ask a vendor about pricing?",
+          a: "One question: under your model, do you earn more by finishing or by continuing? Then ask to see the method — scoping step, eval-based definition of done, and warranty — that makes a fixed price safe.",
+        },
+      ],
+    },
+  },
 };
