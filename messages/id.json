@@ -101,9 +101,9 @@
       {
         "name": "EPIDOM",
         "geo": "🇫🇷 PRANCIS · EROPA",
-        "tag": "F&B · MANAJEMEN INVENTARIS",
+        "tag": "F&B · DASBOR",
         "year": "2026",
-        "body": "Mengembangkan sistem manajemen inventaris bar kue untuk operator F&B Eropa. Dirancang untuk pelacakan multi-lokasi, menggantikan proses manual dengan solusi digital terpusat."
+        "body": "Membangun dasbor operasional produksi untuk operator F&B Eropa. Memusatkan data real-time lintas lokasi, menggantikan pelacakan manual yang terfragmentasi dengan satu antarmuka keputusan untuk operator dan manajer."
       },
       {
         "name": "EXPEDITOO",
@@ -289,7 +289,7 @@
       "product": "PRODUK",
       "resources": "SUMBER DAYA",
       "connect": "HUBUNGI KAMI",
-      "use_cases": "KASUS PENGGUNAAN",
+      "use_cases": "REKAYASA PRODUK AI",
       "delivered": "TERKIRIM"
     },
     "nav": {

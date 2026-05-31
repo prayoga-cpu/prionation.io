@@ -10,7 +10,12 @@
     "stat_deliverable": "TO FIRST DELIVERABLE",
     "stat_production": "TO PRODUCTION",
     "weeks": "weeks",
-    "words": ["bottlenecks.", "manual work.", "data silos.", "slow processes."]
+    "words": [
+      "bottlenecks.",
+      "manual work.",
+      "data silos.",
+      "slow processes."
+    ]
   },
   "Header": {
     "nav": {
@@ -96,9 +101,9 @@
       {
         "name": "EPIDOM",
         "geo": "🇫🇷 FRANCE · EUROPE",
-        "tag": "F&B · INVENTORY MGMT",
+        "tag": "F&B · DASHBOARD",
         "year": "2026",
-        "body": "Developed a cookie bar inventory management system for a European F&B operator. Designed for multi-location tracking, the system replaced manual processes with a centralized digital solution, cutting operational overhead."
+        "body": "Built a production operations dashboard for a European F&B operator. Centralises real-time data across locations, replacing fragmented manual tracking with a single decision surface for operators and managers."
       },
       {
         "name": "EXPEDITOO",
@@ -284,7 +289,7 @@
       "product": "PRODUCT",
       "resources": "RESOURCES",
       "connect": "CONNECT US",
-      "use_cases": "USE CASES",
+      "use_cases": "AI PRODUCT ENGINEERING",
       "delivered": "DELIVERED"
     },
     "nav": {

@@ -101,9 +101,9 @@
       {
         "name": "EPIDOM",
         "geo": "🇫🇷 FRANCE · EUROPE",
-        "tag": "F&B · GESTION DES STOCKS",
+        "tag": "F&B · TABLEAU DE BORD",
         "year": "2026",
-        "body": "Développement d'un système de gestion des stocks pour un opérateur F&B européen. Conçu pour le suivi multi-sites, il remplace les processus manuels par une solution numérique centralisée."
+        "body": "Développement d'un tableau de bord opérationnel de production pour un opérateur F&B européen. Centralise les données en temps réel sur plusieurs sites, remplaçant le suivi manuel fragmenté par une surface de décision unique pour les opérateurs et managers."
       },
       {
         "name": "EXPEDITOO",
@@ -289,7 +289,7 @@
       "product": "PRODUIT",
       "resources": "RESSOURCES",
       "connect": "NOUS CONTACTER",
-      "use_cases": "CAS D'UTILISATION",
+      "use_cases": "IA PRODUIT ENGINEERING",
       "delivered": "LIVRÉ"
     },
     "nav": {

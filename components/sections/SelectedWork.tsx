@@ -99,7 +99,7 @@ export function SelectedWork() {
 
   return (
     <section id="selected-work" className="relative px-page-x py-[140px] max-w-max-w mx-auto">
-      <SectionHead n="03" label={t("label")} title={t("title")} link={t("link")} />
+      <SectionHead n="03" label={t("label")} title={t("title")} link={t("link")} linkHref="/showcases" />
       
       {/* Desktop Grid */}
       <motion.div

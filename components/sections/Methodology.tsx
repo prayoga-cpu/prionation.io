@@ -61,6 +61,7 @@ export function Methodology({ onNotify }: { onNotify: () => void }) {
           label={t("label")}
           title={t("title")}
           link={t("link")}
+          linkHref="/methodology"
         />
         <div className="mt-10 md:mt-14 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[1px] bg-line rounded-[16px] md:rounded-[24px] overflow-hidden pn-ring-wrap border border-line">
           {principles.map((p, i) => (

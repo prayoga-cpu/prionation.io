@@ -1,18 +1,24 @@
 'use client';
 
 import React from 'react';
+import { Link } from '@/i18n/routing';
 import { Dot } from './Typography';
+
+const LINK_CLS =
+  'text-[13px] text-soft inline-flex items-center gap-2 border-b border-line-soft pb-1 transition-colors duration-fast hover:text-white hover:border-white';
 
 export function SectionHead({
   n,
   label,
   title,
   link,
+  linkHref,
 }: {
   n: string;
   label: string;
   title: React.ReactNode;
   link?: string;
+  linkHref?: string;
 }) {
   return (
     <div className="flex justify-between items-end gap-8 mb-14 flex-wrap">
@@ -24,9 +30,15 @@ export function SectionHead({
         <h2 className="font-sans font-extrabold text-[clamp(32px,4.2vw,54px)] leading-[1.02] tracking-[-0.03em] m-0 max-w-[22ch] text-balance text-white">{title}</h2>
       </div>
       {link && (
-        <span className="text-[13px] text-soft inline-flex items-center gap-2 border-b border-line-soft pb-1 transition-colors duration-fast hover:text-white hover:border-white">
-          {link} <span aria-hidden="true">→</span>
-        </span>
+        linkHref ? (
+          <Link href={linkHref as Parameters<typeof Link>[0]['href']} className={LINK_CLS}>
+            {link} <span aria-hidden="true">→</span>
+          </Link>
+        ) : (
+          <span className={LINK_CLS}>
+            {link} <span aria-hidden="true">→</span>
+          </span>
+        )
       )}
     </div>
   );

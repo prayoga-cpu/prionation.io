@@ -6,19 +6,7 @@ import { Dot } from "../../ui/Atoms";
 import { getPublishedPages, type PageSection } from "@/lib/content/pages";
 
 const LINK_CLS = "text-[13px] text-muted hover:text-white transition-colors";
-const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
 
-// Title-case a slug for a footer label (used for published cluster pages).
-function labelFromSlug(slug: string) {
-  return slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
-
-// On the homepage, section links scroll in-page; on any other route they
-// navigate back to the homepage anchor. Declared at module scope so they are
-// stable components, not recreated each render.
 function SectionLink({
   isHome,
   id,
@@ -73,12 +61,14 @@ function EngageLink({
   );
 }
 
-// Published cluster pages for a section (manifest-driven; empty until pages ship).
 function publishedLinks(section: PageSection) {
   return getPublishedPages(section).map((p) => (
     <li key={p.slug}>
       <Link href={`/${section}/${p.slug}`} className={LINK_CLS}>
-        {labelFromSlug(p.slug)}
+        {p.slug
+          .split("-")
+          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+          .join(" ")}
       </Link>
     </li>
   ));
@@ -89,7 +79,6 @@ export function FooterColumns() {
   const isHome = usePathname() === "/";
 
   const showcaseLinks = publishedLinks("showcases");
-  const intelligenceLinks = publishedLinks("intelligence");
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-8">
@@ -114,18 +103,13 @@ export function FooterColumns() {
         </ul>
       </div>
 
-      {/* Resources */}
+      {/* Resources — homepage section shortcuts */}
       <div>
         <h4 className="m-[0_0_16px] font-sans font-bold text-[12px] text-white tracking-[0.06em] uppercase flex items-center gap-2.5">
           <Dot className="shadow-[0_0_10px_var(--c-accent)]" />
           {t("labels.resources")}
         </h4>
         <ul className="list-none p-0 m-0 flex flex-col gap-2">
-          <li>
-            <Link href={ANCHOR_PATH} className={LINK_CLS}>
-              AI Product Engineering
-            </Link>
-          </li>
           <li><SectionLink isHome={isHome} id="how-we-work">{t("nav.how_we_work")}</SectionLink></li>
           <li><SectionLink isHome={isHome} id="methodology">{t("nav.methodology")}</SectionLink></li>
           <li><SectionLink isHome={isHome} id="selected-work">{t("nav.selected_work")}</SectionLink></li>
@@ -161,27 +145,30 @@ export function FooterColumns() {
         </ul>
       </div>
 
-      {/* Use Cases */}
+      {/* AI Product Engineering — category listing pages */}
       <div>
         <h4 className="m-[0_0_16px] font-sans font-bold text-[12px] text-white tracking-[0.06em] uppercase flex items-center gap-2.5">
           <Dot className="shadow-[0_0_10px_var(--c-accent)]" />
           {t("labels.use_cases")}
         </h4>
         <ul className="list-none p-0 m-0 flex flex-col gap-2">
-          {intelligenceLinks.length > 0 ? (
-            intelligenceLinks
-          ) : (
-            <>
-              <li className="flex items-center gap-1.5">
-                <span className="text-[13px] text-muted">Foundation Stats</span>
-                <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase"> soon</span>
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="text-[13px] text-muted">Intelligence Briefings</span>
-                <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase"> soon</span>
-              </li>
-            </>
-          )}
+          <li>
+            <Link href="/ai-product-engineering-for-mid-market-companies" className={LINK_CLS}>
+              Overview
+            </Link>
+          </li>
+          <li><Link href="/methodology" className={LINK_CLS}>Methodology</Link></li>
+          <li><Link href="/showcases" className={LINK_CLS}>Showcases</Link></li>
+          <li><Link href="/frameworks" className={LINK_CLS}>Frameworks</Link></li>
+          <li><Link href="/guides" className={LINK_CLS}>Guides</Link></li>
+          <li className="flex items-center gap-1.5">
+            <span className="text-[13px] text-muted">Intelligence</span>
+            <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase"> soon</span>
+          </li>
+          <li className="flex items-center gap-1.5">
+            <span className="text-[13px] text-muted">Transparency</span>
+            <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase"> soon</span>
+          </li>
         </ul>
       </div>
 
