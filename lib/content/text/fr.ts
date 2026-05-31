@@ -706,7 +706,7 @@ export const pagesFr: LocalePages = {
   },
 
   showcases: {
-    "epidom-logistics-france": {
+    epidom: {
       navLabel: "Epidom",
       seoTitle: "Epidom — opérations d'inventaire, France · PRIONATION",
       metaDescription:
@@ -772,7 +772,7 @@ export const pagesFr: LocalePages = {
       ],
     },
 
-    "expeditoo-marketplace-france": {
+    "expeditoo": {
       navLabel: "Expeditoo",
       seoTitle: "Expeditoo — marketplace logistique, France · PRIONATION",
       metaDescription:
@@ -838,9 +838,10 @@ export const pagesFr: LocalePages = {
       ],
     },
 
-    "lead-agent-real-estate-australia": {
+    "the-lead-agent": {
       navLabel: "The Lead Agent",
-      seoTitle: "The Lead Agent — génération de leads immobiliers, Australie · PRIONATION",
+      seoTitle:
+        "The Lead Agent — génération de leads immobiliers, Australie · PRIONATION",
       metaDescription:
         "Comment PRIONATION a construit une plateforme de génération de leads et de prise de rendez-vous pour The Lead Agent, automatisant la gestion du pipeline pour les agents immobiliers australiens — et la leçon transférable.",
       badge: "Réalisation · 🇦🇺 Australie · Immobilier",
@@ -908,7 +909,8 @@ export const pagesFr: LocalePages = {
   intelligence: {
     "ai-bottlenecks-mid-market-logistics": {
       navLabel: "Goulots IA en logistique",
-      seoTitle: "Goulots d'étranglement IA en logistique mid-market · PRIONATION",
+      seoTitle:
+        "Goulots d'étranglement IA en logistique mid-market · PRIONATION",
       metaDescription:
         "Les goulots opérationnels que l'IA brise systématiquement en logistique mid-market — et ceux qu'elle ne peut pas — issus des missions logistiques de PRIONATION.",
       badge: "Intelligence · Logistique",

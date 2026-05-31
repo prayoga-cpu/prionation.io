@@ -706,7 +706,7 @@ export const pagesId: LocalePages = {
   },
 
   showcases: {
-    "epidom-logistics-france": {
+    epidom: {
       navLabel: "Epidom",
       seoTitle: "Epidom — operasi inventaris, Prancis · PRIONATION",
       metaDescription:
@@ -772,7 +772,7 @@ export const pagesId: LocalePages = {
       ],
     },
 
-    "expeditoo-marketplace-france": {
+    "expeditoo": {
       navLabel: "Expeditoo",
       seoTitle: "Expeditoo — marketplace logistik, Prancis · PRIONATION",
       metaDescription:
@@ -838,7 +838,7 @@ export const pagesId: LocalePages = {
       ],
     },
 
-    "lead-agent-real-estate-australia": {
+    "the-lead-agent": {
       navLabel: "The Lead Agent",
       seoTitle: "The Lead Agent — lead gen real estate, Australia · PRIONATION",
       metaDescription:

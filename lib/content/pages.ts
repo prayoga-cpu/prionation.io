@@ -143,7 +143,7 @@ export const pages: PageMeta[] = [
 
   // ── SHOWCASES ─────────────────────────────────────────────────────────────
   {
-    slug: "epidom-logistics-france",
+    slug: "epidom",
     section: "showcases",
     status: "published",
     seoTitle: "Epidom — logistics AI, France · PRIONATION",
@@ -168,7 +168,7 @@ export const pages: PageMeta[] = [
     ],
   },
   {
-    slug: "expeditoo-marketplace-france",
+    slug: "expeditoo",
     section: "showcases",
     status: "published",
     seoTitle: "Expeditoo — marketplace AI, France · PRIONATION",
@@ -193,7 +193,7 @@ export const pages: PageMeta[] = [
     ],
   },
   {
-    slug: "lead-agent-real-estate-australia",
+    slug: "the-lead-agent",
     section: "showcases",
     status: "published",
     seoTitle: "The Lead Agent — real estate AI, Australia · PRIONATION",
@@ -394,8 +394,8 @@ export const pages: PageMeta[] = [
     ],
     interlinkTo: [
       ANCHOR_PATH,
-      "/showcases/epidom-logistics-france",
-      "/showcases/expeditoo-marketplace-france",
+      "/showcases/epidom",
+      "/showcases/expeditoo",
     ],
   },
   {
@@ -420,7 +420,7 @@ export const pages: PageMeta[] = [
     ],
     interlinkTo: [
       ANCHOR_PATH,
-      "/showcases/lead-agent-real-estate-australia",
+      "/showcases/the-lead-agent",
       "/methodology/evals-before-features",
     ],
   },

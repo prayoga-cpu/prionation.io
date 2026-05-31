@@ -706,14 +706,14 @@ export const pagesEn: LocalePages = {
   },
 
   showcases: {
-    "epidom-logistics-france": {
+    epidom: {
       navLabel: "Epidom",
-      seoTitle: "Epidom — inventory operations, France · PRIONATION",
+      seoTitle: "Epidom — F&B operations dashboard · PRIONATION",
       metaDescription:
         "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
       badge: "Showcase · 🇫🇷 France · F&B",
       tldr: "Epidom, a European F&B operator, ran multi-location inventory on manual processes that did not scale. PRIONATION built a centralised production system to track inventory across locations and cut the operational overhead of doing it by hand. This is the profile of the engagement and the transferable lesson for multi-site operators.",
-      h1: "Epidom: centralising multi-location inventory operations",
+      h1: "Epidom — F&B operations dashboard",
       intro: [
         "Epidom is a European food-and-beverage operator running inventory across multiple locations. Like most multi-site operators, its constraint was not strategy — it was the manual, fragmented process of keeping stock visible and accurate everywhere at once.",
         "This page profiles the engagement: the operational bottleneck, how PRIONATION approached the build, what changed, and the lesson that transfers to any multi-location operation. Quantified results will be published as they are finalised.",
@@ -772,7 +772,7 @@ export const pagesEn: LocalePages = {
       ],
     },
 
-    "expeditoo-marketplace-france": {
+    "expeditoo": {
       navLabel: "Expeditoo",
       seoTitle: "Expeditoo — logistics marketplace, France · PRIONATION",
       metaDescription:
@@ -838,7 +838,7 @@ export const pagesEn: LocalePages = {
       ],
     },
 
-    "lead-agent-real-estate-australia": {
+    "the-lead-agent": {
       navLabel: "The Lead Agent",
       seoTitle: "The Lead Agent — real estate lead gen, Australia · PRIONATION",
       metaDescription:
