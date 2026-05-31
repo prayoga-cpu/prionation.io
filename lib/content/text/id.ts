@@ -304,4 +304,204 @@ export const pagesId: LocalePages = {
       ],
     },
   },
+
+  frameworks: {
+    "ai-build-vs-buy-calculator": {
+      navLabel: "Kalkulator build vs buy",
+      seoTitle: "Kalkulator AI build vs buy · PRIONATION",
+      metaDescription:
+        "Kerangka keputusan untuk operator mid-market: enam masukan yang menentukan apakah membangun AI khusus, membeli SaaS, atau hibrida.",
+      badge: "Kerangka · Build vs buy",
+      tldr: "Keputusan build-vs-buy untuk AI bermuara pada enam variabel: berapa biaya alur kerja, volumenya, seberapa spesifik ke bisnis Anda, sensitivitas data, perkakas yang ada, dan horizon waktu. Kerangka ini mengubahnya menjadi rekomendasi jelas — bangun, beli, atau hibrida — alih-alih firasat.",
+      h1: "AI build vs buy: kerangka keputusan untuk operator mid-market",
+      intro: [
+        "Setiap operator yang menghadapi keputusan AI menanyakan hal yang sama: membangun yang khusus, membeli produk SaaS, atau menggabungkan keduanya? Jawaban yang salah mahal di kedua arah — build khusus untuk masalah generik memboroskan modal; SaaS untuk pembeda inti membatasi potensi Anda.",
+        "Kerangka ini menyederhanakan keputusan menjadi enam masukan dan logika sederhana untuk menimbangnya. Inilah penalaran yang diterapkan PRIONATION dalam Diagnostic, dibuat eksplisit.",
+      ],
+      sections: [
+        {
+          h2: "Cara menggunakannya",
+          body: [
+            "Nilai alur kerja Anda terhadap enam masukan di bawah, dengan jujur. Tujuannya bukan angka presisi melainkan arah: sebagian besar keputusan menjadi jelas begitu variabelnya dinamai. Bila dua masukan menarik ke arah berlawanan, penentunya hampir selalu spesifisitas — seberapa unik alur kerja itu bagi cara Anda bersaing.",
+            "Perlakukan hasilnya sebagai awal percakapan pelingkupan, bukan vonis. Sinyal 'bangun' tetap butuh Diagnostic untuk memastikan hambatannya nyata dan ruang lingkupnya berbatas.",
+          ],
+        },
+        {
+          h2: "Enam masukan",
+          body: [
+            "1) Biaya tahunan alur kerja — biaya penuh menjalankannya saat ini, termasuk orang. 2) Volume bulanan — seberapa sering dijalankan. 3) Spesifisitas — seberapa khas ke bisnis Anda dibanding tugas generik. 4) Sensitivitas data — apakah data boleh keluar lingkungan Anda. 5) Perkakas yang ada — apakah SaaS sudah menutup sebagian besar. 6) Horizon waktu — berapa lama Anda akan bergantung padanya.",
+            "Biaya tinggi, volume tinggi, spesifisitas tinggi, dan data sensitif mendorong ke build. Spesifisitas rendah dan opsi SaaS kuat mendorong ke beli. Horizon panjang menaikkan imbal hasil sebuah build; horizon pendek mendukung membeli.",
+          ],
+        },
+        {
+          h2: "Logika keputusan",
+          body: [
+            "Beli ketika alur kerja generik, terlayani baik oleh SaaS matang, dan bukan sumber keunggulan kompetitif — jangan membangun infrastruktur komoditas. Bangun ketika alur kerja khas ke cara Anda bersaing, mahal, bervolume tinggi, atau dibatasi data yang tak boleh keluar lingkungan Anda, dan Anda akan bergantung padanya bertahun-tahun.",
+            "Pilih hibrida ketika intinya generik tetapi mil terakhirnya milik Anda: beli lapisan komoditas, bangun lapisan pembeda tipis di atasnya. Sebagian besar kemenangan AI mid-market adalah hibrida — nilainya ada di 20% yang khas bagi operasi Anda.",
+          ],
+        },
+        {
+          h2: "Apa yang dilakukan dengan hasilnya",
+          body: [
+            "Hasil 'beli' berarti langkah berikutnya adalah pemilihan vendor, bukan proyek dengan PRIONATION. Kami akan mengatakannya. Hasil 'bangun' atau 'hibrida' berarti langkah berikutnya adalah Diagnostic dua minggu untuk memetakan hambatan, memastikan ruang lingkup, dan menetapkan harga Build tetap.",
+            "Bagaimanapun, kerangka ini berhasil jika menghentikan Anda membangun yang seharusnya dibeli, atau membeli yang seharusnya dibangun.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Kapan membangun AI khusus alih-alih membeli SaaS?",
+          a: "Bangun ketika alur kerja khas ke cara Anda bersaing, mahal atau bervolume tinggi, atau dibatasi data yang tak boleh keluar lingkungan Anda — dan Anda akan bergantung padanya bertahun-tahun. Beli ketika generik dan terlayani baik oleh SaaS matang.",
+        },
+        {
+          q: "Apa itu pendekatan AI hibrida?",
+          a: "Membeli lapisan komoditas dan hanya membangun lapisan pembeda tipis di atasnya. Sebagian besar kemenangan AI mid-market adalah hibrida, karena nilainya ada di bagian kecil alur kerja yang khas bagi operasi Anda.",
+        },
+        {
+          q: "Bagaimana sensitivitas data memengaruhi keputusan?",
+          a: "Jika data tak boleh keluar lingkungan Anda karena alasan kepatuhan atau kompetisi, itu mendorong kuat ke build, karena infrastruktur yang dimiliki menjaga data di akun Anda alih-alih melewati SaaS pihak ketiga.",
+        },
+        {
+          q: "Apakah hasil 'bangun' berarti harus merekrut insinyur?",
+          a: "Tidak selalu. Build bisa dikirim oleh pod ramping berharga tetap lalu diserahkan ke tim Anda — lihat model biaya pod vs rekrut. Keputusan build terpisah dari keputusan perekrutan.",
+        },
+        {
+          q: "Apa langkah berikutnya setelah kerangka ini?",
+          a: "Jika hasilnya bangun atau hibrida, Diagnostic dua minggu memetakan hambatan dan menetapkan harga Build tetap. Jika beli, langkah berikutnya adalah pemilihan vendor — dan kami akan mengatakannya terus terang.",
+        },
+      ],
+    },
+
+    "pod-vs-hire-cost-model": {
+      navLabel: "Model biaya pod vs rekrut",
+      seoTitle: "Pod vs rekrut — model biaya · PRIONATION",
+      metaDescription:
+        "Biaya penuh pod AI ramping versus merekrut insinyur AI internal — gaji, tunjangan, rekrutmen, waktu adaptasi, dan risiko, dibandingkan dengan jujur.",
+      badge: "Kerangka · Pod vs rekrut",
+      tldr: "Membandingkan pod PRIONATION dengan rekrutan AI internal hanya berdasarkan tarif harian itu menyesatkan. Perbandingan jujur mencakup gaji, tunjangan, rekrutmen, waktu adaptasi, dan risiko salah rekrut. Pada satu build delapan minggu, pod berharga tetap hampir selalu lebih murah dan cepat; selama bertahun-tahun, tim internal akhirnya menang. Model ini menunjukkan di mana batasnya.",
+      h1: "Pod vs rekrut: biaya sebenarnya membangun AI",
+      intro: [
+        "Naluri kita membandingkan harga pod dengan gaji insinyur lalu menyimpulkan merekrut lebih murah. Perbandingan itu mengabaikan sebagian besar biaya nyata sebuah rekrutan dan seluruh risikonya.",
+        "Model ini memaparkan biaya penuh tiap jalur agar perbandingannya jujur — dan menunjukkan jawabannya sepenuhnya bergantung pada horizon waktu Anda.",
+      ],
+      sections: [
+        {
+          h2: "Cara menggunakannya",
+          body: [
+            "Pilih skenario yang sesuai: satu build terdefinisi, aliran pekerjaan AI berkelanjutan, atau ketidakpastian di antaranya. Lalu baca biaya penuh tiap jalur, bukan angka utamanya. Keputusan jarang soal harga per hari; ia soal risiko, kecepatan, dan seberapa banyak pekerjaan AI yang sebenarnya Anda punya.",
+            "Model ini mengasumsikan konteks mid-market — gaji Eropa atau AS, satu alur kerja bernilai tinggi — dan dimaksudkan untuk membingkai keputusan, bukan menggantikan penawaran.",
+          ],
+        },
+        {
+          h2: "Biaya penuh sebuah rekrutan",
+          body: [
+            "Insinyur AI senior bukan sekadar gajinya. Biaya penuh menambahkan pajak dan tunjangan pemberi kerja, biaya rekrutmen atau berbulan-bulan waktu pendiri, perangkat dan perkakas, serta tiga hingga enam bulan adaptasi sebelum produktif. Lalu risikonya: salah rekrut di bidang langka yang sulit dinilai bisa memakan setahun tanpa apa pun terkirim.",
+            "Secara tahunan, satu rekrutan AI senior di UE atau AS mencapai jauh ke enam digit dalam biaya penuh — sebelum mengirim apa pun, dan dengan asumsi rekrutannya berhasil.",
+          ],
+        },
+        {
+          h2: "Biaya penuh sebuah pod",
+          body: [
+            "Pod PRIONATION adalah harga tetap untuk build terdefinisi delapan minggu, dengan tim senior kecil, eval, telemetri, dan garansi empat minggu termasuk. Tidak ada rekrutmen, tidak ada adaptasi, tidak ada risiko mutu rekrut — metodologi dan harga tetap menyerap variansi.",
+            "Imbangannya, pod dihargai per proyek. Untuk aliran pekerjaan AI yang berkelanjutan dan terbuka, biaya berulang pod akhirnya melampaui biaya tim internal yang sudah beradaptasi.",
+          ],
+        },
+        {
+          h2: "Di mana batasnya",
+          body: [
+            "Untuk satu atau dua build terdefinisi, pod menang jelas: lebih cepat, lebih murah setelah risiko dan adaptasi dihitung, dan Anda menyimpan kodenya. Untuk peta jalan AI permanen bervolume tinggi, membangun tim internal akhirnya menang — setelah direkrut, beradaptasi, dan dipertahankan.",
+            "Jalur umumnya berurutan: gunakan pod untuk mengirim build pertama dan membuktikan nilai, lalu rekrut internal terhadap peta jalan yang terbukti — dengan serah terima infrastruktur yang dimiliki berarti tim baru Anda mewarisi sistem yang berjalan, bukan kotak hitam.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Apakah pod lebih murah daripada merekrut insinyur AI?",
+          a: "Untuk build terdefinisi, hampir selalu — setelah menghitung rekrutmen, tunjangan, tiga hingga enam bulan adaptasi, dan risiko mutu rekrut, bukan hanya gaji. Untuk peta jalan permanen bervolume tinggi, tim internal akhirnya lebih murah.",
+        },
+        {
+          q: "Apa itu 'biaya penuh' sebuah rekrutan AI?",
+          a: "Gaji plus pajak dan tunjangan pemberi kerja, biaya rekrutmen atau waktu pendiri, perangkat, dan berbulan-bulan adaptasi sebelum produktif — plus risiko salah rekrut di bidang langka yang memakan setahun tanpa hasil.",
+        },
+        {
+          q: "Kapan merekrut internal lebih masuk akal?",
+          a: "Ketika Anda punya aliran pekerjaan AI permanen bervolume tinggi. Setelah tim internal direkrut, beradaptasi, dan dipertahankan, biaya marginalnya per proyek turun di bawah proyek berulang.",
+        },
+        {
+          q: "Bisakah memakai pod lalu merekrut?",
+          a: "Ya, dan itu jalur umumnya: kirim build pertama dengan pod untuk membuktikan nilai, lalu rekrut terhadap peta jalan terbukti. Karena pod menyerahkan infrastruktur yang dimiliki, tim baru Anda mewarisi sistem yang berjalan.",
+        },
+        {
+          q: "Apakah harga pod termasuk pemeliharaan?",
+          a: "Setiap Build mencakup garansi pasca-peluncuran empat minggu. Pemeliharaan berkelanjutan adalah retainer opsional, dilingkupi terhadap telemetri nyata, bukan komitmen terbuka.",
+        },
+      ],
+    },
+
+    "8-week-build-readiness-checklist": {
+      navLabel: "Daftar kesiapan build",
+      seoTitle: "Daftar kesiapan build 8 minggu · PRIONATION",
+      metaDescription:
+        "Penilaian mandiri atas data, pemangku kepentingan, kriteria sukses, akses infrastruktur, dan komitmen — apakah perusahaan Anda siap untuk build AI 8 minggu?",
+      badge: "Kerangka · Kesiapan",
+      tldr: "Sebagian besar build AI yang gagal memang belum siap dimulai. Daftar ini menilai kesiapan di lima area — data, keselarasan pemangku kepentingan, kriteria sukses, akses infrastruktur, dan komitmen komersial. Lemah di lebih dari satu: Diagnostic dulu; kuat di kelimanya: Anda siap membangun.",
+      h1: "Apakah Anda siap untuk build AI 8 minggu? Daftar kesiapan",
+      intro: [
+        "Build berharga tetap delapan minggu hanya berhasil jika lahannya disiapkan. Alasan paling umum sebuah build meleset bukan rekayasanya — melainkan salah satu dari lima prasyarat hilang dan tak ada yang memeriksanya.",
+        "Gunakan daftar ini sebelum berkomitmen pada Build. Inilah penilaian kesiapan yang dilakukan Diagnostic, dijadikan sesuatu yang bisa Anda jalankan sendiri.",
+      ],
+      sections: [
+        {
+          h2: "Cara menggunakannya",
+          body: [
+            "Nilai diri Anda dengan jujur di lima area di bawah. 'Tidak' bukan diskualifikasi — itu hal yang harus diperbaiki sebelum jam berjalan. Inti daftar ini adalah memunculkan celah sekarang, saat murah ditutup, alih-alih di minggu ketiga build, saat mahal.",
+            "Kuat di kelimanya berarti siap membangun. Lemah di satu, perbaiki dulu. Lemah di dua atau lebih, mulai dengan Diagnostic, yang ada justru untuk menyelesaikan ketidakpastian ini.",
+          ],
+        },
+        {
+          h2: "Lima area",
+          body: [
+            "1) Kesiapan data — apakah data representatif ada, dapat diakses, dan cukup baik untuk membangun eval? 2) Keselarasan pemangku kepentingan — apakah ada satu pengambil keputusan yang memiliki hasilnya, bukan komite? 3) Kriteria sukses — bisakah Anda menyatakan apa arti 'berfungsi' secara terukur? 4) Akses infrastruktur — bisakah tim menyediakan di lingkungan Anda tanpa rantai persetujuan berbulan-bulan? 5) Komitmen komersial — apakah anggaran dan kalender delapan minggu benar-benar dikomitmenkan?",
+            "Area ini memetakan langsung ke empat prinsip: data dan kriteria sukses memberi makan eval; akses infrastruktur memungkinkan infrastruktur yang dimiliki; komitmen membuat jam tetap menjadi nyata.",
+          ],
+        },
+        {
+          h2: "Membaca skor Anda",
+          body: [
+            "Jika kuat di kelimanya, Build bisa dimulai dengan percaya diri dan harga tetap minim risiko. Jika data atau kriteria sukses lemah, itulah persis yang dihasilkan Diagnostic — ia memetakan hambatan dan menulis spesifikasi eval, mengubah 'belum' menjadi 'siap'.",
+            "Jika celahnya keselarasan atau komitmen, perbaiki itu sebelum membelanjakan apa pun untuk rekayasa. Tak ada metodologi yang bertahan pada build yang sebenarnya belum dikomitmenkan organisasi.",
+          ],
+        },
+        {
+          h2: "Apa yang dilakukan dengan hasilnya",
+          body: [
+            "Skor kuat berarti langkah berikutnya adalah Diagnostic untuk mengunci ruang lingkup dan menetapkan harga Build — singkat, karena Anda sudah siap. Skor campuran berarti Diagnostic merangkap: menutup celah kesiapan dan menghasilkan rencana build.",
+            "Bagaimanapun, daftar ini berhasil jika memindahkan masalah dari minggu ketiga build ke minggu sebelum ia mulai.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Apa yang membuat perusahaan siap untuk build AI?",
+          a: "Kekuatan di lima area: data representatif yang dapat diakses, satu pengambil keputusan yang bertanggung jawab, kriteria sukses terukur, akses infrastruktur cepat di lingkungan Anda, dan komitmen anggaran serta kalender yang nyata.",
+        },
+        {
+          q: "Bagaimana jika data kami belum siap?",
+          a: "Maka Diagnostic dulu. Membangun suite eval butuh data representatif; jika hilang atau berantakan, Diagnostic memunculkannya dan menentukan apa yang dibutuhkan sebelum Build berharga tetap masuk akal.",
+        },
+        {
+          q: "Apakah perlu metrik sukses sebelum mulai?",
+          a: "Ya — atau Diagnostic untuk mendefinisikannya. 'Berfungsi' harus terukur sebelum build, karena suite eval dan harga tetap ditulis terhadapnya. Sukses yang tak terdefinisi adalah penyebab paling umum proyek AI tak berujung.",
+        },
+        {
+          q: "Mengapa keselarasan pemangku kepentingan begitu penting?",
+          a: "Karena build dengan komite tanpa pemilik tunggal macet pada keputusan. Satu pengambil keputusan yang bertanggung jawab menjaga jam delapan minggu realistis; build yang belum benar-benar dikomitmenkan organisasi akan meleset apa pun metodenya.",
+        },
+        {
+          q: "Apa langkah berikutnya setelah daftar ini?",
+          a: "Diagnostic dua minggu — singkat jika skor Anda kuat, atau merangkap untuk menutup celah dan menghasilkan rencana build jika skor Anda campuran.",
+        },
+      ],
+    },
+  },
 };

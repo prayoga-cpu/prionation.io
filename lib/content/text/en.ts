@@ -304,4 +304,204 @@ export const pagesEn: LocalePages = {
       ],
     },
   },
+
+  frameworks: {
+    "ai-build-vs-buy-calculator": {
+      navLabel: "Build vs buy calculator",
+      seoTitle: "AI build vs buy calculator · PRIONATION.io",
+      metaDescription:
+        "A decision framework for mid-market operators: six inputs that tell you whether to build custom AI, buy SaaS, or run a hybrid.",
+      badge: "Framework · Build vs buy",
+      tldr: "The build-vs-buy decision for AI comes down to six variables: how much the workflow costs you, its volume, how specific it is to your business, your data sensitivity, your existing tooling, and your time horizon. This framework turns those into a clear recommendation — build, buy, or hybrid — instead of a gut call.",
+      h1: "AI build vs buy: a decision framework for mid-market operators",
+      intro: [
+        "Every operator facing an AI decision asks the same question: do we build something custom, buy a SaaS product, or combine both? The wrong answer is expensive in either direction — a custom build for a generic problem wastes capital; a SaaS tool for a core differentiator caps your upside.",
+        "This framework reduces the decision to six inputs and a simple logic for weighing them. It is the same reasoning PRIONATION applies in a Diagnostic, made explicit.",
+      ],
+      sections: [
+        {
+          h2: "How to use this",
+          body: [
+            "Score your workflow against the six inputs below, honestly. The goal is not a precise number but a direction: most decisions become obvious once the variables are named. Where two inputs pull in opposite directions, the tie-breaker is almost always specificity — how unique the workflow is to how you compete.",
+            "Treat the output as the start of a scoping conversation, not a verdict. A 'build' signal still needs a Diagnostic to confirm the bottleneck is real and the scope is bounded.",
+          ],
+        },
+        {
+          h2: "The six inputs",
+          body: [
+            "1) Annual cost of the workflow — the fully loaded cost of doing it today, including the people. 2) Monthly volume — how often it runs. 3) Specificity — how particular it is to your business versus a generic task any company has. 4) Data sensitivity — whether the data can leave your environment. 5) Existing tooling — whether a SaaS product already covers most of it. 6) Time horizon — how long you will rely on this workflow.",
+            "High cost, high volume, high specificity, and high data sensitivity push toward build. Low specificity and a strong existing SaaS option push toward buy. A long time horizon raises the return on a build; a short one favours buying.",
+          ],
+        },
+        {
+          h2: "The decision logic",
+          body: [
+            "Buy when the workflow is generic, well-served by mature SaaS, and not a source of competitive advantage — you should not build commodity infrastructure. Build when the workflow is specific to how you compete, expensive, high-volume, or constrained by data that cannot leave your environment, and you expect to rely on it for years.",
+            "Choose hybrid when the core is generic but the last mile is yours: buy the commodity layer, build the thin differentiating layer on top. Most mid-market AI wins are hybrids — the value is in the 20% that is specific to your operation.",
+          ],
+        },
+        {
+          h2: "What to do with the result",
+          body: [
+            "A 'buy' result means your next step is vendor selection, not an engagement with PRIONATION. We will tell you so. A 'build' or 'hybrid' result means the next step is a two-week Diagnostic to map the bottleneck, confirm the scope, and price a fixed Build.",
+            "Either way, the framework has done its job if it stopped you from building something you should have bought, or buying something you should have built.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "When should we build custom AI instead of buying SaaS?",
+          a: "Build when the workflow is specific to how you compete, expensive or high-volume, or constrained by data that cannot leave your environment — and you will rely on it for years. Buy when it is generic and well-served by mature SaaS.",
+        },
+        {
+          q: "What is a hybrid AI approach?",
+          a: "Buying the commodity layer and building only the thin differentiating layer on top. Most mid-market AI wins are hybrids, because the value sits in the small part of the workflow that is specific to your operation.",
+        },
+        {
+          q: "How does data sensitivity affect the decision?",
+          a: "If the data cannot leave your environment for compliance or competitive reasons, that pushes strongly toward build, because owned infrastructure keeps the data in your accounts rather than routing it through a third-party SaaS.",
+        },
+        {
+          q: "Does a 'build' result mean we should hire engineers?",
+          a: "Not necessarily. A build can be delivered by a lean pod on a fixed price and handed over for your team to own — see the pod vs hire cost model. The build decision is separate from the staffing decision.",
+        },
+        {
+          q: "What is the next step after this framework?",
+          a: "If the result is build or hybrid, a two-week Diagnostic maps the bottleneck and prices a fixed Build. If it is buy, your next step is vendor selection — and we will say so plainly.",
+        },
+      ],
+    },
+
+    "pod-vs-hire-cost-model": {
+      navLabel: "Pod vs hire cost model",
+      seoTitle: "Pod vs hire — real cost model · PRIONATION.io",
+      metaDescription:
+        "The full loaded cost of a lean AI pod versus an in-house AI engineer hire — salary, benefits, recruitment, ramp, and risk, compared honestly.",
+      badge: "Framework · Pod vs hire",
+      tldr: "Comparing a PRIONATION pod to an in-house AI hire on day rate alone is misleading. The honest comparison includes salary, benefits, recruitment, ramp time, and the risk of a bad hire. On a single eight-week build, a fixed-price pod is almost always cheaper and faster than hiring; over years, an internal team eventually wins. This model shows where the line is.",
+      h1: "Pod vs hire: the real cost of building AI",
+      intro: [
+        "The instinct is to compare a pod's price to an engineer's salary and conclude that hiring is cheaper. That comparison ignores most of the real cost of a hire and all of the risk.",
+        "This model lays out the full loaded cost of each path so the comparison is honest — and shows that the answer depends entirely on your time horizon.",
+      ],
+      sections: [
+        {
+          h2: "How to use this",
+          body: [
+            "Pick the scenario that matches you: a single defined build, an ongoing stream of AI work, or uncertainty about which. Then read the loaded cost of each path, not the headline number. The decision is rarely about price per day; it is about risk, speed, and how much AI work you actually have.",
+            "The model assumes a mid-market context — European or US salaries, a single high-value workflow — and is meant to frame the decision, not replace a quote.",
+          ],
+        },
+        {
+          h2: "The full cost of a hire",
+          body: [
+            "A senior AI engineer is not their salary. Loaded cost adds employer taxes and benefits, recruitment fees or months of founder time, equipment and tooling, and the three-to-six-month ramp before they are productive. Then there is risk: a mis-hire in a scarce, hard-to-evaluate field can cost a year and leave nothing shipped.",
+            "On an annual basis a single senior AI hire in the EU or US runs well into six figures fully loaded — before they have shipped anything, and assuming the hire works out.",
+          ],
+        },
+        {
+          h2: "The full cost of a pod",
+          body: [
+            "A PRIONATION pod is a fixed price for a defined eight-week build, with a small senior team, evals, telemetry, and a four-week warranty included. There is no recruitment, no ramp, and no hire-quality risk — the methodology and the fixed price absorb the variance.",
+            "The trade-off is that a pod is priced per engagement. For a continuous, open-ended stream of AI work, the recurring cost of pods eventually exceeds the cost of an internal team that has already ramped.",
+          ],
+        },
+        {
+          h2: "Where the line falls",
+          body: [
+            "For one or two defined builds, the pod wins clearly: faster, cheaper once risk and ramp are counted, and you keep the code. For a permanent, high-volume AI roadmap, building an internal team eventually wins — once it is hired, ramped, and retained.",
+            "The common path is sequential: use pods to ship the first builds and prove the value, then hire internally against a proven roadmap — with PRIONATION's owned-infrastructure handover meaning your new team inherits a running system, not a black box.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Is a pod cheaper than hiring an AI engineer?",
+          a: "For a defined build, almost always — once you count recruitment, benefits, the three-to-six-month ramp, and hire-quality risk, not just salary. For a permanent high-volume roadmap, an internal team eventually costs less.",
+        },
+        {
+          q: "What is the 'loaded cost' of an AI hire?",
+          a: "Salary plus employer taxes and benefits, recruitment cost or founder time, equipment, and the months of ramp before productivity — plus the risk that a mis-hire in a scarce field costs a year with nothing shipped.",
+        },
+        {
+          q: "When does hiring internally make more sense?",
+          a: "When you have a permanent, high-volume stream of AI work. Once an internal team is hired, ramped, and retained, its marginal cost per project falls below repeated engagements.",
+        },
+        {
+          q: "Can we use pods and then hire?",
+          a: "Yes, and it is the common path: ship the first builds with pods to prove value, then hire against a proven roadmap. Because the pod hands over owned infrastructure, your new team inherits a running system.",
+        },
+        {
+          q: "Does the pod price include maintenance?",
+          a: "Each Build includes a four-week post-launch warranty. Ongoing maintenance is an optional retainer, scoped against real telemetry, not an open-ended commitment.",
+        },
+      ],
+    },
+
+    "8-week-build-readiness-checklist": {
+      navLabel: "Build readiness checklist",
+      seoTitle: "8-week build readiness checklist · PRIONATION",
+      metaDescription:
+        "A self-assessment across data, stakeholders, success criteria, infrastructure, and commitment — find out whether your company is ready for an 8-week AI build.",
+      badge: "Framework · Readiness",
+      tldr: "Most AI builds that fail were not ready to start. This checklist assesses readiness across five areas — data, stakeholder alignment, success criteria, infrastructure access, and commercial commitment. If you are weak on more than one, a Diagnostic comes first; if you are strong across all five, you are ready to build.",
+      h1: "Are you ready for an 8-week AI build? A readiness checklist",
+      intro: [
+        "An eight-week fixed-price build only works if the ground is prepared. The most common reason a build slips is not the engineering — it is that one of five preconditions was missing and nobody checked.",
+        "Use this checklist before committing to a Build. It is the readiness assessment a Diagnostic performs, made into something you can run yourself.",
+      ],
+      sections: [
+        {
+          h2: "How to use this",
+          body: [
+            "Score yourself honestly across the five areas below. A 'no' is not a disqualification — it is a thing to fix before the clock starts. The point of the checklist is to surface the gaps now, when they are cheap to close, rather than in week three of a build, when they are expensive.",
+            "Strong across all five means you are build-ready. Weak in one means close it first. Weak in two or more means start with a Diagnostic, which exists precisely to resolve these unknowns.",
+          ],
+        },
+        {
+          h2: "The five areas",
+          body: [
+            "1) Data readiness — does representative data exist, is it accessible, and is it good enough to build evals from? 2) Stakeholder alignment — is there one decision-maker who owns the outcome, not a committee? 3) Success criteria — can you state what 'working' means in measurable terms? 4) Infrastructure access — can a team provision in your environment without a months-long approval chain? 5) Commercial commitment — is the budget and the eight-week calendar genuinely committed?",
+            "These map directly onto the four principles: data and success criteria feed evals; infrastructure access enables owned infrastructure; commitment makes the fixed clock real.",
+          ],
+        },
+        {
+          h2: "Reading your score",
+          body: [
+            "If you are strong on all five, a Build can start with confidence and the fixed price is low-risk. If data or success criteria are weak, those are exactly what a Diagnostic produces — it maps the bottleneck and writes the eval spec, turning a 'not yet' into a 'ready'.",
+            "If stakeholder alignment or commitment is the gap, fix that before spending on engineering at all. No methodology survives a build that the organisation has not actually committed to.",
+          ],
+        },
+        {
+          h2: "What to do with the result",
+          body: [
+            "A strong score means your next step is a Diagnostic to lock scope and price the Build — short, because you are already prepared. A mixed score means the Diagnostic does double duty: it closes the readiness gaps and produces the build plan.",
+            "Either way, the checklist has done its job if it moved a problem from week three of a build to the week before it starts.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "What makes a company ready for an AI build?",
+          a: "Strength across five areas: representative accessible data, a single accountable decision-maker, measurable success criteria, fast infrastructure access in your environment, and genuine budget and calendar commitment.",
+        },
+        {
+          q: "What if our data isn't ready?",
+          a: "Then a Diagnostic comes first. Building the eval suite requires representative data; if it is missing or messy, the Diagnostic surfaces that and defines what is needed before a fixed-price Build is sensible.",
+        },
+        {
+          q: "Do we need success metrics before starting?",
+          a: "Yes — or a Diagnostic to define them. 'Working' must be measurable before a build, because the eval suite and the fixed price are written against it. Undefined success is the most common cause of open-ended AI projects.",
+        },
+        {
+          q: "Why does stakeholder alignment matter so much?",
+          a: "Because a build with a committee and no single owner stalls on decisions. One accountable decision-maker keeps an eight-week clock realistic; a build the organisation has not truly committed to will slip regardless of method.",
+        },
+        {
+          q: "What is the next step after the checklist?",
+          a: "A two-week Diagnostic — short if you scored strongly, or doing double duty to close gaps and produce the build plan if your score was mixed.",
+        },
+      ],
+    },
+  },
 };

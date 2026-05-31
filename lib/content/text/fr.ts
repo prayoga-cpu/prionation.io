@@ -304,4 +304,204 @@ export const pagesFr: LocalePages = {
       ],
     },
   },
+
+  frameworks: {
+    "ai-build-vs-buy-calculator": {
+      navLabel: "Calculateur build vs buy",
+      seoTitle: "Calculateur IA build vs buy · PRIONATION",
+      metaDescription:
+        "Un cadre de décision pour les opérateurs mid-market : six variables qui indiquent s'il faut construire une IA sur mesure, acheter du SaaS ou opter pour l'hybride.",
+      badge: "Cadre · Build vs buy",
+      tldr: "La décision build-vs-buy en IA tient à six variables : le coût du flux de travail, son volume, sa spécificité à votre entreprise, la sensibilité des données, l'outillage existant et l'horizon de temps. Ce cadre les transforme en une recommandation claire — construire, acheter ou hybride — plutôt qu'une intuition.",
+      h1: "IA build vs buy : un cadre de décision pour les opérateurs mid-market",
+      intro: [
+        "Tout opérateur face à une décision IA pose la même question : construit-on du sur-mesure, achète-t-on un produit SaaS, ou combine-t-on les deux ? La mauvaise réponse coûte cher dans les deux sens — un build sur mesure pour un problème générique gaspille du capital ; un SaaS pour un différenciateur clé plafonne votre potentiel.",
+        "Ce cadre réduit la décision à six variables et à une logique simple pour les pondérer. C'est le raisonnement que PRIONATION applique dans un Diagnostic, rendu explicite.",
+      ],
+      sections: [
+        {
+          h2: "Comment l'utiliser",
+          body: [
+            "Évaluez honnêtement votre flux de travail selon les six variables ci-dessous. Le but n'est pas un chiffre précis mais une direction : la plupart des décisions deviennent évidentes une fois les variables nommées. Lorsque deux variables tirent en sens opposés, l'arbitre est presque toujours la spécificité — à quel point le flux est propre à votre façon de concurrencer.",
+            "Traitez le résultat comme le début d'une conversation de cadrage, pas un verdict. Un signal « construire » nécessite encore un Diagnostic pour confirmer que le goulot est réel et le périmètre borné.",
+          ],
+        },
+        {
+          h2: "Les six variables",
+          body: [
+            "1) Coût annuel du flux — le coût complet de sa réalisation aujourd'hui, personnes incluses. 2) Volume mensuel — sa fréquence. 3) Spécificité — à quel point il est particulier à votre entreprise plutôt qu'une tâche générique. 4) Sensibilité des données — si les données peuvent quitter votre environnement. 5) Outillage existant — si un SaaS couvre déjà l'essentiel. 6) Horizon de temps — combien de temps vous en dépendrez.",
+            "Coût élevé, volume élevé, forte spécificité et données sensibles poussent vers le build. Faible spécificité et une bonne option SaaS poussent vers l'achat. Un horizon long augmente le rendement d'un build ; un horizon court favorise l'achat.",
+          ],
+        },
+        {
+          h2: "La logique de décision",
+          body: [
+            "Achetez quand le flux est générique, bien servi par un SaaS mature, et n'est pas une source d'avantage concurrentiel — on ne construit pas une infrastructure de commodité. Construisez quand le flux est propre à votre façon de concurrencer, coûteux, à fort volume, ou contraint par des données qui ne peuvent quitter votre environnement, et que vous comptez vous y appuyer des années.",
+            "Choisissez l'hybride quand le cœur est générique mais le dernier kilomètre est le vôtre : achetez la couche de commodité, construisez par-dessus la fine couche différenciante. La plupart des gains IA mid-market sont des hybrides — la valeur est dans les 20 % propres à votre opération.",
+          ],
+        },
+        {
+          h2: "Que faire du résultat",
+          body: [
+            "Un résultat « acheter » signifie que votre prochaine étape est la sélection d'un fournisseur, pas une mission avec PRIONATION. Nous vous le dirons. Un résultat « construire » ou « hybride » signifie que la prochaine étape est un Diagnostic de deux semaines pour cartographier le goulot, confirmer le périmètre et chiffrer un Build fixe.",
+            "Dans tous les cas, le cadre a fait son travail s'il vous a empêché de construire ce que vous auriez dû acheter, ou d'acheter ce que vous auriez dû construire.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Quand construire une IA sur mesure plutôt qu'acheter du SaaS ?",
+          a: "Construisez quand le flux est propre à votre façon de concurrencer, coûteux ou à fort volume, ou contraint par des données qui ne peuvent quitter votre environnement — et que vous vous y appuierez des années. Achetez quand il est générique et bien servi par un SaaS mature.",
+        },
+        {
+          q: "Qu'est-ce qu'une approche IA hybride ?",
+          a: "Acheter la couche de commodité et ne construire que la fine couche différenciante par-dessus. La plupart des gains IA mid-market sont hybrides, car la valeur réside dans la petite part du flux propre à votre opération.",
+        },
+        {
+          q: "Comment la sensibilité des données influe-t-elle ?",
+          a: "Si les données ne peuvent quitter votre environnement pour des raisons de conformité ou de concurrence, cela pousse fortement vers le build, car l'infrastructure possédée garde les données dans vos comptes plutôt que via un SaaS tiers.",
+        },
+        {
+          q: "Un résultat « construire » signifie-t-il qu'il faut embaucher ?",
+          a: "Pas nécessairement. Un build peut être livré par un pod réduit à prix fixe puis remis à votre équipe — voir le modèle de coût pod vs embauche. La décision de build est distincte de la décision d'embauche.",
+        },
+        {
+          q: "Quelle est l'étape suivante après ce cadre ?",
+          a: "Si le résultat est construire ou hybride, un Diagnostic de deux semaines cartographie le goulot et chiffre un Build fixe. Si c'est acheter, votre prochaine étape est la sélection d'un fournisseur — et nous le dirons clairement.",
+        },
+      ],
+    },
+
+    "pod-vs-hire-cost-model": {
+      navLabel: "Modèle de coût pod vs embauche",
+      seoTitle: "Pod vs embauche — modèle de coût · PRIONATION",
+      metaDescription:
+        "Le coût complet d'un pod IA réduit face à l'embauche d'un ingénieur IA interne — salaire, charges, recrutement, montée en compétence et risque, comparés honnêtement.",
+      badge: "Cadre · Pod vs embauche",
+      tldr: "Comparer un pod PRIONATION à une embauche IA interne sur le seul taux journalier est trompeur. La comparaison honnête inclut salaire, charges, recrutement, montée en compétence et risque de mauvaise embauche. Sur un seul build de huit semaines, un pod à prix fixe est presque toujours moins cher et plus rapide ; sur des années, une équipe interne finit par l'emporter. Ce modèle montre où se situe la limite.",
+      h1: "Pod vs embauche : le vrai coût de construire de l'IA",
+      intro: [
+        "L'instinct est de comparer le prix d'un pod au salaire d'un ingénieur et de conclure que l'embauche est moins chère. Cette comparaison ignore l'essentiel du coût réel d'une embauche et tout le risque.",
+        "Ce modèle expose le coût complet de chaque voie pour que la comparaison soit honnête — et montre que la réponse dépend entièrement de votre horizon de temps.",
+      ],
+      sections: [
+        {
+          h2: "Comment l'utiliser",
+          body: [
+            "Choisissez le scénario qui vous correspond : un seul build défini, un flux continu de travail IA, ou l'incertitude entre les deux. Lisez ensuite le coût complet de chaque voie, pas le chiffre d'affichage. La décision porte rarement sur le prix par jour ; elle porte sur le risque, la vitesse et la quantité réelle de travail IA que vous avez.",
+            "Le modèle suppose un contexte mid-market — salaires européens ou américains, un seul flux à forte valeur — et vise à cadrer la décision, pas à remplacer un devis.",
+          ],
+        },
+        {
+          h2: "Le coût complet d'une embauche",
+          body: [
+            "Un ingénieur IA senior n'est pas son salaire. Le coût complet ajoute charges patronales et avantages, frais de recrutement ou mois de temps du fondateur, équipement et outillage, et les trois à six mois de montée en compétence avant productivité. Puis le risque : une mauvaise embauche dans un domaine rare et difficile à évaluer peut coûter une année sans rien livrer.",
+            "Sur une base annuelle, une seule embauche IA senior dans l'UE ou aux États-Unis atteint largement six chiffres en coût complet — avant d'avoir rien livré, et en supposant que l'embauche réussisse.",
+          ],
+        },
+        {
+          h2: "Le coût complet d'un pod",
+          body: [
+            "Un pod PRIONATION est un prix fixe pour un build défini de huit semaines, avec une petite équipe senior, des evals, de la télémétrie et une garantie de quatre semaines incluses. Pas de recrutement, pas de montée en compétence, pas de risque de qualité d'embauche — la méthodologie et le prix fixe absorbent la variance.",
+            "Le compromis est qu'un pod est facturé par mission. Pour un flux continu et ouvert de travail IA, le coût récurrent des pods finit par dépasser celui d'une équipe interne déjà montée en compétence.",
+          ],
+        },
+        {
+          h2: "Où se situe la limite",
+          body: [
+            "Pour un ou deux builds définis, le pod l'emporte nettement : plus rapide, moins cher une fois le risque et la montée en compétence comptés, et vous gardez le code. Pour une feuille de route IA permanente et à fort volume, construire une équipe interne finit par l'emporter — une fois embauchée, montée en compétence et fidélisée.",
+            "La voie courante est séquentielle : utiliser des pods pour livrer les premiers builds et prouver la valeur, puis embaucher en interne face à une feuille de route prouvée — la remise d'infrastructure possédée signifiant que votre nouvelle équipe hérite d'un système qui tourne, pas d'une boîte noire.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Un pod est-il moins cher qu'embaucher un ingénieur IA ?",
+          a: "Pour un build défini, presque toujours — une fois comptés recrutement, charges, les trois à six mois de montée en compétence et le risque de qualité d'embauche, pas seulement le salaire. Pour une feuille de route permanente à fort volume, une équipe interne finit par coûter moins.",
+        },
+        {
+          q: "Qu'est-ce que le « coût complet » d'une embauche IA ?",
+          a: "Salaire plus charges et avantages, coût de recrutement ou temps du fondateur, équipement, et les mois de montée en compétence avant productivité — plus le risque qu'une mauvaise embauche dans un domaine rare coûte une année sans rien livrer.",
+        },
+        {
+          q: "Quand l'embauche interne a-t-elle plus de sens ?",
+          a: "Quand vous avez un flux permanent et à fort volume de travail IA. Une fois une équipe interne embauchée, montée en compétence et fidélisée, son coût marginal par projet passe sous celui de missions répétées.",
+        },
+        {
+          q: "Peut-on utiliser des pods puis embaucher ?",
+          a: "Oui, et c'est la voie courante : livrer les premiers builds avec des pods pour prouver la valeur, puis embaucher face à une feuille de route prouvée. Parce que le pod remet une infrastructure possédée, votre nouvelle équipe hérite d'un système qui tourne.",
+        },
+        {
+          q: "Le prix du pod inclut-il la maintenance ?",
+          a: "Chaque Build inclut une garantie post-lancement de quatre semaines. La maintenance continue est un retainer optionnel, cadré sur la télémétrie réelle, pas un engagement ouvert.",
+        },
+      ],
+    },
+
+    "8-week-build-readiness-checklist": {
+      navLabel: "Liste de préparation au build",
+      seoTitle: "Liste de préparation au build de 8 semaines · PRIONATION",
+      metaDescription:
+        "Une auto-évaluation sur les données, les parties prenantes, les critères de succès, l'accès à l'infrastructure et l'engagement — êtes-vous prêt pour un build IA de 8 semaines ?",
+      badge: "Cadre · Préparation",
+      tldr: "La plupart des builds IA qui échouent n'étaient pas prêts à démarrer. Cette liste évalue la préparation sur cinq domaines — données, alignement des parties prenantes, critères de succès, accès à l'infrastructure et engagement commercial. Faible sur plus d'un : un Diagnostic d'abord ; fort sur les cinq : vous êtes prêt à construire.",
+      h1: "Êtes-vous prêt pour un build IA de 8 semaines ? Une liste de préparation",
+      intro: [
+        "Un build à prix fixe de huit semaines ne fonctionne que si le terrain est préparé. La raison la plus courante d'un dérapage n'est pas l'ingénierie — c'est qu'une des cinq conditions préalables manquait et que personne ne l'a vérifiée.",
+        "Utilisez cette liste avant de vous engager dans un Build. C'est l'évaluation de préparation qu'un Diagnostic réalise, transformée en quelque chose que vous pouvez exécuter vous-même.",
+      ],
+      sections: [
+        {
+          h2: "Comment l'utiliser",
+          body: [
+            "Évaluez-vous honnêtement sur les cinq domaines ci-dessous. Un « non » n'est pas une disqualification — c'est une chose à corriger avant que l'horloge démarre. L'intérêt de la liste est de faire remonter les lacunes maintenant, quand elles sont peu coûteuses à combler, plutôt qu'en semaine trois d'un build, quand elles coûtent cher.",
+            "Fort sur les cinq : vous êtes prêt à construire. Faible sur un : corrigez-le d'abord. Faible sur deux ou plus : commencez par un Diagnostic, qui existe précisément pour résoudre ces inconnues.",
+          ],
+        },
+        {
+          h2: "Les cinq domaines",
+          body: [
+            "1) Préparation des données — des données représentatives existent-elles, sont-elles accessibles et assez bonnes pour bâtir des evals ? 2) Alignement des parties prenantes — y a-t-il un décideur unique qui possède le résultat, pas un comité ? 3) Critères de succès — pouvez-vous dire ce que « fonctionne » signifie en termes mesurables ? 4) Accès à l'infrastructure — une équipe peut-elle provisionner dans votre environnement sans une chaîne d'approbation de plusieurs mois ? 5) Engagement commercial — le budget et le calendrier de huit semaines sont-ils réellement engagés ?",
+            "Ces domaines correspondent directement aux quatre principes : données et critères de succès alimentent les evals ; l'accès à l'infrastructure permet l'infrastructure possédée ; l'engagement rend l'horloge fixe réelle.",
+          ],
+        },
+        {
+          h2: "Lire votre score",
+          body: [
+            "Si vous êtes fort sur les cinq, un Build peut démarrer en confiance et le prix fixe est peu risqué. Si les données ou les critères de succès sont faibles, c'est exactement ce qu'un Diagnostic produit — il cartographie le goulot et écrit la spécification d'evals, transformant un « pas encore » en « prêt ».",
+            "Si la lacune est l'alignement ou l'engagement, corrigez cela avant de dépenser le moindre euro en ingénierie. Aucune méthodologie ne survit à un build que l'organisation n'a pas réellement engagé.",
+          ],
+        },
+        {
+          h2: "Que faire du résultat",
+          body: [
+            "Un score fort signifie que votre prochaine étape est un Diagnostic pour verrouiller le périmètre et chiffrer le Build — court, car vous êtes déjà prêt. Un score mitigé signifie que le Diagnostic fait double emploi : il comble les lacunes de préparation et produit le plan de build.",
+            "Dans tous les cas, la liste a fait son travail si elle a déplacé un problème de la semaine trois d'un build à la semaine qui le précède.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Qu'est-ce qui rend une entreprise prête pour un build IA ?",
+          a: "La force sur cinq domaines : des données représentatives et accessibles, un décideur unique responsable, des critères de succès mesurables, un accès rapide à l'infrastructure dans votre environnement, et un engagement réel de budget et de calendrier.",
+        },
+        {
+          q: "Et si nos données ne sont pas prêtes ?",
+          a: "Alors un Diagnostic d'abord. Construire la suite d'evals nécessite des données représentatives ; si elles manquent ou sont en désordre, le Diagnostic le fait remonter et définit ce qui est nécessaire avant qu'un Build à prix fixe ait du sens.",
+        },
+        {
+          q: "Faut-il des métriques de succès avant de démarrer ?",
+          a: "Oui — ou un Diagnostic pour les définir. « Fonctionne » doit être mesurable avant un build, car la suite d'evals et le prix fixe s'écrivent dessus. Un succès indéfini est la cause la plus courante de projets IA sans fin.",
+        },
+        {
+          q: "Pourquoi l'alignement des parties prenantes compte-t-il autant ?",
+          a: "Parce qu'un build avec un comité et sans propriétaire unique cale sur les décisions. Un décideur unique responsable garde une horloge de huit semaines réaliste ; un build que l'organisation n'a pas vraiment engagé dérapera quelle que soit la méthode.",
+        },
+        {
+          q: "Quelle est l'étape suivante après la liste ?",
+          a: "Un Diagnostic de deux semaines — court si votre score est fort, ou faisant double emploi pour combler les lacunes et produire le plan de build si votre score est mitigé.",
+        },
+      ],
+    },
+  },
 };

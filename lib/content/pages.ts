@@ -222,7 +222,7 @@ export const pages: PageMeta[] = [
   {
     slug: "ai-build-vs-buy-calculator",
     section: "frameworks",
-    status: "draft",
+    status: "published",
     seoTitle: "AI build vs buy calculator · PRIONATION.io",
     metaDescription:
       "Input 6 variables about your workflow. Get a recommended path: build custom AI, buy SaaS, or hybrid. Decision framework for mid-market operators.",
@@ -247,7 +247,7 @@ export const pages: PageMeta[] = [
   {
     slug: "pod-vs-hire-cost-model",
     section: "frameworks",
-    status: "draft",
+    status: "published",
     seoTitle: "Pod vs hire — real cost model · PRIONATION.io",
     metaDescription:
       "The full loaded cost of a PRIONATION pod vs an in-house AI engineer hire. Interactive model with salary, benefits, recruitment, and ramp time.",
@@ -272,7 +272,7 @@ export const pages: PageMeta[] = [
   {
     slug: "8-week-build-readiness-checklist",
     section: "frameworks",
-    status: "draft",
+    status: "published",
     seoTitle: "8-week build readiness checklist · PRIONATION",
     metaDescription:
       "25-item self-assessment across data readiness, stakeholder alignment, success criteria, infrastructure, and commercial commitment. Know if you're ready to build.",
