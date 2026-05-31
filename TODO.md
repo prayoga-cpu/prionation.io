@@ -24,14 +24,27 @@ the section, then flip `status` to `"published"` in `lib/content/pages.ts`. It
 auto-joins the sitemap + footer. The 5 dynamic routes already exist.
 
 - [x] **Methodology ×4** published (trilingual) — `0fb2ae1`.
-- [ ] **Frameworks ×3** — evergreen; can be authored without client data.
-- [ ] **Guides ×3** — evergreen; can be authored without client data.
-- [ ] **Showcases ×3 + Intelligence ×2** — being authored WITHOUT client metrics
-  for SEO (per decision: structure + transferable content now, real Epidom /
-  Expeditoo / The Lead Agent numbers layered in later). No fabricated figures.
-- [ ] Transparency page (Phase 3) — needs the build-in-public stats.
-- [ ] Per-page content depth: the anchor is ~1,200 words (tight). The doc
-  targets 2,500–3,500; expand if desired.
+- [x] **Frameworks ×3** published (trilingual) — `cb96879`.
+- [x] **Guides ×3** published (trilingual) — `e43710a`.
+- [x] **Showcases ×3** published (trilingual) — `9305f9b`. Truthful to existing
+  public copy; **no fabricated metrics** (results framed as "to be published").
+- [x] **Intelligence ×2** published (trilingual) — `9045f09`. First-party-framed,
+  no fabricated metrics.
+
+**All 15 cluster pages + anchor are live trilingual (48 localized content pages,
+all SSG). Sitemap = 51 URLs.** Remaining content follow-ups:
+
+- [ ] **Real client metrics** for Showcases + Intelligence — layer actual Epidom /
+  Expeditoo / The Lead Agent numbers (eval scores, ROI, throughput) into the
+  "What it changed" sections + FAQ once available. Content currently says results
+  are "being prepared / to be published."
+- [ ] **Transparency page** (`/transparency`, Phase 3) — needs build-in-public
+  stats; not yet built (no route/manifest entry).
+- [ ] Per-page depth: pages are ~1,000–1,500 words (tight, high-signal). The doc
+  targets 2,000–3,500; expand if desired.
+- [ ] **Interactive framework tools** — the 3 framework pages explain the
+  calculator/checklist logic as content; the live interactive widgets (inputs →
+  result) from the doc are not built yet.
 
 ---
 
