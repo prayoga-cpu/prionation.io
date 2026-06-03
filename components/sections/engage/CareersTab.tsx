@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
@@ -29,11 +29,14 @@ const EMPTY: CareerForm = {
 };
 
 const POSITIONS = [
-  { traditional: "Fullstack Engineer", role: "AI Product Engineer", open: true },
-  { traditional: "Digital Marketing", role: "AI Growth Operator", open: true },
-  { traditional: "UI/UX Designer", role: "AI Experience Designer", open: true },
-  { traditional: "Project Manager", role: "AI Delivery Lead", open: true },
-  { traditional: "Data Analyst", role: "Intelligence Architect", open: false },
+  { department: "Development", traditional: "Fullstack Engineer", role: "AI Product Engineer", open: true },
+  { department: "Development", traditional: "Data Engineer", role: "AI Systems Architect", open: false },
+  { department: "Product", traditional: "UI/UX Designer", role: "AI Experience Designer", open: true },
+  { department: "Product", traditional: "Project Manager", role: "AI Delivery Lead", open: true },
+  { department: "Product", traditional: "Data Analyst", role: "Intelligence Architect", open: false },
+  { department: "Marketing", traditional: "Digital Marketing", role: "AI Growth Operator", open: true },
+  { department: "Marketing", traditional: "Video Editor", role: "AI Content Distributor", open: true },
+  { department: "Marketing", traditional: "Copywriter", role: "Prompt Strategist", open: true },
 ];
 
 const REQUIRED: (keyof CareerForm)[] = [
@@ -247,18 +250,33 @@ export function CareersTab() {
               </tr>
             </thead>
             <tbody>
-              {POSITIONS.map((pos) => (
-                <tr key={pos.role} className={`border-b border-line-soft/30 last:border-0 ${!pos.open ? "opacity-50" : ""}`}>
-                  <td className="p-2 md:p-4 text-[10px] md:text-[13px] text-soft line-through">{pos.traditional}</td>
-                  <td className="p-2 md:p-4 text-[11px] md:text-[14px] text-white font-medium">{pos.role}</td>
-                  <td className="p-2 md:p-4 text-[7px] md:text-[8px] font-pixel tracking-[0.1em] uppercase whitespace-nowrap text-right">
-                    {pos.open ? (
-                      <span className="text-accent">● OPEN</span>
-                    ) : (
-                      <span className="text-line-soft">● SOON</span>
-                    )}
-                  </td>
-                </tr>
+              {Object.entries(
+                POSITIONS.reduce((acc, pos) => {
+                  if (!acc[pos.department]) acc[pos.department] = [];
+                  acc[pos.department].push(pos);
+                  return acc;
+                }, {} as Record<string, typeof POSITIONS>)
+              ).map(([department, roles]) => (
+                <React.Fragment key={department}>
+                  <tr>
+                    <td colSpan={3} className="p-2 md:p-4 pt-6 md:pt-8 pb-2 text-[7px] md:text-[8px] font-pixel tracking-[0.15em] text-accent uppercase font-bold border-none">
+                      {department}
+                    </td>
+                  </tr>
+                  {roles.map((pos) => (
+                    <tr key={pos.role} className={`border-b border-line-soft/30 last:border-0 ${!pos.open ? "opacity-50" : ""}`}>
+                      <td className="p-2 md:p-4 text-[10px] md:text-[13px] text-soft line-through">{pos.traditional}</td>
+                      <td className="p-2 md:p-4 text-[11px] md:text-[14px] text-white font-medium">{pos.role}</td>
+                      <td className="p-2 md:p-4 text-[7px] md:text-[8px] font-pixel tracking-[0.1em] uppercase whitespace-nowrap text-right">
+                        {pos.open ? (
+                          <span className="text-accent">● OPEN</span>
+                        ) : (
+                          <span className="text-line-soft">● SOON</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </React.Fragment>
               ))}
             </tbody>
           </table>
