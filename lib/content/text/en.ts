@@ -60,6 +60,13 @@ export const pagesEn: LocalePages = {
             "This is why PRIONATION treats the eval specification as the real deliverable of the Diagnostic. Once it exists, the Build is de-risked for both sides — the scope cannot silently expand, and the result cannot be argued about.",
           ],
         },
+        {
+          h2: "Where teams get this wrong",
+          body: [
+            "The most common mistake is treating evals as a QA step at the end rather than the specification at the start. Written last, they only confirm what was already built; written first, they constrain what gets built at all. The order is the whole point.",
+            "The second mistake is grading on vibes — a handful of cherry-picked examples that look good in a demo. A real suite includes the inputs that break the system: the edge cases, the adversarial phrasings, the formats no one expected. Those are the cases that decide whether a system survives contact with production.",
+          ],
+        },
       ],
       faq: [
         {
@@ -81,6 +88,14 @@ export const pagesEn: LocalePages = {
         {
           q: "Who owns the eval suite?",
           a: "The client. The golden dataset and the eval harness ship with the code as part of owned infrastructure, so the same standard keeps running after the engagement ends.",
+        },
+        {
+          q: "What does an eval suite actually contain?",
+          a: "Three things: a golden dataset of representative inputs, the expected behaviour or acceptance criteria for each, and a scoring method that turns raw outputs into a pass, a fail, or a number. The hardest part is rarely the tooling — it is agreeing what a good answer looks like.",
+        },
+        {
+          q: "Can you write evals when the requirements are still vague?",
+          a: "Writing the evals is how vague requirements become concrete. Specifying inputs, expected outputs, and thresholds forces the ambiguity into the open while it is still cheap to resolve — long before it would otherwise surface as a production incident.",
         },
       ],
     },
@@ -155,6 +170,14 @@ export const pagesEn: LocalePages = {
           q: "How does telemetry support the warranty and retainer?",
           a: "The warranty promises a fix if production quality falls below the agreed eval thresholds; telemetry is how you see that it has. For the retainer, it makes each iteration's impact measurable, so ongoing work is judged on real numbers.",
         },
+        {
+          q: "What do you actually log in an AI system?",
+          a: "The inputs, the model's outputs, the retrieved context, latency, cost, and any guardrail or validation result — enough to reconstruct why a given answer happened. The point is not dashboards for their own sake; it is being able to answer 'why did it do that?' the first time it matters.",
+        },
+        {
+          q: "Isn't logging model inputs a privacy risk?",
+          a: "It can be, which is why telemetry is designed around it: redaction at capture, retention limits, and client-owned storage. Done properly, observability and data protection are not in tension — the same controls that keep logs useful keep them compliant.",
+        },
       ],
     },
 
@@ -227,6 +250,14 @@ export const pagesEn: LocalePages = {
         {
           q: "How does ownership relate to data and compliance?",
           a: "Because the data and hosting live in your accounts, you control residency and access. Client infrastructure can remain within compliant hosting where required, without routing through a third party.",
+        },
+        {
+          q: "Does owning the infrastructure mean we have to maintain it ourselves?",
+          a: "No. Ownership is about control and exit, not obligation. You hold the code, hosting, and accounts, and you can run them yourself, keep PRIONATION on a Retainer, or hand them to any other team — the point is that the choice is always yours, not locked to one vendor.",
+        },
+        {
+          q: "What stops this from becoming our problem the day you leave?",
+          a: "The same things that make the build honest: evals, telemetry, and documentation ship with the system. A handover is not a pile of code — it is a running service with a test suite that tells you when something breaks and instrumentation that tells you why.",
         },
       ],
     },
@@ -700,6 +731,14 @@ export const pagesEn: LocalePages = {
         {
           q: "What should I ask a vendor about pricing?",
           a: "One question: under your model, do you earn more by finishing or by continuing? Then ask to see the method — scoping step, eval-based definition of done, and warranty — that makes a fixed price safe.",
+        },
+        {
+          q: "Why a small pod instead of a larger team?",
+          a: "Because coordination cost grows faster than headcount. Two or three senior engineers who hold the whole system in their heads ship faster than a larger team that spends its time syncing. The fixed clock is what keeps the small pod honest about scope.",
+        },
+        {
+          q: "What happens if the work doesn't fit in eight weeks?",
+          a: "Then the scope was wrong, and that is a scoping failure to fix in the Diagnostic, not a surprise to absorb mid-Build. The fixed clock forces the hard prioritisation conversations up front, where they are cheap, instead of at the deadline, where they are not.",
         },
       ],
     },

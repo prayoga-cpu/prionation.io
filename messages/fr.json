@@ -1,4 +1,40 @@
 {
+  "Meta": {
+    "homeTitle": "Ingénierie de produits IA · PRIONATION.io",
+    "homeDescription": "Infrastructure IA de production pour les entreprises mid-market d'Europe et des États-Unis. Périmètre fixe. Prix fixe. En production en 8 semaines. À partir de 5 000 €."
+  },
+  "Glossary": {
+    "seoTitle": "Glossaire de l'ingénierie IA · PRIONATION.io",
+    "metaDescription": "Définitions claires des termes d'ingénierie IA qui comptent lorsqu'on construit un système de production : evals, télémétrie, RAG, inférence, agents, infrastructure possédée, et plus.",
+    "badge": "Référence · Glossaire",
+    "h1": "Glossaire de l'ingénierie IA",
+    "backToHome": "← Retour à l'accueil",
+    "intro": [
+      "Le vocabulaire de l'IA de production est bruyant, et ce bruit masque des décisions qui coûtent cher. Ce glossaire définit les termes que PRIONATION emploie pour cadrer et construire un système — en langage clair, du point de vue d'un dirigeant mid-market qui doit le financer.",
+      "Chaque définition est pensée pour être utile avant un Diagnostic : de quoi suivre une conversation de cadrage, challenger un prestataire, et distinguer une fonctionnalité d'un risque."
+    ],
+    "terms": [
+      { "term": "Ingénierie produit IA", "def": "La discipline qui consiste à construire, livrer et exploiter un système IA de production — pas à conseiller sur le sujet. Elle couvre les evals, les données, l'infrastructure et le service en marche, et elle se termine par un système que le client possède, et non par une présentation." },
+      { "term": "Eval (suite d'évaluation)", "def": "Un test reproductible qui note la sortie d'un système IA face à un standard défini : entrées représentatives, comportement attendu et méthode de notation. Écrire la suite avant la construction est ce qui rend un prix fixe et une garantie honnêtes." },
+      { "term": "Jeu de données de référence", "def": "Un ensemble d'entrées représentatives associées aux sorties que vous jugeriez correctes. C'est la référence sur laquelle une suite d'evals s'appuie, et l'actif le plus utile à réunir avant toute construction." },
+      { "term": "Télémétrie", "def": "L'instrumentation en production qui enregistre chaque entrée, sortie et échec afin de mesurer le comportement au lieu d'en débattre. Sans elle, « le modèle se trompe » est une opinion ; avec elle, c'est un chiffre." },
+      { "term": "RAG (génération augmentée par récupération)", "def": "Un schéma qui récupère les documents sources pertinents au moment de la requête et les fournit au modèle comme contexte, pour que les réponses soient ancrées dans vos données plutôt que dans l'entraînement du modèle. L'alternative habituelle au fine-tuning pour les tâches de connaissance." },
+      { "term": "Fine-tuning", "def": "Adapter les poids d'un modèle de base en l'entraînant davantage sur des exemples spécifiques. Cela change le comportement et le style, mais c'est rarement le premier outil à dégainer — la plupart des problèmes de connaissance se résolvent à moindre coût par la récupération." },
+      { "term": "Prompt engineering", "def": "Concevoir les instructions, exemples et contexte fournis à un modèle pour orienter sa sortie. Le levier le moins cher, et le premier — mais pas un substitut aux evals ni aux données." },
+      { "term": "LLM (grand modèle de langage)", "def": "Un modèle entraîné à prédire du texte, utilisé pour rédiger, classer, extraire et répondre. Puissant et probabiliste : une même entrée peut produire des sorties différentes, d'où l'importance des evals." },
+      { "term": "Inférence", "def": "L'exécution d'un modèle entraîné pour produire une sortie. Chaque appel a une latence et un coût ; l'économie de l'inférence — tokens par requête multipliés par le volume de requêtes — décide de la viabilité d'un cas d'usage à grande échelle." },
+      { "term": "Fenêtre de contexte", "def": "La quantité maximale de texte (mesurée en tokens) qu'un modèle peut lire en un seul appel. Elle limite l'instruction, les données récupérées et l'historique que vous pouvez fournir d'un coup — et plus grand n'est pas toujours moins cher." },
+      { "term": "Token", "def": "L'unité de texte qu'un modèle lit et écrit — à peu près un morceau de mot. Tarification, limites de contexte et latence se comptent en tokens : les budgets de tokens sont donc une vraie contrainte d'ingénierie, pas un détail." },
+      { "term": "Hallucination", "def": "Une sortie fluide et assurée mais factuellement fausse. C'est une propriété du fonctionnement des modèles de langage, pas un bug à supprimer totalement — d'où l'existence de l'ancrage (RAG), des garde-fous et des evals." },
+      { "term": "Agent", "def": "Un système LLM qui planifie et appelle des outils ou des actions en boucle pour atteindre un objectif, au lieu de répondre en une fois. Plus capable et plus sujet aux échecs, ce qui relève l'exigence sur les evals et la télémétrie." },
+      { "term": "Embeddings / base vectorielle", "def": "Les embeddings transforment le texte en nombres qui capturent le sens ; une base vectorielle les stocke pour permettre une recherche par similarité plutôt que par correspondance exacte. Ensemble, ils forment la moitié « récupération » de la plupart des systèmes RAG." },
+      { "term": "Garde-fous", "def": "Des contraintes qui maintiennent la sortie du modèle sûre, valide et conforme — filtres d'entrée et de sortie, validation de schéma, listes blanches et solutions de repli. La différence entre une démo et quelque chose que l'on peut présenter à un client." },
+      { "term": "Infrastructure possédée", "def": "Un arrangement où le client détient le code, l'hébergement, les données et les comptes des modèles — l'inverse du verrouillage fournisseur. Le système continue de tourner, et peut être modifié, après la fin de la mission." }
+    ],
+    "ctaTitle": "Commencez par un Diagnostic",
+    "ctaBody": "Deux semaines. 5 000 €. Un goulot d'étranglement cartographié et un plan prêt pour la production — sans obligation de poursuivre vers un Build.",
+    "ctaButton": "Démarrer un Diagnostic"
+  },
   "Hero": {
     "eyebrow": "INGÉNIERIE DE PRODUITS IA",
     "title_main": "Nous construisons des logiciels qui",

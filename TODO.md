@@ -1,116 +1,97 @@
-# PRIONATION.io — TODO
+# PRIONATION.io — SEO / AEO / GEO board
 
-Deferred follow-ups. The technical SEO **code** is done and build-verified
-(commits `c415260` P0+P1, `c75c8b3` GEO). What remains needs brand assets,
-external accounts, or is optional polish.
+Monitoring board, organised by optimisation target.
+**Legend:** ✅ done & `next build` clean · 🔄 in progress · ⬜ todo (autonomous) · 🔒 blocked (needs your action / a live deploy).
 
-Source: _[PRIONATION] Dev Implementation Guide, 31-05-2026_ and
-_[PRIONATION] Sitemap Documentation, 31-05-2026_.
+- **SEO** — rank + index in classic search (Google/Bing crawl, rich results, Core Web Vitals)
+- **AEO** — win answer surfaces (featured snippets, voice, "position zero")
+- **GEO** — get cited by generative engines (ChatGPT, Claude, Perplexity, Google AIO)
 
----
-
-## Content cluster system (Sitemap Documentation)
-
-Infrastructure is built: `lib/content/pages.ts` (manifest, source of truth),
-sitemap auto-publishing, manifest-wired footer, and a proven page template.
-
-- [x] Manifest + sitemap wiring + robots Amazonbot (`0bab960`)
-- [x] **Cluster anchor page** built as the reusable template — trilingual,
-  Article + FAQPage schema, sub-page chrome, sitemap (`fc0cf83`). This is the
-  pattern to copy for every cluster page.
-The system is generalized: routes + `ContentArticle` + `meta.ts` are reusable.
-To publish a page now: add its content to `lib/content/text/{en,fr,id}.ts` under
-the section, then flip `status` to `"published"` in `lib/content/pages.ts`. It
-auto-joins the sitemap + footer. The 5 dynamic routes already exist.
-
-- [x] **Methodology ×4** published (trilingual) — `0fb2ae1`.
-- [x] **Frameworks ×3** published (trilingual) — `cb96879`.
-- [x] **Guides ×3** published (trilingual) — `e43710a`.
-- [x] **Showcases ×3** published (trilingual) — `9305f9b`. Truthful to existing
-  public copy; **no fabricated metrics** (results framed as "to be published").
-- [x] **Intelligence ×2** published (trilingual) — `9045f09`. First-party-framed,
-  no fabricated metrics.
-
-**All 15 cluster pages + anchor are live trilingual (48 localized content pages,
-all SSG). Sitemap = 51 URLs.** Remaining content follow-ups:
-
-- [ ] **Real client metrics** for Showcases + Intelligence — layer actual Epidom /
-  Expeditoo / The Lead Agent numbers (eval scores, ROI, throughput) into the
-  "What it changed" sections + FAQ once available. Content currently says results
-  are "being prepared / to be published."
-- [ ] **Transparency page** (`/transparency`, Phase 3) — needs build-in-public
-  stats; not yet built (no route/manifest entry).
-- [ ] Per-page depth: pages are ~1,000–1,500 words (tight, high-signal). The doc
-  targets 2,000–3,500; expand if desired.
-- [ ] **Interactive framework tools** — the 3 framework pages explain the
-  calculator/checklist logic as content; the live interactive widgets (inputs →
-  result) from the doc are not built yet.
+Scale today: **~54 localized URLs** (homepage + anchor + glossary + 15 cluster pages, ×3 locales, all SSG).
+Sources: _Dev Implementation Guide_ + _Sitemap Documentation_ (both 31-05-2026).
 
 ---
 
-## SEO — blocked on brand assets
+## SEO — search ranking & indexing
 
-Drop the files into `/public`, then wire the metadata (notes below).
+**✅ Done — build-verified**
+- Trilingual content cluster: 15 pages + anchor + glossary, all SSG (en/fr/id)
+- Sitemap: hreflang alternates + honest `<lastmod>` driven by `datePublished`/`dateModified`
+- Structured data: Organization · ProfessionalService · WebSite · BreadcrumbList ·
+  valid `Article`/`TechArticle` `@type` (dropped invalid `CaseStudy` / stepless `HowTo`)
+- Localized `<title>` + description per locale (`Meta` namespace) · canonical · hreflang
+- **Internal linking**: glossary hub linked from every cluster page (related-links), plus
+  topical related-links per page; 4-level breadcrumb trail
+- Performance: AVIF/WebP · SSG (TTFB) · font-display swap · vercel cache · favicons · OG image
+- Removed fabricated `Review` schema (Google guideline + project integrity risk)
 
-- [ ] **Favicon PNG set** — only `public/favicon.ico` (48px max) exists today.
-  Export per Brand Guidelines v2.0 §2.1 and add:
-  - `public/favicon-32x32.png` (32×32)
-  - `public/favicon-64x64.png` (64×64)
-  - `public/apple-touch-icon.png` (180×180)
-  - `public/icon-512.png` (512×512)
-  Then expand `icons` in [app/[locale]/layout.tsx](app/[locale]/layout.tsx)
-  (`generateMetadata`) to reference the PNGs + apple-touch-icon.
-- [ ] **`public/icon-512.png`** — the Organization JSON-LD `logo` in
-  [components/JsonLd.tsx](components/JsonLd.tsx) already points to
-  `/icon-512.png`. It **404s until this file exists** (Rich Results Test will
-  warn about an unreachable logo). Highest priority of the asset items.
-- [ ] **OG / social share image** — `public/og.png` (1200×630). OG/Twitter are
-  currently text-only. Once added, set `openGraph.images` + `twitter.images` in
-  the layout `generateMetadata`.
+**🔄 / ⬜ Open — autonomous**
+- 🔄 **Content depth toward 2–3.5k words** (topical authority) — Methodology ×4 ✅;
+  Frameworks / Guides / Intelligence / Showcases ⬜ (see checklist at bottom)
+- ⬜ **XML sitemap index** — *intentionally deferred.* A sitemap index is for sites
+  over ~50k URLs / 50MB; at ~54 URLs a single `sitemap.xml` is the correct, Google-
+  recommended setup. Revisit only if the URL count explodes.
+- ⬜ Inline contextual body links (deeper semantic linking) — needs a content-model
+  change (bodies are plain `string[]`; would need markdown/JSX parsing). Optional.
 
-## SEO — blocked on external accounts / tools
+**🔒 Blocked — needs you / a live deploy**
+- 🔒 Confirm prod origin — `SITE_URL` in `lib/seo/site.ts` (`www` vs apex)
+- 🔒 Submit sitemap → Google Search Console **+** Bing Webmaster (Bing feeds ChatGPT)
+- 🔒 Validate post-deploy — PageSpeed mobile (LCP<2.5s · TTFB<500ms · FCP<1.8s) ·
+  Rich Results (Org · ProfessionalService · FAQPage → 0 err) · robots tester
 
-- [ ] **Confirm production origin.** `SITE_URL` in
-  [lib/seo/site.ts](lib/seo/site.ts) is `https://www.prionation.io`. If the site
-  serves the apex (`prionation.io`), change that one constant — it drives
-  canonical, hreflang, sitemap, JSON-LD, OG.
-- [ ] **Submit sitemap** after deploy: `https://www.prionation.io/sitemap.xml`
-  to Google Search Console **and** Bing Webmaster Tools (Bing feeds ChatGPT
-  citations — don't skip).
-- [ ] **Validate** post-deploy:
-  - PageSpeed Insights (mobile): LCP < 2.5s · TTFB < 500ms · FCP < 1.8s
-  - Rich Results Test: Organization · ProfessionalService · FAQPage → 0 errors
-  - Schema validator: 0 critical errors
-  - robots.txt tester (GSC): pages "Allowed"
-- [ ] **AI citation baseline** — day after deploy, log whether PRIONATION is
-  cited in ChatGPT / Perplexity / Google AIO / Claude for the 5 queries in the
-  guide. Target Day 180: 3+ cited queries.
+## AEO — answer engines & voice
 
-## SEO — optional polish (later)
+**✅ Done — build-verified**
+- FAQPage schema on every cluster page + anchor + homepage
+- **Speakable schema** (`h1` + TL;DR via `[aria-label="Summary"]`) on all 48 article
+  pages + anchor — voice-assistant surfaces
+- TL;DR summary blocks + inverted-pyramid, ~40–60-word answers
+- FAQ depth: Methodology ×4 expanded (evals +section +2 FAQ; others +2 FAQ each)
+- HowTo — intentionally **not** pursued (Google deprecated HowTo rich results in 2023)
 
-- [ ] **Localized meta title/description per locale.** Currently the EN title +
-  description are used across en/fr/id (hreflang/canonical are still correct).
-  Localize via message keys if desired.
-- [ ] **Cluster / showcase pages** — add to [app/sitemap.ts](app/sitemap.ts)
-  **only once each route ships and returns 200** (never list 404s). Candidates:
-  `/ai-product-engineering-for-mid-market-companies`, `/showcases/*`,
-  `/methodology/*`, `/frameworks/*`, `/guides/*`.
+**⬜ Open — autonomous**
+- ⬜ Extend FAQ depth to Frameworks / Guides / Intelligence / Showcases (with #4 batches)
+
+## GEO — generative-engine citation
+
+**✅ Done — build-verified**
+- `llms.txt` — structured value prop, pricing, tech specs, licensing
+- **AI engineering glossary** — `DefinedTermSet` + 16 `DefinedTerm` ×3 locales
+  (machine-readable definitions; broad inbound links aid entity grounding)
+- `robots.txt` allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Amazonbot, …)
+- Machine-readable summary + entity coherence across schema / llms.txt / glossary
+
+**🔒 Blocked — needs you / time**
+- 🔒 **Real client metrics** for Showcases + Intelligence (citable specifics — eval
+  scores, ROI, throughput); copy currently says "to be published"
+- 🔒 **AI citation baseline** — log ChatGPT/Perplexity/AIO/Claude for the 5 guide
+  queries; target Day 180: 3+ cited
 
 ---
 
-## Verify before pushing the SEO work
+## Out of SEO/AEO/GEO scope (product / content backlog)
+- ⬜ **Interactive framework widgets** (calculator/checklist, inputs→result) — a UX
+  feature, not a search lever, and a sizeable build. **Needs your product input**:
+  the cost/decision formulas need real assumptions (salary loads, multipliers) that
+  must not be invented — so it's parked until those are agreed.
+- 🔒 **Transparency page** (`/transparency`) — needs build-in-public stats from you
 
-The two SEO commits are local and **not pushed**. Before pushing:
+## #4 content-expansion checklist
+Truthful depth only (extra sections, decision criteria, common mistakes, more FAQ).
+**Never invent metrics/results.** Bump the page's `updatedAt` when its content changes.
 
-- [ ] `npm run dev` → eyeball the new SERP title and the FAQ/TL;DR section above
-  the footer in all three locales.
-- [ ] Push: `GIT_SSH_COMMAND="ssh -i ~/.ssh/prayoga -o IdentitiesOnly=yes" git push origin main`
+- ✅ **Methodology ×4** — evals-before-features (+section "Where teams get this wrong",
+  +2 FAQ) · telemetry-from-day-one / owned-infrastructure / lean-pods-fixed-clocks
+  (+2 FAQ each) · all 3 locales · `updatedAt` → 2026-06-03
+- ⬜ Frameworks ×3 · ⬜ Guides ×3 · ⬜ Intelligence ×2
+- ⬜ Showcases ×3 — expand *context / transferable lesson* only; results stay deferred
 
-## Done (reference)
-
-- [x] JSON-LD (Organization + ProfessionalService) · llms.txt · robots.txt ·
-  sitemap.ts (hreflang) · per-locale canonical/OG/Twitter · title < 60 chars
-- [x] AVIF/WebP · SSG homepage (TTFB) · vercel.json regions + cache
-- [x] Trilingual TL;DR + FAQ + FAQPage schema
-- [x] Already satisfied by existing code: font-display swap · entity coherence ·
-  pricing crawlability
+## Pre-push — verification gate
+- ✅ `tsc --noEmit` clean · `eslint .` clean · `vitest` 51/51 · `next build` 72/72 SSG
+- ✅ Runtime smoke test (`next start`): homepage + glossary + cluster pages → 200 with
+  correct localized titles (en/fr/id); `DefinedTermSet`/`FAQPage`/`Speakable` served live
+- ⬜ **Push** (→ Vercel prod deploy):
+  `GIT_SSH_COMMAND="ssh -i ~/.ssh/prayoga -o IdentitiesOnly=yes" git push origin main`
+- ℹ️ `components/sections/engage/CareersTab.tsx` (careers grouped by department) is your
+  separate WIP — **left uncommitted**; `git add` it before pushing if it should ship now.

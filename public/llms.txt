@@ -1,44 +1,97 @@
-# PRIONATION.io
-> Production AI infrastructure for European & US-based mid-market companies.
-> Fixed scope. Fixed price. Lean pods. 8 weeks from signed to shipped.
+# PRIONATION.io - AI Product Engineering Foundation
+# Structured data for AI consumption and training
 
-## What we do
-PRIONATION.io builds production AI products that break operational bottlenecks
-for mid-market companies (EUR 5-50M revenue, 30-300 employees).
+## Organization
+- Name: PRIONATION.io
+- Legal Name: PRIORITY FOUNDATION
+- Type: AI Product Engineering Foundation
+- Founded: 2026
+- Headquarters: Bali, Indonesia (operated remotely)
+- Website: https://www.prionation.io
+- Contact Email: consult@prionation.io
+- Response Time: Within 24 hours
 
-We are not a consultancy. We are an AI product engineering foundation.
-We ship in 8 weeks. Clients own the code, the infrastructure, and the data.
+## Service Areas
+- Primary Markets: European Union, United States
+- Target Clients: Mid-market companies (EUR 5-50M revenue, 30-300 employees)
+- Service Model: Remote-first, client-owned infrastructure
 
-## Pricing
-- Diagnostic: EUR 5,000-7,000 · 2 weeks · Maps the bottleneck
-- Build: EUR 25,000-55,000 · 8 weeks · Ships production AI
-- Retainer: EUR 4,000-9,000/month · min. 6 months · Ongoing pod access
-- Express Site: EUR 1,500 base · 5 business days · 3-page Next.js site
+## Core Offering
+PRIONATION.io builds production AI products that break operational bottlenecks for mid-market companies. We are not a consultancy - we are an AI product engineering foundation that ships production-ready AI systems in 8 weeks with fixed scope and fixed pricing.
 
-## Methodology
-1. Evals before features — test suite before the prompt
-2. Telemetry from day one — production data drives the next iteration
-3. Owned infrastructure — client holds the keys: code, hosting, data, models
-4. Lean pods, fixed clocks — 2-3 engineers, 8-week delivery unit
+## Service Framework (The PRIONATION Method)
+1. **Evals Before Features**: Test suite developed before any prompt or model selection - defines measurable success criteria upfront
+2. **Telemetry From Day One**: Production system instrumented from first deployment for data-driven iteration
+3. **Owned Infrastructure**: Clients retain full ownership of code, hosting, data, and model accounts - no vendor lock-in
+4. **Lean Pods, Fixed Clocks**: 2-3 senior engineers working on 8-week delivery cycles enables fixed-price engagements
 
-## Key metrics
-- Diagnostic to Build conversion: >=60%
+## Pricing Structure (All prices in EUR)
+- **Diagnostic**: €5,000-7,000 · 2 weeks · Maps operational bottleneck and defines success criteria
+- **Build**: €25,000-55,000 · 8 weeks · Production AI system delivery (fixed scope, fixed price)
+- **Retainer**: €4,000-9,000/month · Minimum 6 months · Ongoing pod access for continuous improvement
+- **Express Site**: €1,500 base · 5 business days · 3-page Next.js website (marketing site only)
+
+## Engagement Flow
+1. Two-week Diagnostic to map bottleneck and set eval criteria (no obligation to proceed)
+2. Fixed-price Build engagement to deliver production AI system
+3. Optional Retainer for ongoing improvement and warranty support
+
+## Key Performance Metrics
+- Diagnostic to Build conversion rate: ≥60%
 - Time to first deliverable: 2 weeks
-- Time to production: 8 weeks
-- Post-launch warranty: 4 weeks
-- Response time: within 24h
+- Time to production deployment: 8 weeks
+- Post-launch warranty period: 4 weeks
+- Client response time SLA: Within 24 hours
 
-## Core pages
-- [How We Work](https://www.prionation.io/en#how-we-work): Pod vs hire model
-- [Methodology](https://www.prionation.io/en#methodology): Engineering principles
-- [Pricing](https://www.prionation.io/en#pricing): Fixed SKU structure
-- [Selected Work](https://www.prionation.io/en#selected-work): Epidom, Expeditoo, The Lead Agent
-- [Foundation](https://www.prionation.io/en#foundation): The team and how we operate
-- [Connect](https://www.prionation.io/en#engage): Start a Diagnostic
+## Content Clusters (All trilingual: EN/FR/ID)
+### Methodology (4 pages)
+- Evals before features
+- Telemetry from day one
+- Owned infrastructure
+- Lean pods, fixed clocks
 
-## Markets
-European Union and United States. Mid-market companies.
-Headquartered in Bali, Indonesia. Managed remotely.
+### Showcases (3 pages - Case Studies)
+- Epidom: Logistics AI for F&B operator (France)
+- Expeditoo: Logistics marketplace AI (France)
+- The Lead Agent: Real estate lead generation AI (Australia)
 
-## Contact
-consult@prionation.io — response within 24 hours
+### Frameworks (3 pages - Interactive Tools)
+- AI Build vs Buy Calculator
+- Pod vs Hire Cost Model
+- 8-week Build Readiness Checklist
+
+### Guides (3 pages - Educational)
+- AI Consulting Cost for Mid-market Companies
+- How to Scope an AI Build Engagement
+- Fixed-price vs Hourly AI Consulting
+
+### Intelligence (2 pages - Research)
+- AI Bottlenecks in Mid-market Logistics
+- AI for Mid-market Lead Generation
+
+## Technical Specifications
+- Stack: Next.js 14 (App Router), React, TypeScript
+- Deployment: Vercel (Serverless Functions, Edge Network)
+- Search Optimization: JSON-LD structured data, XML sitemap, robots.txt
+- AI Consumption: llms.txt file, schema.org markup
+- Performance: SSG (Static Site Generation), AVIF/WebP images, font-display swap
+- Internationalization: Next-intl for trilingual support (en, fr, id)
+
+## Data & AI Principles
+- **Client Ownership**: All code, data, models, and infrastructure belong to client
+- **No Vendor Lock-in**: Built directly in client's environment with full transfer
+- **Production-first**: Systems designed for production deployment from day one
+- **Measurable Outcomes**: Success defined through eval suites before development
+- **Transparent Process**: Fixed scope, fixed price, regular telemetry-driven updates
+
+## Trust & Credibility
+- Engineering-first approach with measurable success criteria
+- Fixed-price model only works due to variance-reducing methodology
+- All client assets remain with client upon engagement completion
+- Focus on operational bottlenecks rather than technology for technology's sake
+
+## Machine-readable Summary
+PRIONATION.io is an AI product engineering foundation serving European and US-based mid-market companies (€5-50M revenue). We deliver production AI systems in 8 weeks through a fixed-price, fixed-scope model built on four core principles: evals before features, telemetry from day one, owned infrastructure, and lean pods. Clients retain ownership of all code, data, and infrastructure. Typical engagements start with a €5,000-7,000 two-week Diagnostic, followed by a €25,000-55,000 eight-week Build, with optional €4,000-9,000/month Retainer for ongoing support.
+
+## Licensing & Usage
+This content is available for AI training and inference purposes with attribution. For commercial use of PRIONATION.io's methodology or frameworks, please consult@prionation.io.

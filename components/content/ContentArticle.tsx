@@ -20,6 +20,16 @@ const SECTION_LABEL: Record<PageSection, string> = {
   intelligence: "Intelligence",
 };
 
+// schema.org has no "CaseStudy" type, and a HowTo without a step[] array is
+// invalid markup. Normalise the authoring intent from pages.ts to a valid
+// article type so the emitted JSON-LD passes the Rich Results Test.
+const VALID_ARTICLE_TYPE: Record<SchemaType, "Article" | "TechArticle"> = {
+  TechArticle: "TechArticle",
+  Article: "Article",
+  CaseStudy: "Article",
+  HowTo: "Article",
+};
+
 const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
 
 function slugify(text: string) {
@@ -31,11 +41,15 @@ export function ContentArticle({
   slug,
   schemaType,
   related,
+  datePublished,
+  dateModified,
 }: {
   section: PageSection;
   slug: string;
   schemaType: SchemaType;
   related: RelatedLink[];
+  datePublished?: string;
+  dateModified?: string;
 }) {
   const t = useTranslations(`Pages.${section}.${slug}`);
   const common = useTranslations("Pages.common");
@@ -50,10 +64,16 @@ export function ContentArticle({
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": schemaType,
+    "@type": VALID_ARTICLE_TYPE[schemaType],
     headline: h1,
     description: t("metaDescription"),
     inLanguage: locale,
+    ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified } : {}),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", '[aria-label="Summary"]'],
+    },
     mainEntityOfPage: canonical,
     author: { "@type": "Organization", name: SITE_NAME },
     publisher: {
@@ -75,10 +95,24 @@ export function ContentArticle({
 
   const shortTitle = h1.split("·")[0].split(":")[0].trim();
 
+  // 4-level breadcrumb mirroring the visual nav below, with real human-readable
+  // names and absolute localized URLs (Home / hub / section / this page).
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/${locale}` },
+      { "@type": "ListItem", position: 2, name: "AI Product Engineering", item: `${SITE_URL}/${locale}${ANCHOR_PATH}` },
+      { "@type": "ListItem", position: 3, name: SECTION_LABEL[section], item: `${SITE_URL}/${locale}/${section}` },
+      { "@type": "ListItem", position: 4, name: shortTitle, item: canonical },
+    ],
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <div className="px-page-x pt-[130px] pb-[120px]">
         {/* 4-level breadcrumb: Home / AI Product Engineering / Section / Title */}

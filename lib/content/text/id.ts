@@ -60,6 +60,13 @@ export const pagesId: LocalePages = {
             "Itulah sebabnya PRIONATION memperlakukan spesifikasi eval sebagai keluaran sebenarnya dari Diagnostic. Begitu ia ada, Build menjadi minim risiko bagi kedua pihak — ruang lingkup tidak bisa membengkak diam-diam, dan hasilnya tidak bisa diperdebatkan.",
           ],
         },
+        {
+          h2: "Di mana tim sering keliru",
+          body: [
+            "Kesalahan paling umum adalah memperlakukan eval sebagai langkah QA di akhir, bukan sebagai spesifikasi di awal. Ditulis belakangan, eval hanya mengonfirmasi apa yang sudah dibangun; ditulis lebih dulu, ia membatasi apa yang akan dibangun. Urutannya adalah inti persoalannya.",
+            "Kesalahan kedua adalah menilai berdasarkan kesan — segelintir contoh pilihan yang terlihat bagus saat demo. Suite yang sungguhan menyertakan input yang merusak sistem: kasus tepi, frasa adversarial, dan format yang tak terduga. Kasus-kasus itulah yang menentukan apakah sebuah sistem bertahan saat berhadapan dengan produksi.",
+          ],
+        },
       ],
       faq: [
         {
@@ -81,6 +88,14 @@ export const pagesId: LocalePages = {
         {
           q: "Siapa yang memiliki suite eval?",
           a: "Klien. Dataset acuan dan harness eval dikirim bersama kode sebagai bagian dari infrastruktur yang dimiliki, sehingga standar yang sama terus berjalan setelah proyek berakhir.",
+        },
+        {
+          q: "Apa sebenarnya isi sebuah suite eval?",
+          a: "Tiga hal: dataset acuan berisi input representatif, perilaku yang diharapkan atau kriteria penerimaan untuk masing-masing, dan metode penilaian yang mengubah keluaran mentah menjadi lulus, gagal, atau angka. Bagian tersulit jarang soal perkakas — melainkan menyepakati seperti apa jawaban yang baik.",
+        },
+        {
+          q: "Bisakah menulis eval saat kebutuhan masih kabur?",
+          a: "Menulis eval adalah cara kebutuhan yang kabur menjadi konkret. Menentukan input, keluaran yang diharapkan, dan ambang batas memaksa ambiguitas tampak selagi masih murah untuk diselesaikan — jauh sebelum ia muncul sebagai insiden produksi.",
         },
       ],
     },
@@ -155,6 +170,14 @@ export const pagesId: LocalePages = {
           q: "Bagaimana telemetri mendukung garansi dan retainer?",
           a: "Garansi menjanjikan perbaikan jika kualitas produksi turun di bawah ambang eval yang disepakati; telemetri yang membuat Anda melihatnya. Untuk retainer, ia membuat dampak setiap iterasi terukur, sehingga pekerjaan berkelanjutan dinilai dari angka nyata.",
         },
+        {
+          q: "Apa yang sebenarnya Anda catat dalam sistem AI?",
+          a: "Input, keluaran model, konteks yang diambil, latensi, biaya, dan setiap hasil guardrail atau validasi — cukup untuk merekonstruksi mengapa sebuah jawaban muncul. Tujuannya bukan dasbor demi dasbor; melainkan bisa menjawab 'mengapa ia melakukan itu?' pada saat pertama hal itu penting.",
+        },
+        {
+          q: "Bukankah mencatat input model berisiko bagi privasi?",
+          a: "Bisa jadi, dan itulah mengapa telemetri dirancang dengan mempertimbangkannya: redaksi saat penangkapan, batas retensi, dan penyimpanan yang dimiliki klien. Jika dilakukan dengan benar, observabilitas tidak berbenturan dengan perlindungan data — kontrol yang sama yang menjaga log tetap berguna juga menjaganya tetap patuh.",
+        },
       ],
     },
 
@@ -227,6 +250,14 @@ export const pagesId: LocalePages = {
         {
           q: "Bagaimana kepemilikan terkait data dan kepatuhan?",
           a: "Karena data dan hosting berada di akun Anda, Anda mengendalikan residensi dan akses. Infrastruktur klien dapat tetap pada hosting yang patuh bila diperlukan, tanpa melewati pihak ketiga.",
+        },
+        {
+          q: "Apakah memiliki infrastruktur berarti kami harus memeliharanya sendiri?",
+          a: "Tidak. Kepemilikan adalah soal kendali dan jalan keluar, bukan kewajiban. Anda memegang kode, hosting, dan akun, dan Anda bisa menjalankannya sendiri, menahan PRIONATION lewat Retainer, atau menyerahkannya ke tim lain — intinya pilihan selalu ada di tangan Anda, tidak terkunci pada satu vendor.",
+        },
+        {
+          q: "Apa yang mencegah ini menjadi masalah kami begitu Anda pergi?",
+          a: "Hal-hal yang sama yang membuat build jujur: eval, telemetri, dan dokumentasi dikirim bersama sistem. Serah terima bukan setumpuk kode — melainkan layanan yang berjalan dengan suite uji yang memberi tahu kapan sesuatu rusak dan instrumentasi yang memberi tahu mengapa.",
         },
       ],
     },
@@ -700,6 +731,14 @@ export const pagesId: LocalePages = {
         {
           q: "Apa yang harus saya tanyakan ke vendor soal harga?",
           a: "Satu pertanyaan: di bawah model Anda, apakah Anda untung lebih banyak dengan menyelesaikan atau melanjutkan? Lalu minta lihat metodenya — langkah pelingkupan, definisi 'selesai' berbasis eval, dan garansi — yang membuat harga tetap aman.",
+        },
+        {
+          q: "Mengapa pod kecil alih-alih tim besar?",
+          a: "Karena biaya koordinasi tumbuh lebih cepat daripada jumlah orang. Dua atau tiga insinyur senior yang memahami seluruh sistem bekerja lebih cepat daripada tim besar yang menghabiskan waktu untuk saling menyelaraskan. Jam tetap itulah yang menjaga pod kecil tetap jujur soal ruang lingkup.",
+        },
+        {
+          q: "Bagaimana jika pekerjaannya tidak selesai dalam delapan minggu?",
+          a: "Berarti ruang lingkupnya keliru, dan itu kegagalan penentuan lingkup yang harus diperbaiki di Diagnostic, bukan kejutan yang ditanggung di tengah Build. Jam tetap memaksa percakapan prioritas yang sulit dilakukan di awal, saat masih murah, alih-alih di tenggat, saat sudah mahal.",
         },
       ],
     },

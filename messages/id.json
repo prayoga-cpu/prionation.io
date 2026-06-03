@@ -1,4 +1,40 @@
 {
+  "Meta": {
+    "homeTitle": "Rekayasa Produk AI · PRIONATION.io",
+    "homeDescription": "Infrastruktur AI produksi untuk perusahaan mid-market di Eropa dan AS. Lingkup tetap. Harga tetap. Produksi dalam 8 minggu. Mulai dari €5.000."
+  },
+  "Glossary": {
+    "seoTitle": "Glosarium rekayasa AI · PRIONATION.io",
+    "metaDescription": "Definisi sederhana istilah rekayasa AI yang penting ketika membangun sistem produksi: eval, telemetri, RAG, inferensi, agen, infrastruktur yang dimiliki, dan lainnya.",
+    "badge": "Referensi · Glosarium",
+    "h1": "Glosarium rekayasa AI",
+    "backToHome": "← Kembali ke beranda",
+    "intro": [
+      "Kosakata seputar AI produksi penuh kebisingan, dan kebisingan itu menyembunyikan keputusan yang berbiaya nyata. Glosarium ini mendefinisikan istilah yang dipakai PRIONATION saat menyusun lingkup dan membangun sistem — dalam bahasa yang jelas, dari sudut pandang pelaku usaha mid-market yang harus membayarnya.",
+      "Setiap definisi ditulis agar berguna sebelum Diagnostic: cukup untuk mengikuti percakapan penentuan lingkup, menantang vendor, dan membedakan fitur dari liabilitas."
+    ],
+    "terms": [
+      { "term": "Rekayasa produk AI", "def": "Disiplin membangun, merilis, dan mengoperasikan sistem AI produksi — bukan sekadar memberi nasihat tentangnya. Mencakup eval, data, infrastruktur, dan layanan yang berjalan, dan berakhir dengan sistem yang dimiliki klien, bukan sekadar paparan slide." },
+      { "term": "Eval (suite evaluasi)", "def": "Uji yang dapat diulang untuk menilai keluaran sistem AI terhadap standar yang ditetapkan: masukan representatif, perilaku yang diharapkan, dan metode penilaian. Menulis suite-nya sebelum membangun adalah yang membuat harga tetap dan garansi menjadi jujur." },
+      { "term": "Dataset acuan (golden dataset)", "def": "Kumpulan masukan representatif yang dipasangkan dengan keluaran yang Anda anggap benar. Inilah acuan yang dinilai oleh suite eval, dan aset paling berguna untuk disiapkan sebelum membangun apa pun." },
+      { "term": "Telemetri", "def": "Instrumentasi di produksi yang merekam setiap masukan, keluaran, dan kegagalan sehingga perilaku dapat diukur, bukan diperdebatkan. Tanpanya, 'modelnya salah' hanyalah opini; dengannya, ia menjadi angka." },
+      { "term": "RAG (retrieval-augmented generation)", "def": "Pola yang mengambil dokumen sumber relevan saat kueri dan memberikannya ke model sebagai konteks, agar jawaban berpijak pada data Anda, bukan pada pelatihan model. Alternatif umum dari fine-tuning untuk tugas berbasis pengetahuan." },
+      { "term": "Fine-tuning", "def": "Menyesuaikan bobot model dasar dengan melatihnya lebih lanjut pada contoh spesifik tugas. Mengubah perilaku dan gaya, tetapi jarang menjadi alat pertama — sebagian besar masalah pengetahuan lebih murah diselesaikan dengan retrieval." },
+      { "term": "Prompt engineering", "def": "Merancang instruksi, contoh, dan konteks yang diberikan ke model untuk membentuk keluarannya. Tuas termurah, dan yang pertama — tetapi bukan pengganti eval atau data." },
+      { "term": "LLM (large language model)", "def": "Model yang dilatih untuk memprediksi teks, dipakai untuk menulis, mengklasifikasi, mengekstrak, dan menjawab. Kuat dan probabilistik: masukan yang sama bisa menghasilkan keluaran berbeda — itulah sebabnya eval penting." },
+      { "term": "Inferensi", "def": "Menjalankan model terlatih untuk menghasilkan keluaran. Tiap panggilan punya latensi dan biaya, sehingga ekonomi inferensi — token per permintaan dikalikan volume permintaan — menentukan apakah sebuah kasus penggunaan layak pada skala besar." },
+      { "term": "Jendela konteks", "def": "Jumlah maksimum teks (diukur dalam token) yang dapat dibaca model dalam satu panggilan. Ia membatasi instruksi, data hasil retrieval, dan riwayat yang bisa Anda berikan sekaligus — dan lebih besar tidak selalu lebih murah." },
+      { "term": "Token", "def": "Unit teks yang dibaca dan ditulis model — kira-kira sepenggal kata. Harga, batas konteks, dan latensi semuanya dihitung dalam token, sehingga anggaran token adalah kendala rekayasa yang nyata, bukan sekadar detail." },
+      { "term": "Halusinasi", "def": "Keluaran yang lancar dan meyakinkan tetapi salah secara faktual. Ini sifat dari cara kerja model bahasa, bukan bug yang bisa dihilangkan sepenuhnya — itulah mengapa grounding (RAG), guardrail, dan eval ada." },
+      { "term": "Agen", "def": "Sistem LLM yang merencanakan dan memanggil alat atau aksi dalam satu lingkaran untuk mencapai tujuan, alih-alih menjawab sekali jalan. Lebih mampu sekaligus lebih rawan gagal, sehingga menaikkan standar eval dan telemetri." },
+      { "term": "Embeddings / basis data vektor", "def": "Embeddings mengubah teks menjadi angka yang menangkap makna; basis data vektor menyimpannya agar bisa diambil berdasarkan kemiripan, bukan kecocokan persis. Bersama-sama, keduanya adalah paruh 'retrieval' dari sebagian besar sistem RAG." },
+      { "term": "Guardrail", "def": "Batasan yang menjaga keluaran model tetap aman, valid, dan sesuai kebijakan — filter masukan dan keluaran, validasi skema, daftar putih, dan fallback. Pembeda antara demo dan sesuatu yang bisa dihadapkan ke pelanggan." },
+      { "term": "Infrastruktur yang dimiliki", "def": "Pengaturan di mana klien memegang kode, hosting, data, dan akun model — kebalikan dari penguncian vendor. Artinya sistem tetap berjalan, dan bisa diubah, setelah keterlibatan berakhir." }
+    ],
+    "ctaTitle": "Mulai dengan Diagnostic",
+    "ctaBody": "Dua minggu. €5.000. Hambatan yang terpetakan dan rencana siap produksi — tanpa kewajiban melanjutkan ke Build.",
+    "ctaButton": "Mulai Diagnostic"
+  },
   "Hero": {
     "eyebrow": "REKAYASA PRODUK AI",
     "title_main": "Kami membangun perangkat lunak yang",

@@ -224,6 +224,12 @@ export function AnchorPage() {
     headline: t("h1"),
     description: t("metaDescription"),
     inLanguage: locale,
+    datePublished: "2026-05-31",
+    dateModified: "2026-05-31",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", '[aria-label="Summary"]'],
+    },
     mainEntityOfPage: `${SITE_URL}/${locale}${ANCHOR_PATH}`,
     author: { "@type": "Organization", name: SITE_NAME },
     publisher: {

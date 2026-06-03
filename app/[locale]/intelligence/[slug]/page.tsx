@@ -36,7 +36,7 @@ export default async function Page({
   return (
     <>
       <ContentHeader />
-      <ContentArticle section={SECTION} slug={slug} schemaType={page.schema} related={related} />
+      <ContentArticle section={SECTION} slug={slug} schemaType={page.schema} datePublished={page.publishedAt} dateModified={page.updatedAt || page.publishedAt} related={related} />
       <SiteFooter />
     </>
   );

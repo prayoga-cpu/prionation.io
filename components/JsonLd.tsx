@@ -8,9 +8,9 @@ import {
   OFFERS,
 } from "@/lib/seo/site";
 
-// Server components that emit JSON-LD structured data for search + AI engines.
-// Rendered once in the root layout. Page-level schemas (FAQPage, etc.) live with
-// their own sections.
+// Server components that emit site-wide JSON-LD structured data for search + AI
+// engines. Rendered once in the root layout. Page-level schemas (Article,
+// FAQPage, BreadcrumbList) live with their own sections/components.
 
 function JsonLdScript({ data }: { data: object }) {
   return (
@@ -69,6 +69,22 @@ export function ServiceSchema() {
               }
             : {}),
         })),
+      }}
+    />
+  );
+}
+
+export function WebSiteSchema() {
+  return (
+    <JsonLdScript
+      data={{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: SITE_NAME,
+        url: SITE_URL,
+        inLanguage: ["en", "fr", "id"],
+        publisher: { "@type": "Organization", name: SITE_NAME },
+        isAccessibleForFree: true,
       }}
     />
   );

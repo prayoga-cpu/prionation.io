@@ -43,6 +43,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.95,
   }));
 
+  // AI engineering glossary — a live standalone reference page.
+  const glossary = localize("/ai-engineering-glossary").map((entry) => ({
+    ...entry,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   const clusterPages = getPublishedPages().flatMap((page) =>
     localize(`/${page.section}/${page.slug}`).map((entry) => ({
       ...entry,
@@ -52,5 +60,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...homepage, ...anchor, ...clusterPages];
+  return [...homepage, ...anchor, ...glossary, ...clusterPages];
 }

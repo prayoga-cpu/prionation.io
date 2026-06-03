@@ -1,4 +1,40 @@
 {
+  "Meta": {
+    "homeTitle": "AI Product Engineering · PRIONATION.io",
+    "homeDescription": "Production AI infrastructure for EU and US mid-market companies. Fixed scope. Fixed price. 8 weeks to production. Starting at €5,000."
+  },
+  "Glossary": {
+    "seoTitle": "AI engineering glossary · PRIONATION.io",
+    "metaDescription": "Plain-English definitions of the AI engineering terms that matter when you build a production system: evals, telemetry, RAG, inference, agents, owned infrastructure, and more.",
+    "badge": "Reference · Glossary",
+    "h1": "AI engineering glossary",
+    "backToHome": "← Back to home",
+    "intro": [
+      "The vocabulary around production AI is noisy, and the noise hides decisions that cost real money. This glossary defines the terms PRIONATION uses when scoping and building a system — in plain language, from the point of view of a mid-market operator who has to pay for it.",
+      "Each definition is written to be useful before a Diagnostic: enough to follow a scoping conversation, challenge a vendor, and tell the difference between a feature and a liability."
+    ],
+    "terms": [
+      { "term": "AI product engineering", "def": "The discipline of building, shipping, and operating a production AI system — not advising on one. It covers evals, data, infrastructure, and the running service, and it ends with a system the client owns rather than a slide deck." },
+      { "term": "Eval (evaluation suite)", "def": "A repeatable test that scores an AI system's output against a defined standard: representative inputs, expected behaviour, and a scoring method. Writing the suite before the build is what makes a fixed price and a warranty honest." },
+      { "term": "Golden dataset", "def": "A curated set of representative inputs paired with the outputs you would accept as correct. It is the reference an eval suite scores against, and the single most useful asset to assemble before any build." },
+      { "term": "Telemetry", "def": "Production instrumentation that records each input, output, and failure so behaviour can be measured instead of argued about. Without it, 'the model is wrong' is an opinion; with it, it is a number." },
+      { "term": "RAG (retrieval-augmented generation)", "def": "A pattern that retrieves relevant source documents at query time and gives them to the model as context, so answers are grounded in your data rather than the model's training. The standard alternative to fine-tuning for knowledge tasks." },
+      { "term": "Fine-tuning", "def": "Adapting a base model's weights by training it further on task-specific examples. It changes behaviour and style, but it is rarely the first tool to reach for — most knowledge problems are cheaper to solve with retrieval." },
+      { "term": "Prompt engineering", "def": "Designing the instructions, examples, and context handed to a model to shape its output. The cheapest lever to pull, and the first one — but not a substitute for evals or data." },
+      { "term": "LLM (large language model)", "def": "A model trained to predict text, used for tasks like drafting, classifying, extracting, and answering. Powerful and probabilistic: the same input can produce different output, which is why evals matter." },
+      { "term": "Inference", "def": "Running a trained model to produce an output. Each call has a latency and a cost, so inference economics — tokens per request times request volume — decide whether a use case is viable at scale." },
+      { "term": "Context window", "def": "The maximum amount of text (measured in tokens) a model can read in a single call. It bounds how much instruction, retrieved data, and history you can supply at once, and larger is not always cheaper." },
+      { "term": "Token", "def": "The unit of text a model reads and writes — roughly a word-piece. Pricing, context limits, and latency are all counted in tokens, so token budgets are a real engineering constraint, not a detail." },
+      { "term": "Hallucination", "def": "Output that is fluent and confident but factually wrong. It is a property of how language models work, not a bug to be fully removed — which is why grounding (RAG), guardrails, and evals exist." },
+      { "term": "Agent", "def": "An LLM system that plans and calls tools or actions in a loop to reach a goal, instead of answering in one shot. More capable and more failure-prone, which raises the bar on evals and telemetry." },
+      { "term": "Embeddings / vector database", "def": "Embeddings turn text into numbers that capture meaning; a vector database stores them so you can retrieve by similarity rather than exact match. Together they are the retrieval half of most RAG systems." },
+      { "term": "Guardrails", "def": "Constraints that keep model output safe, valid, and on-policy — input and output filters, schema validation, allow-lists, and fallbacks. The difference between a demo and something you can put in front of a customer." },
+      { "term": "Owned infrastructure", "def": "An arrangement where the client holds the code, hosting, data, and model accounts — the opposite of vendor lock-in. It means the system keeps running, and can be changed, after the engagement ends." }
+    ],
+    "ctaTitle": "Start with a Diagnostic",
+    "ctaBody": "Two weeks. €5,000. A mapped bottleneck and a production-ready plan — with no obligation to proceed to a Build.",
+    "ctaButton": "Start a Diagnostic"
+  },
   "Hero": {
     "eyebrow": "AI PRODUCT ENGINEERING",
     "title_main": "We build software that",

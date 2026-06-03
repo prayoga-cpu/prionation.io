@@ -60,6 +60,13 @@ export const pagesFr: LocalePages = {
             "C'est pourquoi PRIONATION considère la spécification des evals comme le véritable livrable du Diagnostic. Une fois qu'elle existe, le Build est dérisqué des deux côtés — le périmètre ne peut pas s'étendre en silence, et le résultat ne peut pas être contesté.",
           ],
         },
+        {
+          h2: "Là où les équipes se trompent",
+          body: [
+            "L'erreur la plus courante est de traiter les evals comme une étape de QA à la fin plutôt que comme la spécification au départ. Écrites en dernier, elles ne font que confirmer ce qui a déjà été construit ; écrites en premier, elles contraignent ce qui sera construit. L'ordre est tout l'enjeu.",
+            "La deuxième erreur est de juger au feeling — une poignée d'exemples triés sur le volet qui font bonne figure en démo. Une vraie suite inclut les entrées qui cassent le système : les cas limites, les formulations adverses, les formats que personne n'avait prévus. Ce sont ces cas qui décident si un système survit au contact de la production.",
+          ],
+        },
       ],
       faq: [
         {
@@ -81,6 +88,14 @@ export const pagesFr: LocalePages = {
         {
           q: "À qui appartient la suite d'evals ?",
           a: "Au client. Le jeu de données de référence et le harnais d'evals sont livrés avec le code dans le cadre de l'infrastructure possédée, de sorte que la même norme continue de tourner après la fin de la mission.",
+        },
+        {
+          q: "Que contient réellement une suite d'evals ?",
+          a: "Trois choses : un jeu de données de référence d'entrées représentatives, le comportement attendu ou les critères d'acceptation pour chacune, et une méthode de notation qui transforme les sorties brutes en réussite, échec ou chiffre. Le plus difficile est rarement l'outillage — c'est de s'accorder sur ce qu'est une bonne réponse.",
+        },
+        {
+          q: "Peut-on écrire des evals quand les besoins sont encore flous ?",
+          a: "Écrire les evals est la façon dont des besoins flous deviennent concrets. Spécifier les entrées, les sorties attendues et les seuils met l'ambiguïté au grand jour tant qu'elle est encore peu coûteuse à lever — bien avant qu'elle ne surgisse comme un incident de production.",
         },
       ],
     },
@@ -155,6 +170,14 @@ export const pagesFr: LocalePages = {
           q: "Comment la télémétrie soutient-elle la garantie et le retainer ?",
           a: "La garantie promet une correction si la qualité en production passe sous les seuils d'evals convenus ; la télémétrie est ce qui permet de le voir. Pour le retainer, elle rend l'impact de chaque itération mesurable, de sorte que le travail continu est jugé sur des chiffres réels.",
         },
+        {
+          q: "Que journalisez-vous réellement dans un système d'IA ?",
+          a: "Les entrées, les sorties du modèle, le contexte récupéré, la latence, le coût et tout résultat de garde-fou ou de validation — de quoi reconstituer pourquoi une réponse donnée s'est produite. Le but n'est pas le tableau de bord pour lui-même ; c'est de pouvoir répondre à « pourquoi a-t-il fait ça ? » dès la première fois que cela compte.",
+        },
+        {
+          q: "Journaliser les entrées du modèle n'est-il pas un risque pour la vie privée ?",
+          a: "Cela peut l'être, et c'est pourquoi la télémétrie est conçue autour de ce risque : caviardage à la capture, limites de rétention et stockage possédé par le client. Bien faite, l'observabilité n'est pas en tension avec la protection des données — les mêmes contrôles qui gardent les journaux utiles les gardent conformes.",
+        },
       ],
     },
 
@@ -227,6 +250,14 @@ export const pagesFr: LocalePages = {
         {
           q: "Quel est le lien entre la possession, les données et la conformité ?",
           a: "Parce que les données et l'hébergement résident dans vos comptes, vous contrôlez la résidence et les accès. L'infrastructure client peut rester sur un hébergement conforme lorsque c'est requis, sans transiter par un tiers.",
+        },
+        {
+          q: "Posséder l'infrastructure signifie-t-il que nous devons la maintenir nous-mêmes ?",
+          a: "Non. La propriété concerne le contrôle et la sortie, pas l'obligation. Vous détenez le code, l'hébergement et les comptes, et vous pouvez les exploiter vous-même, garder PRIONATION en Retainer, ou les confier à une autre équipe — l'essentiel est que le choix reste toujours le vôtre, non verrouillé à un fournisseur.",
+        },
+        {
+          q: "Qu'est-ce qui empêche que cela devienne notre problème le jour où vous partez ?",
+          a: "Les mêmes choses qui rendent le build honnête : les evals, la télémétrie et la documentation sont livrées avec le système. Une passation n'est pas un tas de code — c'est un service en marche avec une suite de tests qui vous dit quand quelque chose casse et une instrumentation qui vous dit pourquoi.",
         },
       ],
     },
@@ -700,6 +731,14 @@ export const pagesFr: LocalePages = {
         {
           q: "Que dois-je demander à un prestataire sur les prix ?",
           a: "Une question : sous votre modèle, gagnez-vous plus en terminant ou en continuant ? Puis demandez à voir la méthode — étape de cadrage, définition du terminé basée sur les evals, et garantie — qui rend un prix fixe sûr.",
+        },
+        {
+          q: "Pourquoi un petit pod plutôt qu'une grande équipe ?",
+          a: "Parce que le coût de coordination croît plus vite que les effectifs. Deux ou trois ingénieurs seniors qui ont tout le système en tête livrent plus vite qu'une équipe plus large qui passe son temps à se synchroniser. L'horloge fixe est ce qui garde le petit pod honnête sur le périmètre.",
+        },
+        {
+          q: "Que se passe-t-il si le travail ne tient pas en huit semaines ?",
+          a: "Alors le périmètre était mauvais, et c'est un échec de cadrage à corriger dans le Diagnostic, pas une surprise à absorber en plein Build. L'horloge fixe force les arbitrages difficiles en amont, là où ils sont peu coûteux, plutôt qu'à l'échéance, où ils ne le sont pas.",
         },
       ],
     },

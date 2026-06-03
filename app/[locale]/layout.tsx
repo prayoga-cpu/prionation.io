@@ -2,12 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Bitter } from "next/font/google";
 import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Analytics } from "@vercel/analytics/react";
 import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
-import { OrganizationSchema, ServiceSchema } from "@/components/JsonLd";
+import { OrganizationSchema, ServiceSchema, WebSiteSchema } from "@/components/JsonLd";
 import "../globals.css";
 
 // Open Graph locale codes per supported language.
@@ -78,10 +78,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Meta" });
   const canonical = `${SITE_URL}/${locale}`;
-  const title = "AI Product Engineering · PRIONATION.io";
-  const description =
-    "Production AI infrastructure for EU and US mid-market companies. Fixed scope. Fixed price. 8 weeks to production. Starting at €5,000.";
+  const title = t("homeTitle");
+  const description = t("homeDescription");
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -103,15 +103,28 @@ export async function generateMetadata({
       siteName: SITE_NAME,
       locale: OG_LOCALE[locale] ?? "en_US",
       type: "website",
+      images: [
+        {
+          url: "/og.png",
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: ["/og.png"],
     },
     icons: {
-      icon: "/favicon.ico",
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-64x64.png", sizes: "64x64", type: "image/png" },
+      ],
       shortcut: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
     },
   };
 }
@@ -153,6 +166,7 @@ export default async function RootLayout({
       <body suppressHydrationWarning>
         <OrganizationSchema />
         <ServiceSchema />
+        <WebSiteSchema />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
