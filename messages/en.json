@@ -1,7 +1,9 @@
 {
   "Meta": {
     "homeTitle": "AI Product Engineering · PRIONATION.io",
-    "homeDescription": "Production AI infrastructure for EU and US mid-market companies. Fixed scope. Fixed price. 8 weeks to production. Starting at €5,000."
+    "homeDescription": "Production AI infrastructure for EU and US mid-market companies. Fixed scope. Fixed price. 8 weeks to production. Starting at €5,000.",
+    "startTitle": "Watch How We Work · PRIONATION.io",
+    "startDescription": "Short videos on how we build production AI, what it costs, and why over 60% of Diagnostics become Builds. Watch, then name your bottleneck."
   },
   "Glossary": {
     "seoTitle": "AI engineering glossary · PRIONATION.io",
@@ -14,22 +16,70 @@
       "Each definition is written to be useful before a Diagnostic: enough to follow a scoping conversation, challenge a vendor, and tell the difference between a feature and a liability."
     ],
     "terms": [
-      { "term": "AI product engineering", "def": "The discipline of building, shipping, and operating a production AI system — not advising on one. It covers evals, data, infrastructure, and the running service, and it ends with a system the client owns rather than a slide deck." },
-      { "term": "Eval (evaluation suite)", "def": "A repeatable test that scores an AI system's output against a defined standard: representative inputs, expected behaviour, and a scoring method. Writing the suite before the build is what makes a fixed price and a warranty honest." },
-      { "term": "Golden dataset", "def": "A curated set of representative inputs paired with the outputs you would accept as correct. It is the reference an eval suite scores against, and the single most useful asset to assemble before any build." },
-      { "term": "Telemetry", "def": "Production instrumentation that records each input, output, and failure so behaviour can be measured instead of argued about. Without it, 'the model is wrong' is an opinion; with it, it is a number." },
-      { "term": "RAG (retrieval-augmented generation)", "def": "A pattern that retrieves relevant source documents at query time and gives them to the model as context, so answers are grounded in your data rather than the model's training. The standard alternative to fine-tuning for knowledge tasks." },
-      { "term": "Fine-tuning", "def": "Adapting a base model's weights by training it further on task-specific examples. It changes behaviour and style, but it is rarely the first tool to reach for — most knowledge problems are cheaper to solve with retrieval." },
-      { "term": "Prompt engineering", "def": "Designing the instructions, examples, and context handed to a model to shape its output. The cheapest lever to pull, and the first one — but not a substitute for evals or data." },
-      { "term": "LLM (large language model)", "def": "A model trained to predict text, used for tasks like drafting, classifying, extracting, and answering. Powerful and probabilistic: the same input can produce different output, which is why evals matter." },
-      { "term": "Inference", "def": "Running a trained model to produce an output. Each call has a latency and a cost, so inference economics — tokens per request times request volume — decide whether a use case is viable at scale." },
-      { "term": "Context window", "def": "The maximum amount of text (measured in tokens) a model can read in a single call. It bounds how much instruction, retrieved data, and history you can supply at once, and larger is not always cheaper." },
-      { "term": "Token", "def": "The unit of text a model reads and writes — roughly a word-piece. Pricing, context limits, and latency are all counted in tokens, so token budgets are a real engineering constraint, not a detail." },
-      { "term": "Hallucination", "def": "Output that is fluent and confident but factually wrong. It is a property of how language models work, not a bug to be fully removed — which is why grounding (RAG), guardrails, and evals exist." },
-      { "term": "Agent", "def": "An LLM system that plans and calls tools or actions in a loop to reach a goal, instead of answering in one shot. More capable and more failure-prone, which raises the bar on evals and telemetry." },
-      { "term": "Embeddings / vector database", "def": "Embeddings turn text into numbers that capture meaning; a vector database stores them so you can retrieve by similarity rather than exact match. Together they are the retrieval half of most RAG systems." },
-      { "term": "Guardrails", "def": "Constraints that keep model output safe, valid, and on-policy — input and output filters, schema validation, allow-lists, and fallbacks. The difference between a demo and something you can put in front of a customer." },
-      { "term": "Owned infrastructure", "def": "An arrangement where the client holds the code, hosting, data, and model accounts — the opposite of vendor lock-in. It means the system keeps running, and can be changed, after the engagement ends." }
+      {
+        "term": "AI product engineering",
+        "def": "The discipline of building, shipping, and operating a production AI system — not advising on one. It covers evals, data, infrastructure, and the running service, and it ends with a system the client owns rather than a slide deck."
+      },
+      {
+        "term": "Eval (evaluation suite)",
+        "def": "A repeatable test that scores an AI system's output against a defined standard: representative inputs, expected behaviour, and a scoring method. Writing the suite before the build is what makes a fixed price and a warranty honest."
+      },
+      {
+        "term": "Golden dataset",
+        "def": "A curated set of representative inputs paired with the outputs you would accept as correct. It is the reference an eval suite scores against, and the single most useful asset to assemble before any build."
+      },
+      {
+        "term": "Telemetry",
+        "def": "Production instrumentation that records each input, output, and failure so behaviour can be measured instead of argued about. Without it, 'the model is wrong' is an opinion; with it, it is a number."
+      },
+      {
+        "term": "RAG (retrieval-augmented generation)",
+        "def": "A pattern that retrieves relevant source documents at query time and gives them to the model as context, so answers are grounded in your data rather than the model's training. The standard alternative to fine-tuning for knowledge tasks."
+      },
+      {
+        "term": "Fine-tuning",
+        "def": "Adapting a base model's weights by training it further on task-specific examples. It changes behaviour and style, but it is rarely the first tool to reach for — most knowledge problems are cheaper to solve with retrieval."
+      },
+      {
+        "term": "Prompt engineering",
+        "def": "Designing the instructions, examples, and context handed to a model to shape its output. The cheapest lever to pull, and the first one — but not a substitute for evals or data."
+      },
+      {
+        "term": "LLM (large language model)",
+        "def": "A model trained to predict text, used for tasks like drafting, classifying, extracting, and answering. Powerful and probabilistic: the same input can produce different output, which is why evals matter."
+      },
+      {
+        "term": "Inference",
+        "def": "Running a trained model to produce an output. Each call has a latency and a cost, so inference economics — tokens per request times request volume — decide whether a use case is viable at scale."
+      },
+      {
+        "term": "Context window",
+        "def": "The maximum amount of text (measured in tokens) a model can read in a single call. It bounds how much instruction, retrieved data, and history you can supply at once, and larger is not always cheaper."
+      },
+      {
+        "term": "Token",
+        "def": "The unit of text a model reads and writes — roughly a word-piece. Pricing, context limits, and latency are all counted in tokens, so token budgets are a real engineering constraint, not a detail."
+      },
+      {
+        "term": "Hallucination",
+        "def": "Output that is fluent and confident but factually wrong. It is a property of how language models work, not a bug to be fully removed — which is why grounding (RAG), guardrails, and evals exist."
+      },
+      {
+        "term": "Agent",
+        "def": "An LLM system that plans and calls tools or actions in a loop to reach a goal, instead of answering in one shot. More capable and more failure-prone, which raises the bar on evals and telemetry."
+      },
+      {
+        "term": "Embeddings / vector database",
+        "def": "Embeddings turn text into numbers that capture meaning; a vector database stores them so you can retrieve by similarity rather than exact match. Together they are the retrieval half of most RAG systems."
+      },
+      {
+        "term": "Guardrails",
+        "def": "Constraints that keep model output safe, valid, and on-policy — input and output filters, schema validation, allow-lists, and fallbacks. The difference between a demo and something you can put in front of a customer."
+      },
+      {
+        "term": "Owned infrastructure",
+        "def": "An arrangement where the client holds the code, hosting, data, and model accounts — the opposite of vendor lock-in. It means the system keeps running, and can be changed, after the engagement ends."
+      }
     ],
     "ctaTitle": "Start with a Diagnostic",
     "ctaBody": "Two weeks. €5,000. A mapped bottleneck and a production-ready plan — with no obligation to proceed to a Build.",
@@ -485,5 +535,182 @@
     "ctaTitle": "Start with a Diagnostic",
     "ctaBody": "Two weeks. €5,000. A mapped bottleneck and a production-ready plan — with no obligation to proceed to a Build.",
     "ctaButton": "Start a Diagnostic"
+  },
+  "Start": {
+    "nav": {
+      "cta": "Book a Diagnostic"
+    },
+    "hero": {
+      "eyebrow": "AI Product Engineering",
+      "title_lead": "AI products that",
+      "title_accent": "break operational bottlenecks.",
+      "desc": "Watch Evan Cao — our CRO and founder of Epidom — break down how we work, what we cost, and why over 60% of Diagnostics become Builds.",
+      "cta_primary": "Start a Diagnostic",
+      "cta_secondary": "Browse the video library",
+      "featured_badge": "FEATURED · 60s",
+      "featured_title": "Stop trying to hire an AI engineer.",
+      "featured_hook": "You won’t find one. Here’s what to do instead."
+    },
+    "trust": {
+      "build_rate": "≥ 60%",
+      "build_rate_label": "Diagnostic → Build rate",
+      "first": "2 wks",
+      "first_label": "To first deliverable",
+      "prod": "8 wks",
+      "prod_label": "To production",
+      "warranty": "4 wks",
+      "warranty_label": "Post-launch warranty"
+    },
+    "evan": {
+      "quote": "Two years ago, I was the customer. I built Epidom and we were drowning in operational complexity. PRIONATION is what I wished I could’ve hired. I’m here as CRO because I know exactly what the buyer needs — because I was the buyer.",
+      "name": "Evan Cao",
+      "role": "CRO, PRIONATION.io · Founder, Epidom (Paris, France)"
+    },
+    "library": {
+      "label": "Video Library",
+      "title": "Find your angle.",
+      "desc": "Filter by what matters to you — the pricing case, the technical methodology, or the 30-second hook.",
+      "tabs": {
+        "all": "All",
+        "ceo": "For the CEO / COO",
+        "cto": "For the CTO",
+        "pricing": "Pricing objections",
+        "quick": "Quick wins"
+      },
+      "videos": [
+        {
+          "title": "I needed this product for my own company",
+          "hook": "“Two years ago, I was the customer of a company that didn’t exist yet.”",
+          "tags": [
+            "CEO",
+            "Origin story"
+          ]
+        },
+        {
+          "title": "The €149 trick",
+          "hook": "“Everyone’s offering free AI consultations. We charge €149. Here’s why.”",
+          "tags": [
+            "All",
+            "Low-friction"
+          ]
+        },
+        {
+          "title": "Why your CFO will love our pricing",
+          "hook": "“Your CFO won’t approve €120,000 to hire an AI engineer. But they will approve this.”",
+          "tags": [
+            "Pricing",
+            "CFO angle"
+          ]
+        },
+        {
+          "title": "8 weeks. Fixed price. No scope creep.",
+          "hook": "“Every AI consulting project I’ve seen runs 6 months over schedule. Ours doesn’t.”",
+          "tags": [
+            "CEO",
+            "Fixed scope"
+          ]
+        },
+        {
+          "title": "Your problem isn’t demand. It’s throughput.",
+          "hook": "“Most operating companies don’t have a demand problem. They have a throughput problem.”",
+          "tags": [
+            "CEO/COO",
+            "Reframe"
+          ]
+        },
+        {
+          "title": "We write the test before the feature",
+          "hook": "“Most AI products fail in production. We solved that by working backwards.”",
+          "tags": [
+            "CTO",
+            "Methodology"
+          ]
+        },
+        {
+          "title": "€1,500 site. 5 days. No nonsense.",
+          "hook": "“Need a professional website. Have €1,500. Read this.”",
+          "tags": [
+            "Express",
+            "Quick win"
+          ]
+        },
+        {
+          "title": "60% of our diagnostics become builds",
+          "hook": "“Most consulting firms hit 10–15% conversion. Here’s why ours is different.”",
+          "tags": [
+            "CEO",
+            "Social proof"
+          ]
+        },
+        {
+          "title": "Tell me your bottleneck",
+          "hook": "“If you can name your bottleneck in one sentence, we can scope a fix in one call.”",
+          "tags": [
+            "Direct CTA",
+            "Retargeting"
+          ]
+        }
+      ]
+    },
+    "pricing": {
+      "label": "Pricing",
+      "title": "Start with a Diagnostic.",
+      "desc": "Fixed scope. Fixed price. Three ways to work together.",
+      "start_here": "Start here",
+      "cta": "Start a Diagnostic",
+      "note": "Response within 24h · consult@prionation.io",
+      "plans": [
+        {
+          "sku": "SKU 01 · Diagnostic",
+          "price": "€5–7K",
+          "period": "2 weeks",
+          "desc": "We map the bottleneck. Design the architecture. Project the ROI. If the math doesn’t work, we tell you straight."
+        },
+        {
+          "sku": "SKU 02 · Build",
+          "price": "€25–55K",
+          "period": "8 weeks",
+          "desc": "Full production AI build. Eval harness. Telemetry. Handoff documentation. 4-week warranty. You own everything."
+        },
+        {
+          "sku": "SKU 03 · Retainer",
+          "price": "€4–9K/mo",
+          "period": "min. 6 months",
+          "desc": "The same engineers who built your system keep it running and evolving. Ongoing pod access."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Objections, handled.",
+      "items": [
+        {
+          "q": "What if the build doesn’t work?",
+          "a": "We write evals before we write features. Every deliverable has measurable success criteria agreed upfront. If the eval suite fails, we don’t ship. The 4-week post-launch warranty covers regressions. The 8-week clock only starts after the Diagnostic scope is signed off together — no surprises."
+        },
+        {
+          "q": "€25–55K is a lot. Why not hire someone?",
+          "a": "A senior AI engineer in Europe runs €120–180K loaded cost, takes 4–6 months to hire, and you get one person. Our Build is 2–3 engineers, in production in 8 weeks, for under half the first-year cost of a single hire."
+        },
+        {
+          "q": "Why 8 weeks exactly?",
+          "a": "8 weeks is the minimum to ship something production-grade, not a prototype. That means eval harness built, telemetry instrumented, model evaluated against real data, deployment tested, and team handed off. Faster builds skip those layers. They fail in production."
+        },
+        {
+          "q": "Do we own the code after?",
+          "a": "Yes. Fully. Code, hosting, data, models — everything. We hand off the entire stack. Our value is the build discipline, not infrastructure lock-in. You can run it yourself or keep us on Retainer, but the choice is yours."
+        },
+        {
+          "q": "We’re already talking to other AI vendors.",
+          "a": "Good. Ask them for their eval harness. Ask what telemetry they instrument on day one. Ask who holds the model, hosting, and data after handoff. The answers tell you everything about how they actually build."
+        }
+      ]
+    },
+    "cta": {
+      "label": "Connect Us",
+      "title": "Name your bottleneck.",
+      "desc": "One sentence about what’s slowing your operations down. That’s the entire qualification.",
+      "button": "Book a 30-minute call",
+      "note": "Free call · Response within 24h · consult@prionation.io"
+    }
   }
 }

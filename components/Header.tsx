@@ -134,6 +134,7 @@ function LocaleSwitcher() {
 
 export function Header() {
   const t = useTranslations("Header");
+  const locale = useLocale();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -159,9 +160,26 @@ export function Header() {
     };
   }, [mobileOpen]);
 
+  // Smooth-scroll if the section is on the current page (homepage);
+  // otherwise navigate to the homepage anchor (e.g. from /start).
   const go = (id: string) => {
     setMobileOpen(false);
-    setTimeout(() => scrollTo(id), 30);
+    if (typeof document !== "undefined" && document.getElementById(id)) {
+      setTimeout(() => scrollTo(id), 30);
+    } else {
+      window.location.assign(`/${locale}#${id}`);
+    }
+  };
+
+  const diagnosticHref = `/${locale}#engage?tab=diagnostic`;
+  const goDiagnostic = () => {
+    setMobileOpen(false);
+    if (typeof document !== "undefined" && document.getElementById("engage")) {
+      window.location.hash = "engage?tab=diagnostic";
+      setTimeout(() => scrollTo("engage"), 30);
+    } else {
+      window.location.assign(diagnosticHref);
+    }
   };
 
   const navScrollClasses = scrolled
@@ -193,7 +211,7 @@ export function Header() {
             <motion.a
               key={id}
               variants={fadeUp}
-              href={`#${id}`}
+              href={`/${locale}#${id}`}
               onClick={(e) => {
                 e.preventDefault();
                 go(id);
@@ -213,11 +231,10 @@ export function Header() {
             <LocaleSwitcher />
           </div>
           <motion.a
-            href="#engage?tab=diagnostic"
+            href={diagnosticHref}
             onClick={(e) => {
               e.preventDefault();
-              window.location.hash = "engage?tab=diagnostic";
-              go("engage");
+              goDiagnostic();
             }}
             className="hidden lg:inline-flex items-center gap-2 px-4 py-[9px] rounded-full bg-white text-[#08090d] font-semibold text-[13px] transition-all duration-fast hover:bg-[#e6e6f0]"
             whileHover={{ scale: 1.03 }}
@@ -316,7 +333,7 @@ export function Header() {
                   <motion.a
                     key={id}
                     variants={fadeUp}
-                    href={`#${id}`}
+                    href={`/${locale}#${id}`}
                     onClick={(e) => {
                       e.preventDefault();
                       go(id);
@@ -329,7 +346,7 @@ export function Header() {
                 ))}
                 <motion.button
                   variants={fadeUp}
-                  onClick={() => go("engage")}
+                  onClick={goDiagnostic}
                   className="mt-7 self-start inline-flex items-center gap-2.5 px-[22px] py-[13px] rounded-full font-sans font-semibold text-sm cursor-pointer bg-white text-[#08090d] hover:bg-[#e6e6f0] transition-colors"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}

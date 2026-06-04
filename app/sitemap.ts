@@ -51,6 +51,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // VSL landing — "watch how we work" video sales letter.
+  const start = localize("/start").map((entry) => ({
+    ...entry,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   const clusterPages = getPublishedPages().flatMap((page) =>
     localize(`/${page.section}/${page.slug}`).map((entry) => ({
       ...entry,
@@ -60,5 +68,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...homepage, ...anchor, ...glossary, ...clusterPages];
+  return [...homepage, ...anchor, ...glossary, ...start, ...clusterPages];
 }

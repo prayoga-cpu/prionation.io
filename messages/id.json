@@ -1,7 +1,9 @@
 {
   "Meta": {
     "homeTitle": "Rekayasa Produk AI · PRIONATION.io",
-    "homeDescription": "Infrastruktur AI produksi untuk perusahaan mid-market di Eropa dan AS. Lingkup tetap. Harga tetap. Produksi dalam 8 minggu. Mulai dari €5.000."
+    "homeDescription": "Infrastruktur AI produksi untuk perusahaan mid-market di Eropa dan AS. Lingkup tetap. Harga tetap. Produksi dalam 8 minggu. Mulai dari €5.000.",
+    "startTitle": "Lihat Cara Kami Bekerja · PRIONATION.io",
+    "startDescription": "Video singkat tentang cara kami membangun AI produksi, biayanya, dan mengapa lebih dari 60% Diagnostik menjadi Build. Tonton, lalu sebutkan hambatan Anda."
   },
   "Glossary": {
     "seoTitle": "Glosarium rekayasa AI · PRIONATION.io",
@@ -14,22 +16,70 @@
       "Setiap definisi ditulis agar berguna sebelum Diagnostic: cukup untuk mengikuti percakapan penentuan lingkup, menantang vendor, dan membedakan fitur dari liabilitas."
     ],
     "terms": [
-      { "term": "Rekayasa produk AI", "def": "Disiplin membangun, merilis, dan mengoperasikan sistem AI produksi — bukan sekadar memberi nasihat tentangnya. Mencakup eval, data, infrastruktur, dan layanan yang berjalan, dan berakhir dengan sistem yang dimiliki klien, bukan sekadar paparan slide." },
-      { "term": "Eval (suite evaluasi)", "def": "Uji yang dapat diulang untuk menilai keluaran sistem AI terhadap standar yang ditetapkan: masukan representatif, perilaku yang diharapkan, dan metode penilaian. Menulis suite-nya sebelum membangun adalah yang membuat harga tetap dan garansi menjadi jujur." },
-      { "term": "Dataset acuan (golden dataset)", "def": "Kumpulan masukan representatif yang dipasangkan dengan keluaran yang Anda anggap benar. Inilah acuan yang dinilai oleh suite eval, dan aset paling berguna untuk disiapkan sebelum membangun apa pun." },
-      { "term": "Telemetri", "def": "Instrumentasi di produksi yang merekam setiap masukan, keluaran, dan kegagalan sehingga perilaku dapat diukur, bukan diperdebatkan. Tanpanya, 'modelnya salah' hanyalah opini; dengannya, ia menjadi angka." },
-      { "term": "RAG (retrieval-augmented generation)", "def": "Pola yang mengambil dokumen sumber relevan saat kueri dan memberikannya ke model sebagai konteks, agar jawaban berpijak pada data Anda, bukan pada pelatihan model. Alternatif umum dari fine-tuning untuk tugas berbasis pengetahuan." },
-      { "term": "Fine-tuning", "def": "Menyesuaikan bobot model dasar dengan melatihnya lebih lanjut pada contoh spesifik tugas. Mengubah perilaku dan gaya, tetapi jarang menjadi alat pertama — sebagian besar masalah pengetahuan lebih murah diselesaikan dengan retrieval." },
-      { "term": "Prompt engineering", "def": "Merancang instruksi, contoh, dan konteks yang diberikan ke model untuk membentuk keluarannya. Tuas termurah, dan yang pertama — tetapi bukan pengganti eval atau data." },
-      { "term": "LLM (large language model)", "def": "Model yang dilatih untuk memprediksi teks, dipakai untuk menulis, mengklasifikasi, mengekstrak, dan menjawab. Kuat dan probabilistik: masukan yang sama bisa menghasilkan keluaran berbeda — itulah sebabnya eval penting." },
-      { "term": "Inferensi", "def": "Menjalankan model terlatih untuk menghasilkan keluaran. Tiap panggilan punya latensi dan biaya, sehingga ekonomi inferensi — token per permintaan dikalikan volume permintaan — menentukan apakah sebuah kasus penggunaan layak pada skala besar." },
-      { "term": "Jendela konteks", "def": "Jumlah maksimum teks (diukur dalam token) yang dapat dibaca model dalam satu panggilan. Ia membatasi instruksi, data hasil retrieval, dan riwayat yang bisa Anda berikan sekaligus — dan lebih besar tidak selalu lebih murah." },
-      { "term": "Token", "def": "Unit teks yang dibaca dan ditulis model — kira-kira sepenggal kata. Harga, batas konteks, dan latensi semuanya dihitung dalam token, sehingga anggaran token adalah kendala rekayasa yang nyata, bukan sekadar detail." },
-      { "term": "Halusinasi", "def": "Keluaran yang lancar dan meyakinkan tetapi salah secara faktual. Ini sifat dari cara kerja model bahasa, bukan bug yang bisa dihilangkan sepenuhnya — itulah mengapa grounding (RAG), guardrail, dan eval ada." },
-      { "term": "Agen", "def": "Sistem LLM yang merencanakan dan memanggil alat atau aksi dalam satu lingkaran untuk mencapai tujuan, alih-alih menjawab sekali jalan. Lebih mampu sekaligus lebih rawan gagal, sehingga menaikkan standar eval dan telemetri." },
-      { "term": "Embeddings / basis data vektor", "def": "Embeddings mengubah teks menjadi angka yang menangkap makna; basis data vektor menyimpannya agar bisa diambil berdasarkan kemiripan, bukan kecocokan persis. Bersama-sama, keduanya adalah paruh 'retrieval' dari sebagian besar sistem RAG." },
-      { "term": "Guardrail", "def": "Batasan yang menjaga keluaran model tetap aman, valid, dan sesuai kebijakan — filter masukan dan keluaran, validasi skema, daftar putih, dan fallback. Pembeda antara demo dan sesuatu yang bisa dihadapkan ke pelanggan." },
-      { "term": "Infrastruktur yang dimiliki", "def": "Pengaturan di mana klien memegang kode, hosting, data, dan akun model — kebalikan dari penguncian vendor. Artinya sistem tetap berjalan, dan bisa diubah, setelah keterlibatan berakhir." }
+      {
+        "term": "Rekayasa produk AI",
+        "def": "Disiplin membangun, merilis, dan mengoperasikan sistem AI produksi — bukan sekadar memberi nasihat tentangnya. Mencakup eval, data, infrastruktur, dan layanan yang berjalan, dan berakhir dengan sistem yang dimiliki klien, bukan sekadar paparan slide."
+      },
+      {
+        "term": "Eval (suite evaluasi)",
+        "def": "Uji yang dapat diulang untuk menilai keluaran sistem AI terhadap standar yang ditetapkan: masukan representatif, perilaku yang diharapkan, dan metode penilaian. Menulis suite-nya sebelum membangun adalah yang membuat harga tetap dan garansi menjadi jujur."
+      },
+      {
+        "term": "Dataset acuan (golden dataset)",
+        "def": "Kumpulan masukan representatif yang dipasangkan dengan keluaran yang Anda anggap benar. Inilah acuan yang dinilai oleh suite eval, dan aset paling berguna untuk disiapkan sebelum membangun apa pun."
+      },
+      {
+        "term": "Telemetri",
+        "def": "Instrumentasi di produksi yang merekam setiap masukan, keluaran, dan kegagalan sehingga perilaku dapat diukur, bukan diperdebatkan. Tanpanya, 'modelnya salah' hanyalah opini; dengannya, ia menjadi angka."
+      },
+      {
+        "term": "RAG (retrieval-augmented generation)",
+        "def": "Pola yang mengambil dokumen sumber relevan saat kueri dan memberikannya ke model sebagai konteks, agar jawaban berpijak pada data Anda, bukan pada pelatihan model. Alternatif umum dari fine-tuning untuk tugas berbasis pengetahuan."
+      },
+      {
+        "term": "Fine-tuning",
+        "def": "Menyesuaikan bobot model dasar dengan melatihnya lebih lanjut pada contoh spesifik tugas. Mengubah perilaku dan gaya, tetapi jarang menjadi alat pertama — sebagian besar masalah pengetahuan lebih murah diselesaikan dengan retrieval."
+      },
+      {
+        "term": "Prompt engineering",
+        "def": "Merancang instruksi, contoh, dan konteks yang diberikan ke model untuk membentuk keluarannya. Tuas termurah, dan yang pertama — tetapi bukan pengganti eval atau data."
+      },
+      {
+        "term": "LLM (large language model)",
+        "def": "Model yang dilatih untuk memprediksi teks, dipakai untuk menulis, mengklasifikasi, mengekstrak, dan menjawab. Kuat dan probabilistik: masukan yang sama bisa menghasilkan keluaran berbeda — itulah sebabnya eval penting."
+      },
+      {
+        "term": "Inferensi",
+        "def": "Menjalankan model terlatih untuk menghasilkan keluaran. Tiap panggilan punya latensi dan biaya, sehingga ekonomi inferensi — token per permintaan dikalikan volume permintaan — menentukan apakah sebuah kasus penggunaan layak pada skala besar."
+      },
+      {
+        "term": "Jendela konteks",
+        "def": "Jumlah maksimum teks (diukur dalam token) yang dapat dibaca model dalam satu panggilan. Ia membatasi instruksi, data hasil retrieval, dan riwayat yang bisa Anda berikan sekaligus — dan lebih besar tidak selalu lebih murah."
+      },
+      {
+        "term": "Token",
+        "def": "Unit teks yang dibaca dan ditulis model — kira-kira sepenggal kata. Harga, batas konteks, dan latensi semuanya dihitung dalam token, sehingga anggaran token adalah kendala rekayasa yang nyata, bukan sekadar detail."
+      },
+      {
+        "term": "Halusinasi",
+        "def": "Keluaran yang lancar dan meyakinkan tetapi salah secara faktual. Ini sifat dari cara kerja model bahasa, bukan bug yang bisa dihilangkan sepenuhnya — itulah mengapa grounding (RAG), guardrail, dan eval ada."
+      },
+      {
+        "term": "Agen",
+        "def": "Sistem LLM yang merencanakan dan memanggil alat atau aksi dalam satu lingkaran untuk mencapai tujuan, alih-alih menjawab sekali jalan. Lebih mampu sekaligus lebih rawan gagal, sehingga menaikkan standar eval dan telemetri."
+      },
+      {
+        "term": "Embeddings / basis data vektor",
+        "def": "Embeddings mengubah teks menjadi angka yang menangkap makna; basis data vektor menyimpannya agar bisa diambil berdasarkan kemiripan, bukan kecocokan persis. Bersama-sama, keduanya adalah paruh 'retrieval' dari sebagian besar sistem RAG."
+      },
+      {
+        "term": "Guardrail",
+        "def": "Batasan yang menjaga keluaran model tetap aman, valid, dan sesuai kebijakan — filter masukan dan keluaran, validasi skema, daftar putih, dan fallback. Pembeda antara demo dan sesuatu yang bisa dihadapkan ke pelanggan."
+      },
+      {
+        "term": "Infrastruktur yang dimiliki",
+        "def": "Pengaturan di mana klien memegang kode, hosting, data, dan akun model — kebalikan dari penguncian vendor. Artinya sistem tetap berjalan, dan bisa diubah, setelah keterlibatan berakhir."
+      }
     ],
     "ctaTitle": "Mulai dengan Diagnostic",
     "ctaBody": "Dua minggu. €5.000. Hambatan yang terpetakan dan rencana siap produksi — tanpa kewajiban melanjutkan ke Build.",
@@ -485,5 +535,182 @@
     "ctaTitle": "Mulai dengan Diagnostic",
     "ctaBody": "Dua minggu. €5.000. Hambatan yang terpetakan dan rencana siap produksi — tanpa kewajiban melanjutkan ke Build.",
     "ctaButton": "Mulai Diagnostic"
+  },
+  "Start": {
+    "nav": {
+      "cta": "Pesan Diagnostik"
+    },
+    "hero": {
+      "eyebrow": "Rekayasa Produk AI",
+      "title_lead": "Produk AI yang",
+      "title_accent": "memecahkan hambatan operasional.",
+      "desc": "Evan Cao — CRO kami dan pendiri Epidom — menjelaskan cara kami bekerja, biaya kami, dan mengapa lebih dari 60% Diagnostik menjadi Build.",
+      "cta_primary": "Mulai Diagnostik",
+      "cta_secondary": "Jelajahi pustaka video",
+      "featured_badge": "UNGGULAN · 60s",
+      "featured_title": "Berhenti mencoba merekrut insinyur AI.",
+      "featured_hook": "Anda tidak akan menemukannya. Ini yang harus dilakukan sebagai gantinya."
+    },
+    "trust": {
+      "build_rate": "≥ 60%",
+      "build_rate_label": "Tingkat Diagnostik → Build",
+      "first": "2 mgg",
+      "first_label": "Hingga hasil pertama",
+      "prod": "8 mgg",
+      "prod_label": "Hingga produksi",
+      "warranty": "4 mgg",
+      "warranty_label": "Garansi pasca-peluncuran"
+    },
+    "evan": {
+      "quote": "Dua tahun lalu, sayalah pelanggannya. Saya membangun Epidom dan kami kewalahan oleh kompleksitas operasional. PRIONATION adalah yang saya harap bisa saya rekrut. Saya di sini sebagai CRO karena saya tahu persis apa yang dibutuhkan pembeli — karena sayalah pembelinya.",
+      "name": "Evan Cao",
+      "role": "CRO, PRIONATION.io · Pendiri, Epidom (Paris, Prancis)"
+    },
+    "library": {
+      "label": "Pustaka Video",
+      "title": "Temukan sudut pandang Anda.",
+      "desc": "Saring berdasarkan yang penting bagi Anda — argumen harga, metodologi teknis, atau pengait 30 detik.",
+      "tabs": {
+        "all": "Semua",
+        "ceo": "Untuk CEO / COO",
+        "cto": "Untuk CTO",
+        "pricing": "Keberatan harga",
+        "quick": "Kemenangan cepat"
+      },
+      "videos": [
+        {
+          "title": "Saya butuh produk ini untuk perusahaan saya sendiri",
+          "hook": "“Dua tahun lalu, saya pelanggan dari perusahaan yang belum ada.”",
+          "tags": [
+            "CEO",
+            "Kisah awal"
+          ]
+        },
+        {
+          "title": "Trik €149",
+          "hook": "“Semua orang menawarkan konsultasi AI gratis. Kami mengenakan €149. Inilah alasannya.”",
+          "tags": [
+            "Semua",
+            "Friksi rendah"
+          ]
+        },
+        {
+          "title": "Mengapa CFO Anda akan menyukai harga kami",
+          "hook": "“CFO Anda tidak akan menyetujui €120.000 untuk merekrut insinyur AI. Tapi mereka akan menyetujui ini.”",
+          "tags": [
+            "Harga",
+            "Sudut CFO"
+          ]
+        },
+        {
+          "title": "8 minggu. Harga tetap. Tanpa pembengkakan lingkup.",
+          "hook": "“Setiap proyek konsultasi AI yang saya lihat molor 6 bulan. Milik kami tidak.”",
+          "tags": [
+            "CEO",
+            "Lingkup tetap"
+          ]
+        },
+        {
+          "title": "Masalah Anda bukan permintaan, melainkan throughput.",
+          "hook": "“Kebanyakan perusahaan tidak punya masalah permintaan. Mereka punya masalah throughput.”",
+          "tags": [
+            "CEO/COO",
+            "Pembingkaian ulang"
+          ]
+        },
+        {
+          "title": "Kami menulis tes sebelum fiturnya",
+          "hook": "“Kebanyakan produk AI gagal di produksi. Kami mengatasinya dengan bekerja mundur.”",
+          "tags": [
+            "CTO",
+            "Metodologi"
+          ]
+        },
+        {
+          "title": "Situs €1.500. 5 hari. Tanpa basa-basi.",
+          "hook": "“Butuh situs profesional. Punya €1.500. Baca ini.”",
+          "tags": [
+            "Express",
+            "Kemenangan cepat"
+          ]
+        },
+        {
+          "title": "60% diagnostik kami menjadi build",
+          "hook": "“Kebanyakan firma konsultan hanya mencapai konversi 10–15%. Inilah mengapa milik kami berbeda.”",
+          "tags": [
+            "CEO",
+            "Bukti sosial"
+          ]
+        },
+        {
+          "title": "Sebutkan hambatan Anda",
+          "hook": "“Jika Anda bisa menyebutkan hambatan dalam satu kalimat, kami bisa merancang solusinya dalam satu panggilan.”",
+          "tags": [
+            "CTA langsung",
+            "Penargetan ulang"
+          ]
+        }
+      ]
+    },
+    "pricing": {
+      "label": "Harga",
+      "title": "Mulai dengan Diagnostik.",
+      "desc": "Lingkup tetap. Harga tetap. Tiga cara untuk bekerja sama.",
+      "start_here": "Mulai di sini",
+      "cta": "Mulai Diagnostik",
+      "note": "Respons dalam 24 jam · consult@prionation.io",
+      "plans": [
+        {
+          "sku": "SKU 01 · Diagnostik",
+          "price": "€5–7K",
+          "period": "2 minggu",
+          "desc": "Kami memetakan hambatan. Merancang arsitektur. Memproyeksikan ROI. Jika perhitungannya tidak masuk akal, kami katakan terus terang."
+        },
+        {
+          "sku": "SKU 02 · Build",
+          "price": "€25–55K",
+          "period": "8 minggu",
+          "desc": "Build AI produksi lengkap. Harness evaluasi. Telemetri. Dokumentasi serah terima. Garansi 4 minggu. Anda memiliki semuanya."
+        },
+        {
+          "sku": "SKU 03 · Retainer",
+          "price": "€4–9K/bln",
+          "period": "min. 6 bulan",
+          "desc": "Insinyur yang membangun sistem Anda terus menjalankan dan mengembangkannya. Akses tim berkelanjutan."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Keberatan, ditangani.",
+      "items": [
+        {
+          "q": "Bagaimana jika build-nya tidak berhasil?",
+          "a": "Kami menulis evaluasi sebelum menulis fitur. Setiap hasil memiliki kriteria keberhasilan terukur yang disepakati di awal. Jika rangkaian evaluasi gagal, kami tidak merilis. Garansi 4 minggu pasca-peluncuran mencakup regresi. Hitungan 8 minggu baru dimulai setelah lingkup Diagnostik disetujui bersama — tanpa kejutan."
+        },
+        {
+          "q": "€25–55K itu banyak. Mengapa tidak merekrut saja?",
+          "a": "Insinyur AI senior di Eropa berbiaya €120–180K termuat, butuh 4–6 bulan untuk direkrut, dan Anda hanya mendapat satu orang. Build kami terdiri dari 2–3 insinyur, di produksi dalam 8 minggu, dengan biaya kurang dari setengah biaya tahun pertama satu perekrutan."
+        },
+        {
+          "q": "Mengapa tepat 8 minggu?",
+          "a": "8 minggu adalah minimum untuk merilis sesuatu yang berkualitas produksi, bukan prototipe. Artinya: harness evaluasi dibangun, telemetri dipasang, model dievaluasi terhadap data nyata, deployment diuji, dan tim diserahterimakan. Build yang lebih cepat melewati lapisan-lapisan itu. Mereka gagal di produksi."
+        },
+        {
+          "q": "Apakah kami memiliki kode setelahnya?",
+          "a": "Ya. Sepenuhnya. Kode, hosting, data, model — semuanya. Kami menyerahkan seluruh stack. Nilai kami adalah disiplin membangun, bukan penguncian infrastruktur. Anda bisa menjalankannya sendiri atau mempertahankan kami dengan Retainer, tapi pilihan ada di tangan Anda."
+        },
+        {
+          "q": "Kami sudah berbicara dengan vendor AI lain.",
+          "a": "Bagus. Minta harness evaluasi mereka. Tanyakan telemetri apa yang mereka pasang di hari pertama. Tanyakan siapa yang memegang model, hosting, dan data setelah serah terima. Jawabannya memberi tahu Anda segalanya tentang cara mereka benar-benar membangun."
+        }
+      ]
+    },
+    "cta": {
+      "label": "Hubungi Kami",
+      "title": "Sebutkan hambatan Anda.",
+      "desc": "Satu kalimat tentang apa yang memperlambat operasi Anda. Itulah seluruh kualifikasinya.",
+      "button": "Pesan panggilan 30 menit",
+      "note": "Panggilan gratis · Respons dalam 24 jam · consult@prionation.io"
+    }
   }
 }
