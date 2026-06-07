@@ -1,42 +1,45 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 
 export function ManifestoPage() {
+  const t = useTranslations("Manifesto");
+
   return (
     <div className="px-page-x pt-[130px] pb-[120px]">
       <div className="max-w-[760px] mx-auto">
         <nav className="flex items-center gap-1.5 text-[12px] text-muted font-sans flex-wrap mb-10" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <Link href="/" className="hover:text-white transition-colors">{t("breadcrumbHome")}</Link>
           <span className="opacity-40">/</span>
-          <Link href="/ai-product-engineering-for-mid-market-companies" className="hover:text-white transition-colors">AI Product Engineering</Link>
+          <Link href="/ai-product-engineering-for-mid-market-companies" className="hover:text-white transition-colors">{t("breadcrumbAnchor")}</Link>
           <span className="opacity-40">/</span>
-          <span className="text-soft">Manifesto</span>
+          <span className="text-soft">{t("breadcrumbManifesto")}</span>
         </nav>
 
         <div className="font-pixel text-[10px] tracking-[0.15em] text-accent uppercase mb-6">
-          THE MANIFESTO
+          {t("badge")}
         </div>
         
         <h1 className="font-sans font-extrabold text-[clamp(32px,4vw,56px)] leading-[1.05] tracking-[-0.03em] text-white mb-10">
-          The firms that sold you "digital transformation" in 2015 are now selling you "AI transformation."
+          {t("h1")}
         </h1>
 
         <div className="prose-like text-soft text-[17px] md:text-[19px] leading-[1.7] space-y-6">
           <p>
-            Same playbook. Same methodology decks. Same €500K engagement that ends with a roadmap and a handshake.
+            {t("p1")}
           </p>
           <p>
-            Different acronym.
+            {t("p2")}
           </p>
           <p>
-            Most AI projects fail in production. Not because the model was wrong. Not because the data was bad. Because the people who designed the system had never shipped a production AI in their careers. They'd shipped recommendations. They'd shipped decks. They'd shipped pilots.
+            {t("p3")}
           </p>
           <p>
-            And when the pilot didn't survive contact with real operations, they were already on their next engagement.
+            {t("p4")}
           </p>
           <p className="font-medium text-white p-6 border-l-2 border-accent bg-accent/5 my-8 rounded-r-lg">
-            That's the dirty secret of AI consulting: the billable model rewards the recommendation, not the result.
+            {t("dirtySecret")}
           </p>
         </div>
 
@@ -49,7 +52,7 @@ export function ManifestoPage() {
         </div>
 
         <h2 className="font-sans font-bold text-[clamp(24px,3vw,32px)] text-white tracking-[-0.02em] mb-10">
-          Before your next AI engagement, ask three questions:
+          {t("askThree")}
         </h2>
 
         <div className="space-y-8">
@@ -57,11 +60,11 @@ export function ManifestoPage() {
             <div className="flex items-start gap-4 md:gap-6">
               <div className="w-10 h-10 rounded-full bg-accent-10 border border-accent-30 flex items-center justify-center shrink-0 font-pixel text-[14px] text-accent mt-0.5">1</div>
               <div>
-                <h3 className="text-white font-bold text-[20px] mb-3">Do they write evals before features?</h3>
+                <h3 className="text-white font-bold text-[20px] mb-3">{t("q1Title")}</h3>
                 <p className="text-soft text-[16px] leading-[1.7] mb-5">
-                  Every production AI system needs a test suite — cases that define what "correct" looks like for your specific problem. If they can't show you an eval harness before they write a single prompt, they have no way to measure whether what they built is actually working. No regression protection. No accountability.
+                  {t("q1Body")}
                 </p>
-                <div className="text-[12px] font-pixel tracking-[0.05em] text-accent uppercase">Most don't have one. Ask to see it.</div>
+                <div className="text-[12px] font-pixel tracking-[0.05em] text-accent uppercase">{t("q1Footer")}</div>
               </div>
             </div>
           </div>
@@ -70,11 +73,11 @@ export function ManifestoPage() {
             <div className="flex items-start gap-4 md:gap-6">
               <div className="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 font-pixel text-[14px] text-blue-400 mt-0.5">2</div>
               <div>
-                <h3 className="text-white font-bold text-[20px] mb-3">Do they instrument telemetry from day one?</h3>
+                <h3 className="text-white font-bold text-[20px] mb-3">{t("q2Title")}</h3>
                 <p className="text-soft text-[16px] leading-[1.7] mb-5">
-                  "The model is wrong" is unfalsifiable without logs. Production AI without telemetry means you inherit a black box. When it breaks — and it will — you'll have no way to diagnose it, iterate on it, or hold anyone accountable.
+                  {t("q2Body")}
                 </p>
-                <div className="text-[12px] font-pixel tracking-[0.05em] text-blue-400 uppercase">Most don't instrument. Ask to see their observability setup.</div>
+                <div className="text-[12px] font-pixel tracking-[0.05em] text-blue-400 uppercase">{t("q2Footer")}</div>
               </div>
             </div>
           </div>
@@ -83,11 +86,11 @@ export function ManifestoPage() {
             <div className="flex items-start gap-4 md:gap-6">
               <div className="w-10 h-10 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center shrink-0 font-pixel text-[14px] text-green-400 mt-0.5">3</div>
               <div>
-                <h3 className="text-white font-bold text-[20px] mb-3">Do you own the code, the hosting, the data, and the models?</h3>
+                <h3 className="text-white font-bold text-[20px] mb-3">{t("q3Title")}</h3>
                 <p className="text-soft text-[16px] leading-[1.7] mb-5">
-                  Or do you own a SaaS subscription that disappears when they pivot? Owned infrastructure isn't just a security question — it's whether you're building a competitive asset or a dependency.
+                  {t("q3Body")}
                 </p>
-                <div className="text-[12px] font-pixel tracking-[0.05em] text-green-400 uppercase">Most leave you with the dependency. Ask for the ownership clause in the contract.</div>
+                <div className="text-[12px] font-pixel tracking-[0.05em] text-green-400 uppercase">{t("q3Footer")}</div>
               </div>
             </div>
           </div>
@@ -103,43 +106,51 @@ export function ManifestoPage() {
 
         <div className="prose-like text-soft text-[17px] md:text-[19px] leading-[1.7] space-y-6">
           <p>
-            If the answers are no, no, and no — you're not working with an engineering partner. You're working with a vendor who's designed the engagement so you'll always need them for the next one.
+            {t("p5")}
           </p>
           <p className="font-bold text-white text-[22px] leading-snug pt-4">
-            That's not AI Product Engineering. That's AI consulting.<br/>
-            <span className="text-accent">They're not the same thing.</span>
+            {t("p6Lead")}<br/>
+            <span className="text-accent">{t("p6Accent")}</span>
           </p>
         </div>
 
         <div className="my-16 border-t border-line-soft pt-16">
           <h2 className="font-sans font-extrabold text-[clamp(28px,3.5vw,40px)] text-white tracking-[-0.02em] mb-8">
-            This is the gap I built PRIONATION to close.
+            {t("gapTitle")}
           </h2>
           <div className="space-y-4 text-soft text-[17px] leading-[1.7] mb-10">
-            <p><strong className="text-white">We don't write roadmaps.</strong> We write eval suites.</p>
-            <p><strong className="text-white">We don't recommend infrastructure.</strong> We build it and hand you the keys.</p>
-            <p><strong className="text-white">We don't run 6-month discovery engagements.</strong> We run an 8-week Diagnostic + Build, fixed scope, fixed price, or we don't take the work.</p>
+            <p><strong className="text-white">{t("gap1Bold")}</strong>{t("gap1Normal")}</p>
+            <p><strong className="text-white">{t("gap2Bold")}</strong>{t("gap2Normal")}</p>
+            <p><strong className="text-white">{t("gap3Bold")}</strong>{t("gap3Normal")}</p>
           </div>
 
           <div className="p-6 md:p-8 bg-card border border-line-soft rounded-[20px]">
-            <div className="font-pixel text-[10px] tracking-[0.15em] text-accent uppercase mb-6">The accountability is structural</div>
+            <div className="font-pixel text-[10px] tracking-[0.15em] text-accent uppercase mb-6">{t("accTitle")}</div>
             <ul className="space-y-4 font-sans text-soft text-[15px] md:text-[16px]">
-              <li className="flex items-start gap-4">
-                <svg className="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                <span><strong className="text-white">Evals before features.</strong> Always.</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <svg className="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                <span><strong className="text-white">Telemetry from day one.</strong> Always.</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <svg className="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                <span><strong className="text-white">Owned infrastructure.</strong> Always.</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <svg className="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-                <span><strong className="text-white">≥60% of Diagnostics become Builds</strong> — because we only take engagements where the math works.</span>
-              </li>
+              {(t.raw("accList") as string[]).map((item, idx) => {
+                let boldPart = "";
+                let normalPart = "";
+                if (item.includes(".")) {
+                  const dotIdx = item.indexOf(".");
+                  boldPart = item.slice(0, dotIdx + 1);
+                  normalPart = item.slice(dotIdx + 1);
+                } else if (item.includes("—")) {
+                  const dashIdx = item.indexOf("—");
+                  boldPart = item.slice(0, dashIdx);
+                  normalPart = item.slice(dashIdx);
+                } else {
+                  normalPart = item;
+                }
+                return (
+                  <li key={idx} className="flex items-start gap-4">
+                    <svg className="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <span>
+                      {boldPart && <strong className="text-white">{boldPart}</strong>}
+                      {normalPart}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
@@ -153,17 +164,17 @@ export function ManifestoPage() {
         </div>
 
         <div className="prose-like text-soft text-[17px] md:text-[19px] leading-[1.7] space-y-6 text-center">
-          <p>There's a generation of mid-market companies that got burned by the first wave of "AI transformation."</p>
-          <p>I talk to their operators every week.</p>
+          <p>{t("p7")}</p>
+          <p>{t("p8")}</p>
           <p>
-            They're not skeptical of AI.<br/>
-            <span className="text-white font-medium">They're skeptical of the industry that sold it to them.</span>
+            {t("p9Lead")}<br/>
+            <span className="text-white font-medium">{t("p9Accent")}</span>
           </p>
-          <p>They're right to be.</p>
+          <p>{t("p10")}</p>
           
           <div className="pt-8 pb-4">
             <p className="font-bold text-white text-[20px] md:text-[26px] max-w-[28ch] mx-auto leading-snug">
-              If you've been burned before and you have a bottleneck you can name in one sentence — that's the only qualification to work with us.
+              {t("qualification")}
             </p>
           </div>
         </div>
@@ -172,13 +183,13 @@ export function ManifestoPage() {
           <div className="bg-card border border-accent/30 rounded-[32px] p-8 md:p-12 text-center shadow-[0_0_50px_rgba(88,101,242,0.1)] relative overflow-hidden group w-full max-w-[500px]">
              <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <div className="relative z-10">
-              <h3 className="font-sans font-extrabold text-[28px] text-white mb-3">Name your bottleneck.</h3>
-              <p className="text-muted text-[15px] mb-8">Take 2 minutes to fill out the intake form. We'll review it and respond within 24 hours.</p>
+              <h3 className="font-sans font-extrabold text-[28px] text-white mb-3">{t("ctaTitle")}</h3>
+              <p className="text-muted text-[15px] mb-8">{t("ctaBody")}</p>
               <Link
                 href="/#engage"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-white font-sans font-bold text-[15px] hover:bg-accent/90 transition-transform hover:scale-105"
               >
-                Start Intake <span className="opacity-80">→</span>
+                {t("ctaButton")} <span className="opacity-80">→</span>
               </Link>
             </div>
           </div>

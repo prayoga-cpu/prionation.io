@@ -398,19 +398,19 @@ export function AnchorPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
               <div className="relative z-10">
                 <div className="font-pixel text-[10px] tracking-[0.15em] text-accent uppercase mb-4">
-                  The Manifesto
+                  {t("manifestoLabel")}
                 </div>
                 <h2 className="font-sans font-extrabold text-white text-[clamp(24px,3vw,36px)] tracking-[-0.02em] mb-4 max-w-[20ch]">
-                  The firms that sold you "digital transformation" in 2015 are now selling you "AI transformation."
+                  {t("manifestoTitle")}
                 </h2>
                 <p className="text-soft text-[16px] leading-[1.8] max-w-[60ch] mb-8">
-                  Most AI projects fail in production because the people who designed the system had never shipped a production AI in their careers. They'd shipped recommendations. They'd shipped decks. They'd shipped pilots. That's not AI Product Engineering.
+                  {t("manifestoBody")}
                 </p>
                 <Link
                   href="/ai-product-engineering-for-mid-market-companies/manifesto"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-sans font-bold text-[14px] hover:bg-white/90 transition-transform hover:scale-105"
                 >
-                  Read the Manifesto <span className="text-[12px] opacity-80">→</span>
+                  {t("manifestoButton")} <span className="text-[12px] opacity-80">→</span>
                 </Link>
               </div>
             </div>
@@ -421,19 +421,19 @@ export function AnchorPage() {
             <div className="bg-card border border-line-soft hover:border-accent/30 transition-colors rounded-[24px] p-8 md:p-10 relative overflow-hidden group">
               <div className="relative z-10">
                 <div className="font-pixel text-[10px] tracking-[0.15em] text-muted group-hover:text-accent transition-colors uppercase mb-4">
-                  Reference
+                  {t("glossaryLabel")}
                 </div>
                 <h2 className="font-sans font-extrabold text-white text-[clamp(20px,2.5vw,28px)] tracking-[-0.02em] mb-3">
-                  AI Engineering Glossary
+                  {t("glossaryTitle")}
                 </h2>
                 <p className="text-soft text-[15px] leading-[1.7] max-w-[60ch] mb-6">
-                  Plain-English definitions of the AI engineering terms that matter when you build a production system: evals, telemetry, RAG, inference, agents, and more.
+                  {t("glossaryBody")}
                 </p>
                 <Link
                   href="/ai-product-engineering-for-mid-market-companies/glossary"
                   className="inline-flex items-center gap-2 text-white font-sans font-semibold text-[14px] group-hover:text-accent transition-colors"
                 >
-                  Read the Glossary <span className="text-[12px] opacity-80 group-hover:translate-x-1 transition-transform">→</span>
+                  {t("glossaryButton")} <span className="text-[12px] opacity-80 group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
               </div>
             </div>

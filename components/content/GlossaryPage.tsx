@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/seo/site";
 type Term = { term: string; def: string };
 
 const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
-const GLOSSARY_PATH = "/ai-engineering-glossary";
+const GLOSSARY_PATH = "/ai-product-engineering-for-mid-market-companies/glossary";
 
 function slugify(text: string) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");

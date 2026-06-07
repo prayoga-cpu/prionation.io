@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
 import { ContentHeader } from "@/components/content/ContentHeader";
 import { ManifestoPage } from "@/components/content/ManifestoPage";
@@ -19,9 +19,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Manifesto" });
   const canonical = `${SITE_URL}/${locale}${PATH}`;
-  const title = "The AI Product Engineering Manifesto · PRIONATION.io";
-  const description = "The firms that sold you digital transformation are now selling you AI. Most AI projects fail in production. Here is why, and how to fix it.";
+  const title = t("seoTitle");
+  const description = t("metaDescription");
 
   return {
     title: { absolute: title },
