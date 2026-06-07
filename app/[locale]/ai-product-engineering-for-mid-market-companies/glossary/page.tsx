@@ -5,7 +5,7 @@ import { ContentHeader } from "@/components/content/ContentHeader";
 import { GlossaryPage } from "@/components/content/GlossaryPage";
 import { SiteFooter } from "@/components/sections/SiteFooter";
 
-const PATH = "/ai-engineering-glossary";
+const PATH = "/ai-product-engineering-for-mid-market-companies/glossary";
 
 const OG_LOCALE: Record<string, string> = {
   en: "en_US",

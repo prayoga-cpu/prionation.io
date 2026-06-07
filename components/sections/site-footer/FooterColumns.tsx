@@ -218,6 +218,8 @@ export function FooterColumns() {
               Overview
             </Link>
           </li>
+
+
           <li>
             <Link href="/methodology" className={LINK_CLS}>
               Methodology
@@ -239,16 +241,9 @@ export function FooterColumns() {
             </Link>
           </li>
           <li>
-            <Link href="/ai-engineering-glossary" className={LINK_CLS}>
-              Glossary
+            <Link href="/intelligence" className={LINK_CLS}>
+              Intelligence
             </Link>
-          </li>
-          <li className="flex items-center gap-1.5">
-            <span className="text-[13px] text-muted">Intelligence</span>
-            <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase">
-              {" "}
-              soon
-            </span>
           </li>
           <li className="flex items-center gap-1.5">
             <span className="text-[13px] text-muted">Transparency</span>

@@ -15,7 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: { absolute: "uguides · PRIONATION.io" },
+    title: { absolute: "Guides · PRIONATION.io" },
     alternates: {
       canonical: `${SITE_URL}/${locale}/guides`,
       languages: {
