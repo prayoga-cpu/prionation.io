@@ -3,6 +3,7 @@
 import { useState, useTransition } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
+import Link from "next/link";
 import { Eyebrow } from "../ui/Atoms";
 import { FooterColumns } from "./site-footer/FooterColumns";
 
@@ -170,12 +171,12 @@ export function SiteFooter() {
           >
             GitHub
           </a>
-          <a
-            href="https://discord.gg/FYB5HmYtg9"
+          <Link
+            href="/discord"
             className="text-muted text-[13px] font-sans tracking-normal normal-case transition-colors duration-fast hover:text-white"
           >
             Discord
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
