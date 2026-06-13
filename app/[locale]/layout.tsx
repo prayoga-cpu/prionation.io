@@ -6,6 +6,8 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Analytics } from "@vercel/analytics/react";
+import { Suspense } from "react";
+import MetaPixel from "@/components/MetaPixel";
 import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
 import { OrganizationSchema, ServiceSchema, WebSiteSchema } from "@/components/JsonLd";
 import "../globals.css";
@@ -171,6 +173,9 @@ export default async function RootLayout({
           {children}
         </NextIntlClientProvider>
         <Analytics />
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
       </body>
     </html>
   );
