@@ -176,14 +176,14 @@ export default function DiscordLandingPage() {
         </motion.div>
 
         {/* Animated Retro Lab Beaker Illustration */}
-        <motion.div variants={fadeUp} className="mt-6 mb-2">
+        <motion.div variants={fadeUp} className="mt-4 mb-3">
           <LabIllustration />
         </motion.div>
 
         {/* Heading */}
         <motion.h1
           variants={fadeUp}
-          className="font-display font-normal text-2xl sm:text-3xl md:text-5xl tracking-normal text-white mb-6 uppercase whitespace-nowrap"
+          className="font-display font-normal text-2xl sm:text-3xl md:text-5xl tracking-normal text-white mb-3 uppercase whitespace-nowrap"
         >
           JOIN THE PRIONATION <span className="text-accent">LAB</span>
         </motion.h1>
@@ -191,7 +191,7 @@ export default function DiscordLandingPage() {
         {/* Description */}
         <motion.p
           variants={fadeUp}
-          className="max-w-[55ch] text-soft text-[16px] md:text-[18px] leading-[1.6] mb-10 mx-0 text-balance"
+          className="max-w-[55ch] text-soft text-[15px] md:text-[16px] leading-[1.5] mb-5 mx-0 text-balance"
         >
           Connect with AI product engineers, QA testers, and content creators. Take part in launch events, graphics challenges, and secure your place in our core talent pool.
         </motion.p>
@@ -199,7 +199,7 @@ export default function DiscordLandingPage() {
         {/* CTA Buttons */}
         <motion.div
           variants={fadeUp}
-          className="flex gap-4 flex-wrap justify-center mb-20"
+          className="flex gap-3 flex-wrap justify-center mb-10"
         >
           <Btn
             variant="primary"
