@@ -8,6 +8,126 @@ import { staggerFast, fadeUp } from "@/lib/motion";
 // The real Discord invite link.
 const DISCORD_INVITE = "https://discord.gg/FYB5HmYtg9";
 
+function LabIllustration() {
+  return (
+    <div className="relative w-32 h-32 flex items-center justify-center select-none pointer-events-none">
+      {/* Outer spinning atomic orbit */}
+      <motion.svg
+        className="absolute w-full h-full text-[#5865f2]/25"
+        viewBox="0 0 100 100"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+      >
+        <circle
+          cx="50"
+          cy="50"
+          r="45"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeDasharray="4 8"
+          fill="none"
+        />
+      </motion.svg>
+
+      {/* Inner reverse-spinning atomic orbit */}
+      <motion.svg
+        className="absolute w-full h-full text-[#eb459f]/20"
+        viewBox="0 0 100 100"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+      >
+        <circle
+          cx="50"
+          cy="50"
+          r="37"
+          stroke="currentColor"
+          strokeWidth="0.75"
+          strokeDasharray="1 5"
+          fill="none"
+        />
+      </motion.svg>
+
+      {/* Floating Beaker / Flask */}
+      <motion.div
+        className="relative z-10 w-16 h-16 flex items-center justify-center"
+        animate={{ y: [-4, 4, -4] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <svg
+          viewBox="0 0 24 24"
+          className="w-full h-full"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="liquid-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#eb459f" />
+              <stop offset="100%" stopColor="#5865f2" />
+            </linearGradient>
+            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="1" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+
+          {/* Liquid inside the beaker with waving path morph */}
+          <motion.path
+            d="M6.5 18.5C8 20 16 20 17.5 18.5C18.5 17.5 17 13 16 11H8C7 13 5.5 17.5 6.5 18.5Z"
+            fill="url(#liquid-grad)"
+            opacity="0.8"
+            animate={{
+              d: [
+                "M6.5 18.5C8 20.5 16 19.5 17.5 18.5C18.5 17.5 17 13 16 11H8C7 13 5.5 17.5 6.5 18.5Z",
+                "M6.5 18.5C8 19.2 16 20.2 17.5 18.5C18.5 17.5 17 13 16 11H8C7 13 5.5 17.5 6.5 18.5Z",
+                "M6.5 18.5C8 20.5 16 19.5 17.5 18.5C18.5 17.5 17 13 16 11H8C7 13 5.5 17.5 6.5 18.5Z",
+              ],
+            }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {/* Flask Outer Border */}
+          <path
+            d="M9 3H15M12 3V7M12 7L7.5 16C6 19 8 21 12 21C16 21 18 19 16.5 16L12 7"
+            stroke="#ffffff"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+
+          {/* Glowing core inside beaker */}
+          <circle cx="12" cy="15" r="1.5" fill="#ffffff" filter="url(#glow)" />
+        </svg>
+
+        {/* Rising bubbles from beaker */}
+        <div className="absolute inset-0">
+          {[...Array(5)].map((_, i) => (
+            <motion.span
+              key={i}
+              className="absolute w-1 h-1 rounded-full bg-[#eb459f]"
+              style={{
+                left: `${35 + i * 8}%`,
+                bottom: "28%",
+              }}
+              animate={{
+                y: [0, -35],
+                x: [0, (i % 2 === 0 ? 1 : -1) * 6],
+                opacity: [0, 1, 0],
+                scale: [0.4, 0.8, 0.1],
+              }}
+              transition={{
+                duration: 2.2 + i * 0.3,
+                repeat: Infinity,
+                delay: i * 0.5,
+                ease: "easeOut",
+              }}
+            />
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 export default function DiscordLandingPage() {
   const handleJoinDiscord = () => {
     // 1. Fire the Pixel so this click becomes a retargetable event.
@@ -23,7 +143,7 @@ export default function DiscordLandingPage() {
   };
 
   return (
-    <main className="relative overflow-hidden px-page-x pt-[120px] pb-[100px] min-h-screen flex flex-col justify-center bg-[#08090d] text-white font-sans">
+    <main className="relative overflow-hidden px-page-x pt-[100px] pb-[100px] min-h-screen flex flex-col justify-center bg-[#08090d] text-white font-sans">
       {/* Background radial gradient layers matching Hero style */}
       <div className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(60%_50%_at_12%_18%,var(--c-accent-glow)_0%,transparent_60%),radial-gradient(45%_40%_at_92%_80%,rgba(235,69,159,0.15)_0%,transparent_65%),linear-gradient(180deg,#0c0e1a_0%,#08090d_70%)]" />
 
@@ -47,12 +167,20 @@ export default function DiscordLandingPage() {
           <Eyebrow glow>COMMUNITY LAUNCH</Eyebrow>
         </motion.div>
 
+        {/* Animated Lab Beaker Illustration */}
+        <motion.div variants={fadeUp} className="mt-6 mb-2">
+          <LabIllustration />
+        </motion.div>
+
         {/* Heading */}
         <motion.h1
           variants={fadeUp}
-          className="font-display font-normal text-[clamp(36px,5vw,68px)] leading-[1.1] md:leading-none tracking-normal text-white my-6 uppercase max-w-[20ch]"
+          className="font-display font-normal text-[clamp(36px,5vw,68px)] leading-[1.1] md:leading-none tracking-normal text-white mb-6 uppercase max-w-[20ch]"
         >
-          JOIN THE <span className="text-accent">PRIONATION</span> LAB
+          JOIN THE <span className="text-accent">PRIONATION</span>{" "}
+          <span className="inline-block bg-[linear-gradient(90deg,#5865f2_0%,#eb459f_50%,#e2b714_100%)] bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(235,69,159,0.2)]">
+            LAB
+          </span>
         </motion.h1>
 
         {/* Description */}
