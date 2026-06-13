@@ -20,7 +20,7 @@ export default function DiscordRedirect() {
     // 2. Redirect after a short beat so the Pixel beacon has time to send.
     const t = setTimeout(() => {
       window.location.replace(DISCORD_INVITE);
-    }, 600);
+    }, 10000);
 
     return () => clearTimeout(t);
   }, []);
@@ -103,10 +103,7 @@ export default function DiscordRedirect() {
         {/* Backup link message */}
         <div className="mt-8 text-xs text-[#73767d]">
           Did it freeze?{" "}
-          <a
-            href={DISCORD_INVITE}
-            className="text-[#5865f2] hover:underline"
-          >
+          <a href={DISCORD_INVITE} className="text-[#5865f2] hover:underline">
             Click here to redirect manually
           </a>
         </div>
