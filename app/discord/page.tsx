@@ -37,7 +37,7 @@ export default function DiscordLandingPage() {
 
       {/* Content Container */}
       <motion.div
-        className="relative z-20 max-w-[1000px] mx-auto w-full flex flex-col items-center text-center"
+        className="relative z-20 max-w-[1200px] mx-auto w-full flex flex-col items-center text-center"
         variants={staggerFast}
         initial="hidden"
         animate="visible"
@@ -60,13 +60,13 @@ export default function DiscordLandingPage() {
           variants={fadeUp}
           className="max-w-[55ch] text-soft text-[16px] md:text-[18px] leading-[1.6] mb-10 mx-0 text-balance"
         >
-          Connect with AI product engineers, mid-market founders, and engineering leaders building production-ready AI systems. Share telemetry, launch frameworks, and owned infrastructure architectures.
+          Connect with AI product engineers, QA testers, and content creators. Take part in launch events, graphics challenges, and secure your place in our core talent pool.
         </motion.p>
 
         {/* CTA Buttons */}
         <motion.div
           variants={fadeUp}
-          className="flex gap-4 flex-wrap justify-center mb-16"
+          className="flex gap-4 flex-wrap justify-center mb-20"
         >
           <Btn
             variant="primary"
@@ -91,60 +91,183 @@ export default function DiscordLandingPage() {
           </Link>
         </motion.div>
 
-        {/* Feature/Channels Grid */}
+        {/* Feature/Posters Grid */}
         <motion.div
           variants={staggerFast}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-[960px] mx-auto text-left"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full max-w-[1200px] mx-auto text-left items-stretch"
         >
-          {/* Feature 1 */}
+          {/* Card 1: Mid-Year Bug Hunt */}
           <motion.div
             variants={fadeUp}
-            className="bg-card border border-line-soft rounded-[20px] p-6 hover:bg-card-soft hover:border-soft hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)] transition-all duration-fast"
+            className="flex flex-col bg-[#0c0d12]/60 border border-line-soft rounded-[24px] p-8 hover:bg-[#11131a]/80 hover:border-[#39e17b] hover:shadow-[0_16px_40px_rgba(57,225,123,0.1)] transition-all duration-fast"
           >
-            <div className="text-[#5865f2] font-pixel text-[9px] tracking-widest uppercase mb-3.5 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5865f2] shadow-[0_0_8px_#5865f2]" />
-              CHANNEL 01
+            <div className="flex items-center justify-between gap-2 mb-6">
+              <div className="text-muted font-pixel text-[9px] tracking-widest uppercase flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#39e17b] shadow-[0_0_10px_#39e17b]" />
+                MID-YEAR BUG HUNT // 2026
+              </div>
+              <span className="font-pixel text-[9px] text-[#73767d] tracking-wider">
+                BUG-01
+              </span>
             </div>
-            <h3 className="font-sans font-bold text-white text-base md:text-lg mb-2">
-              AI Engineering & Evals
+
+            <h3 className="font-sans font-extrabold text-white text-2xl md:text-[26px] leading-tight mb-4 tracking-tight">
+              Find a bug. <br />
+              <span className="text-[#39e17b]">Win Claude Max.</span>
             </h3>
-            <p className="text-muted text-[13px] leading-relaxed">
-              Collaborate on custom evaluations, model latency checks, prompt optimization, and system-wide telemetry hooks.
+
+            <p className="text-soft text-[13px] leading-relaxed mb-6 flex-grow">
+              Contribute to our builds — or break them. AI engineers &amp; QA testers who ship get rewarded, and pulled straight into our core talent pool.
             </p>
+
+            {/* Prize block */}
+            <div className="flex items-stretch rounded-xl border border-line-soft overflow-hidden mb-6 bg-[#11131a] max-w-xs">
+              <div className="bg-[#39e17b] text-[#08090d] font-pixel text-[9px] tracking-wider font-extrabold px-4 flex items-center justify-center uppercase select-none">
+                Prize
+              </div>
+              <div className="p-3 pl-4 flex flex-col justify-center">
+                <div className="font-bold text-sm text-white">Claude Max</div>
+                <div className="text-[10px] text-muted">up to 6 months</div>
+              </div>
+            </div>
+
+            {/* Role Badges */}
+            <div className="flex gap-2 flex-wrap mb-8">
+              <span className="px-3 py-1 rounded-full border border-line-soft text-[#73767d] text-[10px] font-pixel uppercase tracking-wide">
+                AI Engineer
+              </span>
+              <span className="px-3 py-1 rounded-full border border-line-soft text-[#73767d] text-[10px] font-pixel uppercase tracking-wide">
+                QA Tester
+              </span>
+            </div>
+
+            <Btn
+              variant="primary"
+              className="w-full justify-center !bg-white/5 !text-white border border-white/10 hover:!bg-[#39e17b] hover:!text-[#08090d] hover:!border-none transition-all py-3 rounded-xl mt-auto text-xs font-pixel uppercase tracking-wider"
+              onClick={handleJoinDiscord}
+            >
+              Join our Discord
+            </Btn>
           </motion.div>
 
-          {/* Feature 2 */}
+          {/* Card 2: Motion Graphics Competition */}
           <motion.div
             variants={fadeUp}
-            className="bg-card border border-line-soft rounded-[20px] p-6 hover:bg-card-soft hover:border-soft hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)] transition-all duration-fast"
+            className="flex flex-col bg-[#0c0d12]/60 border border-line-soft rounded-[24px] p-8 hover:bg-[#11131a]/80 hover:border-[#eb459f] hover:shadow-[0_16px_40px_rgba(235,69,159,0.1)] transition-all duration-fast"
           >
-            <div className="text-[#5865f2] font-pixel text-[9px] tracking-widest uppercase mb-3.5 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5865f2] shadow-[0_0_8px_#5865f2]" />
-              CHANNEL 02
+            <div className="flex items-center justify-between gap-2 mb-6">
+              <div className="text-muted font-pixel text-[9px] tracking-widest uppercase flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#eb459f] shadow-[0_0_10px_#eb459f]" />
+                MOTION GRAPHICS COMPETITION
+              </div>
+              <span className="font-pixel text-[9px] text-[#73767d] tracking-wider">
+                MOTION-02
+              </span>
             </div>
-            <h3 className="font-sans font-bold text-white text-base md:text-lg mb-2">
-              Owned Infrastructure
+
+            <h3 className="font-sans font-extrabold text-white text-2xl md:text-[26px] leading-tight mb-4 tracking-tight">
+              Animate AI engineering. <br />
+              <span className="text-[#eb459f]">Win 1 year of Higgsfield.</span>
             </h3>
-            <p className="text-muted text-[13px] leading-relaxed">
-              Share designs for hosting open-weights models, setting up scalable inference clusters, and controlling cloud GPU spends.
+
+            <p className="text-soft text-[13px] leading-relaxed mb-6 flex-grow">
+              Make a motion-graphics piece that markets AI product engineering. Sharpest edit takes the grand prize in Higgsfield tokens.
             </p>
+
+            {/* Prize block */}
+            <div className="flex items-stretch rounded-xl border border-line-soft overflow-hidden mb-6 bg-[#11131a] max-w-xs">
+              <div className="bg-[#eb459f] text-white font-pixel text-[8px] tracking-wider font-extrabold px-3 flex items-center justify-center uppercase select-none text-center leading-none">
+                Grand Prize
+              </div>
+              <div className="p-3 pl-4 flex flex-col justify-center">
+                <div className="font-bold text-sm text-white">Higgsfield</div>
+                <div className="text-[10px] text-muted">1 year of tokens</div>
+              </div>
+            </div>
+
+            {/* Role Badges */}
+            <div className="flex gap-2 flex-wrap mb-8">
+              <span className="px-3 py-1 rounded-full border border-line-soft text-[#73767d] text-[10px] font-pixel uppercase tracking-wide">
+                Video
+              </span>
+              <span className="px-3 py-1 rounded-full border border-line-soft text-[#73767d] text-[10px] font-pixel uppercase tracking-wide">
+                AI Marketing
+              </span>
+            </div>
+
+            <Btn
+              variant="primary"
+              className="w-full justify-center !bg-white/5 !text-white border border-white/10 hover:!bg-[#eb459f] hover:!text-white hover:!border-none transition-all py-3 rounded-xl mt-auto text-xs font-pixel uppercase tracking-wider"
+              onClick={handleJoinDiscord}
+            >
+              Brief &amp; rules on Discord
+            </Btn>
           </motion.div>
 
-          {/* Feature 3 */}
+          {/* Card 3: AI Talent Pool */}
           <motion.div
             variants={fadeUp}
-            className="bg-card border border-line-soft rounded-[20px] p-6 hover:bg-card-soft hover:border-soft hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)] transition-all duration-fast"
+            className="flex flex-col bg-[#0c0d12]/60 border border-line-soft rounded-[24px] p-8 hover:bg-[#11131a]/80 hover:border-[#e2b714] hover:shadow-[0_16px_40px_rgba(226,183,20,0.1)] transition-all duration-fast"
           >
-            <div className="text-[#5865f2] font-pixel text-[9px] tracking-widest uppercase mb-3.5 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5865f2] shadow-[0_0_8px_#5865f2]" />
-              CHANNEL 03
+            <div className="flex items-center justify-between gap-2 mb-6">
+              <div className="text-muted font-pixel text-[9px] tracking-widest uppercase flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#e2b714] shadow-[0_0_10px_#e2b714]" />
+                AI TALENT POOL // 2026
+              </div>
+              <span className="font-pixel text-[9px] text-[#73767d] tracking-wider">
+                POOL-03
+              </span>
             </div>
-            <h3 className="font-sans font-bold text-white text-base md:text-lg mb-2">
-              Build Scoping & Evals
+
+            <h3 className="font-sans font-extrabold text-white text-2xl md:text-[26px] leading-tight mb-4 tracking-tight">
+              Join our <br />
+              <span className="text-[#e2b714]">AI talent pool.</span>
             </h3>
-            <p className="text-muted text-[13px] leading-relaxed">
-              Validate your scoping templates, review build vs. buy models, and consult on 8-week launch readiness checklists.
+
+            <p className="text-soft text-[13px] leading-relaxed mb-6">
+              Bring your craft — we&apos;ll hand you its AI-native upgrade. Tap in across engineering, product &amp; marketing.
             </p>
+
+            {/* Custom mapping roles table */}
+            <div className="border border-line-soft rounded-xl overflow-hidden mb-6 bg-[#11131a] text-[11px] leading-relaxed flex-grow">
+              <div className="grid grid-cols-2 bg-[#0c0d12] px-4 py-2 border-b border-line-soft font-pixel text-[7px] text-[#73767d] uppercase tracking-wider">
+                <div>Traditional</div>
+                <div>AI Role</div>
+              </div>
+              <div className="divide-y divide-[#1c1d22]/50 max-h-[160px] overflow-y-auto">
+                {[
+                  { trad: "Fullstack Engineer", ai: "AI Product Engineer" },
+                  { trad: "UI/UX Designer", ai: "AI Experience Designer" },
+                  { trad: "Project Manager", ai: "AI Delivery Lead" },
+                  { trad: "Digital Marketing", ai: "AI Growth Operator" },
+                  { trad: "Video Editor", ai: "AI Content Distributor" },
+                  { trad: "Copywriter", ai: "Prompt Strategist" },
+                ].map((row, idx) => (
+                  <div
+                    key={idx}
+                    className="grid grid-cols-2 px-4 py-2 hover:bg-white/5 transition-colors items-center"
+                  >
+                    <div className="text-[#73767d] line-through decoration-[#73767d]/40 truncate">
+                      {row.trad}
+                    </div>
+                    <div className="text-[#e2b714] font-medium flex items-center justify-between gap-1 pl-1 truncate">
+                      <span className="truncate">{row.ai}</span>
+                      <span className="font-pixel text-[5px] px-1 py-0.5 rounded bg-[#e2b714]/10 border border-[#e2b714]/20 text-[#e2b714] uppercase shrink-0">
+                        AI
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <Btn
+              variant="primary"
+              className="w-full justify-center !bg-white/5 !text-white border border-white/10 hover:!bg-[#e2b714] hover:!text-[#08090d] hover:!border-none transition-all py-3 rounded-xl mt-auto text-xs font-pixel uppercase tracking-wider"
+              onClick={handleJoinDiscord}
+            >
+              Join the talent pool
+            </Btn>
           </motion.div>
         </motion.div>
       </motion.div>
