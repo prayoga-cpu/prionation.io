@@ -10,120 +10,128 @@ const DISCORD_INVITE = "https://discord.gg/FYB5HmYtg9";
 
 function LabIllustration() {
   return (
-    <div className="relative w-32 h-32 flex items-center justify-center select-none pointer-events-none">
-      {/* Outer spinning atomic orbit */}
-      <motion.svg
-        className="absolute w-full h-full text-[#5865f2]/25"
-        viewBox="0 0 100 100"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="45"
-          stroke="currentColor"
-          strokeWidth="1"
-          strokeDasharray="4 8"
-          fill="none"
-        />
-      </motion.svg>
+    <div className="relative w-36 h-36 flex items-center justify-center select-none pointer-events-none bg-[#0c0d12]/40 border border-[#1c1d22] rounded-2xl overflow-hidden shadow-[inset_0_0_20px_rgba(88,101,242,0.15)]">
+      {/* Retro CRT Scanlines & Grid Overlay */}
+      <div className="absolute inset-0 z-20 pointer-events-none opacity-[0.04] bg-[linear-gradient(rgba(255,255,255,1)_50%,transparent_50%)] bg-[size:100%_4px]" />
+      <div className="absolute inset-0 z-0 opacity-15 bg-[linear-gradient(rgba(88,101,242,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(88,101,242,0.1)_1px,transparent_1px)] bg-[size:8px_8px]" />
 
-      {/* Inner reverse-spinning atomic orbit */}
-      <motion.svg
-        className="absolute w-full h-full text-[#eb459f]/20"
-        viewBox="0 0 100 100"
-        animate={{ rotate: -360 }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="37"
-          stroke="currentColor"
-          strokeWidth="0.75"
-          strokeDasharray="1 5"
-          fill="none"
-        />
-      </motion.svg>
-
-      {/* Floating Beaker / Flask */}
+      {/* Floating Retro Container */}
       <motion.div
-        className="relative z-10 w-16 h-16 flex items-center justify-center"
-        animate={{ y: [-4, 4, -4] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="relative z-10 w-20 h-20 flex items-center justify-center"
+        animate={{ y: [-2, 2, -2] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
         <svg
-          viewBox="0 0 24 24"
-          className="w-full h-full"
+          viewBox="0 0 32 32"
+          className="w-full h-full text-white"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <defs>
-            <linearGradient id="liquid-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#eb459f" />
-              <stop offset="100%" stopColor="#5865f2" />
-            </linearGradient>
-            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="1" result="blur" />
-              <feComposite in="SourceGraphic" in2="blur" operator="over" />
-            </filter>
-          </defs>
-
-          {/* Liquid inside the beaker with waving path morph */}
-          <motion.path
-            d="M6.5 18.5C8 20 16 20 17.5 18.5C18.5 17.5 17 13 16 11H8C7 13 5.5 17.5 6.5 18.5Z"
-            fill="url(#liquid-grad)"
-            opacity="0.8"
-            animate={{
-              d: [
-                "M6.5 18.5C8 20.5 16 19.5 17.5 18.5C18.5 17.5 17 13 16 11H8C7 13 5.5 17.5 6.5 18.5Z",
-                "M6.5 18.5C8 19.2 16 20.2 17.5 18.5C18.5 17.5 17 13 16 11H8C7 13 5.5 17.5 6.5 18.5Z",
-                "M6.5 18.5C8 20.5 16 19.5 17.5 18.5C18.5 17.5 17 13 16 11H8C7 13 5.5 17.5 6.5 18.5Z",
-              ],
-            }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          {/* Liquid (Pixelated blocks) */}
+          {/* Level 1 (bottom layer) */}
+          <rect x="4" y="24" width="24" height="4" fill="#5865f2" opacity="0.85" />
+          
+          {/* Level 2 (middle layer) */}
+          <motion.rect
+            x="6"
+            y="20"
+            width="20"
+            height="4"
+            fill="#5865f2"
+            opacity="0.95"
+            animate={{ opacity: [0.7, 1, 0.7] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          />
+          
+          {/* Level 3 (top wave layer - morphing left/right) */}
+          <motion.rect
+            y="16"
+            height="4"
+            fill="#eb459f"
+            animate={{ x: [8, 12, 8], width: [16, 12, 16] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           />
 
-          {/* Flask Outer Border */}
-          <path
-            d="M9 3H15M12 3V7M12 7L7.5 16C6 19 8 21 12 21C16 21 18 19 16.5 16L12 7"
-            stroke="#ffffff"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+          {/* Beaker Pixel Outline */}
+          {/* Lip */}
+          <rect x="12" y="4" width="8" height="2" fill="currentColor" />
+          {/* Neck */}
+          <rect x="14" y="6" width="4" height="6" fill="none" stroke="currentColor" strokeWidth="2" />
+          {/* Body Slopes (represented as stepped pixel blocks) */}
+          <rect x="12" y="12" width="2" height="2" fill="currentColor" />
+          <rect x="18" y="12" width="2" height="2" fill="currentColor" />
+          
+          <rect x="10" y="14" width="2" height="2" fill="currentColor" />
+          <rect x="20" y="14" width="2" height="2" fill="currentColor" />
+          
+          <rect x="8" y="16" width="2" height="4" fill="currentColor" />
+          <rect x="22" y="16" width="2" height="4" fill="currentColor" />
+          
+          <rect x="6" y="20" width="2" height="4" fill="currentColor" />
+          <rect x="24" y="20" width="2" height="4" fill="currentColor" />
+          
+          <rect x="4" y="24" width="2" height="4" fill="currentColor" />
+          <rect x="26" y="24" width="2" height="4" fill="currentColor" />
+          
+          {/* Bottom base */}
+          <rect x="4" y="26" width="24" height="2" fill="currentColor" />
+          
+          {/* Glowing central core - pixel power source */}
+          <motion.rect
+            x="14"
+            y="20"
+            width="4"
+            height="4"
+            fill="#ffffff"
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 1, repeat: Infinity }}
           />
-
-          {/* Glowing core inside beaker */}
-          <circle cx="12" cy="15" r="1.5" fill="#ffffff" filter="url(#glow)" />
         </svg>
 
-        {/* Rising bubbles from beaker */}
+        {/* Rising square pixel bubbles */}
         <div className="absolute inset-0">
           {[...Array(5)].map((_, i) => (
             <motion.span
               key={i}
-              className="absolute w-1 h-1 rounded-full bg-[#eb459f]"
+              className="absolute w-2 h-2 bg-[#5865f2] border border-[#eb459f]/50"
               style={{
-                left: `${35 + i * 8}%`,
-                bottom: "28%",
+                left: `${35 + i * 7}%`,
+                bottom: "35%",
               }}
               animate={{
-                y: [0, -35],
-                x: [0, (i % 2 === 0 ? 1 : -1) * 6],
+                y: [0, -45],
+                x: [0, (i % 2 === 0 ? 1 : -1) * 8],
                 opacity: [0, 1, 0],
-                scale: [0.4, 0.8, 0.1],
+                rotate: [0, 90, 180],
               }}
               transition={{
-                duration: 2.2 + i * 0.3,
+                duration: 2.5 + i * 0.4,
                 repeat: Infinity,
-                delay: i * 0.5,
-                ease: "easeOut",
+                delay: i * 0.4,
+                ease: "linear",
               }}
             />
           ))}
         </div>
+
+        {/* Retro Sparkle Spark */}
+        <motion.div
+          className="absolute z-30"
+          style={{ top: "15%", right: "20%" }}
+          animate={{ scale: [0, 1.2, 0], opacity: [0, 1, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, delay: 0.7 }}
+        >
+          <svg viewBox="0 0 8 8" className="w-4 h-4 text-[#e2b714]" fill="currentColor">
+            <rect x="3" y="0" width="2" height="8" />
+            <rect x="0" y="3" width="8" height="2" />
+          </svg>
+        </motion.div>
       </motion.div>
+
+      {/* 8-bit text label */}
+      <div className="absolute bottom-2 text-[8px] font-pixel tracking-widest text-[#73767d] uppercase">
+        SYS.ACTIVE
+      </div>
     </div>
   );
 }
@@ -167,7 +175,7 @@ export default function DiscordLandingPage() {
           <Eyebrow glow>COMMUNITY LAUNCH</Eyebrow>
         </motion.div>
 
-        {/* Animated Lab Beaker Illustration */}
+        {/* Animated Retro Lab Beaker Illustration */}
         <motion.div variants={fadeUp} className="mt-6 mb-2">
           <LabIllustration />
         </motion.div>
@@ -175,12 +183,9 @@ export default function DiscordLandingPage() {
         {/* Heading */}
         <motion.h1
           variants={fadeUp}
-          className="font-display font-normal text-[clamp(36px,5vw,68px)] leading-[1.1] md:leading-none tracking-normal text-white mb-6 uppercase max-w-[20ch]"
+          className="font-display font-normal text-2xl sm:text-3xl md:text-5xl tracking-normal text-white mb-6 uppercase whitespace-nowrap"
         >
-          JOIN THE <span className="text-accent">PRIONATION</span>{" "}
-          <span className="inline-block bg-[linear-gradient(90deg,#5865f2_0%,#eb459f_50%,#e2b714_100%)] bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(235,69,159,0.2)]">
-            LAB
-          </span>
+          JOIN THE PRIONATION <span className="text-accent">LAB</span>
         </motion.h1>
 
         {/* Description */}
