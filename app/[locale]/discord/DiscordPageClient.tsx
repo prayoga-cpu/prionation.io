@@ -248,14 +248,9 @@ export function DiscordPageClient() {
             </div>
 
             <h3 className="font-sans font-extrabold text-white text-2xl md:text-[26px] leading-tight mb-4 tracking-tight">
-              {t.rich("bugHunt.title", {
-                span: (
-                  <>
-                    <br />
-                    <span className="text-[#39e17b]">{t("bugHunt.span")}</span>
-                  </>
-                ) as any
-              })}
+              {t("bugHunt.title", { span: "" })}
+              <br />
+              <span className="text-[#39e17b]">{t("bugHunt.span")}</span>
             </h3>
 
             <p className="text-soft text-[13px] leading-relaxed mb-6 flex-grow">
@@ -308,14 +303,9 @@ export function DiscordPageClient() {
             </div>
 
             <h3 className="font-sans font-extrabold text-white text-2xl md:text-[26px] leading-tight mb-4 tracking-tight">
-              {t.rich("motion.title", {
-                span: (
-                  <>
-                    <br />
-                    <span className="text-[#eb459f]">{t("motion.span")}</span>
-                  </>
-                ) as any
-              })}
+              {t("motion.title", { span: "" })}
+              <br />
+              <span className="text-[#eb459f]">{t("motion.span")}</span>
             </h3>
 
             <p className="text-soft text-[13px] leading-relaxed mb-6 flex-grow">
@@ -368,14 +358,9 @@ export function DiscordPageClient() {
             </div>
 
             <h3 className="font-sans font-extrabold text-white text-2xl md:text-[26px] leading-tight mb-4 tracking-tight">
-              {t.rich("pool.title", {
-                span: (
-                  <>
-                    <br />
-                    <span className="text-[#e2b714]">{t("pool.span")}</span>
-                  </>
-                ) as any
-              })}
+              {t("pool.title", { span: "" })}
+              <br />
+              <span className="text-[#e2b714]">{t("pool.span")}</span>
             </h3>
 
             <p className="text-soft text-[13px] leading-relaxed mb-6">
