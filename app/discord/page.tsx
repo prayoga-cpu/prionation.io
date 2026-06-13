@@ -20,7 +20,7 @@ export default function DiscordRedirect() {
     // 2. Redirect after a short beat so the Pixel beacon has time to send.
     const t = setTimeout(() => {
       window.location.replace(DISCORD_INVITE);
-    }, 10000);
+    }, 1000);
 
     return () => clearTimeout(t);
   }, []);
@@ -53,7 +53,7 @@ export default function DiscordRedirect() {
             className="h-full bg-[#5865f2] shadow-[0_0_8px_rgba(88,101,242,0.55)]"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 1.0, ease: "easeOut" }}
           />
         </div>
 
