@@ -2,8 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { useRouter, usePathname } from "@/i18n/routing";
-import Link from "next/link";
+import { useRouter, usePathname, Link } from "@/i18n/routing";
 import { Eyebrow } from "../ui/Atoms";
 import { FooterColumns } from "./site-footer/FooterColumns";
 
