@@ -3,7 +3,9 @@
     "homeTitle": "Rekayasa Produk AI · PRIONATION.io",
     "homeDescription": "Infrastruktur AI produksi untuk perusahaan mid-market di Eropa dan AS. Lingkup tetap. Harga tetap. Produksi dalam 8 minggu. Mulai dari €5.000.",
     "startTitle": "Lihat Cara Kami Bekerja · PRIONATION.io",
-    "startDescription": "Video singkat tentang cara kami membangun AI produksi, biayanya, dan mengapa lebih dari 60% Diagnostik menjadi Build. Tonton, lalu sebutkan hambatan Anda."
+    "startDescription": "Video singkat tentang cara kami membangun AI produksi, biayanya, dan mengapa lebih dari 60% Diagnostik menjadi Build. Tonton, lalu sebutkan hambatan Anda.",
+    "discordTitle": "Gabung Komunitas Discord Kami · PRIONATION.io",
+    "discordDescription": "Terhubung dengan insinyur produk AI, penguji QA, dan pembuat konten. Ikuti acara peluncuran, tantangan grafis, dan amankan posisi Anda di pusat kumpulan talenta kami."
   },
   "Glossary": {
     "seoTitle": "Glosarium rekayasa AI · PRIONATION.io",
@@ -769,6 +771,63 @@
       "desc": "Satu kalimat tentang apa yang memperlambat operasi Anda. Itulah seluruh kualifikasinya.",
       "button": "Pesan panggilan 30 menit",
       "note": "Panggilan gratis · Respons dalam 24 jam · consult@prionation.io"
+    }
+  },
+  "Discord": {
+    "eyebrow": "PELUNCURAN KOMUNITAS",
+    "titlePre": "GABUNG DENGAN PRIONATION",
+    "titlePost": "LAB",
+    "description": "Terhubung dengan insinyur produk AI, penguji QA, dan pembuat konten. Ikuti acara peluncuran, tantangan grafis, dan amankan posisi Anda di pusat kumpulan talenta kami.",
+    "joinCTA": "Gabung Discord Kami",
+    "backHome": "Kembali ke Beranda",
+    "bugHunt": {
+      "tagline": "MID-YEAR BUG HUNT // 2026",
+      "title": "Temukan bug. {span}",
+      "span": "Menangkan Claude Max.",
+      "description": "Berkontribusi pada build kami — atau temukan celah kerusakannya. Insinyur AI & penguji QA yang berhasil mengirimkan kontribusi akan mendapatkan hadiah, dan ditarik langsung ke kumpulan talenta utama kami.",
+      "prizeLabel": "Hadiah",
+      "prizeVal": "Claude Max",
+      "prizeSub": "hingga 6 bulan",
+      "btn": "Gabung Discord Kami",
+      "role1": "Insinyur AI",
+      "role2": "Penguji QA"
+    },
+    "motion": {
+      "tagline": "KOMPETISI MOTION GRAPHICS",
+      "title": "Animasikan rekayasa AI. {span}",
+      "span": "Menangkan 1 tahun Higgsfield.",
+      "description": "Buat karya motion graphics yang memasarkan rekayasa produk AI. Suntingan terbaik akan membawa pulang hadiah utama berupa token Higgsfield.",
+      "prizeLabel": "Hadiah Utama",
+      "prizeVal": "Higgsfield",
+      "prizeSub": "1 tahun token",
+      "btn": "Brief & aturan di Discord",
+      "role1": "Video",
+      "role2": "Pemasaran AI"
+    },
+    "pool": {
+      "tagline": "AI TALENT POOL // 2026",
+      "title": "Gabung dengan {span}",
+      "span": "kumpulan talenta AI kami.",
+      "description": "Bawa keahlian Anda — kami akan memberikan peningkatan berbasis AI. Terbuka untuk bidang rekayasa, produk & pemasaran.",
+      "tableCol1": "Tradisional",
+      "tableCol2": "Peran AI",
+      "trad1": "Fullstack Engineer",
+      "ai1": "AI Product Engineer",
+      "trad2": "UI/UX Designer",
+      "ai2": "AI Experience Designer",
+      "trad3": "Project Manager",
+      "ai3": "AI Delivery Lead",
+      "trad4": "Digital Marketing",
+      "ai4": "AI Growth Operator",
+      "trad5": "Video Editor",
+      "ai5": "AI Content Distributor",
+      "trad6": "Copywriter",
+      "ai6": "Prompt Strategist",
+      "btn": "Gabung kumpulan talenta"
+    },
+    "fallback": {
+      "text": "Apakah macet?",
+      "link": "Klik di sini untuk mengalihkan secara manual"
     }
   }
 }

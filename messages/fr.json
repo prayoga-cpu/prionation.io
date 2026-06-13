@@ -3,7 +3,9 @@
     "homeTitle": "Ingénierie de produits IA · PRIONATION.io",
     "homeDescription": "Infrastructure IA de production pour les entreprises mid-market d'Europe et des États-Unis. Périmètre fixe. Prix fixe. En production en 8 semaines. À partir de 5 000 €.",
     "startTitle": "Découvrez notre méthode · PRIONATION.io",
-    "startDescription": "Des vidéos courtes sur notre façon de construire de l’IA de production, nos tarifs, et pourquoi plus de 60 % des Diagnostics deviennent des Builds. Regardez, puis nommez votre goulot d’étranglement."
+    "startDescription": "Des vidéos courtes sur notre façon de construire de l’IA de production, nos tarifs, et pourquoi plus de 60 % des Diagnostics deviennent des Builds. Regardez, puis nommez votre goulot d’étranglement.",
+    "discordTitle": "Rejoignez notre communauté Discord · PRIONATION.io",
+    "discordDescription": "Connectez-vous avec des ingénieurs produits IA, des testeurs QA et des créateurs de contenu. Participez aux lancements, aux défis graphiques et intégrez notre vivier de talents."
   },
   "Glossary": {
     "seoTitle": "Glossaire de l'ingénierie IA · PRIONATION.io",
@@ -769,6 +771,63 @@
       "desc": "Une phrase sur ce qui ralentit vos opérations. C’est toute la qualification.",
       "button": "Réserver un appel de 30 minutes",
       "note": "Appel gratuit · Réponse sous 24 h · consult@prionation.io"
+    }
+  },
+  "Discord": {
+    "eyebrow": "Lancement de la communauté",
+    "titlePre": "Rejoignez le PRIONATION",
+    "titlePost": "LAB",
+    "description": "Connectez-vous avec des ingénieurs produits IA, des testeurs QA et des créateurs de contenu. Participez aux lancements, aux défis graphiques et intégrez notre vivier de talents.",
+    "joinCTA": "Rejoindre le Discord",
+    "backHome": "Retour à l'accueil",
+    "bugHunt": {
+      "tagline": "CHASSE AUX BUGS DE MI-ANNÉE // 2026",
+      "title": "Trouvez un bug. {span}",
+      "span": "Gagnez Claude Max.",
+      "description": "Contribuez à nos builds — ou cassez-les. Les ingénieurs IA et testeurs QA qui livrent sont récompensés et intégrés à notre vivier de talents.",
+      "prizeLabel": "Prix",
+      "prizeVal": "Claude Max",
+      "prizeSub": "jusqu'à 6 mois",
+      "btn": "Rejoindre notre Discord",
+      "role1": "Ingénieur IA",
+      "role2": "Testeur QA"
+    },
+    "motion": {
+      "tagline": "CONCOURS DE GRAPHISME ANIMÉ",
+      "title": "Animez l'ingénierie IA. {span}",
+      "span": "Gagnez 1 an de Higgsfield.",
+      "description": "Créez une animation graphique faisant la promotion de l'ingénierie produit IA. Le meilleur montage remporte le grand prix en jetons Higgsfield.",
+      "prizeLabel": "Grand Prix",
+      "prizeVal": "Higgsfield",
+      "prizeSub": "1 an de jetons",
+      "btn": "Brief & règles sur Discord",
+      "role1": "Vidéo",
+      "role2": "Marketing IA"
+    },
+    "pool": {
+      "tagline": "VIVIER DE TALENTS IA // 2026",
+      "title": "Rejoignez notre {span}",
+      "span": "vivier de talents IA.",
+      "description": "Apportez vos compétences — nous vous fournirons leur mise à niveau IA. Participez en ingénierie, produit ou marketing.",
+      "tableCol1": "Traditionnel",
+      "tableCol2": "Rôle IA",
+      "trad1": "Ingénieur Fullstack",
+      "ai1": "Ingénieur Produit IA",
+      "trad2": "UI/UX Designer",
+      "ai2": "Designer d'Expérience IA",
+      "trad3": "Chef de Projet",
+      "ai3": "Directeur de Livraison IA",
+      "trad4": "Marketing Digital",
+      "ai4": "Opérateur de Croissance IA",
+      "trad5": "Monteur Vidéo",
+      "ai5": "Distributeur de Contenu IA",
+      "trad6": "Rédacteur",
+      "ai6": "Stratège de Prompt",
+      "btn": "Rejoindre le vivier"
+    },
+    "fallback": {
+      "text": "Bloqué ?",
+      "link": "Cliquez ici pour rediriger manuellement"
     }
   }
 }

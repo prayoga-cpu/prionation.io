@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 import { Btn, Eyebrow } from "@/components/ui/Atoms";
 import { staggerFast, fadeUp } from "@/lib/motion";
@@ -136,7 +137,9 @@ function LabIllustration() {
   );
 }
 
-export default function DiscordLandingPage() {
+export function DiscordPageClient() {
+  const t = useTranslations("Discord");
+
   const handleJoinDiscord = () => {
     // 1. Fire the Pixel so this click becomes a retargetable event.
     if (typeof window !== "undefined" && (window as any).fbq) {
@@ -172,7 +175,7 @@ export default function DiscordLandingPage() {
       >
         {/* Eyebrow */}
         <motion.div variants={fadeUp}>
-          <Eyebrow glow>COMMUNITY LAUNCH</Eyebrow>
+          <Eyebrow glow>{t("eyebrow")}</Eyebrow>
         </motion.div>
 
         {/* Animated Retro Lab Beaker Illustration */}
@@ -185,7 +188,7 @@ export default function DiscordLandingPage() {
           variants={fadeUp}
           className="font-display font-normal text-2xl sm:text-3xl md:text-5xl tracking-normal text-white mb-3 uppercase whitespace-nowrap"
         >
-          JOIN THE PRIONATION <span className="text-accent">LAB</span>
+          {t("titlePre")} <span className="text-accent">{t("titlePost")}</span>
         </motion.h1>
 
         {/* Description */}
@@ -193,7 +196,7 @@ export default function DiscordLandingPage() {
           variants={fadeUp}
           className="max-w-[55ch] text-soft text-[15px] md:text-[16px] leading-[1.5] mb-5 mx-0 text-balance"
         >
-          Connect with AI product engineers, QA testers, and content creators. Take part in launch events, graphics challenges, and secure your place in our core talent pool.
+          {t("description")}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -215,11 +218,11 @@ export default function DiscordLandingPage() {
             >
               <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.03c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.03A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.094 13.094 0 0 1-1.873-.894.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 0 1 .078.009c.12.099.246.195.373.289a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.156 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.156 2.418z" />
             </svg>
-            <span>Join Our Discord</span>
+            <span>{t("joinCTA")}</span>
           </Btn>
           <Link href="/">
             <Btn variant="ghost" className="px-8 py-4 text-base">
-              Back to Home
+              {t("backHome")}
             </Btn>
           </Link>
         </motion.div>
@@ -237,7 +240,7 @@ export default function DiscordLandingPage() {
             <div className="flex items-center justify-between gap-2 mb-6">
               <div className="text-muted font-pixel text-[9px] tracking-widest uppercase flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#39e17b] shadow-[0_0_10px_#39e17b]" />
-                MID-YEAR BUG HUNT // 2026
+                {t("bugHunt.tagline")}
               </div>
               <span className="font-pixel text-[9px] text-[#73767d] tracking-wider">
                 BUG-01
@@ -245,32 +248,38 @@ export default function DiscordLandingPage() {
             </div>
 
             <h3 className="font-sans font-extrabold text-white text-2xl md:text-[26px] leading-tight mb-4 tracking-tight">
-              Find a bug. <br />
-              <span className="text-[#39e17b]">Win Claude Max.</span>
+              {t.rich("bugHunt.title", {
+                span: (
+                  <>
+                    <br />
+                    <span className="text-[#39e17b]">{t("bugHunt.span")}</span>
+                  </>
+                ) as any
+              })}
             </h3>
 
             <p className="text-soft text-[13px] leading-relaxed mb-6 flex-grow">
-              Contribute to our builds — or break them. AI engineers &amp; QA testers who ship get rewarded, and pulled straight into our core talent pool.
+              {t("bugHunt.description")}
             </p>
 
             {/* Prize block */}
             <div className="flex items-stretch rounded-xl border border-line-soft overflow-hidden mb-6 bg-[#11131a] max-w-xs">
               <div className="bg-[#39e17b] text-[#08090d] font-pixel text-[9px] tracking-wider font-extrabold px-4 flex items-center justify-center uppercase select-none">
-                Prize
+                {t("bugHunt.prizeLabel")}
               </div>
               <div className="p-3 pl-4 flex flex-col justify-center">
-                <div className="font-bold text-sm text-white">Claude Max</div>
-                <div className="text-[10px] text-muted">up to 6 months</div>
+                <div className="font-bold text-sm text-white">{t("bugHunt.prizeVal")}</div>
+                <div className="text-[10px] text-muted">{t("bugHunt.prizeSub")}</div>
               </div>
             </div>
 
             {/* Role Badges */}
             <div className="flex gap-2 flex-wrap mb-8">
               <span className="px-3 py-1 rounded-full border border-line-soft text-[#73767d] text-[10px] font-pixel uppercase tracking-wide">
-                AI Engineer
+                {t("bugHunt.role1")}
               </span>
               <span className="px-3 py-1 rounded-full border border-line-soft text-[#73767d] text-[10px] font-pixel uppercase tracking-wide">
-                QA Tester
+                {t("bugHunt.role2")}
               </span>
             </div>
 
@@ -279,7 +288,7 @@ export default function DiscordLandingPage() {
               className="w-full justify-center !bg-white/5 !text-white border border-white/10 hover:!bg-[#39e17b] hover:!text-[#08090d] hover:!border-none transition-all py-3 rounded-xl mt-auto text-xs font-pixel uppercase tracking-wider"
               onClick={handleJoinDiscord}
             >
-              Join our Discord
+              {t("bugHunt.btn")}
             </Btn>
           </motion.div>
 
@@ -291,7 +300,7 @@ export default function DiscordLandingPage() {
             <div className="flex items-center justify-between gap-2 mb-6">
               <div className="text-muted font-pixel text-[9px] tracking-widest uppercase flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#eb459f] shadow-[0_0_10px_#eb459f]" />
-                MOTION GRAPHICS COMPETITION
+                {t("motion.tagline")}
               </div>
               <span className="font-pixel text-[9px] text-[#73767d] tracking-wider">
                 MOTION-02
@@ -299,32 +308,38 @@ export default function DiscordLandingPage() {
             </div>
 
             <h3 className="font-sans font-extrabold text-white text-2xl md:text-[26px] leading-tight mb-4 tracking-tight">
-              Animate AI engineering. <br />
-              <span className="text-[#eb459f]">Win 1 year of Higgsfield.</span>
+              {t.rich("motion.title", {
+                span: (
+                  <>
+                    <br />
+                    <span className="text-[#eb459f]">{t("motion.span")}</span>
+                  </>
+                ) as any
+              })}
             </h3>
 
             <p className="text-soft text-[13px] leading-relaxed mb-6 flex-grow">
-              Make a motion-graphics piece that markets AI product engineering. Sharpest edit takes the grand prize in Higgsfield tokens.
+              {t("motion.description")}
             </p>
 
             {/* Prize block */}
             <div className="flex items-stretch rounded-xl border border-line-soft overflow-hidden mb-6 bg-[#11131a] max-w-xs">
               <div className="bg-[#eb459f] text-white font-pixel text-[8px] tracking-wider font-extrabold px-3 flex items-center justify-center uppercase select-none text-center leading-none">
-                Grand Prize
+                {t("motion.prizeLabel")}
               </div>
               <div className="p-3 pl-4 flex flex-col justify-center">
-                <div className="font-bold text-sm text-white">Higgsfield</div>
-                <div className="text-[10px] text-muted">1 year of tokens</div>
+                <div className="font-bold text-sm text-white">{t("motion.prizeVal")}</div>
+                <div className="text-[10px] text-muted">{t("motion.prizeSub")}</div>
               </div>
             </div>
 
             {/* Role Badges */}
             <div className="flex gap-2 flex-wrap mb-8">
               <span className="px-3 py-1 rounded-full border border-line-soft text-[#73767d] text-[10px] font-pixel uppercase tracking-wide">
-                Video
+                {t("motion.role1")}
               </span>
               <span className="px-3 py-1 rounded-full border border-line-soft text-[#73767d] text-[10px] font-pixel uppercase tracking-wide">
-                AI Marketing
+                {t("motion.role2")}
               </span>
             </div>
 
@@ -333,7 +348,7 @@ export default function DiscordLandingPage() {
               className="w-full justify-center !bg-white/5 !text-white border border-white/10 hover:!bg-[#eb459f] hover:!text-white hover:!border-none transition-all py-3 rounded-xl mt-auto text-xs font-pixel uppercase tracking-wider"
               onClick={handleJoinDiscord}
             >
-              Brief &amp; rules on Discord
+              {t("motion.btn")}
             </Btn>
           </motion.div>
 
@@ -345,7 +360,7 @@ export default function DiscordLandingPage() {
             <div className="flex items-center justify-between gap-2 mb-6">
               <div className="text-muted font-pixel text-[9px] tracking-widest uppercase flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#e2b714] shadow-[0_0_10px_#e2b714]" />
-                AI TALENT POOL // 2026
+                {t("pool.tagline")}
               </div>
               <span className="font-pixel text-[9px] text-[#73767d] tracking-wider">
                 POOL-03
@@ -353,44 +368,46 @@ export default function DiscordLandingPage() {
             </div>
 
             <h3 className="font-sans font-extrabold text-white text-2xl md:text-[26px] leading-tight mb-4 tracking-tight">
-              Join our <br />
-              <span className="text-[#e2b714]">AI talent pool.</span>
+              {t.rich("pool.title", {
+                span: (
+                  <>
+                    <br />
+                    <span className="text-[#e2b714]">{t("pool.span")}</span>
+                  </>
+                ) as any
+              })}
             </h3>
 
             <p className="text-soft text-[13px] leading-relaxed mb-6">
-              Bring your craft — we&apos;ll hand you its AI-native upgrade. Tap in across engineering, product &amp; marketing.
+              {t("pool.description")}
             </p>
 
             {/* Custom mapping roles table */}
             <div className="border border-line-soft rounded-xl overflow-hidden mb-6 bg-[#11131a] text-[11px] leading-relaxed flex-grow">
               <div className="grid grid-cols-2 bg-[#0c0d12] px-4 py-2 border-b border-line-soft font-pixel text-[7px] text-[#73767d] uppercase tracking-wider">
-                <div>Traditional</div>
-                <div>AI Role</div>
+                <div>{t("pool.tableCol1")}</div>
+                <div>{t("pool.tableCol2")}</div>
               </div>
               <div className="divide-y divide-[#1c1d22]/50 max-h-[160px] overflow-y-auto">
-                {[
-                  { trad: "Fullstack Engineer", ai: "AI Product Engineer" },
-                  { trad: "UI/UX Designer", ai: "AI Experience Designer" },
-                  { trad: "Project Manager", ai: "AI Delivery Lead" },
-                  { trad: "Digital Marketing", ai: "AI Growth Operator" },
-                  { trad: "Video Editor", ai: "AI Content Distributor" },
-                  { trad: "Copywriter", ai: "Prompt Strategist" },
-                ].map((row, idx) => (
-                  <div
-                    key={idx}
-                    className="grid grid-cols-2 px-4 py-2 hover:bg-white/5 transition-colors items-center"
-                  >
-                    <div className="text-[#73767d] line-through decoration-[#73767d]/40 truncate">
-                      {row.trad}
+                {[...Array(6)].map((_, idx) => {
+                  const num = idx + 1;
+                  return (
+                    <div
+                      key={idx}
+                      className="grid grid-cols-2 px-4 py-2 hover:bg-white/5 transition-colors items-center"
+                    >
+                      <div className="text-[#73767d] line-through decoration-[#73767d]/40 truncate">
+                        {t(`pool.trad${num}`)}
+                      </div>
+                      <div className="text-[#e2b714] font-medium flex items-center justify-between gap-1 pl-1 truncate">
+                        <span className="truncate">{t(`pool.ai${num}`)}</span>
+                        <span className="font-pixel text-[5px] px-1 py-0.5 rounded bg-[#e2b714]/10 border border-[#e2b714]/20 text-[#e2b714] uppercase shrink-0">
+                          AI
+                        </span>
+                      </div>
                     </div>
-                    <div className="text-[#e2b714] font-medium flex items-center justify-between gap-1 pl-1 truncate">
-                      <span className="truncate">{row.ai}</span>
-                      <span className="font-pixel text-[5px] px-1 py-0.5 rounded bg-[#e2b714]/10 border border-[#e2b714]/20 text-[#e2b714] uppercase shrink-0">
-                        AI
-                      </span>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
@@ -399,7 +416,7 @@ export default function DiscordLandingPage() {
               className="w-full justify-center !bg-white/5 !text-white border border-white/10 hover:!bg-[#e2b714] hover:!text-[#08090d] hover:!border-none transition-all py-3 rounded-xl mt-auto text-xs font-pixel uppercase tracking-wider"
               onClick={handleJoinDiscord}
             >
-              Join the talent pool
+              {t("pool.btn")}
             </Btn>
           </motion.div>
         </motion.div>

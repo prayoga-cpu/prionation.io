@@ -3,7 +3,9 @@
     "homeTitle": "AI Product Engineering · PRIONATION.io",
     "homeDescription": "Production AI infrastructure for EU and US mid-market companies. Fixed scope. Fixed price. 8 weeks to production. Starting at €5,000.",
     "startTitle": "Watch How We Work · PRIONATION.io",
-    "startDescription": "Short videos on how we build production AI, what it costs, and why over 60% of Diagnostics become Builds. Watch, then name your bottleneck."
+    "startDescription": "Short videos on how we build production AI, what it costs, and why over 60% of Diagnostics become Builds. Watch, then name your bottleneck.",
+    "discordTitle": "Join our Discord Community · PRIONATION.io",
+    "discordDescription": "Connect with AI product engineers, QA testers, and content creators. Take part in launch events, graphics challenges, and secure your place in our core talent pool."
   },
   "Glossary": {
     "seoTitle": "AI engineering glossary · PRIONATION.io",
@@ -769,6 +771,63 @@
       "desc": "One sentence about what’s slowing your operations down. That’s the entire qualification.",
       "button": "Book a 30-minute call",
       "note": "Free call · Response within 24h · consult@prionation.io"
+    }
+  },
+  "Discord": {
+    "eyebrow": "COMMUNITY LAUNCH",
+    "titlePre": "JOIN THE PRIONATION",
+    "titlePost": "LAB",
+    "description": "Connect with AI product engineers, QA testers, and content creators. Take part in launch events, graphics challenges, and secure your place in our core talent pool.",
+    "joinCTA": "Join Our Discord",
+    "backHome": "Back to Home",
+    "bugHunt": {
+      "tagline": "MID-YEAR BUG HUNT // 2026",
+      "title": "Find a bug. {span}",
+      "span": "Win Claude Max.",
+      "description": "Contribute to our builds — or break them. AI engineers & QA testers who ship get rewarded, and pulled straight into our core talent pool.",
+      "prizeLabel": "Prize",
+      "prizeVal": "Claude Max",
+      "prizeSub": "up to 6 months",
+      "btn": "Join our Discord",
+      "role1": "AI Engineer",
+      "role2": "QA Tester"
+    },
+    "motion": {
+      "tagline": "MOTION GRAPHICS COMPETITION",
+      "title": "Animate AI engineering. {span}",
+      "span": "Win 1 year of Higgsfield.",
+      "description": "Make a motion-graphics piece that markets AI product engineering. Sharpest edit takes the grand prize in Higgsfield tokens.",
+      "prizeLabel": "Grand Prize",
+      "prizeVal": "Higgsfield",
+      "prizeSub": "1 year of tokens",
+      "btn": "Brief & rules on Discord",
+      "role1": "Video",
+      "role2": "AI Marketing"
+    },
+    "pool": {
+      "tagline": "AI TALENT POOL // 2026",
+      "title": "Join our {span}",
+      "span": "AI talent pool.",
+      "description": "Bring your craft — we'll hand you its AI-native upgrade. Tap in across engineering, product & marketing.",
+      "tableCol1": "Traditional",
+      "tableCol2": "AI Role",
+      "trad1": "Fullstack Engineer",
+      "ai1": "AI Product Engineer",
+      "trad2": "UI/UX Designer",
+      "ai2": "AI Experience Designer",
+      "trad3": "Project Manager",
+      "ai3": "AI Delivery Lead",
+      "trad4": "Digital Marketing",
+      "ai4": "AI Growth Operator",
+      "trad5": "Video Editor",
+      "ai5": "AI Content Distributor",
+      "trad6": "Copywriter",
+      "ai6": "Prompt Strategist",
+      "btn": "Join the talent pool"
+    },
+    "fallback": {
+      "text": "Did it freeze?",
+      "link": "Click here to redirect manually"
     }
   }
 }
