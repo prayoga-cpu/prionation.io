@@ -7,3 +7,9 @@ The import below pulls it into Claude Code's context (Claude Code reads
 @AGENTS.md
 
 ## Claude Code
+
+- **Explore with graphify first.** Before reaching for `grep`/`Read`/`Glob` to
+  understand this codebase, run `graphify query "<question>"` (or `graphify
+  explain "<node>"` / `graphify path "<A>" "<B>"` / `graphify affected "<node>"`)
+  against `graphify-out/graph.json` to orient. Drop to `grep`/`Read` only to edit
+  or debug specific lines. The graph auto-rebuilds on commit (watcher hook).
