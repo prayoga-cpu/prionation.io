@@ -82,12 +82,16 @@ Sources: _Dev Implementation Guide_ + _Sitemap Documentation_ (both 31-05-2026).
 
 **✅ Done — validated live (2026-06-15, Rich Results Test, `/en`)**
 
-- ✅ **Rich Results — 4 valid items**: FAQ ×1 · Organization ×2 · ProfessionalService ×1,
-  crawled OK, **0 errors**. ProfessionalService non-critical warnings fixed truthfully in
-  `lib/seo/site.ts` + `components/JsonLd.tsx`: added `priceRange` (€1,500–€55,000),
-  `image` (og.png), `address` (HQ Bali, ID — per the public FAQ), and `email`.
-  `telephone` deliberately omitted — no published business number, and inventing one
-  would breach the no-fabricated-data rule (it is optional / non-critical).
+- ✅ **Rich Results — 0 errors, 0 warnings.** First pass added truthful fields
+  (priceRange/image/email + Bali locality) but `ProfessionalService` is a LocalBusiness
+  subtype, so Google kept asking for `telephone`/`streetAddress`/`postalCode` — none of
+  which a remote-first firm can supply without inventing. Fix (2026-06-15, 2nd pass):
+  changed the "AI Product Engineering" item from `ProfessionalService` → **`Service`**
+  (`components/JsonLd.tsx`) — semantically correct for a remote firm, so the local-
+  business address/phone fields no longer apply and all 3 non-critical warnings clear.
+  Organization + FAQ items remain valid; dropped the unused `BUSINESS_ADDRESS`/
+  `PRICE_RANGE` constants. Trade-off accepted: no "Local businesses" listing (needs a
+  Google-verifiable physical address the firm doesn't have).
 
 ## PageSpeed / Core Web Vitals — live validation
 
@@ -148,6 +152,21 @@ bulk of it post-deploy. Nothing new surfaced this run.
   restored), `heading-order` (HowWeWork section title `<h3>` → `<h2>`; homepage sequence
   now has no skips), and `select-name` (every `<select>` now has an `aria-label` — form
   fields via their localized placeholder, the timezone picker via "Timezone").
+
+**✅ Mobile perf — round 2 shipped 2026-06-15** (after deploy 1 confirmed live: **A11y
+93→100**, **TBT 70→10 ms**; LCP 3.6 s / SI 4.6 s still the gap, plus PSI run-noise):
+
+- ✅ **Font preload trimmed** — homepage was eagerly preloading 8 woff2 (rubik ×5 +
+  black-han-sans + press-start-2p + bitter). Set `preload:false` on press-start-2p
+  (decorative pixel labels) and bitter (only used on `/start`), so only the LCP font
+  (black-han-sans) + body (rubik) preload — frees first-paint bandwidth for the hero LCP
+  text. Verified: homepage now preloads only `black_han_sans` + `rubik`.
+- ✅ **Legacy JS dropped** — added a modern `browserslist` (chrome/edge/firefox ≥109,
+  safari ≥15.4) to `package.json` so SWC stops shipping ES5/legacy polyfills (~26 KiB).
+- ⬜ Remaining (optional, higher-risk, left for a focused pass): framer-motion ~76 KiB
+  unused JS (LazyMotion/`m` refactor or below-fold `next/dynamic` split); hero
+  entrance-animation timing (the grid-overlay fade + stagger inflate Speed Index). Both
+  are broad/design-affecting, so not bundled into this round.
 
 ## AEO — answer engines & voice
 

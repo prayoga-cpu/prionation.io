@@ -55,23 +55,29 @@ const rubik = localFont({
   display: "swap",
 });
 
+// Decorative pixel font (small labels, never the LCP element) — don't preload it
+// so it can't compete with the hero/body fonts for bandwidth on first paint.
 const pressStart2P = localFont({
   src: "../../public/fonts/press-start-2p/press-start-2p-latin-400-normal.woff2",
   variable: "--font-press-start-2p",
   display: "swap",
+  preload: false,
 });
 
+// Hero <h1> display font = the mobile LCP element — keep it preloaded (default).
 const blackHanSans = localFont({
   src: "../../public/fonts/black-han-sans/black-han-sans-latin-400-normal.woff2",
   variable: "--font-black-han-sans",
   display: "swap",
 });
 
+// Serif is only used on /start; don't preload it on every page.
 const bitter = Bitter({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-bitter",
   display: "swap",
+  preload: false,
 });
 
 export async function generateMetadata({

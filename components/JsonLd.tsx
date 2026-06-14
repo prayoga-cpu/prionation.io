@@ -6,8 +6,6 @@ import {
   FOUNDING_DATE,
   SOCIAL_LINKS,
   OFFERS,
-  BUSINESS_ADDRESS,
-  PRICE_RANGE,
 } from "@/lib/seo/site";
 
 // Server components that emit site-wide JSON-LD structured data for search + AI
@@ -48,15 +46,16 @@ export function ServiceSchema() {
     <JsonLdScript
       data={{
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+        // Service (not LocalBusiness/ProfessionalService): the firm is remote-
+        // first with no physical storefront, so the local-business address /
+        // telephone fields don't apply. Contact + brand identity live on the
+        // Organization schema above.
+        "@type": "Service",
+        serviceType: "AI product engineering",
         name: "AI Product Engineering",
         url: SITE_URL,
         image: `${SITE_URL}/og.png`,
-        email: CONTACT_EMAIL,
-        priceRange: PRICE_RANGE,
-        // Remote-first; locality + country only (see BUSINESS_ADDRESS).
-        address: { "@type": "PostalAddress", ...BUSINESS_ADDRESS },
-        provider: { "@type": "Organization", name: SITE_NAME },
+        provider: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
         areaServed: ["European Union", "United States"],
         description:
           "We build production AI products that break operational bottlenecks in 8 weeks with lean pods.",
