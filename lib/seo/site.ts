@@ -8,6 +8,18 @@ export const LEGAL_NAME = "PRIORITY FOUNDATION";
 export const CONTACT_EMAIL = "consult@prionation.io";
 export const FOUNDING_DATE = "2026";
 
+// Business location — remote-first; HQ Bali (ID), CRO in Paris (FR), per the
+// public FAQ. No street address (remote-first), so JSON-LD uses locality +
+// country only. Mirrors the published "HQ Bali, CRO in Paris" statement.
+export const BUSINESS_ADDRESS = {
+  addressLocality: "Bali",
+  addressCountry: "ID",
+} as const;
+
+// Public price span across all offers (Express Site → Build), EUR. Used for the
+// ProfessionalService `priceRange`; mirrors the min/max in OFFERS below.
+export const PRICE_RANGE = "€1,500–€55,000";
+
 export const SOCIAL_LINKS = [
   "https://www.linkedin.com/company/prionation-io",
   "https://www.instagram.com/prionation.io",

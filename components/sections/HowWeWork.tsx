@@ -27,9 +27,9 @@ export function HowWeWork() {
             <Dot className="shadow-[0_0_10px_var(--c-accent)]" />
             {t("eyebrow")}
           </div>
-          <h3 className="font-sans font-extrabold text-[clamp(32px,4.2vw,54px)] leading-[1.02] tracking-[-0.03em] m-0 text-white uppercase">
+          <h2 className="font-sans font-extrabold text-[clamp(32px,4.2vw,54px)] leading-[1.02] tracking-[-0.03em] m-0 text-white uppercase">
             {t("title")}
-          </h3>
+          </h2>
         </motion.div>
 
         <motion.div

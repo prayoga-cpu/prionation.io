@@ -47,6 +47,17 @@ export const fadeUp: Variants = {
   },
 };
 
+/** Slide up only — NO opacity change. Use for above-the-fold / LCP content so it
+ *  paints on the first server render instead of staying at opacity:0 until
+ *  framer-motion hydrates (which delays Largest Contentful Paint on mobile). */
+export const riseIn: Variants = {
+  hidden: { y: 24 },
+  visible: {
+    y: 0,
+    transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
 /** Fade in only (no movement) */
 export const fadeIn: Variants = {
   hidden: { opacity: 0 },

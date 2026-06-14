@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint .",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "pagespeed": "node scripts/pagespeed.mjs",
+    "images:meta": "node scripts/image-metadata.mjs"
   },
   "dependencies": {
     "@marsidev/react-turnstile": "^1.5.2",

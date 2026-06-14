@@ -67,7 +67,7 @@ function FSelect({ value, onChange, options, error, placeholder }: {
 }) {
   return (
     <div className="relative z-20">
-      <select value={value} onChange={(e) => onChange(e.target.value)}
+      <select value={value} onChange={(e) => onChange(e.target.value)} aria-label={placeholder}
         className={`w-full bg-transparent font-sans text-[15px] py-3 border-0 border-b rounded-none outline-none transition-colors duration-fast focus:border-accent appearance-none pr-[30px] cursor-pointer ${error ? "border-accent" : "border-line-soft"} ${!value ? "text-muted" : "text-white"}`}
       >
         <option value="" disabled className="bg-card text-white">{placeholder}</option>

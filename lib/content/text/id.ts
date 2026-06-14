@@ -378,6 +378,38 @@ export const pagesId: LocalePages = {
             "Bagaimanapun, kerangka ini berhasil jika menghentikan Anda membangun yang seharusnya dibeli, atau membeli yang seharusnya dibangun.",
           ],
         },
+        {
+          h2: "Bagaimana keenam masukan saling menukar bobot",
+          body: [
+            "Masukan-masukan ini bukan daftar periksa untuk dijumlahkan; mereka berinteraksi, dan justru pada interaksi itulah sebagian besar keputusan benar-benar ditentukan. Biaya dan volume saling menumpuk — alur kerja yang mahal tiap dijalankan dan terus-menerus berjalan membenarkan sebuah build yang tak akan dibenarkan oleh salah satunya saja. Spesifisitas dan sensitivitas data saling menguatkan ke arah yang sama: alur kerja yang khas bagi cara Anda beroperasi biasanya juga alur kerja yang datanya enggan Anda serahkan ke pihak ketiga. Bila beberapa masukan menunjuk ke arah yang sama, jawabannya jarang meragukan, dan Anda tak butuh kerangka ini untuk melihatnya.",
+            "Kasus yang sulit adalah konflik. Alur kerja berbiaya tinggi dan bervolume tinggi tetapi tetap generik — klasifikasi dokumen massal, misalnya — menggoda operator ke arah build padahal produk SaaS matang akan melayaninya dengan modal sepersekian. Di sini volume adalah pengalih perhatian; spesifisitas adalah variabel yang seharusnya menang. Konflik sebaliknya adalah alur kerja bervolume rendah tetapi sangat spesifik di jantung cara Anda bersaing: volume rendah menentang investasi, tetapi jika alur kerja itu keunggulan Anda, membangunnya tetap dapat dibela bahkan pada skala sederhana. Aturan jujurnya: spesifisitas dan relevansi kompetitif memecah seri; biaya dan volume mengukur besarnya hadiah setelah arahnya sudah ditetapkan.",
+            "Horizon waktu adalah pengali yang berada di bawah semua ini. Horizon panjang menaikkan imbal hasil tiap masukan yang berpihak pada build, karena build adalah biaya tetap yang diamortisasi selama bertahun-tahun sedangkan lisensi SaaS adalah biaya berulang yang tak pernah berhenti. Alur kerja yang sama bisa terbaca 'buy' pada horizon dua tahun dan 'build' pada horizon lima tahun, tanpa ada yang lain berubah. Sebelum menilai apa pun, putuskan dengan jujur berapa lama Anda akan bergantung pada alur kerja itu — salah pada satu masukan ini menyimpangkan setiap pembacaan lainnya.",
+          ],
+        },
+        {
+          h2: "Skenario nyata di mana aturan sederhana berlaku — dan di mana ia menyesatkan",
+          body: [
+            "Pertimbangkan tiga alur kerja untuk melihat logikanya bekerja. Pertama, triase dukungan pelanggan yang mengarahkan tiket ke antrean yang tepat: generik, terlayani baik oleh perkakas matang, bukan sumber keunggulan. Setiap masukan menunjuk ke beli, dan membangunnya berarti menghabiskan modal untuk meniru komoditas. Kedua, mesin penetapan harga atau penawaran yang menyandikan aturan yang tak dimiliki kompetitor mana pun, berjalan di atas data yang tak bisa Anda ekspos, yang akan Anda andalkan bertahun-tahun: spesifisitas, sensitivitas data, dan horizon semuanya selaras ke build, dan biaya kesalahan dengan perkakas generik bersifat struktural, bukan sekadar operasional. Inilah kasus-kasus bersih yang dinamai kerangka ini dengan cepat.",
+            "Kasus yang mendidik adalah yang ketiga, di mana aturan sederhana menyesatkan. Bayangkan alur kerja yang tampak generik di permukaan — peringkasan dokumen — tetapi yang nilainya sepenuhnya bersemayam pada bagaimana bahasa domain Anda, konvensi format Anda, dan sistem hilir Anda membentuk keluarannya. Nilai secara naif dan 'spesifisitas rendah' mendorong Anda membeli; sebuah peringkas SaaS lalu menangani 80% tugas dan gagal pada 20% yang sebenarnya penting, karena 20% itulah intinya. Inilah jebakan hibrida klasik. Perbaikannya adalah menilai spesifisitas pada bagian alur kerja yang menciptakan nilai, bukan pada labelnya yang terdengar generik. Sebagian besar build mid-market yang seharusnya hibrida salah dibaca tepat di sini.",
+            "Pola menyesatkan kedua adalah alur kerja bersensitivitas data tinggi yang oleh operator secara refleks ditandai 'build'. Sensitivitas memang mendorong ke build, tetapi catatan jujurnya: sebagian vendor SaaS kini menawarkan penyebaran yang patuh, dalam wilayah, dan satu-penyewa yang menjaga data dalam batas yang dapat diterima. Jika produk matang dapat memenuhi kendala residensi dan akses Anda, sensitivitas saja tidak menentukan — ia menjadi kriteria pemilihan vendor alih-alih pemicu build. Perlakukan sensitivitas data sebagai filter ketat atas opsi beli mana yang layak, dan sebagai sinyal build hanya setelah tak ada opsi beli yang patuh yang lolos filter itu.",
+          ],
+        },
+        {
+          h2: "Cara paling umum operator menyalahgunakan kerangka ini",
+          body: [
+            "Penyalahgunaan pertama adalah menilai secara aspiratif alih-alih jujur. Operator menandai spesifisitas sebagai 'tinggi' karena mereka ingin alur kerja itu menjadi pembeda, bukan karena memang demikian. Disiplin yang dituntut kerangka ini sama dengan disiplin yang dituntut sebuah Diagnostic: gambarkan alur kerja sebagaimana ia benar-benar berjalan hari ini, dengan biaya nyatanya dan keunikannya yang nyata, bukan sebagai narasi strategis yang Anda inginkan. Alur kerja yang Anda harap eksklusif tetaplah komoditas jika kompetitor bisa membeli kemampuan yang sama besok. Penilaian aspiratif adalah cara perusahaan meyakinkan diri untuk membangun apa yang sudah dipecahkan pasar.",
+            "Penyalahgunaan kedua adalah memakai kerangka ini untuk memutuskan apakah membangun sama sekali, alih-alih apa yang dibangun lebih dulu. Keluarannya adalah arah untuk satu alur kerja bernama — bukan vonis atas strategi AI Anda. Operator yang menjalankan kerangka ini sekali, mendapat sinyal 'build', lalu memesan platform yang meluas ke mana-mana telah melewatkan langkah yang justru ada untuk ditegakkan kerangka ini: membatasi keputusan pada satu alur kerja yang biaya, volume, dan spesifisitasnya benar-benar bisa Anda sebutkan. Jika Anda tak bisa menyebut satu alur kerja yang Anda nilai, kerangka ini tak punya apa pun untuk dikerjakan, dan langkah berikut yang tepat adalah Diagnostic untuk menemukan hambatan — bukan sebuah build.",
+            "Penyalahgunaan ketiga adalah memperlakukan hasilnya sebagai permanen. Keputusan 'buy' yang dibuat ketika tak ada keunggulan spesifik adalah benar pada hari ia dibuat dan bisa berhenti benar saat alur kerja menjadi sentral dalam cara Anda bersaing. Kerangka ini adalah potret sesaat, bukan kebijakan tetap. Batas jujurnya: ia memberi tahu Anda keputusan yang tepat berdasarkan biaya, volume, spesifisitas, dan horizon hari ini — dan tak berkata apa pun tentang kapan masukan-masukan itu akan bergeser cukup jauh untuk mengubah jawabannya, yang menjadi pokok bagian berikutnya.",
+          ],
+        },
+        {
+          h2: "Apa yang mengubah jawaban seiring waktu",
+          body: [
+            "Hasil build-vs-buy punya masa berlaku, karena masukan di baliknya bergerak. Volume bertumbuh: alur kerja yang berjalan beberapa ratus kali sebulan saat Anda membeli lisensi SaaS per kursi atau per panggilan bisa, pada skala, berbiaya lebih besar dalam biaya lisensi daripada biaya build secara langsung — momen klasik ketika sebuah 'buy' diam-diam menjadi 'build'. Pantau belanja berulang terhadap biaya sistem yang dimiliki, diamortisasi selama sisa masa pakainya; ketika garisnya berpotongan, keputusan awal bukan lagi yang tepat, sebaik apa pun ia ketika dibuat.",
+            "Spesifisitas juga bergeser, biasanya ke satu arah. Alur kerja yang Anda beli sebagai komoditas cenderung menumpuk aturan, pengecualian, dan integrasi Anda sendiri hingga tak lagi generik dalam arti apa pun — Anda pada dasarnya telah membangun ulang sistem khusus di dalam produk orang lain, membayar sewa atas lapisan yang telah menjadi unik milik Anda. Inilah sinyal untuk meninjau ulang opsi hibrida: teruskan membeli inti komoditas jika masih ada, tetapi bawa lapisan pembeda ke dalam tempat Anda mengendalikannya. Pemicunya bukan tanggal di kalender; ia adalah momen ketika konfigurasi SaaS Anda mulai tampak seperti logika eksklusif.",
+            "Perubahan eksternal juga menggeser jawaban, dan ia bergerak ke dua arah. Kemampuan yang membenarkan sebuah build tahun lalu bisa menjadi komoditas begitu vendor matang mengirimkannya secara bawaan, mengubah build yang masuk akal menjadi pemeliharaan yang tak perlu lagi Anda tanggung. Sebaliknya juga terjadi: vendor menghentikan sebuah produk, menaikkan harga, atau gagal memenuhi persyaratan kepatuhan Anda yang mengetat, dan sebuah 'buy' yang sudah mapan terbuka kembali. Disiplin praktisnya adalah menjalankan ulang kerangka ini pada alur kerja AI signifikan Anda kira-kira setahun sekali, dan segera pada setiap perubahan mendadak dalam volume, dalam cara alur kerja membedakan Anda, atau dalam lanskap vendor. Keputusan ini murah untuk ditinjau ulang dan mahal untuk dibiarkan basi.",
+          ],
+        },
       ],
       faq: [
         {
@@ -399,6 +431,22 @@ export const pagesId: LocalePages = {
         {
           q: "Apa langkah berikutnya setelah kerangka ini?",
           a: "Jika hasilnya bangun atau hibrida, Diagnostic dua minggu memetakan hambatan dan menetapkan harga Build tetap. Jika beli, langkah berikutnya adalah pemilihan vendor — dan kami akan mengatakannya terus terang.",
+        },
+        {
+          q: "Dua masukan saya menunjuk ke build dan dua ke buy — bagaimana memecah serinya?",
+          a: "Biarkan spesifisitas dan relevansi kompetitif menentukan arahnya, lalu biarkan biaya dan volume mengukur besarnya hadiah. Jika alur kerja benar-benar khas bagi cara Anda bersaing, condonglah ke build bahkan saat volume sederhana; jika generik, condonglah ke beli bahkan saat biaya tinggi. Biaya dan volume memberi tahu Anda seberapa berharga keputusan itu, bukan ke arah mana ia seharusnya pergi.",
+        },
+        {
+          q: "Bisakah satu alur kerja sebagian build dan sebagian buy?",
+          a: "Ya — itulah kasus hibrida, dan ia adalah jawaban menang yang paling umum di mid-market. Beli inti komoditas di mana produk matang melayaninya, dan bangun hanya lapisan tipis yang khas bagi operasi Anda. Disiplinnya adalah menilai spesifisitas pada bagian alur kerja yang menciptakan nilai, bukan pada labelnya yang terdengar generik, agar Anda tak membeli perkakas yang gagal pada 20% yang penting.",
+        },
+        {
+          q: "Seberapa sering kita harus menjalankan ulang keputusan ini?",
+          a: "Kira-kira setahun sekali untuk alur kerja AI signifikan mana pun, dan segera pada perubahan mendadak: lonjakan volume, pergeseran dalam cara alur kerja membedakan Anda, atau pergerakan lanskap vendor. Masukannya bergeser — belanja lisensi berulang naik, perkakas yang dibeli menumpuk logika Anda sendiri, vendor mengirim atau menghentikan kemampuan. Keputusan yang sudah mapan bisa diam-diam menjadi keliru, dan murah untuk ditinjau ulang.",
+        },
+        {
+          q: "Data kami sensitif — apakah itu otomatis berarti build?",
+          a: "Tidak otomatis. Sensitivitas data adalah filter ketat atas opsi beli mana yang layak, bukan pemicu build dengan sendirinya. Sebagian vendor matang menawarkan penyebaran yang patuh, dalam wilayah, dan satu-penyewa yang menjaga data dalam batas yang dapat diterima. Terapkan sensitivitas sebagai filter lebih dulu; perlakukan sebagai sinyal build hanya setelah tak ada opsi beli yang patuh yang lolos darinya.",
         },
       ],
     },
@@ -444,6 +492,38 @@ export const pagesId: LocalePages = {
             "Jalur umumnya berurutan: gunakan pod untuk mengirim build pertama dan membuktikan nilai, lalu rekrut internal terhadap peta jalan yang terbukti — dengan serah terima infrastruktur yang dimiliki berarti tim baru Anda mewarisi sistem yang berjalan, bukan kotak hitam.",
           ],
         },
+        {
+          h2: "Tiga skenario, ditelusuri tuntas",
+          body: [
+            "Bayangkan tiga operator. Yang pertama punya satu alur kerja yang terdefinisi baik — katakanlah mengotomasi proses back-office yang padat dokumen — dan tak ada rencana di luar itu. Di sini perhitungannya nyaris bukan perhitungan: sebuah pod mengirim sistemnya, menyerahkan infrastruktur yang dimiliki, dan hubungan bisa berakhir. Merekrut untuk satu build berarti memikul gaji jauh setelah pekerjaan selesai, dan itulah sebabnya pod menang begitu jelas hingga harga per hari tak pernah ikut diperhitungkan.",
+            "Operator kedua punya peta jalan sungguhan — lima atau enam inisiatif AI yang ingin mereka jalankan selama dua tahun. Nalurinya adalah langsung merekrut, tetapi urutan yang jujur biasanya adalah menjalankan satu atau dua yang pertama sebagai pod. Pod itu memunculkan apa yang sebenarnya dibutuhkan peta jalan, membuktikan nilainya kepada pemegang anggaran, dan menghasilkan sistem yang berjalan yang akan diwarisi rekrutan akhir. Merekrut terhadap peta jalan yang terbukti adalah taruhan yang jauh lebih baik daripada merekrut terhadap peta jalan yang diharapkan.",
+            "Operator ketiga belum tahu mereka yang mana — dan ketidakpastian itu sendiri adalah jawabannya. Berkomitmen pada rekrutan senior permanen untuk menjawab pertanyaan yang masih terbuka adalah cara belajar yang paling mahal. Sebuah Diagnostic, lalu satu pod, menyelesaikan ketidakpastian itu dengan sebagian kecil dari gaji setahun dalam biaya penuh, dan meninggalkan aset apa pun arah jawabannya nanti.",
+          ],
+        },
+        {
+          h2: "Di mana aturan sederhana menyesatkan",
+          body: [
+            "Aturan horizon waktu — pod untuk pekerjaan terdefinisi, tim internal untuk peta jalan permanen — adalah patokan default yang baik, tetapi tiga hal membengkokkannya. Pertama adalah kemudahan merekrut. 'Pada akhirnya tim internal menang' mengasumsikan Anda benar-benar bisa merekrut dan mempertahankan insinyur AI senior, yang di pasar yang langka bukanlah hal yang pasti. Satu baris di spreadsheet yang berbunyi 'rekrut' tak berharga jika posisi itu lowong sembilan bulan; perbandingan yang realistis bukan pod versus rekrut, melainkan pod versus rekrutan yang benar-benar bisa Anda dapatkan.",
+            "Kedua adalah tingkat pemanfaatan. Tim internal hanya mengalahkan pod berulang jika ia tetap sibuk dengan pekerjaan AI yang membenarkan bayaran senior. Banyak peta jalan mid-market bersifat tak merata — intens satu kuartal, sepi dua kuartal — dan tim permanen yang menganggur di antara inisiatif menghapus keunggulan biaya yang seharusnya diberikan horizon panjang. Pemodelan yang jujur menghitung celahnya, bukan hanya puncaknya.",
+            "Ketiga adalah biaya kesalahan, yang sepenuhnya diabaikan oleh perbandingan tarif harian. Salah rekrut di bidang yang sulit dinilai bisa memakan setahun tanpa mengirim apa pun, sementara pod berharga tetap membawa ambang eval yang terdefinisi dan garansi. Ketika sisi buruknya asimetris — dan dalam perekrutan spesialis yang langka biasanya memang begitu — jalur yang tampak lebih murah bisa jadi taruhan yang lebih mahal.",
+          ],
+        },
+        {
+          h2: "Bagaimana operator menyalahgunakan model ini",
+          body: [
+            "Penyalahgunaan paling umum adalah membandingkan harga pod delapan minggu dengan satu tahun gaji pokok lalu berhenti di situ. Itu menyanjung rekrutan dalam dua hal: ia mengabaikan biaya penuh — pajak, tunjangan, rekrutmen, adaptasi, perkakas — dan ia membandingkan sistem yang sudah jadi, bergaransi, dan terkirim dengan orang bergaji yang, pada hari pertama, belum mengirim apa pun. Perbandingan yang setara mengadu biaya tahunan penuh dengan biaya pekerjaan setara yang terkirim, bukan dengan angka utama.",
+            "Penyalahgunaan kedua adalah memperlakukan model sebagai vonis alih-alih kerangka. Ia memberi tahu jalur mana yang secara struktural diunggulkan untuk situasi Anda; ia tidak menghasilkan penawaran, karena penawaran sungguhan bergantung pada apa pekerjaannya sebenarnya, dan itu dipetakan dalam sebuah Diagnostic. Operator yang memasukkan angka kasar, mendapat 'rekrut', lalu langsung beralih ke iklan lowongan telah memakai model untuk membenarkan keputusan alih-alih mengujinya.",
+            "Ketiga adalah melupakan asetnya. Pod tidak sekadar mengirim keluaran; ia meninggalkan eval, telemetri, dokumentasi, dan infrastruktur yang dimiliki. Dimodelkan murni sebagai biaya, pod tampak seperti pengeluaran yang berakhir saat keterlibatan berakhir. Dimodelkan dengan jujur, sebagian dari yang Anda beli adalah sistem yang berjalan yang akan diwarisi rekrutan internal di masa depan — yang mengubah baik perbandingannya maupun urutan pengambilan kedua keputusan itu.",
+          ],
+        },
+        {
+          h2: "Apa yang mengubah jawaban seiring waktu",
+          body: [
+            "Ini bukan keputusan yang Anda ambil sekali saja. Masukannya bergeser. Saat sebuah organisasi menjalankan build pertamanya, ukuran dan kepastian peta jalan AI-nya menajam — ambisi yang kabur menjadi daftar inisiatif yang sudah dihargai, dan argumen untuk tim internal entah mengeras atau diam-diam menguap. Waktu yang tepat untuk meninjau ulang pod versus rekrut adalah setelah satu atau dua build pertama terkirim, bukan sebelum satu pun terkirim, karena saat itulah peta jalan berhenti menjadi tebakan.",
+            "Pasar eksternal juga bergeser. Talenta senior rekayasa AI selama ini langka dan mahal, dan baik pasokan maupun gajinya berubah dari tahun ke tahun; begitu pula kematangan perkakas yang bisa diandalkan tim kecil. Perbandingan yang dijalankan hari ini tidak boleh dianggap final dalam delapan belas bulan. Irama yang masuk akal adalah membiarkan pod membuktikan peta jalan, lalu menjalankan ulang model terhadap kondisi rekrutmen nyata alih-alih asumsi tahun lalu.",
+            "Di sinilah pula kerangka ini memberi makan Diagnostic. Model membingkai pilihan strukturalnya; Diagnostic dua minggu mengubahnya menjadi sesuatu yang bisa ditindaklanjuti — ia memetakan hambatan spesifiknya, menetapkan kriteria eval, dan menghasilkan lingkup serta harga tetap untuk build pertama. Apakah Anda akhirnya merekrut atau tetap dengan pod, Diagnostic adalah langkah murah dan dapat dibalik yang menyelesaikan hal-hal tak diketahui sebelum pengeluaran yang mengikat, di jalur mana pun.",
+          ],
+        },
       ],
       faq: [
         {
@@ -465,6 +545,22 @@ export const pagesId: LocalePages = {
         {
           q: "Apakah harga pod termasuk pemeliharaan?",
           a: "Setiap Build mencakup garansi pasca-peluncuran empat minggu. Pemeliharaan berkelanjutan adalah retainer opsional, dilingkupi terhadap telemetri nyata, bukan komitmen terbuka.",
+        },
+        {
+          q: "Berapa banyak build sebelum merekrut internal menguntungkan?",
+          a: "Tidak ada angka universal, karena ini bergantung pada tingkat pemanfaatan dan kemudahan merekrut, bukan pada hitungan. Tim internal hanya menang begitu ia tetap sibuk dengan pekerjaan AI tingkat senior dan Anda benar-benar bisa merekrut serta mempertahankannya. Peta jalan tak merata dengan kuartal sepi, atau posisi yang lowong berbulan-bulan, bisa membuat pod berulang lebih murah jauh melampaui titik yang disarankan hitungan sederhana.",
+        },
+        {
+          q: "Bagaimana jika kami sama sekali tak bisa merekrut insinyur AI senior?",
+          a: "Maka perbandingannya bukan pod versus rekrut, melainkan pod versus rekrutan yang benar-benar bisa Anda dapatkan. Di pasar yang langka, sebuah posisi bisa lowong berbulan-bulan, di mana tak ada yang terkirim. Pod tetap menjaga pengiriman berjalan apa pun keadaannya, dan serah terima infrastruktur yang dimiliki berarti saat Anda akhirnya merekrut, insinyur baru Anda mewarisi sistem yang berjalan alih-alih halaman kosong.",
+        },
+        {
+          q: "Apakah memakai pod membuat perekrutan kelak lebih sulit?",
+          a: "Cenderung membuatnya lebih mudah. Saat Anda merekrut, build pertama telah membuktikan pekerjaan AI mana yang layak diberi posisi permanen, dan insinyur baru mewarisi eval, telemetri, dokumentasi, dan infrastruktur yang dimiliki — sistem yang berjalan, bukan kotak hitam. Anda juga merekrut terhadap peta jalan yang sudah dihargai alih-alih yang diharapkan, yang merupakan taruhan jauh lebih baik.",
+        },
+        {
+          q: "Sebaiknya kami mempertahankan retainer alih-alih merekrut?",
+          a: "Retainer cocok untuk pekerjaan berkelanjutan tetapi terbatas — iterasi yang dilingkupi terhadap telemetri nyata, seharga €4.000–9.000/bulan dengan minimum enam bulan — tanpa beban tetap gaji senior permanen. Ia adalah pilihan sejati alih-alih ketergantungan, karena Anda memiliki infrastrukturnya. Untuk peta jalan permanen bervolume tinggi, tim internal akhirnya menang; untuk permintaan yang tak merata atau tak pasti, Retainer sering lebih cocok.",
         },
       ],
     },
@@ -510,6 +606,38 @@ export const pagesId: LocalePages = {
             "Bagaimanapun, daftar ini berhasil jika memindahkan masalah dari minggu ketiga build ke minggu sebelum ia mulai.",
           ],
         },
+        {
+          h2: "Bagaimana kelima area saling mengimbangi",
+          body: [
+            "Daftar ini terbaca sebagai lima skor independen, tetapi dalam praktik mereka saling berinteraksi, dan di interaksi itulah pertimbangan sejati berada. Kekuatan di satu area bisa mengimbangi kelemahan di area lain — atau justru menyingkapnya. Pengambil keputusan yang berkomitmen dengan kalender yang dikosongkan bisa cepat membenahi data yang berantakan, jadi 'tidak' pada data yang berdampingan dengan 'ya' yang kuat pada keselarasan pemangku kepentingan adalah posisi yang masih bisa dipulihkan. Sebaliknya tidak: data yang rapi di balik komite tanpa pemilik cenderung tetap tak terpakai, karena tak ada yang berwenang memutuskan apa arti 'cukup baik'.",
+            "Dua area yang tak bisa diimbangi adalah keselarasan pemangku kepentingan dan komitmen. Keduanya berada di hulu segala hal lain — keduanyalah yang mendanai pekerjaan yang menutup celah-celah lainnya. Data, kriteria sukses, dan akses infrastruktur semua adalah hal yang bisa diselesaikan Diagnostic, karena keduanya masalah rekayasa dan informasi. Keselarasan dan komitmen bersifat organisasional, dan tak ada banyaknya metode yang menggantikannya. Jika Anda menimbang skor campuran, beri bobot besar pada dua itu dan anggap tiga area teknis sebagai bisa ditutup.",
+            "Ada juga kaitan tersembunyi antara data dan kriteria sukses: Anda sering tak bisa menulis definisi terukur dari 'berfungsi' sebelum melihat data representatif, dan tak bisa menilai apakah data Anda cukup baik sebelum tahu apa yang ingin Anda ukur. Keduanya seperti ayam dan telur, dan itulah persis mengapa Diagnostic menangani keduanya dalam dua minggu yang sama alih-alih berurutan — spesifikasi eval dan penilaian data ditulis bersama karena masing-masing bergantung pada yang lain.",
+          ],
+        },
+        {
+          h2: "Kasus tepi di mana aturan sederhana menyesatkan",
+          body: [
+            "Aturannya — kuat di lima, bangun; lemah di dua atau lebih, diagnosis dulu — berlaku dalam kasus biasa, tetapi beberapa situasi mematahkannya, dan layak disebut dengan terus terang. Yang pertama adalah 'ya' palsu pada data. Banyak operator menilai diri kuat karena datanya ada di suatu tempat, lalu menemukan di minggu kedua bahwa data itu tak berlabel, tak konsisten antar sistem, atau terkunci di balik ekspor yang butuh enam minggu untuk disetujui tim hukum. Ada bukanlah sama dengan dapat-diakses-dan-representatif; jika Anda tak bisa menaruh sampel di depan seorang insinyur minggu ini, nilai jujur sebagai 'belum'.",
+            "Yang kedua adalah 'ya' palsu pada kriteria sukses. Target seperti 'mengurangi waktu penanganan' terasa terukur tetapi bukan eval — itu hasil tanpa definisi per-masukan tentang jawaban yang benar. Uji yang sebenarnya lebih sempit: untuk satu masukan representatif, bisakah Anda menyatakan apa yang seharusnya dikeluarkan sistem dan bagaimana Anda menilai apakah ia melakukannya? Jika tidak bisa, Anda punya tujuan bisnis, bukan kriteria sukses, dan celahnya lebih besar daripada yang disiratkan skor.",
+            "Kasus tepi ketiga adalah kebalikannya: lima dari lima sempurna pada masalah yang terlalu kecil untuk membutuhkan Build delapan minggu sama sekali. Kesiapan mengukur apakah Anda bisa membangun, bukan apakah Anda sebaiknya membangun. Perusahaan yang sepenuhnya siap dengan masalah seminggu lebih terlayani oleh pekerjaan yang dilingkupi ketat daripada membayar jam yang tak ia butuhkan — dan Diagnostic yang jujur akan mengatakannya alih-alih menjual Build.",
+          ],
+        },
+        {
+          h2: "Cara paling umum operator salah memakai daftar ini",
+          body: [
+            "Salah pakai pertama adalah menilai dengan optimistis untuk membenarkan keputusan yang sudah diambil. Daftar ini hanya berfungsi sebagai diagnostik jika Anda membiarkannya mengembalikan jawaban yang tak nyaman; dinilai untuk mengonfirmasi build yang sudah Anda komitmenkan secara internal, ia menjadi sekadar pertunjukan. Disiplinnya adalah memperlakukan setiap 'ya' sebagai klaim yang harus Anda pertahankan dengan bukti di minggu pertama — jika Anda akan kesulitan menghasilkan bukti itu, maka itu 'tidak'.",
+            "Yang kedua adalah memperlakukan kelima area sebagai gerbang yang dilewati sekali alih-alih keadaan yang dipelihara. Kesiapan bisa luruh: pemilik yang bertanggung jawab dipindahtugaskan, anggaran direalokasi di tengah kuartal, sumber data yang Anda nilai dimigrasikan. Skor yang diambil tiga bulan sebelum build dimulai bisa kedaluwarsa saat jam mulai berjalan. Jalankan ulang dekat dengan tanggal mulai sebenarnya, karena biaya prasyarat yang diam-diam lewat sama saja entah ia tak pernah ada atau sekadar menghilang.",
+            "Salah pakai ketiga adalah memakai daftar untuk menilai vendor alih-alih diri sendiri. Daftar ini dibuat untuk menilai sisi Anda dalam keterlibatan — prasyarat yang Anda kendalikan. Metode vendor, disiplin eval-nya, dan sikapnya soal infrastruktur adalah pertanyaan terpisah. Skor kesiapan yang kuat dengan vendor yang lemah tetap menghasilkan build yang buruk; daftar ini menghapus separuh risiko yang menjadi milik Anda, bukan separuh yang menjadi milik siapa pun yang Anda pekerjakan.",
+          ],
+        },
+        {
+          h2: "Bagaimana hasilnya memberi masukan ke Diagnostic",
+          body: [
+            "Daftar ini bukan pengganti Diagnostic — ia adalah masukan yang menentukan berapa biaya Diagnostic bagi Anda dalam waktu dan perhatian. Lima dari lima yang bersih tak berarti Anda melewati pelingkupan; ia berarti Diagnostic dua minggu menghabiskan waktunya untuk mengonfirmasi dan mengunci alih-alih menemukan, dan penawaran Build yang dihasilkan tiba lebih cepat dengan rentang yang lebih sempit. Skor campuran berarti dua minggu yang sama merangkap, menutup prasyarat yang masih terbuka dan menghasilkan rencana build dalam satu jalan, yang persis ruang lingkup yang dirancang Diagnostic untuk menyerapnya.",
+            "Yang berubah di antara dua kasus adalah ke mana usaha Diagnostic mengarah, bukan apakah Anda membutuhkannya. Dengan data dan kriteria yang kuat, Diagnostic berfokus pada arsitektur dan ambang eval; dengan yang lemah, ia menghabiskan hari-hari pertamanya pada akses data dan mengubah tujuan bisnis menjadi definisi 'selesai' yang dapat dinilai. Bagaimanapun, hasil kerjanya sama — hambatan yang dipetakan, spesifikasi eval, dan ruang lingkup Build berharga tetap — tetapi skor kesiapan memberi tahu Anda di muka percakapan mana yang akan sulit.",
+            "Inilah juga mengapa lebih dari 60% Diagnostic berlanjut ke Build: pada saat Diagnostic berakhir, celah kesiapan yang jika tidak akan muncul di tengah build sudah diselesaikan atau dinamai. Batas jujur daftar ini adalah ia tak bisa melakukan penyelesaian itu sendiri — ia hanya bisa memberi tahu Anda apakah Diagnostic akan menjadi konfirmasi singkat atau pekerjaan dasar yang lebih panjang. Keduanya titik awal yang sah; satu-satunya langkah keliru adalah memulai jam Build dengan celah yang masih terbuka.",
+          ],
+        },
       ],
       faq: [
         {
@@ -531,6 +659,22 @@ export const pagesId: LocalePages = {
         {
           q: "Apa langkah berikutnya setelah daftar ini?",
           a: "Diagnostic dua minggu — singkat jika skor Anda kuat, atau merangkap untuk menutup celah dan menghasilkan rencana build jika skor Anda campuran.",
+        },
+        {
+          q: "Bisakah kami memulai Build dengan satu area lemah, atau semuanya harus hijau dulu?",
+          a: "Satu area lemah biasanya bisa ditutup tanpa menunda Build, terutama jika ia salah satu dari tiga area teknis — data, kriteria sukses, atau akses infrastruktur. Tutup dulu jika cepat; jika tidak, Diagnostic menyelesaikannya sebagai bagian dari pelingkupan. Area yang tak bisa Anda mulai dengan lemah adalah keselarasan pemangku kepentingan dan komitmen, karena tak ada metode yang mengimbangi organisasi yang belum benar-benar memutuskan untuk membangun.",
+        },
+        {
+          q: "Berapa lama kesiapan bertahan setelah kami memilikinya?",
+          a: "Perlakukan kesiapan sebagai keadaan, bukan tiket permanen. Ia bisa luruh saat pemilik dipindahtugaskan, anggaran direalokasi di tengah kuartal, atau sumber data dimigrasikan. Skor yang diambil berbulan-bulan sebelum pekerjaan mulai bisa kedaluwarsa saat jam mulai berjalan, jadi jalankan ulang daftar ini dekat dengan tanggal mulai sebenarnya — prasyarat yang diam-diam lewat berbiaya sama dengan yang tak pernah ada.",
+        },
+        {
+          q: "Kami mendapat skor kuat di kelimanya — apakah kami tetap butuh Diagnostic?",
+          a: "Ya, tetapi lebih singkat dan lebih kecil risikonya. Skor kuat tak menghilangkan kebutuhan memetakan hambatan dan menulis spesifikasi eval yang menjadi dasar harga Build tetap; ia berarti Diagnostic mengonfirmasi dan mengunci alih-alih menemukan. Melompat langsung ke Build berharga tetap tanpa langkah itu berarti harganya tebakan, seberapa pun siap Anda.",
+        },
+        {
+          q: "Apakah skor sempurna berarti Build delapan minggu adalah langkah yang tepat?",
+          a: "Belum tentu. Daftar ini mengukur apakah Anda bisa membangun, bukan apakah Anda sebaiknya membangun. Perusahaan yang sepenuhnya siap dengan masalah yang hanya butuh sepekan pekerjaan lebih terlayani oleh pekerjaan yang dilingkupi ketat daripada membayar jam yang tak ia butuhkan. Kesiapan adalah prasyarat untuk Build, bukan argumen untuk melakukannya — Diagnostic yang jujur akan memberi tahu Anda jika masalah Anda lebih kecil daripada keterlibatannya.",
         },
       ],
     },
@@ -578,6 +722,38 @@ export const pagesId: LocalePages = {
             "Untuk total biaya kepemilikan, hitung apa yang Anda simpan: dengan infrastruktur yang dimiliki, Build adalah aset modal yang bisa dijalankan tim Anda, bukan langganan sistem milik orang lain.",
           ],
         },
+        {
+          h2: "Membandingkan penawaran yang tidak sebanding",
+          body: [
+            "Bagian tersulit dari keputusan membeli AI jarang sekali angka utamanya — melainkan dua penawaran untuk proyek yang 'sama' menggambarkan hal yang berbeda. Angka €30.000 dari satu vendor mencakup prototipe yang berfungsi; milik vendor lain mencakup sistem produksi dengan eval, telemetri, dan serah terima. Tak satu pun berbohong, tetapi keduanya tidak sebanding, dan spreadsheet tarif harian yang berdampingan justru menyembunyikan perbedaan yang penting. Satu-satunya cara membandingkan dengan jujur adalah menormalkan pada hasil yang dikirim, bukan pada harga: apa yang berjalan di produksi pada akhirnya, siapa yang memegangnya, dan bagaimana 'selesai' didefinisikan.",
+            "Metode praktisnya adalah menulis definisi 'selesai' Anda sendiri lebih dulu — alur kerja, kriteria sukses yang terukur, sistem yang harus dihubungkan — dan meminta setiap vendor menetapkan harga terhadap satu spesifikasi itu. Saat hasilnya tetap, harga menjadi sebanding dan celahnya menjadi terlihat: penawaran yang jauh di bawah lainnya biasanya kehilangan integrasi, eval, atau kepemilikan, dan kelalaian itu adalah biaya yang akan Anda bayar nanti, bukan penghematan. Inilah disiplin yang sama yang dihasilkan sebuah Diagnostic, itulah mengapa penawaran yang berjangkar pada Diagnostic yang dilingkupi lebih andal daripada yang diberikan tanpa persiapan.",
+            "Batas jujurnya adalah tak ada spesifikasi yang menghapus seluruh penilaian — tim yang lebih murah mungkin sekadar lebih efisien, dan yang lebih mahal mungkin menggelembungkan harga. Tetapi hasil yang tetap mengubah pertanyaan kabur 'siapa yang lebih murah?' menjadi pertanyaan tepat 'apa yang sebenarnya dibeli setiap harga?', dan pertanyaan itu hampir selalu terjawab sendiri begitu hasilnya disandingkan.",
+          ],
+        },
+        {
+          h2: "Biaya dari penawaran murah",
+          body: [
+            "Penawaran terendah kerap menjadi proyek termahal, karena celah antara dirinya dan yang lain jarang berupa margin — melainkan ruang lingkup yang diam-diam ditinggalkan. Harga yang menghilangkan kerangka eval mengirim sistem yang tak bisa dibuktikan berfungsi oleh siapa pun; yang menghilangkan telemetri mengirim sistem yang tak bisa di-debug oleh siapa pun; yang menghilangkan infrastruktur yang dimiliki mengirim ketergantungan yang Anda bayar tanpa batas lewat biaya hosting atau 'platform'. Angka murah itu membeli build dan menunda sisanya menjadi biaya yang muncul setelah kontrak ditandatangani, saat daya tawar Anda paling lemah.",
+            "Pola yang perlu diwaspadai adalah harga tetap yang ditetapkan tanpa langkah pelingkupan. Vendor yang menyebut angka Build sebelum memetakan data Anda, titik integrasi Anda, dan definisi 'berfungsi' Anda entah menyerap risiko tersembunyi yang akan ia negosiasikan ulang nanti, atau berniat beralih ke time-and-materials begitu pekerjaan ternyata lebih sulit dari yang disiratkan demo. Kedua jalur berakhir di tempat yang sama: angka yang ditawarkan adalah angka pemasaran, bukan komitmen, dan biaya sebenarnya ditemukan di tengah jalan.",
+            "Yang tak bisa diperbaiki ini adalah pembeli yang mengoptimalkan baris terendah pada penawaran tanpa peduli isinya. Pembelaannya adalah menghitung total biaya kepemilikan, bukan build saja — hitung biaya berulang, pekerjaan yang harus Anda ulang, dan biaya keluar — serta memperlakukan penawaran yang mencurigakan murah sebagai pertanyaan untuk diajukan, bukan penghematan untuk dikantongi.",
+          ],
+        },
+        {
+          h2: "Total biaya kepemilikan dalam horizon multitahun",
+          body: [
+            "Build adalah baris sekali bayar; kepemilikan adalah baris berulang, dan keduanya berperilaku sangat berbeda selama tiga sampai lima tahun. Sistem yang disewa — di-hosting vendor, dengan logika di lapisan kepemilikannya — punya harga masuk rendah dan biaya bulanan yang tak pernah berakhir, ditambah biaya keluar yang membesar semakin lama Anda bertahan. Sistem yang dimiliki punya biaya build yang terlihat lebih tinggi lalu biaya jalan yang Anda kendalikan: penggunaan penyedia model, hosting di akun Anda sendiri, dan pemeliharaan apa pun yang Anda pilih, entah itu Retainer opsional atau tim Anda sendiri. Dalam horizon multitahun, baris berulang mendominasi perbandingan, dan opsi sewa yang tampak lebih murah kerap lebih mahal pada tahun kedua.",
+            "Variabel yang paling diremehkan kebanyakan pembeli adalah keluar. Dengan sistem yang disewa, pergi berarti membangun ulang, karena tak ada yang portabel ikut dengan Anda. Dengan infrastruktur yang dimiliki — kode di repositori Anda, infrastruktur yang didefinisikan sebagai kode, akun model dan telemetri atas nama Anda — biaya keluar praktis nol, dan keleluasaan itu bernilai uang nyata bahkan jika Anda tak pernah menggunakannya. Retainer dalam model ini adalah pilihan yang diperbarui atas nilai, bukan biaya yang tak bisa Anda lepas, yang menjaga biaya berjalan tetap jujur karena ia selalu bisa dibatalkan pada batas enam bulan.",
+            "Memodelkan total biaya kepemilikan dengan benar juga membingkai ulang angka build itu sendiri. Build €25.000–55.000 yang menghasilkan aset modal yang bisa dijalankan tim Anda bukanlah jenis pengeluaran yang sama dengan jumlah serupa yang dibayar untuk akses ke sistem yang tak pernah Anda pegang — yang pertama muncul sekali di neraca sebagai sesuatu yang Anda miliki, yang kedua berulang selamanya sebagai sesuatu yang Anda sewa.",
+          ],
+        },
+        {
+          h2: "Apa yang harus ditanyakan ke vendor sebelum Anda berkomitmen",
+          body: [
+            "Pertanyaan paling berguna soal harga sama sekali bukan tentang angkanya. Tanyakan siapa yang memegang kode, akun cloud, dan kunci model pada akhirnya — jika jawabannya 'kami yang meng-hosting untuk Anda', harga utama itu adalah biaya masuk ke langganan, bukan biaya sebuah aset. Tanyakan bagaimana 'selesai' didefinisikan dan diukur — jika tak ada suite eval, tak ada garis akhir yang disepakati, dan harga tetap apa pun yang ditetapkan terhadap akhir yang tak terdefinisi adalah tebakan. Tanyakan apa yang terjadi jika mutu produksi melenceng setelah peluncuran — garansi sungguhan menyebut ambang yang terukur dan jendela waktu; 'kami akan mendukung Anda' yang kabur bukanlah komitmen yang bisa Anda tagih ke siapa pun.",
+            "Lalu ajukan pertanyaan insentif secara langsung: dalam model Anda, apakah Anda lebih banyak menghasilkan dengan menyelesaikan atau dengan melanjutkan? Jawabannya mengungkap apakah kepentingan vendor selaras dengan Anda sebelum satu baris pun ditulis. Padukan dengan permintaan untuk melihat langkah pelingkupan — vendor yang yakin pada harga tetap akan punya mekanisme, seperti Diagnostic berbayar, yang memetakan variansi sebelum berkomitmen pada angka, dan akan bisa menjelaskan mengapa harganya bertahan alih-alih meminta Anda percaya bahwa ia akan bertahan.",
+            "Tanda bahaya yang layak disebut terang-terangan: vendor yang menolak setiap pertanyaan ini, atau yang menjawabnya hanya dengan penenangan alih-alih mekanisme. Kepemilikan, eval, garansi, dan langkah pelingkupan bukan tambahan premium — itulah struktur yang membuat harga tetap menjadi jujur, dan ketiadaannya bukan diskon melainkan tagihan tertunda.",
+          ],
+        },
       ],
       faq: [
         {
@@ -599,6 +775,22 @@ export const pagesId: LocalePages = {
         {
           q: "Apa yang bisa dibatalkan, dan bagaimana garansinya?",
           a: "Diagnostic tak mewajibkan melanjutkan ke Build. Setiap Build mencakup garansi pasca-peluncuran empat minggu terhadap ambang eval yang disepakati; Retainer punya minimum enam bulan dan selain itu berkelanjutan.",
+        },
+        {
+          q: "Bagaimana cara membandingkan penawaran konsultasi AI secara adil?",
+          a: "Normalkan pada hasil yang dikirim, bukan tarif harian. Tulis satu definisi 'selesai' — alur kerja, kriteria sukses yang terukur, dan sistem yang harus dihubungkan — lalu minta setiap vendor menetapkan harga terhadapnya. Saat hasilnya tetap, harga menjadi sebanding, dan penawaran yang jauh di bawah lainnya biasanya mengungkap eval, integrasi, atau kepemilikan yang hilang, bukan penghematan sejati.",
+        },
+        {
+          q: "Mengapa penawaran termurah bisa jadi paling mahal?",
+          a: "Karena celahnya biasanya ruang lingkup yang dihilangkan, bukan margin. Harga rendah yang melewatkan kerangka eval, telemetri, atau infrastruktur yang dimiliki menunda biaya-biaya itu melewati tanda tangan, di mana daya tawar Anda paling lemah. Waspadai terutama harga Build tetap yang ditetapkan tanpa langkah pelingkupan — entah ia menyembunyikan risiko untuk dinegosiasikan ulang nanti atau berniat beralih ke time-and-materials saat pekerjaan menjadi sulit.",
+        },
+        {
+          q: "Berapa total biaya memiliki sistem AI selama beberapa tahun?",
+          a: "Selama tiga sampai lima tahun, baris berulang mendominasi. Sistem yang disewa punya harga masuk rendah tetapi biaya bulanan yang tak pernah berakhir dan biaya keluar yang membesar. Sistem yang dimiliki berbiaya lebih besar secara terlihat di muka, lalu berjalan dengan biaya yang Anda kendalikan — penggunaan model, hosting Anda sendiri, Retainer opsional — dengan biaya keluar yang praktis nol. Jalur kepemilikan kerap lebih murah pada tahun kedua.",
+        },
+        {
+          q: "Apa yang harus ditanyakan ke vendor sebelum berkomitmen pada harga?",
+          a: "Tanyakan siapa yang memegang kode, akun cloud, dan kunci model pada akhirnya; bagaimana 'selesai' didefinisikan dan diukur; serta apa yang terjadi jika mutu melenceng setelah peluncuran. Lalu tanyakan langsung: dalam model Anda, apakah Anda lebih banyak menghasilkan dengan menyelesaikan atau dengan melanjutkan? Vendor yang yakin pada harga tetapnya akan menunjukkan langkah pelingkupan yang memetakan variansi sebelum menetapkan harga, bukan sekadar penenangan.",
         },
       ],
     },
@@ -644,6 +836,38 @@ export const pagesId: LocalePages = {
             "Diagnostic ada untuk menghasilkan persis ruang lingkup ini — tetapi Anda bisa mengerjakan sebagian besarnya sendiri dulu, dan tiba di percakapan dengan ketidakpastian sudah dipersempit.",
           ],
         },
+        {
+          h2: "Bagaimana ruang lingkup terhubung ke empat prinsip",
+          body: [
+            "Ruang lingkup bukan formalitas pengadaan yang terjadi sebelum rekayasa sebenarnya; ia adalah tindakan rekayasa pertama, dan masing-masing dari enam komponennya mengalir langsung ke salah satu dari empat prinsip metodologi. Metrik sukses menjadi suite eval — eval sebelum fitur hanya berhasil jika ruang lingkup sudah menamai seperti apa 'berfungsi' dalam angka. Inventaris data dan titik integrasi menentukan di mana telemetri harus diinstrumentasi, karena Anda tak bisa merekam mutu pada jalur yang tak pernah dilacak ruang lingkup. Batasan — residensi data, latensi, anggaran — menentukan bentuk infrastruktur yang dimiliki, sebab merekalah yang menetapkan cloud mana, akun model mana, dan penyimpanan mana yang harus dijalankan sistem.",
+            "Jangkar jadwal adalah yang membuat pod ramping pada jam tetap sama sekali memungkinkan. Pod dua hingga tiga orang yang bekerja pada jam delapan minggu hanya bisa berkomitmen pada sebuah tanggal jika ruang lingkup telah membatasi apa yang dikomitmenkannya. Dibaca sebaliknya, ini uji yang berguna untuk ruang lingkup Anda sendiri: ambil tiap baris dan tanyakan prinsip mana yang dilayaninya. Jika sebuah baris tak memetakan ke satu pun darinya — jika ia tak mendefinisikan selesai, tak menamai di mana mengukur, tak membentuk apa yang Anda miliki, dan tak mengatur irama jam — ia mungkin sekadar hiasan, dan hiasan dalam ruang lingkup adalah tempat biaya menumpuk diam-diam.",
+            "Inilah juga mengapa metodologi vendor dan ruang lingkup Anda tak bisa dinilai terpisah. Ruang lingkup yang ditulis untuk vendor tanpa disiplin eval tetap akan menyimpang, karena tak ada apa pun di hilir untuk meminta pertanggungjawaban metrik sukses. Ruang lingkup terkuat di dunia tak bisa menyelamatkan model pengiriman yang untung dari pekerjaan yang terus berlanjut — dan pod paling ramping dan paling disiplin tak bisa menyelamatkan ruang lingkup yang tak pernah menyatakan arti selesai.",
+          ],
+        },
+        {
+          h2: "Pertanyaan untuk diajukan ke vendor sebelum Anda tanda tangan",
+          body: [
+            "Ruang lingkup diuji dalam percakapan yang mengikutinya, dan pertanyaan yang diajukan balik oleh vendor mengatakan lebih banyak daripada proposal yang mereka kirim. Hal pertama yang harus disusupi adalah metrik sukses: tanyakan bagaimana mereka berniat mengubah definisi selesai Anda menjadi sesuatu yang otomatis dan dapat diulang. Vendor serius akan bicara tentang golden dataset, rubrik penilaian, dan ambang batas; yang lebih lemah akan meyakinkan Anda bahwa mereka 'akan tahu begitu melihatnya', yang justru keterbukaan tanpa batas yang ruang lingkup baik ada untuk mencegahnya. Tanyakan pula apa yang akan mereka tolak untuk dihargai sampai mereka melihat data Anda — vendor yang menghargai ruang lingkup apa pun tanpa melihat entah melebihkan banyak atau berencana menagih selisihnya nanti.",
+            "Rangkaian pertanyaan kedua adalah tentang variansi dan apa yang terjadi saat build ternyata lebih sulit dari perkiraan. Tanyakan langsung: di bawah model Anda, apakah Anda untung lebih banyak dengan menyelesaikan atau dengan melanjutkan? Tanyakan apa yang dihasilkan langkah pelingkupan, apakah harga dipatok terhadapnya, dan terhadap apa garansi diukur. Jawaban jujur di sini spesifik — harga tetap yang dihargai hanya setelah Diagnostic, garansi yang diukur terhadap ambang eval yang disepakati, pernyataan jelas tentang apa yang di luar ruang lingkup. Kekaburan dalam jawaban adalah ramalan kekaburan dalam tagihan.",
+            "Terakhir, tanyakan apa yang akan Anda pegang saat keterlibatan berakhir. Di mana kode akan tinggal, akun cloud siapa yang menjalankannya, siapa yang memiliki kunci model dan penyimpanan telemetri. Jawabannya memisahkan pembangun dari tuan tanah — dan perbedaannya paling penting justru saat hubungan berjalan baik, karena saat itulah pembeli paling enggan memeriksa. Lingkupi pintu keluar sebelum Anda melingkupi build; jauh lebih murah menegosiasikan kepemilikan saat masuk daripada menemukan ketiadaannya saat keluar.",
+          ],
+        },
+        {
+          h2: "Mengurutkan ruang lingkup: apa yang ditetapkan lebih dulu",
+          body: [
+            "Enam komponen itu tidak sama mendesaknya, dan mencoba menyempurnakan semuanya secara paralel itu sendiri kesalahan pelingkupan. Ada urutan yang mengurangi risiko pekerjaan paling cepat. Tetapkan inventaris data lebih dulu, karena ia komponen yang paling mungkin keliru dengan cara yang menggugurkan segala sesuatu di hilir — target alur kerja dan metrik sukses yang dibangun di atas data yang ternyata tak lengkap, tak terakses, atau terbebani secara hukum adalah jawaban canggih untuk pertanyaan yang salah. Pastikan data itu ada, bahwa Anda bisa menggunakannya secara sah, dan bahwa ia representatif terhadap produksi sebelum Anda menanam usaha di tempat lain.",
+            "Dengan data terkonfirmasi, tetapkan target alur kerja dan metrik sukses bersama-sama, karena keduanya saling membatasi: metrik hanya bermakna terhadap operasi spesifik, dan operasi hanya layak diubah jika suksesnya bisa diukur. Lalu petakan titik integrasi, di mana biaya tak teranggarkan terbesar biasanya bersembunyi — pekerjaan tak gemerlap menghubungkan ke sistem yang berperilaku sama sekali tak seperti dokumentasinya. Batasan dan jangkar jadwal datang terakhir bukan karena paling tak penting tetapi karena paling mudah dinyatakan begitu substansinya beres; sebuah tanggal dan aturan residensi cepat ditulis dan cepat diverifikasi.",
+            "Batas jujur dari mengerjakan ini sendiri adalah pekerjaan data dan integrasi. Anda bisa menulis target alur kerja yang kuat, metrik sukses yang dapat diuji, dan seperangkat batasan yang jelas tanpa vendor di ruangan. Yang biasanya tak bisa Anda tuntaskan sendiri adalah apakah data benar-benar akan mendukung metrik dan apakah integrasinya sebersih tampaknya — dan ketidakpastian itulah yang justru dirancang untuk dikurangi harganya oleh Diagnostic dua minggu sebelum Build dihargai.",
+          ],
+        },
+        {
+          h2: "Kesalahpahaman umum tentang pelingkupan",
+          body: [
+            "Kesalahpahaman paling membandel adalah bahwa ruang lingkup terperinci memperlambat proyek — bahwa mematok segalanya sebelum build adalah beban birokrasi yang menunda pekerjaan menarik. Yang sebaliknya benar khusus untuk AI, karena ketidakpastian yang dibiarkan tak terselesaikan oleh ruang lingkup longgar tak hilang; ia hanya ditunda ke saat ketika jauh lebih mahal untuk dihadapi. Metrik sukses yang dibiarkan kabur saat tanda tangan menjadi sengketa saat pengiriman. Integrasi yang diasumsikan saat pelingkupan menjadi dua pekan pekerjaan tak terencana saat build. Perincian bukanlah biayanya; ia hal yang mencegah biaya itu.",
+            "Kesalahpahaman kedua adalah bahwa ruang lingkup lebih panjang adalah ruang lingkup lebih baik. Panjang bukanlah sinyalnya — keterujian-lah sinyalnya. Satu halaman baris yang dapat dibangun dan dihargai mengalahkan sepuluh halaman aspirasi, dan menjejali ruang lingkup dengan kapabilitas yang tak dibutuhkan proyek adalah cara andal untuk menggelembungkan baik penawaran maupun permukaan risiko. Disiplinnya bersifat mengurangi: ruang lingkup yang baik sama-sama merupakan catatan apa yang secara eksplisit di luar batas dan apa yang di dalam. Menamai pengecualian secara jelas adalah yang menjaga jam delapan minggu tetap jujur.",
+            "Kesalahpahaman ketiga adalah bahwa ruang lingkup tetap begitu ditandatangani. Dalam praktik ruang lingkup adalah batasan hidup yang dijaga jujur oleh telemetri dan eval — metrik sukses yang disepakati di awal adalah tolok ukur yang nanti dipakai untuk mengukur data produksi, dan regresi di bawahnya adalah perkara garansi alih-alih negosiasi ulang. Yang tak boleh bergeser adalah definisi selesai; yang bisa dipelajari adalah bagaimana realitas dibandingkan dengannya. Memperlakukan ruang lingkup sebagai dokumen sekali jadi alih-alih komitmen terukur adalah cara keterlibatan yang mulai baik tetap menyimpang di paruh keduanya.",
+          ],
+        },
       ],
       faq: [
         {
@@ -665,6 +889,22 @@ export const pagesId: LocalePages = {
         {
           q: "Bisakah Diagnostic melakukan pelingkupan untuk kami?",
           a: "Ya — menghasilkan ruang lingkup ini persis yang diberikan Diagnostic dua minggu. Mengerjakan dasarnya sendiri dulu membuat Diagnostic lebih cepat dan Build yang dihasilkan lebih murah.",
+        },
+        {
+          q: "Siapa yang harus menulis ruang lingkup — kami atau vendor?",
+          a: "Keduanya, secara berurutan. Anda bisa menulis target alur kerja, metrik sukses, dan batasan sebelum vendor mana pun terlibat, yang mempertajam tiap percakapan yang menyusul. Yang biasanya tak bisa Anda selesaikan sendiri adalah memastikan data mendukung metrik dan integrasinya bersih — itulah yang dikurangi harganya oleh Diagnostic dua minggu sebelum sebuah Build dihargai. Tiba dengan ketidakpastian sudah dipersempit membuat Diagnostic lebih cepat dan Build lebih murah.",
+        },
+        {
+          q: "Seberapa terperinci ruang lingkup AI sebelum kami bicara dengan vendor?",
+          a: "Cukup terperinci sehingga dua vendor akan menghargainya sama, dan tak lebih. Sinyalnya adalah keterujian, bukan panjang: satu halaman baris yang dapat dibangun dan dihargai mengalahkan sepuluh halaman aspirasi. Patok alur kerja, kriteria sukses terukur, dan apa yang secara eksplisit di luar batas. Biarkan kelayakan data dan kedalaman integrasi sebagai ketidakpastian bernama — itulah persis yang langkah pelingkupan ada untuk menyelesaikannya, dan menebaknya hanya menciptakan presisi palsu.",
+        },
+        {
+          q: "Tanda bahaya ruang lingkup apa yang seharusnya membuat kami menjauh dari vendor?",
+          a: "Tiga. Harga Build tetap yang dihargai tanpa langkah pelingkupan adalah tebakan atau rencana menagih selisihnya nanti. Kriteria sukses yang digambarkan vendor sebagai 'kami akan tahu begitu melihatnya' tak punya eval di baliknya dan akan menyimpang. Dan sistem yang tinggal di cloud, repo, atau akun model vendor adalah penguncian secara rancangan. Tiap tanda bahaya mengubah keterlibatan terdefinisi menjadi terbuka.",
+        },
+        {
+          q: "Bisakah ruang lingkup berubah setelah Build dimulai?",
+          a: "Definisi selesai tak boleh. Itulah satu hal yang menjadi sandaran harga tetap, garansi, dan suite eval — geser ia di tengah Build dan keterlibatan menjadi terbuka. Yang bisa berubah adalah pemahaman Anda tentang bagaimana realitas dibandingkan dengan definisi itu, yang dimunculkan oleh telemetri. Regresi di bawah ambang yang disepakati adalah perkara garansi, bukan negosiasi ulang. Ruang lingkup baru yang sejati adalah pekerjaan baru, dihargai terpisah, bukan diserap diam-diam ke dalam jam asli.",
         },
       ],
     },
@@ -710,6 +950,30 @@ export const pagesId: LocalePages = {
             "Model yang tepat adalah yang membuat vendor hanya menang ketika Anda menang.",
           ],
         },
+        {
+          h2: "Membaca klausul permintaan perubahan",
+          body: [
+            "Model penetapan harga di halaman sampul bukan tempat insentif sesungguhnya berada — ia berada pada cara perubahan ditangani begitu pekerjaan dimulai. Kontrak per jam tidak punya klausul permintaan perubahan karena segalanya adalah perubahan: setiap ide baru cuma menambah jam. Kontrak ruang lingkup tetap harus mendefinisikan apa yang terjadi ketika brief bergeser, dan dalam definisi itulah vendor jujur berpisah dari vendor oportunistik. Klausul yang perlu dibaca adalah yang menyatakan apa yang masuk lingkup, apa yang secara eksplisit di luar, dan bagaimana permintaan di luar lingkup dihargai.",
+            "Vendor yang punya metode menulis ruang lingkup ketat justru karena ia berniat mencapainya; ruang lingkup itu komitmennya, bukan jebakan bagi Anda. Vendor yang tak punya menulis ruang lingkup longgar agar hampir apa pun bisa ditagih sebagai tambahan. Petunjuknya adalah kespesifikan: kesepakatan ruang lingkup tetap yang nyata menyebut ambang eval yang menjadi dasar harga build, sehingga sebuah perubahan adalah apa pun yang menggeser ambang itu — bukan apa pun yang lebih disukai vendor untuk ditagih terpisah. PRIONATION menetapkan garis itu di Diagnostic, sebelum Build dihargai, itulah mengapa ruang lingkup bisa ketat tanpa menjadi adversarial.",
+            "Batas jujurnya adalah perubahan sejati memang terjadi, dan harga tetap tak bisa berpura-pura sebaliknya. Yang bisa ia lakukan adalah membuat batasnya terbaca: ketika persyaratan baru muncul di tengah Build, ia dihargai sebagai potongan pekerjaan terbatasnya sendiri terhadap eval yang direvisi, bukan diserap diam-diam atau diperdebatkan saat tenggat. Itulah beda antara harga tetap yang bertahan dan harga tetap yang diam-diam menjadi time-and-materials begitu brief pertama kali bergeser.",
+          ],
+        },
+        {
+          h2: "Bagaimana model membentuk apa yang sebenarnya Anda terima",
+          body: [
+            "Penetapan harga bukan cuma soal biaya — ia diam-diam menentukan bentuk artefak yang akhirnya Anda miliki. Pekerjaan per jam cenderung menghasilkan apa pun yang ada di hadapan insinyur minggu itu, karena tak ada tekanan struktural menuju keutuhan yang koheren; sistem menumpuk alih-alih dirancang. Pekerjaan berbasis milestone menarik ke arah fragmen yang bisa didemokan, karena tiap pembayaran dilepas terhadap sesuatu yang bisa ditunjukkan, dan bagian-bagian yang membuat sistem layak produksi — penanganan error, telemetri, pengerasan yang tak glamor — adalah bagian yang tak seorang pun demokan.",
+            "Build ruang lingkup tetap yang dihargai terhadap suite eval menarik ke arah sebaliknya. Karena vendor dibayar untuk sistem yang melewati ambang yang disepakati di produksi, insentifnya adalah membelanjakan tepat pada pekerjaan yang menggeser ambang itu, termasuk bagian-bagian yang tak terlihat. Itulah mengapa keempat prinsip bukan metodologi terpisah yang ditempelkan pada model komersial — keduanya adalah apa yang dengan alami diberi imbalan oleh harga tetap yang terstruktur dengan benar. Eval mendefinisikan ambangnya, telemetri membuktikan ia terlewati, infrastruktur yang dimiliki berarti hasilnya milik Anda, dan pod ramping adalah satu-satunya bentuk tim yang bisa dibayar dengan cara ini tanpa melebihkan tagihan.",
+            "Konsekuensi praktis bagi pembeli adalah model penetapan harga merupakan proksi yang masuk akal untuk kualitas build bahkan sebelum Anda melihat satu baris kode. Tanyakan bukan hanya berapa yang akan Anda bayar tetapi apa yang model itu beri imbalan kepada vendor untuk dihasilkan — sistem yang berjalan, terinstrumentasi, dan dimiliki, atau rangkaian momen mengesankan yang tak menjumlah. Keduanya bisa berbiaya sama dan meninggalkan Anda dengan aset yang sangat berbeda.",
+          ],
+        },
+        {
+          h2: "Total biaya kepemilikan di luar faktur",
+          body: [
+            "Harga utama adalah bagian terkecil dari apa yang dibebankan sebuah misi AI kepada Anda. Biaya yang lebih besar datang kemudian: tagihan penggunaan penyedia model, hosting, waktu rekayasa untuk menjaga sistem tetap mutakhir seiring model dan dependensi bergerak, dan — yang paling mahal — biaya berpindah vendor jika hubungan memburuk. Tarif per jam murah yang menghasilkan sistem yang tak bisa Anda operasikan atau tinggalkan tidaklah murah; ia tagihan tertunda tanpa plafon. Harga tetap yang menyerahkan sistem yang bisa dijalankan tim Anda sendiri adalah kebalikannya: biaya yang diketahui sekarang sebagai ganti biaya yang terkendali nanti.",
+            "Di sinilah infrastruktur yang dimiliki mengubah hitungannya. Ketika kode, hosting, data, dan akun model berada di lingkungan Anda sejak hari pertama, biaya pasca-misi adalah biaya yang Anda kendalikan dan bisa Anda bandingkan — Anda bisa menjalankannya secara internal, menahan PRIONATION pada Retainer, atau pindah ke tim lain. Ketika salah satunya berada pada vendor, biaya pasca-misi adalah berapa pun yang mereka putuskan untuk dibebankan, karena pergi berarti membangun ulang. Model penetapan harga pada proposal hampir tak memberi tahu Anda apa pun soal ini; ketentuan kepemilikanlah yang memberi tahu segalanya.",
+            "Timbang Retainer dalam kerangka yang sama. Pada empat hingga sembilan ribu euro per bulan dengan minimum enam bulan, ia komitmen nyata, dan harus diukur terhadap telemetri yang menunjukkan apa yang diubah tiap iterasi — bukan dibeli sebagai asuransi terhadap sistem yang kuncinya tak pernah diserahkan kepada Anda. Retainer yang menempel pada infrastruktur yang dimiliki adalah pilihan yang Anda perbarui atas nilai. Retainer yang menempel pada sistem yang tak bisa Anda jalankan hanyalah penguncian dengan faktur bulanan.",
+          ],
+        },
       ],
       faq: [
         {
@@ -739,6 +1003,22 @@ export const pagesId: LocalePages = {
         {
           q: "Bagaimana jika pekerjaannya tidak selesai dalam delapan minggu?",
           a: "Berarti ruang lingkupnya keliru, dan itu kegagalan penentuan lingkup yang harus diperbaiki di Diagnostic, bukan kejutan yang ditanggung di tengah Build. Jam tetap memaksa percakapan prioritas yang sulit dilakukan di awal, saat masih murah, alih-alih di tenggat, saat sudah mahal.",
+        },
+        {
+          q: "Bukankah harga tetap cuma berarti kami membayar premi untuk risiko vendor?",
+          a: "Memang begitu jika tak ada metode di baliknya — vendor tanpa metode melebihkan angka untuk menutup variansi yang tak bisa ia kendalikan. Tujuan eval, telemetri, dan infrastruktur yang dimiliki adalah menghapus variansi itu sebelum harga ditetapkan, di Diagnostic. Harga tetap yang dibangun di atas ruang lingkup yang sudah dipetakan dihargai terhadap pekerjaan yang diketahui, bukan dilebihkan terhadap risiko yang tak diketahui.",
+        },
+        {
+          q: "Bisakah kami mulai per jam lalu beralih ke harga tetap kemudian?",
+          a: "Diagnostic pada dasarnya adalah jalur itu, dilakukan secara sengaja. Ia misi kecil dua minggu berharga tetap yang memetakan hambatan dan menetapkan kriteria eval — pekerjaan pelingkupan yang akan dilakukan tanpa batas oleh pengaturan per jam yang terbuka. Begitu ia ada, harga Build tetap bisa dihargai dengan jujur. Per jam terbuka yang tak pernah berubah menjadi ruang lingkup terdefinisi adalah pola yang harus dihindari.",
+        },
+        {
+          q: "Bagaimana cara membandingkan dua penawaran harga tetap yang berbeda jauh?",
+          a: "Bandingkan ruang lingkupnya, bukan totalnya. Penawaran lebih tinggi dengan ambang eval yang disebut, garansi, dan infrastruktur yang dimiliki bisa berbiaya lebih rendah dalam total kepemilikan daripada penawaran lebih rendah yang menghilangkannya. Tanyakan tiap vendor terhadap apa harganya diukur dan apa yang Anda pegang ketika mereka pergi. Jika salah satu tak bisa menjawab dalam istilah konkret, selisihnya adalah risiko yang akan Anda tanggung, bukan penghematan.",
+        },
+        {
+          q: "Model penetapan harga apa yang cocok untuk perbaikan berkelanjutan setelah peluncuran?",
+          a: "Retainer, tetapi hanya dilingkupi terhadap telemetri sehingga dampak tiap iterasi terlihat. Pada empat hingga sembilan ribu euro per bulan dengan minimum enam bulan, ia membeli kapasitas senior berkelanjutan untuk sistem yang sudah Anda miliki. Hindari pengaturan terbuka bertipe 'terus perbaiki saja' tanpa ukuran nilai — itu retainer yang menyimpang ke anti-pola per jam dengan nama berbeda.",
         },
       ],
     },
@@ -786,6 +1066,38 @@ export const pagesId: LocalePages = {
             "Jika operasi Anda menjalankan angka kritis di spreadsheet yang dipelihara terpisah tiap lokasi, itu biasanya hambatan yang layak dipetakan pertama.",
           ],
         },
+        {
+          h2: "Mengapa inventaris multi-lokasi terus rusak dengan cara yang sama",
+          body: [
+            "Di makanan dan minuman, masalah inventaris secara struktural lebih sulit ketimbang di kebanyakan ritel multi-lokasi, karena stoknya mudah rusak, satuan ukurnya bergeser saat bahan berpindah dari pengiriman ke persiapan ke piring, dan limbah adalah pos biaya nyata, bukan kesalahan pembulatan. Tiap lokasi mengembangkan konvensinya sendiri — apa arti sebuah 'krat', bagaimana stok terpakai sebagian dihitung, kapan penghitungan dilakukan — dan konvensi itu tak terlihat sampai seseorang mencoba menjumlahkan angka-angkanya. Penyimpangan ini bukan kelalaian; ia hasil yang dapat diprediksi dari tiap lokasi yang mengoptimalkan harinya sendiri sementara tak ada definisi bersama di atas mereka.",
+            "Alasan ini berulang di banyak operator adalah karena pendekatan manual bekerja sempurna di satu atau dua lokasi dan gagal diam-diam di lima atau sepuluh. Pendiri yang bisa menampung seluruh operasi di kepalanya jelas tak bisa lagi begitu operasi membentang ke banyak lokasi, dan spreadsheet yang menskalakan ekspansi pertama berubah menjadi hal yang membatasi ekspansi berikutnya. Saat bebannya terasa sebagai pajak, operasi biasanya sudah menyalurkan uang sungguhan — pemesanan berlebih, isi ulang darurat, penghapusan — lewat selisih antara apa yang dikira dimiliki tiap lokasi dan apa yang benar-benar dimilikinya.",
+            "Mengenali pola ini penting karena ia menunjukkan ke mana build pertama harus diarahkan. Naluri sering mengejar sistem peramalan atau prediksi permintaan — proyek yang tampak cerdas. Tapi peramalan yang dibangun atas angka yang tak terekonsiliasi adalah jawaban salah yang penuh percaya diri. Pengurutan yang jujur adalah membuat pandangan saat ini benar dan bersama sebelum mencoba meramalkan apa pun darinya, dan itulah persis mengapa sumber kebenaran terpusat, bukan sebuah model, adalah build pertama yang tepat bagi operator pada tahap ini.",
+          ],
+        },
+        {
+          h2: "Penalaran rekayasanya: satu model, bukan banyak integrasi",
+          body: [
+            "Cara yang menggoda untuk memusatkan inventaris multi-lokasi adalah membiarkan proses tiap lokasi tetap pada tempatnya dan membangun konektor yang menarik angka tiap lokasi ke dalam dashboard. Ia berdemo dengan baik dan mengubah sedikit — karena dashboard di atas data yang tak konsisten mewarisi ketidakkonsistenannya. Jika dua lokasi menghitung stok terpakai sebagian secara berbeda, agregasi sebanyak apa pun tak merekonsiliasinya; dashboard hanya menampilkan ketidaksepakatan itu dalam resolusi lebih tinggi. Pekerjaan yang benar-benar menghapus beban ada di hulu: menyepakati satu definisi sebuah item, sebuah penghitungan, dan sebuah lokasi, dan membuat tiap lokasi mencatat menurut model tunggal itu alih-alih menerjemahkannya setelah kejadian.",
+            "Inilah mengapa Diagnostic untuk build seperti ini mencurahkan upayanya pada domain sebelum layar apa pun dirancang. Pertanyaan yang menentukan hasil justru tak megah — apa satuan kanonik untuk tiap bahan, peristiwa apa yang dianggap stok keluar dari inventaris, bagaimana transfer antar lokasi direpresentasikan agar tak terhitung ganda — dan jauh lebih murah menjawabnya di atas kertas ketimbang menemukannya di produksi. Mendefinisikan 'pandangan inventaris yang benar dan terkini' dalam istilah terukur adalah yang mengubah proyek dashboard tanpa batas menjadi build berbatas dengan uji yang jelas untuk kata selesai.",
+            "Imbalan dari memodelkan dengan benar adalah konsistensi menjadi properti sistem alih-alih disiplin yang harus dipelihara staf. Saat tiap lokasi menulis menurut definisi yang sama, rekonsiliasi berhenti menjadi tugas berulang karena tak ada yang perlu direkonsiliasi — angka-angka tak pernah dibiarkan menyimpang. Itulah perbedaan antara perangkat lunak yang melaporkan masalah dan perangkat lunak yang menghapusnya, dan itulah alasan build menggantikan proses manual alih-alih duduk di sampingnya.",
+          ],
+        },
+        {
+          h2: "Apa yang sengaja tidak dibangun",
+          body: [
+            "Disiplin jam delapan minggu yang tetap sebagian besar adalah disiplin mengatakan tidak, dan build seperti ini punya daftar jelas hal-hal untuk ditolak. Pemesanan ulang otomatis, integrasi pemasok, peramalan permintaan, dan penghitungan biaya menu dinamis semuanya ambisi yang masuk akal untuk sistem inventaris matang — dan semuanya berada di hilir dari satu pandangan stok yang akurat dan bersama, yang belum ada. Membangunnya lebih dulu berarti membangun kecanggihan di atas angka yang masih menyimpang, yang merupakan cara proyek AI memperoleh fitur mengesankan yang tak cukup dipercaya siapa pun untuk ditindaklanjuti.",
+            "Cakupan yang disengaja adalah sistem produksi terkecil yang membuat pandangan inventaris saat ini benar dan bersama antar lokasi, dengan telemetri untuk mengetahui ia tetap benar. Pengekangan itu bukan kehati-hatian demi kehati-hatian; ia yang memungkinkan operasi membuktikan fondasinya bekerja sebelum keputusan apa pun diotomatiskan di atasnya. Pemilik yang akhirnya bisa memercayai satu angka di semua lokasi berada di posisi jauh lebih baik untuk mencakup build berikutnya — dan untuk melakukannya berdasar pemakaian nyata alih-alih daftar keinginan yang ditulis sebelum fondasinya ada.",
+            "Menamai batasnya juga jujur soal pengurutan ketimbang kapabilitas. Peramalan dan pemesanan ulang otomatis benar-benar berharga, dan operator multi-lokasi kemungkinan akan menginginkannya — nanti, sebagai build kedua yang dicakup berdasar telemetri dari yang pertama. Poin yang dapat dialihkan adalah bahwa urutannya itulah seluruh permainannya: sumber kebenaran terpusat adalah aset yang memungkinkan segala sesuatu sesudahnya, dan mencoba lapisan cerdas lebih dulu adalah cara paling umum fondasinya sama sekali tak pernah terbangun.",
+          ],
+        },
+        {
+          h2: "Cara mengetahui apakah pola ini milik Anda — dan apa yang tak bisa diperbaiki perangkat lunak",
+          body: [
+            "Ada beberapa sinyal jujur bahwa sebuah operasi punya hambatan berbentuk Epidom. Penghitungan stok hidup di spreadsheet per lokasi yang dikonsolidasi seseorang dengan tangan. Item yang sama dideskripsikan berbeda tergantung siapa yang memasukkannya. Pertanyaan sedasar 'berapa banyak yang kita punya di semua lokasi saat ini?' butuh berjam-jam dan menghasilkan jawaban yang diam-diam tak dipercaya orang. Dan waktu yang dihabiskan untuk merekonsiliasi tumbuh tiap kali sebuah lokasi ditambahkan, alih-alih tetap datar. Jika dua atau lebih dari itu benar, pajak rekonsiliasi manual itu nyata dan hampir pasti hal dengan imbal hasil tertinggi untuk dipetakan pertama.",
+            "Batas jujurnya adalah sistem terpusat memperbaiki struktur masalahnya, bukan masukannya. Jika penghitungan dimasukkan sembarangan, atau stok secara fisik keluar lewat pintu belakang, tak ada model yang akan membuat angka-angkanya benar — perangkat lunak menegakkan satu definisi sebuah penghitungan, tapi ia tak bisa menegakkan bahwa penghitungan itu dilakukan dengan jujur. Yang dilakukan sistem adalah membuat selisih terlihat dan dapat diatribusikan, yang sering cukup untuk mengubah perilaku, tapi disiplin pemasukan yang akurat tetap tanggung jawab manusia yang didukung perangkat lunak alih-alih digantikannya.",
+            "Layak pula dikatakan terus terang apa yang tak diberikan kelas build ini: dengan sendirinya, ia tak mengurangi limbah, tak memangkas biaya pemasok, atau memperbaiki margin. Ia menghapus beban menjaga angka tetap lurus dan memberi operasi basis tepercaya untuk membuat keputusan-keputusan itu. Perbaikan margin adalah sesuatu yang diperoleh operator dengan bertindak atas pandangan yang jernih — tugas build adalah memastikan pandangannya akhirnya layak ditindaklanjuti.",
+          ],
+        },
       ],
       faq: [
         {
@@ -807,6 +1119,22 @@ export const pagesId: LocalePages = {
         {
           q: "Bagaimana build serupa dimulai?",
           a: "Dengan Diagnostic dua minggu yang memetakan hambatan operasional dan mendefinisikan target terukur sebelum sistem apa pun dibangun.",
+        },
+        {
+          q: "Mengapa memusatkan data alih-alih sekadar menambahkan dashboard pelaporan di atas spreadsheet yang ada?",
+          a: "Dashboard di atas data yang tak konsisten mewarisi ketidakkonsistenannya — ia menunjukkan ketidaksepakatan antar lokasi dalam resolusi lebih tinggi alih-alih menyelesaikannya. Perbaikannya di hulu: sepakati satu definisi sebuah item, sebuah penghitungan, dan sebuah lokasi, lalu buat tiap lokasi mencatat menurut model itu. Konsistensi menjadi properti sistem alih-alih disiplin yang harus dipelihara staf dengan tangan.",
+        },
+        {
+          q: "Mengapa inventaris multi-lokasi lebih sulit khususnya di makanan dan minuman?",
+          a: "Stoknya mudah rusak, satuan ukurnya bergeser saat bahan berpindah dari pengiriman ke persiapan ke piring, dan limbah adalah pos biaya nyata. Tiap lokasi mengembangkan konvensi penghitungannya sendiri, yang tetap tak terlihat sampai seseorang mencoba menjumlahkan angka-angkanya. Penyimpangannya bukan kelalaian — ia tiap lokasi yang mengoptimalkan harinya sendiri tanpa definisi bersama di atas mereka.",
+        },
+        {
+          q: "Mengapa tidak membangun peramalan atau pemesanan ulang otomatis sekaligus?",
+          a: "Karena keduanya berada di hilir dari satu pandangan stok yang akurat dan bersama, yang belum ada. Peramalan yang dibangun atas angka yang tak terekonsiliasi adalah jawaban salah yang penuh percaya diri. Urutan yang jujur adalah membuat pandangan saat ini benar dan bersama dulu, lalu mencakup peramalan atau pemesanan ulang sebagai build kemudian berdasar telemetri nyata — bukan menumpuk lapisan cerdas di atas fondasi yang menyimpang.",
+        },
+        {
+          q: "Bagaimana saya tahu apakah operasi saya punya hambatan yang sama ini?",
+          a: "Perhatikan beberapa sinyal: penghitungan stok hidup di spreadsheet per lokasi yang dikonsolidasi seseorang dengan tangan, item yang sama dideskripsikan berbeda oleh orang berbeda, pertanyaan seperti 'berapa banyak yang kita punya di semua lokasi saat ini?' butuh berjam-jam dan menghasilkan jawaban yang tak dipercaya orang, dan waktu rekonsiliasi tumbuh tiap ada lokasi baru. Jika dua atau lebih benar, ini kemungkinan build pertama Anda dengan imbal hasil tertinggi.",
         },
       ],
     },
@@ -852,6 +1180,38 @@ export const pagesId: LocalePages = {
             "Jika dua sisi platform Anda berdebat tentang apa yang terjadi, perbaikannya biasanya di hulu pada model data, bukan di salah satu fitur.",
           ],
         },
+        {
+          h2: "Mengapa hambatan ini berulang pada platform logistik dua sisi",
+          body: [
+            "Marketplace logistik adalah dua bisnis yang mengenakan satu logo. Sisi penawaran berperilaku seperti bursa keuangan — harga bergerak, tawaran kedaluwarsa, pihak lawan berkomitmen — sementara sisi pelacakan berperilaku seperti meja operasi, tempat sebuah pengiriman adalah benda fisik yang bergerak melewati keadaan dunia nyata. Kebanyakan tim merekrut dan membangun kedua bagian ini terpisah karena terasa seperti disiplin yang berbeda, dan pemisahan organisasional itu diam-diam menjadi pemisahan arsitektural. Sistem penawaran belajar berpikir dalam tawaran dan uang; sistem operasi belajar berpikir dalam etape dan tonggak; dan tak ada apa pun dalam basis kode yang memaksa keduanya sepakat tentang apa sebenarnya satu pekerjaan itu.",
+            "Pemisahan ini jarang merupakan kesalahan sekali jadi — ia adalah jalur dengan hambatan paling kecil bagi platform yang sedang tumbuh. Marketplace biasanya diluncurkan dengan alur penawaran karena di situlah kegembiraan sisi permintaan berada, lalu menempelkan pelacakan begitu pengiriman pertama harus bergerak. Saat pelacakan menjadi penting, sisi penawaran sudah mendefinisikan kosakatanya sendiri, dan integrasi menjadi masalah penerjemahan antara dua model yang tak pernah dimaksudkan menjadi satu. Inilah sebabnya polanya berulang di platform logistik, pengangkutan, dan pengadaan terlepas dari ukurannya: urutan fitur dibangun nyaris menjamin datanya menyimpang.",
+            "Pembingkaian yang jujur adalah ini bukan kesenjangan teknologi. Tim yang menabraknya kompeten; kegagalannya struktural, tertanam sebelum siapa pun menulis satu baris kode integrasi. Itu juga sebabnya ia bisa diperbaiki — masalah struktural merespons keputusan struktural, dibuat sekali, tentang di mana kebenaran itu berada.",
+          ],
+        },
+        {
+          h2: "Penalaran rekayasanya: satu catatan, bukan dua sistem yang berbicara",
+          body: [
+            "Keputusan inti pada Expeditoo adalah menjadikan satu catatan sebagai tulang punggung seluruh platform — pekerjaan itu — dan memperlakukan penawaran dan pelacakan sebagai dua tampilan dari satu catatan itu, bukan dua sistem yang saling bertukar pesan tentangnya. Ketika sebuah penawaran menang, ia tidak 'membuat' pengiriman di basis data operasi terpisah; ia mentransisikan pekerjaan yang sama ke fase operasionalnya. Harga, pihak lawan, rute, dan status adalah atribut dari satu hal dengan satu identitas, sehingga tak ada langkah sinkronisasi yang bisa gagal, tertinggal, atau berselisih.",
+            "Dinyatakan terus terang, ini terdengar jelas, dan itulah intinya — kesulitannya bukan gagasannya melainkan disiplin mendefinisikan domain bersama sebelum salah satu alur dibangun. Model domain harus mengantisipasi seluruh siklus hidup sebuah pekerjaan dari lelang terbuka hingga pengiriman terkirim, termasuk keadaan canggung di antaranya: penawaran diterima tetapi belum diambil, pengiriman dalam perjalanan yang termanya sedang dinegosiasi ulang, pekerjaan dibatalkan setelah penganugerahan. Memberi nama keadaan-keadaan ini dan menyerahkannya kepada satu model sejak awal adalah yang membuat kedua alur tetap konsisten secara konstruksi alih-alih lewat rekonsiliasi.",
+            "Imbalannya adalah seluruh kategori bug sama sekali tak bisa terjadi. Tak ada insiden 'marketplace bilang terkirim tetapi operasi bilang dalam perjalanan', karena kedua kalimat itu membaca bidang yang sama. Konsistensi berhenti menjadi fitur yang dipelihara tim dan menjadi properti skema — persis jenis variansi yang ada untuk dihapus oleh metodologi sebelum harga tetap ditawarkan.",
+          ],
+        },
+        {
+          h2: "Apa yang dengan sengaja tidak dibangun",
+          body: [
+            "Marketplace dua sisi mengundang lingkup ke segala arah — mesin penetapan harga dinamis, algoritma penilaian pengangkut, optimasi rute otomatis, pesan dalam aplikasi, suite analitik. Disiplin sebuah jam delapan minggu adalah memilih untuk tidak membangun sebagian besarnya. Aturan keputusannya sama dengan yang diterapkan di setiap penugasan: bangun satu hal struktural yang menjadi sandaran semua hal lain, dan tolak fitur yang bisa ditambahkan kemudian tanpa merancang ulang arsitektur. Model pekerjaan bersama adalah hal struktural itu; mesin rekomendasi bukan.",
+            "Beberapa tambahan menggoda sengaja ditinggalkan karena tempatnya di atas domain yang stabil, bukan di dalam build fondasi. Kecerdasan penetapan harga yang canggih, ETA prediktif, dan penilaian pihak lawan semuanya benar-benar berguna — dan semuanya lebih bersih dibangun begitu satu sumber kebenaran ada untuk melatih dan mengukurnya. Membangunnya lebih dulu, di atas model yang tak stabil, adalah bagaimana platform berakhir dengan fitur cerdik yang bertumpu pada data yang tak bisa mereka percayai.",
+            "Menyebutkannya terus terang adalah bagian dari penyerahan yang jujur: marketplace yang bekerja bukanlah marketplace dengan setiap fitur. Tugas build pertama adalah membuat platform koheren dan dapat dimiliki, sehingga operator bisa memutuskan — dengan telemetri nyata, di infrastrukturnya sendiri — fitur tertunda mana yang benar-benar layak mendapat tempatnya.",
+          ],
+        },
+        {
+          h2: "Cara mengetahui apakah pola yang sama berlaku bagi Anda",
+          body: [
+            "Gejala paling jelas adalah perdebatan tentang fakta. Jika orang yang menjalankan sisi permintaan dan orang yang menjalankan sisi pemenuhan Anda secara teratur berselisih tentang status pekerjaan yang sama — dan menyelesaikannya dengan memeriksa dua layar lalu memilih salah satu — platform punya dua sumber kebenaran dan perselisihannya struktural, bukan manusiawi. Tanda kedua adalah pekerjaan integrasi yang tak pernah benar-benar selesai: proses sinkronisasi, rekonsiliasi malam hari, atau antrean ketidakcocokan yang dibereskan seseorang secara manual. Pajak pemeliharaan itu adalah biaya berulang dari model yang dipisah terlalu dini.",
+            "Indikator yang lebih halus adalah kelumpuhan fitur. Ketika tambahan sederhana — notifikasi status, laporan sederhana, penyesuaian biaya — menuntut menyentuh dua sistem dan merekonsiliasi asumsi keduanya, model data sedang memberi tahu Anda bahwa ia tak pernah disatukan. Operator sering salah membacanya sebagai basis kode yang 'kompleks'; lebih sering itu adalah dua basis kode koheren yang berselisih di sambungannya. Biayanya muncul sebagai penyerahan yang lambat alih-alih gangguan yang terlihat, itulah sebabnya ia begitu lama tak bernama.",
+            "Jika gejala-gejala ini terasa akrab, hambatannya hampir pasti di hulu pada model domain, dan langkah dengan daya ungkit tertinggi adalah memetakannya sebelum membangun apa pun yang baru di atasnya. Pemetaan itu persis untuk apa Diagnostic dua minggu ada — memastikan apakah sambungan itu kendala sesungguhnya sebelum satu fitur pun dikuotakan.",
+          ],
+        },
       ],
       faq: [
         {
@@ -873,6 +1233,22 @@ export const pagesId: LocalePages = {
         {
           q: "Bagaimana build serupa dimulai?",
           a: "Dengan Diagnostic dua minggu untuk memetakan domain dan mendefinisikan model data bersama sebelum fitur apa pun dibangun.",
+        },
+        {
+          q: "Mengapa kebanyakan tim membangun penawaran dan pelacakan sebagai sistem terpisah?",
+          a: "Karena keduanya terasa seperti disiplin yang berbeda — yang satu menyerupai bursa keuangan, yang lain meja operasi — dan platform biasanya merilis alur penawaran lebih dulu, lalu menempelkan pelacakan kemudian. Saat itu tiap sisi sudah punya kosakatanya sendiri, sehingga pemisahan menjadi arsitektural. Itu jalur dengan hambatan paling kecil, bukan kegagalan kompetensi, itulah sebabnya polanya berulang begitu konsisten.",
+        },
+        {
+          q: "Apa arti 'satu sumber kebenaran' bagi marketplace, secara konkret?",
+          a: "Satu catatan — pekerjaan itu — yang dibaca dan ditulis oleh baik penawaran maupun pengiriman, alih-alih dua basis data yang saling bertukar pesan. Ketika sebuah penawaran menang, catatan yang sama bertransisi ke fase operasionalnya; harga, pihak lawan, dan status adalah atribut dari satu hal. Konsistensi menjadi properti skema alih-alih proses sinkronisasi yang harus dipelihara tim.",
+        },
+        {
+          q: "Fitur apa yang dengan sengaja ditinggalkan dari build pertama?",
+          a: "Mesin penetapan harga dinamis, ETA prediktif, penilaian pihak lawan, optimasi rute, dan tambahan sejenis. Semuanya benar-benar berguna tetapi tempatnya di atas model domain yang stabil, bukan di dalam build fondasi. Jam delapan minggu memaksa membangun satu hal struktural yang menjadi sandaran semua hal lain, lalu menunda fitur yang bisa ditambahkan kemudian tanpa merancang ulang arsitektur.",
+        },
+        {
+          q: "Bagaimana saya tahu platform saya punya masalah dua sumber kebenaran ini?",
+          a: "Tanda paling jelas adalah orang berdebat tentang status pekerjaan yang sama dan menyelesaikannya dengan memeriksa dua layar. Tanda lain: proses sinkronisasi atau rekonsiliasi yang tak pernah benar-benar selesai, dan perubahan sederhana yang menuntut menyentuh dua sistem. Biayanya biasanya muncul sebagai penyerahan yang lambat alih-alih gangguan, itulah sebabnya ia tetap tak bernama begitu lama.",
         },
       ],
     },
@@ -918,6 +1294,37 @@ export const pagesId: LocalePages = {
             "Dan ada batas yang jujur: sistem menaikkan plafon volume dan konsistensi pipeline, tetapi tak menggantikan pertimbangan agen yang baik. Kemenangannya menghapus koordinasi manual, bukan hubungan manusia.",
           ],
         },
+        {
+          h2: "Mengapa hambatan ini berulang di real estate",
+          body: [
+            "Agen properti adalah bisnis relasi yang berjalan di atas pipeline yang tak pernah dilihat sebagian besar operator sebagai sebuah sistem. Sebuah lead masuk — pertanyaan lewat portal, rujukan, panggilan tak terjawab — dan sejak saat itu ia harus dikualifikasi, dicocokkan ke seorang agen, dihubungi selagi masih hangat, dan dikonversi menjadi penilaian atau peninjauan yang terjadwal. Tiap langkah kecil; kegagalannya ialah langkah-langkah itu hidup di kepala, kotak masuk, dan kalender yang terpisah, direkonsiliasi dengan tangan. Pekerjaannya terasa seperti 'sekadar menindaklanjuti', dan justru itulah mengapa ia jarang dianggarkan sebagai infrastruktur sampai ia membatasi pertumbuhan.",
+            "Kendalanya berlipat seiring ambisi alih-alih mengendur. Menambah agen tidak membagi beban koordinasi — ia melipatgandakannya, karena tiap agen baru menambah satu kalender lagi untuk direkonsiliasi, satu set lead lagi untuk dirutekan, dan satu definisi lagi yang tak konsisten tentang lead yang 'baik'. Bingkai yang jujur ialah pipeline merosot paling cepat persis saat operasi sedang menang: dorongan pemasaran atau pasar yang kuat menaikkan volume lead, dan lapisan manual yang berhasil di volume rendah menjadi hal yang menjatuhkan percakapan begitu saja.",
+            "Itulah mengapa polanya struktural, bukan tanda bisnis yang dikelola buruk. Pipeline manual The Lead Agent adalah cara yang rasional untuk memulai — sampai skala mengubah koordinasi dari tugas menjadi pajak. Sebagian besar operasi yang digerakkan penjualan menabrak tembok yang sama di titik yang sama: saat pertumbuhan bergantung pada orang yang mengingat untuk melakukan hal yang sama secara konsisten, tiap kali, di bawah beban.",
+          ],
+        },
+        {
+          h2: "Penalaran teknik di balik build",
+          body: [
+            "Langkah pertama bukan menulis otomatisasi melainkan memetakan domain — membuat pipeline yang implisit menjadi eksplisit. Apa yang dihitung sebagai lead, kapan ia menjadi terkualifikasi, milik siapa ia, apa arti 'terjadwal', dan apa yang dilakukan operasi ketika dua fakta itu saling bertentangan. Dalam pipeline manual, definisi-definisi ini hidup sebagai kebiasaan, dan kebiasaan berbeda menurut orang dan menurut hari. Menamainya adalah pekerjaan yang tak glamor, dan itulah pekerjaan yang menentukan apakah segala yang dibangun di atasnya layak dipercaya. Anda tidak bisa mengotomatiskan proses yang belum disepakati operasi.",
+            "Dari peta itu lahir satu sumber kebenaran. Cacat berulang dalam pipeline penjualan ialah lead yang sama berada di beberapa tempat sekaligus — sebuah spreadsheet, kotak masuk, ingatan seorang agen — dan tak ada salinan yang otoritatif. Memusatkan pipeline ke dalam satu platform menghadap klien berarti tiap tindakan hilir membaca dari dan menulis ke catatan yang sama, sehingga kualifikasi dan penjadwalan berhenti saling menyimpang. Inilah naluri arsitektur yang sama yang diterapkan PRIONATION di seluruh proyeknya: pusatkan kebenaran dulu, karena tiap keputusan berikutnya mewarisi keandalannya dari satu sumber itu.",
+            "Platformnya kemudian dibangun menjadi infrastruktur yang dimiliki dan dioperasikan The Lead Agent di seluruh pasar Australia, alih-alih disewakan kembali sebagai layanan. Bagi operasi penjualan, pipeline adalah operasinya — catatan tentang siapa yang sedang bermain dan apa yang dijanjikan. Memilikinya berarti riwayat operasional, logika perutean, dan data tetap bersama bisnis. Sistemnya adalah daya ungkit yang dipegang klien, bukan ketergantungan yang mengubah pipeline itu sendiri menjadi sesuatu yang dipegang vendor.",
+          ],
+        },
+        {
+          h2: "Apa yang sengaja tidak dibangun",
+          body: [
+            "Platform seperti ini mengundang melarnya cakupan ke arah sistem operasi agensi penuh — pelacakan komisi, otomatisasi pemasaran, integrasi portal, valuasi prediktif, aplikasi seluler untuk tiap kemungkinan. Disiplinnya ialah membangun pipeline yang menjadi kendala sebenarnya, lalu berhenti. Hambatannya adalah koordinasi antara sebuah lead dan percakapan yang terjadwal; segala sesuatu di luar busur itu ditinggalkan dengan sengaja, karena jam yang tetap mengubah 'apa yang bisa kita bangun?' menjadi 'apa satu hal bernilai tertinggi yang menghapus kendala?' Keluasan akan mengencerkan build dan menunda satu-satunya hasil yang penting.",
+            "Build itu juga tidak mencoba menggantikan pertimbangan agen dengan sebuah model. Sistemnya membakukan dan merutekan; ia tak memutuskan vendor mana yang diambil atau bagaimana menangani negosiasi yang peka. Garisnya ditarik dengan sengaja pada koordinasi, bukan relasi. Mengotomatiskan serah terima yang berulang menaikkan plafon volume dan konsistensi; berpura-pura perangkat lunak bisa memimpin sisi manusia dari penjualan properti akan menghasilkan demo yang mengesankan dan bisnis yang lebih buruk. Menamai apa yang tak akan dilakukan sebuah build sama pentingnya bagi cakupan yang jujur seperti menamai apa yang akan dilakukannya.",
+          ],
+        },
+        {
+          h2: "Cara mengetahui apakah pola yang sama berlaku bagi Anda",
+          body: [
+            "Pertanyaan diagnostiknya bukan 'apakah kita butuh lebih banyak lead?' melainkan 'di mana sebuah lead tersendat?' Jika percakapan hilang antara kedatangan dan penjadwalan — lead dihubungi terlambat, tindak lanjut terlupa, prospek yang sama digarap dua orang atau tak seorang pun — kendalanya adalah pipeline, dan lebih banyak pasokan hanya akan memperdalam tumpukan. Tanda yang andal ialah bulan terbaik Anda untuk volume lead juga bulan terburuk Anda untuk waktu respons: inversi itu berarti lapisan manual, bukan pasar, yang menjadi batasnya.",
+            "Tanda kedua ialah ketidaksepakatan definisi. Tanyai tiga orang dalam operasi apa yang membuat sebuah lead terkualifikasi, milik siapa ia, dan kapan ia dihitung terjadwal, dan jika jawabannya berbeda, tak ada satu sumber kebenaran untuk diotomatiskan — yang ada adalah proses yang belum disepakati. Itu prasyarat, bukan diskualifikasi: membuat definisi-definisi itu eksplisit adalah hasil pertama sebuah Diagnostic, dan ia murah diselesaikan di atas kertas dan mahal ditemukan di produksi.",
+            "Sinyal-tandingan yang jujur sama bergunanya. Jika kendala sebenarnya memang kekurangan lead, pasar yang berhenti membeli, atau agen yang tak akan memercayai keputusan perutean yang bukan mereka buat, maka mengotomatiskan koordinasi menaikkan plafon yang belum Anda capai. Perangkat lunak adalah daya ungkit pada operasi penjualan yang sehat; ia tak menciptakan permintaan, dan Diagnostic ada sebagian untuk mengatakannya sebelum siapa pun berkomitmen pada sebuah build.",
+          ],
+        },
       ],
       faq: [
         {
@@ -939,6 +1346,22 @@ export const pagesId: LocalePages = {
         {
           q: "Apa yang tak bisa diperbaiki otomatisasi di sini?",
           a: "Ia menaikkan plafon volume dan konsistensi pipeline tetapi tak menggantikan pertimbangan agen yang baik. Kemenangannya menghapus koordinasi manual, bukan hubungan manusia.",
+        },
+        {
+          q: "Mengapa mulai dengan memetakan pipeline alih-alih membangun otomatisasi?",
+          a: "Karena Anda tidak bisa mengotomatiskan proses yang belum disepakati operasi. Dalam pipeline manual, apa yang dihitung 'terkualifikasi' atau 'terjadwal' hidup sebagai kebiasaan yang berbeda menurut orang dan hari. Memetakan definisi-definisi itu dulu mengubah kebiasaan implisit menjadi proses yang eksplisit dan disepakati — fondasi yang menjadi sandaran keandalan segala yang dibangun di atasnya.",
+        },
+        {
+          q: "Mengapa satu sumber kebenaran penting bagi pipeline penjualan?",
+          a: "Cacat berulangnya ialah lead yang sama berada di beberapa tempat — sebuah spreadsheet, kotak masuk, ingatan seorang agen — tanpa salinan yang otoritatif. Memusatkan pipeline sehingga tiap tindakan membaca dan menulis satu catatan menghentikan kualifikasi dan penjadwalan dari saling menyimpang. Tiap keputusan hilir mewarisi keandalannya dari satu sumber itu, itulah mengapa ia lebih dulu.",
+        },
+        {
+          q: "Apa yang sengaja ditinggalkan dari build?",
+          a: "Segala sesuatu di luar busur koordinasi antara sebuah lead dan percakapan yang terjadwal — pelacakan komisi, otomatisasi pemasaran, valuasi prediktif, fitur OS agensi yang luas. Jam yang tetap memaksa membangun satu hal bernilai tertinggi yang menghapus kendala, lalu berhenti. Sistemnya juga tak menggantikan pertimbangan agen; garisnya ditarik dengan sengaja pada koordinasi, bukan hubungan manusia.",
+        },
+        {
+          q: "Mengapa memiliki platform penting khusus bagi operasi penjualan?",
+          a: "Bagi bisnis penjualan, pipeline adalah operasinya — catatan tentang siapa yang sedang bermain dan apa yang dijanjikan. Memiliki platform berarti riwayat operasional, logika perutean, dan data tetap bersama bisnis alih-alih disewakan kembali. Sistemnya menjadi daya ungkit yang dipegang klien, bukan ketergantungan yang mengubah pipeline itu sendiri menjadi sesuatu yang dipegang vendor.",
         },
       ],
     },
@@ -986,6 +1409,34 @@ export const pagesId: LocalePages = {
             "Kesalahannya memulai dari gejala yang terlihat — dasbor, prakiraan — sebelum data yang mendasari disatukan. Urutan lebih penting daripada ambisi.",
           ],
         },
+        {
+          h2: "Mengapa permukaan integrasi adalah biaya sebenarnya di logistik",
+          body: [
+            "Pola yang dipublikasikan menggambarkan apa yang dibuka AI; bagian yang diremehkan operator adalah berapa biayanya untuk menjangkau sistem-sistem itu sejak awal. Estate logistik mid-market jarang berupa satu tumpukan — ia adalah sistem manajemen transportasi yang dibeli satu dekade lalu, sistem gudang dari vendor berbeda, portal pengangkut yang masing-masing berbicara dialeknya sendiri, paket keuangan, dan lapisan spreadsheet serta email yang diam-diam menyatukan operasi. Memusatkan sumber kebenaran berarti merekonsiliasi semua ini, dan kesulitannya hampir tak pernah modelnya — melainkan konektornya, pemetaan medan demi medan, dan ketidaksepakatan diam antar sistem tentang apa arti sebuah pengiriman, perhentian, atau status sekalipun.",
+            "Inilah sebabnya PRIONATION memperlakukan permukaan integrasi sebagai ruang lingkup, bukan rincian. Selama Diagnostic, hambatan dipetakan terhadap sistem yang benar-benar disentuhnya, karena konektor ke TMS warisan tanpa API yang bersih berperilaku sangat berbeda dari pengangkut modern dengan webhook yang terdokumentasi. Pembingkaian yang jujur adalah bahwa perpipaan data — bukan pemodelan — adalah tempat sebuah build logistik menghabiskan sebagian besar dari delapan minggunya, dan harga yang tak mengatakannya menyembunyikan pekerjaannya. Infrastruktur yang dimiliki paling penting justru di sini: konektor dan model data kanonis adalah aset yang tahan lama, dan keduanya milik klien sehingga integrasi berikutnya tak dimulai dari nol.",
+          ],
+        },
+        {
+          h2: "Kualitas data menetapkan plafon sebelum model mana pun",
+          body: [
+            "Tak ada kecanggihan model yang mengangkat keluaran di atas kualitas data yang memberinya makan, dan data logistik luar biasa kotor: alamat yang tak ter-geocode, berat dan dimensi yang dimasukkan secara manual, status pengangkut yang tertinggal berjam-jam dari realitas fisik, dan nomor referensi yang berarti berbeda di dua sistem. AI yang menalar di atas ini tanpa mengakuinya menghasilkan jawaban yang percaya diri sekaligus salah — mode kegagalan paling berbahaya dalam operasi di mana satu keputusan rute menggerakkan truk sungguhan.",
+            "Disiplin yang menahan ini adalah eval sebelum fitur. Dataset acuan dibangun dari catatan operator sendiri yang berantakan, bukan contoh ideal, sehingga suite eval menilai sistem terhadap data yang benar-benar akan ditemuinya — termasuk yang cacat bentuk, yang hilang, dan yang saling bertentangan. Di mana data sekadar tak bisa menopang keputusan yang andal, desain yang tepat adalah memunculkan ketidakpastian itu kepada manusia alih-alih menebak. Aturan yang dapat dialihkan ini lugas: ukur datanya sebelum menjanjikan hasilnya. Sebuah Diagnostic yang menemukan bahwa catatan yang mendasari tak bisa menopang keputusan yang diinginkan telah menjalankan tugasnya, bahkan ketika jawabannya adalah 'perbaiki dulu penangkapan datanya'.",
+          ],
+        },
+        {
+          h2: "Pengecualian adalah tempat otomatisasi logistik harus berhenti, secara rancangan",
+          body: [
+            "Logistik berjalan di atas ekor panjang pengecualian — penjemputan yang terlewat, palet yang rusak, penahanan bea cukai, pelanggan yang mengubah jendela pengiriman satu jam sebelumnya. Godaannya adalah mengotomatiskan ini juga, karena inilah kerja manual yang paling menyakitkan. Ini biasanya naluri yang keliru. Pengecualian justru kasus di mana konteks tak lengkap, taruhan tinggi, dan aksi otomatis yang salah mahal untuk diurai kembali. Daya ungkit yang ditawarkan AI bukan memutuskan pengecualiannya — melainkan mendeteksinya lebih awal, merangkai konteks yang relevan, dan mengarahkannya ke orang yang tepat dengan keputusan yang sudah dibingkai di muka.",
+            "Arsitektur yang menghormati ini menarik garis yang disengaja: otomatiskan koordinasi bervolume tinggi dan terdefinisi baik, dan bangun jalur pengecualian sebagai alur kerja manusia berbantuan alih-alih yang sepenuhnya otonom. Telemetri mendapatkan tempatnya di sini. Setiap pengecualian yang dimunculkan sistem, setiap penggantian oleh manusia, dan setiap kasus yang salah diklasifikasikannya mengalir kembali sebagai bukti, sehingga batas antara 'otomatiskan' dan 'eskalasi' digeser berdasarkan data alih-alih ambisi. Seiring waktu, pengecualian yang sudah dipahami baik bermigrasi ke otomatisasi saat bukti menumpuk; yang benar-benar baru tetap bersama manusia. Batas yang jujur adalah bahwa sebagian pengecualian akan selalu memerlukan pertimbangan, dan sistem yang berpura-pura sebaliknya gagal dengan keras justru pada hari-hari ketika operasi paling tak mampu menanggungnya.",
+          ],
+        },
+        {
+          h2: "Efek tingkat kedua dari menyatukan data logistik",
+          body: [
+            "Memusatkan sumber kebenaran mengubah lebih dari alur kerja yang menjadi tujuannya dibangun, dan operator sebaiknya merencanakan konsekuensinya alih-alih terkejut olehnya. Yang pertama: ketimpangan data yang lama ditoleransi menjadi tak terbantahkan. Begitu dua sistem direkonsiliasi menjadi satu tampilan kanonis, celah yang dulu disiasati semua orang secara diam-diam kini terlihat oleh semua, dan seseorang harus memikul tanggung jawab menyelesaikannya. Ini sehat, tetapi ini pekerjaan organisasional, bukan pekerjaan rekayasa, dan ia jatuh pada orang-orang sungguhan.",
+            "Efek kedua: peran bergeser. Saat koordinasi yang dulu menghabiskan satu hari seorang perencana diotomatiskan, kapasitas itu tak lenyap — ia berpindah ke penanganan pengecualian dan hubungan dengan mitra, bagian pekerjaan yang tak bisa dilakukan perangkat lunak. Operator yang memperlakukan ini sebagai pengurangan jumlah karyawan cenderung kehilangan pengetahuan institusional yang membuat otomatisasi itu bisa dispesifikasikan sejak awal; mereka yang memperlakukannya sebagai realokasi kapasitas melipatgandakan keuntungannya. Efek ketiga adalah ketergantungan: sumber kebenaran yang disatukan dengan cepat menjadi penopang, yang menaikkan standar keandalan dan observabilitas. Inilah argumen terkuat untuk infrastruktur yang dimiliki dan telemetri sejak hari pertama — saat sistem menjadi tak tergantikan adalah persis saat Anda perlu memilikinya sepenuhnya dan bisa melihat, kapan pun, apakah ia masih mengatakan kebenaran.",
+          ],
+        },
       ],
       faq: [
         {
@@ -1007,6 +1458,22 @@ export const pagesId: LocalePages = {
         {
           q: "Di mana operator logistik harus memulai?",
           a: "Dengan Diagnostic dua minggu yang mengidentifikasi hambatan mana yang sekaligus paling mahal dan cocok untuk AI — dan, sama pentingnya, mana yang tidak.",
+        },
+        {
+          q: "Kami punya selusin sistem yang tak terhubung — apakah itu mendiskualifikasi kami?",
+          a: "Tidak, itu titik awal mid-market yang lazim dan biasanya justru alasan adanya hambatan sama sekali. Itu memang berarti permukaan integrasi adalah ruang lingkup nyata, dipetakan selama Diagnostic, bukan rincian. Konektor dan model data kanonis yang dibangun untuk merekonsiliasi sistem-sistem itu menjadi aset tahan lama milik klien, sehingga tiap integrasi berikutnya dimulai dari fondasi alih-alih dari nol.",
+        },
+        {
+          q: "Haruskah kami mengotomatiskan penanganan pengecualian lebih dulu, karena itu paling menyakitkan?",
+          a: "Biasanya tidak. Pengecualian adalah tempat konteks tak lengkap dan aksi otomatis yang salah mahal untuk dibalik. Build dengan daya ungkit lebih tinggi mengotomatiskan koordinasi bervolume tinggi dan terdefinisi baik, serta memperlakukan pengecualian sebagai alur kerja manusia berbantuan — mendeteksinya lebih awal, merangkai konteks, mengarahkannya dengan keputusan yang sudah dibingkai di muka. Telemetri lalu memigrasikan kasus yang sudah dipahami baik ke otomatisasi secara bertahap, berdasarkan bukti.",
+        },
+        {
+          q: "Apakah sistem logistik AI akan mengurangi jumlah karyawan kami?",
+          a: "Itu pembingkaian yang keliru, dan operator yang memakainya cenderung kehilangan pengetahuan institusional yang menjadi sandaran otomatisasi. Mengotomatiskan koordinasi merealokasi kapasitas ke penanganan pengecualian dan hubungan dengan mitra — bagian pekerjaan yang tak bisa dilakukan perangkat lunak. Justifikasi jujur untuk build ini adalah daya ungkit pada operasi yang sehat, bukan pengganti orang-orang yang menjalankannya.",
+        },
+        {
+          q: "Bagaimana jika data kami terlalu berantakan untuk dipercaya?",
+          a: "Maka suite eval dibangun dari data berantakan itu, bukan contoh ideal, sehingga sistem dinilai terhadap apa yang benar-benar akan ditemuinya. Di mana catatan tak bisa menopang keputusan yang andal, desain yang tepat memunculkan ketidakpastian itu kepada manusia alih-alih menebak. Sebuah Diagnostic yang menyimpulkan 'perbaiki penangkapan data sebelum membangun' telah menjalankan tugasnya — mengukur plafon data sebelum menjanjikan hasilnya.",
         },
       ],
     },
@@ -1052,6 +1519,37 @@ export const pagesId: LocalePages = {
             "Volume adalah metrik kesombongan jika pipeline tak bisa mengonversinya. Kapasitas mengonversi adalah angka yang menggerakkan bisnis.",
           ],
         },
+        {
+          h2: "Lapisan kualifikasi adalah build yang sesungguhnya, bukan responsnya",
+          body: [
+            "Bagian yang terlihat dari AI lead-gen adalah balasan yang didraf atau rapat yang terjadwal, jadi itulah yang pertama diminta operator. Bagian yang sebenarnya membawa daya ungkit ada di hulu dan tak terlihat: lapisan kualifikasi yang menilai setiap lead masuk terhadap kriteria yang sama, dengan cara yang sama, di setiap giliran kerja. Kualifikasi manusia menyimpang — menurut agen, menurut suasana hati, menurut seberapa sibuk antrean — dan penyimpangan itu adalah alasan diam-diam mengapa throughput tertahan di bawah titik yang seharusnya dicapai penawaran. Lapisan penilaian yang konsisten mengubah filter manual yang tak menentu menjadi filter yang dapat diprediksi.",
+            "Membangunnya dengan baik adalah masalah eval sebelum menjadi masalah model. 'Terkualifikasi' bukanlah definisi universal; itu definisi operasi ini, dan biasanya hanya hidup di kepala seorang agen senior. Pekerjaan dalam Diagnostic adalah mengekstrak definisi itu menjadi dataset acuan berisi lead nyata dari masa lalu — yang berkonversi, yang menyia-nyiakan slot, kasus batas yang diperdebatkan agen berpengalaman — dan menyepakati ambang penilaian sebelum satu prompt pun ditulis. Tanpa itu, sistem mengotomatiskan standar yang sebenarnya tak pernah dituliskan siapa pun, dan ia akan keliru dengan penuh keyakinan justru pada lead yang penting.",
+            "Efek tingkat kedua adalah kualifikasi menjadi dapat diaudit. Begitu setiap lead membawa skor dan alasan di baliknya, seorang manajer penjualan bisa bertanya mengapa sebuah lead diprioritaskan lebih rendah dan mendapatkan jawaban, bukan kedikan bahu. Daya audit itulah yang membuat sisa pipeline aman untuk diotomatiskan — Anda hanya bisa menyerahkan pengarahan dan penjadwalan dengan percaya diri ketika keputusan yang menyuapinya konsisten dan dapat diperiksa.",
+          ],
+        },
+        {
+          h2: "Pengurutan: instrumentasikan pipeline sebelum mengotomatiskannya",
+          body: [
+            "Naluri mendorong untuk mengotomatiskan langkah paling menyakitkan lebih dulu — biasanya tarik-ulur penjadwalan. Urutan yang lebih andal adalah menginstrumentasi sebelum mengotomatiskan: ukur di mana lead benar-benar macet antara kedatangan dan percakapan yang terjadwal, dengan stempel waktu di tiap tahap, sebelum memutuskan apa yang dibangun. Operator rutin keliru tentang hambatan mereka sendiri. Langkah yang terasa menyakitkan tak selalu langkah yang paling banyak kehilangan lead; kerugian sering bersembunyi di celah senyap — antrean yang menua semalaman, aturan pengarahan yang mengirim lead bagus ke meja yang sibuk — yang tak diukur siapa pun karena tak ada yang menghitung waktunya.",
+            "Dengan telemetri itu di tempatnya, build menargetkan tahap dengan kebocoran terukur terbesar, bukan keluhan paling nyaring. Ini disiplin yang sama yang diterapkan metodologi di mana-mana: telemetri sejak hari pertama, agar iterasi pertama mengarah pada bukti alih-alih anekdot. Ini juga membuat jam delapan minggu menjadi realistis — sebuah pod bisa mengirim perbaikan terbatas pada satu tahap dan membuktikan efeknya, alih-alih mencoba membangun ulang pipeline secara penuh yang tak punya garis akhir yang jujur.",
+            "Pengurutan punya manfaat komersial juga. Build pertama yang sempit dan terinstrumentasi adalah persis apa yang dirancang untuk dicakup oleh Diagnostic-lalu-Build berharga tetap. Ia memunculkan apakah kendalanya memang sesuatu yang patut disentuh AI sama sekali — kadang kebocorannya adalah salah konfigurasi CRM atau masalah penawaran, dan hasil jujur dari Diagnostic adalah belum ada build AI yang dibenarkan.",
+          ],
+        },
+        {
+          h2: "Efek tingkat kedua pada tim dan data",
+          body: [
+            "Mengotomatiskan kualifikasi dan koordinasi mengubah pada apa tim penjualan menghabiskan harinya, dan pergeseran itu justru intinya — tetapi harus dirancang, bukan diasumsikan. Saat triase manual lenyap, agen tersisa dengan lebih banyak percakapan dan lebih sedikit alasan untuk menghindari yang sulit. Tim yang memperlakukan AI sebagai cara melakukan pekerjaan yang sama lebih cepat melihat keuntungan sederhana; tim yang menata ulang di sekitar kendala baru — lebih banyak waktu menjual, tindak lanjut lebih ketat pada percakapan yang mencapai manusia — melihat gerakan yang sesungguhnya. Teknologi menaikkan kapasitas; model operasi yang memutuskan apakah kapasitas itu dipakai.",
+            "Ada juga roda gila data yang menguat dengan tenang. Setiap lead yang terkualifikasi-dan-berkonversi, setiap rapat terjadwal-tapi-tak-hadir, setiap koreksi manusia atas skor AI menjadi data berlabel yang mengalir kembali ke dataset acuan. Sepanjang sebuah retainer, umpan balik itulah yang menjaga kualifikasi tetap akurat saat bauran lead bergeser — kampanye baru, pasar baru, produk baru semuanya mengubah seperti apa 'bagus' itu. Pembingkaian jujurnya adalah roda gila ini hanya berputar jika telemetri dan penangkapan koreksi dibangun sejak awal; dipasang belakangan, bulan-bulan awal sinyal sekadar hilang.",
+          ],
+        },
+        {
+          h2: "Di mana pola ini tak berlaku",
+          body: [
+            "Pembingkaian pipeline-di-atas-pasokan berlaku untuk operasi di mana lead benar-benar berdatangan dan kendalanya adalah mengonversinya — motion yang berat inbound, marketplace, atau outbound bervolume tinggi. Ia berlaku kurang mulus di titik ekstrem. Dalam penjualan enterprise bersiklus panjang dan bersentuhan tinggi dengan segelintir akun bernama, tak ada hambatan throughput untuk dilegakan; pekerjaannya adalah relasi dan pertimbangan dari ujung ke ujung, dan mengotomatiskan koordinasi di sekitar selusin kesepakatan per kuartal memecahkan masalah yang tak pernah menjadi kendala. Di sini jawaban jujurnya adalah daya ungkit AI bersifat marginal.",
+            "Ia juga runtuh ketika pasokan di hulu adalah plafon yang sebenarnya — produk niche dengan pasar kecil dan terbatas, di mana pipeline sudah mengonversi sebagian besar dari yang masuk. Mengoptimalkan throughput pada pipeline yang jarang penuh adalah upaya yang dihabiskan di ujung yang salah. Pertanyaan diagnostiknya sederhana: apakah percakapan terkualifikasi dibatasi oleh kapasitas tim untuk menanganinya, atau oleh berapa banyak lead layak yang ada sama sekali? Hanya kasus pertama yang dijelaskan briefing ini.",
+            "Akhirnya, pola ini mengandaikan penawaran yang dapat dipertahankan dan daftar yang cocok dengannya. AI pada pipeline adalah amplifikasi, dan amplifikasi bersifat netral — ia menskalakan penawaran kuat dan daftar yang buruk kecocokannya dengan efisiensi yang sama. Di mana go-to-market yang mendasarinya belum terbukti, urutan yang tepat adalah memperbaiki penawaran secara manual hingga ia berkonversi, lalu mengotomatiskan koordinasi di sekitar sesuatu yang sudah berhasil. Mengotomatiskan lebih dulu hanya membeli konfirmasi lebih cepat bahwa ia tidak berhasil.",
+          ],
+        },
       ],
       faq: [
         {
@@ -1073,6 +1571,22 @@ export const pagesId: LocalePages = {
         {
           q: "Apakah ini berdasarkan proyek nyata?",
           a: "Ya — pandangan langsung dari pekerjaan pipeline lead PRIONATION. Metrik per proyek dipublikasikan di halaman showcase dan transparansi saat difinalkan.",
+        },
+        {
+          q: "Bagaimana lapisan kualifikasi AI cocok dengan CRM dan perkakas SDR kami yang ada?",
+          a: "Ia duduk di dalamnya, bukan di sampingnya. Logika kualifikasi dan koordinasi dibangun ke dalam stack Anda sendiri — CRM Anda, penjadwalan Anda, akun Anda — sehingga lead terus mengalir melalui sistem yang sudah dipakai tim Anda. Build menambahkan lapisan penilaian dan pengarahan yang konsisten pada infrastruktur yang Anda miliki, alih-alih memperkenalkan satu perkakas lagi yang harus diadopsi atau dimasuki tim secara terpisah.",
+        },
+        {
+          q: "Bagaimana Anda mencegah AI mendiskualifikasi lead yang akan dikejar agen yang baik?",
+          a: "Dengan mendefinisikan 'terkualifikasi' dari lead nyata di masa lalu sebelum membangun — termasuk kasus batas yang diperdebatkan agen berpengalaman — dan menangkap setiap koreksi manusia di produksi. Skornya dapat diaudit, sehingga seorang manajer bisa melihat mengapa sebuah lead diprioritaskan lebih rendah dan memperbaikinya. Koreksi itu mengalir kembali ke dataset acuan, dan begitulah sistem tetap selaras dengan pertimbangan alih-alih menyimpang darinya.",
+        },
+        {
+          q: "Apakah ini akan mengurangi jumlah karyawan penjualan yang kami butuhkan?",
+          a: "Itu pembingkaian yang keliru. Ia menaikkan kapasitas konversi tim yang Anda punya, jadi keuntungannya muncul sebagai lebih banyak percakapan terkualifikasi per agen, bukan lebih sedikit agen. Tim yang sekadar melakukan pekerjaan lama lebih cepat melihat hasil sederhana; tim yang menata ulang di sekitar lebih banyak waktu menjual dan tindak lanjut lebih ketat melihat gerakan yang sesungguhnya. Kapasitas itu diciptakan oleh sistem; apa yang Anda lakukan dengannya adalah keputusan model operasi.",
+        },
+        {
+          q: "Kapan AI lead-gen belum layak dibangun?",
+          a: "Ketika kendalanya ada di hulu — pasar niche di mana pipeline jarang penuh, atau penjualan enterprise bersiklus panjang dengan segelintir akun dan tanpa hambatan throughput. Dan ketika penawarannya sendiri belum terbukti: AI mengamplifikasi pipeline, dan mengamplifikasi daftar yang buruk kecocokannya hanya memproduksi rapat yang buruk kecocokan lebih cepat. Perbaiki penawaran secara manual hingga ia berkonversi, lalu otomatiskan koordinasi di sekitar sesuatu yang sudah berhasil.",
         },
       ],
     },

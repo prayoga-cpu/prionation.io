@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 
@@ -9,11 +9,18 @@ const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 export default function MetaPixel() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const initialised = useRef(false);
 
   useEffect(() => {
     if (!pixelId) return;
 
-    // Track pageview on initial mount and route change
+    // The lazyOnload init script below fires the first PageView via the fbq
+    // queue, so skip the initial render here to avoid double-counting. Track
+    // PageView only on subsequent client-side route changes.
+    if (!initialised.current) {
+      initialised.current = true;
+      return;
+    }
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "PageView");
     }
@@ -27,7 +34,7 @@ export default function MetaPixel() {
     <>
       <Script
         id="fb-pixel"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
@@ -39,6 +46,7 @@ export default function MetaPixel() {
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '${pixelId}');
+            fbq('track', 'PageView');
           `,
         }}
       />

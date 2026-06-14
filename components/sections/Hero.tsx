@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Eyebrow, Btn } from "../ui/Atoms";
 import { Typewriter } from "../ui/Typewriter";
 import { useCountUp } from "@/hooks/useCountUp";
-import { staggerFast, fadeUp } from "@/lib/motion";
+import { staggerFast, fadeUp, riseIn } from "@/lib/motion";
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -91,15 +91,15 @@ export function Hero() {
         animate="visible"
       >
         {/* Eyebrow */}
-        <motion.div variants={fadeUp}>
+        <motion.div variants={riseIn}>
           <Eyebrow>
             {t("eyebrow")} <span className="hidden md:block">· v.3.1.0</span>
           </Eyebrow>
         </motion.div>
 
-        {/* H1 */}
+        {/* H1 — LCP element: riseIn (transform-only) so it paints at SSR */}
         <motion.h1
-          variants={fadeUp}
+          variants={riseIn}
           className="font-display font-normal text-[clamp(44px,5.8vw,80px)] leading-[1.1] md:leading-none tracking-normal text-white my-[26px] text-balance max-w-[20ch] uppercase"
         >
           {t("title_main")}{" "}
@@ -112,7 +112,7 @@ export function Hero() {
 
         {/* Description */}
         <motion.p
-          variants={fadeUp}
+          variants={riseIn}
           className="max-w-[58ch] text-soft text-[17px] leading-[1.55] mb-8 mx-0"
         >
           {t("description")}
@@ -120,7 +120,7 @@ export function Hero() {
 
         {/* CTAs */}
         <motion.div
-          variants={fadeUp}
+          variants={riseIn}
           className="flex gap-3 flex-wrap justify-center"
         >
           <Btn

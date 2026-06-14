@@ -153,7 +153,7 @@ export const pages: PageMeta[] = [
     audience: "mixed",
     schema: "CaseStudy",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-05-31",
+    updatedAt: "2026-06-15",
     sitemapPriority: 0.9,
     changeFreq: "monthly",
     tier1Keywords: [
@@ -178,7 +178,7 @@ export const pages: PageMeta[] = [
     audience: "mixed",
     schema: "CaseStudy",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-05-31",
+    updatedAt: "2026-06-15",
     sitemapPriority: 0.9,
     changeFreq: "monthly",
     tier1Keywords: [
@@ -203,7 +203,7 @@ export const pages: PageMeta[] = [
     audience: "mixed",
     schema: "CaseStudy",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-05-31",
+    updatedAt: "2026-06-15",
     sitemapPriority: 0.9,
     changeFreq: "monthly",
     tier1Keywords: [
@@ -230,7 +230,7 @@ export const pages: PageMeta[] = [
     audience: "ceo",
     schema: "HowTo",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-05-31",
+    updatedAt: "2026-06-15",
     sitemapPriority: 0.8,
     changeFreq: "monthly",
     tier1Keywords: [
@@ -255,7 +255,7 @@ export const pages: PageMeta[] = [
     audience: "ceo",
     schema: "HowTo",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-05-31",
+    updatedAt: "2026-06-15",
     sitemapPriority: 0.8,
     changeFreq: "monthly",
     tier1Keywords: [
@@ -280,7 +280,7 @@ export const pages: PageMeta[] = [
     audience: "coo",
     schema: "HowTo",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-05-31",
+    updatedAt: "2026-06-15",
     sitemapPriority: 0.8,
     changeFreq: "monthly",
     tier1Keywords: [
@@ -307,7 +307,7 @@ export const pages: PageMeta[] = [
     audience: "ceo",
     schema: "Article",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-05-31",
+    updatedAt: "2026-06-15",
     sitemapPriority: 0.85,
     changeFreq: "monthly",
     tier1Keywords: [
@@ -332,7 +332,7 @@ export const pages: PageMeta[] = [
     audience: "cto",
     schema: "HowTo",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-05-31",
+    updatedAt: "2026-06-15",
     sitemapPriority: 0.8,
     changeFreq: "monthly",
     tier1Keywords: [
@@ -357,7 +357,7 @@ export const pages: PageMeta[] = [
     audience: "ceo",
     schema: "Article",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-05-31",
+    updatedAt: "2026-06-15",
     sitemapPriority: 0.8,
     changeFreq: "monthly",
     tier1Keywords: [
@@ -384,7 +384,7 @@ export const pages: PageMeta[] = [
     audience: "coo",
     schema: "Article",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-05-31",
+    updatedAt: "2026-06-15",
     sitemapPriority: 0.75,
     changeFreq: "monthly",
     tier1Keywords: [
@@ -410,7 +410,7 @@ export const pages: PageMeta[] = [
     audience: "coo",
     schema: "Article",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-05-31",
+    updatedAt: "2026-06-15",
     sitemapPriority: 0.75,
     changeFreq: "monthly",
     tier1Keywords: [

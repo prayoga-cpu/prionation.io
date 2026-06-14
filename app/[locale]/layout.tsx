@@ -134,8 +134,8 @@ export async function generateMetadata({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  // No maximumScale / userScalable:false — blocking pinch-zoom fails the
+  // Lighthouse a11y `meta-viewport` audit and hurts low-vision users.
 };
 
 export default async function RootLayout({

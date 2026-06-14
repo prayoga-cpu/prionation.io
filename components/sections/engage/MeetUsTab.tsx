@@ -482,6 +482,7 @@ export function MeetUsTab() {
             <select
               value={timezone}
               onChange={(e) => setTimezone(e.target.value)}
+              aria-label="Timezone"
               className="bg-transparent text-muted text-[11px] font-sans outline-none border-0 cursor-pointer hover:text-white transition-colors"
             >
               {timezones.map((tz) => (

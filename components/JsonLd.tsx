@@ -6,6 +6,8 @@ import {
   FOUNDING_DATE,
   SOCIAL_LINKS,
   OFFERS,
+  BUSINESS_ADDRESS,
+  PRICE_RANGE,
 } from "@/lib/seo/site";
 
 // Server components that emit site-wide JSON-LD structured data for search + AI
@@ -48,6 +50,12 @@ export function ServiceSchema() {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         name: "AI Product Engineering",
+        url: SITE_URL,
+        image: `${SITE_URL}/og.png`,
+        email: CONTACT_EMAIL,
+        priceRange: PRICE_RANGE,
+        // Remote-first; locality + country only (see BUSINESS_ADDRESS).
+        address: { "@type": "PostalAddress", ...BUSINESS_ADDRESS },
         provider: { "@type": "Organization", name: SITE_NAME },
         areaServed: ["European Union", "United States"],
         description:

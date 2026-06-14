@@ -1,5 +1,6 @@
 "use client";
 
+import { type ReactNode } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Icon } from "../icons";
@@ -8,6 +9,7 @@ import type { PageSection, SchemaType } from "@/lib/content/pages";
 import type { RelatedLink } from "@/lib/content/meta";
 import { FloatingShareDesktop, FloatingShareMobile } from "./FloatingShare";
 import { ArticleSidebar } from "./ArticleSidebar";
+import { INTERLINKS } from "@/lib/content/interlink";
 
 type Section = { h2: string; body: string[] };
 type Faq = { q: string; a: string };
@@ -36,6 +38,58 @@ function slugify(text: string) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
+// ── Contextual internal links (see lib/content/interlink.ts) ─────────────────
+const INTERLINK_CLS =
+  "text-accent underline decoration-accent/30 underline-offset-2 hover:decoration-accent transition-colors";
+
+function isLetter(ch: string | undefined) {
+  return !!ch && /\p{L}/u.test(ch);
+}
+
+// Boundary-aware, case-insensitive index of `phrase` in `text` (avoids matching
+// inside a longer word). Returns -1 if absent.
+function findPhrase(text: string, phrase: string): number {
+  const lower = text.toLowerCase();
+  const p = phrase.toLowerCase();
+  let from = 0;
+  for (;;) {
+    const idx = lower.indexOf(p, from);
+    if (idx === -1) return -1;
+    const before = idx > 0 ? text[idx - 1] : undefined;
+    const after = idx + p.length < text.length ? text[idx + p.length] : undefined;
+    if (!isLetter(before) && !isLetter(after)) return idx;
+    from = idx + 1;
+  }
+}
+
+// Wrap the earliest unused interlink term in a <Link>, then recurse on the rest.
+// `used` is shared across the whole article so each target is linked only once.
+function renderWithLinks(
+  text: string,
+  links: { href: string; phrases: string[] }[],
+  used: Set<string>,
+): ReactNode[] {
+  let best: { start: number; end: number; href: string } | null = null;
+  for (const l of links) {
+    if (used.has(l.href)) continue;
+    for (const phrase of l.phrases) {
+      const idx = findPhrase(text, phrase);
+      if (idx !== -1 && (best === null || idx < best.start)) {
+        best = { start: idx, end: idx + phrase.length, href: l.href };
+      }
+    }
+  }
+  if (!best) return [text];
+  used.add(best.href);
+  return [
+    text.slice(0, best.start),
+    <Link key={best.href} href={best.href} className={INTERLINK_CLS}>
+      {text.slice(best.start, best.end)}
+    </Link>,
+    ...renderWithLinks(text.slice(best.end), links, used),
+  ];
+}
+
 export function ContentArticle({
   section,
   slug,
@@ -43,6 +97,10 @@ export function ContentArticle({
   related,
   datePublished,
   dateModified,
+  intro,
+  sections,
+  faq,
+  widget,
 }: {
   section: PageSection;
   slug: string;
@@ -50,14 +108,26 @@ export function ContentArticle({
   related: RelatedLink[];
   datePublished?: string;
   dateModified?: string;
+  // Article bodies are passed as props (not via next-intl) so the large
+  // cluster copy is not serialized into every page's client bundle. See
+  // i18n/request.ts (lightPages) and the cluster route page.tsx files.
+  intro: string[];
+  sections: Section[];
+  faq: Faq[];
+  // Optional interactive tool (framework pages); rendered after the intro.
+  widget?: ReactNode;
 }) {
   const t = useTranslations(`Pages.${section}.${slug}`);
   const common = useTranslations("Pages.common");
   const locale = useLocale();
 
-  const intro = t.raw("intro") as string[];
-  const sections = t.raw("sections") as Section[];
-  const faq = t.raw("faq") as Faq[];
+  // Active interlinks for this locale, minus any self-link to the current page.
+  const interlinks = INTERLINKS.map((l) => ({
+    href: l.href,
+    phrases: l.phrases[locale] ?? [],
+  })).filter((l) => l.phrases.length > 0 && l.href !== `/${section}/${slug}`);
+  const linkUsed = new Set<string>();
+
   const h1 = t("h1");
 
   const canonical = `${SITE_URL}/${locale}/${section}/${slug}`;
@@ -175,9 +245,12 @@ export function ContentArticle({
             {/* Intro */}
             <div className="flex flex-col gap-5 mb-14">
               {intro.map((p, i) => (
-                <p key={i} className="text-soft text-[16px] leading-[1.8]">{p}</p>
+                <p key={i} className="text-soft text-[16px] leading-[1.8]">{renderWithLinks(p, interlinks, linkUsed)}</p>
               ))}
             </div>
+
+            {/* Optional interactive widget (framework pages) */}
+            {widget && <div className="mb-14">{widget}</div>}
 
             {/* Sections with anchor IDs */}
             <div className="flex flex-col gap-12">
@@ -188,7 +261,7 @@ export function ContentArticle({
                   </h2>
                   <div className="flex flex-col gap-4">
                     {s.body.map((p, i) => (
-                      <p key={i} className="text-soft text-[16px] leading-[1.8]">{p}</p>
+                      <p key={i} className="text-soft text-[16px] leading-[1.8]">{renderWithLinks(p, interlinks, linkUsed)}</p>
                     ))}
                   </div>
                 </section>
