@@ -3,7 +3,7 @@
 import { useState, useEffect, useTransition } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 import {
   staggerFast,
@@ -189,7 +189,7 @@ export function Header() {
   return (
     <>
       {/* Header bar, slides down from top on mount */}
-      <motion.header
+      <m.header
         variants={slideDown}
         initial="hidden"
         animate="visible"
@@ -201,14 +201,14 @@ export function Header() {
         </div>
 
         {/* Center: Navigation */}
-        <motion.nav
+        <m.nav
           variants={staggerFast}
           initial="hidden"
           animate="visible"
           className="hidden lg:flex absolute left-1/2 -translate-x-1/2 gap-7 text-[13px] text-soft items-center"
         >
           {NAV_ITEMS.map(([id, label]) => (
-            <motion.a
+            <m.a
               key={id}
               variants={fadeUp}
               href={`/${locale}#${id}`}
@@ -221,16 +221,16 @@ export function Header() {
               transition={{ duration: 0.15 }}
             >
               {label}
-            </motion.a>
+            </m.a>
           ))}
-        </motion.nav>
+        </m.nav>
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">
             <LocaleSwitcher />
           </div>
-          <motion.a
+          <m.a
             href={diagnosticHref}
             onClick={(e) => {
               e.preventDefault();
@@ -241,7 +241,7 @@ export function Header() {
             whileTap={{ scale: 0.97 }}
           >
             {t("cta")} <span className="text-[12px] opacity-80">→</span>
-          </motion.a>
+          </m.a>
           {/* Webflow-style animated hamburger */}
           <button
             className="lg:hidden inline-flex items-center justify-center bg-transparent border-0 p-1.5 cursor-pointer w-9 h-9"
@@ -285,14 +285,14 @@ export function Header() {
             </div>
           </button>
         </div>
-      </motion.header>
+      </m.header>
 
       {/* Mobile nav drawer, spring slide from right */}
       <AnimatePresence>
         {mobileOpen && (
           <>
             {/* Backdrop */}
-            <motion.div
+            <m.div
               key="mobile-backdrop"
               variants={backdrop}
               initial="hidden"
@@ -303,7 +303,7 @@ export function Header() {
             />
 
             {/* Drawer — 70% width from right, 30% left for tap-to-dismiss */}
-            <motion.div
+            <m.div
               key="mobile-drawer"
               variants={slideRight}
               initial="hidden"
@@ -312,7 +312,7 @@ export function Header() {
               className="fixed top-0 right-0 bottom-0 z-40 w-[70%] bg-bg px-6 pt-[100px] pb-[40px] flex flex-col shadow-[-8px_0_40px_rgba(0,0,0,0.5)]"
             >
               {/* Locale Switcher */}
-              <motion.div
+              <m.div
                 variants={fadeUp}
                 initial="hidden"
                 animate="visible"
@@ -320,17 +320,17 @@ export function Header() {
                 className="mb-8"
               >
                 <LocaleSwitcher />
-              </motion.div>
+              </m.div>
 
               {/* Nav links stagger */}
-              <motion.nav
+              <m.nav
                 variants={staggerFast}
                 initial="hidden"
                 animate="visible"
                 className="flex flex-col gap-1"
               >
                 {NAV_ITEMS.map(([id, label]) => (
-                  <motion.a
+                  <m.a
                     key={id}
                     variants={fadeUp}
                     href={`/${locale}#${id}`}
@@ -342,9 +342,9 @@ export function Header() {
                     whileTap={{ x: 4 }}
                   >
                     {label}
-                  </motion.a>
+                  </m.a>
                 ))}
-                <motion.button
+                <m.button
                   variants={fadeUp}
                   onClick={goDiagnostic}
                   className="mt-7 self-start inline-flex items-center gap-2.5 px-[22px] py-[13px] rounded-full font-sans font-semibold text-sm cursor-pointer bg-white text-[#08090d] hover:bg-[#e6e6f0] transition-colors"
@@ -352,9 +352,9 @@ export function Header() {
                   whileTap={{ scale: 0.97 }}
                 >
                   {t("cta")} <span className="text-[12px] opacity-80">→</span>
-                </motion.button>
-              </motion.nav>
-            </motion.div>
+                </m.button>
+              </m.nav>
+            </m.div>
           </>
         )}
       </AnimatePresence>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Dot, Btn } from "../ui/Atoms";
 import { Icon } from "../icons";
 import { Header } from "../Header";
@@ -56,7 +56,7 @@ function Reveal({
   delay?: number;
 }) {
   return (
-    <motion.div
+    <m.div
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"
@@ -65,7 +65,7 @@ function Reveal({
       className={className}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -131,7 +131,7 @@ function Hero({ diagHref }: { diagHref: string }) {
       <div className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(55%_45%_at_15%_15%,var(--c-accent-glow)_0%,transparent_60%),linear-gradient(180deg,#0c0e1a_0%,#08090d_75%)] opacity-90" />
       <div className="absolute inset-0 pointer-events-none z-10 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(70%_70%_at_30%_25%,#000_30%,transparent_85%)]" />
 
-      <motion.div
+      <m.div
         variants={staggerFast}
         initial="hidden"
         animate="visible"
@@ -139,31 +139,31 @@ function Hero({ diagHref }: { diagHref: string }) {
       >
         {/* Left: copy */}
         <div>
-          <motion.div variants={fadeUp} className="flex items-center gap-3 mb-7">
+          <m.div variants={fadeUp} className="flex items-center gap-3 mb-7">
             <span className="font-pixel text-[8px] text-accent bg-accent-10 border border-accent-30 px-2.5 py-1.5 rounded-md">
               v.3.1.0
             </span>
             <span className="font-pixel text-[9px] text-muted tracking-[0.05em]">
               · {t("eyebrow")}
             </span>
-          </motion.div>
+          </m.div>
 
-          <motion.h1
+          <m.h1
             variants={fadeUp}
             className="font-sans font-extrabold text-[clamp(34px,5vw,56px)] leading-[1.05] tracking-[-0.03em] text-white text-balance"
           >
             {t("title_lead")}{" "}
             <span className="text-accent">{t("title_accent")}</span>
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             variants={fadeUp}
             className="text-soft text-[17px] leading-[1.7] mt-5 mb-8 max-w-[48ch]"
           >
             {t("desc")}
-          </motion.p>
+          </m.p>
 
-          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3">
+          <m.div variants={fadeUp} className="flex flex-wrap items-center gap-3">
             <a href={diagHref}>
               <Btn variant="primary" className="px-8 py-[15px] text-[15px]">
                 {t("cta_primary")} <span className="text-[12px] opacity-80">→</span>
@@ -174,11 +174,11 @@ function Hero({ diagHref }: { diagHref: string }) {
                 {t("cta_secondary")} <span className="text-[12px] opacity-80">↓</span>
               </Btn>
             </a>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Right: featured video */}
-        <motion.div variants={fadeUp}>
+        <m.div variants={fadeUp}>
           <div className="relative aspect-video rounded-[20px] overflow-hidden bg-card border border-line-soft group transition-all duration-normal hover:border-accent hover:shadow-[0_0_0_1px_var(--c-accent),0_8px_32px_rgba(88,101,242,0.18)]">
             <span className="absolute top-3 left-3 z-20 bg-accent text-white font-pixel text-[7px] px-2.5 py-1.5 rounded-md">
               {t("featured_badge")}
@@ -193,8 +193,8 @@ function Hero({ diagHref }: { diagHref: string }) {
               </p>
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </section>
   );
 }
@@ -260,7 +260,7 @@ function VideoCard({
   hidden: boolean;
 }) {
   return (
-    <motion.article
+    <m.article
       variants={fadeUp}
       className={`bg-card border border-line-soft rounded-[20px] overflow-hidden transition-all duration-fast hover:border-accent hover:-translate-y-0.5 ${
         hidden ? "hidden" : ""
@@ -288,7 +288,7 @@ function VideoCard({
         </h3>
         <p className="text-muted text-[12px] leading-[1.5]">{copy.hook}</p>
       </div>
-    </motion.article>
+    </m.article>
   );
 }
 
@@ -334,7 +334,7 @@ function VideoLibrary() {
       </Reveal>
 
       {/* Grid */}
-      <motion.div
+      <m.div
         variants={staggerSlow}
         initial="hidden"
         whileInView="visible"
@@ -349,7 +349,7 @@ function VideoLibrary() {
             hidden={active !== "all" && !video.cats.includes(active)}
           />
         ))}
-      </motion.div>
+      </m.div>
     </section>
   );
 }
@@ -385,7 +385,7 @@ function PricingTrio({ diagHref }: { diagHref: string }) {
           </p>
         </Reveal>
 
-        <motion.div
+        <m.div
           variants={staggerSlow}
           initial="hidden"
           whileInView="visible"
@@ -395,7 +395,7 @@ function PricingTrio({ diagHref }: { diagHref: string }) {
           {plans.map((p, i) => {
             const featured = i === 0;
             return (
-              <motion.div
+              <m.div
                 key={p.sku}
                 variants={fadeUp}
                 whileHover={{ y: -4, transition: { type: "spring", stiffness: 320, damping: 22 } }}
@@ -418,10 +418,10 @@ function PricingTrio({ diagHref }: { diagHref: string }) {
                 </div>
                 <div className="text-muted text-[13px] mb-5">{p.period}</div>
                 <p className="text-soft text-[13px] leading-[1.6]">{p.desc}</p>
-              </motion.div>
+              </m.div>
             );
           })}
-        </motion.div>
+        </m.div>
 
         <Reveal className="mt-12 flex flex-wrap justify-center items-center gap-5">
           <a href={diagHref}>

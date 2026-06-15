@@ -8,6 +8,7 @@ import { routing } from "@/i18n/routing";
 import { Analytics } from "@vercel/analytics/react";
 import { Suspense } from "react";
 import MetaPixel from "@/components/MetaPixel";
+import { MotionProvider } from "@/components/MotionProvider";
 import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
 import { OrganizationSchema, ServiceSchema, WebSiteSchema } from "@/components/JsonLd";
 import "../globals.css";
@@ -176,7 +177,7 @@ export default async function RootLayout({
         <ServiceSchema />
         <WebSiteSchema />
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <MotionProvider>{children}</MotionProvider>
         </NextIntlClientProvider>
         <Analytics />
         <Suspense fallback={null}>

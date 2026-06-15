@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Eyebrow, Btn } from "../ui/Atoms";
 import { Typewriter } from "../ui/Typewriter";
 import { useCountUp } from "@/hooks/useCountUp";
@@ -46,7 +46,7 @@ function AnimatedStat({
   const display = useCountUp(target, { start: inView, prefix, suffix });
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       variants={fadeUp}
       className="flex flex-col items-center gap-1 shrink-0 origin-center"
@@ -59,7 +59,7 @@ function AnimatedStat({
       <span className="font-pixel text-[7px] md:text-[9px] tracking-[0.05em] md:tracking-[0.15em] text-muted uppercase text-center whitespace-nowrap">
         {label}
       </span>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -76,29 +76,29 @@ export function Hero() {
       <div className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(60%_50%_at_12%_18%,var(--c-accent-glow)_0%,transparent_60%),radial-gradient(45%_40%_at_92%_80%,rgba(235,69,159,0.15)_0%,transparent_65%),linear-gradient(180deg,#0c0e1a_0%,#08090d_70%)]" />
 
       {/* Grid overlay, fades out after 1.5s */}
-      <motion.div
+      <m.div
         className="absolute inset-0 pointer-events-none z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(70%_70%_at_50%_30%,#000_30%,transparent_80%)]"
-        initial={{ opacity: 1 }}
+        initial={{ opacity: 0.6 }}
         animate={{ opacity: 0.35 }}
-        transition={{ delay: 1.6, duration: 1.2, ease: "easeOut" }}
+        transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
       />
 
       {/* Content stagger container */}
-      <motion.div
+      <m.div
         className="relative z-20 max-w-[1100px] mx-auto w-full flex flex-col items-center text-center"
         variants={staggerFast}
         initial="hidden"
         animate="visible"
       >
         {/* Eyebrow */}
-        <motion.div variants={riseIn}>
+        <m.div variants={riseIn}>
           <Eyebrow>
             {t("eyebrow")} <span className="hidden md:block">· v.3.1.0</span>
           </Eyebrow>
-        </motion.div>
+        </m.div>
 
         {/* H1 — LCP element: riseIn (transform-only) so it paints at SSR */}
-        <motion.h1
+        <m.h1
           variants={riseIn}
           className="font-display font-normal text-[clamp(44px,5.8vw,80px)] leading-[1.1] md:leading-none tracking-normal text-white my-[26px] text-balance max-w-[20ch] uppercase"
         >
@@ -108,18 +108,18 @@ export function Hero() {
           <span className="inline-block bg-[linear-gradient(180deg,#fff_0%,#fff_55%,#babbbe_100%)] bg-clip-text text-transparent">
             <Typewriter words={words} />
           </span>
-        </motion.h1>
+        </m.h1>
 
         {/* Description */}
-        <motion.p
+        <m.p
           variants={riseIn}
           className="max-w-[58ch] text-soft text-[17px] leading-[1.55] mb-8 mx-0"
         >
           {t("description")}
-        </motion.p>
+        </m.p>
 
         {/* CTAs */}
-        <motion.div
+        <m.div
           variants={riseIn}
           className="flex gap-3 flex-wrap justify-center"
         >
@@ -142,10 +142,10 @@ export function Hero() {
           >
             {t("cta_meet")}
           </Btn>
-        </motion.div>
+        </m.div>
 
         {/* Stats row */}
-        <motion.div
+        <m.div
           variants={staggerFast}
           className="mt-[40px] md:mt-[60px] flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 w-full max-w-[90vw] md:max-w-none"
         >
@@ -172,8 +172,8 @@ export function Hero() {
               label={t("stat_production")}
             />
           </div>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </section>
   );
 }

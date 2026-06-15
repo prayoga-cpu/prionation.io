@@ -13,7 +13,11 @@ export function Typewriter({
   deletingSpeed?: number;
   pauseTime?: number;
 }) {
-  const [text, setText] = useState("");
+  // Start with the first word fully rendered (this is also the SSR output) so the
+  // hero headline is visually complete on first paint; the loop then pauses and
+  // begins deleting. Starting empty made the page keep changing (worse Speed
+  // Index) and left the line blank before JS ran.
+  const [text, setText] = useState(() => words[0] ?? "");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeedState, setTypingSpeedState] = useState(typingSpeed);

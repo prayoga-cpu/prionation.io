@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Dot } from "../ui/Atoms";
 import { staggerNormal, slideInLeft, fadeUp } from "@/lib/motion";
 
@@ -16,7 +16,7 @@ export function HowWeWork() {
       className="px-page-x py-[120px] border-y border-line bg-[radial-gradient(circle_at_50%_50%,rgba(88,101,242,0.05)_0%,transparent_70%)]"
     >
       <div className="max-w-[1100px] mx-auto">
-        <motion.div
+        <m.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -30,9 +30,9 @@ export function HowWeWork() {
           <h2 className="font-sans font-extrabold text-[clamp(32px,4.2vw,54px)] leading-[1.02] tracking-[-0.03em] m-0 text-white uppercase">
             {t("title")}
           </h2>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           variants={staggerNormal}
           initial="hidden"
           whileInView="visible"
@@ -40,7 +40,7 @@ export function HowWeWork() {
           className="bg-card border border-line-soft rounded-[28px] overflow-hidden shadow-2xl"
         >
           {/* Header row */}
-          <motion.div
+          <m.div
             variants={fadeUp}
             className="grid grid-cols-[1.1fr_1fr_1fr] bg-card-soft border-b border-line-soft"
           >
@@ -53,10 +53,10 @@ export function HowWeWork() {
             <div className="p-3 md:p-6 lg:px-8 border-l border-line-soft font-pixel text-[8px] md:text-[10px] tracking-[0.12em] text-accent uppercase text-center md:text-left">
               {t("col_pod")}
             </div>
-          </motion.div>
+          </m.div>
 
           {rows.map((r, i) => (
-            <motion.div
+            <m.div
               key={i}
               variants={slideInLeft}
               transition={{ delay: i * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -71,9 +71,9 @@ export function HowWeWork() {
               <div className={`p-3 md:p-6 lg:px-8 border-l border-line-soft text-[10px] md:text-[14px] flex items-center leading-tight ${highlights[i] ? "text-accent font-bold" : "text-green-400/90 font-semibold"}`}>
                 {r.us}
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

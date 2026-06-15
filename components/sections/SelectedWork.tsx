@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { SectionHead } from "../ui/Atoms";
 import Image from "next/image";
 import { staggerSlow, fadeUp } from "@/lib/motion";
@@ -28,7 +28,7 @@ function CaseTile({
   c: CaseData; link: string; img: string; viewLabel: string;
 }) {
   return (
-    <motion.a
+    <m.a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
@@ -51,9 +51,9 @@ function CaseTile({
       <p className="text-soft text-[13px] md:text-[14px] leading-[1.5] md:leading-[1.6] line-clamp-3 md:line-clamp-none mb-2 md:mb-0">{c.body}</p>
       <div className="mt-auto pt-2 md:pt-4 flex items-center gap-2 text-[11px] md:text-[12px] font-bold text-accent">
         {viewLabel}{" "}
-        <motion.span aria-hidden="true" className="inline-block" whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 400, damping: 20 }}>→</motion.span>
+        <m.span aria-hidden="true" className="inline-block" whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 400, damping: 20 }}>→</m.span>
       </div>
-    </motion.a>
+    </m.a>
   );
 }
 
@@ -71,7 +71,7 @@ function MobileCarousel({ children }: { children: React.ReactNode[] }) {
     >
       <div className="flex gap-4 px-[var(--page-x)] w-max">
         {infiniteChildren.map((child, i) => (
-          <motion.div
+          <m.div
             key={i}
             className="snap-start shrink-0 w-[280px] h-[440px] origin-left"
             initial={{ scale: 0.85, opacity: 0.35 }}
@@ -80,7 +80,7 @@ function MobileCarousel({ children }: { children: React.ReactNode[] }) {
             transition={{ type: "spring", stiffness: 350, damping: 30 }}
           >
             {child}
-          </motion.div>
+          </m.div>
         ))}
         {/* Spacer to allow the final item to snap properly */}
         <div className="w-[var(--page-x)] shrink-0" />
@@ -102,7 +102,7 @@ export function SelectedWork() {
       <SectionHead n="03" label={t("label")} title={t("title")} link={t("link")} linkHref="/showcases" />
       
       {/* Desktop Grid */}
-      <motion.div
+      <m.div
         variants={staggerSlow}
         initial="hidden"
         whileInView="visible"
@@ -110,7 +110,7 @@ export function SelectedWork() {
         className="hidden md:grid grid-cols-1 lg:grid-cols-[repeat(9,1fr)] gap-5 mt-10"
       >
         {caseCards}
-      </motion.div>
+      </m.div>
 
       {/* Mobile Carousel */}
       <MobileCarousel>

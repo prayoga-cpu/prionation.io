@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Icon } from "../icons";
 import { SectionHead, Btn } from "../ui/Atoms";
 import { MeetUsTab } from "./engage/MeetUsTab";
@@ -17,9 +17,9 @@ type Tab = "Meet Us" | "Diagnostic" | "Careers";
 
 function TabPanel({ tabKey, children }: { tabKey: string; children: React.ReactNode }) {
   return (
-    <motion.div key={tabKey} variants={fadeIn} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.25 }}>
+    <m.div key={tabKey} variants={fadeIn} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.25 }}>
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -58,16 +58,16 @@ export function Engage() {
   if (submitted) {
     return (
       <section id="engage" className="relative px-page-x pt-[110px] pb-[140px] max-w-max-w mx-auto">
-        <motion.div variants={fadeUp} initial="hidden" animate="visible"
+        <m.div variants={fadeUp} initial="hidden" animate="visible"
           className="max-w-[720px] mx-auto bg-card rounded-[28px] p-[64px_48px] text-center bg-[radial-gradient(hsla(0,0%,100%,0.04)_1.2px,transparent_0)] bg-[size:22px_22px] pn-ring-wrap"
         >
-          <motion.span
+          <m.span
             initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 400, damping: 20, delay: 0.1 }}
             className="inline-flex items-center justify-center w-[56px] h-[56px] rounded-full bg-accent text-white mb-6 shadow-[0_0_0_6px_var(--c-accent-10)] relative z-20"
           >
             <Icon name="check-circle" size={20} />
-          </motion.span>
+          </m.span>
           <h2 className="font-sans font-extrabold text-[clamp(28px,3.4vw,40px)] tracking-[-0.024em] leading-[1.08] text-white m-0 relative z-20">
             {ts("title")}
           </h2>
@@ -85,7 +85,7 @@ export function Engage() {
           >
             {ts("reset")} <span aria-hidden="true" className="text-[12px] opacity-80">→</span>
           </button>
-        </motion.div>
+        </m.div>
       </section>
     );
   }
@@ -110,23 +110,23 @@ export function Engage() {
         <div className="flex flex-wrap items-center gap-4 mb-10 relative z-20">
           <div className="flex bg-card-soft border border-line-soft rounded-full p-1">
             {(["Meet Us", "Diagnostic"] as Tab[]).map((tab) => (
-              <motion.button key={tab} type="button"
+              <m.button key={tab} type="button"
                 onClick={() => { setActiveTab(tab); window.location.hash = `engage?tab=${tab === "Meet Us" ? "meet" : tab.toLowerCase()}`; }}
                 whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }}
                 className={`px-6 py-2 font-sans font-semibold text-[13px] rounded-full transition-all duration-fast ${activeTab === tab ? "bg-accent text-white shadow-sm" : "text-soft hover:text-white"}`}
               >
                 {tabLabel(tab)}
-              </motion.button>
+              </m.button>
             ))}
           </div>
 
-          <motion.button type="button"
+          <m.button type="button"
             onClick={() => { setActiveTab("Careers"); window.location.hash = "engage?tab=careers"; }}
             whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }}
             className={`px-6 py-2 font-sans font-semibold text-[13px] rounded-full border transition-all duration-fast ${activeTab === "Careers" ? "bg-white text-card border-white shadow-sm" : "bg-transparent border-line-soft text-soft hover:text-white hover:border-soft"}`}
           >
             {t("tab_careers")}
-          </motion.button>
+          </m.button>
         </div>
 
         {/* Desktop tab content */}
@@ -155,21 +155,21 @@ export function Engage() {
         <AnimatePresence>
           {isModalOpen && (
             <>
-              <motion.div key="engage-backdrop" variants={backdrop} initial="hidden" animate="visible" exit="exit"
+              <m.div key="engage-backdrop" variants={backdrop} initial="hidden" animate="visible" exit="exit"
                 className="fixed inset-0 z-[190] bg-black/60" onClick={() => setIsModalOpen(false)} />
-              <motion.div key="engage-sheet" variants={slideUp} initial="hidden" animate="visible" exit="exit"
+              <m.div key="engage-sheet" variants={slideUp} initial="hidden" animate="visible" exit="exit"
                 className="fixed inset-x-0 bottom-0 top-0 z-[200] bg-bg flex flex-col"
               >
                 <div className="flex items-center justify-between p-6 border-b border-line sticky top-0 bg-bg z-20">
                   <span className="font-pixel text-[10px] tracking-[0.2em] text-accent uppercase">
                     {tabLabel(activeTab)} {t("modal_form")}
                   </span>
-                  <motion.button onClick={() => setIsModalOpen(false)}
+                  <m.button onClick={() => setIsModalOpen(false)}
                     whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
                     className="text-white bg-white/5 w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:bg-white/10"
                   >
                     <Icon name="x" size={20} />
-                  </motion.button>
+                  </m.button>
                 </div>
                 <div className="flex-1 overflow-y-auto py-6 px-4 pb-20">
                   <AnimatePresence mode="wait">
@@ -178,7 +178,7 @@ export function Engage() {
                     {activeTab === "Careers"    && <TabPanel key="modal-careers"    tabKey="modal-careers"><CareersTab /></TabPanel>}
                   </AnimatePresence>
                 </div>
-              </motion.div>
+              </m.div>
             </>
           )}
         </AnimatePresence>,

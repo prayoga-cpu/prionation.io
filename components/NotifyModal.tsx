@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "./icons";
 import { Btn, Eyebrow } from "./ui/Atoms";
@@ -71,7 +71,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
   return (
     <>
       {/* Backdrop */}
-      <motion.div
+      <m.div
         key="notify-backdrop"
         variants={backdrop}
         initial="hidden"
@@ -84,7 +84,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
 
       {/* Card */}
       <div className="fixed inset-0 z-[101] flex items-center justify-center p-6 pointer-events-none">
-        <motion.div
+        <m.div
           key="notify-card"
           variants={scaleIn}
           initial="hidden"
@@ -163,7 +163,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
               </div>
             </>
           ) : (
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
@@ -171,9 +171,9 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
             >
               Got it. We&apos;ll email{" "}
               <span className="text-accent">{email}</span> the day it ships.
-            </motion.p>
+            </m.p>
           )}
-        </motion.div>
+        </m.div>
       </div>
     </>
   );

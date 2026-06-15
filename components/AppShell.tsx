@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Header } from "./Header";
 import { NotifyModal } from "./NotifyModal";
 import { Hero } from "./sections/Hero";
@@ -26,7 +26,7 @@ function FadeSection({
   delay?: number;
 }) {
   return (
-    <motion.div
+    <m.div
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"
@@ -34,7 +34,7 @@ function FadeSection({
       transition={{ delay }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 

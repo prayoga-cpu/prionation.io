@@ -1,6 +1,6 @@
 "use client";
 
-import { useScroll, useSpring, motion } from "framer-motion";
+import { useScroll, useSpring, m } from "framer-motion";
 
 /**
  * ScrollProgress, thin accent bar fixed at the top of the viewport.
@@ -15,7 +15,7 @@ export function ScrollProgress() {
   });
 
   return (
-    <motion.div
+    <m.div
       style={{ scaleX, transformOrigin: "left" }}
       className="fixed top-0 left-0 right-0 h-[2px] z-[200] bg-accent"
       aria-hidden="true"

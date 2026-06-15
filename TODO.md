@@ -163,10 +163,25 @@ bulk of it post-deploy. Nothing new surfaced this run.
   text. Verified: homepage now preloads only `black_han_sans` + `rubik`.
 - ✅ **Legacy JS dropped** — added a modern `browserslist` (chrome/edge/firefox ≥109,
   safari ≥15.4) to `package.json` so SWC stops shipping ES5/legacy polyfills (~26 KiB).
-- ⬜ Remaining (optional, higher-risk, left for a focused pass): framer-motion ~76 KiB
-  unused JS (LazyMotion/`m` refactor or below-fold `next/dynamic` split); hero
-  entrance-animation timing (the grid-overlay fade + stagger inflate Speed Index). Both
-  are broad/design-affecting, so not bundled into this round.
+**✅ Mobile perf — round 3 shipped 2026-06-15** (framer-motion bundle + Speed Index;
+deploy 1+2 confirmed live but mobile Perf plateaued at 87, gated by LCP 3.6 s / SI 4.6 s):
+
+- ✅ **framer-motion → LazyMotion + `m`** — converted all 14 animated files from
+  `motion.*` to the lightweight `m.*` API (162 usages) behind one
+  `<LazyMotion features={domAnimation} strict>` provider (`components/MotionProvider.tsx`,
+  wrapped around `{children}` in the root layout). `domAnimation` carries exactly what the
+  site uses — animation, variants, exit (AnimatePresence), `inView` (whileInView),
+  hover/tap/focus — and drops the unused **drag/layout/pan** that the full `motion` import
+  shipped. `strict` mode makes `next build`'s prerender throw on any missed conversion
+  (build-verified clean). Renamed a colliding `team.map((m,…))` param in Foundation.
+- ✅ **Speed Index** — two SSR/animation fixes: (1) the **Typewriter** now renders the
+  first word at SSR (`useState(() => words[0])`) instead of typing from empty, so the hero
+  headline is visually complete on first paint (verified: "bottlenecks." in SSR HTML);
+  (2) the **hero grid overlay** fade was settling at ~2.8 s (delay 1.6 + dur 1.2) — now
+  starts at 0.6 opacity and settles ~0.8 s (delay 0.2 + dur 0.6).
+- Verified: tsc/eslint clean, `vitest` 51/51, `next build` 87/87 (strict prerender passed),
+  runtime smoke 200 on en/fr/id + discord/start/widget/showcase, no translation-key leak.
+  Re-measure mobile Perf/LCP/SI/unused-JS after this deploy.
 
 ## AEO — answer engines & voice
 

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { SectionHead } from "../ui/Atoms";
@@ -84,7 +84,7 @@ function MobileCarousel({ children }: { children: React.ReactNode[] }) {
     >
       <div className="flex gap-4 px-[var(--page-x)] w-max">
         {infiniteChildren.map((child, i) => (
-          <motion.div
+          <m.div
             key={i}
             className="snap-start shrink-0 w-[280px] h-[480px] origin-left"
             initial={{ scale: 0.85, opacity: 0.35 }}
@@ -93,7 +93,7 @@ function MobileCarousel({ children }: { children: React.ReactNode[] }) {
             transition={{ type: "spring", stiffness: 350, damping: 30 }}
           >
             {child}
-          </motion.div>
+          </m.div>
         ))}
         {/* Spacer to allow the final item to snap properly */}
         <div className="w-[var(--page-x)] shrink-0" />
@@ -107,8 +107,8 @@ export function Foundation() {
   const team = t.raw("team") as TeamMember[];
 
   const cards = [
-    ...team.map((m, i) => (
-      <PersonCard key={`person-${i}`} member={m} poweredBy={t("powered_by")} />
+    ...team.map((person, i) => (
+      <PersonCard key={`person-${i}`} member={person} poweredBy={t("powered_by")} />
     )),
     <div
       key="pod-card"

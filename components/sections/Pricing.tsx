@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Dot, Btn } from "../ui/Atoms";
 import { Icon } from "../icons";
 import { staggerSlow, fadeUp, staggerNormal } from "@/lib/motion";
@@ -27,7 +27,7 @@ export function Pricing() {
       <div className="max-w-max-w mx-auto relative z-20">
 
         {/* Section header */}
-        <motion.div
+        <m.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -41,10 +41,10 @@ export function Pricing() {
           <h2 className="font-sans font-extrabold text-[clamp(32px,4.2vw,54px)] leading-[1.02] tracking-[-0.03em] m-0 text-white uppercase max-w-[15ch]">
             {t("title")}
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Pricing cards */}
-        <motion.div
+        <m.div
           variants={staggerSlow}
           initial="hidden"
           whileInView="visible"
@@ -52,7 +52,7 @@ export function Pricing() {
           className="grid grid-cols-1 lg:grid-cols-3 gap-6"
         >
           {plansWithFeatured.map((p) => (
-            <motion.div
+            <m.div
               key={p.name}
               variants={fadeUp}
               whileHover={
@@ -83,7 +83,7 @@ export function Pricing() {
               </div>
 
               <div className="flex-grow">
-                <motion.ul
+                <m.ul
                   variants={staggerNormal}
                   initial="hidden"
                   whileInView="visible"
@@ -91,12 +91,12 @@ export function Pricing() {
                   className="list-none p-0 m-0 flex flex-col gap-4"
                 >
                   {p.features.map((f) => (
-                    <motion.li key={f} variants={fadeUp} className="flex items-start gap-3 text-[14px] text-soft">
+                    <m.li key={f} variants={fadeUp} className="flex items-start gap-3 text-[14px] text-soft">
                       <Icon name="check-circle" size={16} className="text-accent shrink-0 mt-0.5" />
                       {f}
-                    </motion.li>
+                    </m.li>
                   ))}
-                </motion.ul>
+                </m.ul>
               </div>
 
               <div className="mt-10">
@@ -108,19 +108,19 @@ export function Pricing() {
                   {p.cta} <span className="text-[12px] opacity-80 ml-1">→</span>
                 </Btn>
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Express Site floater */}
-        <motion.div
+        <m.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           className="mt-20 flex justify-center"
         >
-          <motion.div
+          <m.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
@@ -151,8 +151,8 @@ export function Pricing() {
                 </Btn>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
     </section>
   );

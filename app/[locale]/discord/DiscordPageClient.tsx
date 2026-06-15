@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Btn, Eyebrow } from "@/components/ui/Atoms";
 import { staggerFast, fadeUp } from "@/lib/motion";
 
@@ -17,7 +17,7 @@ function LabIllustration() {
       <div className="absolute inset-0 z-0 opacity-15 bg-[linear-gradient(rgba(88,101,242,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(88,101,242,0.1)_1px,transparent_1px)] bg-[size:8px_8px]" />
 
       {/* Floating Retro Container */}
-      <motion.div
+      <m.div
         className="relative z-10 w-20 h-20 flex items-center justify-center"
         animate={{ y: [-2, 2, -2] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -33,7 +33,7 @@ function LabIllustration() {
           <rect x="4" y="24" width="24" height="4" fill="#5865f2" opacity="0.85" />
           
           {/* Level 2 (middle layer) */}
-          <motion.rect
+          <m.rect
             x="6"
             y="20"
             width="20"
@@ -45,7 +45,7 @@ function LabIllustration() {
           />
           
           {/* Level 3 (top wave layer - morphing left/right) */}
-          <motion.rect
+          <m.rect
             y="16"
             height="4"
             fill="#eb459f"
@@ -78,7 +78,7 @@ function LabIllustration() {
           <rect x="4" y="26" width="24" height="2" fill="currentColor" />
           
           {/* Glowing central core - pixel power source */}
-          <motion.rect
+          <m.rect
             x="14"
             y="20"
             width="4"
@@ -92,7 +92,7 @@ function LabIllustration() {
         {/* Rising square pixel bubbles */}
         <div className="absolute inset-0">
           {[...Array(5)].map((_, i) => (
-            <motion.span
+            <m.span
               key={i}
               className="absolute w-2 h-2 bg-[#5865f2] border border-[#eb459f]/50"
               style={{
@@ -116,7 +116,7 @@ function LabIllustration() {
         </div>
 
         {/* Retro Sparkle Spark */}
-        <motion.div
+        <m.div
           className="absolute z-30"
           style={{ top: "15%", right: "20%" }}
           animate={{ scale: [0, 1.2, 0], opacity: [0, 1, 0] }}
@@ -126,8 +126,8 @@ function LabIllustration() {
             <rect x="3" y="0" width="2" height="8" />
             <rect x="0" y="3" width="8" height="2" />
           </svg>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
 
       {/* 8-bit text label */}
       <div className="absolute bottom-2 text-[8px] font-pixel tracking-widest text-[#73767d] uppercase">
@@ -159,7 +159,7 @@ export function DiscordPageClient() {
       <div className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(60%_50%_at_12%_18%,var(--c-accent-glow)_0%,transparent_60%),radial-gradient(45%_40%_at_92%_80%,rgba(235,69,159,0.15)_0%,transparent_65%),linear-gradient(180deg,#0c0e1a_0%,#08090d_70%)]" />
 
       {/* Grid overlay */}
-      <motion.div
+      <m.div
         className="absolute inset-0 pointer-events-none z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(70%_70%_at_50%_30%,#000_30%,transparent_80%)]"
         initial={{ opacity: 0.35 }}
         animate={{ opacity: 0.2 }}
@@ -167,40 +167,40 @@ export function DiscordPageClient() {
       />
 
       {/* Content Container */}
-      <motion.div
+      <m.div
         className="relative z-20 max-w-[1200px] mx-auto w-full flex flex-col items-center text-center"
         variants={staggerFast}
         initial="hidden"
         animate="visible"
       >
         {/* Eyebrow */}
-        <motion.div variants={fadeUp}>
+        <m.div variants={fadeUp}>
           <Eyebrow glow>{t("eyebrow")}</Eyebrow>
-        </motion.div>
+        </m.div>
 
         {/* Animated Retro Lab Beaker Illustration */}
-        <motion.div variants={fadeUp} className="mt-4 mb-3">
+        <m.div variants={fadeUp} className="mt-4 mb-3">
           <LabIllustration />
-        </motion.div>
+        </m.div>
 
         {/* Heading */}
-        <motion.h1
+        <m.h1
           variants={fadeUp}
           className="font-display font-normal text-2xl sm:text-3xl md:text-5xl tracking-normal text-white mb-3 uppercase whitespace-nowrap"
         >
           {t("titlePre")} <span className="text-accent">{t("titlePost")}</span>
-        </motion.h1>
+        </m.h1>
 
         {/* Description */}
-        <motion.p
+        <m.p
           variants={fadeUp}
           className="max-w-[55ch] text-soft text-[15px] md:text-[16px] leading-[1.5] mb-5 mx-0 text-balance"
         >
           {t("description")}
-        </motion.p>
+        </m.p>
 
         {/* CTA Buttons */}
-        <motion.div
+        <m.div
           variants={fadeUp}
           className="flex gap-3 flex-wrap justify-center mb-10"
         >
@@ -225,15 +225,15 @@ export function DiscordPageClient() {
               {t("backHome")}
             </Btn>
           </Link>
-        </motion.div>
+        </m.div>
 
         {/* Feature/Posters Grid */}
-        <motion.div
+        <m.div
           variants={staggerFast}
           className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full max-w-[1200px] mx-auto text-left items-stretch"
         >
           {/* Card 1: Mid-Year Bug Hunt */}
-          <motion.div
+          <m.div
             variants={fadeUp}
             className="flex flex-col bg-[#0c0d12]/60 border border-line-soft rounded-[24px] p-8 hover:bg-[#11131a]/80 hover:border-[#39e17b] hover:shadow-[0_16px_40px_rgba(57,225,123,0.1)] transition-all duration-fast"
           >
@@ -285,10 +285,10 @@ export function DiscordPageClient() {
             >
               {t("bugHunt.btn")}
             </Btn>
-          </motion.div>
+          </m.div>
 
           {/* Card 2: Motion Graphics Competition */}
-          <motion.div
+          <m.div
             variants={fadeUp}
             className="flex flex-col bg-[#0c0d12]/60 border border-line-soft rounded-[24px] p-8 hover:bg-[#11131a]/80 hover:border-[#eb459f] hover:shadow-[0_16px_40px_rgba(235,69,159,0.1)] transition-all duration-fast"
           >
@@ -340,10 +340,10 @@ export function DiscordPageClient() {
             >
               {t("motion.btn")}
             </Btn>
-          </motion.div>
+          </m.div>
 
           {/* Card 3: AI Talent Pool */}
-          <motion.div
+          <m.div
             variants={fadeUp}
             className="flex flex-col bg-[#0c0d12]/60 border border-line-soft rounded-[24px] p-8 hover:bg-[#11131a]/80 hover:border-[#e2b714] hover:shadow-[0_16px_40px_rgba(226,183,20,0.1)] transition-all duration-fast"
           >
@@ -403,9 +403,9 @@ export function DiscordPageClient() {
             >
               {t("pool.btn")}
             </Btn>
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </m.div>
+        </m.div>
+      </m.div>
     </main>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "@/i18n/routing";
 import { Dot } from "../ui/Atoms";
 import { getPublishedPages } from "@/lib/content/pages";
@@ -33,7 +33,7 @@ export function ContentHighlight() {
   return (
     <section className="relative px-page-x py-[100px] md:py-[120px]">
       <div className="max-w-max-w mx-auto">
-        <motion.div
+        <m.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -55,10 +55,10 @@ export function ContentHighlight() {
           >
             Explore all articles <span aria-hidden="true">→</span>
           </Link>
-        </motion.div>
+        </m.div>
 
         {featured.length > 0 && (
-          <motion.div
+          <m.div
             variants={staggerSlow}
             initial="hidden"
             whileInView="visible"
@@ -66,7 +66,7 @@ export function ContentHighlight() {
             className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12"
           >
             {featured.map((page) => (
-              <motion.div key={page.slug} variants={fadeUp}>
+              <m.div key={page.slug} variants={fadeUp}>
                 <Link
                   href={`/${page.section}/${page.slug}`}
                   className="group flex flex-col gap-4 bg-card border border-line-soft rounded-[20px] p-6 h-full hover:bg-card-soft hover:border-soft hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)] transition-all duration-fast"
@@ -89,13 +89,13 @@ export function ContentHighlight() {
                     Read <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
                   </div>
                 </Link>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         )}
 
         {/* Categories strip */}
-        <motion.div
+        <m.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -115,7 +115,7 @@ export function ContentHighlight() {
               </Link>
             );
           })}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

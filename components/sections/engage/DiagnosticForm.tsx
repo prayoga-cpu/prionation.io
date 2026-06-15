@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import { useTranslations } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
@@ -87,12 +87,12 @@ function FRadio({ value, onChange, options }: {
   return (
     <div className="flex flex-wrap gap-2 mt-1.5 relative z-20">
       {options.map((o) => (
-        <motion.button key={o} type="button" onClick={() => onChange(o)}
+        <m.button key={o} type="button" onClick={() => onChange(o)}
           whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
           className={`px-4 py-2.5 font-sans font-medium text-[13px] border rounded-full cursor-pointer transition-all duration-fast hover:border-soft hover:text-white ${value === o ? "bg-accent border-accent text-white" : "bg-transparent border-line-soft text-soft"}`}
         >
           {o}
-        </motion.button>
+        </m.button>
       ))}
     </div>
   );
@@ -250,11 +250,11 @@ export function DiagnosticTab({ setSubmitted }: { setSubmitted: (b: boolean) => 
       </div>
 
       <AnimatePresence mode="wait">
-        <motion.div key={`step-${step}`} variants={fadeIn} initial="hidden" animate="visible" exit="exit"
+        <m.div key={`step-${step}`} variants={fadeIn} initial="hidden" animate="visible" exit="exit"
           transition={{ duration: 0.2 }} className="grid gap-7 mb-10 relative z-20"
         >
           {step === 1 ? Step1Fields : Step2Fields}
-        </motion.div>
+        </m.div>
       </AnimatePresence>
 
       <input
