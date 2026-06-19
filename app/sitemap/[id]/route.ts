@@ -29,7 +29,7 @@ function coreEntries(): Entry[] {
       changefreq: "monthly",
       priority: 0.95,
     },
-    { path: "/ai-engineering-glossary", changefreq: "monthly", priority: 0.7 },
+    { path: "/ai-product-engineering-for-mid-market-companies/glossary", changefreq: "monthly", priority: 0.7 },
     { path: "/start", changefreq: "monthly", priority: 0.8 },
   ];
 }

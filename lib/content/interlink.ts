@@ -33,11 +33,11 @@ export const INTERLINKS: Interlink[] = [
     phrases: { en: ["fixed clock"], fr: ["horloge fixe"], id: ["jam tetap"] },
   },
   {
-    href: "/ai-engineering-glossary",
+    href: "/ai-product-engineering-for-mid-market-companies/glossary",
     phrases: {
-      en: ["golden dataset"],
+      en: ["golden dataset", "golden set"],
       fr: ["jeu de données de référence"],
-      id: ["dataset acuan"],
+      id: ["dataset acuan", "golden dataset", "golden set"],
     },
   },
 ];

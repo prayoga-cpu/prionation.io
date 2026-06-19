@@ -101,7 +101,7 @@ export async function getRelatedLinks({
   // Surface the AI engineering glossary as a definitional reference on every
   // cluster page — broad, semantic internal links into the new term hub.
   const glossary = await getTranslations({ locale, namespace: "Glossary" });
-  out.push({ href: "/ai-engineering-glossary", label: glossary("h1") });
+  out.push({ href: "/ai-product-engineering-for-mid-market-companies/glossary", label: glossary("h1") });
 
   return out;
 }
