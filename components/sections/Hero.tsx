@@ -267,6 +267,7 @@ const valueStyle: CSSProperties = { color: "var(--c-fg)", fontWeight: 700, fontS
 const mutedStyle: CSSProperties = { color: "var(--c-muted)", fontSize: 14, lineHeight: 1.8 };
 const monoStyle: CSSProperties = { fontFamily: "var(--font-pixel)", fontSize: 7, letterSpacing: "0.03em", lineHeight: 2.0, color: "var(--c-muted)" };
 const pixelLabel: CSSProperties = { fontFamily: "var(--font-pixel)", fontSize: 8, letterSpacing: "0.1em", color: "var(--c-muted)" };
+const errorLabel: CSSProperties = { fontFamily: "var(--font-pixel)", fontSize: 8, letterSpacing: "0.1em", color: "var(--c-accent)", textTransform: "uppercase" };
 
 /* Renders the diagnostic block inline, or — when expanded — as a portal to
    <body> so the modal escapes the hero's z-4 stacking context and lands above
@@ -284,8 +285,10 @@ function DiagShell({ modalOpen, onClose, children }: { modalOpen: boolean; onClo
     return createPortal(
       <>
         <div className="pio-backdrop" onClick={onClose} />
-        <div className="pio-diag is-modal" role="dialog" aria-modal="true">
-          {children}
+        <div className="pio-modal-scroll" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+          <div className="pio-diag is-modal" role="dialog" aria-modal="true">
+            {children}
+          </div>
         </div>
       </>,
       document.body,
@@ -329,6 +332,13 @@ function ScaleToFit({ children }: { children: ReactNode }) {
   );
 }
 
+/* Jump to the Engage section with the right tab pre-selected (hash drives the
+   tab; smooth-scrolls the section into view). Mirrors the footer/pricing CTAs. */
+function goEngage(tab: "diagnostic" | "meet") {
+  window.location.hash = `engage?tab=${tab}`;
+  document.getElementById("engage")?.scrollIntoView({ behavior: "smooth" });
+}
+
 export function Hero({ onNotify }: { onNotify?: () => void }) {
   const t = useTranslations("Hero");
   const titleLines = t.raw("title_lines") as string[];
@@ -361,6 +371,7 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
   const [feed, setFeed] = useState<string[]>([]);
   const [tokens, setTokens] = useState(0);
   const [elapsed, setElapsed] = useState(0);
+  const [fieldErrors, setFieldErrors] = useState<{ website?: boolean; bottleneck?: boolean }>({});
 
   const transcriptRef = useRef<HTMLDivElement>(null);
   const timers = useRef<{ t?: ReturnType<typeof setTimeout>; ct?: ReturnType<typeof setTimeout> }>({});
@@ -436,6 +447,19 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
         300 + steps.length * 520 + 480,
       ),
     );
+  };
+
+  // Guided-intake gate: every fillable field is required before a run.
+  const submitIntake = () => {
+    const errs: { website?: boolean; bottleneck?: boolean } = {};
+    if (!website.trim()) errs.website = true;
+    if (!bottleneck && !custom.trim()) errs.bottleneck = true;
+    if (errs.website || errs.bottleneck) {
+      setFieldErrors(errs);
+      return;
+    }
+    setFieldErrors({});
+    runGen();
   };
 
   const canSend = !!draft.trim() && phase !== "loading" && !aiThinking;
@@ -693,15 +717,15 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                   {/* company website */}
                   <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                     <span style={pixelLabel}>{t("website_label")}</span>
-                    <div style={{ display: "flex", alignItems: "center", gap: 9, background: SURFACE_DEEP, border: `1px solid ${LINE}`, borderRadius: 11, padding: "0 13px", height: 46 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 9, background: SURFACE_DEEP, border: `1px solid ${fieldErrors.website ? "var(--c-accent)" : LINE}`, borderRadius: 11, padding: "0 13px", height: 46 }}>
                       <span style={{ fontFamily: "var(--font-pixel)", fontSize: 8, color: "var(--c-muted)", flex: "none" }}>https://</span>
-                      <input className="pio-input" type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder={t("website_placeholder")} style={{ flex: 1, background: "transparent", border: "none", color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14, height: "100%" }} />
+                      <input className="pio-input" type="text" value={website} onChange={(e) => { setWebsite(e.target.value); if (fieldErrors.website) setFieldErrors((s) => ({ ...s, website: false })); }} placeholder={t("website_placeholder")} style={{ flex: 1, background: "transparent", border: "none", color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14, height: "100%" }} />
                       <span style={{ fontFamily: "var(--font-pixel)", fontSize: 7, letterSpacing: "0.08em", color: GREEN, flex: "none", display: "flex", alignItems: "center", gap: 5 }}>
                         <span style={{ width: 6, height: 6, borderRadius: "50%", background: GREEN, display: "inline-block" }} />
                         {t("scan")}
                       </span>
                     </div>
-                    <span style={{ fontSize: 11, color: "var(--c-muted)" }}>{t("website_hint")}</span>
+                    {fieldErrors.website ? <span style={errorLabel}>{t("required")}</span> : <span style={{ fontSize: 11, color: "var(--c-muted)" }}>{t("website_hint")}</span>}
                   </div>
 
                   {/* industry + stage */}
@@ -735,13 +759,14 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                     <span style={pixelLabel}>{t("bottleneck_label")}</span>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 7 }}>
                       {bnList.map((label, i) => (
-                        <button key={i} onClick={() => { setBottleneck(label); setCustom(""); }} style={chipStyle(bottleneck === label && !custom.trim())}>{label}</button>
+                        <button key={i} onClick={() => { setBottleneck(label); setCustom(""); if (fieldErrors.bottleneck) setFieldErrors((s) => ({ ...s, bottleneck: false })); }} style={chipStyle(bottleneck === label && !custom.trim())}>{label}</button>
                       ))}
                     </div>
-                    <input className="pio-input" type="text" value={custom} onChange={(e) => setCustom(e.target.value)} placeholder={t("bottleneck_custom_placeholder")} style={{ background: SURFACE_DEEP, border: `1px solid ${LINE}`, borderRadius: 11, padding: "0 13px", height: 42, color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14 }} />
+                    <input className="pio-input" type="text" value={custom} onChange={(e) => { setCustom(e.target.value); if (fieldErrors.bottleneck) setFieldErrors((s) => ({ ...s, bottleneck: false })); }} placeholder={t("bottleneck_custom_placeholder")} style={{ background: SURFACE_DEEP, border: `1px solid ${fieldErrors.bottleneck ? "var(--c-accent)" : LINE}`, borderRadius: 11, padding: "0 13px", height: 42, color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14 }} />
+                    {fieldErrors.bottleneck && <span style={errorLabel}>{t("required")}</span>}
                   </div>
 
-                  <button onClick={runGen} style={{ height: 50, background: "var(--c-accent)", color: "#fff", border: "none", borderRadius: 12, fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 15, cursor: "pointer", marginTop: 2 }}>
+                  <button onClick={submitIntake} style={{ height: 50, background: "var(--c-accent)", color: "#fff", border: "none", borderRadius: 12, fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 15, cursor: "pointer", marginTop: 2 }}>
                     {phase === "loading" ? t("analyzing") : t("generate")}
                   </button>
                 </div>
@@ -895,6 +920,26 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
           </div>
         </m.div>
         </ScaleToFit>
+
+        {/* ───── REDIRECT LINKS → Engage section (diagnostic form / meet us) ───── */}
+        <m.div variants={fadeIn} className="pio-hero-cta" style={{ marginTop: 28, display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "10px 26px" }}>
+          <a
+            href="#engage?tab=diagnostic"
+            onClick={(e) => { e.preventDefault(); goEngage("diagnostic"); }}
+            className="pio-hero-link"
+            style={{ display: "inline-flex", alignItems: "center", gap: 7, color: "var(--c-accent)", fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 14, textDecoration: "none" }}
+          >
+            {t("cta_diagnostic")} <span style={{ fontSize: 12, opacity: 0.8 }}>→</span>
+          </a>
+          <a
+            href="#engage?tab=meet"
+            onClick={(e) => { e.preventDefault(); goEngage("meet"); }}
+            className="pio-hero-link"
+            style={{ display: "inline-flex", alignItems: "center", gap: 7, color: "var(--c-soft)", fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 14, textDecoration: "none" }}
+          >
+            {t("cta_meet")} <span style={{ fontSize: 12, opacity: 0.8 }}>→</span>
+          </a>
+        </m.div>
       </m.main>
     </section>
   );

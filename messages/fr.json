@@ -144,6 +144,8 @@
     "title_shimmer": "infrastructure IA",
     "title_ai": "IA",
     "subhead": "Obtenez un diagnostic gratuit, généré par IA, de votre principal goulot opérationnel — puis nos équipes construisent avec vous, en 8 semaines, l'infrastructure IA de production qui le résout. Pensé pour les entreprises du marché intermédiaire en Europe et aux États-Unis.",
+    "cta_diagnostic": "Formulaire de diagnostic",
+    "cta_meet": "Rencontrez-nous",
     "input_label": "[ ENTRÉE ]",
     "expand": "Agrandir",
     "close": "Fermer",
@@ -159,6 +161,7 @@
     "bottleneck_custom_placeholder": "Ou décrivez le vôtre…",
     "generate": "Générer le diagnostic →",
     "analyzing": "Analyse…",
+    "required": "Requis",
     "industries": [
       "Restauration / Hôtellerie",
       "Logistique & Chaîne d'approvisionnement",

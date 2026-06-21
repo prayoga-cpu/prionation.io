@@ -144,6 +144,8 @@
     "title_shimmer": "Infrastruktur AI",
     "title_ai": "AI",
     "subhead": "Dapatkan diagnostik gratis bertenaga AI atas hambatan operasional terbesar Anda — lalu tim kami membangun infrastruktur AI produksi yang memperbaikinya, bersama Anda, dalam 8 minggu. Dibuat untuk perusahaan pasar menengah di Eropa dan AS.",
+    "cta_diagnostic": "Formulir diagnostik",
+    "cta_meet": "Temui kami",
     "input_label": "[ MASUKAN ]",
     "expand": "Perbesar",
     "close": "Tutup",
@@ -159,6 +161,7 @@
     "bottleneck_custom_placeholder": "Atau jelaskan sendiri…",
     "generate": "Buat diagnostik →",
     "analyzing": "Menganalisis…",
+    "required": "Wajib diisi",
     "industries": [
       "F&B / Perhotelan",
       "Logistik & Rantai Pasok",

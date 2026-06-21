@@ -95,7 +95,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
         >
           <div className="flex items-start justify-between gap-4 mb-5 relative z-20">
             <div>
-              <Eyebrow>COMING AUGUST 2026</Eyebrow>
+              <Eyebrow className="whitespace-nowrap !text-[8px] sm:!text-[10px]">COMING AUGUST 2026</Eyebrow>
               <h3 className="font-sans font-extrabold text-[22px] tracking-[-0.018em] text-white mt-3 mb-0">
                 AI Consultation
               </h3>

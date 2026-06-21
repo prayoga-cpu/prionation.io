@@ -144,6 +144,8 @@
     "title_shimmer": "AI Infrastructure",
     "title_ai": "AI",
     "subhead": "Get a free, AI-generated diagnostic of your biggest operational bottleneck — then our pods build the production AI infrastructure that fixes it, with you, in 8 weeks. Built for mid-market companies across the EU and US.",
+    "cta_diagnostic": "Diagnostic form",
+    "cta_meet": "Meet us",
     "input_label": "[ INPUT ]",
     "expand": "Expand",
     "close": "Close",
@@ -159,6 +161,7 @@
     "bottleneck_custom_placeholder": "Or describe your own…",
     "generate": "Generate diagnostic →",
     "analyzing": "Analyzing…",
+    "required": "Required",
     "industries": [
       "F&B / Hospitality",
       "Logistics & Supply Chain",
