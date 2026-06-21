@@ -161,7 +161,7 @@ export function Header() {
   }, [mobileOpen]);
 
   // Smooth-scroll if the section is on the current page (homepage);
-  // otherwise navigate to the homepage anchor (e.g. from /start).
+  // otherwise navigate to the homepage anchor (e.g. from a content page).
   const go = (id: string) => {
     setMobileOpen(false);
     if (typeof document !== "undefined" && document.getElementById(id)) {

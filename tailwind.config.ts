@@ -26,7 +26,6 @@ const config: Config = {
         sans: ["var(--font-sans)"],
         pixel: ["var(--font-pixel)"],
         display: ["var(--font-display)"],
-        serif: ["var(--font-serif)"],
       },
       spacing: {
         "page-x": "var(--page-x)",

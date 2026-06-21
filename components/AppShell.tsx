@@ -72,12 +72,12 @@ export default function AppShell() {
       <Header />
       <main>
         {/* Hero has its own internal stagger, no FadeSection wrapper */}
-        <Hero />
+        <Hero onNotify={() => setNotifyOpen(true)} />
         <FadeSection>
           <HowWeWork />
         </FadeSection>
         <FadeSection>
-          <Methodology onNotify={() => setNotifyOpen(true)} />
+          <Methodology />
         </FadeSection>
         <FadeSection>
           <SelectedWork />

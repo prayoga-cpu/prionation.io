@@ -2,8 +2,6 @@
   "Meta": {
     "homeTitle": "AI Product Engineering · PRIONATION.io",
     "homeDescription": "Production AI infrastructure for EU and US mid-market companies. Fixed scope. Fixed price. 8 weeks to production. Starting at €5,000.",
-    "startTitle": "Watch How We Work · PRIONATION.io",
-    "startDescription": "Short videos on how we build production AI, what it costs, and why over 60% of Diagnostics become Builds. Watch, then name your bottleneck.",
     "discordTitle": "Join our Discord Community · PRIONATION.io",
     "discordDescription": "Connect with AI product engineers, QA testers, and content creators. Take part in launch events, graphics challenges, and secure your place in our core talent pool."
   },
@@ -138,22 +136,143 @@
     "ctaButton": "Start Intake"
   },
   "Hero": {
-    "eyebrow": "AI PRODUCT ENGINEERING",
-    "title_main": "We build software that",
-    "title_accent": "break operational",
-    "description": "We build production AI infrastructure for European and US-Based mid-market companies. Eight weeks, fixed scope, lean pods.",
-    "cta_diagnostic": "Start with a Diagnostic",
-    "cta_meet": "Meet Us",
-    "stat_diagnostic": "DIAGNOSTIC → BUILD RATE",
-    "stat_deliverable": "TO FIRST DELIVERABLE",
-    "stat_production": "TO PRODUCTION",
-    "weeks": "weeks",
-    "words": [
-      "bottlenecks.",
-      "manual work.",
-      "data silos.",
-      "slow processes."
-    ]
+    "badge": "AI Product Engineering · Consultation",
+    "title_lines": [
+      "Break operational",
+      "bottleneck with"
+    ],
+    "title_shimmer": "AI Infrastructure",
+    "title_ai": "AI",
+    "subhead": "Get a free, AI-generated diagnostic of your biggest operational bottleneck — then our pods build the production AI infrastructure that fixes it, with you, in 8 weeks. Built for mid-market companies across the EU and US.",
+    "input_label": "[ INPUT ]",
+    "expand": "Expand",
+    "close": "Close",
+    "tab_intake": "Guided intake",
+    "tab_chat": "Chat with AI",
+    "website_label": "COMPANY WEBSITE",
+    "website_placeholder": "yourcompany.com",
+    "website_hint": "We'll scan your site to pre-fill your diagnostic context.",
+    "scan": "SCAN",
+    "industry_label": "INDUSTRY",
+    "stage_label": "COMPANY STAGE",
+    "bottleneck_label": "MOST COMMON BOTTLENECK",
+    "bottleneck_custom_placeholder": "Or describe your own…",
+    "generate": "Generate diagnostic →",
+    "analyzing": "Analyzing…",
+    "industries": [
+      "F&B / Hospitality",
+      "Logistics & Supply Chain",
+      "Real Estate",
+      "E-commerce & Retail",
+      "Professional Services",
+      "Manufacturing",
+      "Healthcare",
+      "Other"
+    ],
+    "bottlenecks": [
+      [
+        "Manual order & inventory tracking",
+        "Fragmented data across locations",
+        "Slow ops & reservation workflow"
+      ],
+      [
+        "Manual shipment tracking",
+        "Disconnected quoting & bidding",
+        "No real-time visibility"
+      ],
+      [
+        "Slow lead response",
+        "Manual pipeline management",
+        "Appointment-setting overhead"
+      ],
+      [
+        "Messy product-catalog data",
+        "High support-ticket volume",
+        "Demand forecasting"
+      ],
+      [
+        "Manual reporting",
+        "Proposal & quote generation",
+        "Client onboarding"
+      ],
+      [
+        "Production scheduling",
+        "Quality-inspection logging",
+        "Maintenance tracking"
+      ],
+      [
+        "Patient-intake paperwork",
+        "Scheduling overhead",
+        "Records reconciliation"
+      ],
+      [
+        "Repetitive manual data entry",
+        "Disconnected internal tools",
+        "Reporting & analytics overhead"
+      ]
+    ],
+    "stages": [
+      "< €1M revenue",
+      "€1–5M",
+      "€5–50M",
+      "€50M+",
+      "Not disclosed"
+    ],
+    "roi": [
+      "≈ €40K / yr recovered · payback under 5 months",
+      "≈ €90K / yr recovered · payback under 4 months",
+      "≈ €180K / yr recovered · payback under 4 months",
+      "≈ €400K / yr recovered · payback under 3 months",
+      "≈ €120K / yr recovered · payback under 4 months"
+    ],
+    "chat_initial": "Tell me what's slowing your team down — in your own words.",
+    "chat_placeholder_initial": "Describe what's slowing you down…",
+    "chat_placeholder_reply": "Type your reply…",
+    "chat_q1": "Got it. Roughly how many people touch that process each week?",
+    "chat_q2": "And which industry are you in?",
+    "chat_final": "Thanks — mapping your bottleneck now.",
+    "thinking_mapping": "Mapping your bottleneck…",
+    "thinking_analyzing": "Analyzing your reply…",
+    "model": "Opus 4.8",
+    "send": "Send",
+    "footer_note": "Free preview · no signup · instant result",
+    "powered_by": "powered by",
+    "powered_brand": "Claude",
+    "file_intake": "diagnostic-preview.md",
+    "file_chat": "consultation.log",
+    "status_ready": "ready",
+    "status_analyzing": "analyzing",
+    "status_preview": "preview · 0.9s",
+    "preview_idle": [
+      "Fill in the intake or chat with the AI — the preview shows your diagnostic.",
+      "It maps the bottleneck and scopes the software + AI we'd build with you to fix it. No call required."
+    ],
+    "load_parsing": "> parsing: {target}",
+    "load_lines": [
+      "> mapping operational bottleneck…",
+      "> matching against delivered builds…",
+      "> projecting ROI + payback…"
+    ],
+    "result_bottleneck_label": "Bottleneck mapped",
+    "result_path_label": "Recommended path",
+    "result_roi_label": "Projected ROI",
+    "result_bottleneck_intake": "{bn} — roughly 20+ hrs/week of operator time lost across the team.",
+    "result_path_intake": "Diagnostic (2 wks) → we build the production software + AI with your {industry} team (8 wks), eval-gated. You own all code, hosting and data.",
+    "result_bottleneck_chat": "“{q}” → a recurring manual bottleneck, ~20 hrs/week of operator time.",
+    "result_path_chat": "Diagnostic (2 wks) → we build the production software + AI with you (8 wks). You own all code, hosting and data.",
+    "result_roi_chat": "≈ €180K / yr recovered · payback under 4 months",
+    "bottleneck_fallback": "a manual, repetitive workflow",
+    "chat_fallback": "your described workflow",
+    "stat_build_value": "≥60%",
+    "stat_build_label": "Diagnostic → Build",
+    "stat_deliverable_value": "2 wks",
+    "stat_deliverable_label": "First deliverable",
+    "stat_production_value": "8 wks",
+    "stat_production_label": "To production",
+    "feed_scraping": "scraping source from {src}…",
+    "feed_thinking": "thinking…",
+    "feed_thought": "thought for {sec}s",
+    "feed_tokens": "{n} tokens"
   },
   "Header": {
     "nav": {
@@ -208,7 +327,6 @@
     "label": "METHODOLOGY",
     "title": "AI NATIVE ENGINEERING DISCIPLINE.",
     "link": "Engineering principles",
-    "coming_soon": "Coming Soon",
     "principles": [
       {
         "title": "Evals before features.",
@@ -223,10 +341,8 @@
         "body": "You hold the keys: code, hosting, data, models. Our value is the build discipline, not infrastructure lock-in."
       },
       {
-        "title": "AI Consultation",
-        "body": "Get a free AI-generated diagnostic preview in minutes. Two paths: structured intake or chat with our AI.",
-        "cta": "Notify me when live",
-        "cta_mobile": "Notify me"
+        "title": "Lean pods, fixed clocks.",
+        "body": "Two to three engineers, one eight-week delivery unit. Small teams on a fixed clock keep scope honest and a fixed price possible."
       }
     ]
   },
@@ -595,183 +711,6 @@
     "glossaryTitle": "AI Engineering Glossary",
     "glossaryBody": "Plain-English definitions of the AI engineering terms that matter when you build a production system: evals, telemetry, RAG, inference, agents, and more.",
     "glossaryButton": "Read the Glossary"
-  },
-  "Start": {
-    "nav": {
-      "cta": "Book a Diagnostic"
-    },
-    "hero": {
-      "eyebrow": "AI Product Engineering",
-      "title_lead": "AI products that",
-      "title_accent": "break operational bottlenecks.",
-      "desc": "Watch Evan Cao — our CRO and founder of Epidom — break down how we work, what we cost, and why over 60% of Diagnostics become Builds.",
-      "cta_primary": "Start a Diagnostic",
-      "cta_secondary": "Browse the video library",
-      "featured_badge": "FEATURED · 60s",
-      "featured_title": "Stop trying to hire an AI engineer.",
-      "featured_hook": "You won’t find one. Here’s what to do instead."
-    },
-    "trust": {
-      "build_rate": "≥ 60%",
-      "build_rate_label": "Diagnostic → Build rate",
-      "first": "2 wks",
-      "first_label": "To first deliverable",
-      "prod": "8 wks",
-      "prod_label": "To production",
-      "warranty": "4 wks",
-      "warranty_label": "Post-launch warranty"
-    },
-    "evan": {
-      "quote": "Two years ago, I was the customer. I built Epidom and we were drowning in operational complexity. PRIONATION is what I wished I could’ve hired. I’m here as CRO because I know exactly what the buyer needs — because I was the buyer.",
-      "name": "Evan Cao",
-      "role": "CRO, PRIONATION.io · Founder, Epidom (Paris, France)"
-    },
-    "library": {
-      "label": "Video Library",
-      "title": "Find your angle.",
-      "desc": "Filter by what matters to you — the pricing case, the technical methodology, or the 30-second hook.",
-      "tabs": {
-        "all": "All",
-        "ceo": "For the CEO / COO",
-        "cto": "For the CTO",
-        "pricing": "Pricing objections",
-        "quick": "Quick wins"
-      },
-      "videos": [
-        {
-          "title": "I needed this product for my own company",
-          "hook": "“Two years ago, I was the customer of a company that didn’t exist yet.”",
-          "tags": [
-            "CEO",
-            "Origin story"
-          ]
-        },
-        {
-          "title": "The €149 trick",
-          "hook": "“Everyone’s offering free AI consultations. We charge €149. Here’s why.”",
-          "tags": [
-            "All",
-            "Low-friction"
-          ]
-        },
-        {
-          "title": "Why your CFO will love our pricing",
-          "hook": "“Your CFO won’t approve €120,000 to hire an AI engineer. But they will approve this.”",
-          "tags": [
-            "Pricing",
-            "CFO angle"
-          ]
-        },
-        {
-          "title": "8 weeks. Fixed price. No scope creep.",
-          "hook": "“Every AI consulting project I’ve seen runs 6 months over schedule. Ours doesn’t.”",
-          "tags": [
-            "CEO",
-            "Fixed scope"
-          ]
-        },
-        {
-          "title": "Your problem isn’t demand. It’s throughput.",
-          "hook": "“Most operating companies don’t have a demand problem. They have a throughput problem.”",
-          "tags": [
-            "CEO/COO",
-            "Reframe"
-          ]
-        },
-        {
-          "title": "We write the test before the feature",
-          "hook": "“Most AI products fail in production. We solved that by working backwards.”",
-          "tags": [
-            "CTO",
-            "Methodology"
-          ]
-        },
-        {
-          "title": "€1,500 site. 5 days. No nonsense.",
-          "hook": "“Need a professional website. Have €1,500. Read this.”",
-          "tags": [
-            "Express",
-            "Quick win"
-          ]
-        },
-        {
-          "title": "60% of our diagnostics become builds",
-          "hook": "“Most consulting firms hit 10–15% conversion. Here’s why ours is different.”",
-          "tags": [
-            "CEO",
-            "Social proof"
-          ]
-        },
-        {
-          "title": "Tell me your bottleneck",
-          "hook": "“If you can name your bottleneck in one sentence, we can scope a fix in one call.”",
-          "tags": [
-            "Direct CTA",
-            "Retargeting"
-          ]
-        }
-      ]
-    },
-    "pricing": {
-      "label": "Pricing",
-      "title": "Start with a Diagnostic.",
-      "desc": "Fixed scope. Fixed price. Three ways to work together.",
-      "start_here": "Start here",
-      "cta": "Start a Diagnostic",
-      "note": "Response within 24h · consult@prionation.io",
-      "plans": [
-        {
-          "sku": "SKU 01 · Diagnostic",
-          "price": "€5–7K",
-          "period": "2 weeks",
-          "desc": "We map the bottleneck. Design the architecture. Project the ROI. If the math doesn’t work, we tell you straight."
-        },
-        {
-          "sku": "SKU 02 · Build",
-          "price": "€25–55K",
-          "period": "8 weeks",
-          "desc": "Full production AI build. Eval harness. Telemetry. Handoff documentation. 4-week warranty. You own everything."
-        },
-        {
-          "sku": "SKU 03 · Retainer",
-          "price": "€4–9K/mo",
-          "period": "min. 6 months",
-          "desc": "The same engineers who built your system keep it running and evolving. Ongoing pod access."
-        }
-      ]
-    },
-    "faq": {
-      "title": "Objections, handled.",
-      "items": [
-        {
-          "q": "What if the build doesn’t work?",
-          "a": "We write evals before we write features. Every deliverable has measurable success criteria agreed upfront. If the eval suite fails, we don’t ship. The 4-week post-launch warranty covers regressions. The 8-week clock only starts after the Diagnostic scope is signed off together — no surprises."
-        },
-        {
-          "q": "€25–55K is a lot. Why not hire someone?",
-          "a": "A senior AI engineer in Europe runs €120–180K loaded cost, takes 4–6 months to hire, and you get one person. Our Build is 2–3 engineers, in production in 8 weeks, for under half the first-year cost of a single hire."
-        },
-        {
-          "q": "Why 8 weeks exactly?",
-          "a": "8 weeks is the minimum to ship something production-grade, not a prototype. That means eval harness built, telemetry instrumented, model evaluated against real data, deployment tested, and team handed off. Faster builds skip those layers. They fail in production."
-        },
-        {
-          "q": "Do we own the code after?",
-          "a": "Yes. Fully. Code, hosting, data, models — everything. We hand off the entire stack. Our value is the build discipline, not infrastructure lock-in. You can run it yourself or keep us on Retainer, but the choice is yours."
-        },
-        {
-          "q": "We’re already talking to other AI vendors.",
-          "a": "Good. Ask them for their eval harness. Ask what telemetry they instrument on day one. Ask who holds the model, hosting, and data after handoff. The answers tell you everything about how they actually build."
-        }
-      ]
-    },
-    "cta": {
-      "label": "Connect Us",
-      "title": "Name your bottleneck.",
-      "desc": "One sentence about what’s slowing your operations down. That’s the entire qualification.",
-      "button": "Book a 30-minute call",
-      "note": "Free call · Response within 24h · consult@prionation.io"
-    }
   },
   "Discord": {
     "eyebrow": "COMMUNITY LAUNCH",

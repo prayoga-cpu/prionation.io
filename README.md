@@ -12,13 +12,14 @@ The official marketing site and intake engine for PRIONATION.io — built to the
 
 ### Features
 
+- **AI Consultation diagnostic (beta)** — interactive in-hero diagnostic with two paths (guided intake / chat-with-AI), a streaming Claude-terminal processing preview (live token + elapsed counters), proof-stats, and a 3D Saturn-ring accent on the "AI" headline word. A prototype illustrating the flow (launching August 2026); completing a diagnostic auto-opens the AI Consultation waitlist. All ROI/metric figures shown are clearly-labelled projections — no fabricated data.
 - **Form integration backend** — 4 fully wired forms (Diagnostic, Booking, Career, Waitlist) with Notion DB writes, Resend email notifications, rate limiting, Turnstile bot protection, and honeypot spam detection
 - **Framer Motion animation system** — staggered hero reveals, infinite mobile native-scroll carousels, spring-based modal transitions, number-scramble stat counters, tab crossfade, and mobile drawer animations
-- **Full i18n (EN / FR / ID)** — 130 translation keys across 8 sections via `next-intl`; every string in every component is locale-driven
+- **Full i18n (EN / FR / ID)** — every string in every component is locale-driven via `next-intl` (incl. the AI Consultation diagnostic flow); the Saturn ring tracks the localized AI/IA token
 - **Diagnostic intake engine** — 2-step multi-field form with Zod validation, disqualification logic, Sales Pipeline auto-sync, and confirmation emails
 - **Dynamic booking system** — Calendar picker with timezone detection, WhatsApp field, and Notion booking record
 - **Career portal** — Supabase Storage CV upload (PDF, 5 MB limit) + Notion write + confirmation email
-- **Waitlist modal** — Email capture per feature with Notion dedup and instant confirmation
+- **Waitlist modal** — AI Consultation email capture, auto-opened after the in-hero diagnostic preview; Notion dedup and instant confirmation
 - **Scroll progress bar** — Accent-colored reading progress indicator using Framer Motion `useScroll`
 - **Cursor glow** — Desktop-only radial glow that follows the mouse
 - **Dark-mode-first design** — Custom design tokens, glassmorphic cards, shimmer border effects
@@ -40,7 +41,7 @@ The official marketing site and intake engine for PRIONATION.io — built to the
 | File storage   | Supabase Storage (CV uploads)      |
 | Rate limiting  | Upstash Redis (sliding window)     |
 | Bot protection | Cloudflare Turnstile (invisible)   |
-| Testing        | Vitest (48 schema tests)           |
+| Testing        | Vitest (51 schema tests)           |
 | Deployment     | Vercel                             |
 
 ---
@@ -84,11 +85,11 @@ The official marketing site and intake engine for PRIONATION.io — built to the
 │   ├── storage/
 │   │   └── supabase.ts        # Supabase client + CV bucket config
 │   └── motion.ts              # Centralized Framer Motion variants
-├── tests/forms/               # Vitest schema + validation tests (48 total)
+├── tests/forms/               # Vitest schema + validation tests (51 total)
 ├── messages/
-│   ├── en.json                # English (130 keys)
-│   ├── fr.json                # French (130 keys)
-│   └── id.json                # Indonesian (130 keys)
+│   ├── en.json                # English (all sections, parity-checked)
+│   ├── fr.json                # French (all sections, parity-checked)
+│   └── id.json                # Indonesian (all sections, parity-checked)
 └── public/
     ├── fonts/                 # Rubik, Press Start 2P (local)
     ├── images/team/           # Team photography

@@ -26,7 +26,6 @@
   --font-sans: var(--font-rubik, "Rubik"), system-ui, sans-serif;
   --font-pixel: var(--font-press-start-2p, "Press Start 2P"), monospace;
   --font-display: var(--font-black-han-sans, "Black Han Sans"), sans-serif;
-  --font-serif: var(--font-bitter, "Bitter"), Georgia, serif;
 
   /* Layout */
   --page-x: clamp(20px, 4vw, 56px);
@@ -175,4 +174,271 @@ select option {
   z-index: 0;
   transition: opacity 0.3s ease;
   mix-blend-mode: screen;
+}
+
+/* ─── Hero diagnostic widget (Crawl Hero) ──────────────────────────────────── */
+
+/* Headline shimmer on the "AI Infrastructure" accent run */
+@keyframes aiShimmer {
+  to {
+    background-position: -220% center;
+  }
+}
+/* AI-thinking spark in the chat path */
+@keyframes aiSpark {
+  0% {
+    transform: rotate(0deg) scale(0.85);
+    opacity: 0.65;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(0.85);
+    opacity: 0.65;
+  }
+}
+/* Diagnostic-preview scan line while analyzing */
+@keyframes scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(240%);
+  }
+}
+/* Blueprint (Eiffel + crane) self-drawing strokes, dots, float & hoist */
+@keyframes bpDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes bpStar {
+  0%,
+  100% {
+    transform: scale(0.7) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1) rotate(45deg);
+    opacity: 1;
+  }
+}
+@keyframes bpFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes bpPop {
+  to {
+    opacity: 0.7;
+  }
+}
+@keyframes bpLift {
+  0%,
+  100% {
+    transform: translateY(7px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+/* Highway cars looping along the road analogy */
+@keyframes roadRun {
+  from {
+    transform: translateX(-28px);
+  }
+  to {
+    transform: translateX(214px);
+  }
+}
+/* Blinking terminal caret in the diagnostic processing feed */
+@keyframes pioBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.pio-caret {
+  animation: pioBlink 1s steps(1) infinite;
+}
+
+/* ── Saturn-style ring + sparkles around the "AI" accent word ──
+   Two clipped halves of one tilted ring: the far (top) half sits behind the
+   text, the near (bottom) half in front, so the ring appears to circle "AI" in
+   3D. A moon-sparkle orbits the ring (dimming/shrinking on the far side), plus a
+   static twinkle. All sizes in em so they scale with the headline. */
+.ai-saturn {
+  display: inline-block;
+  position: relative;
+  isolation: isolate; /* own stacking context so the back ring can sit behind "AI" */
+}
+/* "AI" carries its own shimmer gradient (the parent's background-clip:text does
+   not reach text inside this positioned span), and sits between the ring halves. */
+.ai-text {
+  background: linear-gradient(100deg, var(--c-accent) 16%, #b7c0ff 41%, #ffffff 50%, #b7c0ff 59%, var(--c-accent) 84%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: aiShimmer 3.6s linear infinite;
+}
+.ai-ring,
+.ai-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 156%;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%) rotateX(75deg) rotateZ(-15deg);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.ai-ring {
+  border: 0.055em solid var(--c-accent);
+  box-shadow: 0 0 0.5em rgba(88, 101, 242, 0.5);
+}
+.ai-ring-back {
+  clip-path: inset(0 0 50% 0);
+  opacity: 0.4;
+  z-index: -1; /* far arc behind the "AI" text */
+}
+.ai-ring-front {
+  clip-path: inset(50% 0 0 0);
+  opacity: 0.9;
+}
+.ai-orbit-spin {
+  position: absolute;
+  inset: 0;
+  animation: aiOrbit 7s linear infinite;
+}
+.ai-orbit-moon {
+  position: absolute;
+  top: -0.085em;
+  left: 50%;
+  width: 0.17em;
+  height: 0.17em;
+  margin-left: -0.085em;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 0.28em #fff,
+    0 0 0.55em var(--c-accent);
+  animation: aiMoonDepth 7s linear infinite;
+}
+.ai-extra-spark {
+  position: absolute;
+  top: -0.34em;
+  right: -0.55em;
+  width: 0.5em;
+  height: 0.5em;
+  color: #cdd2ff;
+  animation: bpStar 3.8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes aiOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes aiMoonDepth {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.pio-input::placeholder {
+  color: var(--c-muted);
+}
+.pio-input:focus {
+  outline: none;
+}
+
+/* Diagnostic card → fullscreen modal */
+.pio-diag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.pio-diag.is-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(740px, 94vw);
+  max-height: 92vh;
+  overflow-y: auto;
+  z-index: 111;
+  padding: 42px 12px 16px;
+}
+.pio-diag.is-modal .hero-side-ill {
+  display: none;
+}
+.pio-diag.is-modal .pio-chat-scroll {
+  max-height: none !important;
+  overflow: visible !important;
+}
+.pio-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  background: rgba(5, 8, 16, 0.66);
+  backdrop-filter: blur(3px);
+  cursor: pointer;
+}
+
+/* Side illustrations hide on narrow viewports. The product badge and proof-stats
+   keep their desktop look and are scaled to fit by <ScaleToFit> in Hero.tsx. */
+@media (max-width: 900px) {
+  .hero-side-ill {
+    display: none;
+  }
+}
+
+/* Mobile: drop the card's decorative overhangs and tighten padding so the form
+   uses the full width; stack the two selects; shrink the footer note to sub size
+   so it no longer wraps. */
+@media (max-width: 600px) {
+  .pio-hero-main {
+    padding-top: 84px !important;
+  }
+  .pio-toggle {
+    right: 0 !important;
+  }
+  .pio-diag.is-modal {
+    padding: 38px 6px 14px;
+  }
+  .pio-deco {
+    display: none;
+  }
+  .pio-card {
+    padding: 11px !important;
+  }
+  .pio-field-row {
+    flex-direction: column !important;
+  }
+  .pio-foot {
+    flex-wrap: wrap;
+    gap: 6px !important;
+  }
+  .pio-foot span {
+    font-size: 9px !important;
+  }
 }

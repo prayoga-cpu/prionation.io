@@ -7,20 +7,17 @@ import { SectionHead } from "../ui/Atoms";
 type PrincipleData = {
   title: string;
   body: string;
-  cta?: string;
-  cta_mobile?: string;
 };
 
-const ICONS = ["check-circle", "activity", "key", "sparkles"];
+const ICONS = ["check-circle", "activity", "key", "clock"];
 
 function Principle({
-  n, title, body, icon, comingSoon, cta, ctaMobile, onNotify,
+  n, title, body, icon,
 }: {
   n: string; title: string; body: string; icon: string;
-  comingSoon?: boolean; cta?: string; ctaMobile?: string; onNotify?: () => void;
 }) {
   return (
-    <div className={`bg-card p-5 md:p-[32px_28px] flex flex-col gap-2 md:gap-3 min-h-[240px] md:min-h-[320px] relative transition-colors duration-fast hover:bg-card-soft ${comingSoon ? "!bg-transparent border border-dashed border-line-soft -m-[1px] opacity-85" : ""}`}>
+    <div className="bg-card p-5 md:p-[32px_28px] flex flex-col gap-2 md:gap-3 min-h-[240px] md:min-h-[320px] relative transition-colors duration-fast hover:bg-card-soft">
       <div className="flex items-center justify-between">
         <span className="text-accent font-pixel text-[9px] md:text-[10px] tracking-[0.14em]">/{n}</span>
       </div>
@@ -29,25 +26,11 @@ function Principle({
       </div>
       <h3 className="font-sans font-extrabold text-[16px] md:text-[24px] tracking-[-0.02em] leading-tight text-white mt-2 md:mt-3 mb-0">{title}</h3>
       <p className="text-muted text-[12px] md:text-sm leading-[1.5] md:leading-[1.6] mt-1 mb-0">{body}</p>
-      {comingSoon && (
-        <button
-          onClick={onNotify}
-          className="mt-auto self-start bg-transparent border-0 p-0 text-accent font-sans font-semibold text-[13px] inline-flex items-center gap-2 cursor-pointer"
-        >
-          <span className="hidden md:inline">{cta}</span>
-          <span className="inline md:hidden">{ctaMobile || cta}</span> <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
-        </button>
-      )}
-      {comingSoon && (
-        <span className="absolute top-[18px] right-[18px] font-pixel text-[6px] md:text-[8px] tracking-[0.14em] text-accent bg-accent-10 border border-accent-30 px-1.5 py-1 md:px-2 md:py-1.5 rounded-md uppercase">
-          Coming Soon
-        </span>
-      )}
     </div>
   );
 }
 
-export function Methodology({ onNotify }: { onNotify: () => void }) {
+export function Methodology() {
   const t = useTranslations("Methodology");
   const principles = t.raw("principles") as PrincipleData[];
 
@@ -71,10 +54,6 @@ export function Methodology({ onNotify }: { onNotify: () => void }) {
               icon={ICONS[i]}
               title={p.title}
               body={p.body}
-              comingSoon={i === 3}
-              cta={p.cta}
-              ctaMobile={p.cta_mobile}
-              onNotify={i === 3 ? onNotify : undefined}
             />
           ))}
         </div>

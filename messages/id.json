@@ -2,8 +2,6 @@
   "Meta": {
     "homeTitle": "Rekayasa Produk AI · PRIONATION.io",
     "homeDescription": "Infrastruktur AI produksi untuk perusahaan mid-market di Eropa dan AS. Lingkup tetap. Harga tetap. Produksi dalam 8 minggu. Mulai dari €5.000.",
-    "startTitle": "Lihat Cara Kami Bekerja · PRIONATION.io",
-    "startDescription": "Video singkat tentang cara kami membangun AI produksi, biayanya, dan mengapa lebih dari 60% Diagnostik menjadi Build. Tonton, lalu sebutkan hambatan Anda.",
     "discordTitle": "Gabung Komunitas Discord Kami · PRIONATION.io",
     "discordDescription": "Terhubung dengan insinyur produk AI, penguji QA, dan pembuat konten. Ikuti acara peluncuran, tantangan grafis, dan amankan posisi Anda di pusat kumpulan talenta kami."
   },
@@ -138,22 +136,143 @@
     "ctaButton": "Mulai Intake"
   },
   "Hero": {
-    "eyebrow": "REKAYASA PRODUK AI",
-    "title_main": "Kami membangun perangkat lunak yang",
-    "title_accent": "memecahkan hambatan",
-    "description": "Kami membangun infrastruktur AI produksi untuk perusahaan pasar menengah berbasis di Eropa dan AS. Delapan minggu, lingkup tetap, tim ramping.",
-    "cta_diagnostic": "Mulai dengan Diagnostik",
-    "cta_meet": "Temui Kami",
-    "stat_diagnostic": "DIAGNOSTIK → TINGKAT PEMBANGUNAN",
-    "stat_deliverable": "MENUJU PENGIRIMAN PERTAMA",
-    "stat_production": "MENUJU PRODUKSI",
-    "weeks": "minggu",
-    "words": [
-      "hambatan operasional.",
-      "pekerjaan manual.",
-      "silo data.",
-      "proses yang lambat."
-    ]
+    "badge": "Rekayasa Produk AI · Konsultasi",
+    "title_lines": [
+      "Atasi hambatan",
+      "operasional dengan"
+    ],
+    "title_shimmer": "Infrastruktur AI",
+    "title_ai": "AI",
+    "subhead": "Dapatkan diagnostik gratis bertenaga AI atas hambatan operasional terbesar Anda — lalu tim kami membangun infrastruktur AI produksi yang memperbaikinya, bersama Anda, dalam 8 minggu. Dibuat untuk perusahaan pasar menengah di Eropa dan AS.",
+    "input_label": "[ MASUKAN ]",
+    "expand": "Perbesar",
+    "close": "Tutup",
+    "tab_intake": "Formulir terpandu",
+    "tab_chat": "Chat dengan AI",
+    "website_label": "SITUS WEB PERUSAHAAN",
+    "website_placeholder": "perusahaananda.com",
+    "website_hint": "Kami akan memindai situs Anda untuk mengisi konteks diagnostik.",
+    "scan": "SCAN",
+    "industry_label": "INDUSTRI",
+    "stage_label": "TAHAP PERUSAHAAN",
+    "bottleneck_label": "HAMBATAN PALING UMUM",
+    "bottleneck_custom_placeholder": "Atau jelaskan sendiri…",
+    "generate": "Buat diagnostik →",
+    "analyzing": "Menganalisis…",
+    "industries": [
+      "F&B / Perhotelan",
+      "Logistik & Rantai Pasok",
+      "Properti",
+      "E-commerce & Ritel",
+      "Jasa Profesional",
+      "Manufaktur",
+      "Kesehatan",
+      "Lainnya"
+    ],
+    "bottlenecks": [
+      [
+        "Pelacakan pesanan & inventaris manual",
+        "Data terfragmentasi antar lokasi",
+        "Alur operasi & reservasi lambat"
+      ],
+      [
+        "Pelacakan pengiriman manual",
+        "Penawaran & tender terputus",
+        "Tanpa visibilitas real-time"
+      ],
+      [
+        "Respons prospek lambat",
+        "Pengelolaan pipeline manual",
+        "Beban penjadwalan janji temu"
+      ],
+      [
+        "Data katalog produk berantakan",
+        "Volume tiket dukungan tinggi",
+        "Peramalan permintaan"
+      ],
+      [
+        "Pelaporan manual",
+        "Pembuatan proposal & penawaran",
+        "Onboarding klien"
+      ],
+      [
+        "Penjadwalan produksi",
+        "Pencatatan inspeksi kualitas",
+        "Pelacakan pemeliharaan"
+      ],
+      [
+        "Administrasi pendaftaran pasien",
+        "Beban penjadwalan",
+        "Rekonsiliasi rekam medis"
+      ],
+      [
+        "Entri data manual berulang",
+        "Alat internal terputus",
+        "Beban pelaporan & analitik"
+      ]
+    ],
+    "stages": [
+      "Pendapatan < €1M",
+      "€1–5M",
+      "€5–50M",
+      "€50M+",
+      "Tidak diungkapkan"
+    ],
+    "roi": [
+      "≈ €40K / thn pulih · balik modal < 5 bulan",
+      "≈ €90K / thn pulih · balik modal < 4 bulan",
+      "≈ €180K / thn pulih · balik modal < 4 bulan",
+      "≈ €400K / thn pulih · balik modal < 3 bulan",
+      "≈ €120K / thn pulih · balik modal < 4 bulan"
+    ],
+    "chat_initial": "Ceritakan apa yang memperlambat tim Anda — dengan kata-kata Anda sendiri.",
+    "chat_placeholder_initial": "Jelaskan apa yang memperlambat Anda…",
+    "chat_placeholder_reply": "Ketik balasan Anda…",
+    "chat_q1": "Mengerti. Kira-kira berapa orang yang menangani proses itu tiap minggu?",
+    "chat_q2": "Dan Anda bergerak di industri apa?",
+    "chat_final": "Terima kasih — sedang memetakan hambatan Anda.",
+    "thinking_mapping": "Memetakan hambatan Anda…",
+    "thinking_analyzing": "Menganalisis balasan Anda…",
+    "model": "Opus 4.8",
+    "send": "Kirim",
+    "footer_note": "Pratinjau gratis · tanpa daftar · hasil instan",
+    "powered_by": "didukung oleh",
+    "powered_brand": "Claude",
+    "file_intake": "diagnostic-preview.md",
+    "file_chat": "consultation.log",
+    "status_ready": "siap",
+    "status_analyzing": "menganalisis",
+    "status_preview": "pratinjau · 0,9 dtk",
+    "preview_idle": [
+      "Isi formulir atau chat dengan AI — pratinjau menampilkan diagnostik Anda.",
+      "Ini memetakan hambatan dan menyusun perangkat lunak + AI yang akan kami bangun bersama Anda untuk mengatasinya. Tanpa perlu panggilan."
+    ],
+    "load_parsing": "> mengurai: {target}",
+    "load_lines": [
+      "> memetakan hambatan operasional…",
+      "> mencocokkan dengan proyek terkirim…",
+      "> memproyeksikan ROI + balik modal…"
+    ],
+    "result_bottleneck_label": "Hambatan terpetakan",
+    "result_path_label": "Jalur yang direkomendasikan",
+    "result_roi_label": "Proyeksi ROI",
+    "result_bottleneck_intake": "{bn} — sekitar 20+ jam/minggu waktu operator hilang di seluruh tim.",
+    "result_path_intake": "Diagnostik (2 mgg) → kami membangun perangkat lunak + AI produksi bersama tim {industry} Anda (8 mgg), tervalidasi eval. Anda memiliki seluruh kode, hosting, dan data.",
+    "result_bottleneck_chat": "“{q}” → hambatan manual berulang, ~20 jam/minggu waktu operator.",
+    "result_path_chat": "Diagnostik (2 mgg) → kami membangun perangkat lunak + AI produksi bersama Anda (8 mgg). Anda memiliki seluruh kode, hosting, dan data.",
+    "result_roi_chat": "≈ €180K / thn pulih · balik modal < 4 bulan",
+    "bottleneck_fallback": "alur kerja manual yang berulang",
+    "chat_fallback": "alur kerja yang Anda jelaskan",
+    "stat_build_value": "≥60%",
+    "stat_build_label": "Diagnostik → Bangun",
+    "stat_deliverable_value": "2 mgg",
+    "stat_deliverable_label": "Pengiriman pertama",
+    "stat_production_value": "8 mgg",
+    "stat_production_label": "Menuju produksi",
+    "feed_scraping": "mengambil sumber dari {src}…",
+    "feed_thinking": "berpikir…",
+    "feed_thought": "berpikir selama {sec} dtk",
+    "feed_tokens": "{n} token"
   },
   "Header": {
     "nav": {
@@ -208,7 +327,6 @@
     "label": "METODOLOGI",
     "title": "DISIPLIN REKAYASA AI NATIVE.",
     "link": "Prinsip rekayasa",
-    "coming_soon": "Segera Hadir",
     "principles": [
       {
         "title": "Evaluasi sebelum fitur.",
@@ -223,10 +341,8 @@
         "body": "Anda memegang kuncinya: kode, hosting, data, model. Nilai kami ada pada disiplin pembangunan, bukan penguncian infrastruktur."
       },
       {
-        "title": "Konsultasi AI",
-        "body": "Dapatkan pratinjau diagnostik yang dihasilkan AI dalam hitungan menit. Dua jalur: intake terstruktur atau chat dengan AI kami.",
-        "cta": "Beri tahu saya saat aktif",
-        "cta_mobile": "Beri tahu saya"
+        "title": "Tim ramping, jadwal tetap.",
+        "body": "Dua hingga tiga insinyur, satu unit pengiriman delapan minggu. Tim kecil dengan jadwal tetap menjaga lingkup tetap jujur dan harga tetap memungkinkan."
       }
     ]
   },
@@ -595,183 +711,6 @@
     "glossaryTitle": "Glosarium Rekayasa AI",
     "glossaryBody": "Definisi sederhana tentang istilah rekayasa AI yang penting ketika membangun sistem produksi: eval, telemetri, RAG, inferensi, agen, dan lainnya.",
     "glossaryButton": "Baca Glosarium"
-  },
-  "Start": {
-    "nav": {
-      "cta": "Pesan Diagnostik"
-    },
-    "hero": {
-      "eyebrow": "Rekayasa Produk AI",
-      "title_lead": "Produk AI yang",
-      "title_accent": "memecahkan hambatan operasional.",
-      "desc": "Evan Cao — CRO kami dan pendiri Epidom — menjelaskan cara kami bekerja, biaya kami, dan mengapa lebih dari 60% Diagnostik menjadi Build.",
-      "cta_primary": "Mulai Diagnostik",
-      "cta_secondary": "Jelajahi pustaka video",
-      "featured_badge": "UNGGULAN · 60s",
-      "featured_title": "Berhenti mencoba merekrut insinyur AI.",
-      "featured_hook": "Anda tidak akan menemukannya. Ini yang harus dilakukan sebagai gantinya."
-    },
-    "trust": {
-      "build_rate": "≥ 60%",
-      "build_rate_label": "Tingkat Diagnostik → Build",
-      "first": "2 mgg",
-      "first_label": "Hingga hasil pertama",
-      "prod": "8 mgg",
-      "prod_label": "Hingga produksi",
-      "warranty": "4 mgg",
-      "warranty_label": "Garansi pasca-peluncuran"
-    },
-    "evan": {
-      "quote": "Dua tahun lalu, sayalah pelanggannya. Saya membangun Epidom dan kami kewalahan oleh kompleksitas operasional. PRIONATION adalah yang saya harap bisa saya rekrut. Saya di sini sebagai CRO karena saya tahu persis apa yang dibutuhkan pembeli — karena sayalah pembelinya.",
-      "name": "Evan Cao",
-      "role": "CRO, PRIONATION.io · Pendiri, Epidom (Paris, Prancis)"
-    },
-    "library": {
-      "label": "Pustaka Video",
-      "title": "Temukan sudut pandang Anda.",
-      "desc": "Saring berdasarkan yang penting bagi Anda — argumen harga, metodologi teknis, atau pengait 30 detik.",
-      "tabs": {
-        "all": "Semua",
-        "ceo": "Untuk CEO / COO",
-        "cto": "Untuk CTO",
-        "pricing": "Keberatan harga",
-        "quick": "Kemenangan cepat"
-      },
-      "videos": [
-        {
-          "title": "Saya butuh produk ini untuk perusahaan saya sendiri",
-          "hook": "“Dua tahun lalu, saya pelanggan dari perusahaan yang belum ada.”",
-          "tags": [
-            "CEO",
-            "Kisah awal"
-          ]
-        },
-        {
-          "title": "Trik €149",
-          "hook": "“Semua orang menawarkan konsultasi AI gratis. Kami mengenakan €149. Inilah alasannya.”",
-          "tags": [
-            "Semua",
-            "Friksi rendah"
-          ]
-        },
-        {
-          "title": "Mengapa CFO Anda akan menyukai harga kami",
-          "hook": "“CFO Anda tidak akan menyetujui €120.000 untuk merekrut insinyur AI. Tapi mereka akan menyetujui ini.”",
-          "tags": [
-            "Harga",
-            "Sudut CFO"
-          ]
-        },
-        {
-          "title": "8 minggu. Harga tetap. Tanpa pembengkakan lingkup.",
-          "hook": "“Setiap proyek konsultasi AI yang saya lihat molor 6 bulan. Milik kami tidak.”",
-          "tags": [
-            "CEO",
-            "Lingkup tetap"
-          ]
-        },
-        {
-          "title": "Masalah Anda bukan permintaan, melainkan throughput.",
-          "hook": "“Kebanyakan perusahaan tidak punya masalah permintaan. Mereka punya masalah throughput.”",
-          "tags": [
-            "CEO/COO",
-            "Pembingkaian ulang"
-          ]
-        },
-        {
-          "title": "Kami menulis tes sebelum fiturnya",
-          "hook": "“Kebanyakan produk AI gagal di produksi. Kami mengatasinya dengan bekerja mundur.”",
-          "tags": [
-            "CTO",
-            "Metodologi"
-          ]
-        },
-        {
-          "title": "Situs €1.500. 5 hari. Tanpa basa-basi.",
-          "hook": "“Butuh situs profesional. Punya €1.500. Baca ini.”",
-          "tags": [
-            "Express",
-            "Kemenangan cepat"
-          ]
-        },
-        {
-          "title": "60% diagnostik kami menjadi build",
-          "hook": "“Kebanyakan firma konsultan hanya mencapai konversi 10–15%. Inilah mengapa milik kami berbeda.”",
-          "tags": [
-            "CEO",
-            "Bukti sosial"
-          ]
-        },
-        {
-          "title": "Sebutkan hambatan Anda",
-          "hook": "“Jika Anda bisa menyebutkan hambatan dalam satu kalimat, kami bisa merancang solusinya dalam satu panggilan.”",
-          "tags": [
-            "CTA langsung",
-            "Penargetan ulang"
-          ]
-        }
-      ]
-    },
-    "pricing": {
-      "label": "Harga",
-      "title": "Mulai dengan Diagnostik.",
-      "desc": "Lingkup tetap. Harga tetap. Tiga cara untuk bekerja sama.",
-      "start_here": "Mulai di sini",
-      "cta": "Mulai Diagnostik",
-      "note": "Respons dalam 24 jam · consult@prionation.io",
-      "plans": [
-        {
-          "sku": "SKU 01 · Diagnostik",
-          "price": "€5–7K",
-          "period": "2 minggu",
-          "desc": "Kami memetakan hambatan. Merancang arsitektur. Memproyeksikan ROI. Jika perhitungannya tidak masuk akal, kami katakan terus terang."
-        },
-        {
-          "sku": "SKU 02 · Build",
-          "price": "€25–55K",
-          "period": "8 minggu",
-          "desc": "Build AI produksi lengkap. Harness evaluasi. Telemetri. Dokumentasi serah terima. Garansi 4 minggu. Anda memiliki semuanya."
-        },
-        {
-          "sku": "SKU 03 · Retainer",
-          "price": "€4–9K/bln",
-          "period": "min. 6 bulan",
-          "desc": "Insinyur yang membangun sistem Anda terus menjalankan dan mengembangkannya. Akses tim berkelanjutan."
-        }
-      ]
-    },
-    "faq": {
-      "title": "Keberatan, ditangani.",
-      "items": [
-        {
-          "q": "Bagaimana jika build-nya tidak berhasil?",
-          "a": "Kami menulis evaluasi sebelum menulis fitur. Setiap hasil memiliki kriteria keberhasilan terukur yang disepakati di awal. Jika rangkaian evaluasi gagal, kami tidak merilis. Garansi 4 minggu pasca-peluncuran mencakup regresi. Hitungan 8 minggu baru dimulai setelah lingkup Diagnostik disetujui bersama — tanpa kejutan."
-        },
-        {
-          "q": "€25–55K itu banyak. Mengapa tidak merekrut saja?",
-          "a": "Insinyur AI senior di Eropa berbiaya €120–180K termuat, butuh 4–6 bulan untuk direkrut, dan Anda hanya mendapat satu orang. Build kami terdiri dari 2–3 insinyur, di produksi dalam 8 minggu, dengan biaya kurang dari setengah biaya tahun pertama satu perekrutan."
-        },
-        {
-          "q": "Mengapa tepat 8 minggu?",
-          "a": "8 minggu adalah minimum untuk merilis sesuatu yang berkualitas produksi, bukan prototipe. Artinya: harness evaluasi dibangun, telemetri dipasang, model dievaluasi terhadap data nyata, deployment diuji, dan tim diserahterimakan. Build yang lebih cepat melewati lapisan-lapisan itu. Mereka gagal di produksi."
-        },
-        {
-          "q": "Apakah kami memiliki kode setelahnya?",
-          "a": "Ya. Sepenuhnya. Kode, hosting, data, model — semuanya. Kami menyerahkan seluruh stack. Nilai kami adalah disiplin membangun, bukan penguncian infrastruktur. Anda bisa menjalankannya sendiri atau mempertahankan kami dengan Retainer, tapi pilihan ada di tangan Anda."
-        },
-        {
-          "q": "Kami sudah berbicara dengan vendor AI lain.",
-          "a": "Bagus. Minta harness evaluasi mereka. Tanyakan telemetri apa yang mereka pasang di hari pertama. Tanyakan siapa yang memegang model, hosting, dan data setelah serah terima. Jawabannya memberi tahu Anda segalanya tentang cara mereka benar-benar membangun."
-        }
-      ]
-    },
-    "cta": {
-      "label": "Hubungi Kami",
-      "title": "Sebutkan hambatan Anda.",
-      "desc": "Satu kalimat tentang apa yang memperlambat operasi Anda. Itulah seluruh kualifikasinya.",
-      "button": "Pesan panggilan 30 menit",
-      "note": "Panggilan gratis · Respons dalam 24 jam · consult@prionation.io"
-    }
   },
   "Discord": {
     "eyebrow": "PELUNCURAN KOMUNITAS",

@@ -222,6 +222,19 @@ deploy 1+2 confirmed live but mobile Perf plateaued at 87, gated by LCP 3.6 s / 
 
 ## Out of SEO/AEO/GEO scope (product / content backlog)
 
+- ✅ **AI Consultation diagnostic (beta) — homepage hero** (2026-06-21). Replaced the
+  hero with an interactive AI-consultation diagnostic: guided-intake / chat-with-AI
+  paths, a streaming **Claude-terminal processing preview** (scraping → mapping →
+  matching → projecting, with live token + elapsed counters and a "✓ thought for Xs"
+  summary), proof-stats, and a 3D **Saturn-ring** accent that tracks the localized
+  AI/IA token (en/fr/id). Mobile: forced-identical headline line-breaks via
+  `ScaleToFit`, badge + proof-stats scale-to-fit, reduced card padding, sub-size
+  copy. Completing a diagnostic **auto-opens the AI Consultation waitlist**
+  (`NotifyModal`, copy = early prototype, launching August 2026, email-on-ready).
+  Methodology #4 now shows the real **"Lean pods, fixed clocks"** principle (was the
+  AI-Consultation coming-soon placeholder). Also removed the legacy `/start` route +
+  `public/ads` assets. **All ROI/metric figures in the diagnostic are labelled
+  projections — no fabricated data**.
 - ✅ **Interactive framework widgets** (calculator/checklist, inputs→result) — done
   2026-06-15. Three live tools, one per framework page, rendered after the intro:
   **Build-vs-buy** (6-input scorer → build/hybrid/buy), **Pod-vs-hire** (editable cost
@@ -258,3 +271,7 @@ Truthful depth only (extra sections, decision criteria, common mistakes, more FA
   and the Rich Results Test once the deploy is live to confirm the LCP / a11y / unused-JS
   fixes land. (Graphify tool output `graphify-out/{graph.html,cache/,…}` left out of the
   commit — generated local artifacts; only `graph.json` + `GRAPH_REPORT.md` versioned.)
+- ✅ **AI Consultation beta** (2026-06-21) — `tsc --noEmit` clean · `eslint` clean ·
+  `vitest` **51/51** · `next build` **SSG clean** (84 pages). i18n parity en/fr/id.
+  Pushed → `main` as "ai consultation beta". Re-run `npm run pagespeed` after deploy
+  (hero LCP `<h1>` still transform-only/`riseIn`; the diagnostic widget is below it).

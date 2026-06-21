@@ -77,13 +77,13 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="fixed inset-0 z-[100] bg-[rgba(8,9,13,0.75)] backdrop-blur-[6px]"
+        className="fixed inset-0 z-[120] bg-[rgba(8,9,13,0.75)] backdrop-blur-[6px]"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Card */}
-      <div className="fixed inset-0 z-[101] flex items-center justify-center p-6 pointer-events-none">
+      <div className="fixed inset-0 z-[121] flex items-center justify-center p-6 pointer-events-none">
         <m.div
           key="notify-card"
           variants={scaleIn}
@@ -95,7 +95,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
         >
           <div className="flex items-start justify-between gap-4 mb-5 relative z-20">
             <div>
-              <Eyebrow>COMING SOON</Eyebrow>
+              <Eyebrow>COMING AUGUST 2026</Eyebrow>
               <h3 className="font-sans font-extrabold text-[22px] tracking-[-0.018em] text-white mt-3 mb-0">
                 AI Consultation
               </h3>
@@ -124,8 +124,9 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
           {!done ? (
             <>
               <p className="text-soft text-[14px] leading-[1.6] mb-5 mx-0 mt-0 relative z-20">
-                Drop your email and we&apos;ll ping you the day AI Consultation
-                goes live. No newsletter, no drip, one signal, one email.
+                AI Consultation goes live in August 2026. What you just ran is an
+                early prototype — a preview of how the real diagnostic will work.
+                Leave your email and we&apos;ll ping you the moment it&apos;s ready.
               </p>
               <input
                 type="email"
@@ -169,8 +170,9 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
               transition={{ duration: 0.4 }}
               className="text-soft text-[14px] leading-[1.6] mb-5 mx-0 mt-0 relative z-20"
             >
-              Got it. We&apos;ll email{" "}
-              <span className="text-accent">{email}</span> the day it ships.
+              Done — we&apos;ll email{" "}
+              <span className="text-accent">{email}</span> the moment AI
+              Consultation is live.
             </m.p>
           )}
         </m.div>

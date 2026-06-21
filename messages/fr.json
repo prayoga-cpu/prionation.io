@@ -2,8 +2,6 @@
   "Meta": {
     "homeTitle": "Ingénierie de produits IA · PRIONATION.io",
     "homeDescription": "Infrastructure IA de production pour les entreprises mid-market d'Europe et des États-Unis. Périmètre fixe. Prix fixe. En production en 8 semaines. À partir de 5 000 €.",
-    "startTitle": "Découvrez notre méthode · PRIONATION.io",
-    "startDescription": "Des vidéos courtes sur notre façon de construire de l’IA de production, nos tarifs, et pourquoi plus de 60 % des Diagnostics deviennent des Builds. Regardez, puis nommez votre goulot d’étranglement.",
     "discordTitle": "Rejoignez notre communauté Discord · PRIONATION.io",
     "discordDescription": "Connectez-vous avec des ingénieurs produits IA, des testeurs QA et des créateurs de contenu. Participez aux lancements, aux défis graphiques et intégrez notre vivier de talents."
   },
@@ -138,22 +136,143 @@
     "ctaButton": "Démarrer la saisie"
   },
   "Hero": {
-    "eyebrow": "INGÉNIERIE DE PRODUITS IA",
-    "title_main": "Nous construisons des logiciels qui",
-    "title_accent": "brisent les",
-    "description": "Nous construisons une infrastructure IA de production pour les entreprises du marché intermédiaire basées en Europe et aux États-Unis. Huit semaines, périmètre fixe, équipes agiles.",
-    "cta_diagnostic": "Commencer par un Diagnostic",
-    "cta_meet": "Rencontrez-nous",
-    "stat_diagnostic": "DIAGNOSTIC → TAUX DE CONSTRUCTION",
-    "stat_deliverable": "AU PREMIER LIVRABLE",
-    "stat_production": "À LA PRODUCTION",
-    "weeks": "semaines",
-    "words": [
-      "goulots d'étranglement.",
-      "travail manuel.",
-      "silos de données.",
-      "processus lents."
-    ]
+    "badge": "Ingénierie de produits IA · Consultation",
+    "title_lines": [
+      "Brisez les goulots",
+      "opérationnels avec une"
+    ],
+    "title_shimmer": "infrastructure IA",
+    "title_ai": "IA",
+    "subhead": "Obtenez un diagnostic gratuit, généré par IA, de votre principal goulot opérationnel — puis nos équipes construisent avec vous, en 8 semaines, l'infrastructure IA de production qui le résout. Pensé pour les entreprises du marché intermédiaire en Europe et aux États-Unis.",
+    "input_label": "[ ENTRÉE ]",
+    "expand": "Agrandir",
+    "close": "Fermer",
+    "tab_intake": "Formulaire guidé",
+    "tab_chat": "Discuter avec l'IA",
+    "website_label": "SITE WEB DE L'ENTREPRISE",
+    "website_placeholder": "votreentreprise.com",
+    "website_hint": "Nous analyserons votre site pour préremplir le contexte de votre diagnostic.",
+    "scan": "SCAN",
+    "industry_label": "SECTEUR",
+    "stage_label": "STADE DE L'ENTREPRISE",
+    "bottleneck_label": "GOULOT LE PLUS FRÉQUENT",
+    "bottleneck_custom_placeholder": "Ou décrivez le vôtre…",
+    "generate": "Générer le diagnostic →",
+    "analyzing": "Analyse…",
+    "industries": [
+      "Restauration / Hôtellerie",
+      "Logistique & Chaîne d'approvisionnement",
+      "Immobilier",
+      "E-commerce & Vente au détail",
+      "Services professionnels",
+      "Industrie / Fabrication",
+      "Santé",
+      "Autre"
+    ],
+    "bottlenecks": [
+      [
+        "Suivi manuel des commandes & stocks",
+        "Données fragmentées entre les sites",
+        "Flux réservation & opérations lent"
+      ],
+      [
+        "Suivi manuel des expéditions",
+        "Devis & appels d'offres déconnectés",
+        "Aucune visibilité en temps réel"
+      ],
+      [
+        "Réponse lente aux prospects",
+        "Gestion manuelle du pipeline",
+        "Charge de prise de rendez-vous"
+      ],
+      [
+        "Données catalogue désordonnées",
+        "Volume élevé de tickets support",
+        "Prévision de la demande"
+      ],
+      [
+        "Reporting manuel",
+        "Génération de devis & propositions",
+        "Onboarding client"
+      ],
+      [
+        "Planification de production",
+        "Journalisation du contrôle qualité",
+        "Suivi de la maintenance"
+      ],
+      [
+        "Paperasse d'admission patient",
+        "Charge de planification",
+        "Réconciliation des dossiers"
+      ],
+      [
+        "Saisie manuelle répétitive",
+        "Outils internes déconnectés",
+        "Charge de reporting & analytique"
+      ]
+    ],
+    "stages": [
+      "< €1M de CA",
+      "€1–5M",
+      "€5–50M",
+      "€50M+",
+      "Non communiqué"
+    ],
+    "roi": [
+      "≈ 40 K€ / an récupérés · amorti en moins de 5 mois",
+      "≈ 90 K€ / an récupérés · amorti en moins de 4 mois",
+      "≈ 180 K€ / an récupérés · amorti en moins de 4 mois",
+      "≈ 400 K€ / an récupérés · amorti en moins de 3 mois",
+      "≈ 120 K€ / an récupérés · amorti en moins de 4 mois"
+    ],
+    "chat_initial": "Dites-nous ce qui ralentit votre équipe — avec vos propres mots.",
+    "chat_placeholder_initial": "Décrivez ce qui vous ralentit…",
+    "chat_placeholder_reply": "Tapez votre réponse…",
+    "chat_q1": "Compris. Combien de personnes touchent ce processus chaque semaine, environ ?",
+    "chat_q2": "Et dans quel secteur êtes-vous ?",
+    "chat_final": "Merci — je cartographie votre goulot maintenant.",
+    "thinking_mapping": "Cartographie de votre goulot…",
+    "thinking_analyzing": "Analyse de votre réponse…",
+    "model": "Opus 4.8",
+    "send": "Envoyer",
+    "footer_note": "Aperçu gratuit · sans inscription · résultat instantané",
+    "powered_by": "propulsé par",
+    "powered_brand": "Claude",
+    "file_intake": "diagnostic-preview.md",
+    "file_chat": "consultation.log",
+    "status_ready": "prêt",
+    "status_analyzing": "analyse",
+    "status_preview": "aperçu · 0,9 s",
+    "preview_idle": [
+      "Remplissez le formulaire ou discutez avec l'IA — l'aperçu affiche votre diagnostic.",
+      "Il cartographie le goulot et cadre le logiciel + l'IA que nous construirions avec vous pour le résoudre. Aucun appel requis."
+    ],
+    "load_parsing": "> analyse : {target}",
+    "load_lines": [
+      "> cartographie du goulot opérationnel…",
+      "> comparaison avec nos projets livrés…",
+      "> projection du ROI + retour sur investissement…"
+    ],
+    "result_bottleneck_label": "Goulot cartographié",
+    "result_path_label": "Parcours recommandé",
+    "result_roi_label": "ROI projeté",
+    "result_bottleneck_intake": "{bn} — environ 20 h+/semaine de temps opérateur perdu dans l'équipe.",
+    "result_path_intake": "Diagnostic (2 sem.) → nous construisons le logiciel + l'IA de production avec votre équipe {industry} (8 sem.), validé par évaluations. Vous possédez tout le code, l'hébergement et les données.",
+    "result_bottleneck_chat": "« {q} » → un goulot manuel récurrent, ~20 h/semaine de temps opérateur.",
+    "result_path_chat": "Diagnostic (2 sem.) → nous construisons le logiciel + l'IA de production avec vous (8 sem.). Vous possédez tout le code, l'hébergement et les données.",
+    "result_roi_chat": "≈ 180 K€ / an récupérés · amorti en moins de 4 mois",
+    "bottleneck_fallback": "un flux de travail manuel et répétitif",
+    "chat_fallback": "le flux que vous avez décrit",
+    "stat_build_value": "≥60%",
+    "stat_build_label": "Diagnostic → Construction",
+    "stat_deliverable_value": "2 sem.",
+    "stat_deliverable_label": "Premier livrable",
+    "stat_production_value": "8 sem.",
+    "stat_production_label": "Vers la production",
+    "feed_scraping": "extraction de la source depuis {src}…",
+    "feed_thinking": "réflexion…",
+    "feed_thought": "réfléchi pendant {sec} s",
+    "feed_tokens": "{n} jetons"
   },
   "Header": {
     "nav": {
@@ -208,7 +327,6 @@
     "label": "MÉTHODOLOGIE",
     "title": "DISCIPLINE D'INGÉNIERIE IA NATIVE.",
     "link": "Principes d'ingénierie",
-    "coming_soon": "Bientôt disponible",
     "principles": [
       {
         "title": "Les évaluations avant les fonctionnalités.",
@@ -223,10 +341,8 @@
         "body": "Vous détenez les clés : code, hébergement, données, modèles. Notre valeur réside dans la discipline de construction, pas dans le verrouillage d'infrastructure."
       },
       {
-        "title": "Consultation IA",
-        "body": "Obtenez un aperçu diagnostique généré par IA en quelques minutes. Deux voies : saisie structurée ou chat avec notre IA.",
-        "cta": "Notifiez-moi à la mise en ligne",
-        "cta_mobile": "Notifiez-moi"
+        "title": "Équipes agiles, délais fixes.",
+        "body": "Deux à trois ingénieurs, une unité de livraison de huit semaines. Des équipes réduites à délai fixe gardent le périmètre honnête et rendent un prix fixe possible."
       }
     ]
   },
@@ -595,183 +711,6 @@
     "glossaryTitle": "Glossaire de l'Ingénierie IA",
     "glossaryBody": "Des définitions claires et simples des termes d'ingénierie IA indispensables pour bâtir un système de production : evals, télémétrie, RAG, inférence, agents, et plus.",
     "glossaryButton": "Lire le Glossaire"
-  },
-  "Start": {
-    "nav": {
-      "cta": "Réserver un Diagnostic"
-    },
-    "hero": {
-      "eyebrow": "Ingénierie de produits IA",
-      "title_lead": "Des produits IA qui",
-      "title_accent": "brisent les goulots d’étranglement opérationnels.",
-      "desc": "Evan Cao — notre CRO et fondateur d’Epidom — explique notre façon de travailler, nos tarifs, et pourquoi plus de 60 % des Diagnostics deviennent des Builds.",
-      "cta_primary": "Commencer un Diagnostic",
-      "cta_secondary": "Parcourir la vidéothèque",
-      "featured_badge": "EN VEDETTE · 60s",
-      "featured_title": "Arrêtez de vouloir recruter un ingénieur IA.",
-      "featured_hook": "Vous n’en trouverez pas. Voici quoi faire à la place."
-    },
-    "trust": {
-      "build_rate": "≥ 60 %",
-      "build_rate_label": "Taux Diagnostic → Build",
-      "first": "2 sem.",
-      "first_label": "Au premier livrable",
-      "prod": "8 sem.",
-      "prod_label": "À la production",
-      "warranty": "4 sem.",
-      "warranty_label": "Garantie post-lancement"
-    },
-    "evan": {
-      "quote": "Il y a deux ans, j’étais le client. J’ai créé Epidom et nous croulions sous la complexité opérationnelle. PRIONATION, c’est ce que j’aurais voulu pouvoir recruter. Je suis ici en tant que CRO parce que je sais exactement ce dont l’acheteur a besoin — parce que j’étais l’acheteur.",
-      "name": "Evan Cao",
-      "role": "CRO, PRIONATION.io · Fondateur, Epidom (Paris, France)"
-    },
-    "library": {
-      "label": "Vidéothèque",
-      "title": "Trouvez votre angle.",
-      "desc": "Filtrez selon ce qui compte pour vous — l’argument tarifaire, la méthodologie technique ou l’accroche de 30 secondes.",
-      "tabs": {
-        "all": "Tout",
-        "ceo": "Pour le CEO / COO",
-        "cto": "Pour le CTO",
-        "pricing": "Objections tarifaires",
-        "quick": "Gains rapides"
-      },
-      "videos": [
-        {
-          "title": "J’avais besoin de ce produit pour ma propre entreprise",
-          "hook": "« Il y a deux ans, j’étais le client d’une entreprise qui n’existait pas encore. »",
-          "tags": [
-            "CEO",
-            "Genèse"
-          ]
-        },
-        {
-          "title": "L’astuce à 149 €",
-          "hook": "« Tout le monde propose des consultations IA gratuites. Nous facturons 149 €. Voici pourquoi. »",
-          "tags": [
-            "Tous",
-            "Faible friction"
-          ]
-        },
-        {
-          "title": "Pourquoi votre directeur financier adorera nos tarifs",
-          "hook": "« Votre DAF n’approuvera pas 120 000 € pour recruter un ingénieur IA. Mais il approuvera ceci. »",
-          "tags": [
-            "Tarifs",
-            "Angle DAF"
-          ]
-        },
-        {
-          "title": "8 semaines. Prix fixe. Aucune dérive de périmètre.",
-          "hook": "« Tous les projets de conseil IA que j’ai vus accusent 6 mois de retard. Pas les nôtres. »",
-          "tags": [
-            "CEO",
-            "Périmètre fixe"
-          ]
-        },
-        {
-          "title": "Votre problème n’est pas la demande. C’est le débit.",
-          "hook": "« La plupart des entreprises n’ont pas un problème de demande. Elles ont un problème de débit. »",
-          "tags": [
-            "CEO/COO",
-            "Recadrage"
-          ]
-        },
-        {
-          "title": "Nous écrivons le test avant la fonctionnalité",
-          "hook": "« La plupart des produits IA échouent en production. Nous avons résolu cela en travaillant à rebours. »",
-          "tags": [
-            "CTO",
-            "Méthodologie"
-          ]
-        },
-        {
-          "title": "Site à 1 500 €. 5 jours. Sans chichis.",
-          "hook": "« Besoin d’un site professionnel. Budget de 1 500 €. Lisez ceci. »",
-          "tags": [
-            "Express",
-            "Gain rapide"
-          ]
-        },
-        {
-          "title": "60 % de nos diagnostics deviennent des builds",
-          "hook": "« La plupart des cabinets plafonnent à 10–15 % de conversion. Voici pourquoi le nôtre est différent. »",
-          "tags": [
-            "CEO",
-            "Preuve sociale"
-          ]
-        },
-        {
-          "title": "Dites-moi votre goulot d’étranglement",
-          "hook": "« Si vous pouvez nommer votre goulot d’étranglement en une phrase, nous pouvons cadrer une solution en un appel. »",
-          "tags": [
-            "CTA direct",
-            "Reciblage"
-          ]
-        }
-      ]
-    },
-    "pricing": {
-      "label": "Tarification",
-      "title": "Commencez par un Diagnostic.",
-      "desc": "Périmètre fixe. Prix fixe. Trois façons de collaborer.",
-      "start_here": "Commencez ici",
-      "cta": "Commencer un Diagnostic",
-      "note": "Réponse sous 24 h · consult@prionation.io",
-      "plans": [
-        {
-          "sku": "SKU 01 · Diagnostic",
-          "price": "5–7 K€",
-          "period": "2 semaines",
-          "desc": "Nous cartographions le goulot d’étranglement. Concevons l’architecture. Projetons le ROI. Si le calcul ne tient pas, nous vous le disons franchement."
-        },
-        {
-          "sku": "SKU 02 · Build",
-          "price": "25–55 K€",
-          "period": "8 semaines",
-          "desc": "Build IA de production complet. Harnais d’évaluation. Télémétrie. Documentation de transfert. Garantie de 4 semaines. Vous possédez tout."
-        },
-        {
-          "sku": "SKU 03 · Retainer",
-          "price": "4–9 K€/mois",
-          "period": "min. 6 mois",
-          "desc": "Les ingénieurs qui ont conçu votre système le maintiennent et le font évoluer. Accès continu à l’équipe."
-        }
-      ]
-    },
-    "faq": {
-      "title": "Objections, traitées.",
-      "items": [
-        {
-          "q": "Et si le build ne fonctionne pas ?",
-          "a": "Nous écrivons les évaluations avant les fonctionnalités. Chaque livrable a des critères de réussite mesurables convenus à l’avance. Si la suite d’évaluation échoue, nous ne livrons pas. La garantie de 4 semaines couvre les régressions. Le compte à rebours de 8 semaines ne démarre qu’après validation conjointe du périmètre du Diagnostic — aucune surprise."
-        },
-        {
-          "q": "25–55 K€, c’est beaucoup. Pourquoi ne pas recruter ?",
-          "a": "Un ingénieur IA senior en Europe coûte 120–180 K€ chargé, met 4 à 6 mois à recruter, et vous obtenez une seule personne. Notre Build, c’est 2 à 3 ingénieurs, en production en 8 semaines, pour moins de la moitié du coût de la première année d’un seul recrutement."
-        },
-        {
-          "q": "Pourquoi exactement 8 semaines ?",
-          "a": "8 semaines, c’est le minimum pour livrer quelque chose de qualité production, pas un prototype. Cela signifie : harnais d’évaluation construit, télémétrie instrumentée, modèle évalué sur des données réelles, déploiement testé et équipe formée au transfert. Les builds plus rapides sautent ces étapes. Ils échouent en production."
-        },
-        {
-          "q": "Possédons-nous le code ensuite ?",
-          "a": "Oui. Entièrement. Code, hébergement, données, modèles — tout. Nous transférons l’ensemble de la stack. Notre valeur, c’est la discipline de construction, pas le verrouillage de l’infrastructure. Vous pouvez l’exploiter vous-même ou nous garder en Retainer, mais le choix vous appartient."
-        },
-        {
-          "q": "Nous échangeons déjà avec d’autres prestataires IA.",
-          "a": "Très bien. Demandez-leur leur harnais d’évaluation. Demandez quelle télémétrie ils instrumentent dès le premier jour. Demandez qui détient le modèle, l’hébergement et les données après le transfert. Les réponses vous diront tout sur leur véritable façon de construire."
-        }
-      ]
-    },
-    "cta": {
-      "label": "Nous contacter",
-      "title": "Nommez votre goulot d’étranglement.",
-      "desc": "Une phrase sur ce qui ralentit vos opérations. C’est toute la qualification.",
-      "button": "Réserver un appel de 30 minutes",
-      "note": "Appel gratuit · Réponse sous 24 h · consult@prionation.io"
-    }
   },
   "Discord": {
     "eyebrow": "Lancement de la communauté",

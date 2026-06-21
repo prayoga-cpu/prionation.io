@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Bitter } from "next/font/google";
 import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
@@ -70,15 +69,6 @@ const blackHanSans = localFont({
   src: "../../public/fonts/black-han-sans/black-han-sans-latin-400-normal.woff2",
   variable: "--font-black-han-sans",
   display: "swap",
-});
-
-// Serif is only used on /start; don't preload it on every page.
-const bitter = Bitter({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-bitter",
-  display: "swap",
-  preload: false,
 });
 
 export async function generateMetadata({
@@ -170,7 +160,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       data-scroll-behavior="smooth"
-      className={`${rubik.variable} ${pressStart2P.variable} ${blackHanSans.variable} ${bitter.variable}`}
+      className={`${rubik.variable} ${pressStart2P.variable} ${blackHanSans.variable}`}
     >
       <body suppressHydrationWarning>
         <OrganizationSchema />

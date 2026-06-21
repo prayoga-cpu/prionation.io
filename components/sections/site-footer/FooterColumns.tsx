@@ -92,26 +92,24 @@ export function FooterColumns() {
         </h4>
         <ul className="list-none p-0 m-0 flex flex-col gap-2">
           <li>
-            <SectionLink isHome={isHome} id="how-we-work">
+            <SectionLink isHome={isHome} id="pricing">
               SKU 01 · Diagnostic
             </SectionLink>
           </li>
           <li>
-            <SectionLink isHome={isHome} id="how-we-work">
+            <SectionLink isHome={isHome} id="pricing">
               SKU 02 · Build
             </SectionLink>
           </li>
           <li>
-            <SectionLink isHome={isHome} id="how-we-work">
+            <SectionLink isHome={isHome} id="pricing">
               SKU 03 · Retainer
             </SectionLink>
           </li>
-          <li className="flex items-center gap-1.5">
-            <span className="text-[13px] text-muted">Express Site</span>
-            <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase">
-              {" "}
-              soon
-            </span>
+          <li>
+            <SectionLink isHome={isHome} id="pricing">
+              Express Site
+            </SectionLink>
           </li>
           <li className="flex items-center gap-1.5">
             <span className="text-[13px] text-muted">AI Consultation</span>
