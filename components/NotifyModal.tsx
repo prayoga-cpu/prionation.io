@@ -6,6 +6,7 @@ import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "./icons";
 import { Btn, Eyebrow } from "./ui/Atoms";
 import { scaleIn, backdrop } from "@/lib/motion";
+import { formatEmail } from "@/lib/forms/format";
 
 const isDev = process.env.NODE_ENV !== "production";
 const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
@@ -130,8 +131,9 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
               </p>
               <input
                 type="email"
+                aria-label="Email address"
                 value={email}
-                onChange={(e) => { setEmail(e.target.value); if (error) setError(false); if (apiError) setApiError(""); }}
+                onChange={(e) => { setEmail(formatEmail(e.target.value)); if (error) setError(false); if (apiError) setApiError(""); }}
                 placeholder="you@company.com"
                 className={`w-full bg-transparent text-white font-sans text-[15px] py-3 border-0 border-b rounded-none outline-none transition-colors duration-fast placeholder:text-muted focus:border-accent relative z-20 ${error ? "border-accent" : "border-line-soft"}`}
                 onKeyDown={(e) => e.key === "Enter" && submit()}

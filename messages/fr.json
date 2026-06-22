@@ -135,6 +135,12 @@
     "ctaBody": "Prenez 2 minutes pour remplir le formulaire. Nous l'analyserons et vous répondrons sous 24 heures.",
     "ctaButton": "Démarrer la saisie"
   },
+  "Marquee": {
+    "heading": "Nous sommes spécialisés dans les modèles d'IA, le design d'expérience et l'ingénierie produit de bout en bout"
+  },
+  "Testimonials": {
+    "heading": "Ce que disent nos clients"
+  },
   "Hero": {
     "badge": "Ingénierie de produits IA · Consultation",
     "title_lines": [
@@ -229,6 +235,7 @@
       "≈ 120 K€ / an récupérés · amorti en moins de 4 mois"
     ],
     "chat_initial": "Dites-nous ce qui ralentit votre équipe — avec vos propres mots.",
+    "chat_input_label": "Votre message",
     "chat_placeholder_initial": "Décrivez ce qui vous ralentit…",
     "chat_placeholder_reply": "Tapez votre réponse…",
     "chat_q1": "Compris. Combien de personnes touchent ce processus chaque semaine, environ ?",
@@ -354,6 +361,7 @@
     "title": "TRANSFORMATIONS OPÉRATIONNELLES ÉPROUVÉES.",
     "link": "Voir les archives",
     "view_project": "VOIR LE PROJET",
+    "live_demo": "DÉMO EN DIRECT",
     "cases": [
       {
         "name": "EPIDOM",

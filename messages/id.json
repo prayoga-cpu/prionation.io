@@ -135,6 +135,12 @@
     "ctaBody": "Butuh 2 menit untuk mengisi formulir intake. Kami akan meninjaunya dan merespons dalam 24 jam.",
     "ctaButton": "Mulai Intake"
   },
+  "Marquee": {
+    "heading": "Kami berspesialisasi dalam model AI, desain pengalaman, dan rekayasa produk end-to-end"
+  },
+  "Testimonials": {
+    "heading": "Kata Klien Kami"
+  },
   "Hero": {
     "badge": "Rekayasa Produk AI · Konsultasi",
     "title_lines": [
@@ -229,6 +235,7 @@
       "≈ €120K / thn pulih · balik modal < 4 bulan"
     ],
     "chat_initial": "Ceritakan apa yang memperlambat tim Anda — dengan kata-kata Anda sendiri.",
+    "chat_input_label": "Pesan Anda",
     "chat_placeholder_initial": "Jelaskan apa yang memperlambat Anda…",
     "chat_placeholder_reply": "Ketik balasan Anda…",
     "chat_q1": "Mengerti. Kira-kira berapa orang yang menangani proses itu tiap minggu?",
@@ -354,6 +361,7 @@
     "title": "TRANSFORMASI OPERASIONAL YANG TERBUKTI.",
     "link": "Lihat arsip",
     "view_project": "LIHAT PROYEK",
+    "live_demo": "DEMO LANGSUNG",
     "cases": [
       {
         "name": "EPIDOM",

@@ -4,6 +4,7 @@ import React, { useState, useRef } from "react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
+import { formatEmail, formatUrlForce, formatPhone } from "@/lib/forms/format";
 
 const isDev = process.env.NODE_ENV !== "production";
 const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
@@ -55,8 +56,9 @@ function FLabel({ n, children, optional }: { n: string; children: React.ReactNod
 function FInput({ value, onChange, placeholder, error, type = "text" }: {
   value: string; onChange: (v: string) => void; placeholder: string; error?: boolean; type?: string;
 }) {
+  const format = type === "email" ? formatEmail : type === "url" ? formatUrlForce : type === "tel" ? formatPhone : undefined;
   return (
-    <input type={type} value={value} placeholder={placeholder} onChange={(e) => onChange(e.target.value)}
+    <input type={type} value={value} placeholder={placeholder} aria-label={placeholder} onChange={(e) => onChange(format ? format(e.target.value) : e.target.value)}
       className={`w-full bg-transparent text-white font-sans text-[15px] py-3 border-0 border-b rounded-none outline-none transition-colors duration-fast placeholder:text-muted focus:border-accent relative z-20 ${error ? "border-accent" : "border-line-soft"}`}
     />
   );
@@ -82,7 +84,7 @@ function FSelect({ value, onChange, options, error, placeholder }: {
 
 function FFile({ onChange, error }: { onChange: (f: File | null) => void; error?: boolean }) {
   return (
-    <input type="file" accept="application/pdf" onChange={(e) => onChange(e.target.files?.[0] || null)}
+    <input type="file" accept="application/pdf" aria-label="Upload your CV (PDF)" onChange={(e) => onChange(e.target.files?.[0] || null)}
       className={`w-full bg-transparent text-muted font-sans text-[13px] py-3 border-0 border-b rounded-none outline-none transition-colors duration-fast focus:border-accent relative z-20 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[11px] file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20 cursor-pointer ${error ? "border-accent" : "border-line-soft"}`}
     />
   );

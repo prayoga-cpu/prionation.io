@@ -6,7 +6,19 @@ import {
   FOUNDING_DATE,
   SOCIAL_LINKS,
   OFFERS,
+  TEAM,
 } from "@/lib/seo/site";
+
+// Real people behind the brand → Person nodes for the Organization graph. Helps
+// search/AI engines tie "PRIONATION", "PRIORITY FOUNDATION", and the founders
+// into one entity. Sourced from lib/seo/site.ts (no fabricated data).
+const PEOPLE = TEAM.map((p) => ({
+  "@type": "Person",
+  name: p.name,
+  jobTitle: p.jobTitle,
+  url: p.linkedin,
+  sameAs: [p.linkedin],
+}));
 
 // Server components that emit site-wide JSON-LD structured data for search + AI
 // engines. Rendered once in the root layout. Page-level schemas (Article,
@@ -35,6 +47,8 @@ export function OrganizationSchema() {
           "Production AI infrastructure for European and US-based mid-market companies. Fixed scope. Fixed price. Lean pods.",
         email: CONTACT_EMAIL,
         foundingDate: FOUNDING_DATE,
+        founder: PEOPLE.filter((_, i) => TEAM[i].isFounder),
+        employee: PEOPLE,
         sameAs: SOCIAL_LINKS,
       }}
     />

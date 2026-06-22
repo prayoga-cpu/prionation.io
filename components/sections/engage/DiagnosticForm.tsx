@@ -7,6 +7,7 @@ import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
 import { fadeIn } from "@/lib/motion";
+import { formatEmail, formatUrlForce, formatPhone } from "@/lib/forms/format";
 
 const isDev = process.env.NODE_ENV !== "production";
 const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
@@ -44,9 +45,10 @@ function FLabel({ n, children, optional, optionalLabel }: {
 function FInput({ value, onChange, placeholder, error, type = "text" }: {
   value: string; onChange: (v: string) => void; placeholder: string; error?: boolean; type?: string;
 }) {
+  const format = type === "email" ? formatEmail : type === "url" ? formatUrlForce : type === "tel" ? formatPhone : undefined;
   return (
-    <input type={type} value={value} placeholder={placeholder}
-      onChange={(e) => onChange(e.target.value)}
+    <input type={type} value={value} placeholder={placeholder} aria-label={placeholder}
+      onChange={(e) => onChange(format ? format(e.target.value) : e.target.value)}
       className={`w-full bg-transparent text-white font-sans text-[15px] py-3 border-0 border-b rounded-none outline-none transition-colors duration-fast placeholder:text-muted focus:border-accent relative z-20 ${error ? "border-accent" : "border-line-soft"}`}
     />
   );
@@ -56,7 +58,7 @@ function FArea({ value, onChange, placeholder, error, minRows = 3 }: {
   value: string; onChange: (v: string) => void; placeholder: string; error?: boolean; minRows?: number;
 }) {
   return (
-    <textarea value={value} placeholder={placeholder} rows={minRows}
+    <textarea value={value} placeholder={placeholder} aria-label={placeholder} rows={minRows}
       onChange={(e) => onChange(e.target.value)}
       className={`w-full bg-transparent text-white font-sans text-[15px] py-3 border-0 border-b rounded-none outline-none transition-colors duration-fast placeholder:text-muted focus:border-accent resize-y leading-[1.5] min-h-[80px] relative z-20 ${error ? "border-accent" : "border-line-soft"}`}
     />

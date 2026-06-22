@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
+import { formatEmail, formatPhone, formatDialCode } from "@/lib/forms/format";
 
 const isDev = process.env.NODE_ENV !== "production";
 const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
@@ -374,6 +375,7 @@ export function MeetUsTab() {
                 </label>
                 <input
                   type="text"
+                  aria-label="Full name"
                   value={formData.fullName}
                   onChange={(e) => {
                     setFormData({ ...formData, fullName: e.target.value });
@@ -395,9 +397,10 @@ export function MeetUsTab() {
                 </label>
                 <input
                   type="email"
+                  aria-label="Email"
                   value={formData.email}
                   onChange={(e) => {
-                    setFormData({ ...formData, email: e.target.value });
+                    setFormData({ ...formData, email: formatEmail(e.target.value) });
                     if (errors.email) setErrors({ ...errors, email: false });
                   }}
                   placeholder="john@example.com"
@@ -416,12 +419,13 @@ export function MeetUsTab() {
                 <div className="flex items-end gap-3">
                   <div className="relative">
                     <input
-                      type="text"
+                      type="tel"
+                      aria-label="Country code"
                       value={formData.countryCode}
                       onChange={(e) =>
                         setFormData({
                           ...formData,
-                          countryCode: e.target.value,
+                          countryCode: formatDialCode(e.target.value),
                         })
                       }
                       className="w-16 bg-transparent text-white font-sans text-[15px] py-3 border-0 border-b border-line-soft outline-none focus:border-accent transition-colors text-center"
@@ -429,9 +433,10 @@ export function MeetUsTab() {
                   </div>
                   <input
                     type="tel"
+                    aria-label="WhatsApp number"
                     value={formData.whatsapp}
                     onChange={(e) => {
-                      setFormData({ ...formData, whatsapp: e.target.value });
+                      setFormData({ ...formData, whatsapp: formatPhone(e.target.value) });
                       if (errors.whatsapp)
                         setErrors({ ...errors, whatsapp: false });
                     }}

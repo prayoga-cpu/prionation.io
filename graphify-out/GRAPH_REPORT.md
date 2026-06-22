@@ -1,16 +1,16 @@
-# Graph Report - prionation.io  (2026-06-21)
+# Graph Report - prionation.io  (2026-06-22)
 
 ## Corpus Check
-- 118 files · ~207,110 words
+- 123 files · ~212,429 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 605 nodes · 1189 edges · 37 communities (25 shown, 12 thin omitted)
-- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 55 edges (avg confidence: 0.82)
+- 644 nodes · 1252 edges · 43 communities (32 shown, 11 thin omitted)
+- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 57 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `06e2691f`
+- Built from commit: `b85734f7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -19,7 +19,6 @@
 - [[_COMMUNITY_Form Submission & Backend|Form Submission & Backend]]
 - [[_COMMUNITY_Package Dependencies & Scripts|Package Dependencies & Scripts]]
 - [[_COMMUNITY_Start Page & Discord Page|Start Page & Discord Page]]
-- [[_COMMUNITY_Internationalization & Content Text|Internationalization & Content Text]]
 - [[_COMMUNITY_Engage Forms & UI Tabs|Engage Forms & UI Tabs]]
 - [[_COMMUNITY_Method Principles & System Overview|Method Principles & System Overview]]
 - [[_COMMUNITY_SEOAEOGEO Strategy|SEO/AEO/GEO Strategy]]
@@ -31,10 +30,11 @@
 - [[_COMMUNITY_Anchor Landing Pages|Anchor Landing Pages]]
 - [[_COMMUNITY_Higgsfield Ad Campaign|Higgsfield Ad Campaign]]
 - [[_COMMUNITY_Community 15|Community 15]]
+- [[_COMMUNITY_Community 16|Community 16]]
 - [[_COMMUNITY_Methodology Section & UI Atoms|Methodology Section & UI Atoms]]
 - [[_COMMUNITY_Community 18|Community 18]]
-- [[_COMMUNITY_Floating Share Buttons|Floating Share Buttons]]
 - [[_COMMUNITY_Hero Section & Animations|Hero Section & Animations]]
+- [[_COMMUNITY_Community 22|Community 22]]
 - [[_COMMUNITY_Brand Mark & Favicons|Brand Mark & Favicons]]
 - [[_COMMUNITY_PageSpeed Script|PageSpeed Script]]
 - [[_COMMUNITY_Next.js Config|Next.js Config]]
@@ -44,16 +44,21 @@
 - [[_COMMUNITY_ESLint Config|ESLint Config]]
 - [[_COMMUNITY_PostCSS Config|PostCSS Config]]
 - [[_COMMUNITY_Tailwind Config|Tailwind Config]]
+- [[_COMMUNITY_Community 33|Community 33]]
 - [[_COMMUNITY_Framer Motion System|Framer Motion System]]
 - [[_COMMUNITY_Community 35|Community 35]]
 - [[_COMMUNITY_Community 37|Community 37]]
 - [[_COMMUNITY_Community 38|Community 38]]
+- [[_COMMUNITY_Community 39|Community 39]]
+- [[_COMMUNITY_Community 41|Community 41]]
+- [[_COMMUNITY_Community 43|Community 43]]
 - [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 45|Community 45]]
 - [[_COMMUNITY_Community 46|Community 46]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `getPublishedPages()` - 34 edges
-2. `T` - 25 edges
+2. `T` - 27 edges
 3. `SiteFooter()` - 16 edges
 4. `compilerOptions` - 16 edges
 5. `ContentHeader()` - 15 edges
@@ -70,8 +75,8 @@
   app/[locale]/ai-product-engineering-for-mid-market-companies/manifesto/page.tsx → lib/notify/templates.ts
 - `generateMetadata()` --calls--> `T`  [INFERRED]
   app/[locale]/ai-product-engineering-for-mid-market-companies/page.tsx → lib/notify/templates.ts
-- `generateMetadata()` --calls--> `T`  [INFERRED]
-  app/[locale]/layout.tsx → lib/notify/templates.ts
+- `TESTIMONIALS` --calls--> `T`  [INFERRED]
+  components/sections/Testimonials.tsx → lib/notify/templates.ts
 - `Owned Infrastructure (no vendor lock-in)` --semantically_similar_to--> `Supabase Storage (CV uploads)`  [INFERRED] [semantically similar]
   public/llms.txt → README.md
 
@@ -96,11 +101,11 @@
 - **Prionation Portfolio Work Items** — work_epidom_product, work_expeditoo_product, work_lead_agent_product [INFERRED 0.85]
 - **SaaS Landing Page Designs** — work_epidom_product, work_expeditoo_product, work_lead_agent_product [INFERRED 0.75]
 
-## Communities (37 total, 12 thin omitted)
+## Communities (43 total, 11 thin omitted)
 
 ### Community 0 - "Content Pages & Routing"
-Cohesion: 0.05
-Nodes (65): generateMetadata(), generateStaticParams(), Page(), SECTION, generateMetadata(), generateStaticParams(), Page(), SECTION (+57 more)
+Cohesion: 0.13
+Nodes (9): DiagnosticTab(), EMPTY_FORM, FormState, REQUIRED, MeetUsTab(), fadeIn, slideUp, Engage() (+1 more)
 
 ### Community 1 - "Form Submission & Backend"
 Cohesion: 0.07
@@ -108,19 +113,15 @@ Nodes (66): POST(), POST(), VALID_BASE, VALID_BASE, evaluateDisqualification(), 
 
 ### Community 2 - "Package Dependencies & Scripts"
 Cohesion: 0.05
-Nodes (38): browserslist, dependencies, framer-motion, @marsidev/react-turnstile, next, next-intl, @notionhq/client, react (+30 more)
+Nodes (39): browserslist, dependencies, framer-motion, @marsidev/react-turnstile, next, next-intl, @notionhq/client, react (+31 more)
 
 ### Community 3 - "Start Page & Discord Page"
-Cohesion: 0.14
-Nodes (7): generateMetadata(), OG_LOCALE, AnchorPage(), AnchorSection, Faq, SCHEMA_HUE, SECTIONS_META
-
-### Community 4 - "Internationalization & Content Text"
-Cohesion: 0.22
-Nodes (7): Header(), DiscordPageClient(), generateMetadata(), OG_LOCALE, T, Engage(), HowWeWork()
+Cohesion: 0.15
+Nodes (12): CareerForm, CareersTab(), EMPTY, POSITIONS, REQUIRED, formatDialCode(), formatEmail(), formatPhone() (+4 more)
 
 ### Community 5 - "Engage Forms & UI Tabs"
-Cohesion: 0.13
-Nodes (12): ic(), Icon(), IconProps, DiagnosticTab(), EMPTY_FORM, FormState, REQUIRED, MeetUsTab() (+4 more)
+Cohesion: 0.70
+Nodes (4): collectFromSitemap(), fetchText(), locs(), main()
 
 ### Community 6 - "Method Principles & System Overview"
 Cohesion: 0.08
@@ -132,47 +133,55 @@ Nodes (18): BRAND, buildXmp(), checkOnly, crc32(), CRC_TABLE, __dirname, filter,
 
 ### Community 8 - "Header, Modal & Motion Library"
 Cohesion: 0.13
-Nodes (13): NotifyModal(), backdrop, easeCinematic, easeFast, pageFade, riseIn, scaleIn, slideDown (+5 more)
+Nodes (14): Header(), backdrop, easeCinematic, easeFast, fadeUp, pageFade, slideDown, slideInLeft (+6 more)
 
 ### Community 9 - "TypeScript Config"
 Cohesion: 0.10
 Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
 
 ### Community 10 - "JSON-LD Schema & Root Layout"
-Cohesion: 0.26
-Nodes (7): pagesEn, pagesFr, pagesId, CommonContent, LocalePages, PageContent, SectionContent
+Cohesion: 0.15
+Nodes (10): ic(), Icon(), IconProps, Faq(), FaqItem, Foundation(), TeamMember, ICONS (+2 more)
 
 ### Community 11 - "Hiring Ad Campaign"
-Cohesion: 0.10
-Nodes (24): BUILD_VS_BUY_WEIGHTS, BuildVsBuyText, buildVsBuyVerdict(), BuyBuildVerdict, en, fr, getWidgetText(), id (+16 more)
+Cohesion: 0.11
+Nodes (23): BUILD_VS_BUY_WEIGHTS, BuildVsBuyText, buildVsBuyVerdict(), BuyBuildVerdict, en, fr, getWidgetText(), id (+15 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.29
-Nodes (5): fadeUp, slideInLeft, staggerNormal, PlanData, Pricing()
+Cohesion: 0.06
+Nodes (59): generateMetadata(), generateStaticParams(), Page(), SECTION, generateMetadata(), generateStaticParams(), Page(), SECTION (+51 more)
 
 ### Community 13 - "Anchor Landing Pages"
 Cohesion: 0.22
 Nodes (8): #4 content-expansion checklist, AEO — answer engines & voice, GEO — generative-engine citation, Out of SEO/AEO/GEO scope (product / content backlog), PageSpeed / Core Web Vitals — live validation, Pre-push — verification gate, PRIONATION.io — SEO / AEO / GEO board, SEO — search ranking & indexing
 
 ### Community 14 - "Higgsfield Ad Campaign"
-Cohesion: 0.05
-Nodes (30): OrganizationSchema(), ServiceSchema(), WebSiteSchema(), MotionProvider(), GlossaryPage(), Term, ManifestoPage(), generateMetadata() (+22 more)
+Cohesion: 0.14
+Nodes (13): OrganizationSchema(), PEOPLE, ServiceSchema(), WebSiteSchema(), MotionProvider(), blackHanSans, OG_LOCALE, pressStart2P (+5 more)
+
+### Community 15 - "Community 15"
+Cohesion: 0.09
+Nodes (17): AppShell(), ContentHighlight, Engage, Faq, Foundation, HowWeWork, Methodology, NotifyModal (+9 more)
+
+### Community 16 - "Community 16"
+Cohesion: 0.23
+Nodes (8): coreEntries(), Entry, esc(), GET(), renderEntry(), sectionEntries(), SITEMAP_IDS, SITEMAP_SECTIONS
 
 ### Community 17 - "Methodology Section & UI Atoms"
-Cohesion: 0.22
-Nodes (8): Faq(), FaqItem, ICONS, Methodology(), PrincipleData, SectionHead(), Dot(), Eyebrow()
+Cohesion: 0.29
+Nodes (5): PlanData, Pricing(), SectionHead(), Dot(), Eyebrow()
 
 ### Community 18 - "Community 18"
-Cohesion: 0.20
-Nodes (5): CareerForm, CareersTab(), EMPTY, POSITIONS, REQUIRED
-
-### Community 20 - "Floating Share Buttons"
-Cohesion: 0.32
-Nodes (3): FloatingShareDesktop(), FloatingShareMobile(), usePageUrl()
+Cohesion: 0.14
+Nodes (7): generateMetadata(), OG_LOCALE, AnchorPage(), AnchorSection, Faq, SCHEMA_HUE, SECTIONS_META
 
 ### Community 21 - "Hero Section & Animations"
-Cohesion: 0.11
-Nodes (16): useCountUp(), bodyStyle, buildBlueprint(), buildRoad(), errorLabel, eyebrowStyle, Hero(), monoStyle (+8 more)
+Cohesion: 0.10
+Nodes (17): useCountUp(), riseIn, bodyStyle, buildBlueprint(), buildRoad(), errorLabel, eyebrowStyle, Hero() (+9 more)
+
+### Community 22 - "Community 22"
+Cohesion: 0.17
+Nodes (9): staggerSlow, ContentHighlight(), getFeatured(), SCHEMA_HUE, CASE_DEMOS, CASE_IMGS, CASE_SLUGS, CaseData (+1 more)
 
 ### Community 24 - "Brand Mark & Favicons"
 Cohesion: 0.70
@@ -186,29 +195,49 @@ Nodes (3): pad(), run(), THRESHOLDS
 Cohesion: 0.15
 Nodes (12): Darwin Prayoga (Founder & CEO), Environment variables, Evan Cao (Chief Revenue Officer), Features, Form pipelines, Getting started, Notion setup, PRIONATION.io — v.3.1.0 (+4 more)
 
+### Community 33 - "Community 33"
+Cohesion: 0.32
+Nodes (5): initials(), Testimonial, TestimonialCard(), TESTIMONIALS, Stars()
+
+### Community 39 - "Community 39"
+Cohesion: 0.29
+Nodes (6): DiscordPageClient(), generateMetadata(), OG_LOCALE, generateMetadata(), T, HowWeWork()
+
+### Community 43 - "Community 43"
+Cohesion: 0.10
+Nodes (17): ArticleSidebar(), SECTION_LABEL, SECTIONS, Faq, findPhrase(), isLetter(), renderWithLinks(), Section (+9 more)
+
 ### Community 44 - "Community 44"
-Cohesion: 0.13
-Nodes (10): AppShell(), staggerSlow, ContentHighlight(), getFeatured(), SCHEMA_HUE, CASE_IMGS, CASE_LINKS, CaseData (+2 more)
+Cohesion: 0.40
+Nodes (3): ManifestoPage(), generateMetadata(), OG_LOCALE
+
+### Community 45 - "Community 45"
+Cohesion: 0.29
+Nodes (4): GlossaryPage(), Term, generateMetadata(), OG_LOCALE
+
+### Community 46 - "Community 46"
+Cohesion: 0.38
+Nodes (3): {Link, redirect, usePathname, useRouter, getPathname}, routing, config
 
 ## Knowledge Gaps
-- **200 isolated node(s):** `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE`, `SECTION` (+195 more)
+- **217 isolated node(s):** `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE`, `SECTION` (+212 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `T` connect `Internationalization & Content Text` to `Content Pages & Routing`, `Form Submission & Backend`, `Start Page & Discord Page`, `Community 12`, `Community 44`, `Higgsfield Ad Campaign`, `Community 15`, `Methodology Section & UI Atoms`, `Hero Section & Animations`?**
-  _High betweenness centrality (0.194) - this node is a cross-community bridge._
-- **Why does `getPublishedPages()` connect `Content Pages & Routing` to `Start Page & Discord Page`, `Community 44`, `Higgsfield Ad Campaign`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
-- **Why does `SiteFooter()` connect `Content Pages & Routing` to `Start Page & Discord Page`, `Community 44`, `Internationalization & Content Text`, `Higgsfield Ad Campaign`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+- **Why does `T` connect `Community 39` to `Content Pages & Routing`, `Form Submission & Backend`, `Community 33`, `Header, Modal & Motion Library`, `JSON-LD Schema & Root Layout`, `Community 12`, `Community 45`, `Community 44`, `Community 15`, `Methodology Section & UI Atoms`, `Community 18`, `Hero Section & Animations`, `Community 22`?**
+  _High betweenness centrality (0.202) - this node is a cross-community bridge._
+- **Why does `getPublishedPages()` connect `Community 12` to `Community 16`, `Community 18`, `Community 43`, `Community 22`?**
+  _High betweenness centrality (0.032) - this node is a cross-community bridge._
+- **Why does `SiteFooter()` connect `Community 12` to `Community 39`, `Community 44`, `Community 45`, `Community 15`, `Community 18`?**
+  _High betweenness centrality (0.032) - this node is a cross-community bridge._
 - **Are the 5 inferred relationships involving `getPublishedPages()` (e.g. with `generateStaticParams()` and `generateStaticParams()`) actually correct?**
   _`getPublishedPages()` has 5 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 24 inferred relationships involving `T` (e.g. with `generateMetadata()` and `Header()`) actually correct?**
-  _`T` has 24 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 26 inferred relationships involving `T` (e.g. with `generateMetadata()` and `Header()`) actually correct?**
+  _`T` has 26 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE` to the rest of the system?**
-  _203 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _220 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Content Pages & Routing` be split into smaller, more focused modules?**
-  _Cohesion score 0.05241228070175439 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1323529411764706 - nodes in this community are weakly interconnected._

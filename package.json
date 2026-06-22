@@ -17,6 +17,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "pagespeed": "node scripts/pagespeed.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
     "images:meta": "node scripts/image-metadata.mjs"
   },
   "dependencies": {

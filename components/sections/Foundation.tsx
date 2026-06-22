@@ -72,18 +72,17 @@ function PersonCard({
 
 function MobileCarousel({ children }: { children: React.ReactNode[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
-  
-  // Duplicate children to create a functionally infinite scroll experience (45 items)
-  const infiniteChildren = Array.from({ length: 15 }).flatMap(() => children);
 
+  // One crawlable copy only — a snap-scroll carousel of the real cards. (Was
+  // cloning the set 15× = 45 duplicate DOM nodes, which bloated crawl budget.)
   return (
-    <div 
+    <div
       ref={scrollRef}
       className="relative w-[100vw] -ml-[var(--page-x)] flex overflow-x-auto snap-x snap-mandatory md:hidden mt-8 py-4 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
       style={{ scrollPaddingLeft: "var(--page-x)" }}
     >
       <div className="flex gap-4 px-[var(--page-x)] w-max">
-        {infiniteChildren.map((child, i) => (
+        {children.map((child, i) => (
           <m.div
             key={i}
             className="snap-start shrink-0 w-[280px] h-[480px] origin-left"

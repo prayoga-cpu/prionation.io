@@ -461,3 +461,31 @@ select option {
   text-underline-offset: 3px;
   color: var(--c-fg);
 }
+
+/* "Powered by Claude" link in the consultation card — brighten mark + wordmark together */
+.pio-powered {
+  transition: color 120ms ease;
+}
+.pio-powered:hover b {
+  color: #fff;
+}
+
+/* Logo marquee — seamless infinite scroll (two identical copies, shift by -50%).
+   Duration is set inline per instance. */
+@keyframes scroll-logos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-scroll-logos {
+  animation: scroll-logos linear infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-logos {
+    animation: none;
+  }
+}

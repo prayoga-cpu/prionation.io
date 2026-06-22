@@ -5,6 +5,7 @@ import {
   useRef,
   useEffect,
   useLayoutEffect,
+  useMemo,
   type CSSProperties,
   type ChangeEvent,
   type KeyboardEvent,
@@ -14,6 +15,7 @@ import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
 import { staggerFast, riseIn, fadeIn } from "@/lib/motion";
+import { formatUrlPath } from "@/lib/forms/format";
 
 /* ── blueprint palette (design-specific decorative blues, not theme tokens) ── */
 const INK = "#eaf2ff";
@@ -372,6 +374,7 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
   const [tokens, setTokens] = useState(0);
   const [elapsed, setElapsed] = useState(0);
   const [fieldErrors, setFieldErrors] = useState<{ website?: boolean; bottleneck?: boolean }>({});
+  const [showIllustrations, setShowIllustrations] = useState(false);
 
   const transcriptRef = useRef<HTMLDivElement>(null);
   const timers = useRef<{ t?: ReturnType<typeof setTimeout>; ct?: ReturnType<typeof setTimeout> }>({});
@@ -398,6 +401,23 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
       window.removeEventListener("keydown", esc);
     };
   }, []);
+
+  // The road/Eiffel side illustrations are decorative and CSS-hidden ≤900px.
+  // Build them only on desktop and only after mount, so mobile never pays the
+  // ~200-node render cost (cuts TBT / Speed Index, lets the LCP headline paint
+  // sooner) and there's no SSR/hydration mismatch.
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 901px)");
+    const sync = () => setShowIllustrations(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  // Memoize the SVG element trees so they only rebuild when their phase/cycle
+  // changes — not on every unrelated Hero re-render (e.g. the 100ms token tick).
+  const roadIllustration = useMemo(() => (showIllustrations ? buildRoad(roadPhase) : null), [showIllustrations, roadPhase]);
+  const blueprintIllustration = useMemo(() => (showIllustrations ? buildBlueprint(cycle) : null), [showIllustrations, cycle]);
 
   // keep the chat transcript pinned to the latest message
   useEffect(() => {
@@ -662,14 +682,18 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
         {/* ───── DIAGNOSTIC (input + preview), expandable to a modal ───── */}
         <DiagShell modalOpen={modalOpen} onClose={() => setModalOpen(false)}>
           <div className="pio-card-wrap" style={{ position: "relative", width: "100%", maxWidth: 700 }}>
-            {/* road analogy (left) */}
-            <div className="hero-side-ill" style={{ position: "absolute", right: "100%", top: "50%", transform: "translateY(-50%)", marginRight: 26, width: 140, height: 118, opacity: 0.8, pointerEvents: "none" }}>
-              {buildRoad(roadPhase)}
-            </div>
-            {/* Eiffel construction motif (right) */}
-            <div className="hero-side-ill" style={{ position: "absolute", left: "100%", top: "50%", transform: "translateY(-50%)", marginLeft: 26, width: 132, height: 252, opacity: 0.78, pointerEvents: "none" }}>
-              <div style={{ width: "100%", height: "100%", animationName: "bpFloat", animationDuration: "9s", animationTimingFunction: "ease-in-out", animationIterationCount: "infinite" }}>{buildBlueprint(cycle)}</div>
-            </div>
+            {showIllustrations && (
+              <>
+                {/* road analogy (left) */}
+                <div className="hero-side-ill" style={{ position: "absolute", right: "100%", top: "50%", transform: "translateY(-50%)", marginRight: 26, width: 140, height: 118, opacity: 0.8, pointerEvents: "none" }}>
+                  {roadIllustration}
+                </div>
+                {/* Eiffel construction motif (right) */}
+                <div className="hero-side-ill" style={{ position: "absolute", left: "100%", top: "50%", transform: "translateY(-50%)", marginLeft: 26, width: 132, height: 252, opacity: 0.78, pointerEvents: "none" }}>
+                  <div style={{ width: "100%", height: "100%", animationName: "bpFloat", animationDuration: "9s", animationTimingFunction: "ease-in-out", animationIterationCount: "infinite" }}>{blueprintIllustration}</div>
+                </div>
+              </>
+            )}
 
             {/* corner brackets (decorative — hidden on mobile) */}
             <div className="pio-deco">
@@ -716,10 +740,10 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                 <div style={{ display: "flex", flexDirection: "column", gap: 13, textAlign: "left" }}>
                   {/* company website */}
                   <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                    <span style={pixelLabel}>{t("website_label")}</span>
+                    <span id="pio-lbl-website" style={pixelLabel}>{t("website_label")}</span>
                     <div style={{ display: "flex", alignItems: "center", gap: 9, background: SURFACE_DEEP, border: `1px solid ${fieldErrors.website ? "var(--c-accent)" : LINE}`, borderRadius: 11, padding: "0 13px", height: 46 }}>
                       <span style={{ fontFamily: "var(--font-pixel)", fontSize: 8, color: "var(--c-muted)", flex: "none" }}>https://</span>
-                      <input className="pio-input" type="text" value={website} onChange={(e) => { setWebsite(e.target.value); if (fieldErrors.website) setFieldErrors((s) => ({ ...s, website: false })); }} placeholder={t("website_placeholder")} style={{ flex: 1, background: "transparent", border: "none", color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14, height: "100%" }} />
+                      <input aria-labelledby="pio-lbl-website" className="pio-input" type="text" inputMode="url" value={website} onChange={(e) => { setWebsite(formatUrlPath(e.target.value)); if (fieldErrors.website) setFieldErrors((s) => ({ ...s, website: false })); }} placeholder={t("website_placeholder")} style={{ flex: 1, background: "transparent", border: "none", color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14, height: "100%" }} />
                       <span style={{ fontFamily: "var(--font-pixel)", fontSize: 7, letterSpacing: "0.08em", color: GREEN, flex: "none", display: "flex", alignItems: "center", gap: 5 }}>
                         <span style={{ width: 6, height: 6, borderRadius: "50%", background: GREEN, display: "inline-block" }} />
                         {t("scan")}
@@ -731,9 +755,9 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                   {/* industry + stage */}
                   <div className="pio-field-row" style={{ display: "flex", gap: 12 }}>
                     <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6, minWidth: 0 }}>
-                      <span style={pixelLabel}>{t("industry_label")}</span>
+                      <span id="pio-lbl-industry" style={pixelLabel}>{t("industry_label")}</span>
                       <div style={{ position: "relative" }}>
-                        <select value={industryIdx} onChange={(e) => { setIndustryIdx(+e.target.value); setBottleneck(""); setCustom(""); }} style={fieldStyle}>
+                        <select aria-labelledby="pio-lbl-industry" value={industryIdx} onChange={(e) => { setIndustryIdx(+e.target.value); setBottleneck(""); setCustom(""); }} style={fieldStyle}>
                           {industries.map((opt, i) => (
                             <option key={i} value={i}>{opt}</option>
                           ))}
@@ -742,9 +766,9 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                       </div>
                     </div>
                     <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6, minWidth: 0 }}>
-                      <span style={pixelLabel}>{t("stage_label")}</span>
+                      <span id="pio-lbl-stage" style={pixelLabel}>{t("stage_label")}</span>
                       <div style={{ position: "relative" }}>
-                        <select value={stageIdx} onChange={(e) => setStageIdx(+e.target.value)} style={fieldStyle}>
+                        <select aria-labelledby="pio-lbl-stage" value={stageIdx} onChange={(e) => setStageIdx(+e.target.value)} style={fieldStyle}>
                           {stages.map((st, i) => (
                             <option key={i} value={i}>{st}</option>
                           ))}
@@ -756,13 +780,13 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
 
                   {/* bottleneck */}
                   <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                    <span style={pixelLabel}>{t("bottleneck_label")}</span>
+                    <span id="pio-lbl-bottleneck" style={pixelLabel}>{t("bottleneck_label")}</span>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 7 }}>
                       {bnList.map((label, i) => (
                         <button key={i} onClick={() => { setBottleneck(label); setCustom(""); if (fieldErrors.bottleneck) setFieldErrors((s) => ({ ...s, bottleneck: false })); }} style={chipStyle(bottleneck === label && !custom.trim())}>{label}</button>
                       ))}
                     </div>
-                    <input className="pio-input" type="text" value={custom} onChange={(e) => { setCustom(e.target.value); if (fieldErrors.bottleneck) setFieldErrors((s) => ({ ...s, bottleneck: false })); }} placeholder={t("bottleneck_custom_placeholder")} style={{ background: SURFACE_DEEP, border: `1px solid ${fieldErrors.bottleneck ? "var(--c-accent)" : LINE}`, borderRadius: 11, padding: "0 13px", height: 42, color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14 }} />
+                    <input aria-labelledby="pio-lbl-bottleneck" className="pio-input" type="text" value={custom} onChange={(e) => { setCustom(e.target.value); if (fieldErrors.bottleneck) setFieldErrors((s) => ({ ...s, bottleneck: false })); }} placeholder={t("bottleneck_custom_placeholder")} style={{ background: SURFACE_DEEP, border: `1px solid ${fieldErrors.bottleneck ? "var(--c-accent)" : LINE}`, borderRadius: 11, padding: "0 13px", height: 42, color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14 }} />
                     {fieldErrors.bottleneck && <span style={errorLabel}>{t("required")}</span>}
                   </div>
 
@@ -814,7 +838,7 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
 
                   {/* composer */}
                   <div style={{ background: SURFACE_DEEP, border: `1px solid ${LINE}`, borderRadius: 14, padding: "13px 13px 10px" }}>
-                    <input className="pio-input" type="text" value={draft} onChange={(e: ChangeEvent<HTMLInputElement>) => setDraft(e.target.value)} onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => { if (e.key === "Enter") { e.preventDefault(); doSend(); } }} placeholder={chatStep === 0 ? t("chat_placeholder_initial") : t("chat_placeholder_reply")} style={{ width: "100%", background: "transparent", border: "none", color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14, height: 24 }} />
+                    <input aria-label={t("chat_input_label")} className="pio-input" type="text" value={draft} onChange={(e: ChangeEvent<HTMLInputElement>) => setDraft(e.target.value)} onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => { if (e.key === "Enter") { e.preventDefault(); doSend(); } }} placeholder={chatStep === 0 ? t("chat_placeholder_initial") : t("chat_placeholder_reply")} style={{ width: "100%", background: "transparent", border: "none", color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14, height: 24 }} />
                     <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 10 }}>
                       <button style={{ display: "flex", alignItems: "center", gap: 7, background: "transparent", border: "none", color: "var(--c-soft)", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 500, cursor: "pointer", padding: "5px 8px", borderRadius: 8, whiteSpace: "nowrap", flex: "none" }}>
                         <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--c-accent)", boxShadow: "0 0 6px var(--c-accent)", flex: "none" }} />
@@ -849,9 +873,21 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
               <div className="pio-foot" style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 14, padding: "0 2px" }}>
                 <span style={{ width: 7, height: 7, borderRadius: "50%", background: GREEN, display: "inline-block" }} />
                 <span style={{ fontSize: 11, color: "var(--c-muted)" }}>{t("footer_note")}</span>
-                <span style={{ marginLeft: "auto", fontSize: 11, color: "var(--c-muted)", display: "flex", alignItems: "center", gap: 5, whiteSpace: "nowrap", flex: "none" }}>
-                  {t("powered_by")} <b style={{ color: "var(--c-soft)", fontWeight: 600, letterSpacing: "0.01em" }}>{t("powered_brand")}</b>
-                </span>
+                <a
+                  href="https://claude.com/product/overview"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pio-powered"
+                  style={{ marginLeft: "auto", fontSize: 11, color: "var(--c-muted)", display: "flex", alignItems: "center", gap: 5, whiteSpace: "nowrap", flex: "none", textDecoration: "none" }}
+                >
+                  {t("powered_by")}{" "}
+                  <b style={{ color: "var(--c-soft)", fontWeight: 600, letterSpacing: "0.01em", display: "inline-flex", alignItems: "center", gap: 4 }}>
+                    <svg viewBox="0 0 100 100" width="12" height="12" aria-hidden="true" style={{ fill: "currentColor", flex: "none" }}>
+                      <path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z" />
+                    </svg>
+                    {t("powered_brand")}
+                  </b>
+                </a>
               </div>
             </div>
           </div>

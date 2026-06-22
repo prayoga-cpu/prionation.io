@@ -14,6 +14,23 @@ export const SOCIAL_LINKS = [
   "https://github.com/prayoga-cpu",
 ];
 
+// Leadership — drives Person/founder JSON-LD (helps machines tie the brand to
+// real people). Kept in sync with the Foundation section + public LinkedIn URLs.
+export const TEAM = [
+  {
+    name: "Darwin Prayoga",
+    jobTitle: "Founder & CEO",
+    linkedin: "https://www.linkedin.com/in/darwinprayoga",
+    isFounder: true,
+  },
+  {
+    name: "Evan Cao",
+    jobTitle: "Chief Revenue Officer",
+    linkedin: "https://www.linkedin.com/in/evan-cao-52282bb6",
+    isFounder: false,
+  },
+] as const;
+
 // Pricing offers (EUR, locale-independent) — mirrors the Pricing section + llms.txt.
 export const OFFERS = [
   {

@@ -2,20 +2,30 @@
 
 import { useRef, useEffect, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
+import dynamic from "next/dynamic";
 import { Header } from "./Header";
-import { NotifyModal } from "./NotifyModal";
 import { Hero } from "./sections/Hero";
-import { HowWeWork } from "./sections/HowWeWork";
-import { Methodology } from "./sections/Methodology";
-import { SelectedWork } from "./sections/SelectedWork";
-import { Pricing } from "./sections/Pricing";
-import { Foundation } from "./sections/Foundation";
-import { Engage } from "./sections/Engage";
-import { Faq } from "./sections/Faq";
-import { ContentHighlight } from "./sections/ContentHighlight";
-import { SiteFooter } from "./sections/SiteFooter";
+import { LogoMarquee } from "./sections/LogoMarquee";
 import { ScrollProgress } from "./ui/ScrollProgress";
 import { fadeUp } from "@/lib/motion";
+
+/* Below-the-fold sections are still server-rendered (SSR HTML kept → SEO intact,
+   zero layout shift), but their client JS is code-split out of the initial
+   bundle so it no longer blocks the hero's hydration on mobile. */
+const HowWeWork = dynamic(() => import("./sections/HowWeWork").then((m) => m.HowWeWork));
+const Methodology = dynamic(() => import("./sections/Methodology").then((m) => m.Methodology));
+const SelectedWork = dynamic(() => import("./sections/SelectedWork").then((m) => m.SelectedWork));
+const Pricing = dynamic(() => import("./sections/Pricing").then((m) => m.Pricing));
+const Foundation = dynamic(() => import("./sections/Foundation").then((m) => m.Foundation));
+const Engage = dynamic(() => import("./sections/Engage").then((m) => m.Engage));
+const Testimonials = dynamic(() => import("./sections/Testimonials").then((m) => m.Testimonials));
+const Faq = dynamic(() => import("./sections/Faq").then((m) => m.Faq));
+const ContentHighlight = dynamic(() => import("./sections/ContentHighlight").then((m) => m.ContentHighlight));
+const SiteFooter = dynamic(() => import("./sections/SiteFooter").then((m) => m.SiteFooter));
+
+/* Interaction-only modal (bundles Cloudflare Turnstile) — fully client-side and
+   never shown until the diagnostic runs, so keep it out of the initial bundle. */
+const NotifyModal = dynamic(() => import("./NotifyModal").then((m) => m.NotifyModal), { ssr: false });
 
 /** Wraps each section with whileInView reveal */
 function FadeSection({
@@ -73,6 +83,7 @@ export default function AppShell() {
       <main>
         {/* Hero has its own internal stagger, no FadeSection wrapper */}
         <Hero onNotify={() => setNotifyOpen(true)} />
+        <LogoMarquee />
         <FadeSection>
           <HowWeWork />
         </FadeSection>
@@ -90,6 +101,9 @@ export default function AppShell() {
         </FadeSection>
         <FadeSection>
           <Engage />
+        </FadeSection>
+        <FadeSection>
+          <Testimonials />
         </FadeSection>
         <FadeSection>
           <ContentHighlight />

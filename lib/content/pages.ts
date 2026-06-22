@@ -146,10 +146,10 @@ export const pages: PageMeta[] = [
     slug: "epidom",
     section: "showcases",
     status: "published",
-    seoTitle: "Epidom — logistics AI, France · PRIONATION",
+    seoTitle: "Epidom — F&B operations dashboard, France · PRIONATION",
     metaDescription:
-      "How PRIONATION shipped production AI into Epidom's logistics operations in 8 weeks. Bottleneck, build, result, and the transferable lesson.",
-    ogTitle: "Epidom — logistics operations AI · PRIONATION.io",
+      "How PRIONATION shipped production AI into Epidom's F&B operations — a unified dashboard for menu, POS, and inventory across locations — in 8 weeks. Bottleneck, build, result, and the transferable lesson.",
+    ogTitle: "Epidom — F&B operations dashboard · PRIONATION.io",
     audience: "mixed",
     schema: "CaseStudy",
     publishedAt: "2026-05-31",
@@ -379,7 +379,7 @@ export const pages: PageMeta[] = [
     status: "published",
     seoTitle: "AI bottlenecks in mid-market logistics · PRIONATION",
     metaDescription:
-      "The 4 operational bottlenecks AI consistently breaks in mid-market logistics. First-party observations from the Epidom and Expeditoo engagements.",
+      "The 4 operational bottlenecks AI consistently breaks in mid-market logistics. First-party observations from the Expeditoo engagement.",
     ogTitle: "AI bottlenecks in mid-market logistics · PRIONATION.io",
     audience: "coo",
     schema: "Article",

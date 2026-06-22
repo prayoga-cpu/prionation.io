@@ -135,6 +135,12 @@
     "ctaBody": "Take 2 minutes to fill out the intake form. We'll review it and respond within 24 hours.",
     "ctaButton": "Start Intake"
   },
+  "Marquee": {
+    "heading": "We specialize in AI models, experience design, and end-to-end product engineering"
+  },
+  "Testimonials": {
+    "heading": "Our Clients Say"
+  },
   "Hero": {
     "badge": "AI Product Engineering · Consultation",
     "title_lines": [
@@ -229,6 +235,7 @@
       "≈ €120K / yr recovered · payback under 4 months"
     ],
     "chat_initial": "Tell me what's slowing your team down — in your own words.",
+    "chat_input_label": "Your message",
     "chat_placeholder_initial": "Describe what's slowing you down…",
     "chat_placeholder_reply": "Type your reply…",
     "chat_q1": "Got it. Roughly how many people touch that process each week?",
@@ -354,6 +361,7 @@
     "title": "PROVEN OPERATIONAL TRANSFORMATIONS.",
     "link": "View archive",
     "view_project": "VIEW PROJECT",
+    "live_demo": "LIVE DEMO",
     "cases": [
       {
         "name": "EPIDOM",
