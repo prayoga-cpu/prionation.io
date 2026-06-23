@@ -21,12 +21,15 @@ type Testimonial = {
   avatar?: string;
 };
 
+// ⚠️ PLACEHOLDER RATINGS — the numeric `rating` values below are illustrative
+// (varied, non-perfect) for design only. They are NOT real client scores.
+// Replace each with the client's actual, written-off rating before publishing.
 const TESTIMONIALS: Testimonial[] = [
   {
     quote: "We were drowning in operational complexity, then this model turned it into production, in weeks.",
     name: "Evan Cao",
     role: "CEO at Epidom",
-    rating: 4.5,
+    rating: 4.5, // placeholder — confirm real rating
     avatar: "/testimonials/evan-cao.jpg",
   },
   // DRAFTS — suggested copy. Get each person's written sign-off (and their real
@@ -35,14 +38,14 @@ const TESTIMONIALS: Testimonial[] = [
     quote: "Our logistics ran on spreadsheets and guesswork. They turned it into a production AI system in weeks — and handed us the keys.",
     name: "Nicolas Rémy",
     role: "Business owner of Expeditoo",
-    rating: 5,
+    rating: 4, // placeholder — confirm real rating
     avatar: "/testimonials/nicolas-remy.jpg",
   },
   {
     quote: "They built lead-gen that works the way our agents actually sell, and had it live before most teams finish scoping.",
     name: "Luke",
     role: "Founder of The Lead Agent",
-    rating: 5,
+    rating: 4.5, // placeholder — confirm real rating
     avatar: "/testimonials/luke.jpg",
   },
 ];
@@ -55,7 +58,13 @@ function TestimonialCard({ t }: { t: Testimonial }) {
   const [imgOk, setImgOk] = useState(Boolean(t.avatar));
   return (
     <figure className="bg-card border border-line rounded-[24px] p-6 md:p-8 flex flex-col gap-5 h-full">
-      <Stars rating={t.rating} />
+      <div className="flex items-center gap-2.5">
+        <Stars rating={t.rating} />
+        <span className="font-sans text-[13px] font-semibold leading-none text-[#f6c453]">
+          {Number.isInteger(t.rating) ? String(t.rating) : t.rating.toFixed(1)}
+          <span className="text-muted font-normal"> / 5</span>
+        </span>
+      </div>
       <blockquote className="text-soft text-[15px] md:text-[17px] leading-[1.6] m-0 flex-1">
         &ldquo;{t.quote}&rdquo;
       </blockquote>

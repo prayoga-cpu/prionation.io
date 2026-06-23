@@ -145,7 +145,14 @@
     "badge": "AI Product Engineering · Consultation",
     "title_lines": [
       "Break operational",
-      "bottleneck with"
+      "{typewriter} with"
+    ],
+    "title_typewriter": [
+      "bottlenecks",
+      "manual work",
+      "data silos",
+      "busywork",
+      "slow workflows"
     ],
     "title_shimmer": "AI Infrastructure",
     "title_ai": "AI",

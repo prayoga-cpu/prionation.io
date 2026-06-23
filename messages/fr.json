@@ -144,8 +144,15 @@
   "Hero": {
     "badge": "Ingénierie de produits IA · Consultation",
     "title_lines": [
-      "Brisez les goulots",
+      "Brisez les {typewriter}",
       "opérationnels avec une"
+    ],
+    "title_typewriter": [
+      "goulots",
+      "process manuels",
+      "silos",
+      "blocages",
+      "ralentissements"
     ],
     "title_shimmer": "infrastructure IA",
     "title_ai": "IA",

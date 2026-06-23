@@ -57,7 +57,7 @@ export function LogoMarquee() {
   return (
     <section className="border-t border-white/10 py-8" aria-label={t("heading")}>
       <div className="max-w-max-w mx-auto px-page-x mb-5">
-        <h2 className="font-sans text-xs font-semibold uppercase tracking-[0.1em] text-white/30">
+        <h2 className="font-sans text-[7px] sm:text-[11px] font-semibold uppercase tracking-[0.1em] text-white/30">
           {t("heading")}
         </h2>
       </div>

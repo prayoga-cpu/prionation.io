@@ -270,6 +270,9 @@ const mutedStyle: CSSProperties = { color: "var(--c-muted)", fontSize: 14, lineH
 const monoStyle: CSSProperties = { fontFamily: "var(--font-pixel)", fontSize: 7, letterSpacing: "0.03em", lineHeight: 2.0, color: "var(--c-muted)" };
 const pixelLabel: CSSProperties = { fontFamily: "var(--font-pixel)", fontSize: 8, letterSpacing: "0.1em", color: "var(--c-muted)" };
 const errorLabel: CSSProperties = { fontFamily: "var(--font-pixel)", fontSize: 8, letterSpacing: "0.1em", color: "var(--c-accent)", textTransform: "uppercase" };
+// Shared by the visible headline and the hidden ScaleToFit gauge so both measure
+// to exactly the same width.
+const headlineStyle: CSSProperties = { fontWeight: 400, fontSize: "clamp(32px,6.6vw,86px)", lineHeight: 1.04, letterSpacing: "0.01em", color: "var(--c-fg)", margin: "0 0 22px", padding: "0.18em 0.5em 0.24em", whiteSpace: "nowrap" };
 
 /* Renders the diagnostic block inline, or — when expanded — as a portal to
    <body> so the modal escapes the hero's z-4 stacking context and lands above
@@ -304,33 +307,128 @@ const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : use
 /* Scales its content down (never up) to fit the available width, so the badge
    and proof-stats keep their exact desktop look — just smaller — on mobile.
    Uses transform, which leaves the layout box at natural size, so nothing in the
-   hero flow shifts (no CLS on the LCP headline below). */
-function ScaleToFit({ children }: { children: ReactNode }) {
+   hero flow shifts (no CLS on the LCP headline below).
+
+   When `measure` is provided, the scale is computed from that hidden gauge
+   instead of the live content. The headline passes a static gauge built from its
+   widest possible line (longest typewriter word), so the rotating word never
+   re-fits the block — the scale only changes when the viewport/ratio does. */
+function ScaleToFit({ children, measure }: { children: ReactNode; measure?: ReactNode }) {
   const outer = useRef<HTMLDivElement>(null);
   const inner = useRef<HTMLDivElement>(null);
+  const gauge = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
 
   useIsoLayoutEffect(() => {
     const o = outer.current;
-    const i = inner.current;
-    if (!o || !i) return;
-    const measure = () => {
-      const natural = i.offsetWidth; // layout width — unaffected by the transform
+    const target = gauge.current ?? inner.current; // stable gauge if present
+    if (!o || !target) return;
+    const remeasure = () => {
+      const natural = target.offsetWidth; // layout width — unaffected by the transform
       if (natural) setScale(Math.min(1, o.clientWidth / natural));
     };
-    measure();
-    const ro = new ResizeObserver(measure);
+    remeasure();
+    const ro = new ResizeObserver(remeasure);
     ro.observe(o);
-    ro.observe(i); // re-fit when the content reflows (e.g. web font loads)
+    ro.observe(target); // re-fit on viewport resize / web-font load, not on live content swaps
     return () => ro.disconnect();
   }, []);
 
   return (
-    <div ref={outer} style={{ width: "100%", display: "flex", justifyContent: "center", overflow: "hidden" }}>
+    <div ref={outer} style={{ position: "relative", width: "100%", display: "flex", justifyContent: "center", overflow: "hidden" }}>
       <div ref={inner} style={{ transform: `scale(${scale})`, transformOrigin: "center center", flexShrink: 0 }}>
         {children}
       </div>
+      {measure != null && (
+        <div ref={gauge} aria-hidden="true" style={{ position: "absolute", left: 0, top: 0, visibility: "hidden", pointerEvents: "none" }}>
+          {measure}
+        </div>
+      )}
     </div>
+  );
+}
+
+/* Typewriter that cycles a single word in place inside the headline — types it,
+   holds, deletes, then advances to the next. Width is dynamic: the word renders
+   inline so whatever follows it (e.g. "with") stays glued to its end. The
+   animated copy is aria-hidden, while an sr-only static word stays in the
+   heading for screen readers and crawlers. Honors prefers-reduced-motion. */
+const TYPEWRITER_TOKEN = "{typewriter}";
+
+function Typewriter({ words }: { words: string[] }) {
+  // Snapshot the word list once — it's fixed for the component's lifetime (a
+  // locale switch remounts), so this stays stable across renders.
+  const [list] = useState(words);
+  const [idx, setIdx] = useState(0);
+  const [text, setText] = useState(() => list[0] ?? "");
+  const [deleting, setDeleting] = useState(false);
+  const [reduced, setReduced] = useState(false);
+
+  // Detect reduced-motion (client only). Default false so the typing animation
+  // runs everywhere unless the OS asks us to calm it down.
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => setReduced(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  // Reduced-motion: swap whole words on a calm interval (no per-character typing)
+  // so the rotation still reads through all of them without the jitter.
+  useEffect(() => {
+    if (!reduced || list.length < 2) return;
+    const iv = setInterval(() => setIdx((i) => (i + 1) % list.length), 2600);
+    return () => clearInterval(iv);
+  }, [reduced, list]);
+
+  // Normal motion: type → hold → delete → advance, one char per tick.
+  useEffect(() => {
+    if (reduced || list.length < 2) return;
+    const current = list[idx % list.length] ?? "";
+    const atFull = !deleting && text === current;
+    const atEmpty = deleting && text === "";
+    // hold on the full word, brief pause when empty, else type/delete one char
+    const delay = atFull ? 1900 : atEmpty ? 320 : deleting ? 42 : 85;
+    const timer = setTimeout(() => {
+      if (atFull) {
+        setDeleting(true);
+      } else if (atEmpty) {
+        setDeleting(false);
+        setIdx((i) => (i + 1) % list.length);
+      } else {
+        setText(deleting ? text.slice(0, -1) : current.slice(0, text.length + 1));
+      }
+    }, delay);
+    return () => clearTimeout(timer);
+  }, [text, deleting, idx, list, reduced]);
+
+  // Under reduced motion the visible word follows idx directly (full word);
+  // otherwise it's whatever the typing machine has built up so far.
+  const shown = reduced ? list[idx % list.length] ?? "" : text;
+
+  return (
+    <>
+      <span className="sr-only">{list[0]}</span>
+      <span aria-hidden="true" style={{ color: "var(--c-fg)", whiteSpace: "nowrap" }}>
+        {shown}
+        <span className="pio-caret" style={{ fontWeight: 400 }}>|</span>
+      </span>
+    </>
+  );
+}
+
+/* Splits a title line on the {typewriter} token, dropping the rotating
+   Typewriter in its place; lines without the token render verbatim. */
+function renderTitleLine(line: string, words: string[]): ReactNode {
+  if (!line.includes(TYPEWRITER_TOKEN) || words.length === 0) return line.replace(TYPEWRITER_TOKEN, words[0] ?? "");
+  const [before, after] = line.split(TYPEWRITER_TOKEN);
+  return (
+    <>
+      {before}
+      <Typewriter words={words} />
+      {after}
+    </>
   );
 }
 
@@ -344,6 +442,8 @@ function goEngage(tab: "diagnostic" | "meet") {
 export function Hero({ onNotify }: { onNotify?: () => void }) {
   const t = useTranslations("Hero");
   const titleLines = t.raw("title_lines") as string[];
+  const typewriterWords = (t.raw("title_typewriter") as string[]) ?? [];
+  const longestTypewriter = typewriterWords.reduce((a, b) => (b.length > a.length ? b : a), "");
   // isolate the "AI"/"IA" token (wherever it sits per locale) for the Saturn ring
   const shimmer = t("title_shimmer");
   const aiWord = t("title_ai");
@@ -628,16 +728,29 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
         </ScaleToFit>
 
         {/* headline (Black Han Sans) — forced line breaks kept identical at every
-            width; ScaleToFit shrinks the whole block so it never re-wraps */}
-        <ScaleToFit>
+            width; ScaleToFit shrinks the whole block so it never re-wraps. The
+            gauge (widest possible line, longest typewriter word) drives the scale
+            so the rotating word never re-fits the heading — only the viewport does. */}
+        <ScaleToFit
+          measure={
+            <div className="font-display" aria-hidden="true" style={headlineStyle}>
+              {titleLines.map((line, i) => (
+                <span key={i} style={{ display: "block" }}>
+                  {line.replace(TYPEWRITER_TOKEN, `${longestTypewriter}|`)}
+                </span>
+              ))}
+              <span style={{ display: "block" }}>{shimmer}</span>
+            </div>
+          }
+        >
           <m.h1
             variants={riseIn}
             className="font-display"
-            style={{ fontWeight: 400, fontSize: "clamp(32px,6.6vw,86px)", lineHeight: 1.04, letterSpacing: "0.01em", color: "var(--c-fg)", margin: "0 0 22px", padding: "0.18em 0.5em 0.24em", whiteSpace: "nowrap" }}
+            style={headlineStyle}
           >
             {titleLines.map((line, i) => (
               <span key={i} style={{ display: "block" }}>
-                {line}
+                {renderTitleLine(line, typewriterWords)}
               </span>
             ))}
             <span

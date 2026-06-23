@@ -144,8 +144,15 @@
   "Hero": {
     "badge": "Rekayasa Produk AI · Konsultasi",
     "title_lines": [
-      "Atasi hambatan",
+      "Atasi {typewriter}",
       "operasional dengan"
+    ],
+    "title_typewriter": [
+      "hambatan",
+      "kerja manual",
+      "silo data",
+      "proses lambat",
+      "pekerjaan berulang"
     ],
     "title_shimmer": "Infrastruktur AI",
     "title_ai": "AI",
