@@ -1,6 +1,6 @@
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/seo/site";
-import { getPublishedPages } from "@/lib/content/pages";
+import { getPublishedPages, latestPublishedDate } from "@/lib/content/pages";
 import { SITEMAP_SECTIONS, SITEMAP_IDS } from "@/lib/seo/sitemap-sections";
 
 // Child sitemaps served at /sitemap/<id>.xml (referenced by the index at
@@ -22,14 +22,18 @@ type Entry = {
 };
 
 function coreEntries(): Entry[] {
+  // Standalone pages have no PageMeta; use the newest real content date as an
+  // honest, stable <lastmod> (advances only when published content changes).
+  const lastmod = latestPublishedDate();
   return [
-    { path: "", changefreq: "weekly", priority: 1.0 },
+    { path: "", changefreq: "weekly", priority: 1.0, lastmod },
     {
       path: "/ai-product-engineering-for-mid-market-companies",
       changefreq: "monthly",
       priority: 0.95,
+      lastmod,
     },
-    { path: "/ai-product-engineering-for-mid-market-companies/glossary", changefreq: "monthly", priority: 0.7 },
+    { path: "/ai-product-engineering-for-mid-market-companies/glossary", changefreq: "monthly", priority: 0.7, lastmod },
   ];
 }
 
@@ -40,7 +44,7 @@ function sectionEntries(index: number): Entry[] {
     path: `/${p.section}/${p.slug}`,
     changefreq: p.changeFreq,
     priority: p.sitemapPriority,
-    lastmod: p.updatedAt || undefined,
+    lastmod: p.updatedAt || p.publishedAt || undefined,
   }));
 }
 

@@ -1,5 +1,6 @@
 import { SITE_URL } from "@/lib/seo/site";
 import { SITEMAP_IDS } from "@/lib/seo/sitemap-sections";
+import { latestPublishedDate } from "@/lib/content/pages";
 
 // Sitemap INDEX served at /sitemap.xml (the URL robots.txt and Search Console
 // reference). It references the per-section child sitemaps that Next generates
@@ -8,7 +9,10 @@ import { SITEMAP_IDS } from "@/lib/seo/sitemap-sections";
 export const dynamic = "force-static";
 
 export function GET() {
-  const lastmod = new Date().toISOString();
+  // Derive from newest content date (not now()) so the index only signals
+  // freshness when published content actually changes — unrelated deploys
+  // won't churn every child <lastmod> and train crawlers to ignore it.
+  const lastmod = latestPublishedDate();
   const body =
     `<?xml version="1.0" encoding="UTF-8"?>\n` +
     `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +

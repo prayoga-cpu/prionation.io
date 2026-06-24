@@ -434,6 +434,18 @@ export function getPublishedPages(section?: PageSection): PageMeta[] {
   );
 }
 
+// Newest real content date across published pages. Used as an honest, stable
+// <lastmod> for the sitemap index and the standalone core pages (home/anchor/
+// glossary) instead of a build-time now() that would falsely churn every deploy.
+// ISO date-only strings sort lexically. Falls back to the launch date.
+export function latestPublishedDate(): string {
+  const dates = getPublishedPages()
+    .map((p) => p.updatedAt || p.publishedAt)
+    .filter(Boolean)
+    .sort();
+  return dates[dates.length - 1] ?? "2026-05-31";
+}
+
 export function getPageBySlug(
   section: PageSection,
   slug: string,
