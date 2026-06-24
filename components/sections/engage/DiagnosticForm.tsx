@@ -8,6 +8,10 @@ import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
 import { fadeIn } from "@/lib/motion";
 import { formatEmail, formatUrlForce, formatPhone } from "@/lib/forms/format";
+import { track } from "@vercel/analytics";
+import { getAttribution } from "@/lib/analytics/attribution";
+import { evaluateDisqualification } from "@/lib/forms/disqualification";
+import type { IntakePayload } from "@/lib/forms/types";
 
 const isDev = process.env.NODE_ENV !== "production";
 const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
@@ -139,11 +143,12 @@ export function DiagnosticTab({ setSubmitted }: { setSubmitted: (b: boolean) => 
   const submit = async () => {
     if (!validate(REQUIRED)) return;
     setLoading(true);
+    const attribution = getAttribution();
     try {
       const res = await fetch("/api/forms/intake", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "intake", ...form, turnstileToken, honeypot }),
+        body: JSON.stringify({ type: "intake", ...form, ...attribution, turnstileToken, honeypot }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -152,6 +157,26 @@ export function DiagnosticTab({ setSubmitted }: { setSubmitted: (b: boolean) => 
         turnstileRef.current?.reset();
         setTurnstileToken(isDev ? "dev-bypass" : "");
         return;
+      }
+      // Conversion analytics — cookieless Vercel events + Meta Pixel Lead.
+      // Disqualification is reused client-side (pure fn) to tag lead QUALITY.
+      // Wrapped so an analytics failure can never block the success state.
+      try {
+        const disq = evaluateDisqualification(form as unknown as IntakePayload);
+        track("intake_submit", {
+          stage: form.stage,
+          budget: form.budget,
+          startWindow: form.startWindow,
+          channel: attribution.channel ?? "unknown",
+        });
+        track(disq.disqualified ? "intake_disqualified" : "intake_qualified", { stage: form.stage });
+        (window as unknown as { fbq?: (...a: unknown[]) => void }).fbq?.(
+          "track",
+          "Lead",
+          { content_name: "Intake Submit", content_category: form.stage },
+        );
+      } catch (e) {
+        console.warn("[intake] analytics event failed", e);
       }
       setSubmitted(true);
     } catch (err) {
@@ -277,7 +302,7 @@ export function DiagnosticTab({ setSubmitted }: { setSubmitted: (b: boolean) => 
           </Btn>
         )}
         {step === 1 ? (
-          <Btn variant="primary" onClick={() => { if (validate(["company", "yourName", "email", "basedIn", "stage"])) setStep(2); }}>
+          <Btn variant="primary" onClick={() => { if (validate(["company", "yourName", "email", "basedIn", "stage"])) { track("intake_step2"); setStep(2); } }}>
             {td("continue")} <span className="text-[12px] opacity-80">→</span>
           </Btn>
         ) : (

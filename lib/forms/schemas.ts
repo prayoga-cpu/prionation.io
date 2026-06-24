@@ -16,6 +16,17 @@ export const intakeSchema = z.object({
   budget: z.enum(['Yes', 'Need to confirm with team', 'Not yet']),
   startWindow: z.enum(['Within 30 days', '30–90 days', 'Exploring']),
   source: z.string().max(200).optional().default(''),
+  // Machine attribution — auto-captured client-side (lib/analytics/attribution).
+  // All optional, no PII; folded into the "Referral Source" Notion field.
+  utmSource: z.string().max(200).optional(),
+  utmMedium: z.string().max(200).optional(),
+  utmCampaign: z.string().max(200).optional(),
+  utmTerm: z.string().max(200).optional(),
+  utmContent: z.string().max(200).optional(),
+  referrer: z.string().max(500).optional(),
+  landingPath: z.string().max(300).optional(),
+  landingLocale: z.string().max(20).optional(),
+  channel: z.string().max(40).optional(),
   turnstileToken,
   honeypot,
 });

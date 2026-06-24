@@ -1,5 +1,24 @@
 import type { IntakePayload, BookingPayload, CareerPayload, WaitlistPayload } from '@/lib/forms/types';
 
+// Combine the human self-reported source with auto-captured machine attribution
+// into the existing "Referral Source" rich_text (no new Notion column needed, so
+// the live intake sync can never break on a missing property). Format:
+//   "<human source> · [auto] channel=organic; utm_source=google; ref=…; landing=/en"
+function referralSourceText(p: IntakePayload): string {
+  const human = (p.source ?? '').trim();
+  const auto: string[] = [];
+  if (p.channel) auto.push(`channel=${p.channel}`);
+  if (p.utmSource) auto.push(`utm_source=${p.utmSource}`);
+  if (p.utmMedium) auto.push(`utm_medium=${p.utmMedium}`);
+  if (p.utmCampaign) auto.push(`utm_campaign=${p.utmCampaign}`);
+  if (p.utmTerm) auto.push(`utm_term=${p.utmTerm}`);
+  if (p.utmContent) auto.push(`utm_content=${p.utmContent}`);
+  if (p.referrer) auto.push(`ref=${p.referrer}`);
+  if (p.landingPath) auto.push(`landing=${p.landingPath}`);
+  const machine = auto.length ? `[auto] ${auto.join('; ')}` : '';
+  return [human, machine].filter(Boolean).join(' · ');
+}
+
 export function intakeToNotionProperties(p: IntakePayload) {
   return {
     'Company': { title: [{ text: { content: p.company } }] },
@@ -12,7 +31,7 @@ export function intakeToNotionProperties(p: IntakePayload) {
     'Why Now': { rich_text: [{ text: { content: p.whyNow } }] },
     'Budget Confirmed': { select: { name: p.budget } },
     'Start Window': { select: { name: p.startWindow } },
-    'Referral Source': { rich_text: [{ text: { content: p.source ?? '' } }] },
+    'Referral Source': { rich_text: [{ text: { content: referralSourceText(p) } }] },
     'Sync Status': { select: { name: 'Pending' } },
   };
 }

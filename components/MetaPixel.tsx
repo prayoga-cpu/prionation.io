@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
+import { captureAttribution } from "@/lib/analytics/attribution";
 
 const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
@@ -12,6 +13,10 @@ export default function MetaPixel() {
   const initialised = useRef(false);
 
   useEffect(() => {
+    // First-touch marketing attribution — independent of Meta Pixel, runs even
+    // when the pixel is disabled. Idempotent (first touch only per session).
+    captureAttribution();
+
     if (!pixelId) return;
 
     // The lazyOnload init script below fires the first PageView via the fbq

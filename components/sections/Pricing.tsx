@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
+import { track } from "@vercel/analytics";
 import { Dot, Btn } from "../ui/Atoms";
 import { Icon } from "../icons";
 import { staggerSlow, fadeUp, staggerNormal } from "@/lib/motion";
@@ -103,7 +104,7 @@ export function Pricing() {
                 <Btn
                   variant={p.featured ? "primary" : "ghost"}
                   className="w-full justify-center"
-                  onClick={() => { window.location.hash = "engage?tab=diagnostic"; scrollTo("engage"); }}
+                  onClick={() => { track("pricing_cta_click", { plan: p.name }); window.location.hash = "engage?tab=diagnostic"; scrollTo("engage"); }}
                 >
                   {p.cta} <span className="text-[12px] opacity-80 ml-1">→</span>
                 </Btn>
@@ -145,7 +146,7 @@ export function Pricing() {
                 <Btn
                   variant="ghost"
                   className="px-8 border-green-500/20 hover:border-green-500/50 hover:text-green-400 bg-green-500/[0.02]"
-                  onClick={() => { window.location.hash = "engage?tab=diagnostic"; scrollTo("engage"); }}
+                  onClick={() => { track("pricing_cta_click", { plan: "Express Site" }); window.location.hash = "engage?tab=diagnostic"; scrollTo("engage"); }}
                 >
                   {t("express_cta")} <span className="text-[12px] opacity-80 ml-1">→</span>
                 </Btn>
