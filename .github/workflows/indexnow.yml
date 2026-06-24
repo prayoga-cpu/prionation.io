@@ -1,0 +1,40 @@
+# Auto-submit the sitemap to IndexNow (Bing, Yandex, Seznam, Naver, Yep — and
+# Bing feeds ChatGPT Search & Copilot) the moment a PRODUCTION deploy goes live.
+#
+# Why deployment_status and not a postbuild hook: Vercel's `postbuild` runs
+# DURING the build, while production still serves the *previous* deploy — so the
+# script would fetch a stale sitemap and miss the very pages just shipped, and
+# it'd also fire on every preview build. Instead we listen for Vercel's GitHub
+# "Deployment" reaching success on Production, by which point the new sitemap is
+# live. The submitter (scripts/indexnow.mjs) then fetches it and pings IndexNow.
+#
+# Also runnable on demand from the Actions tab (workflow_dispatch).
+name: IndexNow
+
+on:
+  deployment_status:
+  workflow_dispatch:
+
+# Never overlap submissions if deploys land back-to-back.
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    # Manual run, OR a successful Production deployment only (skip previews and
+    # pending/in-progress/failed states). `contains` is case-insensitive, so it
+    # matches "Production" / "production" / "Production – prionation.io".
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       contains(github.event.deployment_status.environment, 'production'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # scripts/indexnow.mjs has zero dependencies (uses global fetch) — no install needed.
+      - name: Submit live sitemap URLs to IndexNow
+        run: node scripts/indexnow.mjs
