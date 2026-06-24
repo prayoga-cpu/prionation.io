@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { captureAttribution } from "@/lib/analytics/attribution";
-import { useConsent } from "@/lib/analytics/consent";
+import { usePixelAllowed } from "@/lib/analytics/consent";
 
 const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
@@ -12,8 +12,9 @@ export default function MetaPixel() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const initialised = useRef(false);
-  // Meta Pixel is advertising → only loads once consent is granted.
-  const granted = useConsent() === "granted";
+  // Meta Pixel is advertising → loads only when consent isn't required (non-EU)
+  // or has been granted.
+  const granted = usePixelAllowed();
 
   useEffect(() => {
     // First-touch marketing attribution is cookieless (sessionStorage) — always

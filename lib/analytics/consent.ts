@@ -53,3 +53,30 @@ function subscribe(callback: () => void): () => void {
 export function useConsent(): Consent | null {
   return useSyncExternalStore(subscribe, getConsent, () => null);
 }
+
+// Geo gate: proxy.ts (middleware) stamps the pn_eu cookie ("1" = consent-required
+// region, "0" = not). Absent (local dev / non-Vercel) → required (privacy-safe).
+export function isConsentRequired(): boolean {
+  if (typeof document === "undefined") return true;
+  const v = ("; " + document.cookie).split("; pn_eu=")[1];
+  return v ? v[0] !== "0" : true;
+}
+
+// Show the banner only in consent-required regions, only until a choice is made.
+// Server snapshot is false → no SSR flash / hydration mismatch (client decides).
+export function useShowConsentBanner(): boolean {
+  return useSyncExternalStore(
+    subscribe,
+    () => isConsentRequired() && getConsent() === null,
+    () => false,
+  );
+}
+
+// Meta Pixel may load when consent is NOT required (non-EU) OR has been granted.
+export function usePixelAllowed(): boolean {
+  return useSyncExternalStore(
+    subscribe,
+    () => !isConsentRequired() || getConsent() === "granted",
+    () => false,
+  );
+}

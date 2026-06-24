@@ -1,13 +1,14 @@
 "use client";
 
-import { useConsent, setConsent, type Consent } from "@/lib/analytics/consent";
+import { useShowConsentBanner, setConsent, type Consent } from "@/lib/analytics/consent";
 
-// Minimal GDPR/CNIL cookie-consent banner. Shows until the visitor chooses
-// (persisted in localStorage). Decline keeps GA4 in cookieless Consent Mode and
-// never loads Meta Pixel; Accept grants both. Mounted in the root layout.
+// Minimal GDPR/CNIL cookie-consent banner. Shows ONLY in consent-required
+// regions (EEA/UK/CH, via the pn_eu geo cookie) and only until the visitor
+// chooses (persisted in localStorage). Non-EU visitors never see it and
+// analytics run by default. Decline keeps GA4 cookieless and never loads Meta
+// Pixel; Accept grants both. Mounted in the root layout.
 export default function ConsentBanner() {
-  const consent = useConsent();
-  if (consent !== null) return null;
+  if (!useShowConsentBanner()) return null;
 
   const choose = (v: Consent) => setConsent(v);
 

@@ -52,8 +52,9 @@ export default function GA4() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             window.gtag = gtag;
+            var pnReq; try { var pnV = ('; ' + document.cookie).split('; pn_eu=')[1]; pnReq = pnV ? pnV[0] !== '0' : true; } catch (e) { pnReq = true; }
             var pnC; try { pnC = localStorage.getItem('pn_consent'); } catch (e) { pnC = null; }
-            var pnG = pnC === 'granted';
+            var pnG = !pnReq || pnC === 'granted';
             gtag('consent', 'default', {
               ad_storage: pnG ? 'granted' : 'denied',
               analytics_storage: pnG ? 'granted' : 'denied',
