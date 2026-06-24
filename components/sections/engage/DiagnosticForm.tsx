@@ -8,7 +8,7 @@ import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
 import { fadeIn } from "@/lib/motion";
 import { formatEmail, formatUrlForce, formatPhone } from "@/lib/forms/format";
-import { track } from "@vercel/analytics";
+import { trackEvent } from "@/lib/analytics/events";
 import { getAttribution } from "@/lib/analytics/attribution";
 import { evaluateDisqualification } from "@/lib/forms/disqualification";
 import type { IntakePayload } from "@/lib/forms/types";
@@ -163,13 +163,13 @@ export function DiagnosticTab({ setSubmitted }: { setSubmitted: (b: boolean) => 
       // Wrapped so an analytics failure can never block the success state.
       try {
         const disq = evaluateDisqualification(form as unknown as IntakePayload);
-        track("intake_submit", {
+        trackEvent("intake_submit", {
           stage: form.stage,
           budget: form.budget,
           startWindow: form.startWindow,
           channel: attribution.channel ?? "unknown",
         });
-        track(disq.disqualified ? "intake_disqualified" : "intake_qualified", { stage: form.stage });
+        trackEvent(disq.disqualified ? "intake_disqualified" : "intake_qualified", { stage: form.stage });
         (window as unknown as { fbq?: (...a: unknown[]) => void }).fbq?.(
           "track",
           "Lead",
@@ -302,7 +302,7 @@ export function DiagnosticTab({ setSubmitted }: { setSubmitted: (b: boolean) => 
           </Btn>
         )}
         {step === 1 ? (
-          <Btn variant="primary" onClick={() => { if (validate(["company", "yourName", "email", "basedIn", "stage"])) { track("intake_step2"); setStep(2); } }}>
+          <Btn variant="primary" onClick={() => { if (validate(["company", "yourName", "email", "basedIn", "stage"])) { trackEvent("intake_step2"); setStep(2); } }}>
             {td("continue")} <span className="text-[12px] opacity-80">→</span>
           </Btn>
         ) : (

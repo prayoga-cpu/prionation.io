@@ -7,6 +7,8 @@ import { Icon } from "./icons";
 import { Btn, Eyebrow } from "./ui/Atoms";
 import { scaleIn, backdrop } from "@/lib/motion";
 import { formatEmail } from "@/lib/forms/format";
+import { trackEvent } from "@/lib/analytics/events";
+import { getAttribution } from "@/lib/analytics/attribution";
 
 const isDev = process.env.NODE_ENV !== "production";
 const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
@@ -59,6 +61,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
         setTurnstileToken(isDev ? "dev-bypass" : "");
         return;
       }
+      trackEvent("waitlist_submit", { sourceFeature: "AI Consultation", channel: getAttribution().channel ?? "unknown" });
       setDone(true);
     } catch {
       setApiError("Network error. Please try again.");

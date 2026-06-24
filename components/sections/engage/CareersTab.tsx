@@ -5,6 +5,8 @@ import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "../../icons";
 import { Btn } from "../../ui/Atoms";
 import { formatEmail, formatUrlForce, formatPhone } from "@/lib/forms/format";
+import { trackEvent } from "@/lib/analytics/events";
+import { getAttribution } from "@/lib/analytics/attribution";
 
 const isDev = process.env.NODE_ENV !== "production";
 const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
@@ -194,6 +196,7 @@ export function CareersTab() {
         return;
       }
 
+      trackEvent("career_submit", { position: form.position, channel: getAttribution().channel ?? "unknown" });
       setSubmitted(true);
     } catch {
       setApiError("Network error. Please try again.");
