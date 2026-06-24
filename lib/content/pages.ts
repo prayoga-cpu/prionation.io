@@ -32,6 +32,10 @@ export interface PageMeta {
   changeFreq: "weekly" | "monthly";
   tier1Keywords: [string, string, string];
   interlinkTo: string[];
+  // Tags pages created by the automated content-loop. Lets the kill-switch
+  // (CONTENT_LOOP_KILL=1) bulk-unpublish all loop output in one env toggle,
+  // and lets reporting separate loop pages from hand-authored ones.
+  loopGenerated?: boolean;
 }
 
 export const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
@@ -440,8 +444,15 @@ export const pages: PageMeta[] = [
 // ── Utilities consumed by sitemap.ts / generateStaticParams / footer ─────────
 
 export function getPublishedPages(section?: PageSection): PageMeta[] {
+  // Bulk kill-switch: CONTENT_LOOP_KILL=1 drops EVERY loop-generated page from
+  // the sitemap + static build on the next deploy (one env toggle in Vercel).
+  // Per-page takedown is just flipping that page's status to "draft".
+  const killLoop = process.env.CONTENT_LOOP_KILL === "1";
   return pages.filter(
-    (p) => p.status === "published" && (section ? p.section === section : true),
+    (p) =>
+      p.status === "published" &&
+      !(killLoop && p.loopGenerated) &&
+      (section ? p.section === section : true),
   );
 }
 
