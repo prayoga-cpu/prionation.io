@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Suspense } from "react";
 import MetaPixel from "@/components/MetaPixel";
 import GA4 from "@/components/GA4";
+import ConsentBanner from "@/components/ConsentBanner";
 import { MotionProvider } from "@/components/MotionProvider";
 import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
 import { OrganizationSchema, ServiceSchema, WebSiteSchema } from "@/components/JsonLd";
@@ -177,6 +178,7 @@ export default async function RootLayout({
         <Suspense fallback={null}>
           <GA4 />
         </Suspense>
+        <ConsentBanner />
       </body>
     </html>
   );

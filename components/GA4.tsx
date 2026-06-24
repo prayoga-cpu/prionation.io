@@ -9,8 +9,9 @@ import Script from "next/script";
 // page_view on client-side route changes. Conversion/funnel events are sent
 // via lib/analytics/events.ts (trackEvent). Inert (renders null) until the env
 // var is set, so it is safe to ship before the GA4 property exists.
-// NB: GA4 sets cookies — for EU/fr traffic, pair with a consent banner /
-// Consent Mode before heavy promotion.
+// Consent Mode v2: default-denied (inline script reads localStorage) so GA4
+// runs cookieless until the visitor accepts via components/ConsentBanner.tsx
+// (lib/analytics/consent.ts flips it live). Compliant for EU/fr traffic.
 // Tolerate the env value being set with OR without the "G-" prefix — GA4
 // requires the G- form, and Vercel sometimes holds just the suffix.
 const RAW_GA_ID = process.env.NEXT_PUBLIC_GA4_ID;
@@ -51,8 +52,17 @@ export default function GA4() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             window.gtag = gtag;
+            var pnC; try { pnC = localStorage.getItem('pn_consent'); } catch (e) { pnC = null; }
+            var pnG = pnC === 'granted';
+            gtag('consent', 'default', {
+              ad_storage: pnG ? 'granted' : 'denied',
+              analytics_storage: pnG ? 'granted' : 'denied',
+              ad_user_data: pnG ? 'granted' : 'denied',
+              ad_personalization: pnG ? 'granted' : 'denied',
+              wait_for_update: 500
+            });
             gtag('js', new Date());
-            gtag('config', '${GA_ID}', { send_page_view: true });
+            gtag('config', '${GA_ID}');
           `,
         }}
       />

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { captureAttribution } from "@/lib/analytics/attribution";
+import { useConsent } from "@/lib/analytics/consent";
 
 const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
@@ -11,27 +12,28 @@ export default function MetaPixel() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const initialised = useRef(false);
+  // Meta Pixel is advertising → only loads once consent is granted.
+  const granted = useConsent() === "granted";
 
   useEffect(() => {
-    // First-touch marketing attribution — independent of Meta Pixel, runs even
-    // when the pixel is disabled. Idempotent (first touch only per session).
+    // First-touch marketing attribution is cookieless (sessionStorage) — always
+    // capture, independent of consent and of whether the pixel is enabled.
     captureAttribution();
 
-    if (!pixelId) return;
+    if (!pixelId || !granted) return;
 
-    // The lazyOnload init script below fires the first PageView via the fbq
-    // queue, so skip the initial render here to avoid double-counting. Track
+    // The init script below fires the first PageView via the fbq queue, so skip
+    // the first effect run after consent to avoid double-counting. Track
     // PageView only on subsequent client-side route changes.
     if (!initialised.current) {
       initialised.current = true;
       return;
     }
-    if (typeof window !== "undefined" && (window as any).fbq) {
-      (window as any).fbq("track", "PageView");
-    }
-  }, [pathname, searchParams]);
+    const fbq = (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq;
+    fbq?.("track", "PageView");
+  }, [pathname, searchParams, granted]);
 
-  if (!pixelId) {
+  if (!pixelId || !granted) {
     return null;
   }
 
