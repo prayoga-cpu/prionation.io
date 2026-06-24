@@ -176,6 +176,12 @@ export function SiteFooter() {
           >
             Discord
           </Link>
+          <Link
+            href="/privacy"
+            className="text-muted text-[13px] font-sans tracking-normal normal-case transition-colors duration-fast hover:text-white"
+          >
+            Privacy
+          </Link>
         </div>
       </div>
     </footer>

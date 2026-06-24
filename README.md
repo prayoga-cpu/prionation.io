@@ -166,6 +166,24 @@ SECURITY_ENABLED=true
 NEXT_PUBLIC_SECURITY_ENABLED=true
 ```
 
+### Analytics & consent
+
+Analytics are **geo-gated** for privacy compliance:
+
+- Middleware (`proxy.ts`) stamps a `pn_eu` cookie from the visitor's country
+  (`x-vercel-ip-country`): `1` for **EEA / UK / Switzerland**, `0` elsewhere
+  (unknown → `1`, privacy-safe). It's a functional cookie, so pages stay
+  **statically rendered** — geo is never read during page rendering.
+- **EEA / UK / CH visitors:** the consent banner (`components/ConsentBanner.tsx`)
+  shows. Google Analytics starts in **cookieless Consent Mode**
+  (`analytics_storage` denied) and the Meta Pixel does not load until the visitor
+  accepts.
+- **Everywhere else:** no banner; GA4 + Meta Pixel run by default.
+- The choice persists in `localStorage` (`pn_consent`) and flips consent live via
+  `lib/analytics/consent.ts` (`useSyncExternalStore` → no SSR flash). Conversion
+  events route through `lib/analytics/events.ts` (`trackEvent` → GA4 + Vercel).
+- Privacy policy lives at `/[locale]/privacy` (linked from the footer).
+
 ### Notion setup
 
 Each of the 5 databases must be individually connected to the "Prionation Website" integration:
