@@ -154,6 +154,10 @@ NEXT_PUBLIC_SUPABASE_URL=
 SUPABASE_SERVICE_ROLE_KEY=
 SUPABASE_STORAGE_BUCKET=
 
+# Analytics (client-side; set in Vercel env for production)
+NEXT_PUBLIC_GA4_ID=            # GA4 Measurement ID, e.g. G-0D7HXGC7K3 (the "G-" prefix is auto-added if omitted)
+NEXT_PUBLIC_META_PIXEL_ID=    # Meta Pixel ID (optional)
+
 # App
 PRIONATION_ENV=development     # set to "production" on Vercel
 

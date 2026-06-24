@@ -11,7 +11,14 @@ import Script from "next/script";
 // var is set, so it is safe to ship before the GA4 property exists.
 // NB: GA4 sets cookies — for EU/fr traffic, pair with a consent banner /
 // Consent Mode before heavy promotion.
-const GA_ID = process.env.NEXT_PUBLIC_GA4_ID;
+// Tolerate the env value being set with OR without the "G-" prefix — GA4
+// requires the G- form, and Vercel sometimes holds just the suffix.
+const RAW_GA_ID = process.env.NEXT_PUBLIC_GA4_ID;
+const GA_ID = RAW_GA_ID
+  ? RAW_GA_ID.startsWith("G-")
+    ? RAW_GA_ID
+    : `G-${RAW_GA_ID}`
+  : undefined;
 
 export default function GA4() {
   const pathname = usePathname();
