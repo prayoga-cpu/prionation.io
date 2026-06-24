@@ -7,6 +7,8 @@ import {
   SOCIAL_LINKS,
   OFFERS,
   TEAM,
+  ORGANIZATION_ID,
+  WEBSITE_ID,
 } from "@/lib/seo/site";
 
 // Real people behind the brand → Person nodes for the Organization graph. Helps
@@ -39,6 +41,7 @@ export function OrganizationSchema() {
       data={{
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": ORGANIZATION_ID,
         name: SITE_NAME,
         legalName: LEGAL_NAME,
         url: SITE_URL,
@@ -69,7 +72,7 @@ export function ServiceSchema() {
         name: "AI Product Engineering",
         url: SITE_URL,
         image: `${SITE_URL}/og.png`,
-        provider: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+        provider: { "@id": ORGANIZATION_ID },
         areaServed: ["European Union", "United States"],
         description:
           "We build production AI products that break operational bottlenecks in 8 weeks with lean pods.",
@@ -101,10 +104,11 @@ export function WebSiteSchema() {
       data={{
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": WEBSITE_ID,
         name: SITE_NAME,
         url: SITE_URL,
         inLanguage: ["en", "fr", "id"],
-        publisher: { "@type": "Organization", name: SITE_NAME },
+        publisher: { "@id": ORGANIZATION_ID },
         isAccessibleForFree: true,
       }}
     />

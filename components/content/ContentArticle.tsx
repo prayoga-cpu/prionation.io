@@ -4,7 +4,7 @@ import { type ReactNode } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Icon } from "../icons";
-import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
+import { SITE_URL, ORGANIZATION_ID, WEBSITE_ID } from "@/lib/seo/site";
 import type { PageSection, SchemaType } from "@/lib/content/pages";
 import type { RelatedLink } from "@/lib/content/meta";
 import { FloatingShareDesktop, FloatingShareMobile } from "./FloatingShare";
@@ -145,12 +145,13 @@ export function ContentArticle({
       cssSelector: ["h1", '[aria-label="Summary"]'],
     },
     mainEntityOfPage: canonical,
-    author: { "@type": "Organization", name: SITE_NAME },
-    publisher: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/icon-512.png` },
-    },
+    // Reference the shared Organization/WebSite nodes (emitted site-wide in
+    // components/JsonLd.tsx) by @id instead of re-declaring anonymous copies.
+    // The publisher logo lives on that single Organization node; engines merge
+    // the @id-matched blocks across the page into one entity.
+    isPartOf: { "@id": WEBSITE_ID },
+    author: { "@id": ORGANIZATION_ID },
+    publisher: { "@id": ORGANIZATION_ID },
   };
 
   const faqSchema = {

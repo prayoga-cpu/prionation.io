@@ -8,6 +8,14 @@ export const LEGAL_NAME = "PRIORITY FOUNDATION";
 export const CONTACT_EMAIL = "consult@prionation.io";
 export const FOUNDING_DATE = "2026";
 
+// Stable @id anchors so every JSON-LD block — site-wide (components/JsonLd.tsx)
+// and per-page (ContentArticle/AnchorPage/Glossary) — references ONE shared
+// Organization/WebSite node instead of re-declaring anonymous duplicates. This
+// lets Google/AI answer engines merge the brand into a single high-confidence
+// entity across all pages. Anchors are fragments on SITE_URL (no new routes).
+export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+
 export const SOCIAL_LINKS = [
   "https://www.linkedin.com/company/prionation-io",
   "https://www.instagram.com/prionation.io",
