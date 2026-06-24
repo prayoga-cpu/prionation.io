@@ -1,0 +1,28 @@
+{
+  "_doc": "SEO/AEO/GEO loop state ledger. One entry per iteration. Append-only. prod_verify is filled after prod-authoritative verification. See .claude/commands/seo-loop.md.",
+  "run_inspect_url_calls": 3,
+  "iterations": [
+    {
+      "iso": "2026-06-24T10:05:51Z",
+      "iteration": 1,
+      "branch": "main",
+      "sha": "pending-commit",
+      "change_slug": "showcase-real-images",
+      "files": [
+        "lib/content/pages.ts",
+        "components/content/ContentArticle.tsx",
+        "components/sections/SelectedWork.tsx"
+      ],
+      "change": "Showcase Articles reference real owned case image (/work/<file>.png) via shared SHOWCASE_IMAGES map instead of og.png fallback",
+      "sitemap": { "submitted": 54, "indexed": 0, "errors": 0, "warnings": 0 },
+      "before_inspect": {
+        "https://www.prionation.io/en": { "verdict": "PASS", "coverageState": "Submitted and indexed", "lastCrawl": "2026-06-24T07:34:54Z" },
+        "https://www.prionation.io/id": { "verdict": "PASS", "coverageState": "Submitted and indexed", "lastCrawl": "2026-06-07T04:30:32Z" },
+        "https://www.prionation.io/en/ai-product-engineering-for-mid-market-companies": { "verdict": "PASS", "coverageState": "Submitted and indexed", "lastCrawl": "2026-06-22T14:45:56Z" }
+      },
+      "inspect_url_calls_this_cycle": 3,
+      "prod_verify": "pending",
+      "coverage_breadth_pages_with_impressions": 7
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import { SectionHead } from "../ui/Atoms";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { staggerSlow, fadeUp } from "@/lib/motion";
+import { SHOWCASE_IMAGES } from "@/lib/content/pages";
 
 type CaseData = {
   name: string;
@@ -22,7 +23,9 @@ const CASE_DEMOS = [
   "https://expeditoo-rho.vercel.app/",
   "https://lead-agent-lac.vercel.app/",
 ];
-const CASE_IMGS = ["/work/epidom.png", "/work/expeditoo.png", "/work/lead-agent.png"];
+// Images come from the shared showcase map (lib/content/pages.ts) so the tiles
+// and the showcase Article JSON-LD always reference the same owned assets.
+const CASE_IMGS = CASE_SLUGS.map((s) => SHOWCASE_IMAGES[s]);
 
 function CaseTile({
   c, slug, demo, img, viewLabel, demoLabel,

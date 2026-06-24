@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Icon } from "../icons";
 import { SITE_URL, ORGANIZATION_ID, WEBSITE_ID } from "@/lib/seo/site";
+import { SHOWCASE_IMAGES } from "@/lib/content/pages";
 import type { PageSection, SchemaType } from "@/lib/content/pages";
 import type { RelatedLink } from "@/lib/content/meta";
 import { FloatingShareDesktop, FloatingShareMobile } from "./FloatingShare";
@@ -137,7 +138,10 @@ export function ContentArticle({
     "@type": VALID_ARTICLE_TYPE[schemaType],
     headline: h1,
     description: t("metaDescription"),
-    image: `${SITE_URL}/og.png`,
+    // Showcase Articles carry their real owned case image (public/work/*); every
+    // other section falls back to the site og.png. Map lives in lib/content/pages.ts
+    // (single source shared with the homepage SelectedWork tiles).
+    image: `${SITE_URL}${(section === "showcases" && SHOWCASE_IMAGES[slug]) || "/og.png"}`,
     inLanguage: locale,
     ...(datePublished ? { datePublished } : {}),
     ...(dateModified ? { dateModified } : {}),

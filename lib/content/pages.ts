@@ -36,6 +36,17 @@ export interface PageMeta {
 
 export const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
 
+// Real owned case-study images for showcase Articles (files in public/work/).
+// Slug→file is intentionally NOT 1:1 ("the-lead-agent" → lead-agent.png), so the
+// mapping is explicit, not derived. Single source of truth shared by the
+// homepage tiles (components/sections/SelectedWork.tsx) and the showcase Article
+// JSON-LD image (components/content/ContentArticle.tsx) so the two can't drift.
+export const SHOWCASE_IMAGES: Record<string, string> = {
+  epidom: "/work/epidom.png",
+  expeditoo: "/work/expeditoo.png",
+  "the-lead-agent": "/work/lead-agent.png",
+};
+
 export const pages: PageMeta[] = [
   // ── METHODOLOGY ───────────────────────────────────────────────────────────
   {
