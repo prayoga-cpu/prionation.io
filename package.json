@@ -18,7 +18,8 @@
     "test:watch": "vitest",
     "pagespeed": "node scripts/pagespeed.mjs",
     "indexnow": "node scripts/indexnow.mjs",
-    "images:meta": "node scripts/image-metadata.mjs"
+    "images:meta": "node scripts/image-metadata.mjs",
+    "funnel:report": "node --env-file=.env.local scripts/funnel-report.mjs"
   },
   "dependencies": {
     "@marsidev/react-turnstile": "^1.5.2",
