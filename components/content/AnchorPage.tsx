@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Icon } from "../icons";
-import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
+import { SITE_URL, ORGANIZATION_ID, WEBSITE_ID } from "@/lib/seo/site";
 import { getPublishedPages, type PageSection } from "@/lib/content/pages";
 
 const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
@@ -231,12 +231,10 @@ export function AnchorPage() {
       cssSelector: ["h1", '[aria-label="Summary"]'],
     },
     mainEntityOfPage: `${SITE_URL}/${locale}${ANCHOR_PATH}`,
-    author: { "@type": "Organization", name: SITE_NAME },
-    publisher: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/icon-512.png` },
-    },
+    // Reference the shared site-wide Organization/WebSite nodes by @id.
+    isPartOf: { "@id": WEBSITE_ID },
+    author: { "@id": ORGANIZATION_ID },
+    publisher: { "@id": ORGANIZATION_ID },
   };
 
   const faqSchema = {
@@ -252,7 +250,9 @@ export function AnchorPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      {faq.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
 
       <div className="px-page-x pt-[130px] pb-[120px]">
         <div className="max-w-[900px] mx-auto">

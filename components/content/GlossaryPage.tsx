@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { SITE_URL } from "@/lib/seo/site";
+import { SITE_URL, ORGANIZATION_ID, WEBSITE_ID } from "@/lib/seo/site";
 
 type Term = { term: string; def: string };
 
@@ -32,6 +32,8 @@ export function GlossaryPage() {
     description: t("metaDescription"),
     url: canonical,
     inLanguage: locale,
+    isPartOf: { "@id": WEBSITE_ID },
+    publisher: { "@id": ORGANIZATION_ID },
     hasDefinedTerm: terms.map((x) => ({
       "@type": "DefinedTerm",
       name: x.term,
