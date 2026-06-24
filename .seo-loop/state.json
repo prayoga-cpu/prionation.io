@@ -1,12 +1,12 @@
 {
   "_doc": "SEO/AEO/GEO loop state ledger. One entry per iteration. Append-only. prod_verify is filled after prod-authoritative verification. See .claude/commands/seo-loop.md.",
-  "run_inspect_url_calls": 3,
+  "run_inspect_url_calls": 4,
   "iterations": [
     {
       "iso": "2026-06-24T10:05:51Z",
       "iteration": 1,
       "branch": "main",
-      "sha": "pending-commit",
+      "sha": "e5c31910be2854b7b6cab4bf0ff1d0fd105b65fd",
       "change_slug": "showcase-real-images",
       "files": [
         "lib/content/pages.ts",
@@ -20,8 +20,21 @@
         "https://www.prionation.io/id": { "verdict": "PASS", "coverageState": "Submitted and indexed", "lastCrawl": "2026-06-07T04:30:32Z" },
         "https://www.prionation.io/en/ai-product-engineering-for-mid-market-companies": { "verdict": "PASS", "coverageState": "Submitted and indexed", "lastCrawl": "2026-06-22T14:45:56Z" }
       },
-      "inspect_url_calls_this_cycle": 3,
-      "prod_verify": "pending",
+      "after_inspect": {
+        "https://www.prionation.io/en/showcases/epidom": { "verdict": "PASS", "coverageState": "Submitted and indexed", "lastCrawl": "2026-06-08T22:14:21Z", "richResults": "PASS (Breadcrumbs detected; Article image change awaits next crawl)" }
+      },
+      "inspect_url_calls_this_cycle": 4,
+      "prod_verify": {
+        "status": "shipped",
+        "deployment_state": "success",
+        "sha_matched": true,
+        "deployment_target_url": "https://vercel.com/prayogadevelopment-gmailcoms-projects/prionation-io/9yEoz6o5vDJbgomDDNp7z5uPL6zg",
+        "indexnow_run": "run #8 deployment_status conclusion=success (head_sha e5c3191)",
+        "get_en_showcases_epidom": 200,
+        "new_marker_present": "https://www.prionation.io/work/epidom.png in Article JSON-LD",
+        "verified_iso": "2026-06-24T10:08:00Z"
+      },
+      "sitemap_resubmit": "skipped (URL set unchanged; image-only JSON-LD change)",
       "coverage_breadth_pages_with_impressions": 7
     }
   ]
