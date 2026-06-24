@@ -137,6 +137,7 @@ export function ContentArticle({
     "@type": VALID_ARTICLE_TYPE[schemaType],
     headline: h1,
     description: t("metaDescription"),
+    image: `${SITE_URL}/og.png`,
     inLanguage: locale,
     ...(datePublished ? { datePublished } : {}),
     ...(dateModified ? { dateModified } : {}),
@@ -182,7 +183,11 @@ export function ContentArticle({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      {/* Guard empty mainEntity → invalid JSON-LD. NB: Google deprecated FAQ rich
+          results 2026-05-07; kept for AI Overviews / answer engines, not SERP. */}
+      {faq.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <div className="px-page-x pt-[130px] pb-[120px]">

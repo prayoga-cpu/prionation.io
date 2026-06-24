@@ -24,10 +24,14 @@ export function Faq() {
 
   return (
     <section id="faq" className="relative px-page-x py-[140px] max-w-max-w mx-auto">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      {/* Guard empty mainEntity → invalid JSON-LD. NB: Google deprecated FAQ
+          rich results 2026-05-07; kept for AI Overviews / answer engines. */}
+      {items.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      )}
 
       {/* TL;DR — plain, crawlable summary of the core facts */}
       <div
