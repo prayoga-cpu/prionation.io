@@ -8,12 +8,12 @@
 //   npm run indexnow -- https://www.prionation.io/en  https://www.prionation.io/en/pricing
 //
 // Requires the key file to be live at:
-//   https://www.prionation.io/71bdc3f1d53ad47df0b1ebbe972f9e21.txt
-// (committed at public/71bdc3f1d53ad47df0b1ebbe972f9e21.txt — deploy first.)
+//   https://www.prionation.io/34f3ca2fd693436391b39a0e6448df86.txt
+// (committed at public/34f3ca2fd693436391b39a0e6448df86.txt — deploy first.)
 
 const HOST = "www.prionation.io";
 const SITE_URL = `https://${HOST}`;
-const KEY = "71bdc3f1d53ad47df0b1ebbe972f9e21";
+const KEY = "34f3ca2fd693436391b39a0e6448df86";
 const KEY_LOCATION = `${SITE_URL}/${KEY}.txt`;
 const ENDPOINT = "https://api.indexnow.org/indexnow";
 
