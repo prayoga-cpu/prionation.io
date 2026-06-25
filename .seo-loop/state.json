@@ -1,6 +1,6 @@
 {
   "_doc": "SEO/AEO/GEO loop state ledger. One entry per iteration. Append-only. prod_verify is filled after prod-authoritative verification. See .claude/commands/seo-loop.md.",
-  "run_inspect_url_calls": 4,
+  "run_inspect_url_calls": 0,
   "iterations": [
     {
       "iso": "2026-06-24T10:05:51Z",
@@ -36,6 +36,45 @@
       },
       "sitemap_resubmit": "skipped (URL set unchanged; image-only JSON-LD change)",
       "coverage_breadth_pages_with_impressions": 7
+    },
+    {
+      "iso": "2026-06-25T06:20:28Z",
+      "iteration": 2,
+      "run": "2026-06-25 daily",
+      "branch": "main",
+      "sha": "29aedfc04efa8d3d6e733d26ce0ef83bb51d0266",
+      "change_slug": "robots-ai-retrieval-agents",
+      "files": ["public/robots.txt"],
+      "change": "robots.txt names retrieval-time AI agents OAI-SearchBot + ChatGPT-User with explicit Allow:/ (distinct from training crawlers GPTBot/ClaudeBot/etc; keeps allow-all posture). Backlog #3.",
+      "sitemap": { "submitted": 54, "indexed": 0, "errors": 0, "warnings": 0 },
+      "before_inspect": "skipped — all canaries (/en, /id, mid-market) inspected <48h ago per rule 7; robots.txt is a directive file, not an indexable HTML page",
+      "after_inspect": "skipped",
+      "inspect_url_calls_this_cycle": 0,
+      "prod_verify": {
+        "status": "shipped",
+        "deployment_state": "success (live bytes confirmed)",
+        "deployment_id": 5191663103,
+        "deployment_environment": "Production",
+        "deployment_creator": "vercel[bot]",
+        "deployment_created": "2026-06-25T06:18:29Z",
+        "sha_matched": true,
+        "get_robots_txt": 200,
+        "get_en": 200,
+        "new_marker_present": "User-agent: OAI-SearchBot AND User-agent: ChatGPT-User both present in cache-busted live /robots.txt",
+        "verified_iso": "2026-06-25T06:20:28Z"
+      },
+      "sitemap_resubmit": "skipped (URL set unchanged; robots.txt directive change only)",
+      "coverage_breadth_pages_with_impressions": 7,
+      "gsc_observation": {
+        "sitemap_indexed_submitted": "54/0 -> 54/0 (NOISE, flat)",
+        "distinct_pages_with_impressions": "7 -> 7 (NOISE, delta 0)",
+        "note": "correlation-only; query + searchAppearance dimensions empty; indexed=0 is GSC API lag on a 3-week-old site, not a defect"
+      },
+      "deferred_next": {
+        "slug": "dynamic-llms-txt",
+        "backlog": 2,
+        "reason": "~224 changed lines (add app/llms.txt/route.ts ~115 + delete public/llms.txt ~109) exceeds the 150-line/cycle budget, and is unsplittable: app route + static file collide on /llms.txt so the swap must be atomic. Needs a one-time budget exception or a follow-up dedicated cycle."
+      }
     }
   ]
 }
