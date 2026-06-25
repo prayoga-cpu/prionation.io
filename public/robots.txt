@@ -21,4 +21,14 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+# Retrieval-time AI agents (answer engines / live fetch) — distinct from the
+# training crawlers above. Named explicitly so ChatGPT search indexing
+# (OAI-SearchBot) and on-demand fetches during a chat (ChatGPT-User) can reach
+# and cite prionation.io. Keeps the allow-all posture.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 Sitemap: https://www.prionation.io/sitemap.xml
