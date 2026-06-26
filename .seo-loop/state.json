@@ -1,6 +1,6 @@
 {
   "_doc": "SEO/AEO/GEO loop state ledger. One entry per iteration. Append-only. prod_verify is filled after prod-authoritative verification. See .claude/commands/seo-loop.md.",
-  "run_inspect_url_calls": 0,
+  "run_inspect_url_calls": 3,
   "iterations": [
     {
       "iso": "2026-06-24T10:05:51Z",
@@ -74,6 +74,51 @@
         "slug": "dynamic-llms-txt",
         "backlog": 2,
         "reason": "~224 changed lines (add app/llms.txt/route.ts ~115 + delete public/llms.txt ~109) exceeds the 150-line/cycle budget, and is unsplittable: app route + static file collide on /llms.txt so the swap must be atomic. Needs a one-time budget exception or a follow-up dedicated cycle."
+      }
+    },
+    {
+      "iso": "2026-06-26T02:45:00Z",
+      "iteration": 3,
+      "run": "2026-06-26 daily",
+      "branch": "main",
+      "sha": "ba948f654f6992b6914c2ec391ad34ff7be7c280",
+      "change_slug": "per-locale-llms-txt",
+      "files": ["public/llms.txt"],
+      "change": "Add a 'Localized editions' block to public/llms.txt mapping fr (/fr) + id (/id) core entry points (Home, pillar, glossary, manifesto, methodology, showcases, frameworks, guides, intelligence, discord). URLs only — every page is published in all 3 locales (i18n/routing.ts) and already emitted in the 54-URL sitemap with hreflang alternates. Backlog #4. +30 lines, 1 file.",
+      "sitemap": { "submitted": 54, "indexed": 0, "errors": 0, "warnings": 0 },
+      "before_inspect": "n/a — directive/static file change, not an indexable HTML page",
+      "after_inspect": "n/a — llms.txt is not URL-inspectable; locale-root canary verdicts recorded below instead",
+      "canary_inspect": {
+        "https://www.prionation.io/en": { "verdict": "PASS", "coverageState": "Submitted and indexed", "googleCanonical": "https://www.prionation.io/en", "lastCrawl": "2026-06-24T07:34:54Z" },
+        "https://www.prionation.io/fr": { "verdict": "PASS", "coverageState": "Submitted and indexed", "googleCanonical": "https://www.prionation.io/fr", "lastCrawl": "2026-06-07T03:53:02Z" },
+        "https://www.prionation.io/id": { "verdict": "PASS", "coverageState": "Submitted and indexed", "googleCanonical": "https://www.prionation.io/id", "lastCrawl": "2026-06-07T04:30:32Z" }
+      },
+      "inspect_url_calls_this_cycle": 3,
+      "prod_verify": {
+        "status": "shipped",
+        "deployment_id": 5204905693,
+        "deployment_status_id": 14812171358,
+        "deployment_state": "success",
+        "deployment_environment": "Production",
+        "deployment_description": "Deployment has completed",
+        "deployment_creator": "vercel[bot]",
+        "deployment_created": "2026-06-26T02:44:53Z",
+        "sha_matched": true,
+        "get_llms_txt": 200,
+        "new_marker_present": "## Localized editions + ### French (Français) — /fr + ### Indonesian (Bahasa Indonesia) — /id present in cache-busted live https://www.prionation.io/llms.txt?cb=ba948f6",
+        "verified_iso": "2026-06-26T02:46:00Z"
+      },
+      "sitemap_resubmit": "skipped (URL set unchanged; llms.txt is a static directive file and the fr+id URLs were already in the 54-URL sitemap)",
+      "coverage_breadth_pages_with_impressions": 7,
+      "gsc_observation": {
+        "sitemap_indexed_submitted": "54/0 -> 54/0 (NOISE, flat)",
+        "distinct_pages_with_impressions": "7 -> 7 (NOISE, delta 0)",
+        "note": "correlation-only; query + searchAppearance dimensions empty; indexed=0 is GSC API lag on a 3-week-old site, not a defect. Page-dim crawl this cycle: /fr drew its first impression (1) and /id drew 2 clicks (3 impr) — at/below noise floor (impr delta<=3), reported NOT attributed to any change."
+      },
+      "deferred_next": {
+        "slug": "dynamic-llms-txt",
+        "backlog": 2,
+        "reason": "Still over the 150-line/cycle budget and unsplittable: delete public/llms.txt (138 lines after this change) + add app/llms.txt/route.ts (~110+) collide on the /llms.txt path so the swap must be atomic. Needs a dedicated budget-exception cycle. Backlog #5 (founder Person/ProfilePage) remains SKIP — no team/about/founder page exists; never invent bios."
       }
     }
   ]
