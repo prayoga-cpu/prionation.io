@@ -47,6 +47,36 @@ We are not a consultancy. Engagements start with a two-week Diagnostic that maps
 - [AI Bottlenecks in Mid-Market Logistics](https://www.prionation.io/en/intelligence/ai-bottlenecks-mid-market-logistics): Where logistics operations stall
 - [AI for Mid-Market Lead Generation](https://www.prionation.io/en/intelligence/ai-lead-generation-mid-market): Applying AI to lead generation
 
+## Localized editions
+
+PRIONATION.io publishes every page in three languages (en, fr, id). The English URLs above are mirrored under `/fr` and `/id`, and each carries hreflang alternates. Core entry points per locale:
+
+### French (Français) — /fr
+
+- [Home](https://www.prionation.io/fr): The offer, method, and pricing
+- [AI Product Engineering for Mid-Market Companies](https://www.prionation.io/fr/ai-product-engineering-for-mid-market-companies): Pillar guide to the full approach
+- [Glossary](https://www.prionation.io/fr/ai-product-engineering-for-mid-market-companies/glossary): Definitions of key terms
+- [Manifesto](https://www.prionation.io/fr/ai-product-engineering-for-mid-market-companies/manifesto): The principles behind how we build
+- [Methodology](https://www.prionation.io/fr/methodology): The PRIONATION Method
+- [Showcases](https://www.prionation.io/fr/showcases): Selected client work
+- [Frameworks](https://www.prionation.io/fr/frameworks): Calculators and checklists
+- [Guides](https://www.prionation.io/fr/guides): Educational articles
+- [Intelligence](https://www.prionation.io/fr/intelligence): Research and analysis
+- [Community (Discord)](https://www.prionation.io/fr/discord): Join the PRIONATION community
+
+### Indonesian (Bahasa Indonesia) — /id
+
+- [Home](https://www.prionation.io/id): The offer, method, and pricing
+- [AI Product Engineering for Mid-Market Companies](https://www.prionation.io/id/ai-product-engineering-for-mid-market-companies): Pillar guide to the full approach
+- [Glossary](https://www.prionation.io/id/ai-product-engineering-for-mid-market-companies/glossary): Definitions of key terms
+- [Manifesto](https://www.prionation.io/id/ai-product-engineering-for-mid-market-companies/manifesto): The principles behind how we build
+- [Methodology](https://www.prionation.io/id/methodology): The PRIONATION Method
+- [Showcases](https://www.prionation.io/id/showcases): Selected client work
+- [Frameworks](https://www.prionation.io/id/frameworks): Calculators and checklists
+- [Guides](https://www.prionation.io/id/guides): Educational articles
+- [Intelligence](https://www.prionation.io/id/intelligence): Research and analysis
+- [Community (Discord)](https://www.prionation.io/id/discord): Join the PRIONATION community
+
 ## Organization
 
 - Name: PRIONATION.io
