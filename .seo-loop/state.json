@@ -14,14 +14,36 @@
         "components/sections/SelectedWork.tsx"
       ],
       "change": "Showcase Articles reference real owned case image (/work/<file>.png) via shared SHOWCASE_IMAGES map instead of og.png fallback",
-      "sitemap": { "submitted": 54, "indexed": 0, "errors": 0, "warnings": 0 },
+      "sitemap": {
+        "submitted": 54,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0
+      },
       "before_inspect": {
-        "https://www.prionation.io/en": { "verdict": "PASS", "coverageState": "Submitted and indexed", "lastCrawl": "2026-06-24T07:34:54Z" },
-        "https://www.prionation.io/id": { "verdict": "PASS", "coverageState": "Submitted and indexed", "lastCrawl": "2026-06-07T04:30:32Z" },
-        "https://www.prionation.io/en/ai-product-engineering-for-mid-market-companies": { "verdict": "PASS", "coverageState": "Submitted and indexed", "lastCrawl": "2026-06-22T14:45:56Z" }
+        "https://www.prionation.io/en": {
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "lastCrawl": "2026-06-24T07:34:54Z"
+        },
+        "https://www.prionation.io/id": {
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "lastCrawl": "2026-06-07T04:30:32Z"
+        },
+        "https://www.prionation.io/en/ai-product-engineering-for-mid-market-companies": {
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "lastCrawl": "2026-06-22T14:45:56Z"
+        }
       },
       "after_inspect": {
-        "https://www.prionation.io/en/showcases/epidom": { "verdict": "PASS", "coverageState": "Submitted and indexed", "lastCrawl": "2026-06-08T22:14:21Z", "richResults": "PASS (Breadcrumbs detected; Article image change awaits next crawl)" }
+        "https://www.prionation.io/en/showcases/epidom": {
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "lastCrawl": "2026-06-08T22:14:21Z",
+          "richResults": "PASS (Breadcrumbs detected; Article image change awaits next crawl)"
+        }
       },
       "inspect_url_calls_this_cycle": 4,
       "prod_verify": {
@@ -44,9 +66,16 @@
       "branch": "main",
       "sha": "29aedfc04efa8d3d6e733d26ce0ef83bb51d0266",
       "change_slug": "robots-ai-retrieval-agents",
-      "files": ["public/robots.txt"],
+      "files": [
+        "public/robots.txt"
+      ],
       "change": "robots.txt names retrieval-time AI agents OAI-SearchBot + ChatGPT-User with explicit Allow:/ (distinct from training crawlers GPTBot/ClaudeBot/etc; keeps allow-all posture). Backlog #3.",
-      "sitemap": { "submitted": 54, "indexed": 0, "errors": 0, "warnings": 0 },
+      "sitemap": {
+        "submitted": 54,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0
+      },
       "before_inspect": "skipped — all canaries (/en, /id, mid-market) inspected <48h ago per rule 7; robots.txt is a directive file, not an indexable HTML page",
       "after_inspect": "skipped",
       "inspect_url_calls_this_cycle": 0,
@@ -83,15 +112,37 @@
       "branch": "main",
       "sha": "ba948f654f6992b6914c2ec391ad34ff7be7c280",
       "change_slug": "per-locale-llms-txt",
-      "files": ["public/llms.txt"],
+      "files": [
+        "public/llms.txt"
+      ],
       "change": "Add a 'Localized editions' block to public/llms.txt mapping fr (/fr) + id (/id) core entry points (Home, pillar, glossary, manifesto, methodology, showcases, frameworks, guides, intelligence, discord). URLs only — every page is published in all 3 locales (i18n/routing.ts) and already emitted in the 54-URL sitemap with hreflang alternates. Backlog #4. +30 lines, 1 file.",
-      "sitemap": { "submitted": 54, "indexed": 0, "errors": 0, "warnings": 0 },
+      "sitemap": {
+        "submitted": 54,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0
+      },
       "before_inspect": "n/a — directive/static file change, not an indexable HTML page",
       "after_inspect": "n/a — llms.txt is not URL-inspectable; locale-root canary verdicts recorded below instead",
       "canary_inspect": {
-        "https://www.prionation.io/en": { "verdict": "PASS", "coverageState": "Submitted and indexed", "googleCanonical": "https://www.prionation.io/en", "lastCrawl": "2026-06-24T07:34:54Z" },
-        "https://www.prionation.io/fr": { "verdict": "PASS", "coverageState": "Submitted and indexed", "googleCanonical": "https://www.prionation.io/fr", "lastCrawl": "2026-06-07T03:53:02Z" },
-        "https://www.prionation.io/id": { "verdict": "PASS", "coverageState": "Submitted and indexed", "googleCanonical": "https://www.prionation.io/id", "lastCrawl": "2026-06-07T04:30:32Z" }
+        "https://www.prionation.io/en": {
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.prionation.io/en",
+          "lastCrawl": "2026-06-24T07:34:54Z"
+        },
+        "https://www.prionation.io/fr": {
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.prionation.io/fr",
+          "lastCrawl": "2026-06-07T03:53:02Z"
+        },
+        "https://www.prionation.io/id": {
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.prionation.io/id",
+          "lastCrawl": "2026-06-07T04:30:32Z"
+        }
       },
       "inspect_url_calls_this_cycle": 3,
       "prod_verify": {
@@ -120,6 +171,63 @@
         "backlog": 2,
         "reason": "Still over the 150-line/cycle budget and unsplittable: delete public/llms.txt (138 lines after this change) + add app/llms.txt/route.ts (~110+) collide on the /llms.txt path so the swap must be atomic. Needs a dedicated budget-exception cycle. Backlog #5 (founder Person/ProfilePage) remains SKIP — no team/about/founder page exists; never invent bios."
       }
+    },
+    {
+      "iso": "2026-06-27T05:55:00Z",
+      "iteration": 4,
+      "run": "2026-06-27 daily",
+      "branch": "main",
+      "sha": "9d434c48986369f747d8a3a08978f694534215a1",
+      "change_slug": "none — read-only health check",
+      "files": [],
+      "change": "No code change. In-budget backlog exhausted: #2 dynamic-llms-txt remains over the 150-line/cycle budget and unsplittable (app route vs static-file collision on /llms.txt; no tsx devDep so a build-time .mjs generator can't import TS lib/seo/site.ts), #5 founder Person/ProfilePage is a permanent SKIP (no team/about/founder page exists), and llms.txt pricing has ZERO drift vs lib/seo/site.ts OFFERS (Diagnostic EUR 5–7k, Build 25–55k, Retainer 4–9k/mo, Express 1.5k all match exactly). Ran a read-only GSC health check + repo build-gate instead of forcing a change.",
+      "sitemap": {
+        "submitted": 54,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0
+      },
+      "sitemap_inventory": "LIST_SITEMAPS (sc-domain) now returns ONLY the www sitemap — the apex sitemap entry is no longer present (bootstrap #2 'delete apex sitemap from GSC' apparently completed since iter 3; observation, not an agent action). www lastDownloaded 2026-06-26T21:29:26Z, lastSubmitted 2026-06-22T14:42:51Z.",
+      "canary_inspect": {
+        "https://www.prionation.io/en": {
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.prionation.io/en",
+          "lastCrawl": "2026-06-24T07:34:54Z"
+        },
+        "https://www.prionation.io/id": {
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.prionation.io/id",
+          "lastCrawl": "2026-06-07T04:30:32Z"
+        },
+        "https://www.prionation.io/en/ai-product-engineering-for-mid-market-companies": {
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.prionation.io/en/ai-product-engineering-for-mid-market-companies",
+          "lastCrawl": "2026-06-22T14:45:56Z"
+        }
+      },
+      "inspect_url_calls_this_cycle": 3,
+      "build_gate": "lint OK (eslint: no issues) + test OK (51/51 vitest) + build OK (next build, 54-URL sitemap + routes prerendered). No app code changed; .seo-loop/state.json is operator state outside the Next build graph (grep confirms it is imported by no module).",
+      "prod_verify": {
+        "status": "n/a — read-only health check, no deployment this cycle",
+        "get_en": 200,
+        "note": "No new bytes shipped to prod; liveness-only check of https://www.prionation.io/en."
+      },
+      "coverage_breadth_pages_with_impressions": 7,
+      "gsc_observation": {
+        "sitemap_indexed_submitted": "54/0 -> 54/0 (NOISE, flat; indexed=0 is the known sitemap-aggregate API lag, contradicted by per-URL INSPECT = 'Submitted and indexed' on all 3 canaries)",
+        "distinct_pages_with_impressions": "7 -> 7 (NOISE, delta 0). 28d page rows: /en(5 impr), /id/.../manifesto(3), /en/aipe-mid-market(2,1clk), /id(2,1clk), /en/guides(2), /en/showcases/epidom(1), /fr(1) — 16 impr / 2 clicks total. Page SET shifted slightly (guides + epidom + id-manifesto now surfacing) but every movement is sub-noise-floor; correlation-only, NOT attributed to any change.",
+        "note": "query + searchAppearance dimensions still empty (no ranking data on a ~4-week-old site). Apex sitemap removed from GSC inventory."
+      },
+      "deferred_next": {
+        "slug": "dynamic-llms-txt",
+        "backlog": 2,
+        "reason": "ONLY remaining in-list backlog item. Still over the 150-line/cycle budget and unsplittable: app/llms.txt/route.ts (~115 lines, must import TS lib/seo/site.ts so a Next route is the only feasible form — no tsx devDep for a .mjs build generator) PLUS delete static public/llms.txt (138 lines) collide on the /llms.txt path so the swap is atomic (~250 changed lines). REQUIRES a human-granted ONE-TIME budget exception (or add tsx as a devDep to enable a build-time generator). Surfaced to user this run. Backlog #5 (founder Person/ProfilePage) remains a permanent SKIP — no team/about/founder page exists; never invent bios.",
+        "no_drift_confirmed": "llms.txt pricing == OFFERS at this commit, so dynamic-llms-txt is preventative (drift-proofing) only — no live defect, low urgency."
+      },
+      "termination": "Read-only health check. Termination criteria met: all 3 canaries PASS 'Submitted and indexed', sitemap 0 errors / 0 warnings, indexed flat (API lag, not a defect). In-budget backlog exhausted -> no forced change. Loop idle until (a) human grants a budget exception for dynamic-llms-txt, or (b) new backlog items are added."
     }
   ]
 }
