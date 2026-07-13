@@ -72,7 +72,13 @@ export function SiteFooter() {
               </button>
               {verOpen && (
                 <div className="absolute top-full left-0 pt-2 -ml-4 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="min-w-[110px] bg-card border border-line rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+                  <div className="min-w-[140px] bg-card border border-line rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+                    <Link
+                      href="/changelog"
+                      className="block w-full text-left px-4 py-2.5 hover:bg-accent/10 hover:text-white text-accent text-[9px] font-pixel transition-colors border-b border-line/50"
+                    >
+                      Full changelog
+                    </Link>
                     {[
                       { v: "v.2.0.0", url: "https://v2.prionation.io/" },
                       { v: "v.1.0.0", url: "https://v1.prionation.io/" },
