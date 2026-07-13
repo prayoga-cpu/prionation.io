@@ -307,6 +307,7 @@ export const pages: PageMeta[] = [
       ANCHOR_PATH,
       "/frameworks/ai-build-vs-buy-calculator",
       "/methodology/evals-before-features",
+      "/guides/scoping-ai-build-engagement",
     ],
   },
 

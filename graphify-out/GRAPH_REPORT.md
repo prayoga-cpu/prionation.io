@@ -1,7 +1,7 @@
 # Graph Report - prionation.io  (2026-07-13)
 
 ## Corpus Check
-- 139 files · ~230,393 words
+- 139 files · ~230,394 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `64cba804`
+- Built from commit: `f834da11`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -240,7 +240,7 @@ Nodes (14): ManifestoPage(), {Link, redirect, usePathname, useRouter, getPathnam
 
 ### Community 47 - "Community 47"
 Cohesion: 0.16
-Nodes (8): ContentHeader(), OG_LOCALE, Page(), SECTION, OG_LOCALE, SiteFooter(), Page(), SECTION
+Nodes (8): ContentHeader(), Page(), SECTION, OG_LOCALE, Page(), SECTION, OG_LOCALE, SiteFooter()
 
 ### Community 48 - "Community 48"
 Cohesion: 0.29
