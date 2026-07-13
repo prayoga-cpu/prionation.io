@@ -400,33 +400,44 @@ Add `INDEXNOW_KEY` as a repo secret. Expand `urlList` with the pages you changed
 
 ## D8 · Thin-content check
 
+> **Audit finding (2026-07-13, Claude): the suspected pages aren't thin. No content edits made.** Word-counted every indexable page's actual body copy (`tldr` + `intro` + `sections[].body` + `faq[].a`, i.e. real prose, not markup) across all 3 locales:
+> - All 15 published cluster articles: 671–2,543 words. Comfortably clear.
+> - Manifesto: 554 words. Glossary: 732 words. Anchor: 1,165 words. Privacy: 471–609 words (by locale). All clear — contrary to the "Why" above, manifesto and glossary are **not** the thin ones.
+> - Every page checked has a non-empty, unique `h1` and `tldr`/summary block — second acceptance box already true everywhere checked.
+>
+> Two real exceptions, both judgment calls I didn't act on unilaterally:
+> - **`/discord` — 205 words.** But it's a recruitment/community CTA landing page (contest announcements, talent-pool signup), not an article — a different page type than what D8's "Why" is worried about. Padding it with generic prose to hit 300 words would hurt the page's actual job. Options: leave as-is (low risk, single page), or add `noindex` since it's not meant to rank for informational search anyway. Your call.
+> - **The 5 section-index pages** (`/frameworks`, `/guides`, etc.) have very little unique prose (just the one-sentence description + card previews, which reuse *other* pages' text) — but they're hub/listing pages, a normal, widely-accepted pattern, not doorway pages. A genuine improvement would be a short, real 2-3 sentence intro per section (grounded in what's actually true, e.g. methodology's four real principles) — but that's 5 sections × 3 locales of new marketing copy, which is a brand-voice decision I didn't want to make unilaterally. Flagging as a possible follow-up, not doing it without your steer.
+
 **Why:** "Crawled, currently not indexed" often means Google judged a page too thin. Sub-pages like manifesto and glossary entries are the usual suspects.
 
 **Steps:**
-- [ ] List every page under ~300 words of unique body copy
-- [ ] Merge, expand, or `noindex` anything that can't stand alone
-- [ ] Ensure each page carries at least one first-party, PRIONATION-specific fact (not generic AI filler)
+- [x] List every page under ~300 words of unique body copy — done, see finding above (`/discord` + the 5 index pages)
+- [ ] Merge, expand, or `noindex` anything that can't stand alone — judgment call, not acted on (see above)
+- [x] Ensure each page carries at least one first-party, PRIONATION-specific fact (not generic AI filler) — true for every cluster article (each ties to real showcase clients, real pricing, real methodology)
 
 **Acceptance:**
-- [ ] No indexable page under 300 words
-- [ ] Each page has a unique H1 and a TL;DR / summary block
+- [ ] No indexable page under 300 words — **false**, `/discord` + 5 section indices are under, by design (see finding)
+- [x] Each page has a unique H1 and a TL;DR / summary block — verified true everywhere checked
 
 ---
 
 ## D9 · Refresh `llms.txt`
+
+> **Audit finding (2026-07-13, Claude): already fully accurate, no changes needed.** Fetched the live `https://www.prionation.io/llms.txt` and diffed it byte-for-byte against the local `public/llms.txt` — **identical**. Cross-checked every claim in it against the actual codebase: all 15 published article links match the real manifest exactly (no dead/draft URLs, nothing missing); the pricing block (Diagnostic €5-7K, Build €25-55K, Retainer €4-9K/mo, Express Site €1.5K) matches `lib/seo/site.ts`'s `OFFERS` — the source of truth — figure for figure. Spot-checked 10 of the linked URLs live (across all 3 locales, including the D7-fixed `guides/scoping-ai-build-engagement`): all 200.
 
 **Why:** AI crawlers should be pointed only at live, indexed URLs, and at the corrected titles.
 
 **Files:** `public/llms.txt`
 
 **Steps:**
-- [ ] Remove any dead or draft URLs
-- [ ] List only live, indexed pages with their new unique titles
-- [ ] Confirm pricing block lists all 4 SKUs in EUR
+- [x] Remove any dead or draft URLs — none found
+- [x] List only live, indexed pages with their new unique titles — already accurate
+- [x] Confirm pricing block lists all 4 SKUs in EUR — verified against `lib/seo/site.ts` OFFERS
 
 **Acceptance:**
-- [ ] `curl https://www.prionation.io/llms.txt` returns 200, accurate content
-- [ ] No links to unindexed or 404 routes
+- [x] `curl https://www.prionation.io/llms.txt` returns 200, accurate content — verified live 2026-07-13
+- [x] No links to unindexed or 404 routes — 10-URL live spot check, all 200
 
 ---
 
