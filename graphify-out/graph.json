@@ -387,7 +387,7 @@
       "label": "D9 \u00b7 Refresh `llms.txt`",
       "file_type": "document",
       "source_file": "TODO.md",
-      "source_location": "L416",
+      "source_location": "L425",
       "_origin": "ast",
       "id": "todo_d9_refresh_llms_txt",
       "community": 13,
@@ -397,7 +397,7 @@
       "label": "Sprint definition of done",
       "file_type": "document",
       "source_file": "TODO.md",
-      "source_location": "L433",
+      "source_location": "L444",
       "_origin": "ast",
       "id": "todo_sprint_definition_of_done",
       "community": 13,
@@ -407,7 +407,7 @@
       "label": "Explicitly out of scope (handled elsewhere)",
       "file_type": "document",
       "source_file": "TODO.md",
-      "source_location": "L445",
+      "source_location": "L456",
       "_origin": "ast",
       "id": "todo_explicitly_out_of_scope_handled_elsewhere",
       "community": 13,
@@ -22667,5 +22667,5 @@
       "source_file": "public/work/expeditoo.png"
     }
   ],
-  "built_at_commit": "1224262fa7d4601fc180b46e38b05749f01c2cad"
+  "built_at_commit": "52591de0fedc56fb9ee0fec12824392e2bbed841"
 }

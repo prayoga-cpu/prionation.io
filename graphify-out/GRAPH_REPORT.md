@@ -1,7 +1,7 @@
 # Graph Report - prionation.io  (2026-07-13)
 
 ## Corpus Check
-- 139 files · ~231,026 words
+- 139 files · ~231,461 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1224262f`
+- Built from commit: `52591de0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
