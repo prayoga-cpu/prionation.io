@@ -8,6 +8,11 @@ const limiters: Record<string, Ratelimit> = {
   booking: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(3, '1 h') }),
   career: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(3, '1 h') }),
   waitlist: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(5, '1 h') }),
+  // AI consultation chat: 20 messages/h/IP ≈ two full 10-turn conversations.
+  consult: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(20, '1 h') }),
+  // Guided-intake PDF diagnostic: heavier per-call cost (web fetch + PDF
+  // render), so a tighter cap than the chat.
+  diagnostic: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(6, '1 h') }),
 };
 
 export async function rateLimit(form: keyof typeof limiters, ip: string) {

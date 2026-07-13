@@ -144,11 +144,26 @@ export function DiagnosticTab({ setSubmitted }: { setSubmitted: (b: boolean) => 
     if (!validate(REQUIRED)) return;
     setLoading(true);
     const attribution = getAttribution();
+    // Transcript handed off from the AI Consultation chat (Hero / /consult) —
+    // appended to "Tried So Far" in Notion; cleared only after a successful submit.
+    let consultSummary: string | undefined;
+    try {
+      consultSummary = sessionStorage.getItem("pn_consult_summary")?.slice(0, 4000) || undefined;
+    } catch {
+      /* storage unavailable — submit proceeds without the transcript */
+    }
     try {
       const res = await fetch("/api/forms/intake", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "intake", ...form, ...attribution, turnstileToken, honeypot }),
+        body: JSON.stringify({
+          type: "intake",
+          ...form,
+          ...attribution,
+          ...(consultSummary ? { consultSummary } : {}),
+          turnstileToken,
+          honeypot,
+        }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -177,6 +192,11 @@ export function DiagnosticTab({ setSubmitted }: { setSubmitted: (b: boolean) => 
         );
       } catch (e) {
         console.warn("[intake] analytics event failed", e);
+      }
+      try {
+        sessionStorage.removeItem("pn_consult_summary");
+      } catch {
+        /* ignore */
       }
       setSubmitted(true);
     } catch (err) {

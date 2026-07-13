@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { m } from "framer-motion";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Icon } from "./icons";
@@ -13,7 +14,41 @@ import { getAttribution } from "@/lib/analytics/attribution";
 const isDev = process.env.NODE_ENV !== "production";
 const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
 
-export function NotifyModal({ onClose }: { onClose: () => void }) {
+// "launch" is the original AI-Consultation launch waitlist (default, unchanged).
+// "fable5" captures premium-model interest: the consultation runs on Opus 4.8,
+// and the locked Claude Fable 5 option routes here instead of calling any API.
+type NotifyVariant = "launch" | "fable5";
+
+const COPY: Record<
+  NotifyVariant,
+  { eyebrow: string; heading: string; body: string; doneNote: string; sourceFeature: string }
+> = {
+  launch: {
+    eyebrow: "COMING AUGUST 2026",
+    heading: "AI Consultation",
+    body:
+      "AI Consultation goes live in August 2026. What you just ran is an early prototype — a preview of how the real diagnostic will work. Leave your email and we'll ping you the moment it's ready.",
+    doneNote: "the moment AI Consultation is live.",
+    sourceFeature: "AI Consultation",
+  },
+  fable5: {
+    eyebrow: "PREMIUM ACCESS",
+    heading: "Claude Fable 5",
+    body:
+      "The consultation currently runs on Claude Opus 4.8. Claude Fable 5 — Anthropic's most capable model — is planned as a premium option. Leave your email and we'll notify you when Fable 5 access opens.",
+    doneNote: "when Claude Fable 5 access opens.",
+    sourceFeature: "AI Consultation — Claude Fable 5",
+  },
+};
+
+export function NotifyModal({
+  onClose,
+  variant = "launch",
+}: {
+  onClose: () => void;
+  variant?: NotifyVariant;
+}) {
+  const copy = COPY[variant];
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
   const [apiError, setApiError] = useState("");
@@ -49,7 +84,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
         body: JSON.stringify({
           type: "waitlist",
           email,
-          sourceFeature: "AI Consultation",
+          sourceFeature: copy.sourceFeature,
           turnstileToken,
           honeypot,
         }),
@@ -61,7 +96,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
         setTurnstileToken(isDev ? "dev-bypass" : "");
         return;
       }
-      trackEvent("waitlist_submit", { sourceFeature: "AI Consultation", channel: getAttribution().channel ?? "unknown" });
+      trackEvent("waitlist_submit", { sourceFeature: copy.sourceFeature, channel: getAttribution().channel ?? "unknown" });
       setDone(true);
     } catch {
       setApiError("Network error. Please try again.");
@@ -72,7 +107,11 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
     }
   };
 
-  return (
+  // Portalled to <body> (mirrors DiagShell in Hero.tsx) so this fixed-position
+  // modal escapes any ancestor stacking context (e.g. Hero's `relative z-[4]`
+  // wrapper) instead of being capped beneath it.
+  if (typeof document === "undefined") return null;
+  return createPortal(
     <>
       {/* Backdrop */}
       <m.div
@@ -99,9 +138,9 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
         >
           <div className="flex items-start justify-between gap-4 mb-5 relative z-20">
             <div>
-              <Eyebrow className="whitespace-nowrap !text-[8px] sm:!text-[10px]">COMING AUGUST 2026</Eyebrow>
+              <Eyebrow className="whitespace-nowrap !text-[8px] sm:!text-[10px]">{copy.eyebrow}</Eyebrow>
               <h3 className="font-sans font-extrabold text-[22px] tracking-[-0.018em] text-white mt-3 mb-0">
-                AI Consultation
+                {copy.heading}
               </h3>
             </div>
             <button
@@ -128,9 +167,7 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
           {!done ? (
             <>
               <p className="text-soft text-[14px] leading-[1.6] mb-5 mx-0 mt-0 relative z-20">
-                AI Consultation goes live in August 2026. What you just ran is an
-                early prototype — a preview of how the real diagnostic will work.
-                Leave your email and we&apos;ll ping you the moment it&apos;s ready.
+                {copy.body}
               </p>
               <input
                 type="email"
@@ -176,12 +213,12 @@ export function NotifyModal({ onClose }: { onClose: () => void }) {
               className="text-soft text-[14px] leading-[1.6] mb-5 mx-0 mt-0 relative z-20"
             >
               Done — we&apos;ll email{" "}
-              <span className="text-accent">{email}</span> the moment AI
-              Consultation is live.
+              <span className="text-accent">{email}</span> {copy.doneNote}
             </m.p>
           )}
         </m.div>
       </div>
-    </>
+    </>,
+    document.body,
   );
 }

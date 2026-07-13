@@ -19,6 +19,24 @@ function referralSourceText(p: IntakePayload): string {
   return [human, machine].filter(Boolean).join(' · ');
 }
 
+// Fold an AI Consultation transcript (handoff) into "Tried So Far" — same
+// no-new-Notion-column philosophy as referralSourceText above.
+function triedSoFarText(p: IntakePayload): string {
+  const base = (p.triedSoFar ?? '').trim();
+  const summary = (p.consultSummary ?? '').trim();
+  if (!summary) return base;
+  return [base, `[AI Consult transcript]\n${summary}`].filter(Boolean).join('\n\n');
+}
+
+// Notion caps each rich_text item at 2000 chars — chunk longer content.
+function toRichTextChunks(content: string) {
+  const chunks: { text: { content: string } }[] = [];
+  for (let i = 0; i < content.length; i += 2000) {
+    chunks.push({ text: { content: content.slice(i, i + 2000) } });
+  }
+  return chunks.length ? chunks : [{ text: { content: '' } }];
+}
+
 export function intakeToNotionProperties(p: IntakePayload) {
   return {
     'Company': { title: [{ text: { content: p.company } }] },
@@ -27,7 +45,7 @@ export function intakeToNotionProperties(p: IntakePayload) {
     'Location': { rich_text: [{ text: { content: p.basedIn } }] },
     'Revenue Stage': { select: { name: p.stage } },
     'Bottleneck': { rich_text: [{ text: { content: p.bottleneck } }] },
-    'Tried So Far': { rich_text: [{ text: { content: p.triedSoFar ?? '' } }] },
+    'Tried So Far': { rich_text: toRichTextChunks(triedSoFarText(p)) },
     'Why Now': { rich_text: [{ text: { content: p.whyNow } }] },
     'Budget Confirmed': { select: { name: p.budget } },
     'Start Window': { select: { name: p.startWindow } },

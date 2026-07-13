@@ -158,6 +158,9 @@ SUPABASE_STORAGE_BUCKET=
 NEXT_PUBLIC_GA4_ID=            # GA4 Measurement ID, e.g. G-0D7HXGC7K3 (the "G-" prefix is auto-added if omitted)
 NEXT_PUBLIC_META_PIXEL_ID=    # Meta Pixel ID (optional)
 
+# Anthropic (AI Consultation — server-only, never NEXT_PUBLIC_)
+ANTHROPIC_API_KEY=
+
 # App
 PRIONATION_ENV=development     # set to "production" on Vercel
 

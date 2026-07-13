@@ -12,10 +12,16 @@ import {
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
-import { useTranslations } from "next-intl";
-import { m } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
+import { m, AnimatePresence } from "framer-motion";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { staggerFast, riseIn, fadeIn } from "@/lib/motion";
 import { formatUrlPath } from "@/lib/forms/format";
+import { useConsultChat, consultErrorKey } from "@/hooks/useConsultChat";
+import { ModelPicker } from "@/components/consult/ModelPicker";
+import { NotifyModal } from "@/components/NotifyModal";
+import { trackEvent } from "@/lib/analytics/events";
+import type { DiagnosticResult } from "@/lib/consult/prompt";
 
 /* ── blueprint palette (design-specific decorative blues, not theme tokens) ── */
 const INK = "#eaf2ff";
@@ -26,6 +32,10 @@ const LINE_STRONG = "rgba(150,180,255,0.22)";
 const SURFACE = "rgba(13,22,40,0.82)";
 const SURFACE_DEEP = "rgba(7,13,24,0.85)";
 const GREEN = "#58f287";
+
+// Same security gating as NotifyModal / DiagnosticForm.
+const isDev = process.env.NODE_ENV !== "production";
+const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
 
 type Pt = [number, number];
 
@@ -441,6 +451,8 @@ function goEngage(tab: "diagnostic" | "meet") {
 
 export function Hero({ onNotify }: { onNotify?: () => void }) {
   const t = useTranslations("Hero");
+  const tc = useTranslations("Consult");
+  const locale = useLocale();
   const titleLines = t.raw("title_lines") as string[];
   const typewriterWords = (t.raw("title_typewriter") as string[]) ?? [];
   const longestTypewriter = typewriterWords.reduce((a, b) => (b.length > a.length ? b : a), "");
@@ -454,7 +466,6 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
   const industries = t.raw("industries") as string[];
   const bottlenecks = t.raw("bottlenecks") as string[][];
   const stages = t.raw("stages") as string[];
-  const roi = t.raw("roi") as string[];
 
   const [path, setPath] = useState<Path>("intake");
   const [phase, setPhase] = useState<Phase>("idle");
@@ -464,17 +475,40 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
   const [stageIdx, setStageIdx] = useState(2);
   const [bottleneck, setBottleneck] = useState("");
   const [custom, setCustom] = useState("");
-  const [chat, setChat] = useState<Msg[]>([{ role: "ai", text: t("chat_initial") }]);
   const [draft, setDraft] = useState("");
-  const [chatStep, setChatStep] = useState(0);
   const [roadPhase, setRoadPhase] = useState(0);
-  const [aiThinking, setAiThinking] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [feed, setFeed] = useState<string[]>([]);
-  const [tokens, setTokens] = useState(0);
   const [elapsed, setElapsed] = useState(0);
   const [fieldErrors, setFieldErrors] = useState<{ website?: boolean; bottleneck?: boolean }>({});
+  // Real Claude-generated diagnostic (Guided Intake tab) — replaces the old
+  // templated/fabricated bottleneck+ROI copy. diagnosticPdf is the base64 PDF
+  // returned alongside it (see handoffToDiagnostic-adjacent downloadPdf below).
+  const [diagnosticResult, setDiagnosticResult] = useState<DiagnosticResult | null>(null);
+  const [diagnosticPdf, setDiagnosticPdf] = useState<string | null>(null);
+  const [diagnosticError, setDiagnosticError] = useState<string | null>(null);
   const [showIllustrations, setShowIllustrations] = useState(false);
+
+  // Real AI consultation chat — shared brain with the /consult page. The
+  // greeting stays a local, client-only message (never sent to the API).
+  const consult = useConsultChat({ locale, surface: "hero" });
+  const [turnstileToken, setTurnstileToken] = useState(!securityEnabled || isDev ? "dev-bypass" : "");
+  const turnstileRef = useRef<TurnstileInstance>(null);
+  const [fableOpen, setFableOpen] = useState(false);
+  const chatMsgs: Msg[] = [
+    { role: "ai", text: t("chat_initial") },
+    ...consult.messages.filter((mm) => !(mm.role === "ai" && mm.text === "")),
+  ];
+  const lastConsultMsg = consult.messages[consult.messages.length - 1];
+  const aiThinking =
+    consult.status === "streaming" &&
+    (!lastConsultMsg || lastConsultMsg.role !== "ai" || lastConsultMsg.text === "");
+  const { lastFailedText } = consult;
+
+  // A failed turn is rolled back by the hook — restore the text into the input.
+  useEffect(() => {
+    if (lastFailedText) setDraft((d) => d || lastFailedText);
+  }, [lastFailedText]);
 
   const transcriptRef = useRef<HTMLDivElement>(null);
   const timers = useRef<{ t?: ReturnType<typeof setTimeout>; ct?: ReturnType<typeof setTimeout> }>({});
@@ -523,9 +557,8 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
   useEffect(() => {
     const el = transcriptRef.current;
     if (el) el.scrollTop = el.scrollHeight;
-  }, [chat.length, aiThinking]);
+  }, [consult.messages, aiThinking]);
 
-  const appendAI = (text: string) => setChat((c) => [...c, { role: "ai", text }]);
   const clearGenTimers = () => {
     genTimers.current.forEach(clearTimeout);
     genTimers.current.length = 0;
@@ -534,42 +567,92 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
       genTick.current = undefined;
     }
   };
-  // Streams a Claude-terminal-style processing log while the diagnostic "runs",
-  // with a live token counter + elapsed timer, so the wait feels productive.
-  const runGen = () => {
+  // Calls the real diagnostic endpoint (Claude, optionally grounded in the
+  // visitor's site via web_fetch) and renders its structured result + a
+  // downloadable PDF. The status lines shown while waiting are a cosmetic
+  // "working…" indicator only — elapsed time is real (measured against the
+  // actual request), nothing here simulates findings or a token count.
+  const runDiagnostic = async () => {
     clearGenTimers();
     setPhase("loading");
     setFeed([]);
-    setTokens(0);
     setElapsed(0);
+    setDiagnosticError(null);
+    setDiagnosticResult(null);
+    setDiagnosticPdf(null);
+
+    const startedAt = Date.now();
     genTick.current = setInterval(() => {
-      setTokens((x) => x + 30 + Math.floor(Math.random() * 70));
-      setElapsed((x) => Math.round((x + 0.1) * 10) / 10);
+      setElapsed(Math.round((Date.now() - startedAt) / 100) / 10);
     }, 100);
-    const raw = path === "intake" ? website.trim() || effBn : firstUser;
-    const src = raw.length > 42 ? raw.slice(0, 42) + "…" : raw;
-    const steps = [t("feed_scraping", { src }), ...(t.raw("load_lines") as string[])];
-    steps.forEach((line, idx) => {
-      genTimers.current.push(setTimeout(() => setFeed((f) => [...f, line]), 300 + idx * 520));
+    (t.raw("load_lines") as string[]).forEach((line, idx) => {
+      genTimers.current.push(setTimeout(() => setFeed((f) => [...f, line]), 300 + idx * 900));
     });
-    genTimers.current.push(
-      setTimeout(
-        () => {
-          if (genTick.current) {
-            clearInterval(genTick.current);
-            genTick.current = undefined;
-          }
-          setPhase("done");
-          setAiThinking(false);
-          // diagnostic done → invite to the AI Consultation waitlist
-          genTimers.current.push(setTimeout(() => onNotify?.(), 1100));
-        },
-        300 + steps.length * 520 + 480,
-      ),
-    );
+
+    const usedToken = turnstileToken;
+    // Mint a fresh token in parallel — Turnstile tokens are single-use.
+    if (securityEnabled && !isDev) {
+      setTurnstileToken("");
+      turnstileRef.current?.reset();
+    }
+
+    try {
+      const res = await fetch("/api/consult/diagnostic", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          website: website.trim() || undefined,
+          industry: industries[industryIdx] || industries[industries.length - 1],
+          stage: stages[stageIdx],
+          bottleneck: custom.trim() || bottleneck || t("bottleneck_fallback"),
+          locale,
+          turnstileToken: usedToken,
+        }),
+      });
+      clearGenTimers();
+      if (!res.ok) {
+        const payload = await res.json().catch(() => null);
+        setDiagnosticError(payload?.error?.code ?? "generic");
+        setPhase("idle");
+        return;
+      }
+      const data = await res.json();
+      setDiagnosticResult(data.diagnostic);
+      setDiagnosticPdf(data.pdfBase64);
+      setPhase("done");
+      trackEvent("diagnostic_generated", {
+        surface: "hero",
+        recommendedOffer: data.diagnostic?.recommendedOffer ?? "unknown",
+      });
+      // diagnostic done → invite to the AI Consultation waitlist
+      genTimers.current.push(setTimeout(() => onNotify?.(), 1100));
+    } catch {
+      clearGenTimers();
+      setDiagnosticError("generic");
+      setPhase("idle");
+    }
   };
 
-  // Guided-intake gate: every fillable field is required before a run.
+  const downloadDiagnosticPdf = () => {
+    if (!diagnosticPdf) return;
+    const bytes = Uint8Array.from(atob(diagnosticPdf), (c) => c.charCodeAt(0));
+    const blob = new Blob([bytes], { type: "application/pdf" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "prionation-ai-diagnostic.pdf";
+    a.style.display = "none";
+    // The anchor must be attached to the DOM for some browsers to honor the
+    // `download` filename — otherwise the file saves as the blob's raw UUID
+    // with no extension (and won't open, since nothing recognizes it as a PDF).
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    trackEvent("diagnostic_pdf_download", { surface: "hero" });
+  };
+
+  // Guided-intake gate: every fillable field (plus Turnstile) is required.
   const submitIntake = () => {
     const errs: { website?: boolean; bottleneck?: boolean } = {};
     if (!website.trim()) errs.website = true;
@@ -578,78 +661,73 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
       setFieldErrors(errs);
       return;
     }
+    if (securityEnabled && !isDev && !turnstileToken) return;
     setFieldErrors({});
-    runGen();
+    void runDiagnostic();
   };
 
-  const canSend = !!draft.trim() && phase !== "loading" && !aiThinking;
+  // Turnstile is required on every turn (tokens are single-use — see below).
+  const awaitingToken = securityEnabled && !isDev && !turnstileToken;
+  const canSend =
+    !!draft.trim() &&
+    phase !== "loading" &&
+    consult.status !== "streaming" &&
+    !consult.limitReached &&
+    !awaitingToken;
   const doSend = () => {
     const d = draft.trim();
-    if (!d || phase === "loading" || aiThinking) return;
-    const step = chatStep + 1;
-    setChat((c) => [...c, { role: "user", text: d }]);
+    if (!canSend || !d) return;
     setDraft("");
-    setChatStep(step);
-    setAiThinking(true);
-    clearTimeout(timers.current.ct);
-    timers.current.ct = setTimeout(() => {
-      if (step === 1) {
-        appendAI(t("chat_q1"));
-        setAiThinking(false);
-      } else if (step === 2) {
-        appendAI(t("chat_q2"));
-        setAiThinking(false);
-      } else {
-        appendAI(t("chat_final"));
-        setTimeout(() => runGen(), 650);
-      }
-    }, 600);
+    const usedToken = turnstileToken;
+    // Mint a fresh token for the next turn in parallel with this request —
+    // Turnstile tokens are single-use, so re-sending the same one would 403.
+    if (securityEnabled && !isDev) {
+      setTurnstileToken("");
+      turnstileRef.current?.reset();
+    }
+    void consult.send(d, usedToken);
   };
-  const stopChat = () => {
-    clearTimeout(timers.current.t);
-    clearTimeout(timers.current.ct);
-    clearGenTimers();
-    setPhase("idle");
-    setFeed([]);
-    setAiThinking(false);
+  const handoffToDiagnostic = () => {
+    try {
+      sessionStorage.setItem("pn_consult_summary", consult.transcriptText());
+    } catch {
+      /* storage unavailable — handoff still works, summary just isn't carried */
+    }
+    trackEvent("consult_handoff_click", { surface: "hero" });
+    goEngage("diagnostic");
   };
 
   // ── derived view data ──
-  const industryLabel = industries[industryIdx] || industries[industries.length - 1];
   const bnList = bottlenecks[industryIdx] || bottlenecks[bottlenecks.length - 1];
-  const effBn = custom.trim() || bottleneck || t("bottleneck_fallback");
-  const firstUser = chat.find((m) => m.role === "user")?.text || t("chat_fallback");
-  const chatGenerating = phase === "loading" || aiThinking;
+  const chatGenerating = consult.status === "streaming";
 
+  // Preview panel is intake-only now: the chat's real replies stream inline
+  // in its own transcript above (see the CHAT WITH AI block), so `phase`
+  // (loading/done) is only ever driven by runDiagnostic — nothing sets it
+  // while path === "chat".
   type Line = { text: string; style: CSSProperties };
   let lines: Line[];
   if (phase === "idle") {
-    const idle = t.raw("preview_idle") as string[];
-    lines = [
-      { text: idle[0], style: mutedStyle },
-      { text: idle[1], style: { color: "rgba(150,180,255,0.35)", fontSize: 14, lineHeight: 1.8 } },
-    ];
-  } else if (phase === "loading") {
+    if (diagnosticError) {
+      lines = [{ text: tc(consultErrorKey(diagnosticError)), style: { ...bodyStyle, color: "var(--c-accent)" } }];
+    } else {
+      const idle = t.raw("preview_idle") as string[];
+      lines = [
+        { text: idle[0], style: mutedStyle },
+        { text: idle[1], style: { color: "rgba(150,180,255,0.35)", fontSize: 14, lineHeight: 1.8 } },
+      ];
+    }
+  } else if (phase === "loading" || !diagnosticResult) {
     lines = []; // the streamed terminal feed is rendered separately (see preview panel)
-  } else if (path === "intake") {
-    lines = [
-      { text: `✓ ${t("feed_thought", { sec: elapsed.toFixed(1) })} · ${t("feed_tokens", { n: tokens.toLocaleString() })}`, style: { ...monoStyle, color: GREEN } },
-      { text: t("result_bottleneck_label"), style: eyebrowStyle },
-      { text: t("result_bottleneck_intake", { bn: effBn }), style: bodyStyle },
-      { text: t("result_path_label"), style: eyebrowStyle },
-      { text: t("result_path_intake", { industry: industryLabel }), style: bodyStyle },
-      { text: t("result_roi_label"), style: eyebrowStyle },
-      { text: roi[stageIdx] || roi[2], style: valueStyle },
-    ];
   } else {
     lines = [
-      { text: `✓ ${t("feed_thought", { sec: elapsed.toFixed(1) })} · ${t("feed_tokens", { n: tokens.toLocaleString() })}`, style: { ...monoStyle, color: GREEN } },
+      { text: `✓ ${t("feed_thought", { sec: elapsed.toFixed(1) })}`, style: { ...monoStyle, color: GREEN } },
       { text: t("result_bottleneck_label"), style: eyebrowStyle },
-      { text: t("result_bottleneck_chat", { q: firstUser }), style: bodyStyle },
+      { text: diagnosticResult.bottleneckSummary, style: bodyStyle },
       { text: t("result_path_label"), style: eyebrowStyle },
-      { text: t("result_path_chat"), style: bodyStyle },
+      { text: `${diagnosticResult.recommendedOffer} — ${diagnosticResult.pathSummary}`, style: bodyStyle },
       { text: t("result_roi_label"), style: eyebrowStyle },
-      { text: t("result_roi_chat"), style: valueStyle },
+      { text: diagnosticResult.roiEstimateLabel, style: valueStyle },
     ];
   }
   const fileName = path === "intake" ? t("file_intake") : t("file_chat");
@@ -848,6 +926,19 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                 <button onClick={() => setPath("chat")} style={tabStyle(path === "chat")}>{t("tab_chat")}</button>
               </div>
 
+              {/* Mounted unconditionally (not tab-scoped) — both the Guided
+                  Intake diagnostic and the chat need a token, and a widget
+                  nested inside one tab's JSX wouldn't exist while the other
+                  tab is active. */}
+              {securityEnabled && !isDev && (
+                <Turnstile
+                  ref={turnstileRef}
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                  options={{ size: "invisible" }}
+                  onSuccess={(token) => setTurnstileToken(token)}
+                />
+              )}
+
               {/* ── GUIDED INTAKE ── */}
               {path === "intake" && (
                 <div style={{ display: "flex", flexDirection: "column", gap: 13, textAlign: "left" }}>
@@ -903,9 +994,21 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                     {fieldErrors.bottleneck && <span style={errorLabel}>{t("required")}</span>}
                   </div>
 
-                  <button onClick={submitIntake} style={{ height: 50, background: "var(--c-accent)", color: "#fff", border: "none", borderRadius: 12, fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 15, cursor: "pointer", marginTop: 2 }}>
+                  <button
+                    onClick={submitIntake}
+                    disabled={phase === "loading" || (securityEnabled && !isDev && !turnstileToken)}
+                    style={{ height: 50, background: "var(--c-accent)", color: "#fff", border: "none", borderRadius: 12, fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 15, cursor: phase === "loading" ? "default" : "pointer", marginTop: 2, opacity: phase === "loading" ? 0.7 : 1 }}
+                  >
                     {phase === "loading" ? t("analyzing") : t("generate")}
                   </button>
+                  {phase === "done" && diagnosticPdf && (
+                    <button
+                      onClick={downloadDiagnosticPdf}
+                      style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, height: 46, background: "transparent", color: "var(--c-fg)", border: "1px solid var(--c-accent)", borderRadius: 12, fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 14, cursor: "pointer" }}
+                    >
+                      {t("download_pdf")} <span style={{ fontSize: 12, opacity: 0.8 }}>↓</span>
+                    </button>
+                  )}
                 </div>
               )}
 
@@ -913,7 +1016,7 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
               {path === "chat" && (
                 <div style={{ display: "flex", flexDirection: "column", gap: 11, textAlign: "left" }}>
                   <div ref={transcriptRef} className="pio-chat-scroll" style={{ display: "flex", flexDirection: "column", gap: 8, maxHeight: 172, overflowY: "auto", padding: "4px 2px" }}>
-                    {chat.map((mm, i) => {
+                    {chatMsgs.map((mm, i) => {
                       const u = mm.role === "user";
                       return (
                         <div key={i} style={{ display: "flex", justifyContent: u ? "flex-end" : "flex-start" }}>
@@ -949,18 +1052,41 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                     )}
                   </div>
 
+                  {(consult.error || consult.notice) && (
+                    <div style={{ fontFamily: "var(--font-pixel)", fontSize: 8, letterSpacing: "0.12em", color: "var(--c-accent)", textTransform: "uppercase", lineHeight: 1.8, padding: "0 2px" }}>
+                      {consult.error
+                        ? tc(consultErrorKey(consult.error))
+                        : tc(consult.notice === "refusal" ? "error_refusal" : "error_truncated")}
+                    </div>
+                  )}
+                  {consult.limitReached && (
+                    <div style={{ fontSize: 12, color: "var(--c-muted)", padding: "0 2px" }}>{t("chat_limit_note")}</div>
+                  )}
+                  {(consult.turnsUsed >= 3 || consult.limitReached) && !chatGenerating && (
+                    <button
+                      onClick={handoffToDiagnostic}
+                      style={{ alignSelf: "flex-start", display: "flex", alignItems: "center", gap: 7, background: "rgba(88,101,242,0.12)", color: "var(--c-fg)", border: "1px solid var(--c-accent)", borderRadius: 10, padding: "8px 14px", fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 13, cursor: "pointer" }}
+                    >
+                      {t("chat_handoff_cta")} <span style={{ fontSize: 11, opacity: 0.8 }}>→</span>
+                    </button>
+                  )}
+
                   {/* composer */}
                   <div style={{ background: SURFACE_DEEP, border: `1px solid ${LINE}`, borderRadius: 14, padding: "13px 13px 10px" }}>
-                    <input aria-label={t("chat_input_label")} className="pio-input" type="text" value={draft} onChange={(e: ChangeEvent<HTMLInputElement>) => setDraft(e.target.value)} onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => { if (e.key === "Enter") { e.preventDefault(); doSend(); } }} placeholder={chatStep === 0 ? t("chat_placeholder_initial") : t("chat_placeholder_reply")} style={{ width: "100%", background: "transparent", border: "none", color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14, height: 24 }} />
+                    <input aria-label={t("chat_input_label")} className="pio-input" type="text" value={draft} disabled={consult.limitReached} onChange={(e: ChangeEvent<HTMLInputElement>) => setDraft(e.target.value)} onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => { if (e.key === "Enter") { e.preventDefault(); doSend(); } }} placeholder={consult.turnsUsed === 0 ? t("chat_placeholder_initial") : t("chat_placeholder_reply")} style={{ width: "100%", background: "transparent", border: "none", color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14, height: 24, opacity: consult.limitReached ? 0.5 : 1 }} />
                     <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 10 }}>
-                      <button style={{ display: "flex", alignItems: "center", gap: 7, background: "transparent", border: "none", color: "var(--c-soft)", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 500, cursor: "pointer", padding: "5px 8px", borderRadius: 8, whiteSpace: "nowrap", flex: "none" }}>
-                        <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--c-accent)", boxShadow: "0 0 6px var(--c-accent)", flex: "none" }} />
-                        {t("model")}
-                        <span style={{ color: "var(--c-muted)", fontSize: 9 }}>▾</span>
-                      </button>
+                      <ModelPicker
+                        opusLabel={t("model")}
+                        fableLabel={t("model_fable5")}
+                        lockedNote={t("model_locked")}
+                        onFable5Click={() => {
+                          trackEvent("consult_fable5_waitlist_click", { surface: "hero" });
+                          setFableOpen(true);
+                        }}
+                      />
                       <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 8 }}>
                         {chatGenerating ? (
-                          <button onClick={stopChat} title="Stop" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 42, height: 42, background: "transparent", border: "1px solid var(--c-line-soft)", borderRadius: 11, color: "var(--c-soft)", cursor: "pointer" }}>
+                          <button onClick={() => consult.stop()} title={tc("stop")} style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 42, height: 42, background: "transparent", border: "1px solid var(--c-line-soft)", borderRadius: 11, color: "var(--c-soft)", cursor: "pointer" }}>
                             <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><rect x="5" y="5" width="14" height="14" rx="2.5" /></svg>
                           </button>
                         ) : (
@@ -1033,7 +1159,7 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                       </g>
                     </svg>
                     <span>{t("feed_thinking")}</span>
-                    <span style={{ color: "var(--c-muted)" }}>· {t("feed_tokens", { n: tokens.toLocaleString() })} · {elapsed.toFixed(1)}s</span>
+                    <span style={{ color: "var(--c-muted)" }}>· {elapsed.toFixed(1)}s</span>
                     <span className="pio-caret" style={{ color: "var(--c-accent)" }}>▍</span>
                   </div>
                 </div>
@@ -1045,6 +1171,11 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
             </div>
           </div>
         </DiagShell>
+
+        {/* Fable 5 premium ask → waitlist capture (no API call, no payment yet) */}
+        <AnimatePresence>
+          {fableOpen && <NotifyModal variant="fable5" onClose={() => setFableOpen(false)} />}
+        </AnimatePresence>
 
         {/* ───── PROOF STATS ───── (scales down to fit on mobile) */}
         <ScaleToFit>

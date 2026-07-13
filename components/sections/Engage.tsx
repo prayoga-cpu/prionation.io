@@ -44,6 +44,14 @@ export function Engage() {
       else if (hash.includes("tab=diagnostic")) setActiveTab("Diagnostic");
     };
     handleHash();
+    // On first mount only: a cross-page link (e.g. the AI Consultation handoff
+    // CTA on /consult) sets the hash and navigates here in one step, so — unlike
+    // goEngage()'s same-page hash+scroll pair — nothing has scrolled this
+    // section into view yet. Same-page hash changes (goEngage) already scroll
+    // themselves, so this would only double it; scope to mount.
+    if (/tab=(meet|careers|diagnostic)/.test(window.location.hash)) {
+      document.getElementById("engage")?.scrollIntoView({ behavior: "smooth" });
+    }
     window.addEventListener("hashchange", handleHash);
     return () => window.removeEventListener("hashchange", handleHash);
   }, []);

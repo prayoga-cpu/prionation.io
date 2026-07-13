@@ -16,6 +16,9 @@ export const intakeSchema = z.object({
   budget: z.enum(['Yes', 'Need to confirm with team', 'Not yet']),
   startWindow: z.enum(['Within 30 days', '30–90 days', 'Exploring']),
   source: z.string().max(200).optional().default(''),
+  // Transcript of a preceding AI Consultation chat (handoff CTA) — appended to
+  // "Tried So Far" in Notion, never a new column.
+  consultSummary: z.string().max(4000).optional(),
   // Machine attribution — auto-captured client-side (lib/analytics/attribution).
   // All optional, no PII; folded into the "Referral Source" Notion field.
   utmSource: z.string().max(200).optional(),
@@ -68,6 +71,7 @@ export const waitlistSchema = z.object({
   email: z.string().email(),
   sourceFeature: z.enum([
     'AI Consultation',
+    'AI Consultation — Claude Fable 5',
     'Express Site',
     'Foundation Stats',
     'Intelligence Briefings',
