@@ -1,7 +1,7 @@
 # Graph Report - prionation.io  (2026-07-13)
 
 ## Corpus Check
-- 139 files · ~230,394 words
+- 139 files · ~231,026 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f834da11`
+- Built from commit: `1224262f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -175,8 +175,8 @@ Cohesion: 0.07
 Nodes (22): Consent, setConsent(), usePixelAllowed(), useShowConsentBanner(), ConsentBanner(), OrganizationSchema(), PEOPLE, ServiceSchema() (+14 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.10
-Nodes (20): generateStaticParams(), ArticleSidebar(), SECTION_LABEL, SECTIONS, getAllSlugs(), getPublishedPages(), PageAudience, PageMeta (+12 more)
+Cohesion: 0.13
+Nodes (15): generateStaticParams(), ArticleSidebar(), SECTION_LABEL, SECTIONS, getAllSlugs(), getPublishedPages(), PageAudience, PageMeta (+7 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.06
@@ -239,15 +239,15 @@ Cohesion: 0.13
 Nodes (14): ManifestoPage(), {Link, redirect, usePathname, useRouter, getPathname}, routing, config, CONSENT_REQUIRED, intlMiddleware, proxy(), pagesEn (+6 more)
 
 ### Community 47 - "Community 47"
-Cohesion: 0.16
-Nodes (8): ContentHeader(), Page(), SECTION, OG_LOCALE, Page(), SECTION, OG_LOCALE, SiteFooter()
+Cohesion: 0.11
+Nodes (13): ContentHeader(), SectionIndex(), Page(), SECTION, OG_LOCALE, Page(), SECTION, Page() (+5 more)
 
 ### Community 48 - "Community 48"
 Cohesion: 0.29
 Nodes (6): CADENCE, DISTRIBUTION REPURPOSER — prionation.io, GROUND TRUTH, MEASUREMENT, PIPELINE (one run = ONE page repurposed), STAGE (current = A)
 
 ## Knowledge Gaps
-- **267 isolated node(s):** `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE`, `SECTION` (+262 more)
+- **267 isolated node(s):** `The problem in one line`, `How to work this file`, `Priority + sequencing`, `D1 · Unique title + meta description per page, per locale`, `D2 · Canonical + hreflang on every page` (+262 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -264,7 +264,7 @@ _Questions this graph is uniquely positioned to answer:_
   _`getPublishedPages()` has 5 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 26 inferred relationships involving `T` (e.g. with `generateMetadata()` and `Header()`) actually correct?**
   _`T` has 26 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE` to the rest of the system?**
+- **What connects `The problem in one line`, `How to work this file`, `Priority + sequencing` to the rest of the system?**
   _267 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Form Submission & Backend` be split into smaller, more focused modules?**
   _Cohesion score 0.06922675026123302 - nodes in this community are weakly interconnected._
