@@ -281,15 +281,17 @@ landingLocale: z.string().max(10).optional(),
 
 ## D4 · Link GA4 to Google Ads, import the lead conversion
 
+> **Audit finding (2026-07-13, Claude):** the 2 code steps are already shipped — `DiagnosticForm.tsx` fires `trackEvent("intake_submit", …)` on success, then `trackEvent(disq.disqualified ? "intake_disqualified" : "intake_qualified", …)` using `evaluateDisqualification()`, exactly as specified. **Everything else in this task is GA4/Google Ads console configuration — I don't have access to your GA4 or Ads accounts, so I can't do any of it.** The 4 unchecked console steps below are the actual remaining work.
+
 **Why:** The 3M IDR credit can't optimize toward leads without an imported conversion. GA4 already fires events (`lib/analytics/events.ts`); this connects them to Ads.
 
 **Steps (mostly console, some code):**
-- [ ] Confirm `trackEvent('intake_submit', …)` fires on intake success in `DiagnosticForm`
-- [ ] Also fire `intake_qualified` / `intake_disqualified` using the `evaluateDisqualification` result (quality, not just volume)
-- [ ] In GA4 → Admin → Events, mark `intake_submit` as a key event (conversion)
-- [ ] Link GA4 property to the Google Ads account (GA4 Admin → Product links → Google Ads)
-- [ ] Import `intake_submit` as a conversion in Google Ads
-- [ ] Only then switch the campaign bid strategy from Maximize Clicks to Conversions
+- [x] Confirm `trackEvent('intake_submit', …)` fires on intake success in `DiagnosticForm` — verified in code
+- [x] Also fire `intake_qualified` / `intake_disqualified` using the `evaluateDisqualification` result (quality, not just volume) — verified in code
+- [ ] In GA4 → Admin → Events, mark `intake_submit` as a key event (conversion) — **you need to do this**
+- [ ] Link GA4 property to the Google Ads account (GA4 Admin → Product links → Google Ads) — **you need to do this**
+- [ ] Import `intake_submit` as a conversion in Google Ads — **you need to do this**
+- [ ] Only then switch the campaign bid strategy from Maximize Clicks to Conversions — **you need to do this**
 
 **Acceptance:**
 - [ ] `intake_submit` shows as a conversion action in Google Ads
@@ -299,6 +301,10 @@ landingLocale: z.string().max(10).optional(),
 ---
 
 ## D5 · IndexNow (clears Bing's High flag, instant re-crawl)
+
+> **Audit finding (2026-07-13, Claude): already fully shipped, and better than this spec.** `.github/workflows/indexnow.yml` and `scripts/indexnow.mjs` were committed on 2026-06-27/07-04 (commits `013596c`, `93eca96`) — the real, Bing-issued key, not a random one; a real GitHub Actions run history (2 successful production runs); and it improves on the TODO's design in three ways: (1) gates on `deployment_status` == success **and** environment contains "production" (skips previews, unlike the plain template above), (2) has a concurrency group so overlapping deploys don't race, (3) `indexnow.mjs` walks the *live sitemap* and submits every URL it finds, instead of a hardcoded 3-URL list that would silently go stale. The key is hardcoded directly in the script rather than a `INDEXNOW_KEY` repo secret — a reasonable simplification, since this "key" is designed to become public at `/<key>.txt` anyway.
+>
+> **Verified live, right now:** `curl https://www.prionation.io/34f3ca2fd693436391b39a0e6448df86.txt` → 200, correct key. GitHub Actions run history shows 2 successful production submissions (2026-06-27, 2026-07-04) plus one correctly-skipped non-production deploy today. **Both acceptance boxes below are genuinely met.** Nothing left to build here — the only unknown is whether Bing's dashboard has cleared the flag, which needs a manual check in Bing Webmaster Tools.
 
 **Why:** Free instant indexing for Bing and the AI engines it feeds. Also the fastest way to re-surface the D1-fixed pages.
 
@@ -337,16 +343,18 @@ jobs:
           JSON
           )"
 ```
-Add `INDEXNOW_KEY` as a repo secret. Expand `urlList` with the pages you changed each deploy (submit deltas, not the whole site).
+Add `INDEXNOW_KEY` as a repo secret. Expand `urlList` with the pages you changed each deploy (submit deltas, not the whole site). *(Superseded — see audit note above: the shipped version submits the whole live sitemap automatically, no secret or manual urlList maintenance needed.)*
 
 **Acceptance:**
-- [ ] `curl https://www.prionation.io/<key>.txt` returns the key, 200
-- [ ] Action runs green on a deploy
-- [ ] Bing "IndexNow" High-severity flag clears
+- [x] `curl https://www.prionation.io/<key>.txt` returns the key, 200 — verified live 2026-07-13
+- [x] Action runs green on a deploy — verified via GitHub Actions run history (2 successful production runs)
+- [ ] Bing "IndexNow" High-severity flag clears — needs a manual check in Bing Webmaster Tools
 
 ---
 
 ## D6 · GSC validate fix + resubmit (after D1 ships)
+
+> **Note:** entirely GSC/Bing Webmaster console actions — I have no access to either, so none of this can be done or verified from here. Listed as-is for you to work through once D1 is deployed.
 
 **Why:** Tell Google to re-evaluate the 39 pages now that titles and descriptions are unique.
 
@@ -364,19 +372,27 @@ Add `INDEXNOW_KEY` as a repo secret. Expand `urlList` with the pages you changed
 
 ## D7 · Internal linking pass
 
+> **Audit finding (2026-07-13, Claude):** audited the actual link graph via `lib/content/pages.ts`'s manifest (single source of truth for `interlinkTo`) rather than by eyeballing pages. Findings:
+> - All 15 published pages already list `ANCHOR_PATH` first in `interlinkTo` — cluster→anchor backlinks were already 100% complete.
+> - `AnchorPage.tsx` already has a "Categories" grid linking to all 5 section indices (with a live count + 2 recent articles each) — anchor→cluster coverage was already complete.
+> - `FooterColumns.tsx`'s "AI Product Engineering" column already links to all 5 section indices (`/methodology`, `/showcases`, `/frameworks`, `/guides`, `/intelligence`) via the locale-aware `Link` component, present on every page — so every published article is reachable in ≤2 clicks from home via Home → (footer) Section Index → Article, regardless of the anchor page.
+> - Building the reverse-link graph (which pages point *at* which) found exactly **one page with zero inbound topical links**: `guides/scoping-ai-build-engagement` — reachable via the flat `/guides` index, but no other article pointed at it specifically. **Fixed** — added it to `frameworks/8-week-build-readiness-checklist`'s `interlinkTo` (same topic), verified it renders live.
+>
+> Net: this task was ~95% already done by the existing footer/anchor/manifest design; the one real gap is closed.
+
 **Why:** On a low-authority domain, pages with few internal links get deprioritized for crawl. Every page must be reachable from the anchor page and the footer.
 
 **Files:** `components/sections/site-footer/*`, anchor page body, nav.
 
 **Steps:**
-- [ ] Every cluster page links back to the anchor page
-- [ ] Anchor page links out to all live cluster pages (methodology, showcases, guides, glossary)
-- [ ] Footer nav exposes the main sections in all locales
-- [ ] No orphan pages: every route reachable within 2 clicks of home
+- [x] Every cluster page links back to the anchor page — verified via manifest, all 15/15
+- [x] Anchor page links out to all live cluster pages (methodology, showcases, guides, glossary) — verified, `AnchorPage.tsx`'s Categories grid
+- [x] Footer nav exposes the main sections in all locales — verified, `FooterColumns.tsx`
+- [x] No orphan pages: every route reachable within 2 clicks of home — true structurally (footer); the one weak-topical-link page is now fixed too
 
 **Acceptance:**
-- [ ] Screaming Frog (or `next build` route graph) shows zero orphans
-- [ ] Anchor page outbound internal links ≥ number of live cluster pages
+- [ ] Screaming Frog (or `next build` route graph) shows zero orphans — the manifest-based audit above is the code-level equivalent; a Screaming Frog crawl is still worth running once deployed as an independent check
+- [x] Anchor page outbound internal links ≥ number of live cluster pages — anchor links to all 5 section indices (which each list every published page in that section), verified in `AnchorPage.tsx`
 
 ---
 
