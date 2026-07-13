@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/routing";
 import { Eyebrow } from "../ui/Atoms";
 import { FooterColumns } from "./site-footer/FooterColumns";
+import { CURRENT_VERSION } from "@/lib/content/changelog";
 
 function ChevSvg() {
   return (
@@ -68,7 +69,7 @@ export function SiteFooter() {
                 onClick={() => setVerOpen(!verOpen)}
                 className="inline-flex items-center gap-1.5 bg-accent-10 text-accent border border-accent-30 rounded-full px-3 py-1.5 font-pixel text-[9px] tracking-[0.1em] transition-all hover:bg-accent hover:text-white"
               >
-                v.3.1.0 <ChevSvg />
+                v.{CURRENT_VERSION} <ChevSvg />
               </button>
               {verOpen && (
                 <div className="absolute top-full left-0 pt-2 -ml-4 z-50 animate-in fade-in slide-in-from-top-2 duration-200">

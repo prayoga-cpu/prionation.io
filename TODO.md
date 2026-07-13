@@ -1,6 +1,6 @@
 # TODO — Technical SEO & Attribution Recovery
 
-**Version:** v.3.1.0
+**Version:** v.3.8.0
 **Date:** 13/07/2026
 **Repo:** `prayoga-cpu/prionation.io` · Next.js 16 · next-intl (en/fr/id) · Vercel
 **Based on:** GSC (12 indexed / 39 not) + Bing (duplicate titles, duplicate meta descriptions, weak backlinks)
@@ -512,4 +512,4 @@ Everything code-side is done, re-verified fresh today (`npm run lint && npm test
 
 ---
 
-*PRIONATION.io — Dev TODO v.3.1.0 — 13/07/2026 — © 2026 PRIORITY FOUNDATION*
+*PRIONATION.io — Dev TODO v.3.8.0 — 13/07/2026 — © 2026 PRIORITY FOUNDATION*

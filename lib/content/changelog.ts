@@ -4,10 +4,23 @@
 //
 // v3 entries are curated directly from this repo's real git history
 // (`git log`, verified 2026-07-13) — grouped by work session, not fabricated.
-// Maintenance: see AGENTS.md "Changelog" section — update this file whenever
-// a meaningful change ships.
+// Version numbers are assigned retroactively using standard semver
+// discipline against what each session actually shipped:
+//   - minor: new user-facing functionality, a new page, or a new capability
+//   - patch: fixes, performance/accessibility/SEO tuning, tooling, copy
+// package.json's version had been static at "3.1.0" since the first commit
+// (no real bumps ever happened) — this is the first time it tracks reality.
+// Maintenance: see AGENTS.md "Changelog" section — bump + add an entry here
+// whenever a meaningful change ships. CURRENT_VERSION must match the top
+// entry's `version` and package.json's `version` field.
+
+export const CURRENT_VERSION = "3.8.0";
+
+export type SemverBump = "minor" | "patch";
 
 export type ChangelogEntry = {
+  version: string; // matches package.json convention, no leading "v"
+  bump: SemverBump;
   date: string; // ISO date, the real commit date of the session
   title: string;
   items: string[];
@@ -16,6 +29,19 @@ export type ChangelogEntry = {
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
   {
+    version: "3.8.0",
+    bump: "minor",
+    date: "2026-07-13",
+    title: "Real, dated changelog",
+    items: [
+      "Added this page — a changelog curated directly from git history, not a marketing summary.",
+      "Retroactively assigned semver versions to every prior release using standard discipline (new pages/capabilities = minor, fixes/perf/tooling = patch) — package.json's version had been stuck at 3.1.0 since the first commit and never tracked reality until now.",
+      "Linked from the footer's version dropdown as \"Full changelog\"; documented the maintenance rule in AGENTS.md.",
+    ],
+  },
+  {
+    version: "3.7.2",
+    bump: "patch",
     date: "2026-07-13",
     title: "SEO audit: metadata + internal-linking fixes",
     items: [
@@ -25,6 +51,8 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     ],
   },
   {
+    version: "3.7.1",
+    bump: "patch",
     date: "2026-06-26 to 2026-07-04",
     title: "SEO loop: llms.txt localization + automated health checks",
     items: [
@@ -33,6 +61,8 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     ],
   },
   {
+    version: "3.7.0",
+    bump: "minor",
     date: "2026-06-25",
     title: "Privacy policy + AI-crawler access",
     items: [
@@ -42,6 +72,8 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     ],
   },
   {
+    version: "3.6.0",
+    bump: "minor",
     date: "2026-06-24",
     title: "Analytics backbone + growth-automation commands",
     items: [
@@ -53,6 +85,8 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     ],
   },
   {
+    version: "3.5.0",
+    bump: "minor",
     date: "2026-06-21 to 2026-06-23",
     title: "AI Consultation beta + homepage polish",
     items: [
@@ -61,6 +95,8 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     ],
   },
   {
+    version: "3.4.1",
+    bump: "patch",
     date: "2026-06-15 to 2026-06-19",
     title: "Performance, accessibility, and graphify tooling",
     items: [
@@ -70,6 +106,8 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     ],
   },
   {
+    version: "3.4.0",
+    bump: "minor",
     date: "2026-06-13",
     title: "Discord community hub",
     items: [
@@ -77,6 +115,8 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     ],
   },
   {
+    version: "3.3.0",
+    bump: "minor",
     date: "2026-06-03 to 2026-06-07",
     title: "AEO/GEO expansion + manifesto/glossary",
     items: [
@@ -87,6 +127,8 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     ],
   },
   {
+    version: "3.2.0",
+    bump: "minor",
     date: "2026-05-31",
     title: "Full content cluster launch",
     items: [
@@ -97,6 +139,8 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     ],
   },
   {
+    version: "3.1.1",
+    bump: "patch",
     date: "2026-05-29 to 2026-05-30",
     title: "i18n polish + form notifications",
     items: [
@@ -106,6 +150,8 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     ],
   },
   {
+    version: "3.1.0",
+    bump: "minor",
     date: "2026-05-17 to 2026-05-18",
     title: "Forms, animation, and i18n foundation",
     items: [
@@ -116,6 +162,8 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     ],
   },
   {
+    version: "3.0.0",
+    bump: "minor", // baseline release — treated as the minor-0 starting point, not a fresh major
     date: "2026-05-16",
     title: "Initial release",
     items: [

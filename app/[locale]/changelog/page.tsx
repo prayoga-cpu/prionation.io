@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { SITE_URL, SITE_NAME } from "@/lib/seo/site";
-import { V3_ENTRIES, ARCHIVED_VERSIONS } from "@/lib/content/changelog";
+import { V3_ENTRIES, ARCHIVED_VERSIONS, CURRENT_VERSION } from "@/lib/content/changelog";
 
 const OG_LOCALE: Record<string, string> = {
   en: "en_US",
@@ -85,15 +85,18 @@ export default async function ChangelogPage({
         <h1 className="font-sans font-extrabold text-[clamp(28px,3.8vw,46px)] leading-[1.07] tracking-[-0.03em] text-white mb-4">
           Changelog
         </h1>
-        <p className="text-soft text-[15px] leading-[1.7] mb-14 max-w-[62ch]">
+        <p className="text-soft text-[15px] leading-[1.7] mb-6 max-w-[62ch]">
           {DESCRIPTION} Dates are the actual commit dates from this repository&apos;s history — nothing here is invented.
+        </p>
+        <p className="text-muted text-[13px] leading-[1.7] mb-14 max-w-[62ch]">
+          Version numbers follow semver: <span className="text-soft">minor</span> bumps ship a new page or capability, <span className="text-soft">patch</span> bumps are fixes, performance, or tooling. Major stays 3 for the life of this codebase.
         </p>
 
         {/* v3 — this codebase */}
         <section>
           <div className="flex items-center gap-3 mb-8">
             <h2 className="font-sans font-bold text-white text-[clamp(18px,2.2vw,24px)] tracking-[-0.01em] m-0">
-              v3.1.0 — current
+              v{CURRENT_VERSION} — current
             </h2>
             <span className="font-pixel text-[8px] tracking-[0.12em] text-accent uppercase bg-accent-10 border border-accent-30 rounded-full px-2.5 py-1">
               You are here
@@ -107,8 +110,20 @@ export default async function ChangelogPage({
                   aria-hidden="true"
                   className="absolute -left-[29px] top-[6px] w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_8px_var(--c-accent)]"
                 />
-                <div className="font-pixel text-[9px] tracking-[0.12em] text-muted uppercase mb-2">
-                  {formatDate(entry.date)}
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <span className="font-pixel text-[9px] tracking-[0.1em] text-accent uppercase">v{entry.version}</span>
+                  <span
+                    className={`font-pixel text-[7px] tracking-[0.1em] uppercase px-2 py-0.5 rounded-full border ${
+                      entry.bump === "minor"
+                        ? "text-accent bg-accent-10 border-accent-30"
+                        : "text-muted bg-white/5 border-line-soft"
+                    }`}
+                  >
+                    {entry.bump}
+                  </span>
+                  <span className="font-pixel text-[9px] tracking-[0.12em] text-muted uppercase">
+                    {formatDate(entry.date)}
+                  </span>
                 </div>
                 <h3 className="font-sans font-bold text-white text-[16px] mb-2.5">{entry.title}</h3>
                 <ul className="list-disc pl-5 flex flex-col gap-1.5">

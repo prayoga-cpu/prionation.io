@@ -1,4 +1,5 @@
 import { resend, FROM, FROM_NOTIFY, REPLY_TO, TO } from "./resend";
+import { CURRENT_VERSION } from "@/lib/content/changelog";
 import type {
   IntakePayload,
   BookingPayload,
@@ -46,7 +47,7 @@ function brand() {
           <h1 style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:28px;font-weight:800;letter-spacing:-0.02em;color:${T.white};line-height:1;">
             PRIONATION<span style="color:${T.accent};">.</span>io
           </h1>
-          <p style="margin:6px 0 0;font-family:monospace;font-size:8px;letter-spacing:0.15em;color:${T.muted};text-transform:uppercase;">// INTERNAL NOTIFICATION · v.3.1.0</p>
+          <p style="margin:6px 0 0;font-family:monospace;font-size:8px;letter-spacing:0.15em;color:${T.muted};text-transform:uppercase;">// INTERNAL NOTIFICATION · v.${CURRENT_VERSION}</p>
         </td>
       </tr>
     </table>`;
