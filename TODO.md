@@ -1,277 +1,438 @@
-# PRIONATION.io — SEO / AEO / GEO board
+# TODO — Technical SEO & Attribution Recovery
 
-Monitoring board, organised by optimisation target.
-**Legend:** ✅ done & `next build` clean · 🔄 in progress · ⬜ todo (autonomous) · 🔒 blocked (needs your action / a live deploy).
-
-- **SEO** — rank + index in classic search (Google/Bing crawl, rich results, Core Web Vitals)
-- **AEO** — win answer surfaces (featured snippets, voice, "position zero")
-- **GEO** — get cited by generative engines (ChatGPT, Claude, Perplexity, Google AIO)
-
-Scale today: **~54 localized URLs** (homepage + anchor + glossary + 15 cluster pages, ×3 locales, all SSG).
-Sources: _Dev Implementation Guide_ + _Sitemap Documentation_ (both 31-05-2026).
+**Version:** v.3.1.0
+**Date:** 13/07/2026
+**Repo:** `prayoga-cpu/prionation.io` · Next.js 16 · next-intl (en/fr/id) · Vercel
+**Based on:** GSC (12 indexed / 39 not) + Bing (duplicate titles, duplicate meta descriptions, weak backlinks)
 
 ---
 
-## SEO — search ranking & indexing
+## The problem in one line
 
-**✅ Done — build-verified**
+51 pages ship with near-identical titles and meta descriptions, so Google indexes only 12, so almost nothing can rank. Fix metadata first. Everything else is downstream.
 
-- Trilingual content cluster: 15 pages + anchor + glossary, all SSG (en/fr/id)
-- Sitemap: hreflang alternates + honest `<lastmod>` driven by `datePublished`/`dateModified`
-- Structured data: Organization · ProfessionalService · WebSite · BreadcrumbList ·
-  valid `Article`/`TechArticle` `@type` (dropped invalid `CaseStudy` / stepless `HowTo`)
-- Localized `<title>` + description per locale (`Meta` namespace) · canonical · hreflang
-- **Internal linking**: glossary hub linked from every cluster page (related-links), plus
-  topical related-links per page; 4-level breadcrumb trail
-- Performance: AVIF/WebP · SSG (TTFB) · font-display swap · vercel cache · favicons ·
-  OG image (`og.png` compressed 2.9 MB → ~515 KB, well under the 1 MB scraper cap)
-- Removed fabricated `Review` schema (Google guideline + project integrity risk)
+---
 
-**✅ Content depth — done (build-verified)**
+## How to work this file
 
-- ✅ **Content depth → 2–3.5k words** (topical authority) — Methodology ×4 ✅ **+
-  Frameworks ×3 · Guides ×3 · Intelligence ×2 · Showcases ×3**, all 3 locales.
-  ~+14.6k EN words (~+44k across en/fr/id): +43 sections + 44 FAQ **per locale**.
-  `updatedAt` → 2026-06-15. FR/ID fidelity-reviewed (native-speaker pass: 0 drift,
-  0 untranslated, register normalised to formal "Anda"/« »). See checklist at bottom.
+- Build-gated, direct commits to main. One logical change per commit, max 3 files.
+- Every task must pass before it ships:
+  ```bash
+  npm run lint && npm test && npm run build
+  ```
+- After deploy, verify on production before checking the box.
+- Do tasks in order. P0 unblocks indexing, P1 forces the re-crawl and wires measurement, P2 is hygiene.
+- No fabricated data. Attribution and reporting read only real values.
 
-**✅ Inline contextual links — done 2026-06-15**
+---
 
-- ✅ **Inline contextual body links** (deeper semantic linking) — shipped WITHOUT a
-  content-model change. A safe render-time linkifier (`lib/content/interlink.ts` +
-  `ContentArticle`) wraps the first occurrence of canonical terms (eval suite ·
-  telemetry · owned infrastructure · fixed clock · golden dataset) in localized links
-  to the relevant methodology/glossary pages — once per article, self-links skipped,
-  capped at 5, all 3 locales. Failure-safe (no match → no link). Verified in built
-  HTML across en/fr/id (e.g. the telemetry page links out to evals/owned-infra/
-  glossary but never to itself).
+## Priority + sequencing
 
-**✅ Image asset metadata — done 2026-06-15**
-
-- ✅ **Embedded SEO metadata in all 12 content images** — self-describing/attributable
-  wherever scraped, shared, or re-hosted. One idempotent embedder
-  (`scripts/image-metadata.mjs`, `npm run images:meta`) drives a manifest:
-  `og.png` · `work/*.png` ×3 · `images/team/*.jpeg` ×2 · `ads/*.png` ×6.
-  PNG → `iTXt` chunks (Title/Description/Author/Copyright/Source/Keywords) + Dublin
-  Core **XMP**; JPEG → Dublin Core **XMP** in APP1 (existing EXIF preserved).
-  Copy sourced from the repo — `Meta` namespace (og), showcase `seoTitle`/
-  `metaDescription` (work), `Foundation.team` name/role/bio (team) — **no fabricated
-  text**. Replaced `og.png`'s stale Adobe XMP (falsely claimed 3600×1890).
-  Favicons / `icon-512` / `apple-touch-icon` skipped by design (UI chrome browsers
-  re-encode). All 12 re-decode clean; readback verified for PNG + JPEG.
-
-**✅ XML sitemap index — done 2026-06-15**
-
-- ✅ **XML sitemap index** — `/sitemap.xml` now serves a `<sitemapindex>` referencing six
-  child sitemaps split by section (`/sitemap/0.xml` = core/standalone, `1–5` = one per
-  content section), each a `<urlset>` with hreflang alternates + `<lastmod>` from
-  `updatedAt` (57 URLs total). Built as custom route handlers
-  (`app/sitemap.xml/route.ts` + `app/sitemap/[id]/route.ts`, shared section list in
-  `lib/seo/sitemap-sections.ts`) because Next 16's `generateSitemaps` emits the children
-  but not the index route. robots.txt already points at `/sitemap.xml`. Runtime-verified
-  index + all 6 children. (Not strictly required at ~57 URLs, but the structure now
-  scales cleanly as sections grow.)
-
-**✅ Done — live deploy**
-
-- ✅ **Prod origin confirmed** — Vercel serves `https://www.prionation.io/en`, so
-  `SITE_URL = "https://www.prionation.io"` (`www`) in `lib/seo/site.ts` is correct.
-- ✅ **Sitemap submitted** — Google Search Console **+** Bing Webmaster (2026-06-15).
-- ✅ **Core Web Vitals measured** (PSI key wired into `.env.local`) — desktop green,
-  mobile LCP/Speed-Index need work → tracked in the **PageSpeed** section below.
-
-**✅ Done — validated live (2026-06-15, Rich Results Test, `/en`)**
-
-- ✅ **Rich Results — 0 errors, 0 warnings.** First pass added truthful fields
-  (priceRange/image/email + Bali locality) but `ProfessionalService` is a LocalBusiness
-  subtype, so Google kept asking for `telephone`/`streetAddress`/`postalCode` — none of
-  which a remote-first firm can supply without inventing. Fix (2026-06-15, 2nd pass):
-  changed the "AI Product Engineering" item from `ProfessionalService` → **`Service`**
-  (`components/JsonLd.tsx`) — semantically correct for a remote firm, so the local-
-  business address/phone fields no longer apply and all 3 non-critical warnings clear.
-  Organization + FAQ items remain valid; dropped the unused `BUSINESS_ADDRESS`/
-  `PRICE_RANGE` constants. Trade-off accepted: no "Local businesses" listing (needs a
-  Google-verifiable physical address the firm doesn't have).
-
-## PageSpeed / Core Web Vitals — live validation
-
-**Wrapper:** `npm run pagespeed` → `scripts/pagespeed.mjs` pulls Lighthouse scores +
-Core Web Vitals from the live URL via PSI v5 (mobile + desktop). The key lives in
-`.env.local` as `PSI_API_KEY` (the keyless quota is now 0), and the script auto-loads it.
-
-```bash
-npm run pagespeed                                       # both strategies, /en
-npm run pagespeed -- https://www.prionation.io/en mobile
+```
+P0  D1 metadata ─┐
+    D2 canonical ─┼─▶  pages become indexable
+    D3 attribution┘
+P1  D4 ads link ─┐
+    D5 indexnow ─┼─▶  recrawl forced + spend measurable
+    D6 validate ─┤
+    D7 internal ─┘
+P2  D8 thin content
+    D9 llms.txt
 ```
 
-**Last run: 2026-06-15 (live, `/en`, both strategies).** Mobile Performance has recovered
-to **90** (meets target). The remaining gaps are **mobile LCP (3.5 s)** and **Accessibility
-(93 mobile / 89 desktop)** — both addressed by the code fixes shipped this round, which
-only appear on the next `npm run pagespeed` _after deploy_ (PSI reads the live URL; the
-table below is the pre-deploy live baseline).
+---
 
-| Metric         | Mobile   | Desktop  | Target   |
-| -------------- | -------- | -------- | -------- |
-| Performance    | ✅ 90    | ✅ 99    | ≥ 90     |
-| Accessibility  | 🟡 93    | 🔴 89    | ≥ 95     |
-| Best Practices | ✅ 100   | ✅ 100   | ≥ 95     |
-| SEO            | ✅ 100   | ✅ 100   | 100      |
-| LCP            | 🔴 3.5 s | ✅ 1.0 s | ≤ 2.5 s  |
-| FCP            | ✅ 1.1 s | ✅ 0.3 s | ≤ 1.8 s  |
-| TTFB           | ✅ 40 ms | ✅ 40 ms | ≤ 500 ms |
-| CLS            | ✅ 0.006 | ✅ 0.007 | ≤ 0.1    |
-| TBT            | ✅ 70 ms | ✅ 40 ms | ≤ 200 ms |
-| Speed Index    | ✅ 3.0 s | ✅ 0.6 s | ≤ 3.4 s  |
+# P0 — Unblock indexing
 
-**Read:** TTFB (40 ms) and FCP (1.1 s) are fast, so the origin/SSG is fine — the mobile
-LCP element paints ~2.4 s _after_ first paint: the hero `<h1>` was gated behind JS (now
-fixed via the `riseIn` variant + the payload strip, pending deploy). PSI still flags
-**unused JS ≈ 131 KiB** — the Meta Pixel `lazyOnload` + `Pages` payload strip address the
-bulk of it post-deploy. Nothing new surfaced this run.
+## D1 · Unique title + meta description per page, per locale
 
-**✅ Mobile perf — autonomous fixes shipped 2026-06-15 (re-measure post-deploy):**
+> **Audit finding (2026-07-13, Claude):** the actual bug was narrower than assumed. A `lib/content/meta.ts` `buildContentMetadata()` system already existed and already gives every cluster page (`frameworks/guides/intelligence/methodology/showcases`/`[slug]`) and every top-level page (home, anchor, manifesto, glossary, privacy, discord) a unique `seoTitle`/`metaDescription` per locale — confirmed zero duplicate `seoTitle`/`metaDescription` strings across all 15 published cluster-page slugs × 3 locales. The real bug: **4 section-index pages (`/frameworks`, `/guides`, `/intelligence`, `/showcases`) had no `description` field in `generateMetadata()`**, so Next.js silently inherited the root layout's `homeDescription` — identical to home's description and to each other, across all 3 locales. That's the likely source of both the GSC non-indexing and the Bing "duplicate meta descriptions" flag. **Fixed** — see route checklist below. No new `lib/seo/metadata.ts` or `seo` i18n namespace was needed; the existing system just needed those 4 gaps closed.
+>
+> **Separate finding, not fixed (flagged for follow-up, not blocking indexing):** several existing `seoTitle`/`metaDescription` values exceed the length guideline below — 1 title at 61-72 chars across locales ("The Lead Agent" showcase), and 6 showcase/framework descriptions at 161-220 chars (worst: FR "The Lead Agent" showcase at 220). Google truncates rather than penalizes, so this doesn't block indexing, but it's real and worth trimming. Left untouched since it's marketing copy that deserves a human pass rather than a silent AI edit — exact strings are in `lib/content/text/{en,fr,id}.ts`.
 
-- ✅ **Mobile LCP element identified = the hero `<h1>`** (no hero image — it is text).
-  Root cause: framer-motion `initial="hidden"` (opacity:0) gated the LCP text until
-  hydration. Fix: transform-only `riseIn` variant (`lib/motion.ts`) so the hero paints
-  on the first server render. Verified in SSR HTML: `<h1>` is now
-  `transform:translateY(24px)` with **no** `opacity:0`. Fonts already `font-display:swap`.
-- ✅ **Trim unused JS** — Meta Pixel → `strategy="lazyOnload"` (`components/MetaPixel.tsx`):
-  the single biggest contributor (~54 KiB of `connect.facebook.net`) is now off the
-  critical path. PageView preserved via the fbq queue (init script) + a first-render-
-  guarded route-change effect. Remaining ~76 KiB is app chunks (framer-motion) — an
-  optional further code-split.
-- ✅ **Page payload (biggest LCP lever)** — every page was shipping the whole `Pages`
-  namespace (all cluster bodies) as unused client JSON. Stripped the heavy
-  `intro`/`sections`/`faq` from the global messages (`i18n/request.ts` → `lightPages`);
-  cluster pages now receive bodies as props from their route. **Homepage 83.4 → 39.4 KiB
-  gzipped (−53%).** Verified: cluster bodies gone from `/en`; all cluster pages still
-  render full content + FAQPage/Article JSON-LD in en/fr/id.
-- ✅ **Accessibility** — all three failing audits fixed (mobile 93 / desktop 89 → ≥95
-  expected): `meta-viewport` (dropped `maximum-scale`/`user-scalable=false` → pinch-zoom
-  restored), `heading-order` (HowWeWork section title `<h3>` → `<h2>`; homepage sequence
-  now has no skips), and `select-name` (every `<select>` now has an `aria-label` — form
-  fields via their localized placeholder, the timezone picker via "Timezone").
+**Why:** This is the fix. Duplicate titles and descriptions are why Google refuses to index 39 pages and why Bing throws two flags. Every page needs a distinct title (<60 chars) and description (<160 chars) in all three locales.
 
-**✅ Mobile perf — round 2 shipped 2026-06-15** (after deploy 1 confirmed live: **A11y
-93→100**, **TBT 70→10 ms**; LCP 3.6 s / SI 4.6 s still the gap, plus PSI run-noise):
+**Files:**
+- `lib/seo/metadata.ts` (new — shared builder)
+- `messages/en.json`, `messages/fr.json`, `messages/id.json` (add `seo` namespace)
+- every `app/[locale]/**/page.tsx` (add `generateMetadata`)
 
-- ✅ **Font preload trimmed** — homepage was eagerly preloading 8 woff2 (rubik ×5 +
-  black-han-sans + press-start-2p + bitter). Set `preload:false` on press-start-2p
-  (decorative pixel labels) and bitter (only used on `/start`), so only the LCP font
-  (black-han-sans) + body (rubik) preload — frees first-paint bandwidth for the hero LCP
-  text. Verified: homepage now preloads only `black_han_sans` + `rubik`.
-- ✅ **Legacy JS dropped** — added a modern `browserslist` (chrome/edge/firefox ≥109,
-  safari ≥15.4) to `package.json` so SWC stops shipping ES5/legacy polyfills (~26 KiB).
-**✅ Mobile perf — round 3 shipped 2026-06-15** (framer-motion bundle + Speed Index;
-deploy 1+2 confirmed live but mobile Perf plateaued at 87, gated by LCP 3.6 s / SI 4.6 s):
+**Step 1 — shared builder:**
+```ts
+// lib/seo/metadata.ts
+import type { Metadata } from 'next'
 
-- ✅ **framer-motion → LazyMotion + `m`** — converted all 14 animated files from
-  `motion.*` to the lightweight `m.*` API (162 usages) behind one
-  `<LazyMotion features={domAnimation} strict>` provider (`components/MotionProvider.tsx`,
-  wrapped around `{children}` in the root layout). `domAnimation` carries exactly what the
-  site uses — animation, variants, exit (AnimatePresence), `inView` (whileInView),
-  hover/tap/focus — and drops the unused **drag/layout/pan** that the full `motion` import
-  shipped. `strict` mode makes `next build`'s prerender throw on any missed conversion
-  (build-verified clean). Renamed a colliding `team.map((m,…))` param in Foundation.
-- ✅ **Speed Index** — two SSR/animation fixes: (1) the **Typewriter** now renders the
-  first word at SSR (`useState(() => words[0])`) instead of typing from empty, so the hero
-  headline is visually complete on first paint (verified: "bottlenecks." in SSR HTML);
-  (2) the **hero grid overlay** fade was settling at ~2.8 s (delay 1.6 + dur 1.2) — now
-  starts at 0.6 opacity and settles ~0.8 s (delay 0.2 + dur 0.6).
-- Verified: tsc/eslint clean, `vitest` 51/51, `next build` 87/87 (strict prerender passed),
-  runtime smoke 200 on en/fr/id + discord/start/widget/showcase, no translation-key leak.
-  Re-measure mobile Perf/LCP/SI/unused-JS after this deploy.
+const BASE = 'https://www.prionation.io'
+const LOCALES = ['en', 'fr', 'id'] as const
+type Locale = (typeof LOCALES)[number]
 
-## AEO — answer engines & voice
+export function buildMetadata(opts: {
+  locale: Locale
+  path: string            // '' for home, '/ai-engineering-glossary', etc.
+  title: string           // UNIQUE per page+locale, <60 chars
+  description: string     // UNIQUE per page+locale, <160 chars
+  type?: 'website' | 'article'
+}): Metadata {
+  const url = `${BASE}/${opts.locale}${opts.path}`
+  return {
+    title: opts.title,
+    description: opts.description,
+    alternates: {
+      canonical: url,
+      languages: Object.fromEntries(
+        LOCALES.map((l) => [l, `${BASE}/${l}${opts.path}`]),
+      ),
+    },
+    openGraph: {
+      title: opts.title,
+      description: opts.description,
+      url,
+      siteName: 'PRIONATION.io',
+      locale: opts.locale,
+      type: opts.type ?? 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: opts.title,
+      description: opts.description,
+    },
+  }
+}
+```
 
-**✅ Done — build-verified**
+**Step 2 — per-page metadata (example):**
+```ts
+// app/[locale]/ai-engineering-glossary/page.tsx
+import { getTranslations } from 'next-intl/server'
+import { buildMetadata } from '@/lib/seo/metadata'
 
-- FAQPage schema on every cluster page + anchor + homepage
-- **Speakable schema** (`h1` + TL;DR via `[aria-label="Summary"]`) on all 48 article
-  pages + anchor — voice-assistant surfaces
-- TL;DR summary blocks + inverted-pyramid, ~40–60-word answers
-- FAQ depth: Methodology ×4 expanded (evals +section +2 FAQ; others +2 FAQ each);
-  **Frameworks ×3 / Guides ×3 / Intelligence ×2 / Showcases ×3 each +4 FAQ** (#4
-  batches, all 3 locales) — every new Q/A feeds the per-page FAQPage schema
-- HowTo — intentionally **not** pursued (Google deprecated HowTo rich results in 2023)
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: 'en' | 'fr' | 'id' }>
+}) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'seo.glossary' })
+  return buildMetadata({
+    locale,
+    path: '/ai-engineering-glossary',
+    title: t('title'),
+    description: t('description'),
+    type: 'article',
+  })
+}
+```
 
-**✅ Open items cleared**
+**Step 3 — add `seo` strings** to each `messages/*.json`, one unique block per page. Example:
+```json
+"seo": {
+  "home": {
+    "title": "AI Product Engineering · PRIONATION.io",
+    "description": "Production AI for EU and US mid-market companies. Fixed scope, fixed price, 8 weeks to production. Start with a 2-week diagnostic."
+  },
+  "glossary": {
+    "title": "AI Engineering Glossary · PRIONATION.io",
+    "description": "Plain definitions of the AI product engineering terms mid-market operators actually need. Evals, telemetry, RAG, owned infrastructure."
+  }
+}
+```
 
-- ✅ FAQ depth extended to Frameworks / Guides / Intelligence / Showcases (#4 batches) —
-  +44 FAQ per locale across the 11 cluster pages
+**Route checklist — give each a unique title + description in en/fr/id:**
+(Corrected against the real routes — `find app -name 'page.tsx'` — a few paths in the original list didn't match what's actually deployed, e.g. the glossary lives under the anchor path, not at `/ai-engineering-glossary`; `/showcases/epidom` is one of 6 published slugs under the dynamic `/showcases/[slug]`, not its own file.)
+- [x] `/` (home) — root layout `generateMetadata`, `Meta.homeTitle`/`homeDescription`
+- [x] `/ai-product-engineering-for-mid-market-companies` (anchor) — already unique, pre-existing
+- [x] `/ai-product-engineering-for-mid-market-companies/manifesto` — already unique, pre-existing
+- [x] `/ai-product-engineering-for-mid-market-companies/glossary` — already unique, pre-existing
+- [x] `/privacy` — already unique, pre-existing
+- [x] `/discord` — already unique, pre-existing (not in the original list — added)
+- [x] `/frameworks` (index) — **fixed today**, was missing `description`
+- [x] `/guides` (index) — **fixed today**, was missing `description`
+- [x] `/intelligence` (index) — **fixed today**, was missing `description`
+- [x] `/showcases` (index) — **fixed today**, was missing `description`
+- [x] `/methodology` (index) — already had a unique description, pre-existing
+- [x] All 15 published cluster-page slugs (`frameworks/[slug]`, `guides/[slug]`, `intelligence/[slug]`, `methodology/[slug]`, `showcases/[slug]`) — `buildContentMetadata()`, verified zero duplicate `seoTitle`/`metaDescription` across en/fr/id (see length-overage note above for the ones that need trimming)
 
-## GEO — generative-engine citation
+**Duplicate detector (run after deploy to prove it's fixed):**
+```bash
+# titles across the live sitemap — every count should be 1
+node -e '
+const https=require("https");
+(async()=>{
+  const xml=await new Promise(r=>https.get("https://www.prionation.io/sitemap.xml",s=>{let d="";s.on("data",c=>d+=c);s.on("end",()=>r(d))}));
+  const urls=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
+  const seen={};
+  for(const u of urls){
+    const h=await new Promise(r=>https.get(u,s=>{let d="";s.on("data",c=>d+=c);s.on("end",()=>r(d))}));
+    const t=(h.match(/<title>(.*?)<\/title>/)||[])[1]||"";
+    seen[t]=(seen[t]||0)+1;
+  }
+  Object.entries(seen).filter(([,n])=>n>1).forEach(([t,n])=>console.log(n,t));
+})();'
+```
 
-**✅ Done — build-verified**
-
-- `llms.txt` — structured value prop, pricing, tech specs, licensing
-- **AI engineering glossary** — `DefinedTermSet` + 16 `DefinedTerm` ×3 locales
-  (machine-readable definitions; broad inbound links aid entity grounding)
-- `robots.txt` allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Amazonbot, …)
-- Machine-readable summary + entity coherence across schema / llms.txt / glossary
-
-**🔒 Blocked — needs you / time**
-
-- 🔒 **Real client metrics** for Showcases + Intelligence (citable specifics — eval
-  scores, ROI, throughput); copy currently says "to be published"
-- 🔒 **AI citation baseline** — log ChatGPT/Perplexity/AIO/Claude for the 5 guide
-  queries; target Day 180: 3+ cited
+**Acceptance:**
+- [ ] No two live pages share a title (detector prints nothing) — needs a deploy, then run the detector script below
+- [ ] No two live pages share a meta description — same; local content audit (all 3 locale files) already confirms zero duplicates in the *content*, the remaining risk was purely the 4 pages fixed above
+- [ ] Every title <60 chars, every description <160 chars — **not yet true**, see length-overage note above; separate follow-up
+- [ ] Bing "identical titles" and "identical meta descriptions" flags clear on recheck — needs live re-crawl after deploy
+- [x] `npm run lint && npm test && npm run build` passes — verified locally 2026-07-13 (51/51 tests, clean lint, clean build)
 
 ---
 
-## Out of SEO/AEO/GEO scope (product / content backlog)
+## D2 · Canonical + hreflang on every page
 
-- ✅ **AI Consultation diagnostic (beta) — homepage hero** (2026-06-21). Replaced the
-  hero with an interactive AI-consultation diagnostic: guided-intake / chat-with-AI
-  paths, a streaming **Claude-terminal processing preview** (scraping → mapping →
-  matching → projecting, with live token + elapsed counters and a "✓ thought for Xs"
-  summary), proof-stats, and a 3D **Saturn-ring** accent that tracks the localized
-  AI/IA token (en/fr/id). Mobile: forced-identical headline line-breaks via
-  `ScaleToFit`, badge + proof-stats scale-to-fit, reduced card padding, sub-size
-  copy. Completing a diagnostic **auto-opens the AI Consultation waitlist**
-  (`NotifyModal`, copy = early prototype, launching August 2026, email-on-ready).
-  Methodology #4 now shows the real **"Lean pods, fixed clocks"** principle (was the
-  AI-Consultation coming-soon placeholder). Also removed the legacy `/start` route +
-  `public/ads` assets. **All ROI/metric figures in the diagnostic are labelled
-  projections — no fabricated data**.
-- ✅ **Interactive framework widgets** (calculator/checklist, inputs→result) — done
-  2026-06-15. Three live tools, one per framework page, rendered after the intro:
-  **Build-vs-buy** (6-input scorer → build/hybrid/buy), **Pod-vs-hire** (editable cost
-  model → live € comparison), **8-week readiness** (5-area self-assessment → verdict +
-  gaps). Logic is locale-independent (`lib/content/widgets.ts`); strings translated
-  en/fr/id (`widgets.{en,fr,id}.ts`). **No invented assumptions** — the cost defaults
-  (€150K loaded hire, €40K Build, editable) are drawn from figures already published on
-  the site, and every result is labelled an estimate, not a quote. Components in
-  `components/content/widgets/`; payload-safe (only the active locale's strings ship).
-- 🔒 **Transparency page** (`/transparency`) — needs build-in-public stats from you
+**Why:** Three locale variants of each page can be read as duplicates of each other without self-referencing canonicals and reciprocal hreflang. `buildMetadata` in D1 already emits both — this task is verification across all routes.
 
-## #4 content-expansion checklist
+**Files:** none new if D1 shipped correctly; audit only.
 
-Truthful depth only (extra sections, decision criteria, common mistakes, more FAQ).
-**Never invent metrics/results.** Bump the page's `updatedAt` when its content changes.
+> **Audit finding (2026-07-13, Claude):** confirmed clean, no code changes needed. Every route already sets `alternates.canonical` (self-referencing, own locale) and `alternates.languages` (en/fr/id + x-default) via either `buildContentMetadata()` or its own `generateMetadata`. Verified against a running build, not just source: home, `/frameworks`, `/guides`, `/intelligence`, `/showcases` in en, plus `/frameworks` in fr and id — every canonical pointed at that exact page+locale (not `/en`), every page emitted all 4 hreflang links (`en`, `fr`, `id`, `x-default`) with correct targets.
 
-- ✅ **Methodology ×4** — evals-before-features (+section "Where teams get this wrong",
-  +2 FAQ) · telemetry-from-day-one / owned-infrastructure / lean-pods-fixed-clocks
-  (+2 FAQ each) · all 3 locales · `updatedAt` → 2026-06-03
-- ✅ **Frameworks ×3 · Guides ×3 · Intelligence ×2** — +3–4 sections (2–3 paras each)
-  & +4 FAQ per page, all 3 locales · `updatedAt` → 2026-06-15
-- ✅ **Showcases ×3** — _context / transferable lesson_ expanded (+4 sections, +4 FAQ
-  each, all locales); **results stay deferred — zero metrics invented** (numeric scan
-  - native-speaker review confirmed: only established figures + hypotheticals used)
+**Steps:**
+- [x] Confirm every page renders `<link rel="canonical">` pointing to its own locale URL (not to `/en`) — verified against a live build
+- [x] Confirm `hreflang` alternates present for en, fr, id on every page — verified
+- [x] Confirm `x-default` is set (add to `languages` map if missing, pointing to `/en`) — verified, already correct everywhere
+- [ ] Spot-check in browser DevTools → Elements → `<head>` on 5 random pages — did the programmatic equivalent (see above); a manual browser pass is still worth doing but shouldn't surface anything new
 
-## Pre-push — verification gate
+**Acceptance:**
+- [ ] Google Rich Results / URL inspection shows one self-referencing canonical per page — needs live GSC, post-deploy
+- [ ] No "Duplicate, Google chose different canonical" in GSC after re-crawl — needs live GSC, post-deploy
 
-- ✅ `tsc --noEmit` clean · `eslint .` clean · `vitest` 51/51 · `next build` **87/87 SSG**
-  (re-verified after the sitemap index + framework widgets: en/fr/id all compile + prerender)
-- ✅ Runtime smoke test (`next start`): homepage + cluster pages + **framework widget
-  pages** + **`/sitemap.xml` index & all 6 children** → 200, correct localized content
-  (en/fr/id); widgets interactive, `<sitemapindex>` valid.
-- ✅ **Pushed → `main`** (2026-06-15) → Vercel prod deploy. Re-run `npm run pagespeed`
-  and the Rich Results Test once the deploy is live to confirm the LCP / a11y / unused-JS
-  fixes land. (Graphify tool output `graphify-out/{graph.html,cache/,…}` left out of the
-  commit — generated local artifacts; only `graph.json` + `GRAPH_REPORT.md` versioned.)
-- ✅ **AI Consultation beta** (2026-06-21) — `tsc --noEmit` clean · `eslint` clean ·
-  `vitest` **51/51** · `next build` **SSG clean** (84 pages). i18n parity en/fr/id.
-  Pushed → `main` as "ai consultation beta". Re-run `npm run pagespeed` after deploy
-  (hero LCP `<h1>` still transform-only/`riseIn`; the diagnostic widget is below it).
+---
+
+## D3 · UTM + referrer attribution → Notion (Phase A1)
+
+> **Audit finding (2026-07-13, Claude): this is already built, pre-existing, not part of today's work.** All 5 steps below already exist in the codebase:
+> - Step 1 (capture util): `lib/analytics/attribution.ts` — `captureAttribution()`/`getAttribution()`, first-touch, sessionStorage-based, same fields (utmSource/Medium/Campaign/Term/Content, referrer, landingPath, landingLocale) plus a bonus `channel` classifier (organic/paid/social/email/referral/direct/internal).
+> - Step 2 (call on mount): `captureAttribution()` fires unconditionally in `components/MetaPixel.tsx`'s `useEffect` (rendered in the root layout, so every page/locale) — deliberately *before* the consent/pixel-enabled check, since it's cookieless sessionStorage, not a tracking script.
+> - Step 3 (schema): `lib/forms/schemas.ts`'s `intakeSchema` already has all 8 fields (utmSource…landingLocale, channel), all optional.
+> - Step 4 (inject into POST): `components/sections/engage/DiagnosticForm.tsx` calls `getAttribution()` and spreads it into the `/api/forms/intake` body alongside the human `source` field.
+> - Step 5 (map to Notion): `lib/notion/mappers.ts`'s `referralSourceText()` folds channel + all UTM/referrer/landing fields into the existing "Referral Source" rich_text property — a different approach than the TODO's proposed new columns (one column, machine-readable `key=value` format, tagged `[auto]`), but achieves the same goal without a Notion schema migration.
+>
+> **Not verified: the Acceptance checkboxes below need a live test submission, which writes a real row to the production `PN_Intake` Notion database** — I didn't do this without asking, since it has a real side effect on your actual sales pipeline. Say the word and I'll run one (e.g. `?utm_source=google&utm_medium=cpc` → submit → confirm it landed), or do it yourself.
+
+**Why:** GA4 sees channels, but your conversion database (Notion) can't tell an organic lead from a paid one. Capture the source client-side and write it to Notion so `PN_Sales_Pipeline` becomes queryable by channel.
+
+**Files:**
+- `lib/attribution/capture.ts` (new)
+- `lib/forms/schemas.ts` (extend intake schema)
+- `lib/notion/mappers.ts` (map new fields)
+- intake form client component under `components/sections/engage/` (inject hidden fields)
+
+**Step 1 — capture util (first-touch within session):**
+```ts
+// lib/attribution/capture.ts
+export type Attribution = {
+  utmSource: string; utmMedium: string; utmCampaign: string
+  utmTerm: string; utmContent: string
+  referrer: string; landingPath: string; landingLocale: string
+}
+
+export function captureAttribution(): void {
+  if (typeof window === 'undefined') return
+  if (sessionStorage.getItem('pn_attr')) return // keep first touch
+  const p = new URLSearchParams(window.location.search)
+  const attr: Attribution = {
+    utmSource: p.get('utm_source') ?? '',
+    utmMedium: p.get('utm_medium') ?? '',
+    utmCampaign: p.get('utm_campaign') ?? '',
+    utmTerm: p.get('utm_term') ?? '',
+    utmContent: p.get('utm_content') ?? '',
+    referrer: document.referrer ?? '',
+    landingPath: window.location.pathname,
+    landingLocale: document.documentElement.lang ?? '',
+  }
+  sessionStorage.setItem('pn_attr', JSON.stringify(attr))
+}
+
+export function readAttribution(): Partial<Attribution> {
+  if (typeof window === 'undefined') return {}
+  try { return JSON.parse(sessionStorage.getItem('pn_attr') ?? '{}') } catch { return {} }
+}
+```
+
+**Step 2 — call `captureAttribution()`** once on first client mount (a top-level client provider or the existing consent/analytics bootstrap).
+
+**Step 3 — extend the intake Zod schema:**
+```ts
+// lib/forms/schemas.ts  (add to intakeSchema)
+utmSource:     z.string().max(200).optional(),
+utmMedium:     z.string().max(200).optional(),
+utmCampaign:   z.string().max(200).optional(),
+utmTerm:       z.string().max(200).optional(),
+utmContent:    z.string().max(200).optional(),
+referrer:      z.string().max(500).optional(),
+landingPath:   z.string().max(300).optional(),
+landingLocale: z.string().max(10).optional(),
+```
+
+**Step 4 — inject into the intake POST** via `readAttribution()` (hidden fields, alongside the existing human `source` self-report — keep both).
+
+**Step 5 — map to Notion** in `lib/notion/mappers.ts` (add `rich_text` props, or a `select` for `utmSource`) next to the existing "Referral Source". Add the matching columns in `PN_Sales_Pipeline`.
+
+**Acceptance:**
+- [ ] A test submit from `?utm_source=google&utm_medium=cpc` lands those values in Notion — not run (would write a real live-Notion row, needs your go-ahead)
+- [ ] `referrer`, `landingPath`, `landingLocale` populate — same
+- [ ] Organic / direct / paid is now filterable in the Notion pipeline — same
+- [x] Existing 51 schema tests still pass — verified 2026-07-13 (the fields already exist, so there was nothing new to add cases for)
+
+---
+
+# P1 — Force re-crawl + wire measurement
+
+## D4 · Link GA4 to Google Ads, import the lead conversion
+
+**Why:** The 3M IDR credit can't optimize toward leads without an imported conversion. GA4 already fires events (`lib/analytics/events.ts`); this connects them to Ads.
+
+**Steps (mostly console, some code):**
+- [ ] Confirm `trackEvent('intake_submit', …)` fires on intake success in `DiagnosticForm`
+- [ ] Also fire `intake_qualified` / `intake_disqualified` using the `evaluateDisqualification` result (quality, not just volume)
+- [ ] In GA4 → Admin → Events, mark `intake_submit` as a key event (conversion)
+- [ ] Link GA4 property to the Google Ads account (GA4 Admin → Product links → Google Ads)
+- [ ] Import `intake_submit` as a conversion in Google Ads
+- [ ] Only then switch the campaign bid strategy from Maximize Clicks to Conversions
+
+**Acceptance:**
+- [ ] `intake_submit` shows as a conversion action in Google Ads
+- [ ] Test lead registers a conversion within 24–48h
+- [ ] Bid strategy switch is gated on 15–30 recorded conversions
+
+---
+
+## D5 · IndexNow (clears Bing's High flag, instant re-crawl)
+
+**Why:** Free instant indexing for Bing and the AI engines it feeds. Also the fastest way to re-surface the D1-fixed pages.
+
+**Files:**
+- `public/<key>.txt` (new)
+- `.github/workflows/indexnow.yml` (new)
+
+**Step 1 — key file.** Generate `openssl rand -hex 16`, save as `public/<key>.txt` containing only the key.
+
+**Step 2 — deploy-triggered ping:**
+```yaml
+# .github/workflows/indexnow.yml
+name: IndexNow ping
+on:
+  deployment_status:
+jobs:
+  ping:
+    if: github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit URLs to IndexNow
+        run: |
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d "$(cat <<JSON
+          {
+            "host": "www.prionation.io",
+            "key": "${{ secrets.INDEXNOW_KEY }}",
+            "keyLocation": "https://www.prionation.io/${{ secrets.INDEXNOW_KEY }}.txt",
+            "urlList": [
+              "https://www.prionation.io/en",
+              "https://www.prionation.io/fr",
+              "https://www.prionation.io/id"
+            ]
+          }
+          JSON
+          )"
+```
+Add `INDEXNOW_KEY` as a repo secret. Expand `urlList` with the pages you changed each deploy (submit deltas, not the whole site).
+
+**Acceptance:**
+- [ ] `curl https://www.prionation.io/<key>.txt` returns the key, 200
+- [ ] Action runs green on a deploy
+- [ ] Bing "IndexNow" High-severity flag clears
+
+---
+
+## D6 · GSC validate fix + resubmit (after D1 ships)
+
+**Why:** Tell Google to re-evaluate the 39 pages now that titles and descriptions are unique.
+
+**Steps:**
+- [ ] GSC → Pages → open each "not indexed" reason bucket → Validate Fix
+- [ ] GSC → Sitemaps → resubmit `sitemap.xml`
+- [ ] URL-inspect 5 previously-unindexed pages → Request Indexing
+- [ ] Bing Webmaster → resubmit sitemap + submit same URLs via IndexNow
+
+**Acceptance:**
+- [ ] GSC validation state moves to "Started" then "Passed" over the following days
+- [ ] Indexed count climbs from 12 toward 40+ within 4–6 weeks
+
+---
+
+## D7 · Internal linking pass
+
+**Why:** On a low-authority domain, pages with few internal links get deprioritized for crawl. Every page must be reachable from the anchor page and the footer.
+
+**Files:** `components/sections/site-footer/*`, anchor page body, nav.
+
+**Steps:**
+- [ ] Every cluster page links back to the anchor page
+- [ ] Anchor page links out to all live cluster pages (methodology, showcases, guides, glossary)
+- [ ] Footer nav exposes the main sections in all locales
+- [ ] No orphan pages: every route reachable within 2 clicks of home
+
+**Acceptance:**
+- [ ] Screaming Frog (or `next build` route graph) shows zero orphans
+- [ ] Anchor page outbound internal links ≥ number of live cluster pages
+
+---
+
+# P2 — Quality + hygiene
+
+## D8 · Thin-content check
+
+**Why:** "Crawled, currently not indexed" often means Google judged a page too thin. Sub-pages like manifesto and glossary entries are the usual suspects.
+
+**Steps:**
+- [ ] List every page under ~300 words of unique body copy
+- [ ] Merge, expand, or `noindex` anything that can't stand alone
+- [ ] Ensure each page carries at least one first-party, PRIONATION-specific fact (not generic AI filler)
+
+**Acceptance:**
+- [ ] No indexable page under 300 words
+- [ ] Each page has a unique H1 and a TL;DR / summary block
+
+---
+
+## D9 · Refresh `llms.txt`
+
+**Why:** AI crawlers should be pointed only at live, indexed URLs, and at the corrected titles.
+
+**Files:** `public/llms.txt`
+
+**Steps:**
+- [ ] Remove any dead or draft URLs
+- [ ] List only live, indexed pages with their new unique titles
+- [ ] Confirm pricing block lists all 4 SKUs in EUR
+
+**Acceptance:**
+- [ ] `curl https://www.prionation.io/llms.txt` returns 200, accurate content
+- [ ] No links to unindexed or 404 routes
+
+---
+
+## Sprint definition of done
+
+- [ ] Bing: both duplicate flags cleared, IndexNow flag cleared
+- [ ] GSC: indexed count trending 12 → 40+
+- [ ] Every live page: unique title + description, self-canonical, hreflang complete
+- [ ] Notion pipeline: new leads carry UTM + referrer + landing path
+- [ ] Google Ads: `intake_submit` imported as a conversion
+- [ ] `npm run lint && npm test && npm run build` green on main
+- [ ] Production verified after each deploy
+
+---
+
+## Explicitly out of scope (handled elsewhere)
+
+- Backlinks — off-dev: client "Built by PRIONATION" links, directories, digital PR
+- Google Ads launch — gated on D3 + D4
+- Content publishing cadence — resume only after D1 ships
+- Never buy PBN / aged-domain / bulk backlink packages. Penalty risk, brand-fatal.
+
+---
+
+*PRIONATION.io — Dev TODO v.3.1.0 — 13/07/2026 — © 2026 PRIORITY FOUNDATION*
