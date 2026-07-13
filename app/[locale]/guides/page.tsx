@@ -16,6 +16,7 @@ export async function generateMetadata({
   const { locale } = await params;
   return {
     title: { absolute: "Guides · PRIONATION.io" },
+    description: "Honest answers to the questions buyers ask before signing.",
     alternates: {
       canonical: `${SITE_URL}/${locale}/guides`,
       languages: {
