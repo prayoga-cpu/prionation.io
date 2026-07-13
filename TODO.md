@@ -26,6 +26,26 @@
 
 ---
 
+## Status at a glance (2026-07-13 audit — re-verified, see method note below)
+
+| # | Task | Code status | Who does what's left |
+|---|---|---|---|
+| D1 | Unique title/description per page | ✅ Fixed (4 pages) | **You:** push, then run the live duplicate-detector + optionally trim 6 over-length titles/descriptions |
+| D2 | Canonical + hreflang | ✅ Already correct, no changes | **You:** push, then a quick DevTools spot-check is nice-to-have |
+| D3 | UTM attribution → Notion | ✅ Already built (pre-existing) | **You:** say the word for a live test submission, or run one yourself |
+| D4 | GA4 → Google Ads conversion | 🟡 Code done, console pending | **You:** 4 GA4/Ads console steps — no code left |
+| D5 | IndexNow | ✅ Already shipped, live-verified | **You:** confirm the Bing dashboard flag cleared |
+| D6 | GSC/Bing manual resubmit | ⬜ Not started | **You:** 100% console work, do after pushing |
+| D7 | Internal linking | ✅ Fixed (1 gap closed) | **You:** push — nothing else needed |
+| D8 | Thin-content check | ✅ Audited, nothing was thin | **You:** 2 judgment calls (discord, section-index copy) |
+| D9 | llms.txt | ✅ Already accurate, live-verified | Nothing — already correct on production |
+
+**Verification method, so "done" means what it says:** D1/D2/D7 were re-verified today against a **local production build** (`npm run build && npm start`) — real, but not yet the live site, since none of these commits are pushed yet. D3/D5/D9 were verified against **the actual live prionation.io** (they predate this session's work, or in D5's case are independently confirmed via GitHub's Actions API). Full detail and re-verification commands are in each `Dn` section below.
+
+A consolidated, ordered list of everything that needs *you* — pushing, console clicks, and the judgment calls I deliberately didn't make unilaterally — is in **"Your action items"** near the end of this file.
+
+---
+
 ## Priority + sequencing
 
 ```
@@ -185,13 +205,13 @@ const https=require("https");
 
 **Files:** none new if D1 shipped correctly; audit only.
 
-> **Audit finding (2026-07-13, Claude):** confirmed clean, no code changes needed. Every route already sets `alternates.canonical` (self-referencing, own locale) and `alternates.languages` (en/fr/id + x-default) via either `buildContentMetadata()` or its own `generateMetadata`. Verified against a running build, not just source: home, `/frameworks`, `/guides`, `/intelligence`, `/showcases` in en, plus `/frameworks` in fr and id — every canonical pointed at that exact page+locale (not `/en`), every page emitted all 4 hreflang links (`en`, `fr`, `id`, `x-default`) with correct targets.
+> **Audit finding (2026-07-13, Claude):** confirmed clean, no code changes needed. Every route already sets `alternates.canonical` (self-referencing, own locale) and `alternates.languages` (en/fr/id + x-default) via either `buildContentMetadata()` or its own `generateMetadata`. Re-verified twice (initial audit + today's double-check) against a **local production build** (`npm run build && npm start` — not the live site, since nothing's pushed yet): home, `/frameworks`, `/guides`, `/intelligence`, `/showcases` in en, plus `/frameworks` in fr and id — every canonical pointed at that exact page+locale (not `/en`), every page emitted all 4 hreflang links (`en`, `fr`, `id`, `x-default`) with correct targets.
 
 **Steps:**
-- [x] Confirm every page renders `<link rel="canonical">` pointing to its own locale URL (not to `/en`) — verified against a live build
+- [x] Confirm every page renders `<link rel="canonical">` pointing to its own locale URL (not to `/en`) — verified against a local production build
 - [x] Confirm `hreflang` alternates present for en, fr, id on every page — verified
 - [x] Confirm `x-default` is set (add to `languages` map if missing, pointing to `/en`) — verified, already correct everywhere
-- [ ] Spot-check in browser DevTools → Elements → `<head>` on 5 random pages — did the programmatic equivalent (see above); a manual browser pass is still worth doing but shouldn't surface anything new
+- [ ] Spot-check in browser DevTools → Elements → `<head>` on 5 random pages — did the programmatic equivalent twice (see above); a manual browser pass on the *live* site after deploy is still worth doing
 
 **Acceptance:**
 - [ ] Google Rich Results / URL inspection shows one self-referencing canonical per page — needs live GSC, post-deploy
@@ -376,7 +396,7 @@ Add `INDEXNOW_KEY` as a repo secret. Expand `urlList` with the pages you changed
 > - All 15 published pages already list `ANCHOR_PATH` first in `interlinkTo` — cluster→anchor backlinks were already 100% complete.
 > - `AnchorPage.tsx` already has a "Categories" grid linking to all 5 section indices (with a live count + 2 recent articles each) — anchor→cluster coverage was already complete.
 > - `FooterColumns.tsx`'s "AI Product Engineering" column already links to all 5 section indices (`/methodology`, `/showcases`, `/frameworks`, `/guides`, `/intelligence`) via the locale-aware `Link` component, present on every page — so every published article is reachable in ≤2 clicks from home via Home → (footer) Section Index → Article, regardless of the anchor page.
-> - Building the reverse-link graph (which pages point *at* which) found exactly **one page with zero inbound topical links**: `guides/scoping-ai-build-engagement` — reachable via the flat `/guides` index, but no other article pointed at it specifically. **Fixed** — added it to `frameworks/8-week-build-readiness-checklist`'s `interlinkTo` (same topic), verified it renders live.
+> - Building the reverse-link graph (which pages point *at* which) found exactly **one page with zero inbound topical links**: `guides/scoping-ai-build-engagement` — reachable via the flat `/guides` index, but no other article pointed at it specifically. **Fixed** — added it to `frameworks/8-week-build-readiness-checklist`'s `interlinkTo` (same topic). Re-verified twice against a local production build that the new link actually renders on the page — not yet the live site, since nothing's pushed yet.
 >
 > Net: this task was ~95% already done by the existing footer/anchor/manifest design; the one real gap is closed.
 
@@ -438,6 +458,36 @@ Add `INDEXNOW_KEY` as a repo secret. Expand `urlList` with the pages you changed
 **Acceptance:**
 - [x] `curl https://www.prionation.io/llms.txt` returns 200, accurate content — verified live 2026-07-13
 - [x] No links to unindexed or 404 routes — 10-URL live spot check, all 200
+
+---
+
+## Your action items (everything that needs you, in order)
+
+Everything code-side is done, re-verified fresh today (`npm run lint && npm test && npm run build` — all green; every fix re-confirmed against a local production build; sources re-grepped to confirm nothing regressed). Nothing below needs more code — it's either a click-through console flow or a decision only you can make.
+
+**1 — Unblocks everything else:**
+- [ ] `git push` the 7 commits on `main` (D1 fix, D7 fix, 3 audit-doc commits, 2 trailing graph-rebuild commits). Nothing else on this list can be live-verified until Vercel deploys them.
+
+**2 — After the deploy, quick verification (~10 min):**
+- [ ] Run D1's duplicate-title detector script against the live sitemap (in D1 above) — should print nothing
+- [ ] Bing Webmaster Tools → confirm the "duplicate titles," "duplicate meta descriptions," and "IndexNow" flags are all clear (D1 + D5)
+- [ ] Optional: a DevTools spot-check of canonical/hreflang on a couple of live pages (D2) — the code-level check already passed twice, this is just belt-and-suspenders
+
+**3 — Console work with no code surface (I have no access to these):**
+- [ ] D4: GA4 → Admin → Events → mark `intake_submit` as a key event
+- [ ] D4: GA4 → Admin → Product links → link the Google Ads account
+- [ ] D4: Google Ads → import `intake_submit` as a conversion
+- [ ] D4: switch bid strategy from Maximize Clicks to Conversions (gate this on 15–30 recorded conversions first)
+- [ ] D6: GSC → Pages → Validate Fix on each "not indexed" bucket
+- [ ] D6: GSC → Sitemaps → resubmit `sitemap.xml`
+- [ ] D6: GSC → URL-inspect 5 previously-unindexed pages → Request Indexing
+- [ ] D6: Bing Webmaster → resubmit sitemap
+
+**4 — Judgment calls (your call, not mine to make unilaterally):**
+- [ ] D8: decide what happens to `/discord` (205 words) — leave as-is, or add `noindex` since it's a community/contest CTA page, not an article
+- [ ] D8: decide whether to commission real intro copy for the 5 section-index pages (15 short paragraphs across 3 locales) — I flagged this but didn't write unrequested marketing copy
+- [ ] D1: decide whether to trim the ~6 titles/descriptions that run over the 60/160-char guideline (exact strings named in D1 above) — doesn't block indexing, just worth cleaning up
+- [ ] D3 (optional): say the word if you want me to run one live test submission (`?utm_source=google&utm_medium=cpc` → submit → confirm it lands in Notion) — I didn't do this unprompted since it writes a real row to your production sales pipeline
 
 ---
 
