@@ -16,7 +16,8 @@ export async function generateMetadata({
   const { locale } = await params;
   return {
     title: { absolute: "Intelligence · PRIONATION.io" },
-    description: "First-party observations from real engagements by vertical.",
+    description:
+      "First-party observations from real engagements by vertical, starting with AI bottlenecks in mid-market logistics and lead generation.",
     alternates: {
       canonical: `${SITE_URL}/${locale}/intelligence`,
       languages: {

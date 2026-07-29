@@ -16,7 +16,8 @@ export async function generateMetadata({
   const { locale } = await params;
   return {
     title: { absolute: "Frameworks · PRIONATION.io" },
-    description: "Decision tools and calculators for AI operators.",
+    description:
+      "Three decision tools for AI operators: a build-vs-buy calculator, a pod-vs-hire cost model, and an 8-week build-readiness checklist to plan an engagement.",
     alternates: {
       canonical: `${SITE_URL}/${locale}/frameworks`,
       languages: {

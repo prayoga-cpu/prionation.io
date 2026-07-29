@@ -17,7 +17,7 @@ export async function generateMetadata({
   return {
     title: { absolute: "Methodology · PRIONATION.io" },
     description:
-      "The four engineering principles that make fixed-price production AI possible.",
+      "The four engineering principles behind fixed-price AI: evals before features, telemetry from day one, owned infrastructure, lean pods on fixed clocks.",
     alternates: {
       canonical: `${SITE_URL}/${locale}/methodology`,
       languages: {

@@ -16,7 +16,8 @@ export async function generateMetadata({
   const { locale } = await params;
   return {
     title: { absolute: "Showcases · PRIONATION.io" },
-    description: "First-party case studies from production AI engagements.",
+    description:
+      "First-party case studies from production AI engagements, including Epidom, Expeditoo, and The Lead Agent — real builds, real outcomes.",
     alternates: {
       canonical: `${SITE_URL}/${locale}/showcases`,
       languages: {
