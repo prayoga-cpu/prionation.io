@@ -1,6 +1,6 @@
 # TODO — Technical SEO & Attribution Recovery
 
-**Version:** v.3.8.1
+**Version:** v.3.8.2
 **Date:** 13/07/2026
 **Repo:** `prayoga-cpu/prionation.io` · Next.js 16 · next-intl (en/fr/id) · Vercel
 **Based on:** GSC (12 indexed / 39 not) + Bing (duplicate titles, duplicate meta descriptions, weak backlinks)
@@ -528,11 +528,29 @@ GSC "Page indexing" report: 13 indexed / 5 not indexed. Audited each flagged rea
 **Fix shipped:** broadened the matcher to next-intl's own recommended catch-all (`/((?!api|_next|_vercel|.*\.).*)`, i.e. every path except API routes, Next internals, and files with an extension). Verified against a local production build: the previously-404'ing path and other unprefixed page paths now `307` to their correct locale; `/api/*` and `/sitemap.xml` are unaffected (confirmed via `curl -I`, no middleware cookies set on those responses). Version bumped 3.8.0 → 3.8.1 (patch — bug fix, no new capability).
 
 **Action items (console-side, once Vercel deploys this fix):**
-- [ ] GSC → URL Inspection → re-test the previously-404 URL → Request Indexing
+- [x] GSC → URL Inspection → re-test the previously-404 URL → Request Indexing — **live-verified 2026-07-29**: `curl -I` on the previously-404 URL now returns `307 → /en/...`; still worth an explicit Request Indexing click so Google recrawls sooner
 - [ ] GSC → Pages → do **not** re-click "Validate Fix" on the root `/` redirect entry — it is structural/by-design and will never resolve
 - [ ] GSC → URL Inspection → `/id` and `/fr/showcases/epidom` → Request Indexing (both already serve 200; this just nudges Google to recrawl now that the sitewide redirect gap is closed)
 - [ ] GSC → Sitemaps → resubmit `sitemap.xml` so the fixed crawl signal propagates faster
 
 ---
 
-*PRIONATION.io — Dev TODO v.3.8.1 — 29/07/2026 — © 2026 PRIORITY FOUNDATION*
+## 2026-07-29 — Bing Webmaster Tools audit (D11)
+
+You shared 3 Bing "Recommendations" screenshots. Checked each against the live site and the code before touching anything.
+
+| Finding | Severity | Real cause | Status |
+| --- | --- | --- | --- |
+| "Too many pages with identical meta descriptions" (5 pages: `/en`, `/en/guides`, `/en/showcases`, `/`, `/en/frameworks`) | Moderate | **Stale scan** — live `curl` on all 5 right now shows each already serving its own unique description (the D1 fix, live since the earlier push). Bing's crawl just hadn't caught up. | ✅ No code change needed — will self-clear on Bing's next crawl |
+| "Your site lacks inbound links from high-quality domains" | Moderate | Backlinks are off-dev by design — no code can create third-party links pointing at this site | ⚪ **Out of scope for this repo** (see "Explicitly out of scope" above) — needs real digital PR / directory listings / client "Built by PRIONATION" backlinks, not a dev fix. Never buy PBN/aged-domain/bulk backlink packages — penalty risk |
+| "Meta descriptions on many of your pages are too short" (`/en/methodology` flagged directly) | Moderate | `/methodology`'s description was 80 chars; Bing recommends 150-160. The other 4 section-index pages (`frameworks`, `guides`, `showcases`, `intelligence`) had the identical thin pattern (49-61 chars) and would have been flagged next, one by one | ✅ **Fixed, all 5** — rewrote each using only real, already-published facts (the four methodology principles, the three framework tools, the three guide topics, the three named showcases, the two intelligence articles). New lengths: 133-154 chars, no fabricated claims |
+
+**Fix shipped:** `app/[locale]/{methodology,frameworks,guides,showcases,intelligence}/page.tsx` — `generateMetadata()`'s `description` field only, in each. Verified: `tsc`, lint, 51 tests, build all green. Version bumped 3.8.1 → 3.8.2 (patch — copy/SEO tweak, no new capability).
+
+**Action items (console-side):**
+- [ ] Bing Webmaster Tools → Sitemaps → resubmit `sitemap.xml` once this deploys, to speed up the recrawl that clears both meta-description flags
+- [ ] Backlinks flag: decide on a digital-PR/directory/client-backlink push — this is a business-development task, not something I can execute from the codebase
+
+---
+
+*PRIONATION.io — Dev TODO v.3.8.2 — 29/07/2026 — © 2026 PRIORITY FOUNDATION*

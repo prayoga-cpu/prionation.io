@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.8.1";
+export const CURRENT_VERSION = "3.8.2";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,17 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.8.2",
+    bump: "patch",
+    date: "2026-07-29",
+    title: "Lengthen thin section-index meta descriptions (Bing audit)",
+    items: [
+      "Bing Webmaster Tools flagged /methodology's meta description as too short (80 chars, below its 150-160 recommendation); the other 4 section-index pages (frameworks, guides, showcases, intelligence) shared the same thin pattern (49-61 chars) and would have been flagged next.",
+      "Rewrote all 5 with real, grounded detail already published on each page (the four methodology principles, the three framework tools, the three guide topics, the three named showcases, the two intelligence articles) — no invented claims or numbers.",
+      "Bing's separate \"duplicate meta descriptions\" flag on the same 5 pages was confirmed stale: a live check showed every page already serving a unique description from the earlier D1 fix; Bing's crawl simply hadn't caught up yet.",
+    ],
+  },
   {
     version: "3.8.1",
     bump: "patch",
