@@ -32,6 +32,12 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/(id|en|fr)/:path*'],
+  // Match every pathname except api routes, Next internals, and requests for
+  // files with an extension (static assets). Previously this only matched
+  // '/' and already-locale-prefixed paths, so any bare unprefixed link (e.g.
+  // '/ai-product-engineering-for-mid-market-companies' instead of
+  // '/en/ai-product-engineering-for-mid-market-companies') skipped next-intl's
+  // redirect entirely and hard-404'd — confirmed live and flagged in GSC as
+  // "Not found (404)".
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 };
