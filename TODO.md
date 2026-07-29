@@ -1,6 +1,6 @@
 # TODO — Technical SEO & Attribution Recovery
 
-**Version:** v.3.8.0
+**Version:** v.3.8.1
 **Date:** 13/07/2026
 **Repo:** `prayoga-cpu/prionation.io` · Next.js 16 · next-intl (en/fr/id) · Vercel
 **Based on:** GSC (12 indexed / 39 not) + Bing (duplicate titles, duplicate meta descriptions, weak backlinks)
@@ -466,7 +466,7 @@ Add `INDEXNOW_KEY` as a repo secret. Expand `urlList` with the pages you changed
 Everything code-side is done, re-verified fresh today (`npm run lint && npm test && npm run build` — all green; every fix re-confirmed against a local production build; sources re-grepped to confirm nothing regressed). Nothing below needs more code — it's either a click-through console flow or a decision only you can make.
 
 **1 — Unblocks everything else:**
-- [ ] `git push` the 7 commits on `main` (D1 fix, D7 fix, 3 audit-doc commits, 2 trailing graph-rebuild commits). Nothing else on this list can be live-verified until Vercel deploys them.
+- [x] `git push` the commits on `main` (D1 fix, D7 fix, audit docs, changelog + versioning rework, GSC redirect-gap fix below) — confirmed `main` in sync with `origin/main`, 0 ahead / 0 behind.
 
 **2 — After the deploy, quick verification (~10 min):**
 - [ ] Run D1's duplicate-title detector script against the live sitemap (in D1 above) — should print nothing
@@ -512,4 +512,27 @@ Everything code-side is done, re-verified fresh today (`npm run lint && npm test
 
 ---
 
-*PRIONATION.io — Dev TODO v.3.8.0 — 13/07/2026 — © 2026 PRIORITY FOUNDATION*
+## 2026-07-29 — GSC Page Indexing audit (D10)
+
+GSC "Page indexing" report: 13 indexed / 5 not indexed. Audited each flagged reason against the live site and the codebase (not assumed from the GSC labels alone).
+
+| Reason | URL(s) | Live check | Verdict |
+| --- | --- | --- | --- |
+| Not found (404) | `/ai-product-engineering-for-mid-market-companies` (no locale prefix) | `curl -I` → real `404` | **Real bug — fixed** |
+| Page with redirect (Failed) | `https://www.prionation.io/` | `curl -I` → `307 → /en` | Expected — locale negotiation is visitor-dependent (Accept-Language/cookie), so the redirect can never be permanent. Not a defect. |
+| Crawled – currently not indexed | `/id`, `/fr/showcases/epidom` | both `200 OK` | Pages render correctly; Google is deferring indexing on quality/crawl-budget grounds, not blocking on a technical fault. |
+| Crawled – currently not indexed | a `.woff2` font file under `/_next/static/media/` | n/a (static asset) | Google incidentally visited a font resource; not linked as a page anywhere in the code. Cosmetic, no action possible or needed. |
+
+**Root cause found:** `proxy.ts`'s middleware `matcher` only covered `/` and already-locale-prefixed paths (`/(id|en|fr)/:path*`). Any *unprefixed, non-root* path — including real pages like the one above — never reached next-intl's locale-redirect logic, so Next's router had no match and hard-404'd. This affected every bare internal/external link missing a locale segment, not just the one URL Google happened to flag.
+
+**Fix shipped:** broadened the matcher to next-intl's own recommended catch-all (`/((?!api|_next|_vercel|.*\.).*)`, i.e. every path except API routes, Next internals, and files with an extension). Verified against a local production build: the previously-404'ing path and other unprefixed page paths now `307` to their correct locale; `/api/*` and `/sitemap.xml` are unaffected (confirmed via `curl -I`, no middleware cookies set on those responses). Version bumped 3.8.0 → 3.8.1 (patch — bug fix, no new capability).
+
+**Action items (console-side, once Vercel deploys this fix):**
+- [ ] GSC → URL Inspection → re-test the previously-404 URL → Request Indexing
+- [ ] GSC → Pages → do **not** re-click "Validate Fix" on the root `/` redirect entry — it is structural/by-design and will never resolve
+- [ ] GSC → URL Inspection → `/id` and `/fr/showcases/epidom` → Request Indexing (both already serve 200; this just nudges Google to recrawl now that the sitewide redirect gap is closed)
+- [ ] GSC → Sitemaps → resubmit `sitemap.xml` so the fixed crawl signal propagates faster
+
+---
+
+*PRIONATION.io — Dev TODO v.3.8.1 — 29/07/2026 — © 2026 PRIORITY FOUNDATION*

@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.8.0";
+export const CURRENT_VERSION = "3.8.1";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,17 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.8.1",
+    bump: "patch",
+    date: "2026-07-29",
+    title: "Fix locale-redirect gap causing live 404s",
+    items: [
+      "Search Console flagged an unprefixed page URL as \"Not found (404)\"; confirmed live that any bare, unprefixed path (e.g. missing the /en, /fr, /id segment) hard-404'd instead of redirecting to its localized URL.",
+      "Root cause: the middleware matcher only covered '/' and already-locale-prefixed paths, so next-intl's locale-redirect never ran for anything else. Broadened the matcher to cover every path except API routes, Next internals, and static files, matching next-intl's own recommended pattern.",
+      "Verified against a local production build: unprefixed page paths now 307-redirect to the correct locale instead of 404ing; API routes and the sitemap remain unaffected.",
+    ],
+  },
   {
     version: "3.8.0",
     bump: "minor",
