@@ -42,6 +42,9 @@ export function Icon({ name, size = 20, strokeWidth = 1.75, className = '' }: Ic
   const l = (x1: number, y1: number, x2: number, y2: number, k?: string) => (
     <line key={k ?? `${x1}${y1}${x2}${y2}`} x1={x1} y1={y1} x2={x2} y2={y2} />
   );
+  const r = (x: number, y: number, w: number, h: number, rx: number, k?: string) => (
+    <rect key={k ?? `${x}${y}${w}${h}`} x={x} y={y} width={w} height={h} rx={rx} />
+  );
 
   switch (name) {
     case 'search':
@@ -121,6 +124,11 @@ export function Icon({ name, size = 20, strokeWidth = 1.75, className = '' }: Ic
       return ic(size, strokeWidth, className, [l(12, 5, 12, 19, 'a'), l(5, 12, 19, 12, 'b')]);
     case 'dot':
       return ic(size, strokeWidth, className, [c(12, 12, 2.5, 'a')]);
+    case 'lock':
+      return ic(size, strokeWidth, className, [
+        r(3, 11, 18, 11, 2, 'a'),
+        p('M7 11V7a5 5 0 0 1 10 0v4', 'b'),
+      ]);
     case 'mail':
       return ic(size, strokeWidth, className, [
         p('M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z', 'a'),

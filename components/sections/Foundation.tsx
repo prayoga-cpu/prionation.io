@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { m } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import NextLink from "next/link";
 import { SectionHead } from "../ui/Atoms";
 import { Icon } from "../icons";
 
@@ -133,7 +134,19 @@ export function Foundation() {
       id="foundation"
       className="relative px-page-x py-[110px] max-w-max-w mx-auto"
     >
-      <SectionHead n="05" label={t("label")} title={t("title")} />
+      <div className="relative">
+        <SectionHead n="05" label={t("label")} title={t("title")} />
+        {/* next/link directly, not next-intl's locale-aware Link — /finance
+            sits outside app/[locale] and isn't locale-prefixed; the
+            locale-aware Link would incorrectly rewrite this to /en/finance
+            (a real 404, see proxy.ts). */}
+        <NextLink
+          href="/finance"
+          className="inline-flex items-center gap-2 text-[13px] text-soft border-b border-line-soft pb-1 transition-colors duration-fast hover:text-white hover:border-white mt-4 md:mt-0 md:absolute md:top-0 md:right-0"
+        >
+          Internal Finance <Icon name="lock" size={13} />
+        </NextLink>
+      </div>
 
       {/* Desktop Grid */}
       <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
