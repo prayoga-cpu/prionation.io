@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { CurrencyToggle } from "./CurrencyToggle";
 
 const ROLE_LABEL: Record<string, string> = { ceo: "Founder & CEO", cro: "CRO" };
 
@@ -51,6 +52,7 @@ export function DashboardHeader({
         </p>
       </div>
       <div className="flex items-center gap-3">
+        <CurrencyToggle />
         <button
           onClick={handleRefresh}
           disabled={refreshing}

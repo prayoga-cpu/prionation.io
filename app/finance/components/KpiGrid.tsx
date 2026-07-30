@@ -1,15 +1,19 @@
-import { formatEur } from "@/lib/finance/format";
+"use client";
+
 import type { computeKpis } from "@/lib/finance/notion/aggregate";
+import { useCurrency } from "./CurrencyContext";
 
 type Kpis = ReturnType<typeof computeKpis>;
 
 export function KpiGrid({ kpis }: { kpis: Kpis }) {
+  const { currency, format } = useCurrency();
+
   const tiles = [
-    { label: "Realized income", value: formatEur(kpis.realizedIncome) },
-    { label: "Unrealized cashflow", value: formatEur(kpis.unrealizedCashflow) },
-    { label: "Total expenses", value: formatEur(kpis.totalExpenses) },
-    { label: "Net position", value: formatEur(kpis.netPosition) },
-    { label: "Outstanding receivables", value: formatEur(kpis.outstandingReceivables) },
+    { label: "Realized income", value: format(kpis.realizedIncome) },
+    { label: "Unrealized cashflow", value: format(kpis.unrealizedCashflow) },
+    { label: "Total expenses", value: format(kpis.totalExpenses) },
+    { label: "Net position", value: format(kpis.netPosition) },
+    { label: "Outstanding receivables", value: format(kpis.outstandingReceivables) },
     { label: "Overdue count", value: String(kpis.overdueCount) },
   ];
 
@@ -26,7 +30,9 @@ export function KpiGrid({ kpis }: { kpis: Kpis }) {
         ))}
       </div>
       <p className="font-sans text-[11px] text-muted italic mt-4">
-        EUR figures are converted estimates from native-currency ledger entries, not booked FX rates.
+        {currency === "EUR"
+          ? "EUR figures are converted estimates from native-currency ledger entries, not booked FX rates."
+          : `Converted from native-currency ledger entries to EUR, then to ${currency} at a live rate — two layers of estimate, not booked FX.`}
       </p>
     </div>
   );

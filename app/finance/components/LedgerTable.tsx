@@ -1,12 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { formatDate, formatEur } from "@/lib/finance/format";
+import { formatDate } from "@/lib/finance/format";
 import type { Transaction } from "@/lib/finance/notion/types";
+import { useCurrency } from "./CurrencyContext";
 
 type SortKey = "date" | "amountEur" | "name";
 
 export function LedgerTable({ transactions }: { transactions: Transaction[] }) {
+  const { currency, format } = useCurrency();
   const [query, setQuery] = useState("");
   const [typeFilter, setTypeFilter] = useState<string>("all");
   const [sortKey, setSortKey] = useState<SortKey>("date");
@@ -79,7 +81,7 @@ export function LedgerTable({ transactions }: { transactions: Transaction[] }) {
                   ["type", "Type"],
                   ["status", "Status"],
                   ["category", "Category"],
-                  ["amountEur", "Amount (EUR)"],
+                  ["amountEur", `Amount (${currency})`],
                   ["receipt", "Receipt"],
                 ] as const
               ).map(([key, label]) => (
@@ -109,7 +111,7 @@ export function LedgerTable({ transactions }: { transactions: Transaction[] }) {
                 <td className="font-sans text-[13px] text-soft py-3 pr-4">{t.status ?? "—"}</td>
                 <td className="font-sans text-[13px] text-soft py-3 pr-4">{t.category ?? "—"}</td>
                 <td className="font-sans text-[13px] text-soft py-3 pr-4 whitespace-nowrap">
-                  {formatEur(t.amountEur)}
+                  {format(t.amountEur)}
                 </td>
                 <td className="font-sans text-[13px] py-3 pr-4">
                   {t.hasReceipt ? (

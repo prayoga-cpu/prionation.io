@@ -1,9 +1,14 @@
-import { formatDate, formatEur, formatPercent } from "@/lib/finance/format";
+"use client";
+
+import { formatDate, formatPercent } from "@/lib/finance/format";
 import type { computeReceivables } from "@/lib/finance/notion/aggregate";
+import { useCurrency } from "./CurrencyContext";
 
 type Receivables = ReturnType<typeof computeReceivables>;
 
 export function ReceivablesTable({ receivables }: { receivables: Receivables }) {
+  const { format } = useCurrency();
+
   return (
     <div>
       <div className="grid grid-cols-2 gap-4 mb-6">
@@ -12,7 +17,7 @@ export function ReceivablesTable({ receivables }: { receivables: Receivables }) 
             Outstanding (potential inflow)
           </p>
           <p className="font-sans text-2xl font-bold text-white">
-            {formatEur(receivables.totalPotentialInflow)}
+            {format(receivables.totalPotentialInflow)}
           </p>
         </div>
         <div className="bg-card border border-line rounded-xl p-5">
@@ -51,7 +56,7 @@ export function ReceivablesTable({ receivables }: { receivables: Receivables }) 
                   <td className="font-sans text-[13px] text-white py-3 pr-4">{t.name || "—"}</td>
                   <td className="font-sans text-[13px] text-soft py-3 pr-4">{formatDate(t.date)}</td>
                   <td className="font-sans text-[13px] text-soft py-3 pr-4">
-                    {formatEur(t.potentialInflow)}
+                    {format(t.potentialInflow)}
                   </td>
                   <td className="font-sans text-[13px] text-soft py-3 pr-4">
                     {formatPercent(t.percentPaid)}

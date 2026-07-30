@@ -3,6 +3,8 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getFinanceSession } from "@/lib/finance/auth/requireSession";
 import { getFinanceSnapshot } from "@/lib/finance/notion/snapshot";
+import { fetchFxRates } from "@/lib/finance/currency";
+import { CurrencyProvider } from "./components/CurrencyContext";
 import { DashboardHeader } from "./components/DashboardHeader";
 import { KpiGrid } from "./components/KpiGrid";
 import { IncomeByProject } from "./components/IncomeByProject";
@@ -27,59 +29,61 @@ export default async function FinanceDashboardPage() {
   const session = await getFinanceSession();
   if (!session) redirect("/finance/login");
 
-  const data = await getFinanceSnapshot();
+  const [data, fx] = await Promise.all([getFinanceSnapshot(), fetchFxRates()]);
 
   return (
-    <div className="max-w-[1100px] mx-auto px-6">
-      <DashboardHeader role={session.role} fetchedAt={data.fetchedAt} />
+    <CurrencyProvider rates={fx.rates} fetchedAt={fx.fetchedAt}>
+      <div className="max-w-[1100px] mx-auto px-6">
+        <DashboardHeader role={session.role} fetchedAt={data.fetchedAt} />
 
-      <div className="py-6 border-b border-line">
-        <DataQualityPanel issues={data.dataQuality} />
+        <div className="py-6 border-b border-line">
+          <DataQualityPanel issues={data.dataQuality} />
+        </div>
+
+        <SectionShell number="01" title="Overview">
+          <KpiGrid kpis={data.kpis} />
+        </SectionShell>
+
+        <SectionShell number="02" title="Income">
+          <IncomeByProject
+            byProject={data.incomeByProject}
+            byCategory={data.incomeByCategory}
+            byMonth={data.incomeByMonth}
+          />
+        </SectionShell>
+
+        <SectionShell number="03" title="Receivables">
+          <ReceivablesTable receivables={data.receivables} />
+        </SectionShell>
+
+        <SectionShell number="04" title="Profit split">
+          <ProfitSplitPanel split={data.profitSplit} />
+        </SectionShell>
+
+        <SectionShell number="05" title="Budget">
+          <BudgetVsActual lines={data.budgetVsActual} />
+        </SectionShell>
+
+        <SectionShell number="06" title="Pipeline">
+          <PipelineByStage stages={data.pipelineByStage} />
+        </SectionShell>
+
+        <SectionShell number="07" title="Ledger">
+          <LedgerTable transactions={data.transactions} />
+        </SectionShell>
+
+        <footer className="py-10 flex items-center justify-between">
+          <Link
+            href="/finance/terms"
+            className="font-sans text-[12px] text-accent hover:text-white transition-colors"
+          >
+            Terms & conditions
+          </Link>
+          <p className="font-pixel text-[8px] tracking-[0.15em] text-muted uppercase">
+            PRIONATION.io · Internal
+          </p>
+        </footer>
       </div>
-
-      <SectionShell number="01" title="Overview">
-        <KpiGrid kpis={data.kpis} />
-      </SectionShell>
-
-      <SectionShell number="02" title="Income">
-        <IncomeByProject
-          byProject={data.incomeByProject}
-          byCategory={data.incomeByCategory}
-          byMonth={data.incomeByMonth}
-        />
-      </SectionShell>
-
-      <SectionShell number="03" title="Receivables">
-        <ReceivablesTable receivables={data.receivables} />
-      </SectionShell>
-
-      <SectionShell number="04" title="Profit split">
-        <ProfitSplitPanel split={data.profitSplit} />
-      </SectionShell>
-
-      <SectionShell number="05" title="Budget">
-        <BudgetVsActual lines={data.budgetVsActual} />
-      </SectionShell>
-
-      <SectionShell number="06" title="Pipeline">
-        <PipelineByStage stages={data.pipelineByStage} />
-      </SectionShell>
-
-      <SectionShell number="07" title="Ledger">
-        <LedgerTable transactions={data.transactions} />
-      </SectionShell>
-
-      <footer className="py-10 flex items-center justify-between">
-        <Link
-          href="/finance/terms"
-          className="font-sans text-[12px] text-accent hover:text-white transition-colors"
-        >
-          Terms & conditions
-        </Link>
-        <p className="font-pixel text-[8px] tracking-[0.15em] text-muted uppercase">
-          PRIONATION.io · Internal
-        </p>
-      </footer>
-    </div>
+    </CurrencyProvider>
   );
 }

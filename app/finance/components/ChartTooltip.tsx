@@ -1,7 +1,7 @@
 "use client";
 
 import { CHART } from "@/lib/finance/chartTokens";
-import { formatEur } from "@/lib/finance/format";
+import { useCurrency } from "./CurrencyContext";
 
 type Props = {
   active?: boolean;
@@ -10,6 +10,7 @@ type Props = {
 };
 
 export function ChartTooltip({ active, label, payload }: Props) {
+  const { format } = useCurrency();
   if (!active || !payload?.length) return null;
   return (
     <div
@@ -21,7 +22,7 @@ export function ChartTooltip({ active, label, payload }: Props) {
       </p>
       {payload.map((p, i) => (
         <p key={i} className="font-sans text-[12px] text-white">
-          {formatEur(p.value)}
+          {format(p.value)}
         </p>
       ))}
     </div>

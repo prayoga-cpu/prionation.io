@@ -12,13 +12,14 @@ import {
   Cell,
 } from "recharts";
 import { CHART } from "@/lib/finance/chartTokens";
-import { formatEur, formatEurSigned } from "@/lib/finance/format";
 import { ChartTooltip } from "./ChartTooltip";
+import { useCurrency } from "./CurrencyContext";
 import type { computeBudgetVsActual } from "@/lib/finance/notion/aggregate";
 
 type BudgetLines = ReturnType<typeof computeBudgetVsActual>;
 
 export function BudgetVsActual({ lines }: { lines: BudgetLines }) {
+  const { format, formatSigned } = useCurrency();
   const chartData = lines
     .filter((l) => l.variance !== null)
     .map((l) => ({ name: l.name, variance: l.variance as number }));
@@ -74,9 +75,9 @@ export function BudgetVsActual({ lines }: { lines: BudgetLines }) {
                 <td className="font-sans text-[13px] text-white py-3 pr-4">{l.name || "—"}</td>
                 <td className="font-sans text-[13px] text-soft py-3 pr-4">{l.category ?? "—"}</td>
                 <td className="font-sans text-[13px] text-soft py-3 pr-4">
-                  {formatEur(l.budgeted)}
+                  {format(l.budgeted)}
                 </td>
-                <td className="font-sans text-[13px] text-soft py-3 pr-4">{formatEur(l.actual)}</td>
+                <td className="font-sans text-[13px] text-soft py-3 pr-4">{format(l.actual)}</td>
                 <td
                   className={`font-sans text-[13px] py-3 pr-4 ${
                     l.variance === null
@@ -86,7 +87,7 @@ export function BudgetVsActual({ lines }: { lines: BudgetLines }) {
                         : "text-red-400"
                   }`}
                 >
-                  {formatEurSigned(l.variance)}
+                  {formatSigned(l.variance)}
                 </td>
               </tr>
             ))}
