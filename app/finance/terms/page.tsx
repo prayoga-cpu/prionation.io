@@ -3,6 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getFinanceSession } from "@/lib/finance/auth/requireSession";
 import { fetchLatestAcknowledgments, TERMS_VERSION } from "@/lib/finance/notion/acknowledgments";
+import { fetchStockShares } from "@/lib/finance/notion/shares";
 import { AcknowledgeButton } from "../components/AcknowledgeButton";
 
 export const dynamic = "force-dynamic";
@@ -28,9 +29,16 @@ export default async function FinanceTermsPage() {
   const session = await getFinanceSession();
   if (!session) redirect("/finance/login");
 
-  const acknowledgments = await fetchLatestAcknowledgments();
+  const [acknowledgments, shares] = await Promise.all([
+    fetchLatestAcknowledgments(),
+    fetchStockShares(),
+  ]);
   const mine = acknowledgments[session.role];
   const alreadyAcknowledged = mine?.termsVersion === TERMS_VERSION;
+  const exceptionsText = shares
+    .map((s) => s.splitExceptions)
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div className="max-w-[720px] mx-auto px-6 py-16">
@@ -55,18 +63,38 @@ export default async function FinanceTermsPage() {
       </Section>
 
       <Section n={2} title="Standard revenue split">
-        <p>
-          The default split on realized income is <span className="text-white">80% Darwin /
-          20% Evan</span>. Darwin&apos;s share reflects delivery, engineering, and infrastructure
-          ownership; Evan&apos;s share reflects revenue operations and client acquisition.
-        </p>
+        {shares.length > 0 ? (
+          <div className="space-y-3">
+            {shares.map((s) => (
+              <p key={s.id}>
+                <span className="text-white">
+                  {s.name}
+                  {s.percent !== null ? ` (${s.percent}%)` : ""}
+                </span>
+                {s.role ? ` — ${s.role}` : ""}
+                {s.covers ? `. Covers: ${s.covers}` : ""}
+              </p>
+            ))}
+          </div>
+        ) : (
+          <p>
+            The default split on realized income is <span className="text-white">80% Darwin /
+            20% Evan</span>. Darwin&apos;s share reflects delivery, engineering, and infrastructure
+            ownership; Evan&apos;s share reflects revenue operations and client acquisition.
+            (Stock Shares database not reachable — showing the fallback description.)
+          </p>
+        )}
       </Section>
 
       <Section n={3} title="Exceptions">
         <p>
-          <span className="text-white">Epidom</span> is a stated exception: 100% Darwin, 0% Evan.
-          Rationale: development cost reimbursement under a separate project arrangement, not a
-          standard revenue engagement.
+          {exceptionsText || (
+            <>
+              <span className="text-white">Epidom</span> is a stated exception: 100% Darwin, 0%
+              Evan. Rationale: development cost reimbursement under a separate project
+              arrangement, not a standard revenue engagement.
+            </>
+          )}
         </p>
       </Section>
 

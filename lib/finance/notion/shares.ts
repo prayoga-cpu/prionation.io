@@ -5,10 +5,15 @@ import { queryAllPages } from "./query";
 import * as parse from "./parse";
 import type { StockShare } from "./types";
 
+// Property names verified 2026-07-31 against the real live Stock Shares data
+// source schema (GET /v1/data_sources/{id}).
 const P = {
-  NAME: "Name",
-  PERCENT: "Percent",
-  TRANSACTIONS: "Transactions",
+  NAME: "Stakeholder",
+  PERCENT: "Share %",
+  ROLE: "Role",
+  COVERS: "Covers",
+  SPLIT_EXCEPTIONS: "Split Exceptions",
+  LINKED_INCOME: "Linked Income",
 } as const;
 
 async function fetchStockSharesUncached(): Promise<StockShare[]> {
@@ -19,7 +24,10 @@ async function fetchStockSharesUncached(): Promise<StockShare[]> {
       id: page.id,
       name: parse.title(props, P.NAME),
       percent: parse.num(props, P.PERCENT),
-      linkedTransactionIds: parse.relationIds(props, P.TRANSACTIONS),
+      role: parse.selectName(props, P.ROLE),
+      covers: parse.richText(props, P.COVERS),
+      splitExceptions: parse.richText(props, P.SPLIT_EXCEPTIONS),
+      linkedTransactionIds: parse.relationIds(props, P.LINKED_INCOME),
     };
   });
 }

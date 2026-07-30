@@ -18,6 +18,7 @@ export type Transaction = {
   ownProfitShareDeal: boolean;
   hasReceipt: boolean;
   projectIds: string[];
+  stockShareIds: string[];
 };
 
 export type BudgetLine = {
@@ -27,12 +28,16 @@ export type BudgetLine = {
   period: string | null;
   budgetedAmount: number | null;
   actualAmount: number | null;
+  variance: number | null;
 };
 
 export type StockShare = {
   id: string;
   name: string;
   percent: number | null;
+  role: string | null;
+  covers: string;
+  splitExceptions: string;
   linkedTransactionIds: string[];
 };
 

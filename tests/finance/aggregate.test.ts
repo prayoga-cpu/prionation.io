@@ -31,6 +31,7 @@ function makeTx(overrides: Partial<Transaction>): Transaction {
     ownProfitShareDeal: false,
     hasReceipt: false,
     projectIds: [],
+    stockShareIds: [],
     ...overrides,
   };
 }
@@ -151,16 +152,23 @@ describe('computeProfitSplit', () => {
 });
 
 describe('computeBudgetVsActual', () => {
-  it('computes variance only when both figures are present', () => {
+  it('falls back to actual-minus-budgeted when the Notion Variance formula is unset', () => {
     const lines: BudgetLine[] = [
-      { id: '1', name: 'Hosting', category: 'Infra', period: '2026-06', budgetedAmount: 100, actualAmount: 120 },
-      { id: '2', name: 'Ads', category: 'Marketing', period: '2026-06', budgetedAmount: 500, actualAmount: 400 },
-      { id: '3', name: 'Unknown', category: null, period: null, budgetedAmount: null, actualAmount: 50 },
+      { id: '1', name: 'Hosting', category: 'Infra', period: '2026-06', budgetedAmount: 100, actualAmount: 120, variance: null },
+      { id: '2', name: 'Ads', category: 'Marketing', period: '2026-06', budgetedAmount: 500, actualAmount: 400, variance: null },
+      { id: '3', name: 'Unknown', category: null, period: null, budgetedAmount: null, actualAmount: 50, variance: null },
     ];
     const result = computeBudgetVsActual(lines);
     expect(result.find((l) => l.name === 'Hosting')?.variance).toBe(20);
     expect(result.find((l) => l.name === 'Ads')?.variance).toBe(-100);
     expect(result.find((l) => l.name === 'Unknown')?.variance).toBeNull();
+  });
+
+  it("prefers Notion's own Variance formula over the fallback", () => {
+    const lines: BudgetLine[] = [
+      { id: '1', name: 'Hosting', category: null, period: null, budgetedAmount: 100, actualAmount: 120, variance: 999 },
+    ];
+    expect(computeBudgetVsActual(lines)[0].variance).toBe(999);
   });
 });
 
@@ -188,7 +196,17 @@ describe('computePipelineByStage', () => {
 
 describe('computeDataQuality', () => {
   it('flags transactions unlinked to any Stock Shares record', () => {
-    const shares: StockShare[] = [{ id: 's1', name: 'Darwin', percent: 80, linkedTransactionIds: ['tx-linked'] }];
+    const shares: StockShare[] = [
+      {
+        id: 's1',
+        name: 'Darwin',
+        percent: 80,
+        role: null,
+        covers: '',
+        splitExceptions: '',
+        linkedTransactionIds: ['tx-linked'],
+      },
+    ];
     const issues = computeDataQuality({
       transactions: [makeTx({ id: 'tx-linked' }), makeTx({ id: 'tx-unlinked' })],
       budget: [],

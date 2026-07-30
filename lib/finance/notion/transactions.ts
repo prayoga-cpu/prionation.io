@@ -5,12 +5,11 @@ import { queryAllPages } from "./query";
 import * as parse from "./parse";
 import type { Transaction } from "./types";
 
-// Property names as named constants — adjust here if they differ from the
-// live Notion schema once NOTION_TOKEN is set (see build-order step 2 in
-// finance_dashboard_dev_plan.md: verify against real data before trusting).
+// Property names as named constants — verified 2026-07-31 against the real
+// live Transactions data source schema (GET /v1/data_sources/{id}).
 const P = {
-  NAME: "Name",
-  DATE: "Date",
+  NAME: "Transaction",
+  DATE: "Transaction Date",
   TYPE: "Type",
   STATUS: "Status",
   CATEGORY: "Category",
@@ -23,8 +22,9 @@ const P = {
   PERCENT_PAID: "% Paid",
   DAYS_OVERDUE: "Days Overdue",
   OWN_DEAL: "Own Profit Share Deal",
-  RECEIPT: "Receipt",
+  RECEIPT: "Receipt / Transfer Proof",
   PROJECT: "Project",
+  STOCK_SHARES: "Stock Shares",
 } as const;
 
 async function fetchTransactionsUncached(): Promise<Transaction[]> {
@@ -49,6 +49,7 @@ async function fetchTransactionsUncached(): Promise<Transaction[]> {
       ownProfitShareDeal: parse.checkbox(props, P.OWN_DEAL),
       hasReceipt: parse.filesPresent(props, P.RECEIPT),
       projectIds: parse.relationIds(props, P.PROJECT),
+      stockShareIds: parse.relationIds(props, P.STOCK_SHARES),
     };
   });
 }

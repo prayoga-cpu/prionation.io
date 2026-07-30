@@ -1,6 +1,6 @@
 import "server-only";
 import type { PageObjectResponse } from "@notionhq/client";
-import { financeAckNotion } from "./client";
+import { financeAckNotion, financeNotion } from "./client";
 import { FINANCE_DB_ACKNOWLEDGMENTS, FINANCE_DB_ACKNOWLEDGMENTS_DS } from "./ids";
 import * as parse from "./parse";
 import type { FinanceRole } from "@/lib/finance/auth/otp";
@@ -33,15 +33,19 @@ export async function createAcknowledgment(role: FinanceRole, email: string): Pr
   });
 }
 
-// Most recent acknowledgment per role. Returns {} (never throws) if the
-// tracking database or its data source ID isn't configured yet.
+// Most recent acknowledgment per role. Deliberately reads via financeNotion
+// (the read-only integration), not financeAckNotion — that one is write-only
+// by design (see createAcknowledgment above / the dev plan's own spec) and
+// structurally cannot query. The "Finance Acknowledgments" database needs to
+// be shared with the read-only integration too for this to return anything;
+// until then this returns {} (never throws) rather than breaking the page.
 export async function fetchLatestAcknowledgments(): Promise<
   Partial<Record<FinanceRole, Acknowledgment>>
 > {
-  if (!financeAckNotion || !FINANCE_DB_ACKNOWLEDGMENTS_DS) return {};
+  if (!FINANCE_DB_ACKNOWLEDGMENTS_DS) return {};
 
   try {
-    const res = await financeAckNotion.dataSources.query({
+    const res = await financeNotion.dataSources.query({
       data_source_id: FINANCE_DB_ACKNOWLEDGMENTS_DS,
       sorts: [{ timestamp: "created_time", direction: "descending" }],
       page_size: 20,

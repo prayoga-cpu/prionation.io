@@ -116,10 +116,13 @@ export function computeBudgetVsActual(budget: BudgetLine[]) {
       category: b.category,
       budgeted: b.budgetedAmount,
       actual: b.actualAmount,
+      // Notion's own Variance formula is authoritative; fall back to a plain
+      // subtraction only if that formula is somehow unset.
       variance:
-        b.budgetedAmount !== null && b.actualAmount !== null
+        b.variance ??
+        (b.budgetedAmount !== null && b.actualAmount !== null
           ? b.actualAmount - b.budgetedAmount
-          : null,
+          : null),
     }))
     .sort((a, b) => (a.name < b.name ? -1 : 1));
 }
