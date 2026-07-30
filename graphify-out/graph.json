@@ -224,14 +224,464 @@
   },
   "nodes": [
     {
+      "label": "BudgetVsActual.tsx",
+      "file_type": "code",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_budgetvsactual",
+      "community": 0,
+      "norm_label": "budgetvsactual.tsx"
+    },
+    {
+      "label": "BudgetLines",
+      "file_type": "code",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "components_budgetvsactual_budgetlines",
+      "community": 0,
+      "norm_label": "budgetlines"
+    },
+    {
+      "label": "BudgetVsActual()",
+      "file_type": "code",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "components_budgetvsactual_budgetvsactual",
+      "community": 0,
+      "norm_label": "budgetvsactual()"
+    },
+    {
+      "label": "ChartTooltip.tsx",
+      "file_type": "code",
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_charttooltip",
+      "community": 0,
+      "norm_label": "charttooltip.tsx"
+    },
+    {
+      "label": "Props",
+      "file_type": "code",
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_charttooltip_props",
+      "community": 0,
+      "norm_label": "props"
+    },
+    {
+      "label": "ChartTooltip()",
+      "file_type": "code",
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "components_charttooltip_charttooltip",
+      "community": 0,
+      "norm_label": "charttooltip()"
+    },
+    {
+      "label": "CurrencyContext.tsx",
+      "file_type": "code",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_currencycontext",
+      "community": 0,
+      "norm_label": "currencycontext.tsx"
+    },
+    {
+      "label": "CurrencyContextValue",
+      "file_type": "code",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "components_currencycontext_currencycontextvalue",
+      "community": 0,
+      "norm_label": "currencycontextvalue"
+    },
+    {
+      "label": "CurrencyContext",
+      "file_type": "code",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "components_currencycontext_currencycontext",
+      "community": 0,
+      "norm_label": "currencycontext"
+    },
+    {
+      "label": "CurrencyProvider()",
+      "file_type": "code",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "components_currencycontext_currencyprovider",
+      "community": 0,
+      "norm_label": "currencyprovider()"
+    },
+    {
+      "label": "useCurrency()",
+      "file_type": "code",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "components_currencycontext_usecurrency",
+      "community": 0,
+      "norm_label": "usecurrency()"
+    },
+    {
+      "label": "CurrencyToggle.tsx",
+      "file_type": "code",
+      "source_file": "app/finance/components/CurrencyToggle.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_currencytoggle",
+      "community": 0,
+      "norm_label": "currencytoggle.tsx"
+    },
+    {
+      "label": "OPTIONS",
+      "file_type": "code",
+      "source_file": "app/finance/components/CurrencyToggle.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_currencytoggle_options",
+      "community": 0,
+      "norm_label": "options"
+    },
+    {
+      "label": "CurrencyToggle()",
+      "file_type": "code",
+      "source_file": "app/finance/components/CurrencyToggle.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "components_currencytoggle_currencytoggle",
+      "community": 0,
+      "norm_label": "currencytoggle()"
+    },
+    {
+      "label": "DashboardHeader.tsx",
+      "file_type": "code",
+      "source_file": "app/finance/components/DashboardHeader.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_dashboardheader",
+      "community": 0,
+      "norm_label": "dashboardheader.tsx"
+    },
+    {
+      "label": "ROLE_LABEL",
+      "file_type": "code",
+      "source_file": "app/finance/components/DashboardHeader.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "components_dashboardheader_role_label",
+      "community": 0,
+      "norm_label": "role_label"
+    },
+    {
+      "label": "DashboardHeader()",
+      "file_type": "code",
+      "source_file": "app/finance/components/DashboardHeader.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "components_dashboardheader_dashboardheader",
+      "community": 0,
+      "norm_label": "dashboardheader()"
+    },
+    {
+      "label": "KpiGrid.tsx",
+      "file_type": "code",
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_kpigrid",
+      "community": 0,
+      "norm_label": "kpigrid.tsx"
+    },
+    {
+      "label": "Kpis",
+      "file_type": "code",
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_kpigrid_kpis",
+      "community": 0,
+      "norm_label": "kpis"
+    },
+    {
+      "label": "KpiGrid()",
+      "file_type": "code",
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "components_kpigrid_kpigrid",
+      "community": 0,
+      "norm_label": "kpigrid()"
+    },
+    {
+      "label": "LedgerTable.tsx",
+      "file_type": "code",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_ledgertable",
+      "community": 0,
+      "norm_label": "ledgertable.tsx"
+    },
+    {
+      "label": "SortKey",
+      "file_type": "code",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "components_ledgertable_sortkey",
+      "community": 0,
+      "norm_label": "sortkey"
+    },
+    {
+      "label": "LedgerTable()",
+      "file_type": "code",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "components_ledgertable_ledgertable",
+      "community": 0,
+      "norm_label": "ledgertable()"
+    },
+    {
+      "label": "ProfitSplitPanel.tsx",
+      "file_type": "code",
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_profitsplitpanel",
+      "community": 0,
+      "norm_label": "profitsplitpanel.tsx"
+    },
+    {
+      "label": "ProfitSplit",
+      "file_type": "code",
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "components_profitsplitpanel_profitsplit",
+      "community": 0,
+      "norm_label": "profitsplit"
+    },
+    {
+      "label": "ProfitSplitPanel()",
+      "file_type": "code",
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "components_profitsplitpanel_profitsplitpanel",
+      "community": 0,
+      "norm_label": "profitsplitpanel()"
+    },
+    {
+      "label": "ReceivablesTable.tsx",
+      "file_type": "code",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_receivablestable",
+      "community": 0,
+      "norm_label": "receivablestable.tsx"
+    },
+    {
+      "label": "Receivables",
+      "file_type": "code",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "components_receivablestable_receivables",
+      "community": 0,
+      "norm_label": "receivables"
+    },
+    {
+      "label": "ReceivablesTable()",
+      "file_type": "code",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "components_receivablestable_receivablestable",
+      "community": 0,
+      "norm_label": "receivablestable()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "finance_page",
+      "community": 0,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "finance_page_metadata",
+      "community": 0,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "FinanceDashboardPage()",
+      "file_type": "code",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "finance_page_financedashboardpage",
+      "community": 0,
+      "norm_label": "financedashboardpage()"
+    },
+    {
+      "label": "currency.ts",
+      "file_type": "code",
+      "source_file": "lib/finance/currency.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "finance_currency",
+      "community": 0,
+      "norm_label": "currency.ts"
+    },
+    {
+      "label": "Currency",
+      "file_type": "code",
+      "source_file": "lib/finance/currency.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "finance_currency_currency",
+      "community": 0,
+      "norm_label": "currency"
+    },
+    {
+      "label": "FxRates",
+      "file_type": "code",
+      "source_file": "lib/finance/currency.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "finance_currency_fxrates",
+      "community": 0,
+      "norm_label": "fxrates"
+    },
+    {
+      "label": "FxSnapshot",
+      "file_type": "code",
+      "source_file": "lib/finance/currency.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "finance_currency_fxsnapshot",
+      "community": 0,
+      "norm_label": "fxsnapshot"
+    },
+    {
+      "label": "fetchFxRates()",
+      "file_type": "code",
+      "source_file": "lib/finance/currency.ts",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "finance_currency_fetchfxrates",
+      "community": 0,
+      "norm_label": "fetchfxrates()"
+    },
+    {
+      "label": "format.ts",
+      "file_type": "code",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "finance_format",
+      "community": 0,
+      "norm_label": "format.ts"
+    },
+    {
+      "label": "formatEur()",
+      "file_type": "code",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "finance_format_formateur",
+      "community": 0,
+      "norm_label": "formateur()"
+    },
+    {
+      "label": "formatEurSigned()",
+      "file_type": "code",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "finance_format_formateursigned",
+      "community": 0,
+      "norm_label": "formateursigned()"
+    },
+    {
+      "label": "formatMoney()",
+      "file_type": "code",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "finance_format_formatmoney",
+      "community": 0,
+      "norm_label": "formatmoney()"
+    },
+    {
+      "label": "formatMoneySigned()",
+      "file_type": "code",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "finance_format_formatmoneysigned",
+      "community": 0,
+      "norm_label": "formatmoneysigned()"
+    },
+    {
+      "label": "formatPercent()",
+      "file_type": "code",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "finance_format_formatpercent",
+      "community": 0,
+      "norm_label": "formatpercent()"
+    },
+    {
+      "label": "formatDate()",
+      "file_type": "code",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "finance_format_formatdate",
+      "community": 0,
+      "norm_label": "formatdate()"
+    },
+    {
+      "label": "formatMonth()",
+      "file_type": "code",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "finance_format_formatmonth",
+      "community": 0,
+      "norm_label": "formatmonth()"
+    },
+    {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/finance/terms/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "terms_page",
-      "community": 33,
-      "norm_label": "page.tsx"
+      "community": 34,
+      "norm_label": "page.tsx",
+      "id": "terms_page"
     },
     {
       "label": "metadata",
@@ -239,9 +689,9 @@
       "source_file": "app/finance/terms/page.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "terms_page_metadata",
-      "community": 33,
-      "norm_label": "metadata"
+      "community": 34,
+      "norm_label": "metadata",
+      "id": "terms_page_metadata"
     },
     {
       "label": "Section()",
@@ -249,9 +699,9 @@
       "source_file": "app/finance/terms/page.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "terms_page_section",
-      "community": 33,
-      "norm_label": "section()"
+      "community": 34,
+      "norm_label": "section()",
+      "id": "terms_page_section"
     },
     {
       "label": "FinanceTermsPage()",
@@ -259,9 +709,9 @@
       "source_file": "app/finance/terms/page.tsx",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "terms_page_financetermspage",
-      "community": 33,
-      "norm_label": "financetermspage()"
+      "community": 34,
+      "norm_label": "financetermspage()",
+      "id": "terms_page_financetermspage"
     },
     {
       "label": "acknowledgments.ts",
@@ -269,9 +719,9 @@
       "source_file": "lib/finance/notion/acknowledgments.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "notion_acknowledgments",
-      "community": 33,
-      "norm_label": "acknowledgments.ts"
+      "community": 34,
+      "norm_label": "acknowledgments.ts",
+      "id": "notion_acknowledgments"
     },
     {
       "label": "Acknowledgment",
@@ -279,9 +729,9 @@
       "source_file": "lib/finance/notion/acknowledgments.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "notion_acknowledgments_acknowledgment",
-      "community": 33,
-      "norm_label": "acknowledgment"
+      "community": 34,
+      "norm_label": "acknowledgment",
+      "id": "notion_acknowledgments_acknowledgment"
     },
     {
       "label": "createAcknowledgment()",
@@ -289,9 +739,9 @@
       "source_file": "lib/finance/notion/acknowledgments.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "notion_acknowledgments_createacknowledgment",
-      "community": 33,
-      "norm_label": "createacknowledgment()"
+      "community": 34,
+      "norm_label": "createacknowledgment()",
+      "id": "notion_acknowledgments_createacknowledgment"
     },
     {
       "label": "fetchLatestAcknowledgments()",
@@ -299,9 +749,9 @@
       "source_file": "lib/finance/notion/acknowledgments.ts",
       "source_location": "L42",
       "_origin": "ast",
-      "id": "notion_acknowledgments_fetchlatestacknowledgments",
-      "community": 33,
-      "norm_label": "fetchlatestacknowledgments()"
+      "community": 34,
+      "norm_label": "fetchlatestacknowledgments()",
+      "id": "notion_acknowledgments_fetchlatestacknowledgments"
     },
     {
       "label": "aggregate.ts",
@@ -309,9 +759,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "notion_aggregate",
-      "community": 0,
-      "norm_label": "aggregate.ts"
+      "community": 33,
+      "norm_label": "aggregate.ts",
+      "id": "notion_aggregate"
     },
     {
       "label": "FinanceData",
@@ -319,9 +769,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "notion_aggregate_financedata",
-      "community": 0,
-      "norm_label": "financedata"
+      "community": 33,
+      "norm_label": "financedata",
+      "id": "notion_aggregate_financedata"
     },
     {
       "label": "sum()",
@@ -329,9 +779,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "notion_aggregate_sum",
-      "community": 0,
-      "norm_label": "sum()"
+      "community": 33,
+      "norm_label": "sum()",
+      "id": "notion_aggregate_sum"
     },
     {
       "label": "resolveProjectName()",
@@ -339,9 +789,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "notion_aggregate_resolveprojectname",
-      "community": 0,
-      "norm_label": "resolveprojectname()"
+      "community": 33,
+      "norm_label": "resolveprojectname()",
+      "id": "notion_aggregate_resolveprojectname"
     },
     {
       "label": "computeKpis()",
@@ -349,9 +799,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "notion_aggregate_computekpis",
-      "community": 0,
-      "norm_label": "computekpis()"
+      "community": 33,
+      "norm_label": "computekpis()",
+      "id": "notion_aggregate_computekpis"
     },
     {
       "label": "computeIncomeByProject()",
@@ -359,9 +809,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L36",
       "_origin": "ast",
-      "id": "notion_aggregate_computeincomebyproject",
-      "community": 0,
-      "norm_label": "computeincomebyproject()"
+      "community": 33,
+      "norm_label": "computeincomebyproject()",
+      "id": "notion_aggregate_computeincomebyproject"
     },
     {
       "label": "computeIncomeByCategory()",
@@ -369,9 +819,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "id": "notion_aggregate_computeincomebycategory",
-      "community": 0,
-      "norm_label": "computeincomebycategory()"
+      "community": 33,
+      "norm_label": "computeincomebycategory()",
+      "id": "notion_aggregate_computeincomebycategory"
     },
     {
       "label": "computeIncomeByMonth()",
@@ -379,9 +829,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L60",
       "_origin": "ast",
-      "id": "notion_aggregate_computeincomebymonth",
-      "community": 0,
-      "norm_label": "computeincomebymonth()"
+      "community": 33,
+      "norm_label": "computeincomebymonth()",
+      "id": "notion_aggregate_computeincomebymonth"
     },
     {
       "label": "computeReceivables()",
@@ -389,9 +839,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L72",
       "_origin": "ast",
-      "id": "notion_aggregate_computereceivables",
-      "community": 0,
-      "norm_label": "computereceivables()"
+      "community": 33,
+      "norm_label": "computereceivables()",
+      "id": "notion_aggregate_computereceivables"
     },
     {
       "label": "computeProfitSplit()",
@@ -399,9 +849,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L86",
       "_origin": "ast",
-      "id": "notion_aggregate_computeprofitsplit",
-      "community": 0,
-      "norm_label": "computeprofitsplit()"
+      "community": 33,
+      "norm_label": "computeprofitsplit()",
+      "id": "notion_aggregate_computeprofitsplit"
     },
     {
       "label": "computeBudgetVsActual()",
@@ -409,9 +859,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L112",
       "_origin": "ast",
-      "id": "notion_aggregate_computebudgetvsactual",
-      "community": 0,
-      "norm_label": "computebudgetvsactual()"
+      "community": 33,
+      "norm_label": "computebudgetvsactual()",
+      "id": "notion_aggregate_computebudgetvsactual"
     },
     {
       "label": "STAGE_ORDER",
@@ -419,9 +869,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L130",
       "_origin": "ast",
-      "id": "notion_aggregate_stage_order",
-      "community": 0,
-      "norm_label": "stage_order"
+      "community": 33,
+      "norm_label": "stage_order",
+      "id": "notion_aggregate_stage_order"
     },
     {
       "label": "computePipelineByStage()",
@@ -429,9 +879,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L132",
       "_origin": "ast",
-      "id": "notion_aggregate_computepipelinebystage",
-      "community": 0,
-      "norm_label": "computepipelinebystage()"
+      "community": 33,
+      "norm_label": "computepipelinebystage()",
+      "id": "notion_aggregate_computepipelinebystage"
     },
     {
       "label": "DataQualityIssue",
@@ -439,9 +889,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L150",
       "_origin": "ast",
-      "id": "notion_aggregate_dataqualityissue",
-      "community": 0,
-      "norm_label": "dataqualityissue"
+      "community": 33,
+      "norm_label": "dataqualityissue",
+      "id": "notion_aggregate_dataqualityissue"
     },
     {
       "label": "computeDataQuality()",
@@ -449,9 +899,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L159",
       "_origin": "ast",
-      "id": "notion_aggregate_computedataquality",
-      "community": 0,
-      "norm_label": "computedataquality()"
+      "community": 33,
+      "norm_label": "computedataquality()",
+      "id": "notion_aggregate_computedataquality"
     },
     {
       "label": "aggregateFinance()",
@@ -459,9 +909,9 @@
       "source_file": "lib/finance/notion/aggregate.ts",
       "source_location": "L198",
       "_origin": "ast",
-      "id": "notion_aggregate_aggregatefinance",
-      "community": 0,
-      "norm_label": "aggregatefinance()"
+      "community": 33,
+      "norm_label": "aggregatefinance()",
+      "id": "notion_aggregate_aggregatefinance"
     },
     {
       "label": "budget.ts",
@@ -469,9 +919,9 @@
       "source_file": "lib/finance/notion/budget.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "notion_budget",
       "community": 33,
-      "norm_label": "budget.ts"
+      "norm_label": "budget.ts",
+      "id": "notion_budget"
     },
     {
       "label": "P",
@@ -479,9 +929,9 @@
       "source_file": "lib/finance/notion/budget.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "notion_budget_p",
       "community": 33,
-      "norm_label": "p"
+      "norm_label": "p",
+      "id": "notion_budget_p"
     },
     {
       "label": "fetchBudgetLinesUncached()",
@@ -489,9 +939,9 @@
       "source_file": "lib/finance/notion/budget.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "notion_budget_fetchbudgetlinesuncached",
       "community": 33,
-      "norm_label": "fetchbudgetlinesuncached()"
+      "norm_label": "fetchbudgetlinesuncached()",
+      "id": "notion_budget_fetchbudgetlinesuncached"
     },
     {
       "label": "fetchBudgetLines",
@@ -499,9 +949,9 @@
       "source_file": "lib/finance/notion/budget.ts",
       "source_location": "L38",
       "_origin": "ast",
-      "id": "notion_budget_fetchbudgetlines",
       "community": 33,
-      "norm_label": "fetchbudgetlines"
+      "norm_label": "fetchbudgetlines",
+      "id": "notion_budget_fetchbudgetlines"
     },
     {
       "label": "shares.ts",
@@ -509,9 +959,9 @@
       "source_file": "lib/finance/notion/shares.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "notion_shares",
       "community": 33,
-      "norm_label": "shares.ts"
+      "norm_label": "shares.ts",
+      "id": "notion_shares"
     },
     {
       "label": "P",
@@ -519,9 +969,9 @@
       "source_file": "lib/finance/notion/shares.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "notion_shares_p",
       "community": 33,
-      "norm_label": "p"
+      "norm_label": "p",
+      "id": "notion_shares_p"
     },
     {
       "label": "fetchStockSharesUncached()",
@@ -529,9 +979,9 @@
       "source_file": "lib/finance/notion/shares.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "notion_shares_fetchstocksharesuncached",
       "community": 33,
-      "norm_label": "fetchstocksharesuncached()"
+      "norm_label": "fetchstocksharesuncached()",
+      "id": "notion_shares_fetchstocksharesuncached"
     },
     {
       "label": "fetchStockShares",
@@ -539,9 +989,9 @@
       "source_file": "lib/finance/notion/shares.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "notion_shares_fetchstockshares",
-      "community": 33,
-      "norm_label": "fetchstockshares"
+      "community": 34,
+      "norm_label": "fetchstockshares",
+      "id": "notion_shares_fetchstockshares"
     },
     {
       "label": "transactions.ts",
@@ -549,9 +999,9 @@
       "source_file": "lib/finance/notion/transactions.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "notion_transactions",
       "community": 33,
-      "norm_label": "transactions.ts"
+      "norm_label": "transactions.ts",
+      "id": "notion_transactions"
     },
     {
       "label": "P",
@@ -559,9 +1009,9 @@
       "source_file": "lib/finance/notion/transactions.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "notion_transactions_p",
       "community": 33,
-      "norm_label": "p"
+      "norm_label": "p",
+      "id": "notion_transactions_p"
     },
     {
       "label": "fetchTransactionsUncached()",
@@ -569,9 +1019,9 @@
       "source_file": "lib/finance/notion/transactions.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "notion_transactions_fetchtransactionsuncached",
       "community": 33,
-      "norm_label": "fetchtransactionsuncached()"
+      "norm_label": "fetchtransactionsuncached()",
+      "id": "notion_transactions_fetchtransactionsuncached"
     },
     {
       "label": "fetchTransactions",
@@ -579,9 +1029,9 @@
       "source_file": "lib/finance/notion/transactions.ts",
       "source_location": "L57",
       "_origin": "ast",
-      "id": "notion_transactions_fetchtransactions",
       "community": 33,
-      "norm_label": "fetchtransactions"
+      "norm_label": "fetchtransactions",
+      "id": "notion_transactions_fetchtransactions"
     },
     {
       "label": "types.ts",
@@ -589,9 +1039,9 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "notion_types",
-      "community": 0,
-      "norm_label": "types.ts"
+      "community": 33,
+      "norm_label": "types.ts",
+      "id": "notion_types"
     },
     {
       "label": "TransactionType",
@@ -599,9 +1049,9 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "notion_types_transactiontype",
-      "community": 0,
-      "norm_label": "transactiontype"
+      "community": 33,
+      "norm_label": "transactiontype",
+      "id": "notion_types_transactiontype"
     },
     {
       "label": "Transaction",
@@ -609,9 +1059,9 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "notion_types_transaction",
-      "community": 0,
-      "norm_label": "transaction"
+      "community": 33,
+      "norm_label": "transaction",
+      "id": "notion_types_transaction"
     },
     {
       "label": "BudgetLine",
@@ -619,9 +1069,9 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "notion_types_budgetline",
-      "community": 0,
-      "norm_label": "budgetline"
+      "community": 33,
+      "norm_label": "budgetline",
+      "id": "notion_types_budgetline"
     },
     {
       "label": "StockShare",
@@ -629,9 +1079,9 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "id": "notion_types_stockshare",
-      "community": 0,
-      "norm_label": "stockshare"
+      "community": 33,
+      "norm_label": "stockshare",
+      "id": "notion_types_stockshare"
     },
     {
       "label": "PipelineStage",
@@ -639,9 +1089,9 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L44",
       "_origin": "ast",
-      "id": "notion_types_pipelinestage",
-      "community": 0,
-      "norm_label": "pipelinestage"
+      "community": 33,
+      "norm_label": "pipelinestage",
+      "id": "notion_types_pipelinestage"
     },
     {
       "label": "PipelineItem",
@@ -649,9 +1099,9 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "id": "notion_types_pipelineitem",
-      "community": 0,
-      "norm_label": "pipelineitem"
+      "community": 33,
+      "norm_label": "pipelineitem",
+      "id": "notion_types_pipelineitem"
     },
     {
       "label": "aggregate.test.ts",
@@ -659,9 +1109,9 @@
       "source_file": "tests/finance/aggregate.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "finance_aggregate_test",
-      "community": 0,
-      "norm_label": "aggregate.test.ts"
+      "community": 33,
+      "norm_label": "aggregate.test.ts",
+      "id": "finance_aggregate_test"
     },
     {
       "label": "makeTx()",
@@ -669,9 +1119,9 @@
       "source_file": "tests/finance/aggregate.test.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "finance_aggregate_test_maketx",
-      "community": 0,
-      "norm_label": "maketx()"
+      "community": 33,
+      "norm_label": "maketx()",
+      "id": "finance_aggregate_test_maketx"
     },
     {
       "label": "epidom",
@@ -679,9 +1129,9 @@
       "source_file": "tests/finance/aggregate.test.ts",
       "source_location": "L39",
       "_origin": "ast",
-      "id": "finance_aggregate_test_epidom",
-      "community": 0,
-      "norm_label": "epidom"
+      "community": 33,
+      "norm_label": "epidom",
+      "id": "finance_aggregate_test_epidom"
     },
     {
       "label": "acme",
@@ -689,9 +1139,9 @@
       "source_file": "tests/finance/aggregate.test.ts",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "finance_aggregate_test_acme",
-      "community": 0,
-      "norm_label": "acme"
+      "community": 33,
+      "norm_label": "acme",
+      "id": "finance_aggregate_test_acme"
     },
     {
       "label": "page.tsx",
@@ -739,7 +1189,7 @@
       "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/manifesto/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "page.tsx",
       "id": "manifesto_page"
     },
@@ -749,7 +1199,7 @@
       "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/manifesto/page.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "og_locale",
       "id": "manifesto_page_og_locale"
     },
@@ -759,7 +1209,7 @@
       "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/manifesto/page.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "generatemetadata()",
       "id": "manifesto_page_generatemetadata"
     },
@@ -769,7 +1219,7 @@
       "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/manifesto/page.tsx",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "page()",
       "id": "manifesto_page_page"
     },
@@ -779,7 +1229,7 @@
       "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 49,
+      "community": 14,
       "norm_label": "page.tsx",
       "id": "ai_product_engineering_for_mid_market_companies_page"
     },
@@ -789,7 +1239,7 @@
       "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/page.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 49,
+      "community": 14,
       "norm_label": "og_locale",
       "id": "ai_product_engineering_for_mid_market_companies_page_og_locale"
     },
@@ -799,7 +1249,7 @@
       "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/page.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 49,
+      "community": 14,
       "norm_label": "generatemetadata()",
       "id": "ai_product_engineering_for_mid_market_companies_page_generatemetadata"
     },
@@ -809,7 +1259,7 @@
       "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/page.tsx",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 49,
+      "community": 14,
       "norm_label": "page()",
       "id": "ai_product_engineering_for_mid_market_companies_page_page"
     },
@@ -869,7 +1319,7 @@
       "source_file": "app/[locale]/discord/DiscordPageClient.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
+      "community": 6,
       "norm_label": "discordpageclient.tsx",
       "id": "discord_discordpageclient"
     },
@@ -879,7 +1329,7 @@
       "source_file": "app/[locale]/discord/DiscordPageClient.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 8,
+      "community": 6,
       "norm_label": "labillustration()",
       "id": "discord_discordpageclient_labillustration"
     },
@@ -889,7 +1339,7 @@
       "source_file": "app/[locale]/discord/DiscordPageClient.tsx",
       "source_location": "L140",
       "_origin": "ast",
-      "community": 8,
+      "community": 15,
       "norm_label": "discordpageclient()",
       "id": "discord_discordpageclient_discordpageclient"
     },
@@ -899,7 +1349,7 @@
       "source_file": "app/[locale]/discord/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
+      "community": 15,
       "norm_label": "page.tsx",
       "id": "discord_page"
     },
@@ -909,7 +1359,7 @@
       "source_file": "app/[locale]/discord/page.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 8,
+      "community": 15,
       "norm_label": "og_locale",
       "id": "discord_page_og_locale"
     },
@@ -919,7 +1369,7 @@
       "source_file": "app/[locale]/discord/page.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 8,
+      "community": 15,
       "norm_label": "generatemetadata()",
       "id": "discord_page_generatemetadata"
     },
@@ -929,7 +1379,7 @@
       "source_file": "app/[locale]/discord/page.tsx",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 8,
+      "community": 15,
       "norm_label": "page()",
       "id": "discord_page_page"
     },
@@ -989,7 +1439,7 @@
       "source_file": "app/[locale]/frameworks/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "page.tsx",
       "id": "frameworks_page"
     },
@@ -999,7 +1449,7 @@
       "source_file": "app/[locale]/frameworks/page.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "section",
       "id": "frameworks_page_section"
     },
@@ -1009,7 +1459,7 @@
       "source_file": "app/[locale]/frameworks/page.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "generatemetadata()",
       "id": "frameworks_page_generatemetadata"
     },
@@ -1019,7 +1469,7 @@
       "source_file": "app/[locale]/frameworks/page.tsx",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "page()",
       "id": "frameworks_page_page"
     },
@@ -1139,7 +1589,7 @@
       "source_file": "app/[locale]/intelligence/[slug]/page.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 18,
+      "community": 12,
       "norm_label": "generatestaticparams()",
       "id": "app_locale_intelligence_slug_page_tsx_slug_page_generatestaticparams"
     },
@@ -1209,7 +1659,7 @@
       "source_file": "app/[locale]/layout.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "layout.tsx",
       "id": "locale_layout"
     },
@@ -1219,7 +1669,7 @@
       "source_file": "app/[locale]/layout.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "og_locale",
       "id": "locale_layout_og_locale"
     },
@@ -1229,7 +1679,7 @@
       "source_file": "app/[locale]/layout.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "generatestaticparams()",
       "id": "locale_layout_generatestaticparams"
     },
@@ -1239,7 +1689,7 @@
       "source_file": "app/[locale]/layout.tsx",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "rubik",
       "id": "locale_layout_rubik"
     },
@@ -1249,7 +1699,7 @@
       "source_file": "app/[locale]/layout.tsx",
       "source_location": "L62",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "pressstart2p",
       "id": "locale_layout_pressstart2p"
     },
@@ -1259,7 +1709,7 @@
       "source_file": "app/[locale]/layout.tsx",
       "source_location": "L70",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "blackhansans",
       "id": "locale_layout_blackhansans"
     },
@@ -1269,7 +1719,7 @@
       "source_file": "app/[locale]/layout.tsx",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "generatemetadata()",
       "id": "locale_layout_generatemetadata"
     },
@@ -1279,7 +1729,7 @@
       "source_file": "app/[locale]/layout.tsx",
       "source_location": "L133",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "viewport",
       "id": "locale_layout_viewport"
     },
@@ -1289,7 +1739,7 @@
       "source_file": "app/[locale]/layout.tsx",
       "source_location": "L140",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "rootlayout()",
       "id": "locale_layout_rootlayout"
     },
@@ -1319,7 +1769,7 @@
       "source_file": "app/[locale]/methodology/[slug]/page.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 12,
+      "community": 18,
       "norm_label": "generatestaticparams()",
       "id": "app_locale_methodology_slug_page_tsx_slug_page_generatestaticparams"
     },
@@ -1569,7 +2019,7 @@
       "source_file": "app/api/finance/acknowledge/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "norm_label": "route.ts",
       "id": "acknowledge_route"
     },
@@ -1579,7 +2029,7 @@
       "source_file": "app/api/finance/acknowledge/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "norm_label": "post()",
       "id": "acknowledge_route_post"
     },
@@ -1649,7 +2099,7 @@
       "source_file": "app/api/finance/refresh/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "norm_label": "route.ts",
       "id": "refresh_route"
     },
@@ -1659,7 +2109,7 @@
       "source_file": "app/api/finance/refresh/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "norm_label": "post()",
       "id": "refresh_route_post"
     },
@@ -1769,7 +2219,7 @@
       "source_file": "app/finance/components/AcknowledgeButton.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "norm_label": "acknowledgebutton.tsx",
       "id": "components_acknowledgebutton"
     },
@@ -1779,99 +2229,9 @@
       "source_file": "app/finance/components/AcknowledgeButton.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "norm_label": "acknowledgebutton()",
       "id": "components_acknowledgebutton_acknowledgebutton"
-    },
-    {
-      "label": "BudgetVsActual.tsx",
-      "file_type": "code",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "budgetvsactual.tsx",
-      "id": "components_budgetvsactual"
-    },
-    {
-      "label": "BudgetLines",
-      "file_type": "code",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "budgetlines",
-      "id": "components_budgetvsactual_budgetlines"
-    },
-    {
-      "label": "BudgetVsActual()",
-      "file_type": "code",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "budgetvsactual()",
-      "id": "components_budgetvsactual_budgetvsactual"
-    },
-    {
-      "label": "ChartTooltip.tsx",
-      "file_type": "code",
-      "source_file": "app/finance/components/ChartTooltip.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "charttooltip.tsx",
-      "id": "components_charttooltip"
-    },
-    {
-      "label": "Props",
-      "file_type": "code",
-      "source_file": "app/finance/components/ChartTooltip.tsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "props",
-      "id": "components_charttooltip_props"
-    },
-    {
-      "label": "ChartTooltip()",
-      "file_type": "code",
-      "source_file": "app/finance/components/ChartTooltip.tsx",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "charttooltip()",
-      "id": "components_charttooltip_charttooltip"
-    },
-    {
-      "label": "DashboardHeader.tsx",
-      "file_type": "code",
-      "source_file": "app/finance/components/DashboardHeader.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "dashboardheader.tsx",
-      "id": "components_dashboardheader"
-    },
-    {
-      "label": "ROLE_LABEL",
-      "file_type": "code",
-      "source_file": "app/finance/components/DashboardHeader.tsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "role_label",
-      "id": "components_dashboardheader_role_label"
-    },
-    {
-      "label": "DashboardHeader()",
-      "file_type": "code",
-      "source_file": "app/finance/components/DashboardHeader.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "dashboardheader()",
-      "id": "components_dashboardheader_dashboardheader"
     },
     {
       "label": "DataQualityPanel.tsx",
@@ -1879,7 +2239,7 @@
       "source_file": "app/finance/components/DataQualityPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 33,
       "norm_label": "dataqualitypanel.tsx",
       "id": "components_dataqualitypanel"
     },
@@ -1889,7 +2249,7 @@
       "source_file": "app/finance/components/DataQualityPanel.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 33,
       "norm_label": "dataqualitypanel()",
       "id": "components_dataqualitypanel_dataqualitypanel"
     },
@@ -1952,66 +2312,6 @@
       "community": 0,
       "norm_label": "incomebyproject()",
       "id": "components_incomebyproject_incomebyproject"
-    },
-    {
-      "label": "KpiGrid.tsx",
-      "file_type": "code",
-      "source_file": "app/finance/components/KpiGrid.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "kpigrid.tsx",
-      "id": "components_kpigrid"
-    },
-    {
-      "label": "Kpis",
-      "file_type": "code",
-      "source_file": "app/finance/components/KpiGrid.tsx",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "kpis",
-      "id": "components_kpigrid_kpis"
-    },
-    {
-      "label": "KpiGrid()",
-      "file_type": "code",
-      "source_file": "app/finance/components/KpiGrid.tsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "kpigrid()",
-      "id": "components_kpigrid_kpigrid"
-    },
-    {
-      "label": "LedgerTable.tsx",
-      "file_type": "code",
-      "source_file": "app/finance/components/LedgerTable.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "ledgertable.tsx",
-      "id": "components_ledgertable"
-    },
-    {
-      "label": "SortKey",
-      "file_type": "code",
-      "source_file": "app/finance/components/LedgerTable.tsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "sortkey",
-      "id": "components_ledgertable_sortkey"
-    },
-    {
-      "label": "LedgerTable()",
-      "file_type": "code",
-      "source_file": "app/finance/components/LedgerTable.tsx",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "ledgertable()",
-      "id": "components_ledgertable_ledgertable"
     },
     {
       "label": "OtpForm.tsx",
@@ -2082,66 +2382,6 @@
       "community": 0,
       "norm_label": "pipelinebystage()",
       "id": "components_pipelinebystage_pipelinebystage"
-    },
-    {
-      "label": "ProfitSplitPanel.tsx",
-      "file_type": "code",
-      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "profitsplitpanel.tsx",
-      "id": "components_profitsplitpanel"
-    },
-    {
-      "label": "ProfitSplit",
-      "file_type": "code",
-      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "profitsplit",
-      "id": "components_profitsplitpanel_profitsplit"
-    },
-    {
-      "label": "ProfitSplitPanel()",
-      "file_type": "code",
-      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "profitsplitpanel()",
-      "id": "components_profitsplitpanel_profitsplitpanel"
-    },
-    {
-      "label": "ReceivablesTable.tsx",
-      "file_type": "code",
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "receivablestable.tsx",
-      "id": "components_receivablestable"
-    },
-    {
-      "label": "Receivables",
-      "file_type": "code",
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "receivables",
-      "id": "components_receivablestable_receivables"
-    },
-    {
-      "label": "ReceivablesTable()",
-      "file_type": "code",
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "receivablestable()",
-      "id": "components_receivablestable_receivablestable"
     },
     {
       "label": "RoleCard.tsx",
@@ -2332,36 +2572,6 @@
       "community": 39,
       "norm_label": "financeloginpage()",
       "id": "login_page_financeloginpage"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "page.tsx",
-      "id": "finance_page"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "metadata",
-      "id": "finance_page_metadata"
-    },
-    {
-      "label": "FinanceDashboardPage()",
-      "file_type": "code",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "financedashboardpage()",
-      "id": "finance_page_financedashboardpage"
     },
     {
       "label": "route.ts",
@@ -2639,7 +2849,7 @@
       "source_file": "components/GA4.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "ga4.tsx",
       "id": "components_ga4"
     },
@@ -2649,7 +2859,7 @@
       "source_file": "components/GA4.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "ga4()",
       "id": "components_ga4_ga4"
     },
@@ -2699,7 +2909,7 @@
       "source_file": "components/Header.tsx",
       "source_location": "L135",
       "_origin": "ast",
-      "community": 8,
+      "community": 15,
       "norm_label": "header()",
       "id": "components_header_header"
     },
@@ -2709,7 +2919,7 @@
       "source_file": "components/JsonLd.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 43,
       "norm_label": "jsonld.tsx",
       "id": "components_jsonld"
     },
@@ -2719,7 +2929,7 @@
       "source_file": "components/JsonLd.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 17,
+      "community": 43,
       "norm_label": "people",
       "id": "components_jsonld_people"
     },
@@ -2729,7 +2939,7 @@
       "source_file": "components/JsonLd.tsx",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 17,
+      "community": 43,
       "norm_label": "jsonldscript()",
       "id": "components_jsonld_jsonldscript"
     },
@@ -2739,7 +2949,7 @@
       "source_file": "components/JsonLd.tsx",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 17,
+      "community": 43,
       "norm_label": "organizationschema()",
       "id": "components_jsonld_organizationschema"
     },
@@ -2749,7 +2959,7 @@
       "source_file": "components/JsonLd.tsx",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 17,
+      "community": 43,
       "norm_label": "serviceschema()",
       "id": "components_jsonld_serviceschema"
     },
@@ -2759,7 +2969,7 @@
       "source_file": "components/JsonLd.tsx",
       "source_location": "L101",
       "_origin": "ast",
-      "community": 17,
+      "community": 43,
       "norm_label": "websiteschema()",
       "id": "components_jsonld_websiteschema"
     },
@@ -2789,7 +2999,7 @@
       "source_file": "components/MotionProvider.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "motionprovider.tsx",
       "id": "components_motionprovider"
     },
@@ -2799,7 +3009,7 @@
       "source_file": "components/MotionProvider.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 17,
+      "community": 4,
       "norm_label": "motionprovider()",
       "id": "components_motionprovider_motionprovider"
     },
@@ -2929,7 +3139,7 @@
       "source_file": "components/content/AnchorPage.tsx",
       "source_location": "L198",
       "_origin": "ast",
-      "community": 49,
+      "community": 14,
       "norm_label": "anchorpage()",
       "id": "content_anchorpage_anchorpage"
     },
@@ -2939,7 +3149,7 @@
       "source_file": "components/content/ArticleSidebar.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 42,
       "norm_label": "articlesidebar.tsx",
       "id": "content_articlesidebar"
     },
@@ -2949,7 +3159,7 @@
       "source_file": "components/content/ArticleSidebar.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 18,
+      "community": 42,
       "norm_label": "section_label",
       "id": "content_articlesidebar_section_label"
     },
@@ -2959,7 +3169,7 @@
       "source_file": "components/content/ArticleSidebar.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 18,
+      "community": 42,
       "norm_label": "sections",
       "id": "content_articlesidebar_sections"
     },
@@ -2969,7 +3179,7 @@
       "source_file": "components/content/ArticleSidebar.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 18,
+      "community": 42,
       "norm_label": "articlesidebar()",
       "id": "content_articlesidebar_articlesidebar"
     },
@@ -3069,7 +3279,7 @@
       "source_file": "components/content/ContentArticle.tsx",
       "source_location": "L94",
       "_origin": "ast",
-      "community": 49,
+      "community": 12,
       "norm_label": "contentarticle()",
       "id": "content_contentarticle_contentarticle"
     },
@@ -3079,7 +3289,7 @@
       "source_file": "components/content/ContentHeader.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "contentheader.tsx",
       "id": "content_contentheader"
     },
@@ -3089,7 +3299,7 @@
       "source_file": "components/content/ContentHeader.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "localeswitcher()",
       "id": "content_contentheader_localeswitcher"
     },
@@ -3099,7 +3309,7 @@
       "source_file": "components/content/ContentHeader.tsx",
       "source_location": "L44",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "contentheader()",
       "id": "content_contentheader_contentheader"
     },
@@ -3229,7 +3439,7 @@
       "source_file": "components/content/ManifestoPage.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "manifestopage.tsx",
       "id": "content_manifestopage"
     },
@@ -3239,7 +3449,7 @@
       "source_file": "components/content/ManifestoPage.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "manifestopage()",
       "id": "content_manifestopage_manifestopage"
     },
@@ -3449,7 +3659,7 @@
       "source_file": "components/icons.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "icons.tsx",
       "id": "components_icons"
     },
@@ -3459,7 +3669,7 @@
       "source_file": "components/icons.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "iconprops",
       "id": "components_icons_iconprops"
     },
@@ -3469,7 +3679,7 @@
       "source_file": "components/icons.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "ic()",
       "id": "components_icons_ic"
     },
@@ -3479,7 +3689,7 @@
       "source_file": "components/icons.tsx",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "icon()",
       "id": "components_icons_icon"
     },
@@ -3489,7 +3699,7 @@
       "source_file": "components/sections/ContentHighlight.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "contenthighlight.tsx",
       "id": "sections_contenthighlight"
     },
@@ -3499,7 +3709,7 @@
       "source_file": "components/sections/ContentHighlight.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "schema_hue",
       "id": "sections_contenthighlight_schema_hue"
     },
@@ -3509,7 +3719,7 @@
       "source_file": "components/sections/ContentHighlight.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "getfeatured()",
       "id": "sections_contenthighlight_getfeatured"
     },
@@ -3519,7 +3729,7 @@
       "source_file": "components/sections/ContentHighlight.tsx",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "contenthighlight()",
       "id": "sections_contenthighlight_contenthighlight"
     },
@@ -3559,7 +3769,7 @@
       "source_file": "components/sections/Engage.tsx",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 3,
+      "community": 15,
       "norm_label": "engage()",
       "id": "sections_engage_engage"
     },
@@ -3569,7 +3779,7 @@
       "source_file": "components/sections/Faq.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 6,
       "norm_label": "faq.tsx",
       "id": "sections_faq"
     },
@@ -3579,7 +3789,7 @@
       "source_file": "components/sections/Faq.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 4,
+      "community": 6,
       "norm_label": "faqitem",
       "id": "sections_faq_faqitem"
     },
@@ -3589,7 +3799,7 @@
       "source_file": "components/sections/Faq.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 4,
+      "community": 6,
       "norm_label": "faq()",
       "id": "sections_faq_faq"
     },
@@ -3599,7 +3809,7 @@
       "source_file": "components/sections/Foundation.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 15,
       "norm_label": "foundation.tsx",
       "id": "sections_foundation"
     },
@@ -3609,7 +3819,7 @@
       "source_file": "components/sections/Foundation.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 4,
+      "community": 15,
       "norm_label": "teammember",
       "id": "sections_foundation_teammember"
     },
@@ -3619,7 +3829,7 @@
       "source_file": "components/sections/Foundation.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 4,
+      "community": 15,
       "norm_label": "personcard()",
       "id": "sections_foundation_personcard"
     },
@@ -3629,7 +3839,7 @@
       "source_file": "components/sections/Foundation.tsx",
       "source_location": "L73",
       "_origin": "ast",
-      "community": 4,
+      "community": 15,
       "norm_label": "mobilecarousel()",
       "id": "sections_foundation_mobilecarousel"
     },
@@ -3639,7 +3849,7 @@
       "source_file": "components/sections/Foundation.tsx",
       "source_location": "L104",
       "_origin": "ast",
-      "community": 4,
+      "community": 15,
       "norm_label": "foundation()",
       "id": "sections_foundation_foundation"
     },
@@ -3929,7 +4139,7 @@
       "source_file": "components/sections/Methodology.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 15,
       "norm_label": "methodology.tsx",
       "id": "sections_methodology"
     },
@@ -3939,7 +4149,7 @@
       "source_file": "components/sections/Methodology.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 4,
+      "community": 15,
       "norm_label": "principledata",
       "id": "sections_methodology_principledata"
     },
@@ -3949,7 +4159,7 @@
       "source_file": "components/sections/Methodology.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 4,
+      "community": 15,
       "norm_label": "icons",
       "id": "sections_methodology_icons"
     },
@@ -3959,7 +4169,7 @@
       "source_file": "components/sections/Methodology.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 4,
+      "community": 15,
       "norm_label": "principle()",
       "id": "sections_methodology_principle"
     },
@@ -3969,7 +4179,7 @@
       "source_file": "components/sections/Methodology.tsx",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 4,
+      "community": 15,
       "norm_label": "methodology()",
       "id": "sections_methodology_methodology"
     },
@@ -3979,7 +4189,7 @@
       "source_file": "components/sections/Pricing.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "pricing.tsx",
       "id": "sections_pricing"
     },
@@ -3989,7 +4199,7 @@
       "source_file": "components/sections/Pricing.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "plandata",
       "id": "sections_pricing_plandata"
     },
@@ -3999,7 +4209,7 @@
       "source_file": "components/sections/Pricing.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "scrollto()",
       "id": "sections_pricing_scrollto"
     },
@@ -4009,7 +4219,7 @@
       "source_file": "components/sections/Pricing.tsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "pricing()",
       "id": "sections_pricing_pricing"
     },
@@ -4089,7 +4299,7 @@
       "source_file": "components/sections/SelectedWork.tsx",
       "source_location": "L108",
       "_origin": "ast",
-      "community": 22,
+      "community": 15,
       "norm_label": "selectedwork()",
       "id": "sections_selectedwork_selectedwork"
     },
@@ -4099,7 +4309,7 @@
       "source_file": "components/sections/SiteFooter.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "sitefooter.tsx",
       "id": "sections_sitefooter"
     },
@@ -4109,7 +4319,7 @@
       "source_file": "components/sections/SiteFooter.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 19,
+      "community": 18,
       "norm_label": "chevsvg()",
       "id": "sections_sitefooter_chevsvg"
     },
@@ -4119,7 +4329,7 @@
       "source_file": "components/sections/SiteFooter.tsx",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 49,
+      "community": 18,
       "norm_label": "sitefooter()",
       "id": "sections_sitefooter_sitefooter"
     },
@@ -4639,7 +4849,7 @@
       "source_file": "i18n/request.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 46,
+      "community": 19,
       "norm_label": "request.ts",
       "id": "i18n_request"
     },
@@ -4649,7 +4859,7 @@
       "source_file": "i18n/request.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 46,
+      "community": 19,
       "norm_label": "lightpages()",
       "id": "i18n_request_lightpages"
     },
@@ -4659,7 +4869,7 @@
       "source_file": "i18n/routing.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 19,
       "norm_label": "routing.ts",
       "id": "i18n_routing"
     },
@@ -4669,7 +4879,7 @@
       "source_file": "i18n/routing.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 11,
+      "community": 19,
       "norm_label": "routing",
       "id": "i18n_routing_routing"
     },
@@ -4679,7 +4889,7 @@
       "source_file": "i18n/routing.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 11,
+      "community": 19,
       "norm_label": "{link, redirect, usepathname, userouter, getpathname}",
       "id": "i18n_routing_link_redirect_usepathname_userouter_getpathname"
     },
@@ -4949,7 +5159,7 @@
       "source_file": "lib/content/meta.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 42,
+      "community": 12,
       "norm_label": "meta.ts",
       "id": "content_meta"
     },
@@ -4959,7 +5169,7 @@
       "source_file": "lib/content/meta.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 42,
+      "community": 12,
       "norm_label": "og_locale",
       "id": "content_meta_og_locale"
     },
@@ -4979,7 +5189,7 @@
       "source_file": "lib/content/meta.ts",
       "source_location": "L62",
       "_origin": "ast",
-      "community": 42,
+      "community": 12,
       "norm_label": "relatedlink",
       "id": "content_meta_relatedlink"
     },
@@ -4999,7 +5209,7 @@
       "source_file": "lib/content/pages.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 23,
       "norm_label": "pages.ts",
       "id": "content_pages"
     },
@@ -5009,7 +5219,7 @@
       "source_file": "lib/content/pages.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 18,
+      "community": 23,
       "norm_label": "pagestatus",
       "id": "content_pages_pagestatus"
     },
@@ -5019,7 +5229,7 @@
       "source_file": "lib/content/pages.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 42,
+      "community": 23,
       "norm_label": "pagesection",
       "id": "content_pages_pagesection"
     },
@@ -5029,7 +5239,7 @@
       "source_file": "lib/content/pages.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 18,
+      "community": 23,
       "norm_label": "pageaudience",
       "id": "content_pages_pageaudience"
     },
@@ -5069,7 +5279,7 @@
       "source_file": "lib/content/pages.ts",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 18,
+      "community": 23,
       "norm_label": "pages",
       "id": "content_pages_pages"
     },
@@ -5109,7 +5319,7 @@
       "source_file": "lib/content/pages.ts",
       "source_location": "L479",
       "_origin": "ast",
-      "community": 18,
+      "community": 23,
       "norm_label": "getallslugs()",
       "id": "content_pages_getallslugs"
     },
@@ -5249,7 +5459,7 @@
       "source_file": "lib/content/text/index.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 12,
+      "community": 19,
       "norm_label": "pagescontent",
       "id": "text_index_pagescontent"
     },
@@ -5629,7 +5839,7 @@
       "source_file": "lib/finance/auth/requireSession.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "norm_label": "requiresession.ts",
       "id": "auth_requiresession"
     },
@@ -5639,7 +5849,7 @@
       "source_file": "lib/finance/auth/requireSession.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "norm_label": "getfinancesession()",
       "id": "auth_requiresession_getfinancesession"
     },
@@ -5719,7 +5929,7 @@
       "source_file": "lib/finance/auth/session.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "norm_label": "financesessionclaims",
       "id": "auth_session_financesessionclaims"
     },
@@ -5772,66 +5982,6 @@
       "community": 0,
       "norm_label": "chart",
       "id": "finance_charttokens_chart"
-    },
-    {
-      "label": "format.ts",
-      "file_type": "code",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "format.ts",
-      "id": "finance_format"
-    },
-    {
-      "label": "formatEur()",
-      "file_type": "code",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "formateur()",
-      "id": "finance_format_formateur"
-    },
-    {
-      "label": "formatEurSigned()",
-      "file_type": "code",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "formateursigned()",
-      "id": "finance_format_formateursigned"
-    },
-    {
-      "label": "formatPercent()",
-      "file_type": "code",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "formatpercent()",
-      "id": "finance_format_formatpercent"
-    },
-    {
-      "label": "formatDate()",
-      "file_type": "code",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "formatdate()",
-      "id": "finance_format_formatdate"
-    },
-    {
-      "label": "formatMonth()",
-      "file_type": "code",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L33",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "formatmonth()",
-      "id": "finance_format_formatmonth"
     },
     {
       "label": "otpEmail.ts",
@@ -6109,7 +6259,7 @@
       "source_file": "lib/finance/notion/snapshot.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "norm_label": "finance_cache_tags",
       "id": "notion_snapshot_finance_cache_tags"
     },
@@ -6469,7 +6619,7 @@
       "source_file": "lib/motion.ts",
       "source_location": "L128",
       "_origin": "ast",
-      "community": 8,
+      "community": 3,
       "norm_label": "backdrop",
       "id": "lib_motion_backdrop"
     },
@@ -6509,7 +6659,7 @@
       "source_file": "lib/motion.ts",
       "source_location": "L157",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "staggerslow",
       "id": "lib_motion_staggerslow"
     },
@@ -6679,7 +6829,7 @@
       "source_file": "lib/notify/templates.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 49,
+      "community": 15,
       "norm_label": "t",
       "id": "notify_templates_t"
     },
@@ -7059,7 +7209,7 @@
       "source_file": "lib/seo/site.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 49,
+      "community": 43,
       "norm_label": "site.ts",
       "id": "seo_site"
     },
@@ -7069,7 +7219,7 @@
       "source_file": "lib/seo/site.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 17,
+      "community": 43,
       "norm_label": "social_links",
       "id": "seo_site_social_links"
     },
@@ -7079,7 +7229,7 @@
       "source_file": "lib/seo/site.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 17,
+      "community": 43,
       "norm_label": "team",
       "id": "seo_site_team"
     },
@@ -7089,7 +7239,7 @@
       "source_file": "lib/seo/site.ts",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 17,
+      "community": 43,
       "norm_label": "offers",
       "id": "seo_site_offers"
     },
@@ -7639,7 +7789,7 @@
       "source_file": "proxy.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 11,
+      "community": 34,
       "norm_label": "proxy.ts",
       "id": "proxy"
     },
@@ -7649,7 +7799,7 @@
       "source_file": "proxy.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 11,
+      "community": 34,
       "norm_label": "intlmiddleware",
       "id": "proxy_intlmiddleware"
     },
@@ -7659,7 +7809,7 @@
       "source_file": "proxy.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 11,
+      "community": 34,
       "norm_label": "consent_required",
       "id": "proxy_consent_required"
     },
@@ -7669,7 +7819,7 @@
       "source_file": "proxy.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 11,
+      "community": 34,
       "norm_label": "financeguard()",
       "id": "proxy_financeguard"
     },
@@ -7679,7 +7829,7 @@
       "source_file": "proxy.ts",
       "source_location": "L41",
       "_origin": "ast",
-      "community": 11,
+      "community": 34,
       "norm_label": "proxy()",
       "id": "proxy_proxy"
     },
@@ -7689,7 +7839,7 @@
       "source_file": "proxy.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 11,
+      "community": 34,
       "norm_label": "config",
       "id": "proxy_config"
     },
@@ -9494,6 +9644,1513 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "components_budgetvsactual_budgetlines"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "components_budgetvsactual_budgetvsactual"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "components_charttooltip"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "components_charttooltip_charttooltip"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "components_currencycontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "components_currencycontext_usecurrency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "finance_charttokens"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "finance_charttokens_chart"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "finance_format"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "finance_format_formateur"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "finance_format_formateursigned"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "notion_aggregate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_budgetvsactual",
+      "target": "notion_aggregate_computebudgetvsactual"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_budgetvsactual"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/components/BudgetVsActual.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "components_budgetvsactual_budgetvsactual",
+      "target": "components_currencycontext_usecurrency"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_budgetvsactual_budgetvsactual"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_charttooltip",
+      "target": "components_charttooltip_charttooltip"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_charttooltip",
+      "target": "components_charttooltip_props"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_charttooltip",
+      "target": "components_currencycontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_charttooltip",
+      "target": "components_currencycontext_usecurrency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_charttooltip",
+      "target": "finance_charttokens"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_charttooltip",
+      "target": "finance_charttokens_chart"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_charttooltip",
+      "target": "finance_format"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_charttooltip",
+      "target": "finance_format_formateur"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/IncomeByProject.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_incomebyproject",
+      "target": "components_charttooltip"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/components/ChartTooltip.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "components_charttooltip_charttooltip",
+      "target": "components_currencycontext_usecurrency"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/IncomeByProject.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_incomebyproject",
+      "target": "components_charttooltip_charttooltip"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "components_currencycontext",
+      "target": "components_currencycontext_currencycontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_currencycontext",
+      "target": "components_currencycontext_currencycontextvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "components_currencycontext",
+      "target": "components_currencycontext_currencyprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "components_currencycontext",
+      "target": "components_currencycontext_usecurrency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_currencycontext",
+      "target": "finance_currency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_currencycontext",
+      "target": "finance_currency_currency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_currencycontext",
+      "target": "finance_currency_fxrates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_currencycontext",
+      "target": "finance_format",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_currencycontext",
+      "target": "finance_format_formatmoney",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyContext.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_currencycontext",
+      "target": "finance_format_formatmoneysigned",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyToggle.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_currencytoggle",
+      "target": "components_currencycontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_kpigrid",
+      "target": "components_currencycontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_ledgertable",
+      "target": "components_currencycontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_profitsplitpanel",
+      "target": "components_currencycontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_receivablestable",
+      "target": "components_currencycontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "finance_page",
+      "target": "components_currencycontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "finance_page",
+      "target": "components_currencycontext_currencyprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyToggle.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_currencytoggle",
+      "target": "components_currencycontext_usecurrency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/components/CurrencyToggle.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "components_currencytoggle_currencytoggle",
+      "target": "components_currencycontext_usecurrency"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_kpigrid",
+      "target": "components_currencycontext_usecurrency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "components_kpigrid_kpigrid",
+      "target": "components_currencycontext_usecurrency"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_ledgertable",
+      "target": "components_currencycontext_usecurrency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "components_ledgertable_ledgertable",
+      "target": "components_currencycontext_usecurrency"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_profitsplitpanel",
+      "target": "components_currencycontext_usecurrency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "components_profitsplitpanel_profitsplitpanel",
+      "target": "components_currencycontext_usecurrency"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_receivablestable",
+      "target": "components_currencycontext_usecurrency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "components_receivablestable_receivablestable",
+      "target": "components_currencycontext_usecurrency"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyToggle.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_currencytoggle",
+      "target": "components_currencytoggle_currencytoggle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyToggle.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_currencytoggle",
+      "target": "components_currencytoggle_options",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyToggle.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "components_currencytoggle",
+      "target": "finance_currency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/CurrencyToggle.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "components_currencytoggle",
+      "target": "finance_currency_currency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/DashboardHeader.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_dashboardheader",
+      "target": "components_currencytoggle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/DashboardHeader.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_dashboardheader",
+      "target": "components_currencytoggle_currencytoggle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/DashboardHeader.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_dashboardheader",
+      "target": "components_dashboardheader_dashboardheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/DashboardHeader.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_dashboardheader",
+      "target": "components_dashboardheader_role_label"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_dashboardheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_dashboardheader_dashboardheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_kpigrid",
+      "target": "components_kpigrid_kpigrid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_kpigrid",
+      "target": "components_kpigrid_kpis"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_kpigrid",
+      "target": "finance_format"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_kpigrid",
+      "target": "finance_format_formateur"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_kpigrid",
+      "target": "notion_aggregate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_kpigrid",
+      "target": "notion_aggregate_computekpis"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_kpigrid"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/components/KpiGrid.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_kpigrid_kpigrid",
+      "target": "finance_format_formateur"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_kpigrid_kpigrid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_ledgertable",
+      "target": "components_ledgertable_ledgertable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_ledgertable",
+      "target": "components_ledgertable_sortkey"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_ledgertable",
+      "target": "finance_format"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_ledgertable",
+      "target": "finance_format_formatdate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_ledgertable",
+      "target": "finance_format_formateur"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_ledgertable",
+      "target": "notion_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/LedgerTable.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_ledgertable",
+      "target": "notion_types_transaction"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_ledgertable"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_ledgertable_ledgertable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profitsplitpanel",
+      "target": "components_profitsplitpanel_profitsplit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profitsplitpanel",
+      "target": "components_profitsplitpanel_profitsplitpanel"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profitsplitpanel",
+      "target": "finance_format"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profitsplitpanel",
+      "target": "finance_format_formateur"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profitsplitpanel",
+      "target": "notion_aggregate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profitsplitpanel",
+      "target": "notion_aggregate_computeprofitsplit"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_profitsplitpanel"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "components_profitsplitpanel_profitsplitpanel",
+      "target": "finance_format_formateur"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_profitsplitpanel_profitsplitpanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_receivablestable",
+      "target": "components_receivablestable_receivables"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_receivablestable",
+      "target": "components_receivablestable_receivablestable"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_receivablestable",
+      "target": "finance_format"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_receivablestable",
+      "target": "finance_format_formatdate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_receivablestable",
+      "target": "finance_format_formateur"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_receivablestable",
+      "target": "finance_format_formatpercent"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_receivablestable",
+      "target": "notion_aggregate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_receivablestable",
+      "target": "notion_aggregate_computereceivables"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_receivablestable"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "components_receivablestable_receivablestable",
+      "target": "finance_format_formateur"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/components/ReceivablesTable.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "components_receivablestable_receivablestable",
+      "target": "finance_format_formatpercent"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_receivablestable_receivablestable"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "auth_requiresession"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "auth_requiresession_getfinancesession"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_dataqualitypanel"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_dataqualitypanel_dataqualitypanel"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_incomebyproject"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_incomebyproject_incomebyproject"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_pipelinebystage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_pipelinebystage_pipelinebystage"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_sectionshell"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "components_sectionshell_sectionshell"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "finance_page",
+      "target": "finance_currency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "finance_page",
+      "target": "finance_currency_fetchfxrates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "finance_page_financedashboardpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "finance_page_metadata"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "notion_snapshot"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_page",
+      "target": "notion_snapshot_getfinancesnapshot"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "finance_page_financedashboardpage",
+      "target": "auth_requiresession_getfinancesession"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "finance_page_financedashboardpage",
+      "target": "finance_currency_fetchfxrates"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/finance/page.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "finance_page_financedashboardpage",
+      "target": "notion_snapshot_getfinancesnapshot"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/currency.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "finance_currency",
+      "target": "finance_currency_currency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/currency.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "finance_currency",
+      "target": "finance_currency_fetchfxrates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/currency.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "finance_currency",
+      "target": "finance_currency_fxrates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/currency.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "finance_currency",
+      "target": "finance_currency_fxsnapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "finance_format",
+      "target": "finance_currency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "finance_format",
+      "target": "finance_currency_currency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "finance_format",
+      "target": "finance_currency_fxrates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/IncomeByProject.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_incomebyproject",
+      "target": "finance_format"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_format",
+      "target": "finance_format_formatdate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_format",
+      "target": "finance_format_formateur"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_format",
+      "target": "finance_format_formateursigned"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "finance_format",
+      "target": "finance_format_formatmoney",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "finance_format",
+      "target": "finance_format_formatmoneysigned",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_format",
+      "target": "finance_format_formatmonth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_format",
+      "target": "finance_format_formatpercent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "finance_format_formateursigned",
+      "target": "finance_format_formateur"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/finance/format.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "finance_format_formatmoneysigned",
+      "target": "finance_format_formatmoney",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/components/IncomeByProject.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_incomebyproject",
+      "target": "finance_format_formatmonth"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9566,9 +11223,9 @@
       "source_file": "app/finance/terms/page.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "terms_page",
-      "target": "notion_shares",
-      "confidence_score": 1.0
+      "target": "notion_shares"
     },
     {
       "relation": "imports",
@@ -9577,9 +11234,9 @@
       "source_file": "app/finance/terms/page.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "terms_page",
-      "target": "notion_shares_fetchstockshares",
-      "confidence_score": 1.0
+      "target": "notion_shares_fetchstockshares"
     },
     {
       "relation": "contains",
@@ -9714,9 +11371,9 @@
       "source_file": "lib/finance/notion/acknowledgments.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "notion_acknowledgments",
-      "target": "notion_client_financenotion",
-      "confidence_score": 1.0
+      "target": "notion_client_financenotion"
     },
     {
       "relation": "imports_from",
@@ -9766,17 +11423,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_budgetvsactual",
-      "target": "notion_aggregate"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/finance/components/DataQualityPanel.tsx",
       "source_location": "L1",
       "weight": 1.0,
@@ -9788,44 +11434,11 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/KpiGrid.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_kpigrid",
-      "target": "notion_aggregate"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/finance/components/PipelineByStage.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_pipelinebystage",
-      "target": "notion_aggregate"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_profitsplitpanel",
-      "target": "notion_aggregate"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_receivablestable",
       "target": "notion_aggregate"
     },
     {
@@ -10070,17 +11683,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/KpiGrid.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_kpigrid",
-      "target": "notion_aggregate_computekpis"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "tests/finance/aggregate.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -10169,17 +11771,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_receivablestable",
-      "target": "notion_aggregate_computereceivables"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "tests/finance/aggregate.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -10202,17 +11793,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_profitsplitpanel",
-      "target": "notion_aggregate_computeprofitsplit"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "tests/finance/aggregate.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -10230,17 +11810,6 @@
       "confidence_score": 1.0,
       "source": "notion_aggregate_aggregatefinance",
       "target": "notion_aggregate_computeprofitsplit"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_budgetvsactual",
-      "target": "notion_aggregate_computebudgetvsactual"
     },
     {
       "relation": "imports",
@@ -10809,17 +12378,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/LedgerTable.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_ledgertable",
-      "target": "notion_types"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "tests/finance/aggregate.test.ts",
       "source_location": "L13",
       "weight": 1.0,
@@ -10897,17 +12455,6 @@
       "confidence_score": 1.0,
       "source": "notion_types",
       "target": "notion_types_transactiontype"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/LedgerTable.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_ledgertable",
-      "target": "notion_types_transaction"
     },
     {
       "relation": "imports",
@@ -15593,280 +17140,11 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_budgetvsactual",
-      "target": "components_budgetvsactual_budgetlines"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_budgetvsactual",
-      "target": "components_budgetvsactual_budgetvsactual"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_budgetvsactual",
-      "target": "components_charttooltip"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_budgetvsactual",
-      "target": "components_charttooltip_charttooltip"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_budgetvsactual",
-      "target": "finance_charttokens"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_budgetvsactual",
-      "target": "finance_charttokens_chart"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_budgetvsactual",
-      "target": "finance_format"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_budgetvsactual",
-      "target": "finance_format_formateur"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/BudgetVsActual.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_budgetvsactual",
-      "target": "finance_format_formateursigned"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_budgetvsactual"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_budgetvsactual_budgetvsactual"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ChartTooltip.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_charttooltip",
-      "target": "components_charttooltip_charttooltip"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ChartTooltip.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_charttooltip",
-      "target": "components_charttooltip_props"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ChartTooltip.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_charttooltip",
-      "target": "finance_charttokens"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ChartTooltip.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_charttooltip",
-      "target": "finance_charttokens_chart"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ChartTooltip.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_charttooltip",
-      "target": "finance_format"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ChartTooltip.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_charttooltip",
-      "target": "finance_format_formateur"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/IncomeByProject.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_incomebyproject",
-      "target": "components_charttooltip"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/IncomeByProject.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_incomebyproject",
-      "target": "components_charttooltip_charttooltip"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/DashboardHeader.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_dashboardheader",
-      "target": "components_dashboardheader_dashboardheader"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/DashboardHeader.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_dashboardheader",
-      "target": "components_dashboardheader_role_label"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_dashboardheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_dashboardheader_dashboardheader"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/finance/components/DataQualityPanel.tsx",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_dataqualitypanel",
-      "target": "components_dataqualitypanel_dataqualitypanel"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_dataqualitypanel"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
       "target": "components_dataqualitypanel_dataqualitypanel"
     },
     {
@@ -15940,200 +17218,6 @@
       "confidence_score": 1.0,
       "source": "components_incomebyproject",
       "target": "finance_charttokens_chart"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/IncomeByProject.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_incomebyproject",
-      "target": "finance_format"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/IncomeByProject.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_incomebyproject",
-      "target": "finance_format_formatmonth"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_incomebyproject"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_incomebyproject_incomebyproject"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/KpiGrid.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_kpigrid",
-      "target": "components_kpigrid_kpigrid"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/KpiGrid.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_kpigrid",
-      "target": "components_kpigrid_kpis"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/KpiGrid.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_kpigrid",
-      "target": "finance_format"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/KpiGrid.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_kpigrid",
-      "target": "finance_format_formateur"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_kpigrid"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/finance/components/KpiGrid.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "components_kpigrid_kpigrid",
-      "target": "finance_format_formateur"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_kpigrid_kpigrid"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/LedgerTable.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_ledgertable",
-      "target": "components_ledgertable_ledgertable"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/LedgerTable.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_ledgertable",
-      "target": "components_ledgertable_sortkey"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/LedgerTable.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_ledgertable",
-      "target": "finance_format"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/LedgerTable.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_ledgertable",
-      "target": "finance_format_formatdate"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/LedgerTable.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_ledgertable",
-      "target": "finance_format_formateur"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_ledgertable"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_ledgertable_ledgertable"
     },
     {
       "relation": "contains",
@@ -16230,211 +17314,6 @@
       "target": "finance_charttokens_chart"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_pipelinebystage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_pipelinebystage_pipelinebystage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_profitsplitpanel",
-      "target": "components_profitsplitpanel_profitsplit"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_profitsplitpanel",
-      "target": "components_profitsplitpanel_profitsplitpanel"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_profitsplitpanel",
-      "target": "finance_format"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_profitsplitpanel",
-      "target": "finance_format_formateur"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_profitsplitpanel"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/finance/components/ProfitSplitPanel.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "components_profitsplitpanel_profitsplitpanel",
-      "target": "finance_format_formateur"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_profitsplitpanel_profitsplitpanel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_receivablestable",
-      "target": "components_receivablestable_receivables"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_receivablestable",
-      "target": "components_receivablestable_receivablestable"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_receivablestable",
-      "target": "finance_format"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_receivablestable",
-      "target": "finance_format_formatdate"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_receivablestable",
-      "target": "finance_format_formateur"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_receivablestable",
-      "target": "finance_format_formatpercent"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_receivablestable"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "components_receivablestable_receivablestable",
-      "target": "finance_format_formateur"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/finance/components/ReceivablesTable.tsx",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "components_receivablestable_receivablestable",
-      "target": "finance_format_formatpercent"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_receivablestable_receivablestable"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/finance/components/RoleCard.tsx",
@@ -16484,28 +17363,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_sectionshell",
-      "target": "components_sectionshell_sectionshell"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "components_sectionshell"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
       "target": "components_sectionshell_sectionshell"
     },
     {
@@ -16639,92 +17496,6 @@
       "confidence_score": 1.0,
       "source": "login_page",
       "target": "login_page_metadata"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "auth_requiresession"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "auth_requiresession_getfinancesession"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "finance_page_financedashboardpage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "finance_page_metadata"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "notion_snapshot"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_page",
-      "target": "notion_snapshot_getfinancesnapshot"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L27",
-      "weight": 1.0,
-      "source": "finance_page_financedashboardpage",
-      "target": "auth_requiresession_getfinancesession"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/finance/page.tsx",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "finance_page_financedashboardpage",
-      "target": "notion_snapshot_getfinancesnapshot"
     },
     {
       "relation": "imports_from",
@@ -23744,67 +24515,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_format",
-      "target": "finance_format_formatdate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_format",
-      "target": "finance_format_formateur"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_format",
-      "target": "finance_format_formateursigned"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_format",
-      "target": "finance_format_formatmonth"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_format",
-      "target": "finance_format_formatpercent"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/finance/format.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "finance_format_formateursigned",
-      "target": "finance_format_formateur"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "lib/finance/notify/otpEmail.ts",
       "source_location": "L18",
       "weight": 1.0,
@@ -28583,5 +29293,5 @@
       "source_file": "public/work/expeditoo.png"
     }
   ],
-  "built_at_commit": "b4f77a7e71205651785d6d7b6330538f07e5bce0"
+  "built_at_commit": "3d5dcc83d22e7f0d03adb5fda02ab130ea5419e1"
 }
