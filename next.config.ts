@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
   },
   async headers() {
+    // Next.js dev mode (Turbopack/webpack HMR, React's dev-mode callstack
+    // reconstruction) needs eval() to run at all — confirmed live: without
+    // 'unsafe-eval' the /finance/login page hard-errors on every click in
+    // `next dev`. Production never needs it, so only relax this in dev.
+    const scriptSrc =
+      process.env.NODE_ENV === "production"
+        ? "script-src 'self' 'unsafe-inline'"
+        : "script-src 'self' 'unsafe-inline' 'unsafe-eval'";
+
     return [
       {
         // Internal-only, auth-gated route (see proxy.ts + AGENTS.md). Blocks
@@ -23,7 +32,7 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline'",
+              scriptSrc,
               "style-src 'self' 'unsafe-inline'",
               "font-src 'self'",
               "img-src 'self' data:",
