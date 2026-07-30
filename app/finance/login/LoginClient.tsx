@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence, type PanInfo } from "framer-motion";
 import { OtpForm } from "../components/OtpForm";
 import { TeamRoleCard, FINANCE_TEAM, type TeamMember } from "../components/TeamRoleCard";
@@ -21,7 +21,7 @@ const SLOW = { duration: 0.7, ease: EASE };
 
 function ChevronIcon({ direction }: { direction: "left" | "right" }) {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d={direction === "left" ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -36,15 +36,30 @@ export function LoginClient() {
 
   const selected: TeamMember | null = FINANCE_TEAM.find((m) => m.role === role) ?? null;
 
+  // Guards against the drag gesture also registering as a tap — without
+  // this, a swipe attempt that falls short of the 70px cycle threshold
+  // could still fire onTap and select the card the user was only browsing.
+  const dragOffsetRef = useRef(0);
+
   function cycle(dir: 1 | -1) {
     setDeckIndex((prev) => (prev + dir + FINANCE_TEAM.length) % FINANCE_TEAM.length);
   }
 
-  function handleDragEnd(_e: unknown, info: PanInfo) {
-    if (Math.abs(info.offset.x) > 70) cycle(info.offset.x > 0 ? -1 : 1);
+  function handleDrag(_e: unknown, info: PanInfo) {
+    dragOffsetRef.current = info.offset.x;
   }
 
-  function pick(m: TeamMember) {
+  function handleDragEnd(_e: unknown, info: PanInfo) {
+    if (Math.abs(info.offset.x) > 70) cycle(info.offset.x > 0 ? -1 : 1);
+    // Tap fires right after drag-end; clear on a short delay so it can
+    // still see a non-zero offset and reject a stray tap.
+    setTimeout(() => {
+      dragOffsetRef.current = 0;
+    }, 100);
+  }
+
+  function pick(m: TeamMember, isFront: boolean) {
+    if (!isFront || Math.abs(dragOffsetRef.current) > 4) return;
     setRole(m.role);
     setStep("focused");
   }
@@ -138,7 +153,7 @@ export function LoginClient() {
                 type="button"
                 onClick={() => cycle(-1)}
                 aria-label="Previous"
-                className="w-9 h-9 rounded-full bg-card border border-line text-muted flex items-center justify-center hover:text-white hover:border-accent-30 transition-colors shrink-0"
+                className="text-muted hover:text-white transition-colors shrink-0 p-2"
               >
                 <ChevronIcon direction="left" />
               </button>
@@ -152,8 +167,9 @@ export function LoginClient() {
                       drag={isFront ? "x" : false}
                       dragConstraints={{ left: 0, right: 0 }}
                       dragElastic={0.7}
+                      onDrag={handleDrag}
                       onDragEnd={handleDragEnd}
-                      onTap={() => isFront && pick(m)}
+                      onTap={() => pick(m, isFront)}
                       animate={
                         isFront
                           ? { x: 0, y: 0, rotate: 0, scale: 1, zIndex: 2 }
@@ -174,7 +190,7 @@ export function LoginClient() {
                 type="button"
                 onClick={() => cycle(1)}
                 aria-label="Next"
-                className="w-9 h-9 rounded-full bg-card border border-line text-muted flex items-center justify-center hover:text-white hover:border-accent-30 transition-colors shrink-0"
+                className="text-muted hover:text-white transition-colors shrink-0 p-2"
               >
                 <ChevronIcon direction="right" />
               </button>
