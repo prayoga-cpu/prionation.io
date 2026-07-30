@@ -8,6 +8,38 @@ const nextConfig: NextConfig = {
     // Serve AVIF/WebP automatically to supporting browsers (smaller LCP assets).
     formats: ["image/avif", "image/webp"],
   },
+  async headers() {
+    return [
+      {
+        // Internal-only, auth-gated route (see proxy.ts + AGENTS.md). Blocks
+        // third-party script/style/frame origins entirely. Keeps
+        // 'unsafe-inline' on script/style: Next.js's __NEXT_DATA__ hydration
+        // payload and next/font's injected @font-face rules aren't verifiable
+        // against a stricter nonce-based CSP without a live browser pass
+        // against real data — tighten this once that's been tested.
+        source: "/finance/:path*",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline'",
+              "style-src 'self' 'unsafe-inline'",
+              "font-src 'self'",
+              "img-src 'self' data:",
+              "connect-src 'self'",
+              "frame-ancestors 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+            ].join("; "),
+          },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "no-referrer" },
+        ],
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);
