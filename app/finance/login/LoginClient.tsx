@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, type PanInfo } from "framer-motion";
 import { OtpForm } from "../components/OtpForm";
 import { TeamRoleCard, FINANCE_TEAM, type TeamMember } from "../components/TeamRoleCard";
 import type { FinanceRole } from "@/lib/finance/auth/otp";
@@ -16,17 +16,36 @@ const ERROR_COPY: Record<string, string> = {
   generic: "Something went wrong. Try again.",
 };
 
+const EASE = [0.4, 0, 0.2, 1] as const; // slow, deliberate easeInOut
+const SLOW = { duration: 0.7, ease: EASE };
+
+function ChevronIcon({ direction }: { direction: "left" | "right" }) {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <path d={direction === "left" ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function LoginClient() {
   const [step, setStep] = useState<Step>("picking");
+  const [deckIndex, setDeckIndex] = useState(0);
   const [role, setRole] = useState<FinanceRole | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const selected: TeamMember | null = FINANCE_TEAM.find((m) => m.role === role) ?? null;
 
-  function pick(r: FinanceRole) {
-    if (step !== "picking") return;
-    setRole(r);
+  function cycle(dir: 1 | -1) {
+    setDeckIndex((prev) => (prev + dir + FINANCE_TEAM.length) % FINANCE_TEAM.length);
+  }
+
+  function handleDragEnd(_e: unknown, info: PanInfo) {
+    if (Math.abs(info.offset.x) > 70) cycle(info.offset.x > 0 ? -1 : 1);
+  }
+
+  function pick(m: TeamMember) {
+    setRole(m.role);
     setStep("focused");
   }
 
@@ -85,91 +104,142 @@ export function LoginClient() {
   return (
     <div className="min-h-screen flex items-center justify-center px-6 py-16 overflow-hidden">
       <div className="w-full max-w-[420px] flex flex-col items-center">
-        <div className="mb-10 text-center">
-          <p className="font-pixel text-[9px] tracking-[0.15em] text-accent uppercase mb-3">
-            Internal · Finance
-          </p>
-          <h1 className="font-sans text-2xl font-bold text-white">
-            PRIONATION<span className="text-accent">.</span>io
-          </h1>
-        </div>
-
-        {step !== "otp" && (
-          <div className="relative w-[260px] h-[340px] mb-8" style={{ perspective: 1000 }}>
-            {FINANCE_TEAM.map((m, i) => {
-              const isSelected = role === m.role;
-              const isFocused = step === "focused";
-              const stacked = { x: i === 0 ? -16 : 16, y: i === 0 ? 0 : 14, rotate: i === 0 ? -7 : 7, scale: i === 0 ? 1 : 0.94, opacity: 1, zIndex: i === 0 ? 2 : 1 };
-              const focusedSelf = { x: 0, y: 0, rotate: 0, scale: 1.06, opacity: 1, zIndex: 10 };
-              const focusedOther = { x: 0, y: 36, rotate: 0, scale: 0.86, opacity: 0, zIndex: 1 };
-
-              return (
-                <motion.button
-                  key={m.role}
-                  type="button"
-                  onClick={() => pick(m.role)}
-                  animate={isFocused ? (isSelected ? focusedSelf : focusedOther) : stacked}
-                  transition={{ type: "spring", stiffness: 260, damping: 24 }}
-                  whileHover={step === "picking" ? { y: (i === 0 ? 0 : 14) - 6 } : undefined}
-                  className="absolute inset-0"
-                  style={{
-                    transformOrigin: "center",
-                    pointerEvents: isFocused && !isSelected ? "none" : "auto",
-                    cursor: step === "picking" ? "pointer" : "default",
-                  }}
-                  aria-label={`Sign in as ${m.jobTitle}`}
-                >
-                  <TeamRoleCard member={m} />
-                </motion.button>
-              );
-            })}
-          </div>
-        )}
-
-        {step === "focused" && selected && (
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.25 }}
-            className="w-full flex flex-col items-center gap-3"
-          >
-            <button
-              type="button"
-              onClick={() => requestOtp(selected.role)}
-              disabled={busy}
-              className="w-full bg-accent text-white font-sans font-semibold text-sm rounded-full py-3 transition-opacity hover:opacity-90 disabled:opacity-50"
+        <AnimatePresence mode="wait">
+          {step === "picking" && (
+            <motion.div
+              key="header"
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={SLOW}
+              className="mb-10 text-center"
             >
-              {busy ? "Sending code…" : `Continue as ${selected.jobTitle}`}
-            </button>
-            <button
-              type="button"
-              onClick={backToPicking}
-              disabled={busy}
-              className="font-sans text-[12px] text-muted hover:text-white transition-colors disabled:opacity-40"
-            >
-              ← Choose someone else
-            </button>
-            {error && (
-              <p className="text-[13px] text-red-400 text-center" role="alert">
-                {error}
+              <p className="font-pixel text-[9px] tracking-[0.15em] text-accent uppercase mb-3">
+                Internal · Finance
               </p>
-            )}
-          </motion.div>
-        )}
+              <h1 className="font-sans text-2xl font-bold text-white">
+                PRIONATION<span className="text-accent">.</span>io
+              </h1>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-        {step === "otp" && selected && (
-          <OtpForm
-            inboxLabel={`the ${selected.jobTitle} inbox`}
-            busy={busy}
-            error={error}
-            onSubmit={verifyOtp}
-            onResend={() => requestOtp(selected.role)}
-            onBack={() => {
-              setStep("focused");
-              setError(null);
-            }}
-          />
-        )}
+        <AnimatePresence mode="wait">
+          {step === "picking" && (
+            <motion.div
+              key="deck"
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.94 }}
+              transition={SLOW}
+              className="flex items-center gap-5"
+            >
+              <button
+                type="button"
+                onClick={() => cycle(-1)}
+                aria-label="Previous"
+                className="w-9 h-9 rounded-full bg-card border border-line text-muted flex items-center justify-center hover:text-white hover:border-accent-30 transition-colors shrink-0"
+              >
+                <ChevronIcon direction="left" />
+              </button>
+
+              <div className="relative w-[260px] h-[340px] shrink-0">
+                {FINANCE_TEAM.map((m, i) => {
+                  const isFront = i === deckIndex;
+                  return (
+                    <motion.div
+                      key={m.role}
+                      drag={isFront ? "x" : false}
+                      dragConstraints={{ left: 0, right: 0 }}
+                      dragElastic={0.7}
+                      onDragEnd={handleDragEnd}
+                      onTap={() => isFront && pick(m)}
+                      animate={
+                        isFront
+                          ? { x: 0, y: 0, rotate: 0, scale: 1, zIndex: 2 }
+                          : { x: 16, y: 14, rotate: 7, scale: 0.94, zIndex: 1 }
+                      }
+                      transition={{ ...SLOW, duration: 0.6 }}
+                      className="absolute inset-0"
+                      style={{ cursor: isFront ? "grab" : "default", touchAction: "pan-y" }}
+                      whileTap={isFront ? { cursor: "grabbing" } : undefined}
+                    >
+                      <TeamRoleCard member={m} />
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              <button
+                type="button"
+                onClick={() => cycle(1)}
+                aria-label="Next"
+                className="w-9 h-9 rounded-full bg-card border border-line text-muted flex items-center justify-center hover:text-white hover:border-accent-30 transition-colors shrink-0"
+              >
+                <ChevronIcon direction="right" />
+              </button>
+            </motion.div>
+          )}
+
+          {step === "focused" && selected && (
+            <motion.div
+              key="focused"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={SLOW}
+              className="w-full flex flex-col items-center gap-4"
+            >
+              <div className="w-full h-[520px]">
+                <TeamRoleCard member={selected} large />
+              </div>
+              <button
+                type="button"
+                onClick={() => requestOtp(selected.role)}
+                disabled={busy}
+                className="w-full bg-accent text-white font-sans font-semibold text-sm rounded-full py-3 transition-opacity hover:opacity-90 disabled:opacity-50"
+              >
+                {busy ? "Sending code…" : `Continue as ${selected.jobTitle}`}
+              </button>
+              <button
+                type="button"
+                onClick={backToPicking}
+                disabled={busy}
+                className="font-sans text-[12px] text-muted hover:text-white transition-colors disabled:opacity-40"
+              >
+                ← Choose someone else
+              </button>
+              {error && (
+                <p className="text-[13px] text-red-400 text-center" role="alert">
+                  {error}
+                </p>
+              )}
+            </motion.div>
+          )}
+
+          {step === "otp" && selected && (
+            <motion.div
+              key="otp"
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.94 }}
+              transition={SLOW}
+              className="w-full"
+            >
+              <OtpForm
+                inboxLabel={`the ${selected.jobTitle} inbox`}
+                busy={busy}
+                error={error}
+                onSubmit={verifyOtp}
+                onResend={() => requestOtp(selected.role)}
+                onBack={() => {
+                  setStep("focused");
+                  setError(null);
+                }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
