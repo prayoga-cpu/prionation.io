@@ -8,6 +8,9 @@ const limiters: Record<string, Ratelimit> = {
   booking: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(3, '1 h') }),
   career: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(3, '1 h') }),
   waitlist: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(5, '1 h') }),
+  // Keyed by role (not IP) — see lib/finance/auth/otp.ts. Caps OTP requests
+  // for a given role globally, regardless of who's asking.
+  'finance-otp-request': new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(3, '15 m') }),
 };
 
 export async function rateLimit(form: keyof typeof limiters, ip: string) {
