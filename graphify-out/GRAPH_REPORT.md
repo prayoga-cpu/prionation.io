@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 959 nodes · 1887 edges · 54 communities (45 shown, 9 thin omitted)
+- 959 nodes · 1901 edges · 51 communities (42 shown, 9 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 54 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `169ac609`
+- Built from commit: `c4897b0b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -50,14 +50,12 @@
 - [[_COMMUNITY_Tailwind Config|Tailwind Config]]
 - [[_COMMUNITY_Community 33|Community 33]]
 - [[_COMMUNITY_Community 34|Community 34]]
-- [[_COMMUNITY_Community 35|Community 35]]
 - [[_COMMUNITY_Community 37|Community 37]]
 - [[_COMMUNITY_Community 38|Community 38]]
 - [[_COMMUNITY_Community 39|Community 39]]
 - [[_COMMUNITY_Community 40|Community 40]]
 - [[_COMMUNITY_Community 41|Community 41]]
 - [[_COMMUNITY_Community 42|Community 42]]
-- [[_COMMUNITY_Community 43|Community 43]]
 - [[_COMMUNITY_Community 44|Community 44]]
 - [[_COMMUNITY_Community 45|Community 45]]
 - [[_COMMUNITY_Community 46|Community 46]]
@@ -65,19 +63,18 @@
 - [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 49|Community 49]]
 - [[_COMMUNITY_Community 50|Community 50]]
-- [[_COMMUNITY_Community 51|Community 51]]
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `getPublishedPages()` - 35 edges
 2. `T` - 27 edges
-3. `useCurrency()` - 16 edges
+3. `useCurrency()` - 17 edges
 4. `SiteFooter()` - 16 edges
 5. `compilerOptions` - 16 edges
 6. `ContentHeader()` - 15 edges
-7. `aggregateFinance()` - 14 edges
-8. `getRelatedLinks()` - 14 edges
+7. `getRelatedLinks()` - 14 edges
+8. `aggregateFinance()` - 14 edges
 9. `Icon()` - 13 edges
 10. `getPageBySlug()` - 13 edges
 
@@ -114,11 +111,11 @@
 - **Prionation Portfolio Work Items** — work_epidom_product, work_expeditoo_product, work_lead_agent_product [INFERRED 0.85]
 - **SaaS Landing Page Designs** — work_epidom_product, work_expeditoo_product, work_lead_agent_product [INFERRED 0.75]
 
-## Communities (54 total, 9 thin omitted)
+## Communities (51 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.23
-Nodes (12): BudgetLines, BudgetVsActual(), ChartTooltip(), Props, useCurrency(), ExpandableText(), LedgerTable(), SortKey (+4 more)
+Cohesion: 0.18
+Nodes (20): BudgetLines, BudgetVsActual(), CurrencyContext, CurrencyContextValue, CurrencyProvider(), useCurrency(), DetailModal(), ExpandableText() (+12 more)
 
 ### Community 1 - "Form Submission & Backend"
 Cohesion: 0.07
@@ -185,8 +182,8 @@ Cohesion: 0.12
 Nodes (15): BACKLOG, GROUND TRUTH (verified — do not re-derive), HARD RULES (non-negotiable — violating any aborts the cycle with STATUS=aborted), ONE-TIME BOOTSTRAP (human/console only — surface as QUESTIONS, never automate), Open (work top-down, ONE logical change per cycle), PHASE 0 — RESUME, PHASE 1 — CRAWL (read GSC), PHASE 2 — AUDIT (pick ONE change) (+7 more)
 
 ### Community 17 - "Community 17"
-Cohesion: 0.16
-Nodes (21): acme, epidom, RATES, aggregateFinance(), computeBudgetVsActual(), computeDataQuality(), computeIncomeByCategory(), computeIncomeByMonth() (+13 more)
+Cohesion: 0.15
+Nodes (22): acme, epidom, RATES, aggregateFinance(), computeBudgetVsActual(), computeDataQuality(), computeIncomeByCategory(), computeIncomeByMonth() (+14 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.11
@@ -225,24 +222,20 @@ Cohesion: 0.17
 Nodes (11): Analytics & consent, Environment variables, Features, Form pipelines, Getting started, Notion setup, PRIONATION.io — v.3.8.2, Project structure (+3 more)
 
 ### Community 33 - "Community 33"
-Cohesion: 0.06
-Nodes (33): POST(), getFinanceSession(), FinanceSessionClaims, secretKey(), signFinanceSession(), verifyFinanceSession(), AcknowledgeButton(), Acknowledgment (+25 more)
+Cohesion: 0.07
+Nodes (28): POST(), getFinanceSession(), AcknowledgeButton(), Acknowledgment, createAcknowledgment(), fetchLatestAcknowledgments(), fetchBudgetLines, fetchBudgetLinesUncached() (+20 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.18
-Nodes (13): DetailModal(), DetailRow, KpiGrid(), Kpis, rowsFor(), TileKey, Receivables, ReceivablesTable() (+5 more)
-
-### Community 35 - "Community 35"
-Cohesion: 0.22
-Nodes (6): OG_LOCALE, ARCHIVED_VERSIONS, ArchivedVersion, ChangelogEntry, SemverBump, V3_ENTRIES
+Cohesion: 0.27
+Nodes (8): DetailRow, KpiGrid(), Kpis, rowsFor(), TileKey, FxRates, RATES, toEur()
 
 ### Community 39 - "Community 39"
-Cohesion: 0.08
-Nodes (32): logSuccessfulLogin(), attemptsKey(), FinanceRole, generateCode(), hashCode(), otpKey(), redis, storeOtp() (+24 more)
+Cohesion: 0.06
+Nodes (37): logSuccessfulLogin(), attemptsKey(), FinanceRole, generateCode(), hashCode(), otpKey(), redis, storeOtp() (+29 more)
 
 ### Community 40 - "Community 40"
-Cohesion: 0.20
-Nodes (9): DataQualityPanel(), PipelineByStage(), Stages, SectionShell(), fetchFxRates(), FinanceDashboardPage(), metadata, DataQualityIssue (+1 more)
+Cohesion: 0.15
+Nodes (13): CurrencyToggle(), OPTIONS, DashboardHeader(), ROLE_LABEL, DataQualityPanel(), SectionShell(), Currency, fetchFxRates() (+5 more)
 
 ### Community 41 - "Community 41"
 Cohesion: 0.20
@@ -252,17 +245,13 @@ Nodes (9): CONTENT-LOOP OPERATOR — prionation.io, CURRENT DIAL & STAGE (decide
 Cohesion: 0.15
 Nodes (13): ArticleSidebar(), SECTION_LABEL, SECTIONS, Faq, findPhrase(), isLetter(), renderWithLinks(), Section (+5 more)
 
-### Community 43 - "Community 43"
-Cohesion: 0.26
-Nodes (9): CurrencyContext, CurrencyContextValue, CurrencyProvider(), OPTIONS, Currency, FxSnapshot, formatEurSigned(), formatMoney() (+1 more)
-
 ### Community 44 - "Community 44"
 Cohesion: 0.32
 Nodes (3): FloatingShareDesktop(), FloatingShareMobile(), usePageUrl()
 
 ### Community 45 - "Community 45"
-Cohesion: 0.23
-Nodes (11): PRIVACY, PrivacyBlock, PrivacyDoc, PrivacyLocale, PrivacySection, Block(), generateMetadata(), OG_LOCALE (+3 more)
+Cohesion: 0.11
+Nodes (17): OG_LOCALE, ARCHIVED_VERSIONS, ArchivedVersion, ChangelogEntry, SemverBump, V3_ENTRIES, PRIVACY, PrivacyBlock (+9 more)
 
 ### Community 46 - "Community 46"
 Cohesion: 0.32
@@ -281,36 +270,32 @@ Cohesion: 0.11
 Nodes (16): generateMetadata(), OG_LOCALE, AnchorPage(), ContentArticle(), ContentHeader(), GlossaryPage(), Term, ManifestoPage() (+8 more)
 
 ### Community 50 - "Community 50"
-Cohesion: 0.25
-Nodes (5): ByCategory, ByMonth, ByProject, IncomeByProject(), formatMonth()
-
-### Community 51 - "Community 51"
-Cohesion: 0.33
-Nodes (4): CurrencyToggle(), DashboardHeader(), ROLE_LABEL, PillLogo()
+Cohesion: 0.15
+Nodes (10): ChartTooltip(), Props, ByCategory, ByMonth, ByProject, IncomeByProject(), PipelineByStage(), Stages (+2 more)
 
 ### Community 53 - "Community 53"
 Cohesion: 0.32
 Nodes (5): initials(), Testimonial, TestimonialCard(), TESTIMONIALS, Stars()
 
 ## Knowledge Gaps
-- **316 isolated node(s):** `Step`, `ERROR_COPY`, `EASE`, `SLOW`, `ROLE_LABEL` (+311 more)
+- **316 isolated node(s):** `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE` (+311 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `verifyFinanceSession()` connect `Community 33` to `Hiring Ad Campaign`?**
+- **Why does `verifyFinanceSession()` connect `Community 39` to `Community 33`, `Hiring Ad Campaign`?**
   _High betweenness centrality (0.084) - this node is a cross-community bridge._
 - **Why does `T` connect `Community 49` to `Form Submission & Backend`, `Start Page & Discord Page`, `Community 4`, `Community 6`, `Header, Modal & Motion Library`, `Community 12`, `Community 14`, `Community 15`, `Community 19`, `Hero Section & Animations`, `Community 22`, `Community 53`?**
   _High betweenness centrality (0.062) - this node is a cross-community bridge._
-- **Why does `FinanceRole` connect `Community 39` to `Community 33`?**
-  _High betweenness centrality (0.048) - this node is a cross-community bridge._
+- **Why does `getFinanceSession()` connect `Community 33` to `Community 40`, `Community 39`?**
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **Are the 5 inferred relationships involving `getPublishedPages()` (e.g. with `generateStaticParams()` and `generateStaticParams()`) actually correct?**
   _`getPublishedPages()` has 5 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 26 inferred relationships involving `T` (e.g. with `generateMetadata()` and `Header()`) actually correct?**
   _`T` has 26 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Step`, `ERROR_COPY`, `EASE` to the rest of the system?**
+- **What connects `OG_LOCALE`, `OG_LOCALE`, `OG_LOCALE` to the rest of the system?**
   _316 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Form Submission & Backend` be split into smaller, more focused modules?**
   _Cohesion score 0.07286288009179576 - nodes in this community are weakly interconnected._
