@@ -1,7 +1,7 @@
 # Graph Report - prionation.io  (2026-07-31)
 
 ## Corpus Check
-- 198 files · ~249,359 words
+- 198 files · ~249,406 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `784cc50b`
+- Built from commit: `654ba0b1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -293,7 +293,7 @@ Cohesion: 0.32
 Nodes (5): initials(), Testimonial, TestimonialCard(), TESTIMONIALS, Stars()
 
 ## Knowledge Gaps
-- **316 isolated node(s):** `Kpis`, `TileKey`, `Receivables`, `metadata`, `FinanceData` (+311 more)
+- **316 isolated node(s):** `ROLE_LABEL`, `Kpis`, `TileKey`, `Receivables`, `metadata` (+311 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -310,7 +310,7 @@ _Questions this graph is uniquely positioned to answer:_
   _`getPublishedPages()` has 5 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 26 inferred relationships involving `T` (e.g. with `generateMetadata()` and `Header()`) actually correct?**
   _`T` has 26 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Kpis`, `TileKey`, `Receivables` to the rest of the system?**
+- **What connects `ROLE_LABEL`, `Kpis`, `TileKey` to the rest of the system?**
   _316 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Form Submission & Backend` be split into smaller, more focused modules?**
   _Cohesion score 0.07286288009179576 - nodes in this community are weakly interconnected._
