@@ -115,9 +115,9 @@ export function ReceivablesTable({
       {showOutstanding && (
         <DetailModal
           title="Outstanding (potential inflow)"
-          subtitle="Every transaction with a potential inflow figure"
+          subtitle="Every transaction with a nonzero potential inflow"
           rows={transactions
-            .filter((t) => t.potentialInflow !== null)
+            .filter((t) => t.potentialInflow !== null && t.potentialInflow !== 0)
             .map((t) => ({
               id: t.id,
               name: t.name,

@@ -68,8 +68,9 @@ export function DashboardHeader({
       <div className="flex items-center justify-between gap-3">
         <div className="min-w-0">
           <PillLogo compact />
-          <p className="font-pixel text-[7px] sm:text-[8px] tracking-[0.1em] text-muted uppercase mt-1.5 truncate">
-            {ROLE_LABEL[role] ?? role} · {asOf}
+          <p className="font-pixel text-[6px] sm:text-[8px] tracking-[0.1em] text-muted uppercase mt-1.5 truncate">
+            <span className="hidden sm:inline">{ROLE_LABEL[role] ?? role} · </span>
+            {asOf}
           </p>
         </div>
 

@@ -28,9 +28,12 @@ function rowsFor(key: TileKey, transactions: Transaction[], rates: FxRates): Det
         .map((t) => ({ id: t.id, name: t.name, amount: t.amountEur, date: t.date }));
     case "outstandingReceivables":
       // potentialInflow is native-currency (Invoice Total − Amount Paid),
-      // not EUR-normalized — convert per row before display.
+      // not EUR-normalized — convert per row before display. Excludes rows
+      // that are exactly 0 (fully paid — Invoice Total === Amount Paid):
+      // they're real, correct zeros, but a "why is this number non-zero"
+      // breakdown shouldn't be cluttered with rows contributing nothing.
       return transactions
-        .filter((t) => t.potentialInflow !== null)
+        .filter((t) => t.potentialInflow !== null && t.potentialInflow !== 0)
         .map((t) => ({
           id: t.id,
           name: t.name,
