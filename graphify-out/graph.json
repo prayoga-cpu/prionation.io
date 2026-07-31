@@ -224,14 +224,84 @@
   },
   "nodes": [
     {
+      "label": "LoginClient.tsx",
+      "file_type": "code",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "login_loginclient",
+      "community": 39,
+      "norm_label": "loginclient.tsx"
+    },
+    {
+      "label": "Step",
+      "file_type": "code",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "login_loginclient_step",
+      "community": 39,
+      "norm_label": "step"
+    },
+    {
+      "label": "ERROR_COPY",
+      "file_type": "code",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "login_loginclient_error_copy",
+      "community": 39,
+      "norm_label": "error_copy"
+    },
+    {
+      "label": "EASE",
+      "file_type": "code",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "login_loginclient_ease",
+      "community": 39,
+      "norm_label": "ease"
+    },
+    {
+      "label": "SLOW",
+      "file_type": "code",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "login_loginclient_slow",
+      "community": 39,
+      "norm_label": "slow"
+    },
+    {
+      "label": "ChevronIcon()",
+      "file_type": "code",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "login_loginclient_chevronicon",
+      "community": 39,
+      "norm_label": "chevronicon()"
+    },
+    {
+      "label": "LoginClient()",
+      "file_type": "code",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "login_loginclient_loginclient",
+      "community": 39,
+      "norm_label": "loginclient()"
+    },
+    {
       "label": "DashboardHeader.tsx",
       "file_type": "code",
       "source_file": "app/finance/components/DashboardHeader.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_dashboardheader",
       "community": 51,
-      "norm_label": "dashboardheader.tsx"
+      "norm_label": "dashboardheader.tsx",
+      "id": "components_dashboardheader"
     },
     {
       "label": "ROLE_LABEL",
@@ -239,9 +309,9 @@
       "source_file": "app/finance/components/DashboardHeader.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "components_dashboardheader_role_label",
       "community": 51,
-      "norm_label": "role_label"
+      "norm_label": "role_label",
+      "id": "components_dashboardheader_role_label"
     },
     {
       "label": "MoreIcon()",
@@ -249,9 +319,9 @@
       "source_file": "app/finance/components/DashboardHeader.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "components_dashboardheader_moreicon",
       "community": 51,
-      "norm_label": "moreicon()"
+      "norm_label": "moreicon()",
+      "id": "components_dashboardheader_moreicon"
     },
     {
       "label": "DashboardHeader()",
@@ -259,9 +329,9 @@
       "source_file": "app/finance/components/DashboardHeader.tsx",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "components_dashboardheader_dashboardheader",
       "community": 51,
-      "norm_label": "dashboardheader()"
+      "norm_label": "dashboardheader()",
+      "id": "components_dashboardheader_dashboardheader"
     },
     {
       "label": "KpiGrid.tsx",
@@ -269,9 +339,9 @@
       "source_file": "app/finance/components/KpiGrid.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_kpigrid",
       "community": 34,
-      "norm_label": "kpigrid.tsx"
+      "norm_label": "kpigrid.tsx",
+      "id": "components_kpigrid"
     },
     {
       "label": "Kpis",
@@ -279,9 +349,9 @@
       "source_file": "app/finance/components/KpiGrid.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "components_kpigrid_kpis",
       "community": 34,
-      "norm_label": "kpis"
+      "norm_label": "kpis",
+      "id": "components_kpigrid_kpis"
     },
     {
       "label": "TileKey",
@@ -289,9 +359,9 @@
       "source_file": "app/finance/components/KpiGrid.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "components_kpigrid_tilekey",
       "community": 34,
-      "norm_label": "tilekey"
+      "norm_label": "tilekey",
+      "id": "components_kpigrid_tilekey"
     },
     {
       "label": "rowsFor()",
@@ -299,9 +369,9 @@
       "source_file": "app/finance/components/KpiGrid.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "components_kpigrid_rowsfor",
       "community": 34,
-      "norm_label": "rowsfor()"
+      "norm_label": "rowsfor()",
+      "id": "components_kpigrid_rowsfor"
     },
     {
       "label": "KpiGrid()",
@@ -309,9 +379,9 @@
       "source_file": "app/finance/components/KpiGrid.tsx",
       "source_location": "L57",
       "_origin": "ast",
-      "id": "components_kpigrid_kpigrid",
       "community": 34,
-      "norm_label": "kpigrid()"
+      "norm_label": "kpigrid()",
+      "id": "components_kpigrid_kpigrid"
     },
     {
       "label": "ReceivablesTable.tsx",
@@ -319,9 +389,9 @@
       "source_file": "app/finance/components/ReceivablesTable.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_receivablestable",
       "community": 34,
-      "norm_label": "receivablestable.tsx"
+      "norm_label": "receivablestable.tsx",
+      "id": "components_receivablestable"
     },
     {
       "label": "Receivables",
@@ -329,9 +399,9 @@
       "source_file": "app/finance/components/ReceivablesTable.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "components_receivablestable_receivables",
       "community": 34,
-      "norm_label": "receivables"
+      "norm_label": "receivables",
+      "id": "components_receivablestable_receivables"
     },
     {
       "label": "ReceivablesTable()",
@@ -339,9 +409,9 @@
       "source_file": "app/finance/components/ReceivablesTable.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "components_receivablestable_receivablestable",
       "community": 34,
-      "norm_label": "receivablestable()"
+      "norm_label": "receivablestable()",
+      "id": "components_receivablestable_receivablestable"
     },
     {
       "label": "page.tsx",
@@ -1104,76 +1174,6 @@
       "id": "components_teamrolecard_teamrolecard"
     },
     {
-      "label": "LoginClient.tsx",
-      "file_type": "code",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 39,
-      "norm_label": "loginclient.tsx",
-      "id": "login_loginclient"
-    },
-    {
-      "label": "Step",
-      "file_type": "code",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 39,
-      "norm_label": "step",
-      "id": "login_loginclient_step"
-    },
-    {
-      "label": "ERROR_COPY",
-      "file_type": "code",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 39,
-      "norm_label": "error_copy",
-      "id": "login_loginclient_error_copy"
-    },
-    {
-      "label": "EASE",
-      "file_type": "code",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 39,
-      "norm_label": "ease",
-      "id": "login_loginclient_ease"
-    },
-    {
-      "label": "SLOW",
-      "file_type": "code",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 39,
-      "norm_label": "slow",
-      "id": "login_loginclient_slow"
-    },
-    {
-      "label": "ChevronIcon()",
-      "file_type": "code",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 39,
-      "norm_label": "chevronicon()",
-      "id": "login_loginclient_chevronicon"
-    },
-    {
-      "label": "LoginClient()",
-      "file_type": "code",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 39,
-      "norm_label": "loginclient()",
-      "id": "login_loginclient_loginclient"
-    },
-    {
       "label": "ChartTooltip.tsx",
       "file_type": "code",
       "source_file": "app/finance/components/ChartTooltip.tsx",
@@ -1619,7 +1619,7 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 33,
+      "community": 17,
       "norm_label": "types.ts",
       "id": "notion_types"
     },
@@ -1629,7 +1629,7 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 33,
+      "community": 17,
       "norm_label": "transactiontype",
       "id": "notion_types_transactiontype"
     },
@@ -1659,7 +1659,7 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 33,
+      "community": 17,
       "norm_label": "stockshare",
       "id": "notion_types_stockshare"
     },
@@ -1669,7 +1669,7 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L44",
       "_origin": "ast",
-      "community": 33,
+      "community": 17,
       "norm_label": "pipelinestage",
       "id": "notion_types_pipelinestage"
     },
@@ -1679,7 +1679,7 @@
       "source_file": "lib/finance/notion/types.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 33,
+      "community": 17,
       "norm_label": "pipelineitem",
       "id": "notion_types_pipelineitem"
     },
@@ -9834,6 +9834,176 @@
   ],
   "links": [
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "auth_otp_financerole"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "components_otpform"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "components_otpform_otpform"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "login_loginclient",
+      "target": "components_pilllogo_pilllogo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "components_teamrolecard"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "components_teamrolecard_finance_team"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "components_teamrolecard_teammember"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "components_teamrolecard_teamrolecard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "login_loginclient_chevronicon"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "login_loginclient_ease"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "login_loginclient_error_copy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "login_loginclient_loginclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "login_loginclient_slow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/LoginClient.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_loginclient",
+      "target": "login_loginclient_step"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_page",
+      "target": "login_loginclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/finance/login/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "login_page",
+      "target": "login_loginclient_loginclient"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -12703,165 +12873,6 @@
       "confidence_score": 1.0,
       "source": "components_teamrolecard",
       "target": "components_teamrolecard_teamrolecard"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "components_teamrolecard"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "components_teamrolecard_teammember"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "components_teamrolecard_finance_team"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "components_teamrolecard_teamrolecard"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "auth_otp_financerole"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "components_otpform"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "components_otpform_otpform"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "login_loginclient_chevronicon"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "login_loginclient_ease"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "login_loginclient_error_copy"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "login_loginclient_loginclient"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "login_loginclient_slow"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/LoginClient.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_loginclient",
-      "target": "login_loginclient_step"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/page.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_page",
-      "target": "login_loginclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/finance/login/page.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "login_page",
-      "target": "login_loginclient_loginclient"
     },
     {
       "relation": "contains",
@@ -30030,5 +30041,5 @@
       "source_file": "public/work/expeditoo.png"
     }
   ],
-  "built_at_commit": "654ba0b175ed993ff7be0eb20bf73fba0b6482c5"
+  "built_at_commit": "169ac60901cbcc57e241cdbe43e354aec3aa0d18"
 }
