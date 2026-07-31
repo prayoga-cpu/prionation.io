@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, type PanInfo } from "framer-motion";
 import { OtpForm } from "../components/OtpForm";
+import { PillLogo } from "../components/PillLogo";
 import { TeamRoleCard, FINANCE_TEAM, type TeamMember } from "../components/TeamRoleCard";
 import type { FinanceRole } from "@/lib/finance/auth/otp";
 
@@ -132,9 +133,9 @@ export function LoginClient() {
               <p className="font-pixel text-[9px] tracking-[0.15em] text-accent uppercase mb-3">
                 Internal · Finance
               </p>
-              <h1 className="font-sans text-2xl font-bold text-white">
-                PRIONATION<span className="text-accent">.</span>io
-              </h1>
+              <div className="flex justify-center">
+                <PillLogo />
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
