@@ -75,7 +75,10 @@ export function DashboardHeader({
         </div>
 
         <div className="flex items-center gap-2 shrink-0">
-          <CurrencyToggle />
+          {/* Desktop: currency toggle inline */}
+          <div className="hidden sm:block">
+            <CurrencyToggle />
+          </div>
 
           {/* Desktop: full actions inline */}
           <div className="hidden sm:flex items-center gap-3">
@@ -95,7 +98,7 @@ export function DashboardHeader({
             </button>
           </div>
 
-          {/* Mobile: overflow menu */}
+          {/* Mobile: overflow menu — currency toggle + actions */}
           <div className="relative sm:hidden" ref={menuRef}>
             <button
               onClick={() => setMenuOpen((v) => !v)}
@@ -105,7 +108,13 @@ export function DashboardHeader({
               <MoreIcon />
             </button>
             {menuOpen && (
-              <div className="absolute top-full right-0 mt-2 z-20 min-w-[160px] bg-card border border-line rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+              <div className="absolute top-full right-0 mt-2 z-20 min-w-[200px] bg-card border border-line rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+                <div className="p-3 border-b border-line/50">
+                  <p className="font-pixel text-[7px] tracking-[0.1em] text-muted uppercase mb-2">
+                    Currency
+                  </p>
+                  <CurrencyToggle />
+                </div>
                 <button
                   onClick={handleRefresh}
                   disabled={refreshing}
