@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { formatDate } from "@/lib/finance/format";
 import type { Transaction } from "@/lib/finance/notion/types";
 import { useCurrency } from "./CurrencyContext";
+import { ExpandableText } from "./ExpandableText";
 
 type SortKey = "date" | "amountEur" | "name";
 
@@ -52,7 +53,7 @@ export function LedgerTable({ transactions }: { transactions: Transaction[] }) {
           placeholder="Search name…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="bg-card border border-line rounded-lg px-3 py-2 text-[13px] font-sans text-white placeholder:text-muted focus:outline-none focus:border-accent-30"
+          className="flex-1 min-w-[140px] bg-card border border-line rounded-lg px-3 py-2 text-[13px] font-sans text-white placeholder:text-muted focus:outline-none focus:border-accent-30"
         />
         <select
           value={typeFilter}
@@ -65,69 +66,121 @@ export function LedgerTable({ transactions }: { transactions: Transaction[] }) {
             </option>
           ))}
         </select>
+        <div className="w-full sm:hidden flex items-center gap-2">
+          <span className="font-pixel text-[8px] tracking-[0.1em] text-muted uppercase">Sort</span>
+          {(["date", "amountEur", "name"] as const).map((key) => (
+            <button
+              key={key}
+              onClick={() => toggleSort(key)}
+              className={`font-sans text-[11px] px-2.5 py-1 rounded-full border transition-colors ${
+                sortKey === key
+                  ? "border-accent-30 text-accent bg-accent-10"
+                  : "border-line text-muted hover:text-white"
+              }`}
+            >
+              {key === "amountEur" ? "Amount" : key === "date" ? "Date" : "Name"}
+              {sortKey === key ? (sortDesc ? " ↓" : " ↑") : ""}
+            </button>
+          ))}
+        </div>
         <p className="font-sans text-[12px] text-muted self-center">
           {rows.length} of {transactions.length}
         </p>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse">
-          <thead>
-            <tr className="border-b border-line">
-              {(
-                [
-                  ["name", "Name"],
-                  ["date", "Date"],
-                  ["type", "Type"],
-                  ["status", "Status"],
-                  ["category", "Category"],
-                  ["amountEur", `Amount (${currency})`],
-                  ["receipt", "Receipt"],
-                ] as const
-              ).map(([key, label]) => (
-                <th
-                  key={key}
-                  onClick={() => (key === "date" || key === "amountEur" || key === "name") && toggleSort(key)}
-                  className={`font-pixel text-[8px] tracking-[0.1em] text-muted uppercase pb-3 pr-4 whitespace-nowrap ${
-                    key === "date" || key === "amountEur" || key === "name"
-                      ? "cursor-pointer hover:text-white"
-                      : ""
-                  }`}
-                >
-                  {label}
-                  {sortKey === key ? (sortDesc ? " ↓" : " ↑") : ""}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
+      {rows.length === 0 ? (
+        <p className="font-sans text-[13px] text-muted py-6 text-center">No matching transactions.</p>
+      ) : (
+        <>
+          {/* Mobile: stacked cards */}
+          <div className="sm:hidden space-y-2">
             {rows.map((t) => (
-              <tr key={t.id} className="border-b border-line/50">
-                <td className="font-sans text-[13px] text-white py-3 pr-4">{t.name || "—"}</td>
-                <td className="font-sans text-[13px] text-soft py-3 pr-4 whitespace-nowrap">
-                  {formatDate(t.date)}
-                </td>
-                <td className="font-sans text-[13px] text-soft py-3 pr-4">{t.type ?? "—"}</td>
-                <td className="font-sans text-[13px] text-soft py-3 pr-4">{t.status ?? "—"}</td>
-                <td className="font-sans text-[13px] text-soft py-3 pr-4">{t.category ?? "—"}</td>
-                <td className="font-sans text-[13px] text-soft py-3 pr-4 whitespace-nowrap">
-                  {format(t.amountEur)}
-                </td>
-                <td className="font-sans text-[13px] py-3 pr-4">
+              <div key={t.id} className="bg-card-soft border border-line rounded-xl p-3.5">
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <p className="font-sans text-[13px] text-white leading-snug min-w-0">
+                    <ExpandableText text={t.name} maxChars={30} />
+                  </p>
+                  <p className="font-sans text-[13px] text-white shrink-0 whitespace-nowrap">
+                    {format(t.amountEur)}
+                  </p>
+                </div>
+                <div className="flex items-center justify-between text-[11px] font-sans text-muted">
+                  <span>
+                    {formatDate(t.date)} · {t.type ?? "—"}
+                    {t.category ? ` · ${t.category}` : ""}
+                  </span>
                   {t.hasReceipt ? (
-                    <span className="text-green-400">Yes</span>
+                    <span className="text-green-400">Receipt</span>
                   ) : (
-                    <span className="text-red-400">No</span>
+                    <span className="text-red-400">No receipt</span>
                   )}
-                </td>
-              </tr>
+                </div>
+              </div>
             ))}
-          </tbody>
-        </table>
-        {rows.length === 0 && (
-          <p className="font-sans text-[13px] text-muted py-6 text-center">No matching transactions.</p>
-        )}
-      </div>
+          </div>
+
+          {/* Desktop: table */}
+          <div className="hidden sm:block overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-line">
+                  {(
+                    [
+                      ["name", "Name"],
+                      ["date", "Date"],
+                      ["type", "Type"],
+                      ["status", "Status"],
+                      ["category", "Category"],
+                      ["amountEur", `Amount (${currency})`],
+                      ["receipt", "Receipt"],
+                    ] as const
+                  ).map(([key, label]) => (
+                    <th
+                      key={key}
+                      onClick={() =>
+                        (key === "date" || key === "amountEur" || key === "name") && toggleSort(key)
+                      }
+                      className={`font-pixel text-[8px] tracking-[0.1em] text-muted uppercase pb-3 pr-4 whitespace-nowrap ${
+                        key === "date" || key === "amountEur" || key === "name"
+                          ? "cursor-pointer hover:text-white"
+                          : ""
+                      }`}
+                    >
+                      {label}
+                      {sortKey === key ? (sortDesc ? " ↓" : " ↑") : ""}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((t) => (
+                  <tr key={t.id} className="border-b border-line/50">
+                    <td className="font-sans text-[13px] text-white py-3 pr-4 max-w-[220px]">
+                      <ExpandableText text={t.name} maxChars={28} />
+                    </td>
+                    <td className="font-sans text-[13px] text-soft py-3 pr-4 whitespace-nowrap">
+                      {formatDate(t.date)}
+                    </td>
+                    <td className="font-sans text-[13px] text-soft py-3 pr-4">{t.type ?? "—"}</td>
+                    <td className="font-sans text-[13px] text-soft py-3 pr-4">{t.status ?? "—"}</td>
+                    <td className="font-sans text-[13px] text-soft py-3 pr-4">{t.category ?? "—"}</td>
+                    <td className="font-sans text-[13px] text-soft py-3 pr-4 whitespace-nowrap">
+                      {format(t.amountEur)}
+                    </td>
+                    <td className="font-sans text-[13px] py-3 pr-4">
+                      {t.hasReceipt ? (
+                        <span className="text-green-400">Yes</span>
+                      ) : (
+                        <span className="text-red-400">No</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
     </div>
   );
 }

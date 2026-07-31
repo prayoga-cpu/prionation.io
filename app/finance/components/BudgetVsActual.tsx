@@ -14,6 +14,7 @@ import {
 import { CHART } from "@/lib/finance/chartTokens";
 import { ChartTooltip } from "./ChartTooltip";
 import { useCurrency } from "./CurrencyContext";
+import { ExpandableText } from "./ExpandableText";
 import type { computeBudgetVsActual } from "@/lib/finance/notion/aggregate";
 
 type BudgetLines = ReturnType<typeof computeBudgetVsActual>;
@@ -55,7 +56,32 @@ export function BudgetVsActual({ lines }: { lines: BudgetLines }) {
         </div>
       )}
 
-      <div className="overflow-x-auto">
+      {/* Mobile: stacked cards */}
+      <div className="sm:hidden space-y-2">
+        {lines.map((l, i) => (
+          <div key={`${l.name}-${i}`} className="bg-card-soft border border-line rounded-xl p-3.5">
+            <div className="flex items-start justify-between gap-3 mb-1.5">
+              <p className="font-sans text-[13px] text-white leading-snug min-w-0">
+                <ExpandableText text={l.name} maxChars={26} />
+              </p>
+              <p
+                className={`font-sans text-[13px] shrink-0 whitespace-nowrap ${
+                  l.variance === null ? "text-muted" : l.variance >= 0 ? "text-green-400" : "text-red-400"
+                }`}
+              >
+                {formatSigned(l.variance)}
+              </p>
+            </div>
+            <p className="font-sans text-[11px] text-muted">
+              {l.category ?? "Uncategorized"} · Budgeted {format(l.budgeted)} · Actual{" "}
+              {format(l.actual)}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: table */}
+      <div className="hidden sm:block overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="border-b border-line">
@@ -72,7 +98,9 @@ export function BudgetVsActual({ lines }: { lines: BudgetLines }) {
           <tbody>
             {lines.map((l, i) => (
               <tr key={`${l.name}-${i}`} className="border-b border-line/50">
-                <td className="font-sans text-[13px] text-white py-3 pr-4">{l.name || "—"}</td>
+                <td className="font-sans text-[13px] text-white py-3 pr-4 max-w-[200px]">
+                  <ExpandableText text={l.name} maxChars={26} />
+                </td>
                 <td className="font-sans text-[13px] text-soft py-3 pr-4">{l.category ?? "—"}</td>
                 <td className="font-sans text-[13px] text-soft py-3 pr-4">
                   {format(l.budgeted)}

@@ -32,15 +32,16 @@ export function PipelineByStage({ stages }: { stages: Stages }) {
     return <p className="font-sans text-[13px] text-muted">No pipeline entries yet.</p>;
   }
   return (
-    <div className="bg-card border border-line rounded-xl p-5">
+    <div className="bg-card border border-line rounded-xl p-4 sm:p-5">
       <ResponsiveContainer width="100%" height={220}>
-        <BarChart data={stages} margin={{ left: 8, right: 16, top: 8 }}>
+        <BarChart data={stages} margin={{ left: 0, right: 8, top: 8 }}>
           <CartesianGrid stroke={CHART.grid} vertical={false} />
           <XAxis
             dataKey="stage"
-            tick={{ fill: CHART.text, fontSize: 11 }}
+            tick={{ fill: CHART.text, fontSize: 9 }}
             axisLine={false}
             tickLine={false}
+            interval={0}
           />
           <YAxis hide allowDecimals={false} />
           <Tooltip content={<StageTooltip />} cursor={{ fill: "rgba(255,255,255,0.03)" }} />
