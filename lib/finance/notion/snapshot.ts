@@ -4,7 +4,6 @@ import { fetchTransactions } from "./transactions";
 import { fetchBudgetLines } from "./budget";
 import { fetchStockShares } from "./shares";
 import { fetchPipeline } from "./pipeline";
-import { aggregateFinance } from "./aggregate";
 
 export const FINANCE_CACHE_TAGS = [
   "finance-transactions",
@@ -22,14 +21,21 @@ async function getFinanceSnapshotUncached() {
     fetchPipeline(),
   ]);
   return {
-    ...aggregateFinance({ transactions, budget, shares, pipeline }),
     transactions,
+    budget,
+    shares,
+    pipeline,
     fetchedAt: new Date().toISOString(),
   };
 }
 
-// Wraps the four already-cached fetchers so "data as of" reflects the last
-// real fetch, not just page-render time (§2.5 — 300s revalidate).
+// Caches only the raw fetched Notion data (the expensive I/O), tagged for
+// the manual refresh button. Deliberately does NOT run aggregateFinance()
+// here — that needs live FX rates (see lib/finance/currency.ts), and
+// unstable_cache's key is derived from call arguments, so threading rates
+// through would either go stale for an hour or bust this cache every time
+// rates refresh. Aggregation is cheap pure computation, so it re-runs fresh
+// on every request in app/finance/page.tsx instead.
 export const getFinanceSnapshot = unstable_cache(
   getFinanceSnapshotUncached,
   ["finance-snapshot"],

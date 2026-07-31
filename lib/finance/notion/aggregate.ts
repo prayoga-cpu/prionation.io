@@ -1,4 +1,6 @@
 import "server-only";
+import { toEur } from "../fx";
+import type { FxRates } from "../currency";
 import type { BudgetLine, PipelineItem, StockShare, Transaction } from "./types";
 
 export type FinanceData = {
@@ -17,7 +19,7 @@ function resolveProjectName(projectIds: string[], pipeline: PipelineItem[]): str
   return pipeline.find((p) => p.id === id)?.company ?? "Unassigned";
 }
 
-export function computeKpis(transactions: Transaction[]) {
+export function computeKpis(transactions: Transaction[], rates: FxRates) {
   const income = transactions.filter((t) => t.type === "Income");
   const cashflow = transactions.filter((t) => t.type === "Cashflow");
   const expenses = transactions.filter((t) => t.type === "Expense");
@@ -28,7 +30,11 @@ export function computeKpis(transactions: Transaction[]) {
     unrealizedCashflow: sum(cashflow.map((t) => t.amountEur)),
     totalExpenses,
     netPosition: realizedIncome - totalExpenses,
-    outstandingReceivables: sum(transactions.map((t) => t.potentialInflow)),
+    // "Potential Inflow" is Invoice Total − Amount Paid in each
+    // transaction's own NATIVE currency (Notion never normalizes it to
+    // EUR, unlike amountEur/darwinCutEur/evanCutEur) — must convert per
+    // row before summing, or IDR millions get added to EUR hundreds.
+    outstandingReceivables: sum(transactions.map((t) => toEur(t.potentialInflow, t.currency, rates))),
     overdueCount: transactions.filter((t) => (t.daysOverdue ?? 0) > 0).length,
   };
 }
@@ -69,13 +75,14 @@ export function computeIncomeByMonth(transactions: Transaction[]) {
     .sort((a, b) => a.month.localeCompare(b.month));
 }
 
-export function computeReceivables(transactions: Transaction[]) {
+export function computeReceivables(transactions: Transaction[], rates: FxRates) {
   const overdue = transactions
     .filter((t) => (t.daysOverdue ?? 0) > 0)
-    .sort((a, b) => (b.daysOverdue ?? 0) - (a.daysOverdue ?? 0));
+    .sort((a, b) => (b.daysOverdue ?? 0) - (a.daysOverdue ?? 0))
+    .map((t) => ({ ...t, potentialInflowEur: toEur(t.potentialInflow, t.currency, rates) }));
   const withPercent = transactions.filter((t) => t.percentPaid !== null);
   return {
-    totalPotentialInflow: sum(transactions.map((t) => t.potentialInflow)),
+    totalPotentialInflow: sum(transactions.map((t) => toEur(t.potentialInflow, t.currency, rates))),
     avgPercentPaid: withPercent.length
       ? sum(withPercent.map((t) => t.percentPaid)) / withPercent.length
       : null,
@@ -195,13 +202,13 @@ export function computeDataQuality(data: FinanceData): DataQualityIssue[] {
   return issues;
 }
 
-export function aggregateFinance(data: FinanceData) {
+export function aggregateFinance(data: FinanceData, rates: FxRates) {
   return {
-    kpis: computeKpis(data.transactions),
+    kpis: computeKpis(data.transactions, rates),
     incomeByProject: computeIncomeByProject(data.transactions, data.pipeline),
     incomeByCategory: computeIncomeByCategory(data.transactions),
     incomeByMonth: computeIncomeByMonth(data.transactions),
-    receivables: computeReceivables(data.transactions),
+    receivables: computeReceivables(data.transactions, rates),
     profitSplit: computeProfitSplit(data.transactions, data.pipeline),
     budgetVsActual: computeBudgetVsActual(data.budget),
     pipelineByStage: computePipelineByStage(data.pipeline),
