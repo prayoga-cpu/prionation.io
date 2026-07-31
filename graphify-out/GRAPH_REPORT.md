@@ -1,16 +1,16 @@
 # Graph Report - prionation.io  (2026-07-31)
 
 ## Corpus Check
-- 193 files · ~246,981 words
+- 198 files · ~249,359 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 943 nodes · 1842 edges · 49 communities (40 shown, 9 thin omitted)
+- 959 nodes · 1886 edges · 54 communities (45 shown, 9 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 54 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `75c480c3`
+- Built from commit: `784cc50b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -34,6 +34,7 @@
 - [[_COMMUNITY_Community 16|Community 16]]
 - [[_COMMUNITY_Community 17|Community 17]]
 - [[_COMMUNITY_Community 18|Community 18]]
+- [[_COMMUNITY_Community 19|Community 19]]
 - [[_COMMUNITY_Community 20|Community 20]]
 - [[_COMMUNITY_Hero Section & Animations|Hero Section & Animations]]
 - [[_COMMUNITY_Community 22|Community 22]]
@@ -48,6 +49,7 @@
 - [[_COMMUNITY_PostCSS Config|PostCSS Config]]
 - [[_COMMUNITY_Tailwind Config|Tailwind Config]]
 - [[_COMMUNITY_Community 33|Community 33]]
+- [[_COMMUNITY_Community 34|Community 34]]
 - [[_COMMUNITY_Community 35|Community 35]]
 - [[_COMMUNITY_Community 37|Community 37]]
 - [[_COMMUNITY_Community 38|Community 38]]
@@ -62,19 +64,22 @@
 - [[_COMMUNITY_Community 47|Community 47]]
 - [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 49|Community 49]]
+- [[_COMMUNITY_Community 50|Community 50]]
+- [[_COMMUNITY_Community 51|Community 51]]
+- [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `getPublishedPages()` - 35 edges
 2. `T` - 27 edges
-3. `SiteFooter()` - 16 edges
-4. `compilerOptions` - 16 edges
-5. `useCurrency()` - 15 edges
+3. `useCurrency()` - 16 edges
+4. `SiteFooter()` - 16 edges
+5. `compilerOptions` - 16 edges
 6. `ContentHeader()` - 15 edges
-7. `getRelatedLinks()` - 14 edges
-8. `Icon()` - 13 edges
-9. `getPageBySlug()` - 13 edges
-10. `aggregateFinance()` - 12 edges
+7. `aggregateFinance()` - 14 edges
+8. `getRelatedLinks()` - 14 edges
+9. `Icon()` - 13 edges
+10. `getPageBySlug()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `generateMetadata()` --calls--> `T`  [INFERRED]
@@ -109,23 +114,23 @@
 - **Prionation Portfolio Work Items** — work_epidom_product, work_expeditoo_product, work_lead_agent_product [INFERRED 0.85]
 - **SaaS Landing Page Designs** — work_epidom_product, work_expeditoo_product, work_lead_agent_product [INFERRED 0.75]
 
-## Communities (49 total, 9 thin omitted)
+## Communities (54 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.05
-Nodes (65): BudgetLines, BudgetVsActual(), ChartTooltip(), Props, CurrencyContext, CurrencyContextValue, CurrencyProvider(), useCurrency() (+57 more)
+Cohesion: 0.23
+Nodes (12): BudgetLines, BudgetVsActual(), ChartTooltip(), Props, useCurrency(), ExpandableText(), LedgerTable(), SortKey (+4 more)
 
 ### Community 1 - "Form Submission & Backend"
 Cohesion: 0.07
-Nodes (66): POST(), POST(), VALID_BASE, VALID_BASE, evaluateDisqualification(), VALID_BASE, BookingPayload, bookingSchema (+58 more)
+Nodes (64): POST(), POST(), VALID_BASE, VALID_BASE, evaluateDisqualification(), VALID_BASE, BookingPayload, bookingSchema (+56 more)
 
 ### Community 2 - "Package Dependencies & Scripts"
 Cohesion: 0.05
 Nodes (43): browserslist, dependencies, framer-motion, jose, @marsidev/react-turnstile, next, next-intl, @notionhq/client (+35 more)
 
 ### Community 3 - "Start Page & Discord Page"
-Cohesion: 0.12
-Nodes (18): Attribution, captureAttribution(), classifyChannel(), getAttribution(), EventParams, trackEvent(), NotifyModal(), CareerForm (+10 more)
+Cohesion: 0.08
+Nodes (26): Attribution, captureAttribution(), classifyChannel(), getAttribution(), EventParams, trackEvent(), NotifyModal(), CareerForm (+18 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.08
@@ -136,16 +141,16 @@ Cohesion: 0.70
 Nodes (4): collectFromSitemap(), fetchText(), locs(), main()
 
 ### Community 6 - "Community 6"
-Cohesion: 0.14
-Nodes (13): ic(), Icon(), IconProps, Faq(), FaqItem, Foundation(), TeamMember, ICONS (+5 more)
+Cohesion: 0.15
+Nodes (10): ic(), Icon(), IconProps, Faq(), FaqItem, Foundation(), TeamMember, ICONS (+2 more)
 
 ### Community 7 - "SEO/AEO/GEO Strategy"
 Cohesion: 0.16
 Nodes (18): BRAND, buildXmp(), checkOnly, crc32(), CRC_TABLE, __dirname, filter, MANIFEST (+10 more)
 
 ### Community 8 - "Header, Modal & Motion Library"
-Cohesion: 0.10
-Nodes (17): Header(), backdrop, easeCinematic, easeFast, fadeUp, pageFade, riseIn, slideDown (+9 more)
+Cohesion: 0.09
+Nodes (20): Header(), DiscordPageClient(), generateMetadata(), OG_LOCALE, backdrop, easeCinematic, easeFast, fadeUp (+12 more)
 
 ### Community 9 - "TypeScript Config"
 Cohesion: 0.10
@@ -156,8 +161,8 @@ Cohesion: 0.12
 Nodes (10): byChannel, byStage, byStatus, channelOf(), lines, pipelineValue, report, today (+2 more)
 
 ### Community 11 - "Hiring Ad Campaign"
-Cohesion: 0.11
-Nodes (23): BUILD_VS_BUY_WEIGHTS, BuildVsBuyText, buildVsBuyVerdict(), BuyBuildVerdict, en, fr, getWidgetText(), id (+15 more)
+Cohesion: 0.08
+Nodes (30): BUILD_VS_BUY_WEIGHTS, BuildVsBuyText, buildVsBuyVerdict(), BuyBuildVerdict, en, fr, getWidgetText(), id (+22 more)
 
 ### Community 12 - "Community 12"
 Cohesion: 0.14
@@ -168,8 +173,8 @@ Cohesion: 0.09
 Nodes (22): 2026-07-29 — Bing Webmaster Tools audit (D11), 2026-07-29 — GSC Page Indexing audit (D10), D1 · Unique title + meta description per page, per locale, D2 · Canonical + hreflang on every page, D3 · UTM + referrer attribution → Notion (Phase A1), D4 · Link GA4 to Google Ads, import the lead conversion, D5 · IndexNow (clears Bing's High flag, instant re-crawl), D6 · GSC validate fix + resubmit (after D1 ships) (+14 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.20
-Nodes (4): AnchorSection, Faq, SCHEMA_HUE, SECTIONS_META
+Cohesion: 0.13
+Nodes (7): AnchorSection, Faq, SCHEMA_HUE, SECTIONS_META, PageSection, FooterColumns(), publishedLinks()
 
 ### Community 15 - "Community 15"
 Cohesion: 0.09
@@ -180,12 +185,16 @@ Cohesion: 0.12
 Nodes (15): BACKLOG, GROUND TRUTH (verified — do not re-derive), HARD RULES (non-negotiable — violating any aborts the cycle with STATUS=aborted), ONE-TIME BOOTSTRAP (human/console only — surface as QUESTIONS, never automate), Open (work top-down, ONE logical change per cycle), PHASE 0 — RESUME, PHASE 1 — CRAWL (read GSC), PHASE 2 — AUDIT (pick ONE change) (+7 more)
 
 ### Community 17 - "Community 17"
-Cohesion: 0.12
-Nodes (10): DiagnosticTab(), EMPTY_FORM, FormState, REQUIRED, MeetUsTab(), fadeIn, slideUp, Engage() (+2 more)
+Cohesion: 0.19
+Nodes (17): acme, epidom, RATES, aggregateFinance(), computeBudgetVsActual(), computeDataQuality(), computeIncomeByCategory(), computeIncomeByMonth() (+9 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.11
-Nodes (17): generateStaticParams(), ContentHeader(), getPublishedPages(), ALL_SECTIONS, SCHEMA_HUE, SECTION_META, SectionIndex(), Page() (+9 more)
+Nodes (19): generateStaticParams(), getAllSlugs(), getPublishedPages(), PageAudience, PageMeta, pages, PageStatus, ALL_SECTIONS (+11 more)
+
+### Community 19 - "Community 19"
+Cohesion: 0.20
+Nodes (10): staggerSlow, ContentHighlight(), getFeatured(), SCHEMA_HUE, PlanData, Pricing(), Btn(), SectionHead() (+2 more)
 
 ### Community 20 - "Community 20"
 Cohesion: 0.29
@@ -196,12 +205,12 @@ Cohesion: 0.09
 Nodes (17): useCountUp(), bodyStyle, buildBlueprint(), buildRoad(), errorLabel, eyebrowStyle, headlineStyle, Hero() (+9 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.17
-Nodes (9): staggerSlow, ContentHighlight(), getFeatured(), SCHEMA_HUE, CASE_DEMOS, CASE_IMGS, CASE_SLUGS, CaseData (+1 more)
+Cohesion: 0.22
+Nodes (6): SHOWCASE_IMAGES, CASE_DEMOS, CASE_IMGS, CASE_SLUGS, CaseData, SelectedWork()
 
 ### Community 23 - "Community 23"
-Cohesion: 0.16
-Nodes (16): getAllSlugs(), latestPublishedDate(), PageAudience, PageMeta, pages, PageSection, PageStatus, coreEntries() (+8 more)
+Cohesion: 0.24
+Nodes (10): latestPublishedDate(), coreEntries(), Entry, esc(), GET(), renderEntry(), sectionEntries(), SITEMAP_IDS (+2 more)
 
 ### Community 24 - "Brand Mark & Favicons"
 Cohesion: 0.70
@@ -219,25 +228,33 @@ Nodes (11): Analytics & consent, Environment variables, Features, Form pipelines
 Cohesion: 0.06
 Nodes (37): POST(), getFinanceSession(), FinanceSessionClaims, secretKey(), signFinanceSession(), verifyFinanceSession(), AcknowledgeButton(), Acknowledgment (+29 more)
 
+### Community 34 - "Community 34"
+Cohesion: 0.18
+Nodes (13): DetailModal(), DetailRow, KpiGrid(), Kpis, rowsFor(), TileKey, Receivables, ReceivablesTable() (+5 more)
+
 ### Community 35 - "Community 35"
 Cohesion: 0.22
 Nodes (6): OG_LOCALE, ARCHIVED_VERSIONS, ArchivedVersion, ChangelogEntry, SemverBump, V3_ENTRIES
 
 ### Community 39 - "Community 39"
 Cohesion: 0.08
-Nodes (30): logSuccessfulLogin(), attemptsKey(), FinanceRole, generateCode(), hashCode(), otpKey(), redis, storeOtp() (+22 more)
+Nodes (32): logSuccessfulLogin(), attemptsKey(), FinanceRole, generateCode(), hashCode(), otpKey(), redis, storeOtp() (+24 more)
+
+### Community 40 - "Community 40"
+Cohesion: 0.20
+Nodes (9): DataQualityPanel(), PipelineByStage(), Stages, SectionShell(), fetchFxRates(), FinanceDashboardPage(), metadata, DataQualityIssue (+1 more)
 
 ### Community 41 - "Community 41"
 Cohesion: 0.20
 Nodes (9): CONTENT-LOOP OPERATOR — prionation.io, CURRENT DIAL & STAGE (decided by user), DISTRIBUTION (higher ROI than more pages), NON-NEGOTIABLE CONTEXT, PIPELINE (one run = at most ONE piece advanced), SECTIONS, STAGE GRADUATION, TAKEDOWN / KILL-SWITCH (built; use if anything looks wrong) (+1 more)
 
 ### Community 42 - "Community 42"
-Cohesion: 0.14
-Nodes (14): ArticleSidebar(), SECTION_LABEL, SECTIONS, Faq, findPhrase(), isLetter(), renderWithLinks(), Section (+6 more)
+Cohesion: 0.15
+Nodes (13): ArticleSidebar(), SECTION_LABEL, SECTIONS, Faq, findPhrase(), isLetter(), renderWithLinks(), Section (+5 more)
 
 ### Community 43 - "Community 43"
-Cohesion: 0.29
-Nodes (4): DiscordPageClient(), generateMetadata(), OG_LOCALE, staggerFast
+Cohesion: 0.26
+Nodes (9): CurrencyContext, CurrencyContextValue, CurrencyProvider(), OPTIONS, Currency, FxSnapshot, formatEurSigned(), formatMoney() (+1 more)
 
 ### Community 44 - "Community 44"
 Cohesion: 0.32
@@ -248,8 +265,8 @@ Cohesion: 0.23
 Nodes (11): PRIVACY, PrivacyBlock, PrivacyDoc, PrivacyLocale, PrivacySection, Block(), generateMetadata(), OG_LOCALE (+3 more)
 
 ### Community 46 - "Community 46"
-Cohesion: 0.21
-Nodes (9): {Link, redirect, usePathname, useRouter, getPathname}, routing, pagesEn, pagesFr, pagesId, CommonContent, LocalePages, PageContent (+1 more)
+Cohesion: 0.32
+Nodes (7): pagesEn, pagesFr, pagesId, CommonContent, LocalePages, PageContent, SectionContent
 
 ### Community 47 - "Community 47"
 Cohesion: 0.33
@@ -261,31 +278,39 @@ Nodes (6): CADENCE, DISTRIBUTION REPURPOSER — prionation.io, GROUND TRUTH, MEA
 
 ### Community 49 - "Community 49"
 Cohesion: 0.11
-Nodes (15): generateMetadata(), OG_LOCALE, AnchorPage(), ContentArticle(), GlossaryPage(), Term, ManifestoPage(), generateMetadata() (+7 more)
+Nodes (16): generateMetadata(), OG_LOCALE, AnchorPage(), ContentArticle(), ContentHeader(), GlossaryPage(), Term, ManifestoPage() (+8 more)
+
+### Community 50 - "Community 50"
+Cohesion: 0.25
+Nodes (5): ByCategory, ByMonth, ByProject, IncomeByProject(), formatMonth()
+
+### Community 51 - "Community 51"
+Cohesion: 0.33
+Nodes (4): CurrencyToggle(), DashboardHeader(), ROLE_LABEL, PillLogo()
 
 ### Community 53 - "Community 53"
 Cohesion: 0.32
 Nodes (5): initials(), Testimonial, TestimonialCard(), TESTIMONIALS, Stars()
 
 ## Knowledge Gaps
-- **313 isolated node(s):** `IconProps`, `TeamMember`, `Step`, `ERROR_COPY`, `EASE` (+308 more)
+- **316 isolated node(s):** `Kpis`, `TileKey`, `Receivables`, `metadata`, `FinanceData` (+311 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `T` connect `Community 49` to `Form Submission & Backend`, `Community 4`, `Community 6`, `Header, Modal & Motion Library`, `Community 43`, `Community 12`, `Community 15`, `Community 17`, `Community 18`, `Hero Section & Animations`, `Community 22`, `Community 53`?**
-  _High betweenness centrality (0.064) - this node is a cross-community bridge._
+- **Why does `verifyFinanceSession()` connect `Community 33` to `Hiring Ad Campaign`?**
+  _High betweenness centrality (0.085) - this node is a cross-community bridge._
+- **Why does `T` connect `Community 49` to `Form Submission & Backend`, `Start Page & Discord Page`, `Community 4`, `Community 6`, `Header, Modal & Motion Library`, `Community 12`, `Community 14`, `Community 15`, `Community 19`, `Hero Section & Animations`, `Community 22`, `Community 53`?**
+  _High betweenness centrality (0.062) - this node is a cross-community bridge._
 - **Why does `FinanceRole` connect `Community 39` to `Community 33`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
+  _High betweenness centrality (0.048) - this node is a cross-community bridge._
 - **Are the 5 inferred relationships involving `getPublishedPages()` (e.g. with `generateStaticParams()` and `generateStaticParams()`) actually correct?**
   _`getPublishedPages()` has 5 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 26 inferred relationships involving `T` (e.g. with `generateMetadata()` and `Header()`) actually correct?**
   _`T` has 26 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `IconProps`, `TeamMember`, `Step` to the rest of the system?**
-  _313 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.05337078651685393 - nodes in this community are weakly interconnected._
+- **What connects `Kpis`, `TileKey`, `Receivables` to the rest of the system?**
+  _316 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Form Submission & Backend` be split into smaller, more focused modules?**
-  _Cohesion score 0.06923282544774124 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07286288009179576 - nodes in this community are weakly interconnected._
