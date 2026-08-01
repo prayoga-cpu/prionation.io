@@ -17,21 +17,31 @@ const CONSENT_REQUIRED = new Set([
 
 const FINANCE_LOGIN_PATH = '/finance/login';
 
+// Every /finance response depends on the per-user session cookie and must
+// never be cached or reused across requests. next.config.ts's headers()
+// declares this too, but confirmed live that Vercel's edge overrides a
+// custom Cache-Control there for Edge Middleware responses specifically —
+// setting it directly on the response object here is what actually sticks.
+function noStore(response: NextResponse): NextResponse {
+  response.headers.set('Cache-Control', 'private, no-store');
+  return response;
+}
+
 // /finance lives outside app/[locale] (internal, English-only, no i18n) and
 // is gated on a session cookie instead of locale negotiation — handled here,
 // before next-intl ever sees the request.
 async function financeGuard(request: NextRequest): Promise<NextResponse> {
   if (request.nextUrl.pathname === FINANCE_LOGIN_PATH) {
-    return NextResponse.next();
+    return noStore(NextResponse.next());
   }
   const token = request.cookies.get(FINANCE_SESSION_COOKIE)?.value;
   const session = token ? await verifyFinanceSession(token) : null;
   if (!session) {
     const url = request.nextUrl.clone();
     url.pathname = FINANCE_LOGIN_PATH;
-    return NextResponse.redirect(url);
+    return noStore(NextResponse.redirect(url));
   }
-  return NextResponse.next();
+  return noStore(NextResponse.next());
 }
 
 // Wrap next-intl's middleware to also stamp a geo cookie the client reads to
