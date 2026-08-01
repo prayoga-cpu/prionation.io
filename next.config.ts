@@ -45,6 +45,15 @@ const nextConfig: NextConfig = {
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "no-referrer" },
+          // Every /finance response depends on the session cookie — without
+          // this, Vercel's default `public, max-age=3600` lets the browser
+          // (or any intermediary cache) reuse a pre-login redirect response
+          // after a real login. Confirmed live: the middleware's 307 to
+          // /finance/login carried the public/cacheable default, which is
+          // exactly what made a fresh, successful OTP login still land back
+          // on the login page — the browser could serve its own cached
+          // redirect instead of re-checking the new cookie with the server.
+          { key: "Cache-Control", value: "private, no-store" },
         ],
       },
     ];
