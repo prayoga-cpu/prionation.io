@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.9.0";
+export const CURRENT_VERSION = "3.9.1";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,16 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.9.1",
+    bump: "patch",
+    date: "2026-10-08",
+    title: "Simpler /start navbar",
+    items: [
+      "Removed the \"P.\" brand mark from the /start navbar; the PRIONATION.io pill wordmark is now the logo there at every screen width (compact on phones).",
+      "On phones, the EN/FR/ID switcher on /start uses tighter spacing so the wordmark, switcher, and WhatsApp button fit on one row down to 360px wide.",
+    ],
+  },
   {
     version: "3.9.0",
     bump: "minor",

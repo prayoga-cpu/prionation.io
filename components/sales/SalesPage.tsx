@@ -191,10 +191,12 @@ export async function SalesPage() {
     <div className="min-h-screen bg-bg text-white font-sans overflow-x-clip">
       {/* ============ NAV ============ */}
       <header className="relative z-10 border-b border-line">
-        <div className={`${CONTAINER} py-4 flex items-center justify-between gap-4`}>
-          <a href="#top" aria-label={t("nav.home")} className="flex items-center gap-3 shrink-0">
-            <BrandMark className="h-[30px]" />
-            <span className="hidden md:inline-flex">
+        <div className={`${CONTAINER} py-4 flex items-center justify-between gap-2 sm:gap-4`}>
+          <a href="#top" aria-label={t("nav.home")} className="flex items-center shrink-0">
+            <span className="sm:hidden">
+              <PillLogo compact />
+            </span>
+            <span className="hidden sm:inline-flex">
               <PillLogo />
             </span>
           </a>
@@ -203,8 +205,8 @@ export async function SalesPage() {
             <a href="#work" className="text-soft transition-colors duration-fast hover:text-white">{t("nav.work")}</a>
             <a href="#faq" className="text-soft transition-colors duration-fast hover:text-white">{t("nav.faq")}</a>
           </nav>
-          <div className="flex items-center gap-3 sm:gap-4">
-            <LocaleSwitcher />
+          <div className="flex items-center gap-2 sm:gap-4">
+            <LocaleSwitcher compact />
             {/* Icon-only on phones (the hero CTA sits right below); the label stays for screen readers. */}
             <WhatsAppCta
               message={msg}

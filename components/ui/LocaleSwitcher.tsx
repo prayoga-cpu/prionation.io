@@ -12,8 +12,9 @@ const LOCALES = [
 
 // EN / FR / ID pill switcher. Swaps the locale segment and keeps the current
 // path (e.g. /en/start → /fr/start). Shared by the homepage Header, the
-// content-page ContentHeader and the /start sales page.
-export function LocaleSwitcher() {
+// content-page ContentHeader and the /start sales page. `compact` tightens the
+// buttons below `sm` so it fits a 360px-wide header next to a logo and a CTA.
+export function LocaleSwitcher({ compact = false }: { compact?: boolean }) {
   const [isPending, startTransition] = useTransition();
   const locale = useLocale();
   const router = useRouter();
@@ -32,7 +33,9 @@ export function LocaleSwitcher() {
           key={loc.code}
           onClick={() => onLocaleChange(loc.code)}
           disabled={isPending || locale === loc.code}
-          className={`text-[10px] font-pixel px-3 py-1.5 min-w-[38px] rounded-full transition-all ${
+          className={`text-[10px] font-pixel py-1.5 rounded-full transition-all ${
+            compact ? "px-2 sm:px-3 sm:min-w-[38px]" : "px-3 min-w-[38px]"
+          } ${
             locale === loc.code
               ? "bg-accent text-white shadow-[0_0_12px_rgba(235,69,159,0.4)]"
               : "text-muted hover:text-white hover:bg-white/5"
