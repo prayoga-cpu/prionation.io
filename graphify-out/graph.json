@@ -234,14 +234,14 @@
       "norm_label": "readme.md"
     },
     {
-      "label": "PRIONATION.io \u2014 v.3.9.0",
+      "label": "PRIONATION.io \u2014 v.3.9.1",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "readme_prionation_io_v_3_9_0",
+      "id": "readme_prionation_io_v_3_9_1",
       "community": 27,
-      "norm_label": "prionation.io \u2014 v.3.9.0"
+      "norm_label": "prionation.io \u2014 v.3.9.1"
     },
     {
       "label": "What's in this repo",
@@ -574,236 +574,6 @@
       "norm_label": "2026-07-29 \u2014 bing webmaster tools audit (d11)"
     },
     {
-      "label": "layout.tsx",
-      "file_type": "code",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "locale_layout",
-      "community": 4,
-      "norm_label": "layout.tsx"
-    },
-    {
-      "label": "OG_LOCALE",
-      "file_type": "code",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L18",
-      "_origin": "ast",
-      "id": "locale_layout_og_locale",
-      "community": 4,
-      "norm_label": "og_locale"
-    },
-    {
-      "label": "generateStaticParams()",
-      "file_type": "code",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "locale_layout_generatestaticparams",
-      "community": 4,
-      "norm_label": "generatestaticparams()"
-    },
-    {
-      "label": "rubik",
-      "file_type": "code",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "locale_layout_rubik",
-      "community": 4,
-      "norm_label": "rubik"
-    },
-    {
-      "label": "pressStart2P",
-      "file_type": "code",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L62",
-      "_origin": "ast",
-      "id": "locale_layout_pressstart2p",
-      "community": 4,
-      "norm_label": "pressstart2p"
-    },
-    {
-      "label": "blackHanSans",
-      "file_type": "code",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L70",
-      "_origin": "ast",
-      "id": "locale_layout_blackhansans",
-      "community": 4,
-      "norm_label": "blackhansans"
-    },
-    {
-      "label": "generateMetadata()",
-      "file_type": "code",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L76",
-      "_origin": "ast",
-      "id": "locale_layout_generatemetadata",
-      "community": 18,
-      "norm_label": "generatemetadata()"
-    },
-    {
-      "label": "viewport",
-      "file_type": "code",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L133",
-      "_origin": "ast",
-      "id": "locale_layout_viewport",
-      "community": 4,
-      "norm_label": "viewport"
-    },
-    {
-      "label": "RootLayout()",
-      "file_type": "code",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L140",
-      "_origin": "ast",
-      "id": "locale_layout_rootlayout",
-      "community": 4,
-      "norm_label": "rootlayout()"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/[locale]/start/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "start_page",
-      "community": 35,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "OG_LOCALE",
-      "file_type": "code",
-      "source_file": "app/[locale]/start/page.tsx",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "start_page_og_locale",
-      "community": 35,
-      "norm_label": "og_locale"
-    },
-    {
-      "label": "generateMetadata()",
-      "file_type": "code",
-      "source_file": "app/[locale]/start/page.tsx",
-      "source_location": "L17",
-      "_origin": "ast",
-      "id": "start_page_generatemetadata",
-      "community": 35,
-      "norm_label": "generatemetadata()"
-    },
-    {
-      "label": "Page()",
-      "file_type": "code",
-      "source_file": "app/[locale]/start/page.tsx",
-      "source_location": "L60",
-      "_origin": "ast",
-      "id": "start_page_page",
-      "community": 35,
-      "norm_label": "page()"
-    },
-    {
-      "label": "ConsentBanner.tsx",
-      "file_type": "code",
-      "source_file": "components/ConsentBanner.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_consentbanner",
-      "community": 4,
-      "norm_label": "consentbanner.tsx"
-    },
-    {
-      "label": "ConsentBanner()",
-      "file_type": "code",
-      "source_file": "components/ConsentBanner.tsx",
-      "source_location": "L12",
-      "_origin": "ast",
-      "id": "components_consentbanner_consentbanner",
-      "community": 4,
-      "norm_label": "consentbanner()"
-    },
-    {
-      "label": "Header.tsx",
-      "file_type": "code",
-      "source_file": "components/Header.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_header",
-      "community": 8,
-      "norm_label": "header.tsx"
-    },
-    {
-      "label": "scrollTo()",
-      "file_type": "code",
-      "source_file": "components/Header.tsx",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "components_header_scrollto",
-      "community": 8,
-      "norm_label": "scrollto()"
-    },
-    {
-      "label": "Wordmark()",
-      "file_type": "code",
-      "source_file": "components/Header.tsx",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "components_header_wordmark",
-      "community": 8,
-      "norm_label": "wordmark()"
-    },
-    {
-      "label": "Header()",
-      "file_type": "code",
-      "source_file": "components/Header.tsx",
-      "source_location": "L97",
-      "_origin": "ast",
-      "id": "components_header_header",
-      "community": 8,
-      "norm_label": "header()"
-    },
-    {
-      "label": "ContentHeader.tsx",
-      "file_type": "code",
-      "source_file": "components/content/ContentHeader.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "content_contentheader",
-      "community": 49,
-      "norm_label": "contentheader.tsx"
-    },
-    {
-      "label": "ContentHeader()",
-      "file_type": "code",
-      "source_file": "components/content/ContentHeader.tsx",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "content_contentheader_contentheader",
-      "community": 49,
-      "norm_label": "contentheader()"
-    },
-    {
-      "label": "Reveal.tsx",
-      "file_type": "code",
-      "source_file": "components/sales/Reveal.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "sales_reveal",
-      "community": 8,
-      "norm_label": "reveal.tsx"
-    },
-    {
-      "label": "Reveal()",
-      "file_type": "code",
-      "source_file": "components/sales/Reveal.tsx",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "sales_reveal_reveal",
-      "community": 8,
-      "norm_label": "reveal()"
-    },
-    {
       "label": "SalesPage.tsx",
       "file_type": "code",
       "source_file": "components/sales/SalesPage.tsx",
@@ -964,26 +734,6 @@
       "norm_label": "salespage()"
     },
     {
-      "label": "WhatsAppCta.tsx",
-      "file_type": "code",
-      "source_file": "components/sales/WhatsAppCta.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "sales_whatsappcta",
-      "community": 3,
-      "norm_label": "whatsappcta.tsx"
-    },
-    {
-      "label": "WhatsAppCta()",
-      "file_type": "code",
-      "source_file": "components/sales/WhatsAppCta.tsx",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "sales_whatsappcta_whatsappcta",
-      "community": 35,
-      "norm_label": "whatsappcta()"
-    },
-    {
       "label": "LocaleSwitcher.tsx",
       "file_type": "code",
       "source_file": "components/ui/LocaleSwitcher.tsx",
@@ -1007,7 +757,7 @@
       "label": "LocaleSwitcher()",
       "file_type": "code",
       "source_file": "components/ui/LocaleSwitcher.tsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "ui_localeswitcher_localeswitcher",
       "community": 35,
@@ -1057,7 +807,7 @@
       "label": "ArchivedVersion",
       "file_type": "code",
       "source_file": "lib/content/changelog.ts",
-      "source_location": "L211",
+      "source_location": "L221",
       "_origin": "ast",
       "id": "content_changelog_archivedversion",
       "community": 51,
@@ -1067,51 +817,11 @@
       "label": "ARCHIVED_VERSIONS",
       "file_type": "code",
       "source_file": "lib/content/changelog.ts",
-      "source_location": "L220",
+      "source_location": "L230",
       "_origin": "ast",
       "id": "content_changelog_archived_versions",
       "community": 51,
       "norm_label": "archived_versions"
-    },
-    {
-      "label": "site.ts",
-      "file_type": "code",
-      "source_file": "lib/seo/site.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "seo_site",
-      "community": 4,
-      "norm_label": "site.ts"
-    },
-    {
-      "label": "SOCIAL_LINKS",
-      "file_type": "code",
-      "source_file": "lib/seo/site.ts",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "seo_site_social_links",
-      "community": 4,
-      "norm_label": "social_links"
-    },
-    {
-      "label": "TEAM",
-      "file_type": "code",
-      "source_file": "lib/seo/site.ts",
-      "source_location": "L32",
-      "_origin": "ast",
-      "id": "seo_site_team",
-      "community": 4,
-      "norm_label": "team"
-    },
-    {
-      "label": "OFFERS",
-      "file_type": "code",
-      "source_file": "lib/seo/site.ts",
-      "source_location": "L48",
-      "_origin": "ast",
-      "id": "seo_site_offers",
-      "community": 4,
-      "norm_label": "offers"
     },
     {
       "label": "package.json",
@@ -1554,14 +1264,304 @@
       "norm_label": "vitest"
     },
     {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "layout.tsx",
+      "id": "locale_layout"
+    },
+    {
+      "label": "OG_LOCALE",
+      "file_type": "code",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "og_locale",
+      "id": "locale_layout_og_locale"
+    },
+    {
+      "label": "generateStaticParams()",
+      "file_type": "code",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "generatestaticparams()",
+      "id": "locale_layout_generatestaticparams"
+    },
+    {
+      "label": "rubik",
+      "file_type": "code",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "rubik",
+      "id": "locale_layout_rubik"
+    },
+    {
+      "label": "pressStart2P",
+      "file_type": "code",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L62",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "pressstart2p",
+      "id": "locale_layout_pressstart2p"
+    },
+    {
+      "label": "blackHanSans",
+      "file_type": "code",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L70",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "blackhansans",
+      "id": "locale_layout_blackhansans"
+    },
+    {
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L76",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "generatemetadata()",
+      "id": "locale_layout_generatemetadata"
+    },
+    {
+      "label": "viewport",
+      "file_type": "code",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L133",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "viewport",
+      "id": "locale_layout_viewport"
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L140",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "rootlayout()",
+      "id": "locale_layout_rootlayout"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/[locale]/start/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 35,
+      "norm_label": "page.tsx",
+      "id": "start_page"
+    },
+    {
+      "label": "OG_LOCALE",
+      "file_type": "code",
+      "source_file": "app/[locale]/start/page.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 35,
+      "norm_label": "og_locale",
+      "id": "start_page_og_locale"
+    },
+    {
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "app/[locale]/start/page.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "community": 35,
+      "norm_label": "generatemetadata()",
+      "id": "start_page_generatemetadata"
+    },
+    {
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/[locale]/start/page.tsx",
+      "source_location": "L60",
+      "_origin": "ast",
+      "community": 35,
+      "norm_label": "page()",
+      "id": "start_page_page"
+    },
+    {
+      "label": "ConsentBanner.tsx",
+      "file_type": "code",
+      "source_file": "components/ConsentBanner.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "consentbanner.tsx",
+      "id": "components_consentbanner"
+    },
+    {
+      "label": "ConsentBanner()",
+      "file_type": "code",
+      "source_file": "components/ConsentBanner.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "consentbanner()",
+      "id": "components_consentbanner_consentbanner"
+    },
+    {
+      "label": "Header.tsx",
+      "file_type": "code",
+      "source_file": "components/Header.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "header.tsx",
+      "id": "components_header"
+    },
+    {
+      "label": "scrollTo()",
+      "file_type": "code",
+      "source_file": "components/Header.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "scrollto()",
+      "id": "components_header_scrollto"
+    },
+    {
+      "label": "Wordmark()",
+      "file_type": "code",
+      "source_file": "components/Header.tsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "wordmark()",
+      "id": "components_header_wordmark"
+    },
+    {
+      "label": "Header()",
+      "file_type": "code",
+      "source_file": "components/Header.tsx",
+      "source_location": "L97",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "header()",
+      "id": "components_header_header"
+    },
+    {
+      "label": "ContentHeader.tsx",
+      "file_type": "code",
+      "source_file": "components/content/ContentHeader.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 49,
+      "norm_label": "contentheader.tsx",
+      "id": "content_contentheader"
+    },
+    {
+      "label": "ContentHeader()",
+      "file_type": "code",
+      "source_file": "components/content/ContentHeader.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 49,
+      "norm_label": "contentheader()",
+      "id": "content_contentheader_contentheader"
+    },
+    {
+      "label": "Reveal.tsx",
+      "file_type": "code",
+      "source_file": "components/sales/Reveal.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "reveal.tsx",
+      "id": "sales_reveal"
+    },
+    {
+      "label": "Reveal()",
+      "file_type": "code",
+      "source_file": "components/sales/Reveal.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "reveal()",
+      "id": "sales_reveal_reveal"
+    },
+    {
+      "label": "WhatsAppCta.tsx",
+      "file_type": "code",
+      "source_file": "components/sales/WhatsAppCta.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "whatsappcta.tsx",
+      "id": "sales_whatsappcta"
+    },
+    {
+      "label": "WhatsAppCta()",
+      "file_type": "code",
+      "source_file": "components/sales/WhatsAppCta.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 35,
+      "norm_label": "whatsappcta()",
+      "id": "sales_whatsappcta_whatsappcta"
+    },
+    {
+      "label": "site.ts",
+      "file_type": "code",
+      "source_file": "lib/seo/site.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "site.ts",
+      "id": "seo_site"
+    },
+    {
+      "label": "SOCIAL_LINKS",
+      "file_type": "code",
+      "source_file": "lib/seo/site.ts",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "social_links",
+      "id": "seo_site_social_links"
+    },
+    {
+      "label": "TEAM",
+      "file_type": "code",
+      "source_file": "lib/seo/site.ts",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "team",
+      "id": "seo_site_team"
+    },
+    {
+      "label": "OFFERS",
+      "file_type": "code",
+      "source_file": "lib/seo/site.ts",
+      "source_location": "L48",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "offers",
+      "id": "seo_site_offers"
+    },
+    {
       "label": "image-metadata.mjs",
       "file_type": "code",
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "scripts_image_metadata",
       "community": 7,
-      "norm_label": "image-metadata.mjs"
+      "norm_label": "image-metadata.mjs",
+      "id": "scripts_image_metadata"
     },
     {
       "label": "__dirname",
@@ -1569,9 +1569,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L27",
       "_origin": "ast",
-      "id": "scripts_image_metadata_dirname",
       "community": 7,
-      "norm_label": "__dirname"
+      "norm_label": "__dirname",
+      "id": "scripts_image_metadata_dirname"
     },
     {
       "label": "repoRoot",
@@ -1579,9 +1579,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "scripts_image_metadata_reporoot",
       "community": 7,
-      "norm_label": "reporoot"
+      "norm_label": "reporoot",
+      "id": "scripts_image_metadata_reporoot"
     },
     {
       "label": "BRAND",
@@ -1589,9 +1589,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "scripts_image_metadata_brand",
       "community": 7,
-      "norm_label": "brand"
+      "norm_label": "brand",
+      "id": "scripts_image_metadata_brand"
     },
     {
       "label": "messages",
@@ -1599,9 +1599,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L39",
       "_origin": "ast",
-      "id": "scripts_image_metadata_messages",
       "community": 7,
-      "norm_label": "messages"
+      "norm_label": "messages",
+      "id": "scripts_image_metadata_messages"
     },
     {
       "label": "team",
@@ -1609,9 +1609,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L42",
       "_origin": "ast",
-      "id": "scripts_image_metadata_team",
       "community": 7,
-      "norm_label": "team"
+      "norm_label": "team",
+      "id": "scripts_image_metadata_team"
     },
     {
       "label": "MANIFEST",
@@ -1619,9 +1619,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L48",
       "_origin": "ast",
-      "id": "scripts_image_metadata_manifest",
       "community": 7,
-      "norm_label": "manifest"
+      "norm_label": "manifest",
+      "id": "scripts_image_metadata_manifest"
     },
     {
       "label": "xmlEsc()",
@@ -1629,9 +1629,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L159",
       "_origin": "ast",
-      "id": "scripts_image_metadata_xmlesc",
       "community": 7,
-      "norm_label": "xmlesc()"
+      "norm_label": "xmlesc()",
+      "id": "scripts_image_metadata_xmlesc"
     },
     {
       "label": "resolved()",
@@ -1639,9 +1639,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L162",
       "_origin": "ast",
-      "id": "scripts_image_metadata_resolved",
       "community": 7,
-      "norm_label": "resolved()"
+      "norm_label": "resolved()",
+      "id": "scripts_image_metadata_resolved"
     },
     {
       "label": "buildXmp()",
@@ -1649,9 +1649,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L173",
       "_origin": "ast",
-      "id": "scripts_image_metadata_buildxmp",
       "community": 7,
-      "norm_label": "buildxmp()"
+      "norm_label": "buildxmp()",
+      "id": "scripts_image_metadata_buildxmp"
     },
     {
       "label": "PNG_SIG",
@@ -1659,9 +1659,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L209",
       "_origin": "ast",
-      "id": "scripts_image_metadata_png_sig",
       "community": 7,
-      "norm_label": "png_sig"
+      "norm_label": "png_sig",
+      "id": "scripts_image_metadata_png_sig"
     },
     {
       "label": "CRC_TABLE",
@@ -1669,9 +1669,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L210",
       "_origin": "ast",
-      "id": "scripts_image_metadata_crc_table",
       "community": 7,
-      "norm_label": "crc_table"
+      "norm_label": "crc_table",
+      "id": "scripts_image_metadata_crc_table"
     },
     {
       "label": "crc32()",
@@ -1679,9 +1679,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L219",
       "_origin": "ast",
-      "id": "scripts_image_metadata_crc32",
       "community": 7,
-      "norm_label": "crc32()"
+      "norm_label": "crc32()",
+      "id": "scripts_image_metadata_crc32"
     },
     {
       "label": "pngChunk()",
@@ -1689,9 +1689,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L224",
       "_origin": "ast",
-      "id": "scripts_image_metadata_pngchunk",
       "community": 7,
-      "norm_label": "pngchunk()"
+      "norm_label": "pngchunk()",
+      "id": "scripts_image_metadata_pngchunk"
     },
     {
       "label": "pngITXt()",
@@ -1699,9 +1699,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L232",
       "_origin": "ast",
-      "id": "scripts_image_metadata_pngitxt",
       "community": 7,
-      "norm_label": "pngitxt()"
+      "norm_label": "pngitxt()",
+      "id": "scripts_image_metadata_pngitxt"
     },
     {
       "label": "processPng()",
@@ -1709,9 +1709,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L244",
       "_origin": "ast",
-      "id": "scripts_image_metadata_processpng",
       "community": 7,
-      "norm_label": "processpng()"
+      "norm_label": "processpng()",
+      "id": "scripts_image_metadata_processpng"
     },
     {
       "label": "processJpeg()",
@@ -1719,9 +1719,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L279",
       "_origin": "ast",
-      "id": "scripts_image_metadata_processjpeg",
       "community": 7,
-      "norm_label": "processjpeg()"
+      "norm_label": "processjpeg()",
+      "id": "scripts_image_metadata_processjpeg"
     },
     {
       "label": "checkOnly",
@@ -1729,9 +1729,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L327",
       "_origin": "ast",
-      "id": "scripts_image_metadata_checkonly",
       "community": 7,
-      "norm_label": "checkonly"
+      "norm_label": "checkonly",
+      "id": "scripts_image_metadata_checkonly"
     },
     {
       "label": "filter",
@@ -1739,9 +1739,9 @@
       "source_file": "scripts/image-metadata.mjs",
       "source_location": "L328",
       "_origin": "ast",
-      "id": "scripts_image_metadata_filter",
       "community": 7,
-      "norm_label": "filter"
+      "norm_label": "filter",
+      "id": "scripts_image_metadata_filter"
     },
     {
       "label": "messages.test.ts",
@@ -1749,9 +1749,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "i18n_messages_test",
       "community": 23,
-      "norm_label": "messages.test.ts"
+      "norm_label": "messages.test.ts",
+      "id": "i18n_messages_test"
     },
     {
       "label": "LOCALES",
@@ -1759,9 +1759,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "i18n_messages_test_locales",
       "community": 23,
-      "norm_label": "locales"
+      "norm_label": "locales",
+      "id": "i18n_messages_test_locales"
     },
     {
       "label": "Locale",
@@ -1769,9 +1769,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "i18n_messages_test_locale",
       "community": 23,
-      "norm_label": "locale"
+      "norm_label": "locale",
+      "id": "i18n_messages_test_locale"
     },
     {
       "label": "ALL",
@@ -1779,9 +1779,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "i18n_messages_test_all",
       "community": 23,
-      "norm_label": "all"
+      "norm_label": "all",
+      "id": "i18n_messages_test_all"
     },
     {
       "label": "shape()",
@@ -1789,9 +1789,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "i18n_messages_test_shape",
       "community": 23,
-      "norm_label": "shape()"
+      "norm_label": "shape()",
+      "id": "i18n_messages_test_shape"
     },
     {
       "label": "stringKeys()",
@@ -1799,9 +1799,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "i18n_messages_test_stringkeys",
       "community": 23,
-      "norm_label": "stringkeys()"
+      "norm_label": "stringkeys()",
+      "id": "i18n_messages_test_stringkeys"
     },
     {
       "label": "lookup()",
@@ -1809,9 +1809,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "i18n_messages_test_lookup",
       "community": 23,
-      "norm_label": "lookup()"
+      "norm_label": "lookup()",
+      "id": "i18n_messages_test_lookup"
     },
     {
       "label": "page.tsx",
@@ -10169,9 +10169,9 @@
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "readme",
-      "target": "readme_prionation_io_v_3_9_0"
+      "target": "readme_prionation_io_v_3_9_1",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10179,9 +10179,9 @@
       "source_file": "README.md",
       "source_location": "L198",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_prionation_io_v_3_9_0",
-      "target": "readme_form_pipelines"
+      "source": "readme_prionation_io_v_3_9_1",
+      "target": "readme_form_pipelines",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10189,9 +10189,9 @@
       "source_file": "README.md",
       "source_location": "L101",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_prionation_io_v_3_9_0",
-      "target": "readme_getting_started"
+      "source": "readme_prionation_io_v_3_9_1",
+      "target": "readme_getting_started",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10199,9 +10199,9 @@
       "source_file": "README.md",
       "source_location": "L49",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_prionation_io_v_3_9_0",
-      "target": "readme_project_structure"
+      "source": "readme_prionation_io_v_3_9_1",
+      "target": "readme_project_structure",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10209,9 +10209,9 @@
       "source_file": "README.md",
       "source_location": "L29",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_prionation_io_v_3_9_0",
-      "target": "readme_tech_stack"
+      "source": "readme_prionation_io_v_3_9_1",
+      "target": "readme_tech_stack",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10219,9 +10219,9 @@
       "source_file": "README.md",
       "source_location": "L211",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_prionation_io_v_3_9_0",
-      "target": "readme_the_foundation"
+      "source": "readme_prionation_io_v_3_9_1",
+      "target": "readme_the_foundation",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10229,9 +10229,9 @@
       "source_file": "README.md",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_prionation_io_v_3_9_0",
-      "target": "readme_what_s_in_this_repo"
+      "source": "readme_prionation_io_v_3_9_1",
+      "target": "readme_what_s_in_this_repo",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10497,924 +10497,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "components_consentbanner"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "components_consentbanner_consentbanner"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "components_ga4"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "components_jsonld"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "components_jsonld_organizationschema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "components_jsonld_serviceschema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "components_jsonld_websiteschema"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "components_metapixel"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "components_motionprovider"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "components_motionprovider_motionprovider"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "i18n_routing"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "i18n_routing_routing"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "locale_layout_blackhansans"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "locale_layout_generatemetadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "locale_layout_generatestaticparams"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "locale_layout_og_locale"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "locale_layout_pressstart2p"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L141",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "locale_layout_rootlayout"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "locale_layout_rubik"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L134",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "locale_layout_viewport"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "locale_layout",
-      "target": "seo_site"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/[locale]/layout.tsx",
-      "source_location": "L85",
-      "weight": 1.0,
-      "source": "locale_layout_generatemetadata",
-      "target": "notify_templates_t"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/start/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "start_page",
-      "target": "sales_salespage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/start/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "start_page",
-      "target": "sales_salespage_salespage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/start/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "start_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/start/page.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "start_page",
-      "target": "start_page_generatemetadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/start/page.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "start_page",
-      "target": "start_page_og_locale"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/start/page.tsx",
-      "source_location": "L60",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "start_page",
-      "target": "start_page_page"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ConsentBanner.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_consentbanner",
-      "target": "analytics_consent"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ConsentBanner.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_consentbanner",
-      "target": "analytics_consent_consent"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ConsentBanner.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_consentbanner",
-      "target": "analytics_consent_setconsent"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ConsentBanner.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_consentbanner",
-      "target": "analytics_consent_useshowconsentbanner"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ConsentBanner.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_consentbanner",
-      "target": "components_consentbanner_consentbanner"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/ConsentBanner.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "components_consentbanner_consentbanner",
-      "target": "analytics_consent_useshowconsentbanner"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/AppShell.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_appshell",
-      "target": "components_header"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L135",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_header",
-      "target": "components_header_header"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_header",
-      "target": "components_header_scrollto"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_header",
-      "target": "components_header_wordmark"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_header",
-      "target": "i18n_routing"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_header",
-      "target": "lib_motion"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_header",
-      "target": "lib_motion_backdrop"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_header",
-      "target": "lib_motion_fadeup"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_header",
-      "target": "lib_motion_slidedown"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_header",
-      "target": "lib_motion_slideright"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_header",
-      "target": "lib_motion_staggerfast"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "components_header",
-      "target": "ui_localeswitcher",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Header.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "components_header",
-      "target": "ui_localeswitcher_localeswitcher",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/AppShell.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_appshell",
-      "target": "components_header_header"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "components/Header.tsx",
-      "source_location": "L142",
-      "weight": 1.0,
-      "source": "components_header_header",
-      "target": "notify_templates_t"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_product_engineering_for_mid_market_companies_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/frameworks/[slug]/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_locale_frameworks_slug_page_tsx_slug_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/guides/[slug]/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_locale_guides_slug_page_tsx_slug_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/intelligence/[slug]/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_locale_intelligence_slug_page_tsx_slug_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/methodology/[slug]/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_locale_methodology_slug_page_tsx_slug_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/showcases/[slug]/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_locale_showcases_slug_page_tsx_slug_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/content/ContentHeader.tsx",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "content_contentheader",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/content/ContentHeader.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "content_contentheader",
-      "target": "i18n_routing"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/content/ContentHeader.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "content_contentheader",
-      "target": "ui_localeswitcher",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/content/ContentHeader.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "content_contentheader",
-      "target": "ui_localeswitcher_localeswitcher",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/frameworks/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frameworks_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/glossary/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "glossary_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/guides/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "guides_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/intelligence/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "intelligence_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/manifesto/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifesto_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/methodology/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methodology_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/showcases/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "showcases_page",
-      "target": "content_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_product_engineering_for_mid_market_companies_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/frameworks/[slug]/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_locale_frameworks_slug_page_tsx_slug_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/guides/[slug]/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_locale_guides_slug_page_tsx_slug_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/intelligence/[slug]/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_locale_intelligence_slug_page_tsx_slug_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/methodology/[slug]/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_locale_methodology_slug_page_tsx_slug_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/showcases/[slug]/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_locale_showcases_slug_page_tsx_slug_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "components/content/ContentHeader.tsx",
-      "source_location": "L70",
-      "weight": 1.0,
-      "source": "content_contentheader_contentheader",
-      "target": "notify_templates_t"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/frameworks/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frameworks_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/glossary/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "glossary_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/guides/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "guides_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/intelligence/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "intelligence_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/manifesto/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifesto_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/methodology/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methodology_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/showcases/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "showcases_page",
-      "target": "content_contentheader_contentheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/sales/Reveal.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sales_reveal",
-      "target": "lib_motion"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/sales/Reveal.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sales_reveal",
-      "target": "lib_motion_fadeup"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/sales/Reveal.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sales_reveal",
-      "target": "sales_reveal_reveal"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/sales/SalesPage.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sales_salespage",
-      "target": "sales_reveal"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/sales/SalesPage.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sales_salespage",
-      "target": "sales_reveal_reveal"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "components/sales/SalesPage.tsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -11443,6 +10525,28 @@
       "confidence_score": 1.0,
       "source": "sales_salespage",
       "target": "i18n_routing"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sales/SalesPage.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sales_salespage",
+      "target": "sales_reveal"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sales/SalesPage.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sales_salespage",
+      "target": "sales_reveal_reveal"
     },
     {
       "relation": "contains",
@@ -11634,9 +10738,9 @@
       "source_file": "components/sales/SalesPage.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sales_salespage",
-      "target": "ui_localeswitcher",
-      "confidence_score": 1.0
+      "target": "ui_localeswitcher"
     },
     {
       "relation": "imports",
@@ -11645,9 +10749,9 @@
       "source_file": "components/sales/SalesPage.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sales_salespage",
-      "target": "ui_localeswitcher_localeswitcher",
-      "confidence_score": 1.0
+      "target": "ui_localeswitcher_localeswitcher"
     },
     {
       "relation": "imports_from",
@@ -11675,66 +10779,45 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "components/sales/WhatsAppCta.tsx",
+      "source_file": "app/[locale]/start/page.tsx",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "sales_whatsappcta",
-      "target": "analytics_attribution"
+      "source": "start_page",
+      "target": "sales_salespage"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "components/sales/WhatsAppCta.tsx",
+      "source_file": "app/[locale]/start/page.tsx",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "sales_whatsappcta",
-      "target": "analytics_attribution_getattribution"
+      "source": "start_page",
+      "target": "sales_salespage_salespage"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "components/sales/WhatsAppCta.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sales_whatsappcta",
-      "target": "analytics_events"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/sales/WhatsAppCta.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sales_whatsappcta",
-      "target": "analytics_events_trackevent"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/sales/WhatsAppCta.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sales_whatsappcta",
-      "target": "sales_whatsappcta_whatsappcta"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/sales/WhatsAppCta.tsx",
+      "source_file": "components/Header.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "sales_whatsappcta",
-      "target": "seo_site"
+      "source": "components_header",
+      "target": "ui_localeswitcher"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/content/ContentHeader.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "content_contentheader",
+      "target": "ui_localeswitcher"
     },
     {
       "relation": "contains",
@@ -11742,9 +10825,9 @@
       "source_file": "components/ui/LocaleSwitcher.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_localeswitcher",
-      "target": "ui_localeswitcher_locales",
-      "confidence_score": 1.0
+      "target": "ui_localeswitcher_locales"
     },
     {
       "relation": "contains",
@@ -11752,9 +10835,31 @@
       "source_file": "components/ui/LocaleSwitcher.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_localeswitcher",
-      "target": "ui_localeswitcher_localeswitcher",
-      "confidence_score": 1.0
+      "target": "ui_localeswitcher_localeswitcher"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Header.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_header",
+      "target": "ui_localeswitcher_localeswitcher"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/content/ContentHeader.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "content_contentheader",
+      "target": "ui_localeswitcher_localeswitcher"
     },
     {
       "relation": "imports_from",
@@ -11871,267 +10976,6 @@
       "confidence_score": 1.0,
       "source": "changelog_page",
       "target": "content_changelog_archived_versions"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_product_engineering_for_mid_market_companies_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/changelog/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "changelog_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/JsonLd.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_jsonld",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/content/AnchorPage.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "content_anchorpage",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/content/ContentArticle.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "content_contentarticle",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/content/GlossaryPage.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "content_glossarypage",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/content/meta.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "content_meta",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/discord/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "discord_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/frameworks/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "frameworks_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/glossary/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "glossary_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/guides/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "guides_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/sitemap/[id]/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "id_route",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/intelligence/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "intelligence_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/manifesto/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifesto_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/methodology/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "methodology_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/privacy/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "privacy_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/seo/site.ts",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_site",
-      "target": "seo_site_offers"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/seo/site.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_site",
-      "target": "seo_site_social_links"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/seo/site.ts",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seo_site",
-      "target": "seo_site_team"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/[locale]/showcases/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "showcases_page",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/sitemap.xml/route.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sitemap_xml_route",
-      "target": "seo_site"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/JsonLd.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_jsonld",
-      "target": "seo_site_social_links"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/JsonLd.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_jsonld",
-      "target": "seo_site_team"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/JsonLd.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_jsonld",
-      "target": "seo_site_offers"
     },
     {
       "relation": "contains",
@@ -12564,6 +11408,1162 @@
       "target": "package_devdependencies_vitest"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "components_consentbanner"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "components_consentbanner_consentbanner"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "components_ga4"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "components_jsonld"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "components_jsonld_organizationschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "components_jsonld_serviceschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "components_jsonld_websiteschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "components_metapixel"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "components_motionprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "components_motionprovider_motionprovider"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "i18n_routing"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "i18n_routing_routing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "locale_layout_blackhansans"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "locale_layout_generatemetadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "locale_layout_generatestaticparams"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "locale_layout_og_locale"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "locale_layout_pressstart2p"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L141",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "locale_layout_rootlayout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "locale_layout_rubik"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L134",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "locale_layout_viewport"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locale_layout",
+      "target": "seo_site"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/[locale]/layout.tsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "locale_layout_generatemetadata",
+      "target": "notify_templates_t"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/start/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "start_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/start/page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "start_page",
+      "target": "start_page_generatemetadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/start/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "start_page",
+      "target": "start_page_og_locale"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/start/page.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "start_page",
+      "target": "start_page_page"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ConsentBanner.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_consentbanner",
+      "target": "analytics_consent"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ConsentBanner.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_consentbanner",
+      "target": "analytics_consent_consent"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ConsentBanner.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_consentbanner",
+      "target": "analytics_consent_setconsent"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ConsentBanner.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_consentbanner",
+      "target": "analytics_consent_useshowconsentbanner"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ConsentBanner.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_consentbanner",
+      "target": "components_consentbanner_consentbanner"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/ConsentBanner.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "components_consentbanner_consentbanner",
+      "target": "analytics_consent_useshowconsentbanner"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/AppShell.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_appshell",
+      "target": "components_header"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Header.tsx",
+      "source_location": "L135",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_header",
+      "target": "components_header_header"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Header.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_header",
+      "target": "components_header_scrollto"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Header.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_header",
+      "target": "components_header_wordmark"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Header.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_header",
+      "target": "i18n_routing"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Header.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_header",
+      "target": "lib_motion"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Header.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_header",
+      "target": "lib_motion_backdrop"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Header.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_header",
+      "target": "lib_motion_fadeup"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Header.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_header",
+      "target": "lib_motion_slidedown"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Header.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_header",
+      "target": "lib_motion_slideright"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Header.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_header",
+      "target": "lib_motion_staggerfast"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/AppShell.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_appshell",
+      "target": "components_header_header"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/Header.tsx",
+      "source_location": "L142",
+      "weight": 1.0,
+      "source": "components_header_header",
+      "target": "notify_templates_t"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_product_engineering_for_mid_market_companies_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/frameworks/[slug]/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_locale_frameworks_slug_page_tsx_slug_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/guides/[slug]/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_locale_guides_slug_page_tsx_slug_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/intelligence/[slug]/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_locale_intelligence_slug_page_tsx_slug_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/methodology/[slug]/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_locale_methodology_slug_page_tsx_slug_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/showcases/[slug]/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_locale_showcases_slug_page_tsx_slug_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/content/ContentHeader.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "content_contentheader",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/content/ContentHeader.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "content_contentheader",
+      "target": "i18n_routing"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/frameworks/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frameworks_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/glossary/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "glossary_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/guides/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "guides_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/intelligence/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "intelligence_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/manifesto/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifesto_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/methodology/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methodology_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/showcases/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "showcases_page",
+      "target": "content_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_product_engineering_for_mid_market_companies_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/frameworks/[slug]/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_locale_frameworks_slug_page_tsx_slug_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/guides/[slug]/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_locale_guides_slug_page_tsx_slug_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/intelligence/[slug]/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_locale_intelligence_slug_page_tsx_slug_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/methodology/[slug]/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_locale_methodology_slug_page_tsx_slug_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/showcases/[slug]/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_locale_showcases_slug_page_tsx_slug_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "components/content/ContentHeader.tsx",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "content_contentheader_contentheader",
+      "target": "notify_templates_t"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/frameworks/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frameworks_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/glossary/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "glossary_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/guides/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "guides_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/intelligence/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "intelligence_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/manifesto/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifesto_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/methodology/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methodology_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/showcases/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "showcases_page",
+      "target": "content_contentheader_contentheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sales/Reveal.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sales_reveal",
+      "target": "lib_motion"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sales/Reveal.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sales_reveal",
+      "target": "lib_motion_fadeup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sales/Reveal.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sales_reveal",
+      "target": "sales_reveal_reveal"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sales/WhatsAppCta.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sales_whatsappcta",
+      "target": "analytics_attribution"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sales/WhatsAppCta.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sales_whatsappcta",
+      "target": "analytics_attribution_getattribution"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sales/WhatsAppCta.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sales_whatsappcta",
+      "target": "analytics_events"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sales/WhatsAppCta.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sales_whatsappcta",
+      "target": "analytics_events_trackevent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sales/WhatsAppCta.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sales_whatsappcta",
+      "target": "sales_whatsappcta_whatsappcta"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sales/WhatsAppCta.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sales_whatsappcta",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_product_engineering_for_mid_market_companies_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/changelog/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "changelog_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/JsonLd.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_jsonld",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/content/AnchorPage.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "content_anchorpage",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/content/ContentArticle.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "content_contentarticle",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/content/GlossaryPage.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "content_glossarypage",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/content/meta.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "content_meta",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/discord/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "discord_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/frameworks/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frameworks_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/glossary/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "glossary_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/guides/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "guides_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/sitemap/[id]/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "id_route",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/intelligence/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "intelligence_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/ai-product-engineering-for-mid-market-companies/manifesto/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifesto_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/methodology/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "methodology_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/privacy/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "privacy_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/seo/site.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_site",
+      "target": "seo_site_offers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/seo/site.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_site",
+      "target": "seo_site_social_links"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/seo/site.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seo_site",
+      "target": "seo_site_team"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/[locale]/showcases/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "showcases_page",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/sitemap.xml/route.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sitemap_xml_route",
+      "target": "seo_site"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/JsonLd.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_jsonld",
+      "target": "seo_site_social_links"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/JsonLd.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_jsonld",
+      "target": "seo_site_team"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/JsonLd.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_jsonld",
+      "target": "seo_site_offers"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/image-metadata.mjs",
@@ -12848,9 +12848,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "i18n_messages_test",
-      "target": "i18n_messages_test_all",
-      "confidence_score": 1.0
+      "target": "i18n_messages_test_all"
     },
     {
       "relation": "contains",
@@ -12858,9 +12858,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "i18n_messages_test",
-      "target": "i18n_messages_test_locale",
-      "confidence_score": 1.0
+      "target": "i18n_messages_test_locale"
     },
     {
       "relation": "contains",
@@ -12868,9 +12868,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "i18n_messages_test",
-      "target": "i18n_messages_test_locales",
-      "confidence_score": 1.0
+      "target": "i18n_messages_test_locales"
     },
     {
       "relation": "contains",
@@ -12878,9 +12878,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "i18n_messages_test",
-      "target": "i18n_messages_test_lookup",
-      "confidence_score": 1.0
+      "target": "i18n_messages_test_lookup"
     },
     {
       "relation": "contains",
@@ -12888,9 +12888,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "i18n_messages_test",
-      "target": "i18n_messages_test_shape",
-      "confidence_score": 1.0
+      "target": "i18n_messages_test_shape"
     },
     {
       "relation": "contains",
@@ -12898,9 +12898,9 @@
       "source_file": "tests/i18n/messages.test.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "i18n_messages_test",
-      "target": "i18n_messages_test_stringkeys",
-      "confidence_score": 1.0
+      "target": "i18n_messages_test_stringkeys"
     },
     {
       "relation": "imports_from",
@@ -31092,5 +31092,5 @@
       "source_file": "public/work/expeditoo.png"
     }
   ],
-  "built_at_commit": "f5355dec273c7009ec090448ecc0f426f798f651"
+  "built_at_commit": "67dae96a06d9aa68d94d7f463e53fe1c193bce29"
 }
