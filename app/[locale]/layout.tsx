@@ -170,6 +170,7 @@ export default async function RootLayout({
         <WebSiteSchema />
         <NextIntlClientProvider messages={messages}>
           <MotionProvider>{children}</MotionProvider>
+          <ConsentBanner />
         </NextIntlClientProvider>
         <Analytics />
         <Suspense fallback={null}>
@@ -178,7 +179,6 @@ export default async function RootLayout({
         <Suspense fallback={null}>
           <GA4 />
         </Suspense>
-        <ConsentBanner />
       </body>
     </html>
   );

@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.8.2";
+export const CURRENT_VERSION = "3.9.0";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,19 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.9.0",
+    bump: "minor",
+    date: "2026-10-08",
+    title: "Sales page at /start",
+    items: [
+      "Added a long-form sales page at /start, fully translated into English, French, and Indonesian with an EN/FR/ID switcher in its header: problem, founder story, method, a pod-vs-hire comparison, shipped work, guarantees, and FAQ.",
+      "The EN/FR/ID switcher is now one shared component used by the homepage, content pages, and /start, and a new test (npm test) catches any locale that is missing a key or carries a malformed translation.",
+      "Every call to action opens a WhatsApp chat with sales. Each click fires a whatsapp_click funnel event (GA4 + Vercel Analytics) and, where the Meta Pixel is consented, a standard Contact event.",
+      "The page is noindexed and kept out of the sitemap so it doesn't compete with the homepage. Client logos and the technology stack are labelled as separate groups.",
+      "The cookie-consent banner now follows the page language (English, French, Indonesian) instead of always showing English.",
+    ],
+  },
   {
     version: "3.8.2",
     bump: "patch",

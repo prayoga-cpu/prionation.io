@@ -786,5 +786,240 @@
       "text": "Bloqué ?",
       "link": "Cliquez ici pour rediriger manuellement"
     }
+  },
+  "Sales": {
+    "metaTitle": "Remplacez le manuel par un outil sur mesure en 8 semaines · PRIONATION.io",
+    "metaDescription": "On identifie le goulot qui freine votre croissance, puis on livre l'outil sur mesure qui le règle. En 8 semaines, à prix fixe. Et le code vous appartient.",
+    "whatsappMessage": "Bonjour Evan, j'ai vu la page Prionation et j'aimerais parler d'un projet.",
+    "whatsappMessageStory": "Bonjour Evan, je voudrais vous parler du goulot qui freine mon activité.",
+    "nav": {
+      "label": "Navigation principale",
+      "home": "PRIONATION.io — retour en haut",
+      "method": "Méthode",
+      "work": "Projets",
+      "faq": "FAQ",
+      "cta": "Parler de mon projet"
+    },
+    "hero": {
+      "eyebrow": "Ingénierie de produits IA · Bali × Paris",
+      "title": "Votre activité tourne encore sur Excel, WhatsApp et la mémoire de vos équipes ?",
+      "sub": "On identifie le goulot qui freine votre croissance, puis on livre <strong>l'outil sur mesure qui le règle</strong>. En 8 semaines, à prix fixe. Et le code vous appartient.",
+      "cta": "Parler de mon projet sur WhatsApp",
+      "secondary": "Voir nos projets",
+      "reassurance": "Réponse sous 24 h · Premier échange gratuit et sans engagement",
+      "stats": [
+        {
+          "value": "2 SEM.",
+          "label": "Premier livrable"
+        },
+        {
+          "value": "8 SEM.",
+          "label": "Jusqu'à la mise en production"
+        },
+        {
+          "value": "100 %",
+          "label": "Du code vous appartient"
+        }
+      ],
+      "browserBar": "epidom · plateforme F&B livrée par PRIONATION",
+      "imageAlt": "Page d'accueil d'Epidom, plateforme F&B construite par PRIONATION",
+      "liveTitle": "En production",
+      "liveSub": "Commandes, caisse et stocks centralisés",
+      "pill": "Périmètre fixe · Prix fixe"
+    },
+    "logos": {
+      "clients": "Ils nous ont confié leur produit",
+      "stack": "Construit avec"
+    },
+    "problem": {
+      "eyebrow": "01 · Le constat",
+      "title": "Votre croissance bute sur des tâches que personne ne devrait faire à la main.",
+      "intro": "Si vous vous reconnaissez dans au moins une de ces situations, on a probablement déjà résolu un problème proche du vôtre.",
+      "items": [
+        {
+          "title": "Des fichiers Excel partout",
+          "body": "Commandes, stocks, plannings : chaque équipe a sa version, et personne n'a la bonne."
+        },
+        {
+          "title": "Des heures de saisie répétitive",
+          "body": "Vos meilleurs profils recopient des données au lieu de faire avancer l'entreprise."
+        },
+        {
+          "title": "Tout repose sur une personne",
+          "body": "L'information est « dans la tête des gens ». Un départ ou des vacances, et tout ralentit."
+        },
+        {
+          "title": "Des logiciels qui ne collent pas",
+          "body": "Vous payez trois abonnements SaaS et vous bricolez quand même entre les trois."
+        }
+      ]
+    },
+    "story": {
+      "badge": "Evan Cao · Directeur des Revenus",
+      "imageAlt": "Evan Cao, Directeur des Revenus de PRIONATION",
+      "eyebrow": "02 · Pourquoi PRIONATION existe",
+      "quote": "« Il y a deux ans, je cherchais une entreprise qui n'existait pas. »",
+      "p1": "Quand j'ai créé Epidom, une plateforme logicielle française, on se noyait dans les tâches répétitives. Tout se faisait à la main, les informations étaient éparpillées dans des fichiers Excel et dans la tête des gens.",
+      "p2": "J'avais besoin de quelqu'un qui arrive, identifie précisément ce qui bloquait notre croissance et livre un outil concret pour régler le problème. <strong>Pas du conseil théorique. Pas des présentations PowerPoint.</strong> Un vrai outil opérationnel, livré en quelques semaines.",
+      "p3": "Cette entreprise n'existait pas. Alors on l'a créée. Aujourd'hui, j'en suis le directeur commercial, parce que je sais exactement ce dont le client a besoin : <strong>j'étais ce client.</strong>",
+      "cta": "Racontez-moi votre goulot sur WhatsApp"
+    },
+    "method": {
+      "eyebrow": "03 · La méthode",
+      "title": "Du goulot à l'outil en production. En trois étapes, sans surprise.",
+      "steps": [
+        {
+          "duration": "2 semaines",
+          "title": "Diagnostic",
+          "body": "On s'immerge dans vos opérations, on cartographie le goulot au ROI le plus élevé et on écrit le cahier des charges.",
+          "items": [
+            "Architecture système + projection ROI",
+            "Plan de construction sur 8 semaines",
+            "Document de 15 à 25 pages + restitution"
+          ]
+        },
+        {
+          "duration": "8 semaines",
+          "title": "Build",
+          "body": "Un pod de 2 à 3 ingénieurs produit IA construit et déploie votre outil, directement dans votre environnement.",
+          "items": [
+            "Logiciel déployé en production",
+            "Tests, télémétrie et monitoring dès le jour 1",
+            "Documentation de passation complète"
+          ]
+        },
+        {
+          "duration": "En continu",
+          "title": "Retainer",
+          "body": "On garde l'outil performant et on le fait évoluer avec votre activité, mois après mois.",
+          "items": [
+            "Maintenance et mises à jour des modèles",
+            "1 nouvelle fonctionnalité par mois",
+            "Suivi continu du ROI"
+          ]
+        }
+      ],
+      "compareTitle": "Une équipe dédiée plutôt qu'un recrutement risqué",
+      "colCriteria": "Critère",
+      "colInhouse": "Recrutement interne",
+      "colPod": "Pod PRIONATION",
+      "rows": [
+        {
+          "label": "Délai avant résultat",
+          "them": "4 à 6 mois pour recruter et former",
+          "us": "8 semaines jusqu'à la production"
+        },
+        {
+          "label": "Coût",
+          "them": "120 000 à 180 000 €/an tout compris",
+          "us": "Prix fixe, validé avant de commencer"
+        },
+        {
+          "label": "Ce que vous obtenez",
+          "them": "Une seule personne",
+          "us": "2 à 3 ingénieurs produit IA"
+        },
+        {
+          "label": "Périmètre",
+          "them": "Modifications continues, sans limite",
+          "us": "Contrat à périmètre fixe dès le jour 1"
+        },
+        {
+          "label": "Risque",
+          "them": "Mauvais recrutement = 6 mois et 50 000 € perdus",
+          "us": "Vous pouvez arrêter après le Diagnostic"
+        }
+      ]
+    },
+    "work": {
+      "eyebrow": "04 · Projets livrés",
+      "title": "Des outils en production, pas des maquettes.",
+      "intro": "Restauration, logistique, immobilier : trois métiers, un même principe. Remplacer le manuel par un système.",
+      "cases": [
+        {
+          "tag": "F&B · Tableau de bord · France",
+          "name": "Epidom",
+          "body": "Un tableau de bord opérationnel qui centralise en temps réel les données de plusieurs sites, à la place d'un suivi manuel fragmenté.",
+          "alt": "Interface Epidom"
+        },
+        {
+          "tag": "Logistique · Marketplace · France",
+          "name": "Expeditoo",
+          "body": "Une marketplace logistique qui combine enchères et suivi des expéditions dans une seule application.",
+          "alt": "Interface Expeditoo"
+        },
+        {
+          "tag": "Immobilier · Leads · Australie",
+          "name": "The Lead Agent",
+          "body": "Une plateforme complète de génération de leads et de prise de rendez-vous pour une agence immobilière.",
+          "alt": "Interface The Lead Agent"
+        }
+      ],
+      "quoteRoles": [
+        "Dirigeant, Expeditoo",
+        "Fondateur, The Lead Agent"
+      ]
+    },
+    "guaranteesLabel": "Nos garanties",
+    "guarantees": [
+      {
+        "title": "Vous possédez tout",
+        "body": "Code, hébergement, données, modèles : les clés sont à vous. Aucune dépendance."
+      },
+      {
+        "title": "Garantie de 4 semaines",
+        "body": "Si les performances passent sous les seuils fixés ensemble, on corrige sans frais."
+      },
+      {
+        "title": "Périmètre écrit, prix fixe",
+        "body": "Tout est défini dans le contrat avant de commencer. Pas de dépassement surprise."
+      },
+      {
+        "title": "Libre après le Diagnostic",
+        "body": "Vous gardez le cahier des charges, même si vous décidez de construire ailleurs."
+      }
+    ],
+    "faq": {
+      "eyebrow": "05 · Questions fréquentes",
+      "title": "Avant de nous écrire",
+      "items": [
+        {
+          "q": "Concrètement, qu'est-ce que vous construisez ?",
+          "a": "Des outils logiciels et IA qui tournent dans vos vrais process : tableaux de bord, automatisations, applications métier. Pas des preuves de concept, des produits en production qui remplacent des opérations manuelles."
+        },
+        {
+          "q": "Combien coûte un projet ?",
+          "a": "Chaque projet est chiffré à prix fixe, selon votre goulot et le périmètre défini ensemble. Vous connaissez le montant exact avant de signer. Écrivez-nous sur WhatsApp pour une première estimation."
+        },
+        {
+          "q": "Que veut dire « vous possédez l'infrastructure » ?",
+          "a": "À la fin de la mission, vous détenez le dépôt de code, les accès cloud, les comptes des fournisseurs de modèles et toutes les données. On livre dans votre environnement dès le premier jour."
+        },
+        {
+          "q": "Pourquoi pas simplement recruter un développeur ?",
+          "a": "Un ingénieur IA coûte de 150 000 à 250 000 €/an tout compris, demande 3 à 6 mois de montée en compétence et le risque d'erreur de recrutement est réel. Un pod livre en 8 semaines, avec tests, télémétrie et garantie."
+        },
+        {
+          "q": "Vous êtes à Bali, comment ça se passe pour une entreprise française ?",
+          "a": "L'équipe est remote-first, avec le siège à Bali et la direction commerciale à Paris. Les missions sont facturées en euros, en français, et l'hébergement reste conforme à l'UE quand c'est nécessaire."
+        }
+      ]
+    },
+    "final": {
+      "title": "Qu'est-ce qui freine votre activité ?",
+      "body": "Dites-le-nous. On fait le point ensemble en un seul échange, et vous repartez avec une idée claire de ce qui peut être automatisé.",
+      "cta": "Écrire à Evan sur WhatsApp",
+      "note": "Réponse sous 24 h"
+    },
+    "footer": {
+      "location": "Bali · Paris",
+      "privacy": "Confidentialité"
+    }
+  },
+  "Consent": {
+    "label": "Consentement aux cookies",
+    "body": "Nous utilisons des cookies d'analyse (Google Analytics et Meta) pour comprendre la fréquentation du site. Si vous refusez, l'analyse reste sans cookies.",
+    "decline": "Refuser",
+    "accept": "Accepter"
   }
 }

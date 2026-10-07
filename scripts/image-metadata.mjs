@@ -102,6 +102,22 @@ const MANIFEST = [
     keywords: [team.evan.name, team.evan.role, BRAND.siteName, BRAND.legalName],
   },
   {
+    // messages/en.json → Foundation.team (Evan Cao) — studio portrait on /start
+    file: "public/images/team/evan-studio.jpg",
+    title: `${team.evan.name} — ${team.evan.role} · ${BRAND.siteName}`,
+    description: team.evan.bio,
+    creator: team.evan.name,
+    keywords: [team.evan.name, team.evan.role, BRAND.siteName, BRAND.legalName],
+  },
+  {
+    // lib/content/text/en.ts → showcases.epidom (same source as public/work/epidom.png) — /start hero
+    file: "public/work/epidom-home.jpg",
+    title: "Epidom — F&B operations dashboard · PRIONATION",
+    description:
+      "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
+    keywords: ["Epidom", "F&B operations", "inventory management", "production dashboard", "PRIONATION showcase", "France"],
+  },
+  {
     file: "public/ads/bug-bounty-campaign-1080x1350.png",
     title: `${BRAND.siteName} — Bug Bounty Campaign (portrait)`,
     description: `Advertising creative for the ${BRAND.siteName} bug bounty campaign. 1080×1350 (4:5) portrait format.`,

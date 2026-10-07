@@ -786,5 +786,240 @@
       "text": "Did it freeze?",
       "link": "Click here to redirect manually"
     }
+  },
+  "Sales": {
+    "metaTitle": "Replace manual work with a custom tool in 8 weeks · PRIONATION.io",
+    "metaDescription": "We pinpoint the bottleneck holding back your growth, then ship the custom tool that fixes it. In 8 weeks, at a fixed price. And you own the code.",
+    "whatsappMessage": "Hi Evan, I saw the Prionation page and I'd like to talk about a project.",
+    "whatsappMessageStory": "Hi Evan, I'd like to tell you about the bottleneck slowing down my business.",
+    "nav": {
+      "label": "Main navigation",
+      "home": "PRIONATION.io — back to top",
+      "method": "Method",
+      "work": "Work",
+      "faq": "FAQ",
+      "cta": "Talk about my project"
+    },
+    "hero": {
+      "eyebrow": "AI product engineering · Bali × Paris",
+      "title": "Is your business still running on spreadsheets, WhatsApp and your team's memory?",
+      "sub": "We pinpoint the bottleneck holding back your growth, then ship <strong>the custom tool that fixes it</strong>. In 8 weeks, at a fixed price. And you own the code.",
+      "cta": "Talk about my project on WhatsApp",
+      "secondary": "See our work",
+      "reassurance": "Reply within 24 hours · First call free, no commitment",
+      "stats": [
+        {
+          "value": "2 WKS",
+          "label": "First deliverable"
+        },
+        {
+          "value": "8 WKS",
+          "label": "To production"
+        },
+        {
+          "value": "100%",
+          "label": "Of the code is yours"
+        }
+      ],
+      "browserBar": "epidom · F&B platform built by PRIONATION",
+      "imageAlt": "Epidom homepage, an F&B platform built by PRIONATION",
+      "liveTitle": "Live in production",
+      "liveSub": "Orders, POS and stock in one place",
+      "pill": "Fixed scope · Fixed price"
+    },
+    "logos": {
+      "clients": "They trusted us with their product",
+      "stack": "Built with"
+    },
+    "problem": {
+      "eyebrow": "01 · The problem",
+      "title": "Your growth is stuck on tasks nobody should be doing by hand.",
+      "intro": "If even one of these sounds familiar, we've probably already solved something close to your problem.",
+      "items": [
+        {
+          "title": "Spreadsheets everywhere",
+          "body": "Orders, stock, schedules: every team has its own version, and none of them is the right one."
+        },
+        {
+          "title": "Hours of repetitive data entry",
+          "body": "Your best people copy data around instead of moving the business forward."
+        },
+        {
+          "title": "Everything depends on one person",
+          "body": "The knowledge lives \"in people's heads\". One resignation or one holiday, and everything slows down."
+        },
+        {
+          "title": "Software that doesn't fit",
+          "body": "You pay for three SaaS subscriptions and still patch things together between them."
+        }
+      ]
+    },
+    "story": {
+      "badge": "Evan Cao · Chief Revenue Officer",
+      "imageAlt": "Evan Cao, Chief Revenue Officer at PRIONATION",
+      "eyebrow": "02 · Why PRIONATION exists",
+      "quote": "“Two years ago, I was looking for a company that didn't exist.”",
+      "p1": "When I founded Epidom, a French software platform, we were drowning in repetitive tasks. Everything was done by hand, and information was scattered across Excel files and people's heads.",
+      "p2": "I needed someone who would come in, pinpoint exactly what was holding back our growth, and deliver a concrete tool to fix it. <strong>No theoretical consulting. No PowerPoint decks.</strong> A real, working tool, delivered in a few weeks.",
+      "p3": "That company didn't exist. So we built it. Today I run sales, because I know exactly what the client needs: <strong>I was that client.</strong>",
+      "cta": "Tell me about your bottleneck on WhatsApp"
+    },
+    "method": {
+      "eyebrow": "03 · The method",
+      "title": "From bottleneck to production tool. Three steps, no surprises.",
+      "steps": [
+        {
+          "duration": "2 weeks",
+          "title": "Diagnostic",
+          "body": "We immerse ourselves in your operations, map the bottleneck with the highest ROI and write the specs.",
+          "items": [
+            "System architecture + ROI projection",
+            "8-week build plan",
+            "15–25 page report + debrief session"
+          ]
+        },
+        {
+          "duration": "8 weeks",
+          "title": "Build",
+          "body": "A pod of 2–3 AI product engineers builds and deploys your tool, directly in your own environment.",
+          "items": [
+            "Software deployed to production",
+            "Tests, telemetry and monitoring from day one",
+            "Full handover documentation"
+          ]
+        },
+        {
+          "duration": "Ongoing",
+          "title": "Retainer",
+          "body": "We keep the tool sharp and grow it alongside your business, month after month.",
+          "items": [
+            "Maintenance and model updates",
+            "1 new feature every month",
+            "Ongoing ROI tracking"
+          ]
+        }
+      ],
+      "compareTitle": "A dedicated team instead of a risky hire",
+      "colCriteria": "Criteria",
+      "colInhouse": "In-house hire",
+      "colPod": "PRIONATION pod",
+      "rows": [
+        {
+          "label": "Time to results",
+          "them": "4–6 months to hire and onboard",
+          "us": "8 weeks to production"
+        },
+        {
+          "label": "Cost",
+          "them": "€120,000–180,000 a year, all-in",
+          "us": "Fixed price, agreed before we start"
+        },
+        {
+          "label": "What you get",
+          "them": "One person",
+          "us": "2–3 AI product engineers"
+        },
+        {
+          "label": "Scope",
+          "them": "Endless ongoing changes",
+          "us": "Fixed-scope contract from day one"
+        },
+        {
+          "label": "Risk",
+          "them": "A bad hire = 6 months and €50,000 lost",
+          "us": "You can stop after the Diagnostic"
+        }
+      ]
+    },
+    "work": {
+      "eyebrow": "04 · Shipped work",
+      "title": "Tools in production, not mockups.",
+      "intro": "Hospitality, logistics, real estate: three industries, one principle. Replace manual work with a system.",
+      "cases": [
+        {
+          "tag": "F&B · Dashboard · France",
+          "name": "Epidom",
+          "body": "An operations dashboard that centralises real-time data across several locations, replacing fragmented manual tracking.",
+          "alt": "Epidom interface"
+        },
+        {
+          "tag": "Logistics · Marketplace · France",
+          "name": "Expeditoo",
+          "body": "A logistics marketplace combining auctions and shipment tracking in a single app.",
+          "alt": "Expeditoo interface"
+        },
+        {
+          "tag": "Real estate · Lead gen · Australia",
+          "name": "The Lead Agent",
+          "body": "A complete lead-generation and appointment-booking platform for a real estate agency.",
+          "alt": "The Lead Agent interface"
+        }
+      ],
+      "quoteRoles": [
+        "Business owner, Expeditoo",
+        "Founder, The Lead Agent"
+      ]
+    },
+    "guaranteesLabel": "Our guarantees",
+    "guarantees": [
+      {
+        "title": "You own everything",
+        "body": "Code, hosting, data, models: the keys are yours. No lock-in."
+      },
+      {
+        "title": "4-week guarantee",
+        "body": "If performance drops below the thresholds we agreed on, we fix it at no extra cost."
+      },
+      {
+        "title": "Written scope, fixed price",
+        "body": "Everything is defined in the contract before we start. No surprise overruns."
+      },
+      {
+        "title": "Free to leave after the Diagnostic",
+        "body": "You keep the specs, even if you decide to build elsewhere."
+      }
+    ],
+    "faq": {
+      "eyebrow": "05 · FAQ",
+      "title": "Before you message us",
+      "items": [
+        {
+          "q": "What exactly do you build?",
+          "a": "Software and AI tools that run inside your real workflows: dashboards, automations, business apps. Not proofs of concept, but products in production that replace manual operations."
+        },
+        {
+          "q": "How much does a project cost?",
+          "a": "Every project is quoted at a fixed price, based on your bottleneck and the scope we define together. You know the exact amount before you sign. Message us on WhatsApp for a first estimate."
+        },
+        {
+          "q": "What does “you own the infrastructure” mean?",
+          "a": "At the end of the engagement, you hold the code repository, the cloud access, the model provider accounts and all the data. We deliver into your environment from day one."
+        },
+        {
+          "q": "Why not just hire a developer?",
+          "a": "An AI engineer costs €150,000–250,000 a year all-in, takes 3–6 months to ramp up, and the hiring risk is real. A pod ships in 8 weeks, with tests, telemetry and a guarantee."
+        },
+        {
+          "q": "You're based in Bali. How does that work for my company?",
+          "a": "The team is remote-first, with headquarters in Bali and sales leadership in Paris. We work in English or French, bill in euros, and keep hosting EU-compliant when required."
+        }
+      ]
+    },
+    "final": {
+      "title": "What's slowing your business down?",
+      "body": "Tell us. We'll go through it together in a single conversation, and you'll leave with a clear idea of what can be automated.",
+      "cta": "Message Evan on WhatsApp",
+      "note": "Reply within 24h"
+    },
+    "footer": {
+      "location": "Bali · Paris",
+      "privacy": "Privacy"
+    }
+  },
+  "Consent": {
+    "label": "Cookie consent",
+    "body": "We use analytics cookies (Google Analytics & Meta) to understand site traffic. Decline keeps analytics cookieless.",
+    "decline": "Decline",
+    "accept": "Accept"
   }
 }

@@ -1,4 +1,4 @@
-# PRIONATION.io — v.3.8.2
+# PRIONATION.io — v.3.9.0
 
 **AI Product Engineering · Fixed scope · 8 weeks to production.**
 

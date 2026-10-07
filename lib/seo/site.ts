@@ -8,6 +8,11 @@ export const LEGAL_NAME = "PRIORITY FOUNDATION";
 export const CONTACT_EMAIL = "consult@prionation.io";
 export const FOUNDING_DATE = "2026";
 
+// Sales WhatsApp line (Evan Cao, CRO, Paris). WHATSAPP_NUMBER is the wa.me
+// form (country code + number, digits only); WHATSAPP_DISPLAY is for humans.
+export const WHATSAPP_NUMBER = "33781732386";
+export const WHATSAPP_DISPLAY = "+33 7 81 73 23 86";
+
 // Stable @id anchors so every JSON-LD block — site-wide (components/JsonLd.tsx)
 // and per-page (ContentArticle/AnchorPage/Glossary) — references ONE shared
 // Organization/WebSite node instead of re-declaring anonymous duplicates. This

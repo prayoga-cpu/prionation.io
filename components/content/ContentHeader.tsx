@@ -1,46 +1,12 @@
 "use client";
 
-import { useTransition } from "react";
-import { useLocale, useTranslations } from "next-intl";
-import { Link, useRouter, usePathname } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
+import { LocaleSwitcher } from "@/components/ui/LocaleSwitcher";
 
 // Header for standalone content pages (cluster/anchor). Unlike the homepage
 // Header, nav targets are real routes/anchors (not in-page scroll), so links
 // work from any page. Wordmark -> home, CTA -> homepage Diagnostic.
-function LocaleSwitcher() {
-  const [isPending, startTransition] = useTransition();
-  const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const locales = [
-    { code: "en", label: "EN" },
-    { code: "fr", label: "FR" },
-    { code: "id", label: "ID" },
-  ];
-
-  return (
-    <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1 w-fit">
-      {locales.map((loc) => (
-        <button
-          key={loc.code}
-          onClick={() =>
-            startTransition(() => router.replace(pathname, { locale: loc.code }))
-          }
-          disabled={isPending || locale === loc.code}
-          className={`text-[10px] font-pixel px-3 py-1.5 min-w-[38px] rounded-full transition-all ${
-            locale === loc.code
-              ? "bg-accent text-white shadow-[0_0_12px_rgba(235,69,159,0.4)]"
-              : "text-muted hover:text-white hover:bg-white/5"
-          } disabled:cursor-default`}
-        >
-          {loc.label}
-        </button>
-      ))}
-    </div>
-  );
-}
-
 export function ContentHeader() {
   const t = useTranslations("Header");
 
