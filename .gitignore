@@ -45,3 +45,13 @@ next-env.d.ts
 graphify-out/*
 !graphify-out/graph.json
 !graphify-out/GRAPH_REPORT.md
+
+# local-only screenshots/source art — never deployed (not in public/) and never
+# committed (this repo is public). E.g. raw product shots with test data or
+# personal details, and the sources behind composited images in public/work/.
+/private-assets/
+
+# local automation state (content-loop / distribute skills) — per-machine
+# ledgers and drafts, not source
+/.content-loop/
+/.distribute/
