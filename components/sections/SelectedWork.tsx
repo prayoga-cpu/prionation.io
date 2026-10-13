@@ -5,9 +5,8 @@ import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
 import { SectionHead } from "../ui/Atoms";
 import { Link } from "@/i18n/routing";
-import Image from "next/image";
 import { staggerSlow, fadeUp } from "@/lib/motion";
-import { SHOWCASE_IMAGES } from "@/lib/content/pages";
+import { ShowcaseSlideshow } from "../ui/ShowcaseSlideshow";
 
 type CaseData = {
   name: string;
@@ -23,14 +22,11 @@ const CASE_DEMOS = [
   "https://expeditoo-rho.vercel.app/",
   "https://lead-agent-lac.vercel.app/",
 ];
-// Images come from the shared showcase map (lib/content/pages.ts) so the tiles
-// and the showcase Article JSON-LD always reference the same owned assets.
-const CASE_IMGS = CASE_SLUGS.map((s) => SHOWCASE_IMAGES[s]);
 
 function CaseTile({
-  c, slug, demo, img, viewLabel, demoLabel,
+  c, slug, demo, viewLabel, demoLabel,
 }: {
-  c: CaseData; slug: string; demo: string; img: string; viewLabel: string; demoLabel: string;
+  c: CaseData; slug: string; demo: string; viewLabel: string; demoLabel: string;
 }) {
   return (
     <m.div
@@ -47,7 +43,7 @@ function CaseTile({
         <span className="text-muted font-pixel text-[8px] md:text-[9px] tracking-[0.15em]">{c.year}</span>
       </div>
       <div className="rounded-xl flex-1 min-h-[160px] relative overflow-hidden bg-card-soft border border-line-soft">
-        <Image src={img} alt={c.name} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+        <ShowcaseSlideshow slug={slug} alt={c.name} sizes="(min-width: 1024px) 33vw, 100vw" className="transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 z-10 pointer-events-none" />
       </div>
       <div className="flex flex-col gap-1.5">
@@ -110,7 +106,7 @@ export function SelectedWork() {
   const cases = t.raw("cases") as CaseData[];
 
   const caseCards = cases.map((c, i) => (
-    <CaseTile key={i} c={c} slug={CASE_SLUGS[i]} demo={CASE_DEMOS[i]} img={CASE_IMGS[i]} viewLabel={t("view_project")} demoLabel={t("live_demo")} />
+    <CaseTile key={i} c={c} slug={CASE_SLUGS[i]} demo={CASE_DEMOS[i]} viewLabel={t("view_project")} demoLabel={t("live_demo")} />
   ));
 
   return (

@@ -5,6 +5,7 @@ import { PillLogo } from "@/app/finance/components/PillLogo";
 import { Dot } from "@/components/ui/Typography";
 import { LocaleSwitcher } from "@/components/ui/LocaleSwitcher";
 import { CONTACT_EMAIL, WHATSAPP_DISPLAY } from "@/lib/seo/site";
+import { ShowcaseSlideshow } from "@/components/ui/ShowcaseSlideshow";
 import { WhatsAppCta } from "./WhatsAppCta";
 import { Reveal } from "./Reveal";
 
@@ -21,7 +22,7 @@ import { Reveal } from "./Reveal";
 type Item = { title: string; body: string };
 type Step = { duration: string; title: string; body: string; items: string[] };
 type Row = { label: string; them: string; us: string };
-type Case = { tag: string; name: string; body: string; alt: string; src: string };
+type Case = { tag: string; name: string; body: string; alt: string; slug: string };
 type Faq = { q: string; a: string };
 
 // Same client quotes as the homepage (components/sections/Testimonials.tsx),
@@ -52,7 +53,7 @@ const STACK_LOGOS = [
   { name: "Stripe", src: "/logos/stripe.svg", h: "h-[26px]" },
 ];
 
-const CASE_IMAGES = ["/work/epidom.png", "/work/expeditoo.png", "/work/lead-agent.png"];
+const CASE_SLUGS = ["epidom", "expeditoo", "the-lead-agent"];
 
 // ─── Shared class strings ──────────────────────────────────────────────────
 
@@ -179,7 +180,7 @@ export async function SalesPage() {
   const problems = t.raw("problem.items") as Item[];
   const steps = t.raw("method.steps") as Step[];
   const rows = t.raw("method.rows") as Row[];
-  const cases = (t.raw("work.cases") as Omit<Case, "src">[]).map((c, i) => ({ ...c, src: CASE_IMAGES[i] }));
+  const cases = (t.raw("work.cases") as Omit<Case, "slug">[]).map((c, i) => ({ ...c, slug: CASE_SLUGS[i] }));
   const roles = t.raw("work.quoteRoles") as string[];
   const guarantees = t.raw("guarantees") as Item[];
   const faqs = t.raw("faq.items") as Faq[];
@@ -283,15 +284,9 @@ export async function SalesPage() {
                     {t("hero.browserBar")}
                   </span>
                 </div>
-                <Image
-                  src="/work/epidom-home.jpg"
-                  alt={t("hero.imageAlt")}
-                  width={2880}
-                  height={1800}
-                  priority
-                  sizes="(min-width: 1024px) 600px, 100vw"
-                  className="block w-full h-auto"
-                />
+                <div className="relative aspect-[1280/850]">
+                  <ShowcaseSlideshow slug="epidom" alt={t("hero.imageAlt")} sizes="(min-width: 1024px) 600px, 100vw" priority />
+                </div>
               </figure>
               <div className="absolute left-2 sm:-left-[18px] bottom-1.5 flex items-center gap-3 bg-[rgba(12,13,18,0.92)] border border-white/15 rounded-2xl px-4 py-3.5 shadow-[0_20px_50px_rgba(0,0,0,0.55)]">
                 <span className="w-[34px] h-[34px] rounded-[10px] bg-accent flex items-center justify-center shrink-0 text-white">
@@ -515,13 +510,7 @@ export async function SalesPage() {
                 {cases.map((c) => (
                   <article key={c.name} className={`${CARD} border-white/10 rounded-[22px] overflow-hidden flex flex-col`}>
                     <div className="relative aspect-[16/10] border-b border-white/[0.08]">
-                      <Image
-                        src={c.src}
-                        alt={c.alt}
-                        fill
-                        sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw"
-                        className="object-cover object-top"
-                      />
+                      <ShowcaseSlideshow slug={c.slug} alt={c.alt} sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw" />
                     </div>
                     <div className="p-[26px] flex flex-col gap-3">
                       <span className={`text-muted ${PIXEL_LABEL}`}>{c.tag}</span>

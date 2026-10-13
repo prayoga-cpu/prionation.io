@@ -3,6 +3,7 @@ import { createTranslator } from "next-intl";
 import en from "@/messages/en.json";
 import fr from "@/messages/fr.json";
 import id from "@/messages/id.json";
+import { SHOWCASE_IMAGES } from "@/lib/content/pages";
 
 const LOCALES = { en, fr, id } as const;
 type Locale = keyof typeof LOCALES;
@@ -37,6 +38,16 @@ function lookup(value: Record<string, unknown>, key: string): unknown {
 describe("messages", () => {
   it.each(["fr", "id"] as const)("%s has exactly the same keys as en", (locale) => {
     expect(shape(LOCALES[locale]).sort()).toEqual(shape(en).sort());
+  });
+
+  // ShowcaseSlideshow reads one alt per image after the first; a missing one
+  // would ship an image with alt={undefined}.
+  it.each(ALL)("%s has an alt for every extra showcase image", (locale) => {
+    const alts = LOCALES[locale].ShowcaseImages as Record<string, string[]>;
+    for (const [slug, images] of Object.entries(SHOWCASE_IMAGES)) {
+      expect(alts[slug] ?? [], slug).toHaveLength(images.length - 1);
+      for (const a of alts[slug] ?? []) expect(a.trim(), slug).not.toBe("");
+    }
   });
 });
 

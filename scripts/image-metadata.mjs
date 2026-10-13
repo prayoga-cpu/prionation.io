@@ -62,12 +62,37 @@ const MANIFEST = [
     ],
   },
   {
-    // lib/content/text/en.ts → showcases.epidom.seoTitle / metaDescription
-    file: "public/work/epidom.png",
+    // lib/content/text/en.ts → showcases.epidom.seoTitle / metaDescription (also the /start hero)
+    file: "public/work/epidom-home.png",
     title: "Epidom — F&B operations dashboard · PRIONATION",
     description:
       "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
     keywords: ["Epidom", "F&B operations", "inventory management", "production dashboard", "PRIONATION showcase", "France"],
+  },
+  {
+    // lib/content/text/en.ts → showcases.epidom (same source as epidom-home.png) — POS frame of the Epidom slideshow
+    file: "public/work/epidom-pos.png",
+    title: "Epidom — F&B operations dashboard · PRIONATION",
+    description:
+      "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
+    keywords: ["Epidom", "F&B operations", "POS", "inventory management", "production dashboard", "PRIONATION showcase", "France"],
+  },
+  {
+    // lib/content/text/en.ts → showcases.epidom — phone-ordering frame of the Epidom slideshow
+    // (composited from private-assets/epidom/epidom-mobile-{menu,checkout}.png)
+    file: "public/work/epidom-mobile-ordering.png",
+    title: "Epidom — F&B operations dashboard · PRIONATION",
+    description:
+      "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
+    keywords: ["Epidom", "F&B operations", "online ordering", "mobile ordering", "PRIONATION showcase", "France"],
+  },
+  {
+    // lib/content/text/en.ts → showcases.epidom — customer-display frame of the Epidom slideshow
+    file: "public/work/epidom-customer-display.png",
+    title: "Epidom — F&B operations dashboard · PRIONATION",
+    description:
+      "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
+    keywords: ["Epidom", "F&B operations", "POS", "customer display", "PRIONATION showcase", "France"],
   },
   {
     // lib/content/text/en.ts → showcases.expeditoo.seoTitle / metaDescription
@@ -108,14 +133,6 @@ const MANIFEST = [
     description: team.evan.bio,
     creator: team.evan.name,
     keywords: [team.evan.name, team.evan.role, BRAND.siteName, BRAND.legalName],
-  },
-  {
-    // lib/content/text/en.ts → showcases.epidom (same source as public/work/epidom.png) — /start hero
-    file: "public/work/epidom-home.jpg",
-    title: "Epidom — F&B operations dashboard · PRIONATION",
-    description:
-      "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
-    keywords: ["Epidom", "F&B operations", "inventory management", "production dashboard", "PRIONATION showcase", "France"],
   },
   {
     file: "public/ads/bug-bounty-campaign-1080x1350.png",

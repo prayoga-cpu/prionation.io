@@ -489,3 +489,50 @@ select option {
     animation: none;
   }
 }
+
+/* Showcase slideshow (components/ui/ShowcaseSlideshow.tsx) for any number of
+   images (--frames), each frame one container wide, plus a trailing clone of
+   the first. Two stacked, synchronised animations so no per-count keyframes
+   are needed:
+     .showcase-step  jumps one frame left every 4.5s (steps), and
+     .showcase-slide holds 3.5s then slides one frame left over 1s, then resets.
+   At each 4.5s boundary the step's jump and the slide's reset cancel out, so the
+   motion is continuous and always forward; after the clone, both restart at 0,
+   which looks identical. Pauses on hover, including inside a hovered `group`
+   card whose stretched link sits on top of the image. */
+@keyframes showcase-step {
+  to {
+    transform: translateX(calc(-100% * var(--frames)));
+  }
+}
+@keyframes showcase-slide {
+  0%,
+  77.8% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.showcase-step {
+  animation: showcase-step calc(var(--frames) * 4.5s) steps(var(--frames)) infinite;
+}
+.showcase-slide {
+  animation: showcase-slide 4.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+.showcase-step,
+.showcase-slide {
+  will-change: transform;
+}
+.showcase-step:hover,
+.showcase-step:hover .showcase-slide,
+.group:hover .showcase-step,
+.group:hover .showcase-slide {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .showcase-step,
+  .showcase-slide {
+    animation: none;
+  }
+}

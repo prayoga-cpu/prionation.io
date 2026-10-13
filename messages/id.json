@@ -1021,5 +1021,12 @@
     "body": "Kami menggunakan cookie analitik (Google Analytics & Meta) untuk memahami lalu lintas situs. Jika Anda menolak, analitik tetap berjalan tanpa cookie.",
     "decline": "Tolak",
     "accept": "Terima"
+  },
+  "ShowcaseImages": {
+    "epidom": [
+      "Pemesanan online Epidom di ponsel: menu, lalu checkout untuk makan di tempat, dibawa pulang, atau diantar",
+      "POS berbasis web Epidom: layar kasir dengan antrean pesanan, makan di tempat atau dibawa pulang, dan pembayaran",
+      "Layar pelanggan Epidom: pesanan dan total yang ditampilkan ke pelanggan di kasir"
+    ]
   }
 }

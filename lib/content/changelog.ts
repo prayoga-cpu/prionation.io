@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.9.1";
+export const CURRENT_VERSION = "3.9.2";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,17 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.9.2",
+    bump: "patch",
+    date: "2026-10-13",
+    title: "Epidom thumbnail slideshow: website, ordering, POS, customer display",
+    items: [
+      "The Epidom case-study image is now a four-image slideshow, one image per part of the product: its current homepage, ordering on a phone (menu, then checkout), the web-based POS cashier screen, and the customer-facing display. It slides forward through them on a continuous loop, pauses on hover, and stays on the homepage shot for visitors who prefer reduced motion. It's pure CSS, so no extra JavaScript, and it works for any number of images.",
+      "The slideshow appears on the homepage's Selected Work tile, the /start hero, and the /start shipped-work cards. All three read Epidom's images from one shared map in public/work/. Each later image has its own alt text in English, French, and Indonesian, and a test fails if one is missing.",
+      "The Epidom showcase article's structured data now lists all four images. Both older Epidom screenshots were removed. The new files have new names so cached copies of the old image aren't served in their place.",
+    ],
+  },
   {
     version: "3.9.1",
     bump: "patch",

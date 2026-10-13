@@ -1021,5 +1021,12 @@
     "body": "We use analytics cookies (Google Analytics & Meta) to understand site traffic. Decline keeps analytics cookieless.",
     "decline": "Decline",
     "accept": "Accept"
+  },
+  "ShowcaseImages": {
+    "epidom": [
+      "Epidom online ordering on a phone: the menu, then checkout for dine-in, takeaway or delivery",
+      "Epidom web-based POS: the cashier screen with order queue, dine-in and take-away, and checkout",
+      "Epidom customer display: the order and total shown to the customer at the counter"
+    ]
   }
 }

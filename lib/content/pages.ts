@@ -43,12 +43,28 @@ export const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
 // Real owned case-study images for showcase Articles (files in public/work/).
 // Slug→file is intentionally NOT 1:1 ("the-lead-agent" → lead-agent.png), so the
 // mapping is explicit, not derived. Single source of truth shared by the
-// homepage tiles (components/sections/SelectedWork.tsx) and the showcase Article
-// JSON-LD image (components/content/ContentArticle.tsx) so the two can't drift.
-export const SHOWCASE_IMAGES: Record<string, string> = {
-  epidom: "/work/epidom.png",
-  expeditoo: "/work/expeditoo.png",
-  "the-lead-agent": "/work/lead-agent.png",
+// homepage tiles (components/sections/SelectedWork.tsx), the /start hero + work
+// cards (components/sales/SalesPage.tsx) and the showcase Article JSON-LD image
+// (components/content/ContentArticle.tsx) so they can't drift. When swapping an
+// image, give the new file a new name: /_next/image caches by URL, so reusing a
+// filename keeps serving the old optimized copy until the cache expires.
+// More than one image turns the showcase into a slideshow
+// (components/ui/ShowcaseSlideshow.tsx), in this order; alt text for every image
+// after the first lives in messages/*.json → ShowcaseImages.<slug>.
+// Epidom: website → phone ordering → POS → customer display, so the tile reads as
+// one all-in-one web app. Its unused raw screenshots (test data / personal
+// details) stay out of the repo in the git-ignored private-assets/epidom/.
+export type ShowcaseImages = readonly [string, ...string[]];
+
+export const SHOWCASE_IMAGES: Record<string, ShowcaseImages> = {
+  epidom: [
+    "/work/epidom-home.png",
+    "/work/epidom-mobile-ordering.png",
+    "/work/epidom-pos.png",
+    "/work/epidom-customer-display.png",
+  ],
+  expeditoo: ["/work/expeditoo.png"],
+  "the-lead-agent": ["/work/lead-agent.png"],
 };
 
 export const pages: PageMeta[] = [

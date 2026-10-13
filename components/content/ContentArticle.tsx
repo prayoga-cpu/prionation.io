@@ -132,16 +132,22 @@ export function ContentArticle({
   const h1 = t("h1");
 
   const canonical = `${SITE_URL}/${locale}/${section}/${slug}`;
+  const showcaseImages = section === "showcases" ? SHOWCASE_IMAGES[slug] : undefined;
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": VALID_ARTICLE_TYPE[schemaType],
     headline: h1,
     description: t("metaDescription"),
-    // Showcase Articles carry their real owned case image (public/work/*); every
-    // other section falls back to the site og.png. Map lives in lib/content/pages.ts
-    // (single source shared with the homepage SelectedWork tiles).
-    image: `${SITE_URL}${(section === "showcases" && SHOWCASE_IMAGES[slug]) || "/og.png"}`,
+    // Showcase Articles carry their real owned case image(s) (public/work/*) —
+    // a list when the showcase has several; every other section falls back to
+    // the site og.png. Map lives in lib/content/pages.ts (single source shared
+    // with the homepage SelectedWork tiles and /start).
+    image: showcaseImages
+      ? showcaseImages.length > 1
+        ? showcaseImages.map((p) => `${SITE_URL}${p}`)
+        : `${SITE_URL}${showcaseImages[0]}`
+      : `${SITE_URL}/og.png`,
     inLanguage: locale,
     ...(datePublished ? { datePublished } : {}),
     ...(dateModified ? { dateModified } : {}),

@@ -1021,5 +1021,12 @@
     "body": "Nous utilisons des cookies d'analyse (Google Analytics et Meta) pour comprendre la fréquentation du site. Si vous refusez, l'analyse reste sans cookies.",
     "decline": "Refuser",
     "accept": "Accepter"
+  },
+  "ShowcaseImages": {
+    "epidom": [
+      "Commande en ligne Epidom sur mobile : le menu, puis la validation sur place, à emporter ou en livraison",
+      "Le POS web d’Epidom : écran de caisse avec file de commandes, sur place ou à emporter, et encaissement",
+      "Écran client Epidom : la commande et le total affichés au client au comptoir"
+    ]
   }
 }
