@@ -12,6 +12,9 @@ type PlanData = {
   desc: string; cta: string; features: string[];
 };
 
+// Express Site card is hidden for now (team decision 2026-10-14); flip to bring it back.
+const SHOW_EXPRESS_SITE = false;
+
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 }
@@ -77,7 +80,7 @@ export function Pricing() {
                 <span className="font-pixel text-[9px] tracking-[0.12em] text-muted uppercase">{p.label} · {p.name}</span>
                 <h3 className="font-sans font-bold text-[28px] text-white mt-3 mb-1">{p.name}</h3>
                 <div className="flex items-baseline gap-2 mt-4">
-                  <span className="text-white font-sans font-extrabold text-[36px]">€{p.price}</span>
+                  <span className="text-white font-sans font-extrabold text-[30px]">{p.price}</span>
                   <span className="text-muted font-sans text-[14px]">{p.period}</span>
                 </div>
                 <p className="text-soft text-[14px] leading-[1.6] mt-4 min-h-[48px]">{p.desc}</p>
@@ -114,46 +117,47 @@ export function Pricing() {
         </m.div>
 
         {/* Express Site floater */}
-        <m.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="mt-20 flex justify-center"
-        >
+        {SHOW_EXPRESS_SITE && (
           <m.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-            className="bg-[#0c0d12] border border-line-soft rounded-[24px] p-6 md:p-8 flex flex-col items-center text-center gap-6 relative overflow-hidden group max-w-[540px] shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            className="mt-20 flex justify-center"
           >
-            <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(88,242,135,0.08)_0%,transparent_70%)]" />
-            <div className="relative z-10 flex flex-col items-center">
-              <div className="flex items-center gap-3 mb-2">
-                <h3 className="font-sans font-bold text-[22px] text-white">{t("express_title")}</h3>
-                <span className="bg-green-500/10 text-green-400 font-pixel text-[8px] tracking-[0.1em] px-2.5 py-1 rounded-full uppercase border border-green-500/20">
-                  {t("express_badge")}
-                </span>
-              </div>
-              <p className="text-soft text-[14px] leading-[1.5] max-w-[34ch] mb-6">
-                {t("express_desc", { days: t("express_days") })}
-              </p>
-              <div className="flex flex-col items-center gap-4">
-                <div className="font-sans font-extrabold text-[28px] text-green-400">
-                  €1,500{" "}
-                  <span className="text-[12px] text-muted font-normal uppercase tracking-wider ml-1">{t("express_base")}</span>
+            <m.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+              className="bg-[#0c0d12] border border-line-soft rounded-[24px] p-6 md:p-8 flex flex-col items-center text-center gap-6 relative overflow-hidden group max-w-[540px] shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            >
+              <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(88,242,135,0.08)_0%,transparent_70%)]" />
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="flex items-center gap-3 mb-2">
+                  <h3 className="font-sans font-bold text-[22px] text-white">{t("express_title")}</h3>
+                  <span className="bg-green-500/10 text-green-400 font-pixel text-[8px] tracking-[0.1em] px-2.5 py-1 rounded-full uppercase border border-green-500/20">
+                    {t("express_badge")}
+                  </span>
                 </div>
-                <Btn
-                  variant="ghost"
-                  className="px-8 border-green-500/20 hover:border-green-500/50 hover:text-green-400 bg-green-500/[0.02]"
-                  onClick={() => { trackEvent("pricing_cta_click", { plan: "Express Site" }); window.location.hash = "engage?tab=diagnostic"; scrollTo("engage"); }}
-                >
-                  {t("express_cta")} <span className="text-[12px] opacity-80 ml-1">→</span>
-                </Btn>
+                <p className="text-soft text-[14px] leading-[1.5] max-w-[34ch] mb-6">
+                  {t("express_desc", { days: t("express_days") })}
+                </p>
+                <div className="flex flex-col items-center gap-4">
+                  <div className="font-sans font-extrabold text-[28px] text-green-400">
+                    {t("express_price")}
+                  </div>
+                  <Btn
+                    variant="ghost"
+                    className="px-8 border-green-500/20 hover:border-green-500/50 hover:text-green-400 bg-green-500/[0.02]"
+                    onClick={() => { trackEvent("pricing_cta_click", { plan: "Express Site" }); window.location.hash = "engage?tab=diagnostic"; scrollTo("engage"); }}
+                  >
+                    {t("express_cta")} <span className="text-[12px] opacity-80 ml-1">→</span>
+                  </Btn>
+                </div>
               </div>
-            </div>
+            </m.div>
           </m.div>
-        </m.div>
+        )}
       </div>
     </section>
   );

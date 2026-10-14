@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.10.0";
+export const CURRENT_VERSION = "3.10.1";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,17 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.10.1",
+    bump: "patch",
+    date: "2026-10-14",
+    title: "Hide prices on the homepage and /start",
+    items: [
+      "Removed price figures from /start and the homepage (pricing cards, how-we-work comparison, FAQ, TL;DR, diagnostic form, meta description): offers now show their length and \"fixed price, on quote\", and the price comes up in the first conversation. Paid ads currently target small-business owners.",
+      "/start now speaks to small and mid-sized businesses (\"Pour les TPE et PME\") and its price section became a step-by-step \"how it works\".",
+      "The Express Site offer is hidden for now from the homepage pricing section and the footer.",
+    ],
+  },
   {
     version: "3.10.0",
     bump: "minor",

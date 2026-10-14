@@ -106,11 +106,6 @@ export function FooterColumns() {
               SKU 03 · Retainer
             </SectionLink>
           </li>
-          <li>
-            <SectionLink isHome={isHome} id="pricing">
-              Express Site
-            </SectionLink>
-          </li>
           <li className="flex items-center gap-1.5">
             <span className="text-[13px] text-muted">AI Consultation</span>
             <span className="font-pixel text-[8px] tracking-[0.12em] text-line-soft uppercase">

@@ -1,7 +1,7 @@
 {
   "Meta": {
     "homeTitle": "AI Product Engineering · PRIONATION.io",
-    "homeDescription": "Production AI infrastructure for EU and US mid-market companies. Fixed scope. Fixed price. 8 weeks to production. Starting at €5,000.",
+    "homeDescription": "Production AI infrastructure for EU and US mid-market companies. Fixed scope. Fixed price. 8 weeks to production.",
     "discordTitle": "Join our Discord Community · PRIONATION.io",
     "discordDescription": "Connect with AI product engineers, QA testers, and content creators. Take part in launch events, graphics challenges, and secure your place in our core talent pool."
   },
@@ -300,7 +300,7 @@
       {
         "label": "Cost (first deliverable)",
         "them": "€120–180K/year fully loaded",
-        "us": "€25–55K fixed per project"
+        "us": "Fixed price per project, agreed before we start"
       },
       {
         "label": "What you get",
@@ -315,7 +315,7 @@
       {
         "label": "Retainer cost",
         "them": "≈ one engineer/year = €120K+",
-        "us": "€4–9K/month for the full pod"
+        "us": "Monthly plan for the full pod"
       },
       {
         "label": "Risk",
@@ -378,21 +378,20 @@
     ]
   },
   "Pricing": {
-    "eyebrow": "04 · PRICING",
+    "eyebrow": "04 · OFFERS",
     "title": "Fixed scope, zero surprises.",
     "most_popular": "Most Popular",
     "express_title": "Express Site",
     "express_badge": "NEW",
     "express_desc": "3-page Next.js site, contact form, SEO, Vercel deploy, {days} business days.",
     "express_days": "5",
-    "express_base": "base",
     "express_cta": "See Express",
     "plans": [
       {
         "name": "Diagnostic",
         "label": "SKU 1",
-        "price": "5–7K",
-        "period": "fixed · 2 weeks",
+        "price": "On quote",
+        "period": "fixed price · 2 weeks",
         "desc": "Map the bottleneck. Get the build spec. Sign without procurement.",
         "cta": "Start the Diagnostic",
         "features": [
@@ -407,8 +406,8 @@
       {
         "name": "Build",
         "label": "SKU 2",
-        "price": "25–55K",
-        "period": "fixed · 8 weeks",
+        "price": "On quote",
+        "period": "fixed price · 8 weeks",
         "desc": "Ship production AI. Fixed scope, protected by the Diagnostic contract.",
         "cta": "Get started",
         "features": [
@@ -423,8 +422,8 @@
       {
         "name": "Retainer",
         "label": "SKU 3",
-        "price": "4–9K",
-        "period": "/month · min. 6 months",
+        "price": "On quote",
+        "period": "monthly · min. 6 months",
         "desc": "Ongoing pod access. The only SKU that compounds.",
         "cta": "Talk about a retainer",
         "features": [
@@ -436,7 +435,8 @@
           "Continuous ROI tracking"
         ]
       }
-    ]
+    ],
+    "express_price": "On quote"
   },
   "Foundation": {
     "label": "THE FOUNDATION",
@@ -497,7 +497,7 @@
         "bottleneck": "The operational bottleneck, describe in 2–3 sentences",
         "triedSoFar": "What have you tried so far?",
         "whyNow": "Why does this matter now?",
-        "budget": "Are you budgeted for a 2-week paid Diagnostic in the €5–7K range?",
+        "budget": "Are you budgeted for a 2-week, fixed-price paid Diagnostic?",
         "startWindow": "Ideal start window",
         "source": "How did you hear about us?"
       },
@@ -571,7 +571,7 @@
   },
   "Tldr": {
     "label": "Summary",
-    "summary": "PRIONATION.io builds production AI infrastructure for European and US-based mid-market companies (€5–50M revenue). Fixed scope. Fixed price. Lean pods. 8 weeks from signed to shipped. Starting at €5,000 for a 2-week Diagnostic."
+    "summary": "PRIONATION.io builds production AI infrastructure for European and US-based mid-market companies (€5–50M revenue). Fixed scope. Fixed price. Lean pods. 8 weeks from signed to shipped."
   },
   "Faq": {
     "label": "FAQ",
@@ -582,8 +582,8 @@
         "a": "AI product engineering is the practice of building production AI infrastructure — not proofs-of-concept — that operates within real business workflows. For mid-market companies (€5–50M revenue), it means shipping AI products that replace manual operations within a fixed 8-week timeline, with evals defining done and clients owning all code and infrastructure."
       },
       {
-        "q": "How much does an AI build engagement cost for a €10–50M company?",
-        "a": "PRIONATION's AI build engagements run €25,000–55,000 for an 8-week production build. The process starts with a 2-week Diagnostic at €5,000–7,000 to map the bottleneck and confirm scope. Ongoing pod access runs €4,000–9,000/month."
+        "q": "How much does a project cost?",
+        "a": "Every project is quoted at a fixed price, based on the bottleneck to solve and the scope we define together, and the amount is written into the contract before we start. Everything starts with a 2-week Diagnostic that maps the bottleneck and confirms the scope. The first conversation is free."
       },
       {
         "q": "What does 'client owns the infrastructure' mean in practice?",
@@ -591,11 +591,11 @@
       },
       {
         "q": "How is a lean pod different from hiring an AI engineer?",
-        "a": "A 3-person PRIONATION pod costs €25,000–55,000 per project, ships in 8 weeks, and comes with evals, telemetry, and a 4-week warranty. A single AI engineer hire costs €150,000–250,000/year loaded (salary + benefits + recruitment), takes 3–6 months to ramp, and carries significant hire-quality risk. The pod is the de-risked path until internal AI engineering capability scales."
+        "a": "A 3-person PRIONATION pod works at a fixed price per project, ships in 8 weeks, and comes with evals, telemetry, and a 4-week warranty. Hiring a single AI engineer takes months to recruit and ramp, and carries real hire-quality risk. The pod is the de-risked path until internal AI engineering capability scales."
       },
       {
         "q": "What is the PRIONATION Diagnostic?",
-        "a": "The Diagnostic is a 2-week fixed-scope engagement at €5,000–7,000. It maps the single highest-ROI operational bottleneck, defines the AI build scope, produces the eval suite specification, and delivers a production-ready architecture proposal. It is the required entry point before any Build engagement."
+        "a": "The Diagnostic is a 2-week fixed-scope, fixed-price engagement. It maps the single highest-ROI operational bottleneck, defines the AI build scope, produces the eval suite specification, and delivers a production-ready architecture proposal. It is the required entry point before any Build engagement."
       },
       {
         "q": "How does PRIONATION handle AI consulting for European companies?",
@@ -774,22 +774,22 @@
   },
   "Sales": {
     "metaTitle": "A custom tool to replace your spreadsheets · PRIONATION.io",
-    "metaDescription": "For SMEs and mid-market companies: a 2-week Diagnostic, then your custom tool delivered in 8 weeks at a fixed price. Message Evan on WhatsApp or get a call back.",
+    "metaDescription": "For small and mid-sized businesses: a 2-week Diagnostic, then your custom tool delivered in 8 weeks at a fixed price. Message Evan on WhatsApp or get a call back.",
     "refLabel": "ref.",
     "whatsappMessage": "Hi Evan, I'm coming from your PRIONATION page. I'd like to know whether some of our manual work could be automated, and at what price.",
     "whatsappMessageStory": "Hi Evan, I read the Epidom story. A lot of our work is still done by hand too. Could you tell me what could be automated?",
-    "whatsappMessagePrix": "Hi Evan, I saw your prices on the PRIONATION page. Could you give me a range for our case? I'll describe what we need right after.",
+    "whatsappMessagePrix": "Hi Evan, I'm coming from your PRIONATION page. Could you give me an estimate for our case? I'll describe what we need right after.",
     "nav": {
       "label": "Main navigation",
       "home": "PRIONATION.io — back to top",
-      "prix": "Pricing",
+      "prix": "How it works",
       "work": "Work",
       "faq": "FAQ",
       "cta": "Message Evan",
       "ctaShort": "WhatsApp"
     },
     "hero": {
-      "eyebrow": "For SMEs and mid-market companies · Contact in Paris",
+      "eyebrow": "For small and mid-sized businesses · Contact in Paris",
       "title": "A custom tool to replace your spreadsheets.",
       "sub": "Orders, stock, schedules, quotes: we replace manual data entry with a tool built for your team. Diagnostic in 2 weeks, then your tool delivered in 8 weeks, at a fixed price.",
       "cta": "Message Evan on WhatsApp",
@@ -802,12 +802,12 @@
           "value": "Free"
         },
         {
-          "label": "Diagnostic · 2 weeks",
-          "value": "€5k–7k"
+          "label": "Diagnostic",
+          "value": "2 weeks"
         },
         {
-          "label": "Tool delivered · 8 weeks",
-          "value": "€25k–55k"
+          "label": "Tool delivered",
+          "value": "8 weeks"
         }
       ],
       "altLabel": "Not on WhatsApp?",
@@ -848,8 +848,8 @@
       ]
     },
     "prix": {
-      "eyebrow": "Pricing and process",
-      "title": "What it costs, and how it works.",
+      "eyebrow": "How it works",
+      "title": "How it works, step by step.",
       "steps": [
         {
           "title": "First conversation",
@@ -858,17 +858,17 @@
         },
         {
           "title": "Diagnostic",
-          "meta": "2 weeks · €5,000–7,000",
+          "meta": "2 weeks · fixed price",
           "body": "We analyse your operations, find what slows you down most, and write the specification. You keep it, even if you build elsewhere."
         },
         {
           "title": "Build",
-          "meta": "8 weeks · €25,000–55,000",
+          "meta": "8 weeks · fixed price",
           "body": "A team of 2–3 engineers builds and deploys the tool in your environment, with tests and performance monitoring from day one. Fixed price, written into the contract before we start."
         },
         {
           "title": "Monthly support (optional)",
-          "meta": "€4,000–9,000 per month · 6-month minimum",
+          "meta": "Monthly plan · 6-month minimum",
           "body": "We maintain the tool and evolve it with your business, month after month."
         }
       ],
@@ -933,7 +933,7 @@
       "items": [
         {
           "q": "How much does a project cost?",
-          "a": "The Diagnostic (2 weeks) costs €5,000–7,000. The tool is then built in 8 weeks at a fixed price: €25,000–55,000 depending on scope, written into the contract before we start. You can stop after the Diagnostic and keep the specification. The first conversation is free."
+          "a": "Every project is quoted at a fixed price, based on what you want to automate and the scope we define together. The amount is written into the contract before we start, and you can stop after the Diagnostic and keep the specification. The first conversation is free: describe your need to Evan and he'll give you a first estimate."
         },
         {
           "q": "What happens when I message Evan?",

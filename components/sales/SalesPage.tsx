@@ -18,14 +18,15 @@ import { Reveal } from "./Reveal";
  * v3.10.0 after the first campaign (83 landing-page views, 0 chats) and the
  * audit that followed:
  * - the first phone screen answers what the ad click asks: what you get, for
- *   whom, what it costs and who replies — with the button above a compact
- *   consent banner;
+ *   whom, how long it takes and who replies — with the button above a compact
+ *   consent banner. Prices are not shown (team decision 2026-10-14: the ads
+ *   target small-business owners); Evan quotes in the conversation;
  * - WhatsApp stays the main way in, with a phone link and a call-back form
  *   next to it, and a sticky bar on phones;
  * - only verifiable proof (Epidom disclosed as our own product; no unapproved
  *   quotes; no uncited cost figures);
  * - every view and tap is counted without cookies (lib/analytics/counter.ts).
- * Copy: messages/*.json → "Sales". Prices mirror lib/seo/site.ts OFFERS.
+ * Copy: messages/*.json → "Sales".
  */
 
 type Item = { title: string; body: string };
@@ -208,7 +209,7 @@ export async function SalesPage() {
             </span>
           </a>
           <nav aria-label={t("nav.label")} className="hidden lg:flex items-center gap-7 text-[15px]">
-            <a href="#prix" className="text-soft transition-colors duration-fast hover:text-white">{t("nav.prix")}</a>
+            <a href="#process" className="text-soft transition-colors duration-fast hover:text-white">{t("nav.prix")}</a>
             <a href="#work" className="text-soft transition-colors duration-fast hover:text-white">{t("nav.work")}</a>
             <a href="#faq" className="text-soft transition-colors duration-fast hover:text-white">{t("nav.faq")}</a>
           </nav>
@@ -370,8 +371,8 @@ export async function SalesPage() {
           </Reveal>
         </section>
 
-        {/* ============ PRICE & PROCESS ============ */}
-        <section id="prix" className={`py-16 md:py-24 border-y border-line bg-[#0a0b10] ${GRID_BG}`}>
+        {/* ============ PROCESS (no prices shown) ============ */}
+        <section id="process" className={`py-16 md:py-24 border-y border-line bg-[#0a0b10] ${GRID_BG}`}>
           <div className={`${CONTAINER} flex flex-col gap-10`}>
             <Reveal>
               <Head eyebrow={t("prix.eyebrow")} title={t("prix.title")} />

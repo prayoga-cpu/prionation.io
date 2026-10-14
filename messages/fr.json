@@ -1,7 +1,7 @@
 {
   "Meta": {
     "homeTitle": "Ingénierie de produits IA · PRIONATION.io",
-    "homeDescription": "Infrastructure IA de production pour les entreprises mid-market d'Europe et des États-Unis. Périmètre fixe. Prix fixe. En production en 8 semaines. À partir de 5 000 €.",
+    "homeDescription": "Infrastructure IA de production pour les entreprises mid-market d'Europe et des États-Unis. Périmètre fixe. Prix fixe. En production en 8 semaines.",
     "discordTitle": "Rejoignez notre communauté Discord · PRIONATION.io",
     "discordDescription": "Connectez-vous avec des ingénieurs produits IA, des testeurs QA et des créateurs de contenu. Participez aux lancements, aux défis graphiques et intégrez notre vivier de talents."
   },
@@ -300,7 +300,7 @@
       {
         "label": "Coût (premier livrable)",
         "them": "120 000–180 000 €/an tout compris",
-        "us": "25 000–55 000 € fixe par projet"
+        "us": "Prix fixe par projet, défini avant de commencer"
       },
       {
         "label": "Ce que vous obtenez",
@@ -315,7 +315,7 @@
       {
         "label": "Coût de retainer",
         "them": "≈ un ingénieur/an = 120 000 € +",
-        "us": "4 000–9 000 €/mois pour l'équipe complète"
+        "us": "Forfait mensuel pour l'équipe complète"
       },
       {
         "label": "Risque",
@@ -378,21 +378,20 @@
     ]
   },
   "Pricing": {
-    "eyebrow": "04 · TARIFICATION",
+    "eyebrow": "04 · OFFRES",
     "title": "Périmètre fixe, zéro surprise.",
     "most_popular": "Le Plus Populaire",
     "express_title": "Site Express",
     "express_badge": "NOUVEAU",
     "express_desc": "Site Next.js 3 pages, formulaire de contact, SEO, déploiement Vercel, {days} jours ouvrés.",
     "express_days": "5",
-    "express_base": "base",
     "express_cta": "Voir Express",
     "plans": [
       {
         "name": "Diagnostic",
         "label": "SKU 1",
-        "price": "5–7K",
-        "period": "fixe · 2 semaines",
+        "price": "Sur devis",
+        "period": "prix fixe · 2 semaines",
         "desc": "Cartographiez le goulot d'étranglement. Obtenez le cahier des charges. Signez sans appel d'offres.",
         "cta": "Démarrer le Diagnostic",
         "features": [
@@ -407,8 +406,8 @@
       {
         "name": "Build",
         "label": "SKU 2",
-        "price": "25–55K",
-        "period": "fixe · 8 semaines",
+        "price": "Sur devis",
+        "period": "prix fixe · 8 semaines",
         "desc": "Livrez de l'IA en production. Périmètre fixe, protégé par le contrat Diagnostic.",
         "cta": "Commencer",
         "features": [
@@ -423,8 +422,8 @@
       {
         "name": "Retainer",
         "label": "SKU 3",
-        "price": "4–9K",
-        "period": "/mois · min. 6 mois",
+        "price": "Sur devis",
+        "period": "mensuel · min. 6 mois",
         "desc": "Accès pod continu. Le seul SKU qui s'accumule.",
         "cta": "Parler d'un retainer",
         "features": [
@@ -436,7 +435,8 @@
           "Suivi continu du ROI"
         ]
       }
-    ]
+    ],
+    "express_price": "Sur devis"
   },
   "Foundation": {
     "label": "LA FONDATION",
@@ -497,7 +497,7 @@
         "bottleneck": "Le goulot d'étranglement opérationnel, décrivez en 2–3 phrases",
         "triedSoFar": "Qu'avez-vous essayé jusqu'à présent ?",
         "whyNow": "Pourquoi est-ce important maintenant ?",
-        "budget": "Avez-vous un budget pour un Diagnostic de 2 semaines dans la fourchette 5 000–7 000 € ?",
+        "budget": "Avez-vous un budget pour un Diagnostic de 2 semaines à prix fixe ?",
         "startWindow": "Fenêtre de démarrage idéale",
         "source": "Comment avez-vous entendu parler de nous ?"
       },
@@ -571,7 +571,7 @@
   },
   "Tldr": {
     "label": "Résumé",
-    "summary": "PRIONATION.io construit une infrastructure IA de production pour les entreprises mid-market européennes et américaines (5–50 M€ de chiffre d'affaires). Périmètre fixe. Prix fixe. Pods réduits. 8 semaines entre la signature et la livraison. À partir de 5 000 € pour un Diagnostic de 2 semaines."
+    "summary": "PRIONATION.io construit une infrastructure IA de production pour les entreprises mid-market européennes et américaines (5–50 M€ de chiffre d'affaires). Périmètre fixe. Prix fixe. Pods réduits. 8 semaines entre la signature et la livraison."
   },
   "Faq": {
     "label": "FAQ",
@@ -582,8 +582,8 @@
         "a": "L'ingénierie produit IA consiste à construire une infrastructure IA de production — pas des preuves de concept — qui opère au sein de véritables flux métier. Pour les entreprises mid-market (5–50 M€ de chiffre d'affaires), cela signifie livrer des produits IA qui remplacent les opérations manuelles dans un délai fixe de 8 semaines, avec des evals qui définissent le « terminé » et des clients qui possèdent l'intégralité du code et de l'infrastructure."
       },
       {
-        "q": "Combien coûte un projet de build IA pour une entreprise de 10–50 M€ ?",
-        "a": "Les projets de build IA de PRIONATION coûtent de 25 000 à 55 000 € pour un build de production de 8 semaines. Le processus commence par un Diagnostic de 2 semaines à 5 000–7 000 € pour cartographier le goulot d'étranglement et confirmer le périmètre. L'accès continu au pod coûte de 4 000 à 9 000 €/mois."
+        "q": "Combien coûte un projet ?",
+        "a": "Chaque projet est chiffré à prix fixe, selon le goulot à résoudre et le périmètre défini ensemble, et le montant est écrit au contrat avant de commencer. Tout commence par un Diagnostic de 2 semaines qui cartographie le goulot et confirme le périmètre. Le premier échange est gratuit."
       },
       {
         "q": "Que signifie concrètement « le client possède l'infrastructure » ?",
@@ -591,11 +591,11 @@
       },
       {
         "q": "En quoi un pod réduit diffère-t-il de l'embauche d'un ingénieur IA ?",
-        "a": "Un pod PRIONATION de 3 personnes coûte de 25 000 à 55 000 € par projet, livre en 8 semaines et inclut des evals, de la télémétrie et une garantie de 4 semaines. L'embauche d'un seul ingénieur IA coûte de 150 000 à 250 000 €/an en coût complet (salaire + charges + recrutement), nécessite 3 à 6 mois de montée en compétence et comporte un risque important sur la qualité du recrutement. Le pod est la voie sécurisée tant que la capacité interne en ingénierie IA n'est pas à l'échelle."
+        "a": "Un pod PRIONATION de 3 personnes travaille à prix fixe par projet, livre en 8 semaines et inclut des evals, de la télémétrie et une garantie de 4 semaines. Recruter un ingénieur IA prend des mois entre le recrutement et la montée en compétence, avec un vrai risque sur la qualité du recrutement. Le pod est la voie sécurisée tant que la capacité interne en ingénierie IA n'est pas à l'échelle."
       },
       {
         "q": "Qu'est-ce que le Diagnostic PRIONATION ?",
-        "a": "Le Diagnostic est une mission à périmètre fixe de 2 semaines à 5 000–7 000 €. Il cartographie le goulot d'étranglement opérationnel au ROI le plus élevé, définit le périmètre du build IA, produit la spécification de la suite d'evals et livre une proposition d'architecture prête pour la production. C'est le point d'entrée obligatoire avant tout Build."
+        "a": "Le Diagnostic est une mission de 2 semaines à périmètre fixe et prix fixe. Il cartographie le goulot d'étranglement opérationnel au ROI le plus élevé, définit le périmètre du build IA, produit la spécification de la suite d'evals et livre une proposition d'architecture prête pour la production. C'est le point d'entrée obligatoire avant tout Build."
       },
       {
         "q": "Comment PRIONATION gère-t-il le conseil en IA pour les entreprises européennes ?",
@@ -774,22 +774,22 @@
   },
   "Sales": {
     "metaTitle": "Un outil sur mesure à la place de vos fichiers Excel · PRIONATION.io",
-    "metaDescription": "Pour les PME et ETI : un Diagnostic de 2 semaines, puis l'outil sur mesure livré en 8 semaines, à prix fixe. Écrivez à Evan sur WhatsApp ou faites-vous rappeler.",
+    "metaDescription": "Pour les TPE et PME : un Diagnostic de 2 semaines, puis l'outil sur mesure livré en 8 semaines, à prix fixe. Écrivez à Evan sur WhatsApp ou faites-vous rappeler.",
     "refLabel": "réf.",
     "whatsappMessage": "Bonjour Evan, je viens de votre page PRIONATION. J'aimerais savoir si une partie de notre travail fait à la main peut être automatisée, et à quel prix.",
     "whatsappMessageStory": "Bonjour Evan, j'ai lu l'histoire d'Epidom. Chez nous aussi, beaucoup de choses se font encore à la main. Pouvez-vous me dire ce qui pourrait être automatisé ?",
-    "whatsappMessagePrix": "Bonjour Evan, j'ai vu vos tarifs sur la page PRIONATION. Pouvez-vous me donner une fourchette pour notre cas ? Je vous décris notre besoin juste après.",
+    "whatsappMessagePrix": "Bonjour Evan, je viens de votre page PRIONATION. Pouvez-vous me donner une estimation pour notre cas ? Je vous décris notre besoin juste après.",
     "nav": {
       "label": "Navigation principale",
       "home": "PRIONATION.io — retour en haut",
-      "prix": "Prix",
+      "prix": "Déroulé",
       "work": "Projets",
       "faq": "FAQ",
       "cta": "Écrire à Evan",
       "ctaShort": "WhatsApp"
     },
     "hero": {
-      "eyebrow": "Pour les PME et ETI · Interlocuteur à Paris",
+      "eyebrow": "Pour les TPE et PME · Interlocuteur à Paris",
       "title": "Un outil sur mesure à la place de vos fichiers Excel.",
       "sub": "Commandes, stocks, plannings, devis : on remplace la saisie à la main par un outil conçu pour votre équipe. Diagnostic en 2 semaines, puis outil livré en 8 semaines, à prix fixe.",
       "cta": "Écrire à Evan sur WhatsApp",
@@ -802,12 +802,12 @@
           "value": "Gratuit"
         },
         {
-          "label": "Diagnostic · 2 semaines",
-          "value": "5–7 k€"
+          "label": "Diagnostic",
+          "value": "2 semaines"
         },
         {
-          "label": "Outil livré · 8 semaines",
-          "value": "25–55 k€"
+          "label": "Outil livré",
+          "value": "8 semaines"
         }
       ],
       "altLabel": "Pas de WhatsApp ?",
@@ -848,8 +848,8 @@
       ]
     },
     "prix": {
-      "eyebrow": "Prix et déroulé",
-      "title": "Combien ça coûte, et comment ça se passe.",
+      "eyebrow": "Déroulé",
+      "title": "Comment ça se passe, étape par étape.",
       "steps": [
         {
           "title": "Premier échange",
@@ -858,17 +858,17 @@
         },
         {
           "title": "Diagnostic",
-          "meta": "2 semaines · 5 000 – 7 000 €",
+          "meta": "2 semaines · prix fixe",
           "body": "On analyse vos opérations, on repère ce qui vous ralentit le plus et on rédige le cahier des charges. Vous le gardez, même si vous construisez ailleurs."
         },
         {
           "title": "Construction",
-          "meta": "8 semaines · 25 000 – 55 000 €",
+          "meta": "8 semaines · prix fixe",
           "body": "Une équipe de 2 à 3 ingénieurs construit et déploie l'outil dans votre environnement, avec tests et suivi des performances dès le premier jour. Prix fixe, écrit au contrat avant de commencer."
         },
         {
           "title": "Suivi mensuel (facultatif)",
-          "meta": "4 000 – 9 000 € par mois · 6 mois minimum",
+          "meta": "Forfait mensuel · 6 mois minimum",
           "body": "On maintient l'outil et on le fait évoluer avec votre activité, mois après mois."
         }
       ],
@@ -933,7 +933,7 @@
       "items": [
         {
           "q": "Combien coûte un projet ?",
-          "a": "Le Diagnostic (2 semaines) coûte de 5 000 à 7 000 €. L'outil est ensuite construit en 8 semaines, à prix fixe : de 25 000 à 55 000 € selon le périmètre, écrit au contrat avant de commencer. Vous pouvez vous arrêter après le Diagnostic et garder le cahier des charges. Le premier échange est gratuit."
+          "a": "Chaque projet est chiffré à prix fixe, selon ce que vous voulez automatiser et le périmètre défini ensemble. Le montant est écrit au contrat avant de commencer, et vous pouvez vous arrêter après le Diagnostic en gardant le cahier des charges. Le premier échange est gratuit : décrivez votre besoin à Evan, il vous donne une première estimation."
         },
         {
           "q": "Que se passe-t-il quand j'écris à Evan ?",

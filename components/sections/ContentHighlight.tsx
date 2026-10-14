@@ -14,14 +14,18 @@ const SCHEMA_HUE: Record<string, string> = {
   Article:     "text-blue-400 bg-blue-500/10 border-blue-500/20",
 };
 
+// Prices are not shown on the homepage (team decision 2026-10-14: paid ads
+// target small-business owners), so skip pages whose card summary lists them.
+const noPrice = (p: { metaDescription: string }) => !/€/.test(p.metaDescription);
+
 // Pick a handful of representative published pages across sections.
 function getFeatured() {
   const all = [
-    ...getPublishedPages("methodology").slice(0, 1),
-    ...getPublishedPages("frameworks").slice(0, 1),
-    ...getPublishedPages("guides").slice(0, 1),
-    ...getPublishedPages("showcases").slice(0, 1),
-    ...getPublishedPages("intelligence").slice(0, 1),
+    ...getPublishedPages("methodology").filter(noPrice).slice(0, 1),
+    ...getPublishedPages("frameworks").filter(noPrice).slice(0, 1),
+    ...getPublishedPages("guides").filter(noPrice).slice(0, 1),
+    ...getPublishedPages("showcases").filter(noPrice).slice(0, 1),
+    ...getPublishedPages("intelligence").filter(noPrice).slice(0, 1),
   ];
   return all.slice(0, 3);
 }

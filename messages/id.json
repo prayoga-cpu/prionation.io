@@ -1,7 +1,7 @@
 {
   "Meta": {
     "homeTitle": "Rekayasa Produk AI · PRIONATION.io",
-    "homeDescription": "Infrastruktur AI produksi untuk perusahaan mid-market di Eropa dan AS. Lingkup tetap. Harga tetap. Produksi dalam 8 minggu. Mulai dari €5.000.",
+    "homeDescription": "Infrastruktur AI produksi untuk perusahaan mid-market di Eropa dan AS. Lingkup tetap. Harga tetap. Produksi dalam 8 minggu.",
     "discordTitle": "Gabung Komunitas Discord Kami · PRIONATION.io",
     "discordDescription": "Terhubung dengan insinyur produk AI, penguji QA, dan pembuat konten. Ikuti acara peluncuran, tantangan grafis, dan amankan posisi Anda di pusat kumpulan talenta kami."
   },
@@ -300,7 +300,7 @@
       {
         "label": "Biaya (pengiriman pertama)",
         "them": "€120–180K/tahun all-in",
-        "us": "€25–55K tetap per proyek"
+        "us": "Harga tetap per proyek, disepakati sebelum mulai"
       },
       {
         "label": "Yang Anda dapatkan",
@@ -315,7 +315,7 @@
       {
         "label": "Biaya retainer",
         "them": "≈ satu insinyur/tahun = €120K+",
-        "us": "€4–9K/bulan untuk seluruh pod"
+        "us": "Paket bulanan untuk seluruh pod"
       },
       {
         "label": "Risiko",
@@ -378,21 +378,20 @@
     ]
   },
   "Pricing": {
-    "eyebrow": "04 · HARGA",
+    "eyebrow": "04 · PENAWARAN",
     "title": "Lingkup tetap, tanpa kejutan.",
     "most_popular": "Paling Populer",
     "express_title": "Situs Express",
     "express_badge": "BARU",
     "express_desc": "Situs Next.js 3 halaman, formulir kontak, SEO, deploy Vercel, {days} hari kerja.",
     "express_days": "5",
-    "express_base": "dasar",
     "express_cta": "Lihat Express",
     "plans": [
       {
         "name": "Diagnostik",
         "label": "SKU 1",
-        "price": "5–7K",
-        "period": "tetap · 2 minggu",
+        "price": "Sesuai penawaran",
+        "period": "harga tetap · 2 minggu",
         "desc": "Petakan hambatan. Dapatkan spesifikasi pembangunan. Tanda tangan tanpa pengadaan.",
         "cta": "Mulai Diagnostik",
         "features": [
@@ -407,8 +406,8 @@
       {
         "name": "Build",
         "label": "SKU 2",
-        "price": "25–55K",
-        "period": "tetap · 8 minggu",
+        "price": "Sesuai penawaran",
+        "period": "harga tetap · 8 minggu",
         "desc": "Kirim AI ke produksi. Lingkup tetap, dilindungi oleh kontrak Diagnostik.",
         "cta": "Mulai sekarang",
         "features": [
@@ -423,8 +422,8 @@
       {
         "name": "Retainer",
         "label": "SKU 3",
-        "price": "4–9K",
-        "period": "/bulan · min. 6 bulan",
+        "price": "Sesuai penawaran",
+        "period": "bulanan · min. 6 bulan",
         "desc": "Akses pod berkelanjutan. Satu-satunya SKU yang terus berkembang.",
         "cta": "Diskusikan retainer",
         "features": [
@@ -436,7 +435,8 @@
           "Pelacakan ROI berkelanjutan"
         ]
       }
-    ]
+    ],
+    "express_price": "Sesuai penawaran"
   },
   "Foundation": {
     "label": "FONDASI",
@@ -497,7 +497,7 @@
         "bottleneck": "Hambatan operasional, jelaskan dalam 2–3 kalimat",
         "triedSoFar": "Apa yang sudah Anda coba sejauh ini?",
         "whyNow": "Mengapa ini penting sekarang?",
-        "budget": "Apakah Anda memiliki anggaran untuk Diagnostik 2 minggu dalam kisaran €5–7K?",
+        "budget": "Apakah Anda memiliki anggaran untuk Diagnostic 2 minggu berbayar dengan harga tetap?",
         "startWindow": "Jendela mulai yang ideal",
         "source": "Bagaimana Anda mendengar tentang kami?"
       },
@@ -571,7 +571,7 @@
   },
   "Tldr": {
     "label": "Ringkasan",
-    "summary": "PRIONATION.io membangun infrastruktur AI produksi untuk perusahaan mid-market di Eropa dan Amerika Serikat (pendapatan €5–50 jt). Ruang lingkup tetap. Harga tetap. Pod ramping. 8 minggu dari tanda tangan hingga rilis. Mulai dari €5.000 untuk Diagnostic 2 minggu."
+    "summary": "PRIONATION.io membangun infrastruktur AI produksi untuk perusahaan mid-market di Eropa dan Amerika Serikat (pendapatan €5–50 jt). Ruang lingkup tetap. Harga tetap. Pod ramping. 8 minggu dari tanda tangan hingga rilis."
   },
   "Faq": {
     "label": "FAQ",
@@ -582,8 +582,8 @@
         "a": "Rekayasa produk AI adalah praktik membangun infrastruktur AI produksi — bukan proof-of-concept — yang beroperasi di dalam alur kerja bisnis nyata. Untuk perusahaan mid-market (pendapatan €5–50 jt), ini berarti merilis produk AI yang menggantikan operasi manual dalam jangka waktu tetap 8 minggu, dengan eval yang menentukan 'selesai' dan klien yang memiliki seluruh kode dan infrastruktur."
       },
       {
-        "q": "Berapa biaya proyek build AI untuk perusahaan €10–50 jt?",
-        "a": "Proyek build AI PRIONATION berkisar €25.000–55.000 untuk build produksi 8 minggu. Prosesnya dimulai dengan Diagnostic 2 minggu seharga €5.000–7.000 untuk memetakan hambatan dan memastikan ruang lingkup. Akses pod berkelanjutan berkisar €4.000–9.000/bulan."
+        "q": "Berapa biaya sebuah proyek?",
+        "a": "Setiap proyek dihitung dengan harga tetap, berdasarkan hambatan yang ingin diselesaikan dan lingkup yang kita sepakati bersama, dan nilainya tertulis di kontrak sebelum mulai. Semuanya dimulai dengan Diagnostic 2 minggu yang memetakan hambatan dan memastikan lingkup. Percakapan pertama gratis."
       },
       {
         "q": "Apa arti 'klien memiliki infrastruktur' dalam praktiknya?",
@@ -591,11 +591,11 @@
       },
       {
         "q": "Apa bedanya pod ramping dengan merekrut insinyur AI?",
-        "a": "Pod PRIONATION beranggotakan 3 orang berbiaya €25.000–55.000 per proyek, merilis dalam 8 minggu, dan dilengkapi eval, telemetri, serta garansi 4 minggu. Merekrut satu insinyur AI berbiaya €150.000–250.000/tahun secara penuh (gaji + tunjangan + rekrutmen), butuh 3–6 bulan untuk siap, dan membawa risiko kualitas rekrutmen yang signifikan. Pod adalah jalur minim risiko hingga kapabilitas rekayasa AI internal berkembang."
+        "a": "Pod PRIONATION beranggotakan 3 orang bekerja dengan harga tetap per proyek, merilis dalam 8 minggu, dan dilengkapi eval, telemetri, serta garansi 4 minggu. Merekrut satu insinyur AI butuh berbulan-bulan untuk rekrutmen dan adaptasi, serta membawa risiko kualitas rekrutmen yang nyata. Pod adalah jalur minim risiko hingga kapabilitas rekayasa AI internal berkembang."
       },
       {
         "q": "Apa itu PRIONATION Diagnostic?",
-        "a": "Diagnostic adalah proyek ruang lingkup tetap selama 2 minggu seharga €5.000–7.000. Diagnostic memetakan satu hambatan operasional dengan ROI tertinggi, menentukan ruang lingkup build AI, menghasilkan spesifikasi suite eval, dan menyampaikan proposal arsitektur yang siap produksi. Ini adalah titik masuk wajib sebelum setiap Build."
+        "a": "Diagnostic adalah proyek 2 minggu dengan ruang lingkup tetap dan harga tetap. Diagnostic memetakan satu hambatan operasional dengan ROI tertinggi, menentukan ruang lingkup build AI, menghasilkan spesifikasi suite eval, dan menyampaikan proposal arsitektur yang siap produksi. Ini adalah titik masuk wajib sebelum setiap Build."
       },
       {
         "q": "Bagaimana PRIONATION menangani konsultasi AI untuk perusahaan Eropa?",
@@ -774,22 +774,22 @@
   },
   "Sales": {
     "metaTitle": "Alat khusus untuk menggantikan spreadsheet Anda · PRIONATION.io",
-    "metaDescription": "Untuk UKM dan perusahaan menengah: Diagnostic 2 minggu, lalu alat khusus Anda selesai dalam 8 minggu dengan harga tetap. Kirim pesan WhatsApp ke Evan atau minta ditelepon.",
+    "metaDescription": "Untuk usaha kecil dan menengah: Diagnostic 2 minggu, lalu alat khusus Anda selesai dalam 8 minggu dengan harga tetap. Kirim pesan WhatsApp ke Evan atau minta ditelepon.",
     "refLabel": "ref.",
     "whatsappMessage": "Halo Evan, saya datang dari halaman PRIONATION Anda. Saya ingin tahu apakah sebagian pekerjaan manual kami bisa diotomatisasi, dan berapa biayanya.",
     "whatsappMessageStory": "Halo Evan, saya sudah membaca kisah Epidom. Di tempat kami juga masih banyak pekerjaan manual. Bisakah Anda memberi tahu apa yang bisa diotomatisasi?",
-    "whatsappMessagePrix": "Halo Evan, saya melihat harga Anda di halaman PRIONATION. Bisakah Anda memberi kisaran untuk kasus kami? Saya akan jelaskan kebutuhan kami setelah ini.",
+    "whatsappMessagePrix": "Halo Evan, saya datang dari halaman PRIONATION Anda. Bisakah Anda memberi perkiraan untuk kasus kami? Saya akan jelaskan kebutuhan kami setelah ini.",
     "nav": {
       "label": "Navigasi utama",
       "home": "PRIONATION.io — kembali ke atas",
-      "prix": "Harga",
+      "prix": "Alur kerja",
       "work": "Proyek",
       "faq": "FAQ",
       "cta": "Hubungi Evan",
       "ctaShort": "WhatsApp"
     },
     "hero": {
-      "eyebrow": "Untuk UKM dan perusahaan menengah · Kontak di Paris",
+      "eyebrow": "Untuk usaha kecil dan menengah · Kontak di Paris",
       "title": "Alat khusus untuk menggantikan spreadsheet Anda.",
       "sub": "Pesanan, stok, jadwal, penawaran: kami mengganti input data manual dengan alat yang dibuat untuk tim Anda. Diagnostic dalam 2 minggu, lalu alat selesai dalam 8 minggu, dengan harga tetap.",
       "cta": "Kirim pesan ke Evan di WhatsApp",
@@ -802,12 +802,12 @@
           "value": "Gratis"
         },
         {
-          "label": "Diagnostic · 2 minggu",
-          "value": "€5–7 ribu"
+          "label": "Diagnostic",
+          "value": "2 minggu"
         },
         {
-          "label": "Alat selesai · 8 minggu",
-          "value": "€25–55 ribu"
+          "label": "Alat selesai",
+          "value": "8 minggu"
         }
       ],
       "altLabel": "Tidak pakai WhatsApp?",
@@ -848,8 +848,8 @@
       ]
     },
     "prix": {
-      "eyebrow": "Harga dan proses",
-      "title": "Berapa biayanya, dan bagaimana prosesnya.",
+      "eyebrow": "Alur kerja",
+      "title": "Bagaimana prosesnya, langkah demi langkah.",
       "steps": [
         {
           "title": "Percakapan pertama",
@@ -858,17 +858,17 @@
         },
         {
           "title": "Diagnostic",
-          "meta": "2 minggu · €5.000–7.000",
+          "meta": "2 minggu · harga tetap",
           "body": "Kami menganalisis operasional Anda, menemukan hambatan terbesar, dan menulis spesifikasinya. Spesifikasi itu milik Anda, meskipun Anda membangun di tempat lain."
         },
         {
           "title": "Build",
-          "meta": "8 minggu · €25.000–55.000",
+          "meta": "8 minggu · harga tetap",
           "body": "Tim berisi 2–3 engineer membangun dan menerapkan alat di lingkungan Anda, dengan pengujian dan pemantauan performa sejak hari pertama. Harga tetap, tertulis di kontrak sebelum mulai."
         },
         {
           "title": "Dukungan bulanan (opsional)",
-          "meta": "€4.000–9.000 per bulan · minimum 6 bulan",
+          "meta": "Paket bulanan · minimum 6 bulan",
           "body": "Kami merawat alat tersebut dan mengembangkannya seiring bisnis Anda, bulan demi bulan."
         }
       ],
@@ -933,7 +933,7 @@
       "items": [
         {
           "q": "Berapa biaya sebuah proyek?",
-          "a": "Diagnostic (2 minggu) berbiaya €5.000–7.000. Alat kemudian dibangun dalam 8 minggu dengan harga tetap: €25.000–55.000 tergantung lingkup, tertulis di kontrak sebelum mulai. Anda bisa berhenti setelah Diagnostic dan menyimpan spesifikasinya. Percakapan pertama gratis."
+          "a": "Setiap proyek dihitung dengan harga tetap, berdasarkan apa yang ingin Anda otomatisasi dan lingkup yang kita sepakati bersama. Nilainya tertulis di kontrak sebelum mulai, dan Anda bisa berhenti setelah Diagnostic sambil menyimpan spesifikasinya. Percakapan pertama gratis: jelaskan kebutuhan Anda kepada Evan dan ia akan memberi perkiraan awal."
         },
         {
           "q": "Apa yang terjadi saat saya menghubungi Evan?",
