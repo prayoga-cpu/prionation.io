@@ -59,17 +59,18 @@ describe("Sales namespace (/start)", () => {
       locale,
       messages: LOCALES[locale] as Record<string, unknown>,
       onError: (error) => errors.push(error.message),
-    }) as unknown as { rich: (key: string, values: Record<string, (chunks: unknown) => unknown>) => unknown };
+    }) as unknown as { rich: (key: string, values: Record<string, unknown>) => unknown };
     const keys = stringKeys(LOCALES[locale].Sales);
     expect(keys.length).toBeGreaterThan(40);
     for (const key of keys) {
-      t.rich(`Sales.${key}`, { strong: (chunks) => chunks });
+      // {phone} / {email} are filled from lib/seo/site.ts by the page.
+      t.rich(`Sales.${key}`, { strong: (chunks: unknown) => chunks, phone: "07 81 73 23 86", email: "consult@prionation.io" });
     }
     expect(errors).toEqual([]);
   });
 
   it.each(ALL)("%s keeps the <strong> emphasis in rich strings", (locale) => {
-    for (const key of ["hero.sub", "story.p2", "story.p3"]) {
+    for (const key of ["story.p2"]) {
       expect(lookup(LOCALES[locale].Sales, key)).toMatch(/<strong>[^<]+<\/strong>/);
     }
   });

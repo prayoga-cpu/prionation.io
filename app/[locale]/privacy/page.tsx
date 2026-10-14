@@ -5,7 +5,7 @@ import { Link } from "@/i18n/routing";
 import { SITE_URL, SITE_NAME, LEGAL_NAME, CONTACT_EMAIL } from "@/lib/seo/site";
 import { PRIVACY, type PrivacyBlock, type PrivacyLocale } from "@/lib/content/privacy";
 
-const LAST_UPDATED = "2026-06-25";
+const LAST_UPDATED = "2026-10-14";
 
 const OG_LOCALE: Record<string, string> = {
   en: "en_US",

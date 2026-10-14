@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.9.3";
+export const CURRENT_VERSION = "3.10.0";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,21 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.10.0",
+    bump: "minor",
+    date: "2026-10-14",
+    title: "/start rework: clearer offer, a second way to reach sales, consent-free measurement",
+    items: [
+      "Rebuilt the /start first screen around what an ad visitor needs to decide: who it is for, the published price ranges (Diagnostic €5,000–7,000, build €25,000–55,000), who replies (Evan, with his photo) and the next step. The headline is shorter, and on phones the WhatsApp button now sits above the consent banner.",
+      "Added a second way to reach sales next to every WhatsApp button: a tappable phone number and a call-back form (\"Être rappelé(e)\") that files the request in Notion and alerts the team. Phones also get a contact bar that stays on screen.",
+      "Prefilled WhatsApp messages now ask a simple question and end with a short reference (for example \"réf. A1-H\"), so each chat can be traced to an ad and a button.",
+      "Added consent-free audience measurement for /start: anonymous daily totals of page views and contact-button taps, with no cookie and no identifier, shown on an internal page.",
+      "Removed the unapproved testimonials, the uncited in-house hiring-cost comparison and the technical jargon from /start. Epidom is now labelled as our own product instead of a client.",
+      "Cookie consent: in regions that require it, Google Analytics and the Meta Pixel no longer load at all before consent. The banner has equal Refuser and Accepter buttons, accurate purposes and a policy link, a \"Gérer les cookies\" link lets visitors change their choice, and France's overseas departments are now covered.",
+      "Added a legal notice page (/mentions-legales) and updated the privacy policy: WhatsApp, call-back requests, the new counters, and the right to complain to the CNIL.",
+    ],
+  },
   {
     version: "3.9.3",
     bump: "patch",

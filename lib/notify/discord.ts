@@ -1,6 +1,7 @@
 import type {
   IntakePayload,
   BookingPayload,
+  CallbackPayload,
   CareerPayload,
   WaitlistPayload,
 } from "@/lib/forms/types";
@@ -106,6 +107,23 @@ export function sendBookingToDiscord(p: BookingPayload) {
         description:
           "Confirm by replying to the email or messaging WhatsApp directly.",
       },
+    ),
+  );
+}
+
+// Fast alert for Evan. The phone number stays out of Discord: it is in the team
+// email and in Notion (PN_Bookings).
+export function sendCallbackToDiscord(p: CallbackPayload) {
+  return postEmbed(
+    base(
+      "📞 New call-back request (/start)",
+      [
+        { name: "Name", value: p.firstName, inline: true },
+        { name: "Company", value: p.company || "n/a", inline: true },
+        { name: "When", value: p.slot.replace(/_/g, " "), inline: true },
+        { name: "Source", value: `/${p.locale}/start · ${p.placement ?? "-"} · ref ${p.ref ?? "O"}`, inline: true },
+      ],
+      { description: "Phone number is in the team email and in Notion (PN_Bookings)." },
     ),
   );
 }

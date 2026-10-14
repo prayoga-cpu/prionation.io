@@ -13,6 +13,10 @@ const CONSENT_REQUIRED = new Set([
   'SE', // EU
   'IS', 'LI', 'NO', // EEA
   'GB', 'CH', // UK + Switzerland
+  // French overseas departments and regions have their own ISO codes but are
+  // EU territory (GDPR applies); the collectivities are included as a
+  // privacy-safe default.
+  'RE', 'GP', 'MQ', 'GF', 'YT', 'MF', 'BL', 'PM', 'NC', 'PF', 'WF',
 ]);
 
 const FINANCE_LOGIN_PATH = '/finance/login';

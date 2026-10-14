@@ -12,6 +12,36 @@ export const FOUNDING_DATE = "2026";
 // form (country code + number, digits only); WHATSAPP_DISPLAY is for humans.
 export const WHATSAPP_NUMBER = "33781732386";
 export const WHATSAPP_DISPLAY = "+33 7 81 73 23 86";
+// Same number in French national format, for French copy (tel: links use the
+// international form).
+export const PHONE_DISPLAY_FR = "07 81 73 23 86";
+export const PHONE_TEL = "+33781732386";
+
+// Publisher identity for the legal notice (app/[locale]/mentions-legales). Only
+// verified facts go here; null fields are not rendered. Fill in the legal form,
+// registration number and registered address as soon as they are confirmed —
+// French law (LCEN art. 1-1) expects them on a site that targets France.
+export const LEGAL_ENTITY: {
+  name: string;
+  legalForm: string | null;
+  registration: string | null;
+  address: string | null;
+  publicationDirector: string;
+} = {
+  name: LEGAL_NAME,
+  legalForm: null,
+  registration: null,
+  address: null,
+  publicationDirector: "Darwin Prayoga",
+};
+
+// Host of the site (LCEN art. 1-1 also requires naming it). Address as published
+// in Vercel's privacy policy, checked 2026-10-14.
+export const HOSTING_PROVIDER = {
+  name: "Vercel Inc.",
+  address: "440 N Barranca Avenue #4133, Covina, CA 91723, United States",
+  website: "https://vercel.com",
+};
 
 // Stable @id anchors so every JSON-LD block — site-wide (components/JsonLd.tsx)
 // and per-page (ContentArticle/AnchorPage/Glossary) — references ONE shared

@@ -44,6 +44,29 @@ export const bookingSchema = z.object({
   honeypot,
 });
 
+// Call-back request from the /start sales page ("Être rappelé(e)"). Phone is
+// free-form (French or international formats) but limited to dialable chars.
+export const CALLBACK_SLOTS = ['asap', 'tomorrow_morning', 'tomorrow_afternoon'] as const;
+
+export const callbackSchema = z.object({
+  type: z.literal('callback'),
+  firstName: z.string().trim().min(1).max(80),
+  phone: z
+    .string()
+    .trim()
+    .regex(/^\+?[0-9 ().-]{6,24}$/, 'Phone number: digits, spaces, + . - ( ) only')
+    .refine((v) => v.replace(/\D/g, '').length >= 6, 'Phone number too short'),
+  company: z.string().trim().max(120).optional().default(''),
+  slot: z.enum(CALLBACK_SLOTS),
+  locale: z.enum(['en', 'fr', 'id']),
+  placement: z.string().max(20).optional(),
+  ref: z.string().regex(/^[A-Z0-9]{1,4}$/).optional(),
+  utmCampaign: z.string().max(200).optional(),
+  utmContent: z.string().max(200).optional(),
+  turnstileToken,
+  honeypot,
+});
+
 export const careerSchema = z.object({
   type: z.literal('career'),
   fullName: z.string().min(1).max(120),
@@ -80,5 +103,6 @@ export const waitlistSchema = z.object({
 
 export type IntakePayload = z.infer<typeof intakeSchema>;
 export type BookingPayload = z.infer<typeof bookingSchema>;
+export type CallbackPayload = z.infer<typeof callbackSchema>;
 export type CareerPayload = z.infer<typeof careerSchema>;
 export type WaitlistPayload = z.infer<typeof waitlistSchema>;

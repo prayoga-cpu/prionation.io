@@ -1,8 +1,10 @@
 import { resend, FROM, FROM_NOTIFY, REPLY_TO, TO } from "./resend";
 import { CURRENT_VERSION } from "@/lib/content/changelog";
+import { CALLBACK_SLOT_LABELS } from "@/lib/notion/mappers";
 import type {
   IntakePayload,
   BookingPayload,
+  CallbackPayload,
   CareerPayload,
   WaitlistPayload,
 } from "@/lib/forms/types";
@@ -256,6 +258,51 @@ export async function sendBookingNotification(p: BookingPayload) {
       `When: ${p.selectedDate} at ${p.selectedTime} (${p.timezone})`,
       "",
       "Action: confirm by replying or messaging WhatsApp.",
+    ]),
+  });
+}
+
+// Visitor-typed values are escaped before going into the HTML email.
+function esc(value: string) {
+  return value.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+}
+
+export async function sendCallbackNotification(p: CallbackPayload) {
+  const html = shell(
+    "[CALL-BACK]",
+    `
+    ${sectionHead("Call-back request from /start")}
+    ${field("Name", esc(p.firstName), true)}
+    ${field("Phone", esc(p.phone))}
+    ${field("Company", esc(p.company || "n/a"))}
+    ${field("When", esc(CALLBACK_SLOT_LABELS[p.slot]))}
+    ${divider()}
+    ${field("Page", `/${p.locale}/start · button ${esc(p.placement ?? "-")}`)}
+    ${field("Ad ref", esc(p.ref ?? "O (none)"))}
+    ${field("Campaign", esc(p.utmCampaign || "n/a"))}
+    <tr>
+      <td colspan="2" style="padding:16px 0 0;">
+        <div style="background:${T.accentDim};border:1px solid ${T.accentBdr};border-radius:10px;padding:14px 16px;">
+          <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:13px;color:${T.soft};">Action: call back in the requested slot (Paris time). The request is also in Notion (PN_Bookings).</p>
+        </div>
+      </td>
+    </tr>
+  `,
+  );
+
+  return resend.emails.send({
+    from: FROM_NOTIFY,
+    to: TO,
+    replyTo: REPLY_TO,
+    subject: `[Call-back] ${p.firstName}${p.company ? ` (${p.company})` : ""}, ${CALLBACK_SLOT_LABELS[p.slot]}`,
+    html,
+    text: txt([
+      "New call-back request from /start.",
+      "",
+      `Name: ${p.firstName}${p.company ? ` (${p.company})` : ""}`,
+      `Phone: ${p.phone}`,
+      `When: ${CALLBACK_SLOT_LABELS[p.slot]}`,
+      `Page: /${p.locale}/start, button ${p.placement ?? "-"}, ref ${p.ref ?? "O"}, campaign ${p.utmCampaign || "n/a"}`,
     ]),
   });
 }

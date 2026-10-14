@@ -3,6 +3,7 @@
 import { useState, useTransition } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname, Link } from "@/i18n/routing";
+import { ConsentSettingsLink } from "@/components/ConsentSettingsLink";
 import { Eyebrow } from "../ui/Atoms";
 import { FooterColumns } from "./site-footer/FooterColumns";
 import { CURRENT_VERSION } from "@/lib/content/changelog";
@@ -189,6 +190,13 @@ export function SiteFooter() {
           >
             Privacy
           </Link>
+          <Link
+            href="/mentions-legales"
+            className="text-muted text-[13px] font-sans tracking-normal normal-case transition-colors duration-fast hover:text-white"
+          >
+            {t("legal")}
+          </Link>
+          <ConsentSettingsLink className="text-muted text-[13px] font-sans tracking-normal normal-case transition-colors duration-fast hover:text-white" />
         </div>
       </div>
     </footer>

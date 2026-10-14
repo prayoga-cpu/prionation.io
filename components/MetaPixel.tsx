@@ -17,9 +17,10 @@ export default function MetaPixel() {
   const granted = usePixelAllowed();
 
   useEffect(() => {
-    // First-touch marketing attribution is cookieless (sessionStorage) — always
-    // capture, independent of consent and of whether the pixel is enabled.
-    captureAttribution();
+    // First-touch marketing attribution lives in sessionStorage and is attached
+    // to intake leads, so in consent-required regions it is captured only after
+    // consent (device storage counts as a tracker under the CNIL's reading).
+    if (granted) captureAttribution();
 
     if (!pixelId || !granted) return;
 
@@ -42,7 +43,7 @@ export default function MetaPixel() {
     <>
       <Script
         id="fb-pixel"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)

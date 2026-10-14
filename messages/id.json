@@ -566,7 +566,8 @@
       "Kontrol atas ketergantungan.",
       "Daya ungkit atas tenaga kerja.",
       "Sistem atas eksekusi manual."
-    ]
+    ],
+    "legal": "Informasi hukum"
   },
   "Tldr": {
     "label": "Ringkasan",
@@ -772,239 +773,239 @@
     }
   },
   "Sales": {
-    "metaTitle": "Ganti pekerjaan manual dengan alat khusus dalam 8 minggu · PRIONATION.io",
-    "metaDescription": "Kami menemukan hambatan yang menahan pertumbuhan Anda, lalu mengirimkan alat khusus yang menyelesaikannya. Dalam 8 minggu, dengan harga tetap. Dan kodenya milik Anda.",
-    "whatsappMessage": "Hi Evan, I saw the Prionation page and I'd like to talk about a project.",
-    "whatsappMessageStory": "Hi Evan, I'd like to tell you about the bottleneck slowing down my business.",
+    "metaTitle": "Alat khusus untuk menggantikan spreadsheet Anda · PRIONATION.io",
+    "metaDescription": "Untuk UKM dan perusahaan menengah: Diagnostic 2 minggu, lalu alat khusus Anda selesai dalam 8 minggu dengan harga tetap. Kirim pesan WhatsApp ke Evan atau minta ditelepon.",
+    "refLabel": "ref.",
+    "whatsappMessage": "Halo Evan, saya datang dari halaman PRIONATION Anda. Saya ingin tahu apakah sebagian pekerjaan manual kami bisa diotomatisasi, dan berapa biayanya.",
+    "whatsappMessageStory": "Halo Evan, saya sudah membaca kisah Epidom. Di tempat kami juga masih banyak pekerjaan manual. Bisakah Anda memberi tahu apa yang bisa diotomatisasi?",
+    "whatsappMessagePrix": "Halo Evan, saya melihat harga Anda di halaman PRIONATION. Bisakah Anda memberi kisaran untuk kasus kami? Saya akan jelaskan kebutuhan kami setelah ini.",
     "nav": {
       "label": "Navigasi utama",
       "home": "PRIONATION.io — kembali ke atas",
-      "method": "Metode",
-      "work": "Karya",
+      "prix": "Harga",
+      "work": "Proyek",
       "faq": "FAQ",
-      "cta": "Bahas proyek saya"
+      "cta": "Hubungi Evan",
+      "ctaShort": "WhatsApp"
     },
     "hero": {
-      "eyebrow": "Rekayasa produk AI · Bali × Paris",
-      "title": "Apakah bisnis Anda masih berjalan di atas spreadsheet, WhatsApp, dan ingatan tim Anda?",
-      "sub": "Kami menemukan hambatan yang menahan pertumbuhan Anda, lalu mengirimkan <strong>alat khusus yang menyelesaikannya</strong>. Dalam 8 minggu, dengan harga tetap. Dan kodenya milik Anda.",
-      "cta": "Bahas proyek saya di WhatsApp",
-      "secondary": "Lihat karya kami",
-      "reassurance": "Balasan dalam 24 jam · Percakapan pertama gratis, tanpa komitmen",
-      "stats": [
+      "eyebrow": "Untuk UKM dan perusahaan menengah · Kontak di Paris",
+      "title": "Alat khusus untuk menggantikan spreadsheet Anda.",
+      "sub": "Pesanan, stok, jadwal, penawaran: kami mengganti input data manual dengan alat yang dibuat untuk tim Anda. Diagnostic dalam 2 minggu, lalu alat selesai dalam 8 minggu, dengan harga tetap.",
+      "cta": "Kirim pesan ke Evan di WhatsApp",
+      "evanName": "Evan Cao, direktur penjualan di Paris",
+      "evanLine": "Ia membalas sendiri, dalam 24 jam. Percakapan pertama gratis, tanpa komitmen.",
+      "evanAlt": "Evan Cao",
+      "prices": [
         {
-          "value": "2 MGG",
-          "label": "Hasil pertama"
+          "label": "Percakapan pertama",
+          "value": "Gratis"
         },
         {
-          "value": "8 MGG",
-          "label": "Hingga produksi"
+          "label": "Diagnostic · 2 minggu",
+          "value": "€5–7 ribu"
         },
         {
-          "value": "100%",
-          "label": "Kode milik Anda"
+          "label": "Alat selesai · 8 minggu",
+          "value": "€25–55 ribu"
         }
       ],
-      "browserBar": "epidom · platform F&B dibangun oleh PRIONATION",
-      "imageAlt": "Beranda Epidom, platform F&B yang dibangun oleh PRIONATION",
-      "liveTitle": "Berjalan di produksi",
+      "altLabel": "Tidak pakai WhatsApp?",
+      "call": "Telepon {phone}",
+      "callback": "Minta ditelepon",
+      "secondary": "Lihat 3 proyek yang sudah selesai",
+      "browserBar": "epidom.fr · produk kami sendiri",
+      "imageAlt": "Tampilan Epidom, perangkat lunak pemesanan dan kasir yang dibuat oleh tim kami",
+      "liveTitle": "Beroperasi",
       "liveSub": "Pesanan, kasir, dan stok dalam satu tempat",
-      "pill": "Lingkup tetap · Harga tetap"
+      "caption": "Epidom, produk kami sendiri: dibangun dan dijalankan oleh tim kami."
     },
     "logos": {
-      "clients": "Mereka memercayakan produknya kepada kami",
-      "stack": "Dibangun dengan"
+      "clients": "Klien kami",
+      "own": "Produk kami sendiri"
     },
     "problem": {
-      "eyebrow": "01 · Masalahnya",
-      "title": "Pertumbuhan Anda tertahan oleh pekerjaan yang seharusnya tidak dikerjakan manual.",
-      "intro": "Jika satu saja dari ini terdengar familier, kemungkinan besar kami sudah pernah menyelesaikan masalah yang mirip dengan milik Anda.",
+      "eyebrow": "Masalahnya",
+      "title": "Terdengar familier?",
+      "intro": "Jika setidaknya satu poin ini terasa akrab, kemungkinan besar kami sudah pernah menyelesaikan masalah yang mirip dengan masalah Anda.",
       "items": [
         {
           "title": "Spreadsheet di mana-mana",
-          "body": "Pesanan, stok, jadwal: setiap tim punya versinya sendiri, dan tidak ada satu pun yang benar."
+          "body": "Pesanan, stok, jadwal: setiap tim punya versinya sendiri, dan tidak ada yang benar."
         },
         {
           "title": "Berjam-jam input data berulang",
-          "body": "Orang-orang terbaik Anda menyalin data ke sana kemari alih-alih memajukan bisnis."
+          "body": "Orang-orang terbaik Anda menyalin data, bukan memajukan bisnis."
         },
         {
           "title": "Semuanya bergantung pada satu orang",
-          "body": "Pengetahuan tersimpan \"di kepala orang\". Satu orang resign atau cuti, dan semuanya melambat."
+          "body": "Informasi ada di kepala orang. Satu orang keluar atau cuti, semuanya melambat."
         },
         {
-          "title": "Software yang tidak cocok",
-          "body": "Anda membayar tiga langganan SaaS dan tetap harus menambal celah di antaranya."
+          "title": "Perangkat lunak yang tidak saling terhubung",
+          "body": "Anda membayar beberapa langganan dan tetap menyalin data dari satu ke yang lain."
         }
       ]
     },
-    "story": {
-      "badge": "Evan Cao · Chief Revenue Officer",
-      "imageAlt": "Evan Cao, Chief Revenue Officer PRIONATION",
-      "eyebrow": "02 · Mengapa PRIONATION ada",
-      "quote": "“Dua tahun lalu, saya mencari perusahaan yang belum ada.”",
-      "p1": "Saat saya mendirikan Epidom, platform software asal Prancis, kami tenggelam dalam pekerjaan berulang. Semuanya dikerjakan manual, dan informasinya tersebar di file Excel dan di kepala orang.",
-      "p2": "Saya butuh seseorang yang datang, menemukan dengan tepat apa yang menahan pertumbuhan kami, lalu mengirimkan alat nyata untuk menyelesaikannya. <strong>Bukan konsultasi teoretis. Bukan slide PowerPoint.</strong> Alat yang benar-benar berjalan, dikirim dalam beberapa minggu.",
-      "p3": "Perusahaan seperti itu belum ada. Jadi kami membangunnya. Hari ini saya memimpin penjualan, karena saya tahu persis apa yang dibutuhkan klien: <strong>dulu saya adalah klien itu.</strong>",
-      "cta": "Ceritakan hambatan Anda di WhatsApp"
-    },
-    "method": {
-      "eyebrow": "03 · Metodenya",
-      "title": "Dari hambatan ke alat di produksi. Tiga langkah, tanpa kejutan.",
+    "prix": {
+      "eyebrow": "Harga dan proses",
+      "title": "Berapa biayanya, dan bagaimana prosesnya.",
       "steps": [
         {
-          "duration": "2 minggu",
-          "title": "Diagnostik",
-          "body": "Kami mendalami operasi Anda, memetakan hambatan dengan ROI tertinggi, dan menulis spesifikasinya.",
-          "items": [
-            "Arsitektur sistem + proyeksi ROI",
-            "Rencana pembangunan 8 minggu",
-            "Laporan 15–25 halaman + sesi pemaparan"
-          ]
+          "title": "Percakapan pertama",
+          "meta": "Gratis · WhatsApp atau telepon",
+          "body": "Anda menjelaskan tugas yang menyita waktu. Evan memberi tahu apakah tugas itu bisa diotomatisasi, bagaimana caranya, dan memberi perkiraan awal."
         },
         {
-          "duration": "8 minggu",
+          "title": "Diagnostic",
+          "meta": "2 minggu · €5.000–7.000",
+          "body": "Kami menganalisis operasional Anda, menemukan hambatan terbesar, dan menulis spesifikasinya. Spesifikasi itu milik Anda, meskipun Anda membangun di tempat lain."
+        },
+        {
           "title": "Build",
-          "body": "Satu pod berisi 2–3 Insinyur Produk AI membangun dan men-deploy alat Anda, langsung di lingkungan Anda sendiri.",
-          "items": [
-            "Perangkat lunak di-deploy ke produksi",
-            "Tes, telemetri, dan monitoring sejak hari pertama",
-            "Dokumentasi serah terima lengkap"
-          ]
+          "meta": "8 minggu · €25.000–55.000",
+          "body": "Tim berisi 2–3 engineer membangun dan menerapkan alat di lingkungan Anda, dengan pengujian dan pemantauan performa sejak hari pertama. Harga tetap, tertulis di kontrak sebelum mulai."
         },
         {
-          "duration": "Berkelanjutan",
-          "title": "Retainer",
-          "body": "Kami menjaga alat tetap prima dan mengembangkannya seiring bisnis Anda, bulan demi bulan.",
-          "items": [
-            "Pemeliharaan dan pembaruan model",
-            "1 fitur baru setiap bulan",
-            "Pelacakan ROI berkelanjutan"
-          ]
+          "title": "Dukungan bulanan (opsional)",
+          "meta": "€4.000–9.000 per bulan · minimum 6 bulan",
+          "body": "Kami merawat alat tersebut dan mengembangkannya seiring bisnis Anda, bulan demi bulan."
         }
       ],
-      "compareTitle": "Tim khusus, bukan rekrutmen yang berisiko",
-      "colCriteria": "Kriteria",
-      "colInhouse": "Rekrut internal",
-      "colPod": "Pod PRIONATION",
-      "rows": [
+      "guaranteesTitle": "Jaminan kami",
+      "guarantees": [
         {
-          "label": "Waktu hingga hasil",
-          "them": "4–6 bulan untuk rekrut dan orientasi",
-          "us": "8 minggu ke produksi"
+          "title": "Semuanya milik Anda",
+          "body": "Kode yang dibuat untuk Anda, hosting, data, dan akun penyedia AI atas nama Anda. Tanpa ketergantungan pada kami."
         },
         {
-          "label": "Biaya",
-          "them": "€120.000–180.000 per tahun, all-in",
-          "us": "Harga tetap, disepakati sebelum mulai"
+          "title": "Jaminan 4 minggu",
+          "body": "Setelah alat beroperasi, jika kualitasnya turun di bawah ambang yang kita sepakati di awal, kami memperbaikinya tanpa biaya."
         },
         {
-          "label": "Yang Anda dapatkan",
-          "them": "Satu orang",
-          "us": "2–3 Insinyur Produk AI"
+          "title": "Lingkup tertulis, harga tetap",
+          "body": "Semuanya ditetapkan dalam kontrak sebelum mulai. Tanpa biaya tambahan yang mengejutkan."
         },
         {
-          "label": "Lingkup",
-          "them": "Perubahan terus-menerus tanpa akhir",
-          "us": "Kontrak lingkup tetap sejak hari pertama"
-        },
-        {
-          "label": "Risiko",
-          "them": "Rekrutan buruk = 6 bulan dan €50.000 hilang",
-          "us": "Anda bisa berhenti setelah Diagnostik"
+          "title": "Bebas berhenti setelah Diagnostic",
+          "body": "Spesifikasinya tetap milik Anda, meskipun Anda memutuskan membangun di tempat lain."
         }
-      ]
+      ],
+      "cta": "Minta perkiraan harga"
+    },
+    "story": {
+      "eyebrow": "Mengapa PRIONATION ada",
+      "badge": "Evan Cao · Direktur penjualan · Paris",
+      "imageAlt": "Evan Cao, direktur penjualan PRIONATION",
+      "quote": "\"Dua tahun lalu, saya mencari perusahaan yang belum ada.\"",
+      "p1": "Saat saya mendirikan Epidom, sebuah platform perangkat lunak Prancis, kami tenggelam dalam tugas berulang. Semuanya dikerjakan manual, dan informasi tersebar di spreadsheet dan di kepala orang.",
+      "p2": "Perusahaan itu belum ada. Jadi kami membangunnya. Kini saya direktur penjualannya, karena saya tahu persis apa yang dibutuhkan klien: <strong>saya dulu adalah klien itu.</strong>",
+      "cta": "Ajukan pertanyaan ke Evan"
     },
     "work": {
-      "eyebrow": "04 · Karya yang sudah dikirim",
-      "title": "Alat di produksi, bukan mockup.",
-      "intro": "Hospitality, logistik, properti: tiga industri, satu prinsip. Ganti pekerjaan manual dengan sistem.",
+      "eyebrow": "Proyek yang sudah selesai",
+      "title": "Alat yang sudah diserahkan, bukan maket.",
+      "intro": "Restoran, logistik, properti: tiga industri, satu prinsip. Mengganti pekerjaan manual dengan sistem.",
       "cases": [
         {
-          "tag": "F&B · Dasbor · Prancis",
+          "tag": "Produk kami · Restoran · Prancis",
           "name": "Epidom",
-          "body": "Dasbor operasional yang memusatkan data real-time dari beberapa lokasi, menggantikan pelacakan manual yang terfragmentasi.",
-          "alt": "Antarmuka Epidom"
+          "body": "Pemesanan online, kasir, dan layar pelanggan untuk restoran dalam satu alat. Dibangun dan dijalankan oleh tim kami.",
+          "alt": "Tampilan Epidom"
         },
         {
-          "tag": "Logistik · Marketplace · Prancis",
+          "tag": "Klien · Logistik · Prancis",
           "name": "Expeditoo",
           "body": "Marketplace logistik yang menggabungkan lelang dan pelacakan pengiriman dalam satu aplikasi.",
-          "alt": "Antarmuka Expeditoo"
+          "alt": "Tampilan Expeditoo"
         },
         {
-          "tag": "Properti · Generasi prospek · Australia",
+          "tag": "Klien · Properti · Australia",
           "name": "The Lead Agent",
-          "body": "Platform lengkap untuk generasi prospek dan pemesanan janji temu bagi sebuah agen properti.",
-          "alt": "Antarmuka The Lead Agent"
+          "body": "Platform lengkap untuk menghasilkan prospek dan membuat janji temu bagi agen properti.",
+          "alt": "Tampilan The Lead Agent"
         }
-      ],
-      "quoteRoles": [
-        "Pemilik bisnis, Expeditoo",
-        "Pendiri, The Lead Agent"
       ]
     },
-    "guaranteesLabel": "Jaminan kami",
-    "guarantees": [
-      {
-        "title": "Semuanya milik Anda",
-        "body": "Kode, hosting, data, model: kuncinya di tangan Anda. Tanpa lock-in."
-      },
-      {
-        "title": "Garansi 4 minggu",
-        "body": "Jika performa turun di bawah ambang yang kita sepakati, kami perbaiki tanpa biaya tambahan."
-      },
-      {
-        "title": "Lingkup tertulis, harga tetap",
-        "body": "Semuanya ditetapkan dalam kontrak sebelum kami mulai. Tanpa pembengkakan biaya mendadak."
-      },
-      {
-        "title": "Bebas pergi setelah Diagnostik",
-        "body": "Spesifikasinya tetap milik Anda, meskipun Anda memutuskan membangun di tempat lain."
-      }
-    ],
     "faq": {
-      "eyebrow": "05 · FAQ",
-      "title": "Sebelum Anda menghubungi kami",
+      "eyebrow": "FAQ",
+      "title": "Sebelum menghubungi Evan",
       "items": [
         {
-          "q": "Apa sebenarnya yang kalian bangun?",
-          "a": "Software dan alat AI yang berjalan di dalam alur kerja nyata Anda: dasbor, otomasi, aplikasi bisnis. Bukan proof of concept, melainkan produk di produksi yang menggantikan operasi manual."
-        },
-        {
           "q": "Berapa biaya sebuah proyek?",
-          "a": "Setiap proyek dihitung dengan harga tetap, berdasarkan hambatan Anda dan lingkup yang kita tetapkan bersama. Anda tahu jumlah pastinya sebelum tanda tangan. Kirim pesan WhatsApp untuk estimasi awal."
+          "a": "Diagnostic (2 minggu) berbiaya €5.000–7.000. Alat kemudian dibangun dalam 8 minggu dengan harga tetap: €25.000–55.000 tergantung lingkup, tertulis di kontrak sebelum mulai. Anda bisa berhenti setelah Diagnostic dan menyimpan spesifikasinya. Percakapan pertama gratis."
         },
         {
-          "q": "Apa arti “Anda memiliki infrastrukturnya”?",
-          "a": "Di akhir proyek, Anda memegang repositori kode, akses cloud, akun penyedia model, dan semua data. Kami mengirimkan ke lingkungan Anda sejak hari pertama."
+          "q": "Apa yang terjadi saat saya menghubungi Evan?",
+          "a": "Evan membalas sendiri, dalam 24 jam. Anda menjelaskan tugas yang menyita waktu; ia memberi tahu apakah tugas itu bisa diotomatisasi, bagaimana caranya, dan memberi perkiraan awal. Lebih suka telepon? Telepon dia atau minta ditelepon."
         },
         {
-          "q": "Kenapa tidak merekrut developer saja?",
-          "a": "Seorang insinyur AI menghabiskan €150.000–250.000 per tahun all-in, butuh 3–6 bulan untuk mulai produktif, dan risiko salah rekrut itu nyata. Satu pod mengirimkan hasil dalam 8 minggu, lengkap dengan tes, telemetri, dan garansi."
+          "q": "Apa sebenarnya yang Anda bangun?",
+          "a": "Perangkat lunak dan alat AI yang berjalan di proses nyata Anda: dasbor, otomatisasi, aplikasi bisnis. Bukan proof of concept, melainkan alat yang dipakai setiap hari untuk menggantikan pekerjaan manual."
         },
         {
-          "q": "Kalian berbasis di Bali. Bagaimana cara kerjanya untuk perusahaan saya?",
-          "a": "Tim kami remote-first, dengan kantor pusat di Bali dan pimpinan penjualan di Paris. Kami bekerja dalam bahasa Inggris atau Prancis, menagih dalam euro, dan menjaga hosting tetap patuh regulasi UE bila diperlukan."
+          "q": "Apa maksud \"semuanya milik Anda\"?",
+          "a": "Di akhir proyek, Anda memegang repositori kode, akses cloud, akun penyedia AI, dan semua data. Kami bekerja di lingkungan Anda sejak hari pertama."
+        },
+        {
+          "q": "Mengapa tidak merekrut developer saja?",
+          "a": "Rekrutmen butuh waktu, orang baru perlu dilatih, dan satu orang jarang menguasai produk, data, dan AI sekaligus. Tim berisi 2–3 engineer menyelesaikan dalam 8 minggu, dengan harga tetap, pengujian, dan jaminan."
+        },
+        {
+          "q": "Anda di Bali: bagaimana kerja samanya?",
+          "a": "Tim engineer kami berbasis di Bali dan kontak penjualan Anda, Evan, ada di Paris. Proyek ditagih dalam euro. Detail penerbit situs ada di halaman informasi hukum."
         }
       ]
     },
     "final": {
       "title": "Apa yang memperlambat bisnis Anda?",
-      "body": "Ceritakan kepada kami. Kita bahas bersama dalam satu percakapan, dan Anda akan mendapat gambaran jelas tentang apa yang bisa diotomatisasi.",
+      "body": "Jelaskan tugasnya dalam dua baris. Evan memberi tahu apakah bisa diotomatisasi, bagaimana caranya, dan memberi perkiraan awal.",
       "cta": "Kirim pesan ke Evan di WhatsApp",
-      "note": "Balasan dalam 24 jam"
+      "note": "Balasan dalam 24 jam · Percakapan pertama gratis"
+    },
+    "contact": {
+      "title": "Cara lain menghubungi Evan",
+      "intro": "Pilih yang paling nyaman bagi Anda.",
+      "call": "Telepon Evan: {phone}",
+      "copy": "Salin nomor",
+      "copied": "Nomor disalin",
+      "email": "Email ke {email}",
+      "callbackTitle": "Minta ditelepon",
+      "firstName": "Nama depan",
+      "phone": "Telepon",
+      "company": "Perusahaan (opsional)",
+      "slot": "Kapan kami menelepon?",
+      "slots": [
+        "Secepatnya (hari kerja)",
+        "Besok pagi",
+        "Besok siang"
+      ],
+      "submit": "Minta ditelepon",
+      "sending": "Mengirim…",
+      "notice": "Data ini hanya kami gunakan untuk menelepon Anda kembali.",
+      "privacy": "Kebijakan privasi",
+      "success": "Tercatat: Evan akan menelepon Anda pada waktu yang Anda pilih.",
+      "error": "Pengiriman gagal. Coba lagi, atau telepon {phone}.",
+      "invalid": "Periksa nama depan dan nomor telepon Anda.",
+      "close": "Tutup"
+    },
+    "sticky": {
+      "wa": "Hubungi Evan",
+      "callback": "Minta ditelepon"
     },
     "footer": {
-      "location": "Bali · Paris",
-      "privacy": "Privasi"
+      "location": "Tim di Bali · Kontak di Paris",
+      "privacy": "Privasi",
+      "legal": "Informasi hukum"
     }
   },
   "Consent": {
     "label": "Persetujuan cookie",
-    "body": "Kami menggunakan cookie analitik (Google Analytics & Meta) untuk memahami lalu lintas situs. Jika Anda menolak, analitik tetap berjalan tanpa cookie.",
+    "body": "Dengan persetujuan Anda, kami menggunakan Google Analytics (statistik kunjungan) dan piksel Meta (pengukuran iklan Facebook dan Instagram kami).",
     "decline": "Tolak",
-    "accept": "Terima"
+    "accept": "Terima",
+    "more": "Selengkapnya",
+    "manage": "Pengaturan cookie"
   },
   "ShowcaseImages": {
     "epidom": [

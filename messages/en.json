@@ -566,7 +566,8 @@
       "Control over dependency.",
       "Leverage over labor.",
       "Systems over manual execution."
-    ]
+    ],
+    "legal": "Legal notice"
   },
   "Tldr": {
     "label": "Summary",
@@ -772,239 +773,239 @@
     }
   },
   "Sales": {
-    "metaTitle": "Replace manual work with a custom tool in 8 weeks · PRIONATION.io",
-    "metaDescription": "We pinpoint the bottleneck holding back your growth, then ship the custom tool that fixes it. In 8 weeks, at a fixed price. And you own the code.",
-    "whatsappMessage": "Hi Evan, I saw the Prionation page and I'd like to talk about a project.",
-    "whatsappMessageStory": "Hi Evan, I'd like to tell you about the bottleneck slowing down my business.",
+    "metaTitle": "A custom tool to replace your spreadsheets · PRIONATION.io",
+    "metaDescription": "For SMEs and mid-market companies: a 2-week Diagnostic, then your custom tool delivered in 8 weeks at a fixed price. Message Evan on WhatsApp or get a call back.",
+    "refLabel": "ref.",
+    "whatsappMessage": "Hi Evan, I'm coming from your PRIONATION page. I'd like to know whether some of our manual work could be automated, and at what price.",
+    "whatsappMessageStory": "Hi Evan, I read the Epidom story. A lot of our work is still done by hand too. Could you tell me what could be automated?",
+    "whatsappMessagePrix": "Hi Evan, I saw your prices on the PRIONATION page. Could you give me a range for our case? I'll describe what we need right after.",
     "nav": {
       "label": "Main navigation",
       "home": "PRIONATION.io — back to top",
-      "method": "Method",
+      "prix": "Pricing",
       "work": "Work",
       "faq": "FAQ",
-      "cta": "Talk about my project"
+      "cta": "Message Evan",
+      "ctaShort": "WhatsApp"
     },
     "hero": {
-      "eyebrow": "AI product engineering · Bali × Paris",
-      "title": "Is your business still running on spreadsheets, WhatsApp and your team's memory?",
-      "sub": "We pinpoint the bottleneck holding back your growth, then ship <strong>the custom tool that fixes it</strong>. In 8 weeks, at a fixed price. And you own the code.",
-      "cta": "Talk about my project on WhatsApp",
-      "secondary": "See our work",
-      "reassurance": "Reply within 24 hours · First call free, no commitment",
-      "stats": [
+      "eyebrow": "For SMEs and mid-market companies · Contact in Paris",
+      "title": "A custom tool to replace your spreadsheets.",
+      "sub": "Orders, stock, schedules, quotes: we replace manual data entry with a tool built for your team. Diagnostic in 2 weeks, then your tool delivered in 8 weeks, at a fixed price.",
+      "cta": "Message Evan on WhatsApp",
+      "evanName": "Evan Cao, sales director in Paris",
+      "evanLine": "He replies himself, within 24 hours. The first conversation is free, with no commitment.",
+      "evanAlt": "Evan Cao",
+      "prices": [
         {
-          "value": "2 WKS",
-          "label": "First deliverable"
+          "label": "First conversation",
+          "value": "Free"
         },
         {
-          "value": "8 WKS",
-          "label": "To production"
+          "label": "Diagnostic · 2 weeks",
+          "value": "€5k–7k"
         },
         {
-          "value": "100%",
-          "label": "Of the code is yours"
+          "label": "Tool delivered · 8 weeks",
+          "value": "€25k–55k"
         }
       ],
-      "browserBar": "epidom · F&B platform built by PRIONATION",
-      "imageAlt": "Epidom homepage, an F&B platform built by PRIONATION",
-      "liveTitle": "Live in production",
-      "liveSub": "Orders, POS and stock in one place",
-      "pill": "Fixed scope · Fixed price"
+      "altLabel": "Not on WhatsApp?",
+      "call": "Call {phone}",
+      "callback": "Get a call back",
+      "secondary": "See 3 delivered projects",
+      "browserBar": "epidom.fr · our own product",
+      "imageAlt": "Screens from Epidom, the ordering and point-of-sale software built by our team",
+      "liveTitle": "Live",
+      "liveSub": "Orders, point of sale and stock in one place",
+      "caption": "Epidom, our own product: built and run by our team."
     },
     "logos": {
-      "clients": "They trusted us with their product",
-      "stack": "Built with"
+      "clients": "Our clients",
+      "own": "Our own product"
     },
     "problem": {
-      "eyebrow": "01 · The problem",
-      "title": "Your growth is stuck on tasks nobody should be doing by hand.",
-      "intro": "If even one of these sounds familiar, we've probably already solved something close to your problem.",
+      "eyebrow": "The problem",
+      "title": "Sound familiar?",
+      "intro": "If at least one of these rings true, we have most likely already solved a problem close to yours.",
       "items": [
         {
           "title": "Spreadsheets everywhere",
-          "body": "Orders, stock, schedules: every team has its own version, and none of them is the right one."
+          "body": "Orders, stock, schedules: every team has its own version, and nobody has the right one."
         },
         {
           "title": "Hours of repetitive data entry",
-          "body": "Your best people copy data around instead of moving the business forward."
+          "body": "Your best people copy data instead of moving the business forward."
         },
         {
           "title": "Everything depends on one person",
-          "body": "The knowledge lives \"in people's heads\". One resignation or one holiday, and everything slows down."
+          "body": "The information lives in people's heads. One departure or holiday and everything slows down."
         },
         {
-          "title": "Software that doesn't fit",
-          "body": "You pay for three SaaS subscriptions and still patch things together between them."
+          "title": "Software that doesn't talk to each other",
+          "body": "You pay for several subscriptions and still copy data from one to the other."
         }
       ]
     },
-    "story": {
-      "badge": "Evan Cao · Chief Revenue Officer",
-      "imageAlt": "Evan Cao, Chief Revenue Officer at PRIONATION",
-      "eyebrow": "02 · Why PRIONATION exists",
-      "quote": "“Two years ago, I was looking for a company that didn't exist.”",
-      "p1": "When I founded Epidom, a French software platform, we were drowning in repetitive tasks. Everything was done by hand, and information was scattered across Excel files and people's heads.",
-      "p2": "I needed someone who would come in, pinpoint exactly what was holding back our growth, and deliver a concrete tool to fix it. <strong>No theoretical consulting. No PowerPoint decks.</strong> A real, working tool, delivered in a few weeks.",
-      "p3": "That company didn't exist. So we built it. Today I run sales, because I know exactly what the client needs: <strong>I was that client.</strong>",
-      "cta": "Tell me about your bottleneck on WhatsApp"
-    },
-    "method": {
-      "eyebrow": "03 · The method",
-      "title": "From bottleneck to production tool. Three steps, no surprises.",
+    "prix": {
+      "eyebrow": "Pricing and process",
+      "title": "What it costs, and how it works.",
       "steps": [
         {
-          "duration": "2 weeks",
+          "title": "First conversation",
+          "meta": "Free · WhatsApp or phone",
+          "body": "You describe the task that eats your time. Evan tells you whether it can be automated, how, and gives you a first estimate."
+        },
+        {
           "title": "Diagnostic",
-          "body": "We immerse ourselves in your operations, map the bottleneck with the highest ROI and write the specs.",
-          "items": [
-            "System architecture + ROI projection",
-            "8-week build plan",
-            "15–25 page report + debrief session"
-          ]
+          "meta": "2 weeks · €5,000–7,000",
+          "body": "We analyse your operations, find what slows you down most, and write the specification. You keep it, even if you build elsewhere."
         },
         {
-          "duration": "8 weeks",
           "title": "Build",
-          "body": "A pod of 2–3 AI product engineers builds and deploys your tool, directly in your own environment.",
-          "items": [
-            "Software deployed to production",
-            "Tests, telemetry and monitoring from day one",
-            "Full handover documentation"
-          ]
+          "meta": "8 weeks · €25,000–55,000",
+          "body": "A team of 2–3 engineers builds and deploys the tool in your environment, with tests and performance monitoring from day one. Fixed price, written into the contract before we start."
         },
         {
-          "duration": "Ongoing",
-          "title": "Retainer",
-          "body": "We keep the tool sharp and grow it alongside your business, month after month.",
-          "items": [
-            "Maintenance and model updates",
-            "1 new feature every month",
-            "Ongoing ROI tracking"
-          ]
+          "title": "Monthly support (optional)",
+          "meta": "€4,000–9,000 per month · 6-month minimum",
+          "body": "We maintain the tool and evolve it with your business, month after month."
         }
       ],
-      "compareTitle": "A dedicated team instead of a risky hire",
-      "colCriteria": "Criteria",
-      "colInhouse": "In-house hire",
-      "colPod": "PRIONATION pod",
-      "rows": [
+      "guaranteesTitle": "Our guarantees",
+      "guarantees": [
         {
-          "label": "Time to results",
-          "them": "4–6 months to hire and onboard",
-          "us": "8 weeks to production"
+          "title": "You own everything",
+          "body": "The code built for you, the hosting, the data and the AI provider accounts are in your name. No dependency on us."
         },
         {
-          "label": "Cost",
-          "them": "€120,000–180,000 a year, all-in",
-          "us": "Fixed price, agreed before we start"
+          "title": "4-week guarantee",
+          "body": "After go-live, if the tool falls below the quality thresholds we set together at the start, we fix it at no cost."
         },
         {
-          "label": "What you get",
-          "them": "One person",
-          "us": "2–3 AI product engineers"
+          "title": "Written scope, fixed price",
+          "body": "Everything is defined in the contract before we start. No surprise overruns."
         },
         {
-          "label": "Scope",
-          "them": "Endless ongoing changes",
-          "us": "Fixed-scope contract from day one"
-        },
-        {
-          "label": "Risk",
-          "them": "A bad hire = 6 months and €50,000 lost",
-          "us": "You can stop after the Diagnostic"
+          "title": "Free to stop after the Diagnostic",
+          "body": "You keep the specification, even if you decide to build elsewhere."
         }
-      ]
+      ],
+      "cta": "Ask for an estimate"
+    },
+    "story": {
+      "eyebrow": "Why PRIONATION exists",
+      "badge": "Evan Cao · Sales director · Paris",
+      "imageAlt": "Evan Cao, sales director at PRIONATION",
+      "quote": "\"Two years ago, I was looking for a company that didn't exist.\"",
+      "p1": "When I created Epidom, a French software platform, we were drowning in repetitive tasks. Everything was done by hand, and information was scattered across spreadsheets and people's heads.",
+      "p2": "That company didn't exist. So we built it. Today I'm its sales director, because I know exactly what the client needs: <strong>I was that client.</strong>",
+      "cta": "Ask Evan my question"
     },
     "work": {
-      "eyebrow": "04 · Shipped work",
-      "title": "Tools in production, not mockups.",
+      "eyebrow": "Delivered work",
+      "title": "Delivered tools, not mock-ups.",
       "intro": "Hospitality, logistics, real estate: three industries, one principle. Replace manual work with a system.",
       "cases": [
         {
-          "tag": "F&B · Dashboard · France",
+          "tag": "Our product · Hospitality · France",
           "name": "Epidom",
-          "body": "An operations dashboard that centralises real-time data across several locations, replacing fragmented manual tracking.",
+          "body": "Online ordering, point of sale and customer display for restaurants, in one tool. Built and run by our team.",
           "alt": "Epidom interface"
         },
         {
-          "tag": "Logistics · Marketplace · France",
+          "tag": "Client · Logistics · France",
           "name": "Expeditoo",
-          "body": "A logistics marketplace combining auctions and shipment tracking in a single app.",
+          "body": "A logistics marketplace that combines bidding and shipment tracking in a single app.",
           "alt": "Expeditoo interface"
         },
         {
-          "tag": "Real estate · Lead gen · Australia",
+          "tag": "Client · Real estate · Australia",
           "name": "The Lead Agent",
-          "body": "A complete lead-generation and appointment-booking platform for a real estate agency.",
+          "body": "A complete lead-generation and appointment-booking platform for a real-estate agency.",
           "alt": "The Lead Agent interface"
         }
-      ],
-      "quoteRoles": [
-        "Business owner, Expeditoo",
-        "Founder, The Lead Agent"
       ]
     },
-    "guaranteesLabel": "Our guarantees",
-    "guarantees": [
-      {
-        "title": "You own everything",
-        "body": "Code, hosting, data, models: the keys are yours. No lock-in."
-      },
-      {
-        "title": "4-week guarantee",
-        "body": "If performance drops below the thresholds we agreed on, we fix it at no extra cost."
-      },
-      {
-        "title": "Written scope, fixed price",
-        "body": "Everything is defined in the contract before we start. No surprise overruns."
-      },
-      {
-        "title": "Free to leave after the Diagnostic",
-        "body": "You keep the specs, even if you decide to build elsewhere."
-      }
-    ],
     "faq": {
-      "eyebrow": "05 · FAQ",
-      "title": "Before you message us",
+      "eyebrow": "FAQ",
+      "title": "Before you message Evan",
       "items": [
         {
-          "q": "What exactly do you build?",
-          "a": "Software and AI tools that run inside your real workflows: dashboards, automations, business apps. Not proofs of concept, but products in production that replace manual operations."
-        },
-        {
           "q": "How much does a project cost?",
-          "a": "Every project is quoted at a fixed price, based on your bottleneck and the scope we define together. You know the exact amount before you sign. Message us on WhatsApp for a first estimate."
+          "a": "The Diagnostic (2 weeks) costs €5,000–7,000. The tool is then built in 8 weeks at a fixed price: €25,000–55,000 depending on scope, written into the contract before we start. You can stop after the Diagnostic and keep the specification. The first conversation is free."
         },
         {
-          "q": "What does “you own the infrastructure” mean?",
-          "a": "At the end of the engagement, you hold the code repository, the cloud access, the model provider accounts and all the data. We deliver into your environment from day one."
+          "q": "What happens when I message Evan?",
+          "a": "Evan replies himself, within 24 hours. You describe the task that eats your time; he tells you whether it can be automated, how, and gives you a first estimate. Prefer the phone? Call him or ask for a call back."
+        },
+        {
+          "q": "What exactly do you build?",
+          "a": "Software and AI tools that run inside your real processes: dashboards, automations, business applications. Not proofs of concept: tools used every day that replace manual operations."
+        },
+        {
+          "q": "What does \"you own everything\" mean?",
+          "a": "At the end of the engagement you hold the code repository, the cloud access, the AI provider accounts and all the data. We deliver into your environment from day one."
         },
         {
           "q": "Why not just hire a developer?",
-          "a": "An AI engineer costs €150,000–250,000 a year all-in, takes 3–6 months to ramp up, and the hiring risk is real. A pod ships in 8 weeks, with tests, telemetry and a guarantee."
+          "a": "Hiring takes time, the person then needs onboarding, and one person rarely covers product, data and AI at once. A team of 2–3 engineers delivers in 8 weeks, at a fixed price, with tests and a guarantee."
         },
         {
-          "q": "You're based in Bali. How does that work for my company?",
-          "a": "The team is remote-first, with headquarters in Bali and sales leadership in Paris. We work in English or French, bill in euros, and keep hosting EU-compliant when required."
+          "q": "You're in Bali: how does that work for a European company?",
+          "a": "Our engineering team is based in Bali and your sales contact, Evan, is in Paris. Engagements are invoiced in euros. The publisher's details are in the legal notice."
         }
       ]
     },
     "final": {
       "title": "What's slowing your business down?",
-      "body": "Tell us. We'll go through it together in a single conversation, and you'll leave with a clear idea of what can be automated.",
+      "body": "Describe the task in two lines. Evan tells you whether it can be automated, how, and gives you a first estimate.",
       "cta": "Message Evan on WhatsApp",
-      "note": "Reply within 24h"
+      "note": "Reply within 24 hours · First conversation free"
+    },
+    "contact": {
+      "title": "Other ways to reach Evan",
+      "intro": "Pick what suits you.",
+      "call": "Call Evan: {phone}",
+      "copy": "Copy the number",
+      "copied": "Number copied",
+      "email": "Email {email}",
+      "callbackTitle": "Get a call back",
+      "firstName": "First name",
+      "phone": "Phone",
+      "company": "Company (optional)",
+      "slot": "When should we call?",
+      "slots": [
+        "As soon as possible (business days)",
+        "Tomorrow morning",
+        "Tomorrow afternoon"
+      ],
+      "submit": "Get a call back",
+      "sending": "Sending…",
+      "notice": "We use these details only to call you back.",
+      "privacy": "Privacy policy",
+      "success": "Got it: Evan will call you back in the slot you chose.",
+      "error": "That didn't go through. Try again, or call {phone}.",
+      "invalid": "Please check your first name and phone number.",
+      "close": "Close"
+    },
+    "sticky": {
+      "wa": "Message Evan",
+      "callback": "Get a call back"
     },
     "footer": {
-      "location": "Bali · Paris",
-      "privacy": "Privacy"
+      "location": "Team in Bali · Contact in Paris",
+      "privacy": "Privacy",
+      "legal": "Legal notice"
     }
   },
   "Consent": {
     "label": "Cookie consent",
-    "body": "We use analytics cookies (Google Analytics & Meta) to understand site traffic. Decline keeps analytics cookieless.",
+    "body": "With your consent, we use Google Analytics (visit statistics) and the Meta pixel (measuring our Facebook and Instagram ads).",
     "decline": "Decline",
-    "accept": "Accept"
+    "accept": "Accept",
+    "more": "Learn more",
+    "manage": "Cookie settings"
   },
   "ShowcaseImages": {
     "epidom": [

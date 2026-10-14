@@ -1,4 +1,4 @@
-import type { IntakePayload, BookingPayload, CareerPayload, WaitlistPayload } from '@/lib/forms/types';
+import type { IntakePayload, BookingPayload, CallbackPayload, CareerPayload, WaitlistPayload } from '@/lib/forms/types';
 
 // Combine the human self-reported source with auto-captured machine attribution
 // into the existing "Referral Source" rich_text (no new Notion column needed, so
@@ -44,6 +44,32 @@ export function bookingToNotionProperties(p: BookingPayload) {
     'Session Date': { date: { start: p.selectedDate } },
     'Session Time': { rich_text: [{ text: { content: p.selectedTime } }] },
     'Timezone': { rich_text: [{ text: { content: p.timezone } }] },
+    'Status': { select: { name: 'New' } },
+  };
+}
+
+export const CALLBACK_SLOT_LABELS: Record<CallbackPayload['slot'], string> = {
+  asap: 'As soon as possible (business hours, Paris)',
+  tomorrow_morning: 'Tomorrow morning (Paris)',
+  tomorrow_afternoon: 'Tomorrow afternoon (Paris)',
+};
+
+// Call-back requests from /start go into PN_Bookings with the existing columns
+// (no new Notion property, so the live table can't break): the phone goes in
+// "WhatsApp" (a phone-number column), the request date in "Session Date", and
+// "Session Time" says it is a call-back plus the slot and source button.
+export function callbackToNotionProperties(p: CallbackPayload, requestDay: string) {
+  const name = p.company ? `${p.firstName} · ${p.company}` : p.firstName;
+  const source = [`button ${p.placement ?? '-'}`, `ref ${p.ref ?? 'O'}`, p.utmCampaign ? `campaign ${p.utmCampaign}` : '']
+    .filter(Boolean)
+    .join(', ');
+  return {
+    'Full Name': { title: [{ text: { content: name } }] },
+    'Email': { email: null },
+    'WhatsApp': { phone_number: p.phone },
+    'Session Date': { date: { start: requestDay } },
+    'Session Time': { rich_text: [{ text: { content: `Call-back /start · ${CALLBACK_SLOT_LABELS[p.slot]} · ${source}` } }] },
+    'Timezone': { rich_text: [{ text: { content: 'Europe/Paris' } }] },
     'Status': { select: { name: 'New' } },
   };
 }

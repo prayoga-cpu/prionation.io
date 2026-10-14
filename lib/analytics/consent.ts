@@ -37,6 +37,19 @@ export function setConsent(v: Consent): void {
   window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: v }));
 }
 
+// Withdraw a stored choice so the banner shows again ("Gérer les cookies").
+// Scripts already loaded this page view (GA4, Meta Pixel) can't be unloaded, so
+// the banner reloads the page if the visitor then refuses — see ConsentBanner.
+export function resetConsent(): void {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.removeItem(KEY);
+  } catch {
+    /* storage blocked — nothing stored to remove */
+  }
+  window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: null }));
+}
+
 function subscribe(callback: () => void): () => void {
   if (typeof window === "undefined") return () => {};
   window.addEventListener(CONSENT_EVENT, callback);
@@ -70,6 +83,17 @@ export function useShowConsentBanner(): boolean {
     () => isConsentRequired() && getConsent() === null,
     () => false,
   );
+}
+
+// True when consent is not required (non-EU) or has been granted.
+export function trackingAllowed(): boolean {
+  return !isConsentRequired() || getConsent() === "granted";
+}
+
+// GA4 and the Meta Pixel load only when trackingAllowed() — in consent-required
+// regions nothing is sent to Google or Meta before "Accepter" (basic consent mode).
+export function useTrackingAllowed(): boolean {
+  return useSyncExternalStore(subscribe, trackingAllowed, () => false);
 }
 
 // Meta Pixel may load when consent is NOT required (non-EU) OR has been granted.
