@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.10.1";
+export const CURRENT_VERSION = "3.10.2";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,15 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.10.2",
+    bump: "patch",
+    date: "2026-10-14",
+    title: "/start: remove the call-back button",
+    items: [
+      "Removed the \"Être rappelé(e)\" (request a call-back) button from /start, under each main button and in the phone sticky bar. WhatsApp stays the main way in, with the phone number as the alternative.",
+    ],
+  },
   {
     version: "3.10.1",
     bump: "patch",

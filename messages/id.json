@@ -812,7 +812,6 @@
       ],
       "altLabel": "Tidak pakai WhatsApp?",
       "call": "Telepon {phone}",
-      "callback": "Minta ditelepon",
       "secondary": "Lihat 3 proyek yang sudah selesai",
       "browserBar": "epidom.fr · produk kami sendiri",
       "imageAlt": "Tampilan Epidom, perangkat lunak pemesanan dan kasir yang dibuat oleh tim kami",
@@ -990,8 +989,7 @@
       "close": "Tutup"
     },
     "sticky": {
-      "wa": "Hubungi Evan",
-      "callback": "Minta ditelepon"
+      "wa": "Hubungi Evan"
     },
     "footer": {
       "location": "Tim di Bali · Kontak di Paris",

@@ -8,8 +8,7 @@ import { ConsentSettingsLink } from "@/components/ConsentSettingsLink";
 import { CONTACT_EMAIL, PHONE_DISPLAY_FR, WHATSAPP_DISPLAY } from "@/lib/seo/site";
 import { ShowcaseSlideshow } from "@/components/ui/ShowcaseSlideshow";
 import { WhatsAppCta } from "./WhatsAppCta";
-import { TelLink, CallbackButton } from "./ContactLinks";
-import { ContactSheet } from "./ContactSheet";
+import { TelLink } from "./ContactLinks";
 import { StickyCta } from "./StickyCta";
 import { Reveal } from "./Reveal";
 
@@ -177,17 +176,13 @@ export async function SalesPage() {
   const PROBLEM_ICONS = ["grid", "clock", "person", "wrench"];
   const GUARANTEE_ICONS = ["lock", "shield", "lines", "exit"];
 
-  // The second way in, shown under every main button: phone + call-back.
+  // The second way in, shown under every main button: phone.
   const altLine = (placement: string, size = "text-[14px]") => (
     <p className={`m-0 ${size} text-soft leading-[1.6]`}>
       {t("hero.altLabel")}{" "}
       <TelLink placement={placement} locale={locale} className={LINK}>
         {t("hero.call", { phone })}
       </TelLink>
-      {" · "}
-      <CallbackButton placement={placement} locale={locale} className={`${LINK} bg-transparent border-0 p-0 cursor-pointer font-[inherit]`}>
-        {t("hero.callback")}
-      </CallbackButton>
     </p>
   );
 
@@ -581,8 +576,7 @@ export async function SalesPage() {
         </div>
       </footer>
 
-      <StickyCta message={msg} refLabel={refLabel} locale={locale} waLabel={t("sticky.wa")} callbackLabel={t("sticky.callback")} />
-      <ContactSheet locale={locale} />
+      <StickyCta message={msg} refLabel={refLabel} locale={locale} waLabel={t("sticky.wa")} />
     </div>
   );
 }

@@ -812,7 +812,6 @@
       ],
       "altLabel": "Not on WhatsApp?",
       "call": "Call {phone}",
-      "callback": "Get a call back",
       "secondary": "See 3 delivered projects",
       "browserBar": "epidom.fr · our own product",
       "imageAlt": "Screens from Epidom, the ordering and point-of-sale software built by our team",
@@ -990,8 +989,7 @@
       "close": "Close"
     },
     "sticky": {
-      "wa": "Message Evan",
-      "callback": "Get a call back"
+      "wa": "Message Evan"
     },
     "footer": {
       "location": "Team in Bali · Contact in Paris",

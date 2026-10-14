@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useShowConsentBanner } from "@/lib/analytics/consent";
 import { WhatsAppCta } from "./WhatsAppCta";
-import { CallbackButton } from "./ContactLinks";
 
 // Phone-only bar that keeps a way to reach Evan on screen once the hero button
 // has scrolled away (the long page had no button for ~10 screens). Hidden again
@@ -14,13 +13,11 @@ export function StickyCta({
   refLabel,
   locale,
   waLabel,
-  callbackLabel,
 }: {
   message: string;
   refLabel: string;
   locale: string;
   waLabel: string;
-  callbackLabel: string;
 }) {
   const [heroGone, setHeroGone] = useState(false);
   const [finalVisible, setFinalVisible] = useState(false);
@@ -69,13 +66,6 @@ export function StickyCta({
         >
           {waLabel}
         </WhatsAppCta>
-        <CallbackButton
-          placement="sticky"
-          locale={locale}
-          className="inline-flex items-center justify-center min-h-[48px] px-4 rounded-full border border-white/15 bg-white/5 text-white font-semibold text-[14px]"
-        >
-          {callbackLabel}
-        </CallbackButton>
       </div>
     </div>
   );

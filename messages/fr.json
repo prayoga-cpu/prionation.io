@@ -812,7 +812,6 @@
       ],
       "altLabel": "Pas de WhatsApp ?",
       "call": "Appeler le {phone}",
-      "callback": "Être rappelé(e)",
       "secondary": "Voir 3 projets livrés",
       "browserBar": "epidom.fr · notre propre produit",
       "imageAlt": "Écrans d'Epidom, le logiciel de commande et de caisse construit par notre équipe",
@@ -990,8 +989,7 @@
       "close": "Fermer"
     },
     "sticky": {
-      "wa": "Écrire à Evan",
-      "callback": "Être rappelé(e)"
+      "wa": "Écrire à Evan"
     },
     "footer": {
       "location": "Équipe à Bali · Interlocuteur à Paris",
