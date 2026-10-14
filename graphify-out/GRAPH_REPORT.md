@@ -1,7 +1,7 @@
 # Graph Report - prionation.io  (2026-10-14)
 
 ## Corpus Check
-- 216 files · ~325,223 words
+- 216 files · ~325,197 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ec072d1b`
+- Built from commit: `d77410ac`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -212,7 +212,7 @@ Nodes (3): pad(), run(), THRESHOLDS
 
 ### Community 27 - "Founders & Foundation"
 Cohesion: 0.17
-Nodes (11): Analytics & consent, Environment variables, Features, Form pipelines, Getting started, Notion setup, PRIONATION.io — v.3.10.1, Project structure (+3 more)
+Nodes (11): Analytics & consent, Environment variables, Features, Form pipelines, Getting started, Notion setup, PRIONATION.io — v.3.10.2, Project structure (+3 more)
 
 ### Community 33 - "Community 33"
 Cohesion: 0.07
@@ -303,11 +303,11 @@ Nodes (9): DiagnosticTab(), EMPTY_FORM, FormState, REQUIRED, MeetUsTab(), evalua
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `T` connect `Community 59` to `Form Submission & Backend`, `Community 35`, `Community 4`, `Community 6`, `Header, Modal & Motion Library`, `Community 12`, `Community 14`, `Community 15`, `Community 17`, `Community 18`, `Community 51`, `Community 19`, `Hero Section & Animations`, `Community 22`, `Community 54`, `Community 53`, `Community 58`?**
-  _High betweenness centrality (0.082) - this node is a cross-community bridge._
+  _High betweenness centrality (0.086) - this node is a cross-community bridge._
 - **Why does `PillLogo()` connect `Community 43` to `Community 0`, `Community 35`?**
-  _High betweenness centrality (0.063) - this node is a cross-community bridge._
-- **Why does `verifyFinanceSession()` connect `Community 43` to `Community 33`, `Community 34`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+  _High betweenness centrality (0.066) - this node is a cross-community bridge._
+- **Why does `getFinanceSession()` connect `Community 33` to `Community 0`, `Community 43`, `Community 52`?**
+  _High betweenness centrality (0.027) - this node is a cross-community bridge._
 - **Are the 5 inferred relationships involving `getPublishedPages()` (e.g. with `generateStaticParams()` and `generateStaticParams()`) actually correct?**
   _`getPublishedPages()` has 5 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 30 inferred relationships involving `T` (e.g. with `generateMetadata()` and `ConsentBanner()`) actually correct?**
