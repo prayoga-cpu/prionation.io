@@ -18,7 +18,6 @@ const SelectedWork = dynamic(() => import("./sections/SelectedWork").then((m) =>
 const Pricing = dynamic(() => import("./sections/Pricing").then((m) => m.Pricing));
 const Foundation = dynamic(() => import("./sections/Foundation").then((m) => m.Foundation));
 const Engage = dynamic(() => import("./sections/Engage").then((m) => m.Engage));
-const Testimonials = dynamic(() => import("./sections/Testimonials").then((m) => m.Testimonials));
 const Faq = dynamic(() => import("./sections/Faq").then((m) => m.Faq));
 const ContentHighlight = dynamic(() => import("./sections/ContentHighlight").then((m) => m.ContentHighlight));
 const SiteFooter = dynamic(() => import("./sections/SiteFooter").then((m) => m.SiteFooter));
@@ -101,9 +100,6 @@ export default function AppShell() {
         </FadeSection>
         <FadeSection>
           <Engage />
-        </FadeSection>
-        <FadeSection>
-          <Testimonials />
         </FadeSection>
         <FadeSection>
           <ContentHighlight />

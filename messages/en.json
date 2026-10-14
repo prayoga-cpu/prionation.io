@@ -123,7 +123,7 @@
       "Evals before features. Always.",
       "Telemetry from day one. Always.",
       "Owned infrastructure. Always.",
-      "≥60% of Diagnostics become Builds — because we only take engagements where the math works."
+      "We only take engagements where the math works — the Diagnostic exists to qualify the work, not to sell the Build."
     ],
     "p7": "There's a generation of mid-market companies that got burned by the first wave of \"AI transformation.\"",
     "p8": "I talk to their operators every week.",
@@ -156,18 +156,17 @@
     ],
     "title_shimmer": "AI Infrastructure",
     "title_ai": "AI",
-    "subhead": "Get a free, AI-generated diagnostic of your biggest operational bottleneck — then our pods build the production AI infrastructure that fixes it, with you, in 8 weeks. Built for mid-market companies across the EU and US.",
+    "subhead": "Preview how we'd map your biggest operational bottleneck — then our pods build the production AI infrastructure that fixes it, with you, in 8 weeks. Built for mid-market companies across the EU and US.",
     "cta_diagnostic": "Diagnostic form",
     "cta_meet": "Meet us",
     "input_label": "[ INPUT ]",
     "expand": "Expand",
     "close": "Close",
     "tab_intake": "Guided intake",
-    "tab_chat": "Chat with AI",
+    "tab_chat": "Quick chat",
     "website_label": "COMPANY WEBSITE",
     "website_placeholder": "yourcompany.com",
-    "website_hint": "We'll scan your site to pre-fill your diagnostic context.",
-    "scan": "SCAN",
+    "website_hint": "Only used for this preview — nothing is sent.",
     "industry_label": "INDUSTRY",
     "stage_label": "COMPANY STAGE",
     "bottleneck_label": "MOST COMMON BOTTLENECK",
@@ -234,62 +233,47 @@
       "€50M+",
       "Not disclosed"
     ],
-    "roi": [
-      "≈ €40K / yr recovered · payback under 5 months",
-      "≈ €90K / yr recovered · payback under 4 months",
-      "≈ €180K / yr recovered · payback under 4 months",
-      "≈ €400K / yr recovered · payback under 3 months",
-      "≈ €120K / yr recovered · payback under 4 months"
-    ],
     "chat_initial": "Tell me what's slowing your team down — in your own words.",
     "chat_input_label": "Your message",
     "chat_placeholder_initial": "Describe what's slowing you down…",
     "chat_placeholder_reply": "Type your reply…",
     "chat_q1": "Got it. Roughly how many people touch that process each week?",
     "chat_q2": "And which industry are you in?",
-    "chat_final": "Thanks — mapping your bottleneck now.",
-    "thinking_mapping": "Mapping your bottleneck…",
-    "thinking_analyzing": "Analyzing your reply…",
-    "model": "Opus 4.8",
+    "chat_final": "Thanks — here's an illustrative preview.",
+    "thinking_mapping": "Preparing the preview…",
+    "thinking_analyzing": "One moment…",
     "send": "Send",
-    "footer_note": "Free preview · no signup · instant result",
-    "powered_by": "powered by",
-    "powered_brand": "Claude",
+    "footer_note": "Illustrative preview · no signup",
     "file_intake": "diagnostic-preview.md",
     "file_chat": "consultation.log",
     "status_ready": "ready",
     "status_analyzing": "analyzing",
-    "status_preview": "preview · 0.9s",
+    "status_preview": "illustrative preview",
     "preview_idle": [
-      "Fill in the intake or chat with the AI — the preview shows your diagnostic.",
-      "It maps the bottleneck and scopes the software + AI we'd build with you to fix it. No call required."
+      "Fill in the intake or the quick chat — the preview shows an illustrative example of a diagnostic.",
+      "The real bottleneck mapping and scoping happen in the paid 2-week Diagnostic. No call needed to try this."
     ],
     "load_parsing": "> parsing: {target}",
     "load_lines": [
-      "> mapping operational bottleneck…",
-      "> matching against delivered builds…",
-      "> projecting ROI + payback…"
+      "> structuring your answers…",
+      "> drafting an illustrative preview…"
     ],
     "result_bottleneck_label": "Bottleneck mapped",
     "result_path_label": "Recommended path",
-    "result_roi_label": "Projected ROI",
-    "result_bottleneck_intake": "{bn} — roughly 20+ hrs/week of operator time lost across the team.",
+    "result_bottleneck_intake": "{bn} — to be mapped and sized during the Diagnostic.",
     "result_path_intake": "Diagnostic (2 wks) → we build the production software + AI with your {industry} team (8 wks), eval-gated. You own all code, hosting and data.",
-    "result_bottleneck_chat": "“{q}” → a recurring manual bottleneck, ~20 hrs/week of operator time.",
+    "result_bottleneck_chat": "“{q}” → to be mapped and sized during the Diagnostic.",
     "result_path_chat": "Diagnostic (2 wks) → we build the production software + AI with you (8 wks). You own all code, hosting and data.",
-    "result_roi_chat": "≈ €180K / yr recovered · payback under 4 months",
     "bottleneck_fallback": "a manual, repetitive workflow",
     "chat_fallback": "your described workflow",
-    "stat_build_value": "≥60%",
-    "stat_build_label": "Diagnostic → Build",
     "stat_deliverable_value": "2 wks",
     "stat_deliverable_label": "First deliverable",
     "stat_production_value": "8 wks",
     "stat_production_label": "To production",
-    "feed_scraping": "scraping source from {src}…",
+    "feed_scraping": "reading your answers ({src})…",
     "feed_thinking": "thinking…",
     "feed_thought": "thought for {sec}s",
-    "feed_tokens": "{n} tokens"
+    "result_disclaimer": "Illustrative example — not an analysis of your business."
   },
   "Header": {
     "nav": {
@@ -598,7 +582,7 @@
       },
       {
         "q": "How much does an AI build engagement cost for a €10–50M company?",
-        "a": "PRIONATION's AI build engagements run €25,000–55,000 for an 8-week production build. The process starts with a 2-week Diagnostic at €5,000–7,000 to map the bottleneck and confirm scope. Over 60% of Diagnostics proceed to a Build. Ongoing pod access runs €4,000–9,000/month."
+        "a": "PRIONATION's AI build engagements run €25,000–55,000 for an 8-week production build. The process starts with a 2-week Diagnostic at €5,000–7,000 to map the bottleneck and confirm scope. Ongoing pod access runs €4,000–9,000/month."
       },
       {
         "q": "What does 'client owns the infrastructure' mean in practice?",
@@ -678,7 +662,7 @@
         "id": "pricing",
         "h2": "Pricing and timelines",
         "body": [
-          "Engagements are quoted in euros, with fixed scope and fixed price. The Diagnostic is €5,000–7,000 over two weeks. The Build is €25,000–55,000 over eight weeks. The Retainer is €4,000–9,000 per month with a six-month minimum. A three-page Express Site is available from €1,500. Over 60% of Diagnostics proceed to a Build.",
+          "Engagements are quoted in euros, with fixed scope and fixed price. The Diagnostic is €5,000–7,000 over two weeks. The Build is €25,000–55,000 over eight weeks. The Retainer is €4,000–9,000 per month with a six-month minimum. A three-page Express Site is available from €1,500.",
           "The Diagnostic is the required entry point. It is what lets PRIONATION quote a fixed price on the Build with confidence — the scope is mapped and the eval criteria are agreed before anyone commits to a number."
         ]
       },

@@ -21,34 +21,12 @@ type Testimonial = {
   avatar?: string;
 };
 
-// ⚠️ PLACEHOLDER RATINGS — the numeric `rating` values below are illustrative
-// (varied, non-perfect) for design only. They are NOT real client scores.
-// Replace each with the client's actual, written-off rating before publishing.
-const TESTIMONIALS: Testimonial[] = [
-  {
-    quote: "We were drowning in operational complexity, then this model turned it into production, in weeks.",
-    name: "Evan Cao",
-    role: "CEO at Epidom",
-    rating: 4.5, // placeholder — confirm real rating
-    avatar: "/testimonials/evan-cao.jpg",
-  },
-  // DRAFTS — suggested copy. Get each person's written sign-off (and their real
-  // rating) before publishing; do not present these as their words until approved.
-  {
-    quote: "Our logistics ran on spreadsheets and guesswork. They turned it into a production AI system in weeks — and handed us the keys.",
-    name: "Nicolas Rémy",
-    role: "Business owner of Expeditoo",
-    rating: 4, // placeholder — confirm real rating
-    avatar: "/testimonials/nicolas-remy.jpg",
-  },
-  {
-    quote: "They built lead-gen that works the way our agents actually sell, and had it live before most teams finish scoping.",
-    name: "Luke",
-    role: "Founder of The Lead Agent",
-    rating: 4.5, // placeholder — confirm real rating
-    avatar: "/testimonials/luke.jpg",
-  },
-];
+// Empty until a client approves their own words in writing. The previous
+// entries were unapproved drafts plus a self-review from our own CRO with
+// placeholder ratings, which broke the no-fabricated-data rule (removed
+// 2026-10-14). Each new entry needs: the client's written sign-off on the exact
+// quote, their real rating (or none), and permission for name/photo/company.
+const TESTIMONIALS: Testimonial[] = [];
 
 function initials(name: string) {
   return name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]?.toUpperCase()).join("");
@@ -97,6 +75,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
 
 export function Testimonials() {
   const t = useTranslations("Testimonials");
+  if (TESTIMONIALS.length === 0) return null;
 
   return (
     <section className="max-w-max-w mx-auto px-page-x pb-[100px]" aria-label={t("heading")}>

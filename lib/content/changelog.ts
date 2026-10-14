@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.9.2";
+export const CURRENT_VERSION = "3.9.3";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,19 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.9.3",
+    bump: "patch",
+    date: "2026-10-14",
+    title: "Remove unverified claims from the homepage",
+    items: [
+      "Removed the homepage testimonials section. Its quotes were unapproved drafts or a review written by our own team, and its star ratings were placeholders. Testimonials return only with each client's written sign-off.",
+      "Relabelled the homepage diagnostic widget as an illustrative preview. Removed the \"powered by Claude\" credit, the model label, the token counter, the \"scan\" badge, and the projected ROI and hours-lost figures, none of which came from a real analysis.",
+      "Removed the \"≥60% of Diagnostics become Builds\" figure from the homepage, FAQ, guides and llms.txt, because no published count backs it.",
+      "Removed the Expeditoo live-demo link, whose deployment no longer exists; that project links to its case study only.",
+      "Corrected the 3.9.0 note below: Vercel Analytics only records custom events such as whatsapp_click on its Pro plan, so on this site that event reaches GA4 only.",
+    ],
+  },
   {
     version: "3.9.2",
     bump: "patch",
@@ -57,7 +70,7 @@ export const V3_ENTRIES: ChangelogEntry[] = [
     items: [
       "Added a long-form sales page at /start, fully translated into English, French, and Indonesian with an EN/FR/ID switcher in its header: problem, founder story, method, a pod-vs-hire comparison, shipped work, guarantees, and FAQ.",
       "The EN/FR/ID switcher is now one shared component used by the homepage, content pages, and /start, and a new test (npm test) catches any locale that is missing a key or carries a malformed translation.",
-      "Every call to action opens a WhatsApp chat with sales. Each click fires a whatsapp_click funnel event (GA4 + Vercel Analytics) and, where the Meta Pixel is consented, a standard Contact event.",
+      "Every call to action opens a WhatsApp chat with sales. Each click fires a whatsapp_click funnel event (GA4; Vercel Analytics records custom events only on its Pro plan, which this site does not use) and, where the Meta Pixel is consented, a standard Contact event.",
       "The page is noindexed and kept out of the sitemap so it doesn't compete with the homepage. Client logos and the technology stack are labelled as separate groups.",
       "The cookie-consent banner now follows the page language (English, French, Indonesian) instead of always showing English.",
     ],

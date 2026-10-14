@@ -265,7 +265,6 @@ type Msg = { role: "ai" | "user"; text: string };
 
 const eyebrowStyle: CSSProperties = { fontFamily: "var(--font-pixel)", fontSize: 8, letterSpacing: "0.12em", color: "var(--c-accent)", textTransform: "uppercase", lineHeight: 2.6 };
 const bodyStyle: CSSProperties = { color: "var(--c-soft)", fontSize: 14, lineHeight: 1.7 };
-const valueStyle: CSSProperties = { color: "var(--c-fg)", fontWeight: 700, fontSize: 15, lineHeight: 1.85 };
 const mutedStyle: CSSProperties = { color: "var(--c-muted)", fontSize: 14, lineHeight: 1.8 };
 const monoStyle: CSSProperties = { fontFamily: "var(--font-pixel)", fontSize: 7, letterSpacing: "0.03em", lineHeight: 2.0, color: "var(--c-muted)" };
 const pixelLabel: CSSProperties = { fontFamily: "var(--font-pixel)", fontSize: 8, letterSpacing: "0.1em", color: "var(--c-muted)" };
@@ -454,7 +453,6 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
   const industries = t.raw("industries") as string[];
   const bottlenecks = t.raw("bottlenecks") as string[][];
   const stages = t.raw("stages") as string[];
-  const roi = t.raw("roi") as string[];
 
   const [path, setPath] = useState<Path>("intake");
   const [phase, setPhase] = useState<Phase>("idle");
@@ -471,7 +469,6 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
   const [aiThinking, setAiThinking] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [feed, setFeed] = useState<string[]>([]);
-  const [tokens, setTokens] = useState(0);
   const [elapsed, setElapsed] = useState(0);
   const [fieldErrors, setFieldErrors] = useState<{ website?: boolean; bottleneck?: boolean }>({});
   const [showIllustrations, setShowIllustrations] = useState(false);
@@ -534,16 +531,15 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
       genTick.current = undefined;
     }
   };
-  // Streams a Claude-terminal-style processing log while the diagnostic "runs",
-  // with a live token counter + elapsed timer, so the wait feels productive.
+  // Plays a short scripted progress log before showing the illustrative preview.
+  // Nothing is analysed or sent: the widget is an illustration, labelled as such
+  // in the result (Hero.result_disclaimer) and the footer note.
   const runGen = () => {
     clearGenTimers();
     setPhase("loading");
     setFeed([]);
-    setTokens(0);
     setElapsed(0);
     genTick.current = setInterval(() => {
-      setTokens((x) => x + 30 + Math.floor(Math.random() * 70));
       setElapsed((x) => Math.round((x + 0.1) * 10) / 10);
     }, 100);
     const raw = path === "intake" ? website.trim() || effBn : firstUser;
@@ -633,23 +629,19 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
     lines = []; // the streamed terminal feed is rendered separately (see preview panel)
   } else if (path === "intake") {
     lines = [
-      { text: `✓ ${t("feed_thought", { sec: elapsed.toFixed(1) })} · ${t("feed_tokens", { n: tokens.toLocaleString() })}`, style: { ...monoStyle, color: GREEN } },
+      { text: t("result_disclaimer"), style: { ...monoStyle, color: GREEN } },
       { text: t("result_bottleneck_label"), style: eyebrowStyle },
       { text: t("result_bottleneck_intake", { bn: effBn }), style: bodyStyle },
       { text: t("result_path_label"), style: eyebrowStyle },
       { text: t("result_path_intake", { industry: industryLabel }), style: bodyStyle },
-      { text: t("result_roi_label"), style: eyebrowStyle },
-      { text: roi[stageIdx] || roi[2], style: valueStyle },
     ];
   } else {
     lines = [
-      { text: `✓ ${t("feed_thought", { sec: elapsed.toFixed(1) })} · ${t("feed_tokens", { n: tokens.toLocaleString() })}`, style: { ...monoStyle, color: GREEN } },
+      { text: t("result_disclaimer"), style: { ...monoStyle, color: GREEN } },
       { text: t("result_bottleneck_label"), style: eyebrowStyle },
       { text: t("result_bottleneck_chat", { q: firstUser }), style: bodyStyle },
       { text: t("result_path_label"), style: eyebrowStyle },
       { text: t("result_path_chat"), style: bodyStyle },
-      { text: t("result_roi_label"), style: eyebrowStyle },
-      { text: t("result_roi_chat"), style: valueStyle },
     ];
   }
   const fileName = path === "intake" ? t("file_intake") : t("file_chat");
@@ -857,10 +849,6 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                     <div style={{ display: "flex", alignItems: "center", gap: 9, background: SURFACE_DEEP, border: `1px solid ${fieldErrors.website ? "var(--c-accent)" : LINE}`, borderRadius: 11, padding: "0 13px", height: 46 }}>
                       <span style={{ fontFamily: "var(--font-pixel)", fontSize: 8, color: "var(--c-muted)", flex: "none" }}>https://</span>
                       <input aria-labelledby="pio-lbl-website" className="pio-input" type="text" inputMode="url" value={website} onChange={(e) => { setWebsite(formatUrlPath(e.target.value)); if (fieldErrors.website) setFieldErrors((s) => ({ ...s, website: false })); }} placeholder={t("website_placeholder")} style={{ flex: 1, background: "transparent", border: "none", color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14, height: "100%" }} />
-                      <span style={{ fontFamily: "var(--font-pixel)", fontSize: 7, letterSpacing: "0.08em", color: GREEN, flex: "none", display: "flex", alignItems: "center", gap: 5 }}>
-                        <span style={{ width: 6, height: 6, borderRadius: "50%", background: GREEN, display: "inline-block" }} />
-                        {t("scan")}
-                      </span>
                     </div>
                     {fieldErrors.website ? <span style={errorLabel}>{t("required")}</span> : <span style={{ fontSize: 11, color: "var(--c-muted)" }}>{t("website_hint")}</span>}
                   </div>
@@ -953,11 +941,6 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                   <div style={{ background: SURFACE_DEEP, border: `1px solid ${LINE}`, borderRadius: 14, padding: "13px 13px 10px" }}>
                     <input aria-label={t("chat_input_label")} className="pio-input" type="text" value={draft} onChange={(e: ChangeEvent<HTMLInputElement>) => setDraft(e.target.value)} onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => { if (e.key === "Enter") { e.preventDefault(); doSend(); } }} placeholder={chatStep === 0 ? t("chat_placeholder_initial") : t("chat_placeholder_reply")} style={{ width: "100%", background: "transparent", border: "none", color: "var(--c-fg)", fontFamily: "var(--font-sans)", fontSize: 14, height: 24 }} />
                     <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 10 }}>
-                      <button style={{ display: "flex", alignItems: "center", gap: 7, background: "transparent", border: "none", color: "var(--c-soft)", fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 500, cursor: "pointer", padding: "5px 8px", borderRadius: 8, whiteSpace: "nowrap", flex: "none" }}>
-                        <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--c-accent)", boxShadow: "0 0 6px var(--c-accent)", flex: "none" }} />
-                        {t("model")}
-                        <span style={{ color: "var(--c-muted)", fontSize: 9 }}>▾</span>
-                      </button>
                       <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 8 }}>
                         {chatGenerating ? (
                           <button onClick={stopChat} title="Stop" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 42, height: 42, background: "transparent", border: "1px solid var(--c-line-soft)", borderRadius: 11, color: "var(--c-soft)", cursor: "pointer" }}>
@@ -986,21 +969,6 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
               <div className="pio-foot" style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 14, padding: "0 2px" }}>
                 <span style={{ width: 7, height: 7, borderRadius: "50%", background: GREEN, display: "inline-block" }} />
                 <span style={{ fontSize: 11, color: "var(--c-muted)" }}>{t("footer_note")}</span>
-                <a
-                  href="https://claude.com/product/overview"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="pio-powered"
-                  style={{ marginLeft: "auto", fontSize: 11, color: "var(--c-muted)", display: "flex", alignItems: "center", gap: 5, whiteSpace: "nowrap", flex: "none", textDecoration: "none" }}
-                >
-                  {t("powered_by")}{" "}
-                  <b style={{ color: "var(--c-soft)", fontWeight: 600, letterSpacing: "0.01em", display: "inline-flex", alignItems: "center", gap: 4 }}>
-                    <svg viewBox="0 0 100 100" width="12" height="12" aria-hidden="true" style={{ fill: "currentColor", flex: "none" }}>
-                      <path d="m19.6 66.5 19.7-11 .3-1-.3-.5h-1l-3.3-.2-11.2-.3L14 53l-9.5-.5-2.4-.5L0 49l.2-1.5 2-1.3 2.9.2 6.3.5 9.5.6 6.9.4L38 49.1h1.6l.2-.7-.5-.4-.4-.4L29 41l-10.6-7-5.6-4.1-3-2-1.5-2-.6-4.2 2.7-3 3.7.3.9.2 3.7 2.9 8 6.1L37 36l1.5 1.2.6-.4.1-.3-.7-1.1L33 25l-6-10.4-2.7-4.3-.7-2.6c-.3-1-.4-2-.4-3l3-4.2L28 0l4.2.6L33.8 2l2.6 6 4.1 9.3L47 29.9l2 3.8 1 3.4.3 1h.7v-.5l.5-7.2 1-8.7 1-11.2.3-3.2 1.6-3.8 3-2L61 2.6l2 2.9-.3 1.8-1.1 7.7L59 27.1l-1.5 8.2h.9l1-1.1 4.1-5.4 6.9-8.6 3-3.5L77 13l2.3-1.8h4.3l3.1 4.7-1.4 4.9-4.4 5.6-3.7 4.7-5.3 7.1-3.2 5.7.3.4h.7l12-2.6 6.4-1.1 7.6-1.3 3.5 1.6.4 1.6-1.4 3.4-8.2 2-9.6 2-14.3 3.3-.2.1.2.3 6.4.6 2.8.2h6.8l12.6 1 3.3 2 1.9 2.7-.3 2-5.1 2.6-6.8-1.6-16-3.8-5.4-1.3h-.8v.4l4.6 4.5 8.3 7.5L89 80.1l.5 2.4-1.3 2-1.4-.2-9.2-7-3.6-3-8-6.8h-.5v.7l1.8 2.7 9.8 14.7.5 4.5-.7 1.4-2.6 1-2.7-.6-5.8-8-6-9-4.7-8.2-.5.4-2.9 30.2-1.3 1.5-3 1.2-2.5-2-1.4-3 1.4-6.2 1.6-8 1.3-6.4 1.2-7.9.7-2.6v-.2H49L43 72l-9 12.3-7.2 7.6-1.7.7-3-1.5.3-2.8L24 86l10-12.8 6-7.9 4-4.6-.1-.5h-.3L17.2 77.4l-4.7.6-2-2 .2-3 1-1 8-5.5Z" />
-                    </svg>
-                    {t("powered_brand")}
-                  </b>
-                </a>
               </div>
             </div>
           </div>
@@ -1033,7 +1001,7 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
                       </g>
                     </svg>
                     <span>{t("feed_thinking")}</span>
-                    <span style={{ color: "var(--c-muted)" }}>· {t("feed_tokens", { n: tokens.toLocaleString() })} · {elapsed.toFixed(1)}s</span>
+                    <span style={{ color: "var(--c-muted)" }}>· {elapsed.toFixed(1)}s</span>
                     <span className="pio-caret" style={{ color: "var(--c-accent)" }}>▍</span>
                   </div>
                 </div>
@@ -1053,11 +1021,6 @@ export function Hero({ onNotify }: { onNotify?: () => void }) {
           className="pio-stats"
           style={{ marginTop: 54, display: "flex", alignItems: "stretch", border: "1px solid rgba(150,180,255,0.2)", borderRadius: 14, overflow: "hidden", background: "rgba(13,22,40,0.7)", backdropFilter: "blur(2px)" }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: 7, padding: "18px 30px", alignItems: "center" }}>
-            <span style={{ fontFamily: "var(--font-pixel)", fontSize: 20, letterSpacing: "0.02em", color: "var(--c-accent)" }}>{t("stat_build_value")}</span>
-            <span style={{ fontFamily: "var(--font-pixel)", fontSize: 7, letterSpacing: "0.12em", color: "var(--c-muted)", textTransform: "uppercase" }}>{t("stat_build_label")}</span>
-          </div>
-          <div style={{ width: 1, background: "rgba(150,180,255,0.18)" }} />
           <div style={{ display: "flex", flexDirection: "column", gap: 7, padding: "18px 30px", alignItems: "center" }}>
             <span style={{ fontFamily: "var(--font-pixel)", fontSize: 20, letterSpacing: "0.02em", color: "var(--c-fg)" }}>{t("stat_deliverable_value")}</span>
             <span style={{ fontFamily: "var(--font-pixel)", fontSize: 7, letterSpacing: "0.12em", color: "var(--c-muted)", textTransform: "uppercase" }}>{t("stat_deliverable_label")}</span>

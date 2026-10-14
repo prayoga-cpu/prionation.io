@@ -17,16 +17,18 @@ type CaseData = {
 };
 
 const CASE_SLUGS = ["epidom", "expeditoo", "the-lead-agent"];
-const CASE_DEMOS = [
+// null = no public demo. The Expeditoo deployment was removed (it returned
+// DEPLOYMENT_NOT_FOUND on 2026-10-14), so its tile links only to the case study.
+const CASE_DEMOS: (string | null)[] = [
   "https://epidom-eight.vercel.app/",
-  "https://expeditoo-rho.vercel.app/",
+  null,
   "https://lead-agent-lac.vercel.app/",
 ];
 
 function CaseTile({
   c, slug, demo, viewLabel, demoLabel,
 }: {
-  c: CaseData; slug: string; demo: string; viewLabel: string; demoLabel: string;
+  c: CaseData; slug: string; demo: string | null; viewLabel: string; demoLabel: string;
 }) {
   return (
     <m.div
@@ -56,15 +58,17 @@ function CaseTile({
           {viewLabel}{" "}
           <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
         </span>
-        <a
-          href={demo}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${c.name} — ${demoLabel}`}
-          className="relative z-30 inline-flex items-center gap-1 text-[10px] md:text-[11px] font-semibold text-muted hover:text-white transition-colors"
-        >
-          {demoLabel} <span aria-hidden="true">↗</span>
-        </a>
+        {demo && (
+          <a
+            href={demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${c.name} — ${demoLabel}`}
+            className="relative z-30 inline-flex items-center gap-1 text-[10px] md:text-[11px] font-semibold text-muted hover:text-white transition-colors"
+          >
+            {demoLabel} <span aria-hidden="true">↗</span>
+          </a>
+        )}
       </div>
     </m.div>
   );

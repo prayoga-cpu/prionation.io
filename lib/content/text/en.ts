@@ -635,7 +635,7 @@ export const pagesEn: LocalePages = {
           body: [
             "The checklist is not a substitute for the Diagnostic — it is the input that determines what the Diagnostic costs you in time and attention. A clean five-out-of-five does not mean you skip scoping; it means the two-week Diagnostic spends its time confirming and locking rather than discovering, and the resulting Build quote arrives faster and with a tighter range. A mixed score means the same two weeks do double duty, closing the open preconditions and producing the build plan in one pass, which is precisely what the Diagnostic is scoped to absorb.",
             "What changes between the two cases is where the Diagnostic's effort goes, not whether you need it. With strong data and criteria, the Diagnostic concentrates on architecture and the eval thresholds; with weak ones, it spends its first days on data access and on turning a business goal into a scorable definition of done. Either way the deliverable is the same — a mapped bottleneck, an eval spec, and a fixed-price Build scope — but the readiness score tells you in advance which conversations will be hard.",
-            "This is also why more than 60% of Diagnostics proceed to a Build: by the time the Diagnostic ends, the readiness gaps that would otherwise have surfaced mid-build have already been resolved or named. The honest limit of the checklist is that it cannot do this resolution itself — it can only tell you whether the Diagnostic will be a short confirmation or a longer piece of groundwork. Both are legitimate starting points; the only wrong move is starting the Build clock with the gaps still open.",
+            "This is also why the Diagnostic makes the Build predictable: by the time the Diagnostic ends, the readiness gaps that would otherwise have surfaced mid-build have already been resolved or named. The honest limit of the checklist is that it cannot do this resolution itself — it can only tell you whether the Diagnostic will be a short confirmation or a longer piece of groundwork. Both are legitimate starting points; the only wrong move is starting the Build clock with the gaps still open.",
           ],
         },
       ],
@@ -698,7 +698,7 @@ export const pagesEn: LocalePages = {
           h2: "The real figures",
           body: [
             "PRIONATION's structure is fixed and public: a Diagnostic at €5,000–7,000 over two weeks maps the bottleneck and sets the scope; a Build at €25,000–55,000 over eight weeks ships the production system; a Retainer at €4,000–9,000/month keeps a pod available afterwards, with a six-month minimum. A three-page Express Site starts at €1,500.",
-            "More than 60% of Diagnostics proceed to a Build — a number that only holds because the Diagnostic is scoped to qualify the work, not to sell the next stage regardless.",
+            "The Diagnostic is scoped to qualify the work, not to sell the next stage regardless.",
           ],
         },
         {

@@ -635,7 +635,7 @@ export const pagesFr: LocalePages = {
           body: [
             "La liste n'est pas un substitut au Diagnostic — c'est l'entrée qui détermine ce que le Diagnostic vous coûte en temps et en attention. Un cinq sur cinq net ne signifie pas que vous sautez le cadrage ; il signifie que le Diagnostic de deux semaines passe son temps à confirmer et verrouiller plutôt qu'à découvrir, et que le devis de Build qui en résulte arrive plus vite et avec une fourchette plus serrée. Un score mitigé signifie que les mêmes deux semaines font double emploi, comblant les conditions préalables ouvertes et produisant le plan de build en une seule passe, ce qui est précisément ce que le Diagnostic est cadré pour absorber.",
             "Ce qui change entre les deux cas, c'est où va l'effort du Diagnostic, pas le fait que vous en ayez besoin. Avec des données et des critères solides, le Diagnostic se concentre sur l'architecture et les seuils d'evals ; avec des faibles, il passe ses premiers jours sur l'accès aux données et à transformer un objectif métier en une définition scorable du « terminé ». Dans les deux cas, le livrable est le même — un goulot cartographié, une spécification d'evals et un périmètre de Build à prix fixe — mais le score de préparation vous dit à l'avance quelles conversations seront difficiles.",
-            "C'est aussi pourquoi plus de 60 % des Diagnostics débouchent sur un Build : au moment où le Diagnostic se termine, les lacunes de préparation qui auraient autrement émergé en cours de build ont déjà été résolues ou nommées. La limite honnête de la liste est qu'elle ne peut pas faire cette résolution elle-même — elle peut seulement vous dire si le Diagnostic sera une courte confirmation ou un travail de fond plus long. Les deux sont des points de départ légitimes ; le seul mauvais geste est de démarrer l'horloge du Build avec les lacunes encore ouvertes.",
+            "C'est aussi pourquoi le Diagnostic rend le Build prévisible : au moment où le Diagnostic se termine, les lacunes de préparation qui auraient autrement émergé en cours de build ont déjà été résolues ou nommées. La limite honnête de la liste est qu'elle ne peut pas faire cette résolution elle-même — elle peut seulement vous dire si le Diagnostic sera une courte confirmation ou un travail de fond plus long. Les deux sont des points de départ légitimes ; le seul mauvais geste est de démarrer l'horloge du Build avec les lacunes encore ouvertes.",
           ],
         },
       ],
@@ -698,7 +698,7 @@ export const pagesFr: LocalePages = {
           h2: "Les vrais chiffres",
           body: [
             "La structure de PRIONATION est fixe et publique : un Diagnostic à 5 000–7 000 € sur deux semaines cartographie le goulot et fixe le périmètre ; un Build à 25 000–55 000 € sur huit semaines livre le système de production ; un Retainer à 4 000–9 000 €/mois maintient un pod disponible ensuite, avec un minimum de six mois. Un site Express de trois pages démarre à 1 500 €.",
-            "Plus de 60 % des Diagnostics débouchent sur un Build — un chiffre qui ne tient que parce que le Diagnostic est cadré pour qualifier le travail, pas pour vendre l'étape suivante à tout prix.",
+            "Le Diagnostic est cadré pour qualifier le travail, pas pour vendre l'étape suivante à tout prix.",
           ],
         },
         {

@@ -106,7 +106,6 @@ PRIONATION.io publishes every page in three languages (en, fr, id). The English 
 
 ## Key performance metrics
 
-- Diagnostic-to-Build conversion rate: ≥60%
 - Time to first deliverable: 2 weeks
 - Time to production deployment: 8 weeks
 - Post-launch warranty period: 4 weeks

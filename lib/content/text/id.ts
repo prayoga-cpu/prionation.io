@@ -635,7 +635,7 @@ export const pagesId: LocalePages = {
           body: [
             "Daftar ini bukan pengganti Diagnostic — ia adalah masukan yang menentukan berapa biaya Diagnostic bagi Anda dalam waktu dan perhatian. Lima dari lima yang bersih tak berarti Anda melewati pelingkupan; ia berarti Diagnostic dua minggu menghabiskan waktunya untuk mengonfirmasi dan mengunci alih-alih menemukan, dan penawaran Build yang dihasilkan tiba lebih cepat dengan rentang yang lebih sempit. Skor campuran berarti dua minggu yang sama merangkap, menutup prasyarat yang masih terbuka dan menghasilkan rencana build dalam satu jalan, yang persis ruang lingkup yang dirancang Diagnostic untuk menyerapnya.",
             "Yang berubah di antara dua kasus adalah ke mana usaha Diagnostic mengarah, bukan apakah Anda membutuhkannya. Dengan data dan kriteria yang kuat, Diagnostic berfokus pada arsitektur dan ambang eval; dengan yang lemah, ia menghabiskan hari-hari pertamanya pada akses data dan mengubah tujuan bisnis menjadi definisi 'selesai' yang dapat dinilai. Bagaimanapun, hasil kerjanya sama — hambatan yang dipetakan, spesifikasi eval, dan ruang lingkup Build berharga tetap — tetapi skor kesiapan memberi tahu Anda di muka percakapan mana yang akan sulit.",
-            "Inilah juga mengapa lebih dari 60% Diagnostic berlanjut ke Build: pada saat Diagnostic berakhir, celah kesiapan yang jika tidak akan muncul di tengah build sudah diselesaikan atau dinamai. Batas jujur daftar ini adalah ia tak bisa melakukan penyelesaian itu sendiri — ia hanya bisa memberi tahu Anda apakah Diagnostic akan menjadi konfirmasi singkat atau pekerjaan dasar yang lebih panjang. Keduanya titik awal yang sah; satu-satunya langkah keliru adalah memulai jam Build dengan celah yang masih terbuka.",
+            "Inilah juga mengapa Diagnostic membuat Build dapat diprediksi: pada saat Diagnostic berakhir, celah kesiapan yang jika tidak akan muncul di tengah build sudah diselesaikan atau dinamai. Batas jujur daftar ini adalah ia tak bisa melakukan penyelesaian itu sendiri — ia hanya bisa memberi tahu Anda apakah Diagnostic akan menjadi konfirmasi singkat atau pekerjaan dasar yang lebih panjang. Keduanya titik awal yang sah; satu-satunya langkah keliru adalah memulai jam Build dengan celah yang masih terbuka.",
           ],
         },
       ],
@@ -698,7 +698,7 @@ export const pagesId: LocalePages = {
           h2: "Angka nyata",
           body: [
             "Struktur PRIONATION tetap dan terbuka: Diagnostic €5.000–7.000 selama dua minggu memetakan hambatan dan menetapkan ruang lingkup; Build €25.000–55.000 selama delapan minggu mengirim sistem produksi; Retainer €4.000–9.000/bulan menjaga pod tersedia sesudahnya, dengan minimum enam bulan. Situs Express tiga halaman mulai €1.500.",
-            "Lebih dari 60% Diagnostic berlanjut ke Build — angka yang hanya bertahan karena Diagnostic dilingkupi untuk mengkualifikasi pekerjaan, bukan menjual tahap berikutnya apa pun caranya.",
+            "Diagnostic dilingkupi untuk mengkualifikasi pekerjaan, bukan menjual tahap berikutnya apa pun caranya.",
           ],
         },
         {

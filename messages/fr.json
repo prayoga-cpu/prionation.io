@@ -123,7 +123,7 @@
       "Les evals avant les fonctionnalités. Toujours.",
       "La télémétrie dès le premier jour. Toujours.",
       "Infrastructure possédée. Toujours.",
-      "≥60 % des Diagnostics deviennent des Builds — parce que nous ne prenons que les missions où le calcul est rentable."
+      "Nous ne prenons que les missions où le calcul est rentable — le Diagnostic sert à qualifier le travail, pas à vendre le Build."
     ],
     "p7": "Toute une génération d'entreprises mid-market s'est brûlé les ailes avec la première vague de « transformation IA ».",
     "p8": "J'échange avec leurs dirigeants chaque semaine.",
@@ -156,18 +156,17 @@
     ],
     "title_shimmer": "infrastructure IA",
     "title_ai": "IA",
-    "subhead": "Obtenez un diagnostic gratuit, généré par IA, de votre principal goulot opérationnel — puis nos équipes construisent avec vous, en 8 semaines, l'infrastructure IA de production qui le résout. Pensé pour les entreprises du marché intermédiaire en Europe et aux États-Unis.",
+    "subhead": "Visualisez comment nous cartographierions votre principal goulot opérationnel — puis nos équipes construisent avec vous, en 8 semaines, l'infrastructure IA de production qui le résout. Pensé pour les entreprises du marché intermédiaire en Europe et aux États-Unis.",
     "cta_diagnostic": "Formulaire de diagnostic",
     "cta_meet": "Rencontrez-nous",
     "input_label": "[ ENTRÉE ]",
     "expand": "Agrandir",
     "close": "Fermer",
     "tab_intake": "Formulaire guidé",
-    "tab_chat": "Discuter avec l'IA",
+    "tab_chat": "Échange rapide",
     "website_label": "SITE WEB DE L'ENTREPRISE",
     "website_placeholder": "votreentreprise.com",
-    "website_hint": "Nous analyserons votre site pour préremplir le contexte de votre diagnostic.",
-    "scan": "SCAN",
+    "website_hint": "Utilisé uniquement pour cet aperçu, rien n'est envoyé.",
     "industry_label": "SECTEUR",
     "stage_label": "STADE DE L'ENTREPRISE",
     "bottleneck_label": "GOULOT LE PLUS FRÉQUENT",
@@ -234,62 +233,47 @@
       "€50M+",
       "Non communiqué"
     ],
-    "roi": [
-      "≈ 40 K€ / an récupérés · amorti en moins de 5 mois",
-      "≈ 90 K€ / an récupérés · amorti en moins de 4 mois",
-      "≈ 180 K€ / an récupérés · amorti en moins de 4 mois",
-      "≈ 400 K€ / an récupérés · amorti en moins de 3 mois",
-      "≈ 120 K€ / an récupérés · amorti en moins de 4 mois"
-    ],
     "chat_initial": "Dites-nous ce qui ralentit votre équipe — avec vos propres mots.",
     "chat_input_label": "Votre message",
     "chat_placeholder_initial": "Décrivez ce qui vous ralentit…",
     "chat_placeholder_reply": "Tapez votre réponse…",
     "chat_q1": "Compris. Combien de personnes touchent ce processus chaque semaine, environ ?",
     "chat_q2": "Et dans quel secteur êtes-vous ?",
-    "chat_final": "Merci — je cartographie votre goulot maintenant.",
-    "thinking_mapping": "Cartographie de votre goulot…",
-    "thinking_analyzing": "Analyse de votre réponse…",
-    "model": "Opus 4.8",
+    "chat_final": "Merci — voici un aperçu illustratif.",
+    "thinking_mapping": "Préparation de l'aperçu…",
+    "thinking_analyzing": "Un instant…",
     "send": "Envoyer",
-    "footer_note": "Aperçu gratuit · sans inscription · résultat instantané",
-    "powered_by": "propulsé par",
-    "powered_brand": "Claude",
+    "footer_note": "Aperçu illustratif · sans inscription",
     "file_intake": "diagnostic-preview.md",
     "file_chat": "consultation.log",
     "status_ready": "prêt",
     "status_analyzing": "analyse",
-    "status_preview": "aperçu · 0,9 s",
+    "status_preview": "aperçu illustratif",
     "preview_idle": [
-      "Remplissez le formulaire ou discutez avec l'IA — l'aperçu affiche votre diagnostic.",
-      "Il cartographie le goulot et cadre le logiciel + l'IA que nous construirions avec vous pour le résoudre. Aucun appel requis."
+      "Remplissez le formulaire ou l'échange rapide — l'aperçu montre un exemple illustratif de diagnostic.",
+      "La vraie cartographie du goulot et le cadrage se font pendant le Diagnostic payant de 2 semaines. Aucun appel nécessaire pour essayer."
     ],
     "load_parsing": "> analyse : {target}",
     "load_lines": [
-      "> cartographie du goulot opérationnel…",
-      "> comparaison avec nos projets livrés…",
-      "> projection du ROI + retour sur investissement…"
+      "> structuration de vos réponses…",
+      "> préparation d'un aperçu illustratif…"
     ],
     "result_bottleneck_label": "Goulot cartographié",
     "result_path_label": "Parcours recommandé",
-    "result_roi_label": "ROI projeté",
-    "result_bottleneck_intake": "{bn} — environ 20 h+/semaine de temps opérateur perdu dans l'équipe.",
+    "result_bottleneck_intake": "{bn} — à cartographier et chiffrer pendant le Diagnostic.",
     "result_path_intake": "Diagnostic (2 sem.) → nous construisons le logiciel + l'IA de production avec votre équipe {industry} (8 sem.), validé par évaluations. Vous possédez tout le code, l'hébergement et les données.",
-    "result_bottleneck_chat": "« {q} » → un goulot manuel récurrent, ~20 h/semaine de temps opérateur.",
+    "result_bottleneck_chat": "« {q} » → à cartographier et chiffrer pendant le Diagnostic.",
     "result_path_chat": "Diagnostic (2 sem.) → nous construisons le logiciel + l'IA de production avec vous (8 sem.). Vous possédez tout le code, l'hébergement et les données.",
-    "result_roi_chat": "≈ 180 K€ / an récupérés · amorti en moins de 4 mois",
     "bottleneck_fallback": "un flux de travail manuel et répétitif",
     "chat_fallback": "le flux que vous avez décrit",
-    "stat_build_value": "≥60%",
-    "stat_build_label": "Diagnostic → Construction",
     "stat_deliverable_value": "2 sem.",
     "stat_deliverable_label": "Premier livrable",
     "stat_production_value": "8 sem.",
     "stat_production_label": "Vers la production",
-    "feed_scraping": "extraction de la source depuis {src}…",
+    "feed_scraping": "lecture de vos réponses ({src})…",
     "feed_thinking": "réflexion…",
     "feed_thought": "réfléchi pendant {sec} s",
-    "feed_tokens": "{n} jetons"
+    "result_disclaimer": "Exemple illustratif — pas une analyse de votre activité."
   },
   "Header": {
     "nav": {
@@ -598,7 +582,7 @@
       },
       {
         "q": "Combien coûte un projet de build IA pour une entreprise de 10–50 M€ ?",
-        "a": "Les projets de build IA de PRIONATION coûtent de 25 000 à 55 000 € pour un build de production de 8 semaines. Le processus commence par un Diagnostic de 2 semaines à 5 000–7 000 € pour cartographier le goulot d'étranglement et confirmer le périmètre. Plus de 60 % des Diagnostics débouchent sur un Build. L'accès continu au pod coûte de 4 000 à 9 000 €/mois."
+        "a": "Les projets de build IA de PRIONATION coûtent de 25 000 à 55 000 € pour un build de production de 8 semaines. Le processus commence par un Diagnostic de 2 semaines à 5 000–7 000 € pour cartographier le goulot d'étranglement et confirmer le périmètre. L'accès continu au pod coûte de 4 000 à 9 000 €/mois."
       },
       {
         "q": "Que signifie concrètement « le client possède l'infrastructure » ?",
@@ -678,7 +662,7 @@
         "id": "pricing",
         "h2": "Tarifs et délais",
         "body": [
-          "Les missions sont facturées en euros, à périmètre et prix fixes. Le Diagnostic coûte 5 000–7 000 € sur deux semaines. Le Build coûte 25 000–55 000 € sur huit semaines. Le Retainer coûte 4 000–9 000 € par mois, avec un minimum de six mois. Un site Express de trois pages est disponible à partir de 1 500 €. Plus de 60 % des Diagnostics débouchent sur un Build.",
+          "Les missions sont facturées en euros, à périmètre et prix fixes. Le Diagnostic coûte 5 000–7 000 € sur deux semaines. Le Build coûte 25 000–55 000 € sur huit semaines. Le Retainer coûte 4 000–9 000 € par mois, avec un minimum de six mois. Un site Express de trois pages est disponible à partir de 1 500 €.",
           "Le Diagnostic est le point d'entrée obligatoire. C'est lui qui permet à PRIONATION d'annoncer un prix fixe sur le Build en toute confiance : le périmètre est cartographié et les critères d'evals sont convenus avant que quiconque s'engage sur un chiffre."
         ]
       },
