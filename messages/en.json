@@ -280,7 +280,7 @@
       "how-we-work": "How we work",
       "methodology": "Methodology",
       "work": "Work",
-      "pricing": "Pricing",
+      "pricing": "Offers",
       "foundation": "Foundation"
     },
     "cta": "Start a Diagnostic"
@@ -552,7 +552,7 @@
       "how_we_work": "How we work",
       "methodology": "Methodology",
       "selected_work": "Selected work",
-      "pricing": "Pricing",
+      "pricing": "Offers",
       "foundation": "The foundation",
       "meet_us": "Meet Us",
       "diagnostic_form": "Diagnostic Form",
@@ -774,7 +774,7 @@
   },
   "Sales": {
     "metaTitle": "A custom tool to replace your spreadsheets · PRIONATION.io",
-    "metaDescription": "For small and mid-sized businesses: a 2-week Diagnostic, then your custom tool delivered in 8 weeks at a fixed price. Message Evan on WhatsApp or get a call back.",
+    "metaDescription": "For small and mid-sized businesses: a 2-week Diagnostic, then your custom tool delivered in 8 weeks at a fixed price. Message Evan on WhatsApp.",
     "refLabel": "ref.",
     "whatsappMessage": "Hi Evan, I'm coming from your PRIONATION page. I'd like to know whether some of our manual work could be automated, and at what price.",
     "whatsappMessageStory": "Hi Evan, I read the Epidom story. A lot of our work is still done by hand too. Could you tell me what could be automated?",
@@ -936,7 +936,7 @@
         },
         {
           "q": "What happens when I message Evan?",
-          "a": "Evan replies himself, within 24 hours. You describe the task that eats your time; he tells you whether it can be automated, how, and gives you a first estimate. Prefer the phone? Call him or ask for a call back."
+          "a": "Evan replies himself, within 24 hours. You describe the task that eats your time; he tells you whether it can be automated, how, and gives you a first estimate. Prefer the phone? Call him on {phone}."
         },
         {
           "q": "What exactly do you build?",

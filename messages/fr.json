@@ -280,7 +280,7 @@
       "how-we-work": "Comment nous travaillons",
       "methodology": "Méthodologie",
       "work": "Projets",
-      "pricing": "Tarification",
+      "pricing": "Offres",
       "foundation": "Équipe"
     },
     "cta": "Démarrer un Diagnostic"
@@ -552,7 +552,7 @@
       "how_we_work": "Comment nous travaillons",
       "methodology": "Méthodologie",
       "selected_work": "Travaux sélectionnés",
-      "pricing": "Tarification",
+      "pricing": "Offres",
       "foundation": "La fondation",
       "meet_us": "Rencontrez-nous",
       "diagnostic_form": "Formulaire Diagnostic",
@@ -774,7 +774,7 @@
   },
   "Sales": {
     "metaTitle": "Un outil sur mesure à la place de vos fichiers Excel · PRIONATION.io",
-    "metaDescription": "Pour les TPE et PME : un Diagnostic de 2 semaines, puis l'outil sur mesure livré en 8 semaines, à prix fixe. Écrivez à Evan sur WhatsApp ou faites-vous rappeler.",
+    "metaDescription": "Pour les TPE et PME : un Diagnostic de 2 semaines, puis l'outil sur mesure livré en 8 semaines, à prix fixe. Écrivez à Evan sur WhatsApp.",
     "refLabel": "réf.",
     "whatsappMessage": "Bonjour Evan, je viens de votre page PRIONATION. J'aimerais savoir si une partie de notre travail fait à la main peut être automatisée, et à quel prix.",
     "whatsappMessageStory": "Bonjour Evan, j'ai lu l'histoire d'Epidom. Chez nous aussi, beaucoup de choses se font encore à la main. Pouvez-vous me dire ce qui pourrait être automatisé ?",
@@ -936,7 +936,7 @@
         },
         {
           "q": "Que se passe-t-il quand j'écris à Evan ?",
-          "a": "Evan vous répond lui-même, sous 24 h. Vous lui décrivez la tâche qui vous prend du temps ; il vous dit si elle peut être automatisée, comment, et vous donne une première estimation. Vous préférez le téléphone ? Appelez-le ou demandez à être rappelé(e)."
+          "a": "Evan vous répond lui-même, sous 24 h. Vous lui décrivez la tâche qui vous prend du temps ; il vous dit si elle peut être automatisée, comment, et vous donne une première estimation. Vous préférez le téléphone ? Appelez-le au {phone}."
         },
         {
           "q": "Concrètement, qu'est-ce que vous construisez ?",

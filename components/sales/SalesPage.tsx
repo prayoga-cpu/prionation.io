@@ -20,8 +20,8 @@ import { Reveal } from "./Reveal";
  *   whom, how long it takes and who replies — with the button above a compact
  *   consent banner. Prices are not shown (team decision 2026-10-14: the ads
  *   target small-business owners); Evan quotes in the conversation;
- * - WhatsApp stays the main way in, with a phone link and a call-back form
- *   next to it, and a sticky bar on phones;
+ * - WhatsApp stays the main way in, with a phone link next to it and a
+ *   sticky bar on phones;
  * - only verifiable proof (Epidom disclosed as our own product; no unapproved
  *   quotes; no uncited cost figures);
  * - every view and tap is counted without cookies (lib/analytics/counter.ts).
@@ -507,7 +507,7 @@ export async function SalesPage() {
                         +
                       </span>
                     </summary>
-                    <p className="m-0 mb-5 text-[16px] leading-[1.7] text-soft">{f.a}</p>
+                    <p className="m-0 mb-5 text-[16px] leading-[1.7] text-soft">{f.a.replace("{phone}", phone)}</p>
                   </details>
                 ))}
               </div>

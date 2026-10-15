@@ -79,7 +79,7 @@ export function Pricing() {
               <div className="mb-8">
                 <span className="font-pixel text-[9px] tracking-[0.12em] text-muted uppercase">{p.label} · {p.name}</span>
                 <h3 className="font-sans font-bold text-[28px] text-white mt-3 mb-1">{p.name}</h3>
-                <div className="flex items-baseline gap-2 mt-4">
+                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mt-4">
                   <span className="text-white font-sans font-extrabold text-[30px]">{p.price}</span>
                   <span className="text-muted font-sans text-[14px]">{p.period}</span>
                 </div>

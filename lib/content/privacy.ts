@@ -56,7 +56,7 @@ export const PRIVACY: Record<PrivacyLocale, PrivacyDoc> = {
         h: "Information you give us",
         blocks: [
           { p: "When you submit the diagnostic, meeting, careers, or waitlist forms, we collect what you enter — such as your name, email, company, location, role, and the details you describe (and, for careers, your CV). We use this only to respond to you and manage the resulting conversation." },
-          { p: "If you message us on WhatsApp, our sales contact (Evan Cao) receives your phone number, your WhatsApp profile name and your messages through WhatsApp (Meta); we use them only to reply to you. If you ask to be called back, we collect your first name, phone number, company (optional) and preferred time slot, only to call you back." },
+          { p: "If you message us on WhatsApp, our sales contact (Evan Cao) receives your phone number, your WhatsApp profile name and your messages through WhatsApp (Meta); we use them only to reply to you." },
         ],
       },
       {
@@ -137,7 +137,7 @@ export const PRIVACY: Record<PrivacyLocale, PrivacyDoc> = {
         h: "Informations que vous nous fournissez",
         blocks: [
           { p: "Lorsque vous soumettez les formulaires de diagnostic, de rendez-vous, de candidature ou de liste d'attente, nous collectons ce que vous saisissez — comme votre nom, votre e-mail, votre entreprise, votre localisation, votre fonction et les détails que vous décrivez (et, pour les candidatures, votre CV). Nous les utilisons uniquement pour vous répondre et gérer l'échange qui en découle." },
-          { p: "Si vous nous écrivez sur WhatsApp, notre interlocuteur commercial (Evan Cao) reçoit votre numéro, votre nom de profil WhatsApp et vos messages via WhatsApp (Meta) ; nous les utilisons uniquement pour vous répondre. Si vous demandez à être rappelé(e), nous collectons votre prénom, votre numéro de téléphone, votre entreprise (facultatif) et le créneau souhaité, uniquement pour vous rappeler." },
+          { p: "Si vous nous écrivez sur WhatsApp, notre interlocuteur commercial (Evan Cao) reçoit votre numéro, votre nom de profil WhatsApp et vos messages via WhatsApp (Meta) ; nous les utilisons uniquement pour vous répondre." },
         ],
       },
       {
@@ -218,7 +218,7 @@ export const PRIVACY: Record<PrivacyLocale, PrivacyDoc> = {
         h: "Informasi yang Anda berikan",
         blocks: [
           { p: "Saat Anda mengirimkan formulir diagnostik, pertemuan, karier, atau daftar tunggu, kami mengumpulkan apa yang Anda masukkan — seperti nama, email, perusahaan, lokasi, peran, dan detail yang Anda uraikan (dan, untuk karier, CV Anda). Kami menggunakannya hanya untuk menanggapi Anda dan mengelola percakapan yang dihasilkan." },
-          { p: "Jika Anda mengirim pesan WhatsApp kepada kami, kontak penjualan kami (Evan Cao) menerima nomor Anda, nama profil WhatsApp Anda, dan pesan Anda melalui WhatsApp (Meta); kami menggunakannya hanya untuk membalas Anda. Jika Anda meminta ditelepon kembali, kami mengumpulkan nama depan, nomor telepon, perusahaan (opsional), dan waktu pilihan Anda, hanya untuk menelepon Anda kembali." },
+          { p: "Jika Anda mengirim pesan WhatsApp kepada kami, kontak penjualan kami (Evan Cao) menerima nomor Anda, nama profil WhatsApp Anda, dan pesan Anda melalui WhatsApp (Meta); kami menggunakannya hanya untuk membalas Anda." },
         ],
       },
       {

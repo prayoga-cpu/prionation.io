@@ -15,7 +15,14 @@ import { parisDay, recordHit } from '@/lib/analytics/counter';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
+// The call-back button was removed from /start in v3.10.2 (team decision
+// 2026-10-14), so the endpoint is closed too; flip to bring both back.
+const CALLBACK_ENABLED = false;
+
 export async function POST(req: NextRequest) {
+  if (!CALLBACK_ENABLED) {
+    return NextResponse.json({ error: 'Call-back requests are closed.' }, { status: 410 });
+  }
   try {
     const ip = req.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
     const rl = await rateLimit('callback', ip);

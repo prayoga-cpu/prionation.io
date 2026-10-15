@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.10.2";
+export const CURRENT_VERSION = "3.10.3";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,18 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.10.3",
+    bump: "patch",
+    date: "2026-10-15",
+    title: "Finish removing the call-back option; homepage fixes on phones",
+    items: [
+      "Removed the last call-back mentions from /start: the FAQ answer about phoning Evan now gives his number, and the page description used in link previews only mentions WhatsApp.",
+      "Closed the call-back request endpoint (it now answers 410) and removed the call-back paragraph from the privacy policy; no call-back request was ever received.",
+      "The homepage menu and footer now say \"Offres\" / \"Offers\" / \"Penawaran\" instead of \"Tarification\", matching the pricing section, which no longer lists prices.",
+      "Phone layout: the footer links now wrap instead of making every page that uses that footer (the homepage included) wider than the screen, which had pushed the cookie banner's buttons partly off-screen; the offer cards no longer split \"Sur devis\" over two lines.",
+    ],
+  },
   {
     version: "3.10.2",
     bump: "patch",

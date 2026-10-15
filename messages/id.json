@@ -280,7 +280,7 @@
       "how-we-work": "Cara kerja kami",
       "methodology": "Metodologi",
       "work": "Karya",
-      "pricing": "Harga",
+      "pricing": "Penawaran",
       "foundation": "Fondasi"
     },
     "cta": "Mulai Diagnostik"
@@ -552,7 +552,7 @@
       "how_we_work": "Cara kerja kami",
       "methodology": "Metodologi",
       "selected_work": "Karya terpilih",
-      "pricing": "Harga",
+      "pricing": "Penawaran",
       "foundation": "Fondasi",
       "meet_us": "Temui Kami",
       "diagnostic_form": "Formulir Diagnostik",
@@ -774,7 +774,7 @@
   },
   "Sales": {
     "metaTitle": "Alat khusus untuk menggantikan spreadsheet Anda · PRIONATION.io",
-    "metaDescription": "Untuk usaha kecil dan menengah: Diagnostic 2 minggu, lalu alat khusus Anda selesai dalam 8 minggu dengan harga tetap. Kirim pesan WhatsApp ke Evan atau minta ditelepon.",
+    "metaDescription": "Untuk usaha kecil dan menengah: Diagnostic 2 minggu, lalu alat khusus Anda selesai dalam 8 minggu dengan harga tetap. Kirim pesan WhatsApp ke Evan.",
     "refLabel": "ref.",
     "whatsappMessage": "Halo Evan, saya datang dari halaman PRIONATION Anda. Saya ingin tahu apakah sebagian pekerjaan manual kami bisa diotomatisasi, dan berapa biayanya.",
     "whatsappMessageStory": "Halo Evan, saya sudah membaca kisah Epidom. Di tempat kami juga masih banyak pekerjaan manual. Bisakah Anda memberi tahu apa yang bisa diotomatisasi?",
@@ -936,7 +936,7 @@
         },
         {
           "q": "Apa yang terjadi saat saya menghubungi Evan?",
-          "a": "Evan membalas sendiri, dalam 24 jam. Anda menjelaskan tugas yang menyita waktu; ia memberi tahu apakah tugas itu bisa diotomatisasi, bagaimana caranya, dan memberi perkiraan awal. Lebih suka telepon? Telepon dia atau minta ditelepon."
+          "a": "Evan membalas sendiri, dalam 24 jam. Anda menjelaskan tugas yang menyita waktu; ia memberi tahu apakah tugas itu bisa diotomatisasi, bagaimana caranya, dan memberi perkiraan awal. Lebih suka telepon? Telepon dia di {phone}."
         },
         {
           "q": "Apa sebenarnya yang Anda bangun?",

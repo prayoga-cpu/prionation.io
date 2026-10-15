@@ -159,7 +159,7 @@ export function SiteFooter() {
       <div className="pt-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center font-pixel text-[9px] tracking-[0.15em] text-line-soft text-left md:text-center">
         <div className="text-left">{t("copyright")}</div>
         <div className="text-left md:text-center">{t("managed")}</div>
-        <div className="flex justify-start md:justify-end gap-4 text-left md:text-right">
+        <div className="flex flex-wrap justify-start md:justify-end gap-x-4 gap-y-2 text-left md:text-right">
           <a
             href="https://www.instagram.com/prionation.io/"
             className="text-muted text-[13px] font-sans tracking-normal normal-case transition-colors duration-fast hover:text-white"
