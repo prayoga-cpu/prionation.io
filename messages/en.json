@@ -362,11 +362,18 @@
         "body": "Built a production operations dashboard for a European F&B operator. Centralises real-time data across locations, replacing fragmented manual tracking with a single decision surface for operators and managers."
       },
       {
-        "name": "EXPEDITOO",
+        "name": "EXPEDION × EXPEDITOO",
         "geo": "🇫🇷 FRANCE · EUROPE",
-        "tag": "LOGISTICS · MARKETPLACE",
-        "year": "2025",
-        "body": "Engineered a logistics and auction marketplace combining bidding mechanics and shipment tracking into a single application. Demonstrates full-stack capability across complex business logic."
+        "tag": "LOGISTICS · AI",
+        "year": "2026",
+        "body": "Built two connected products for one logistics group: a buyer app that reads auction invoices with a vision model and quotes a fixed delivery price, and a carrier marketplace that takes the jobs the fleet cannot — on one shared database."
+      },
+      {
+        "name": "ACTE",
+        "geo": "🇫🇷 FRANCE · EUROPE",
+        "tag": "LEGAL TECH · BETA",
+        "year": "2026",
+        "body": "Built the beta of time tracking and billing for French law firms: case budgets, one-click validation, invoice drafts, per-firm encryption and a pseudonymised AI assistant. Automatic case matching comes next, eval set first."
       },
       {
         "name": "The Lead Agent",
@@ -904,7 +911,7 @@
     "work": {
       "eyebrow": "Delivered work",
       "title": "Delivered tools, not mock-ups.",
-      "intro": "Hospitality, logistics, real estate: three industries, one principle. Replace manual work with a system.",
+      "intro": "Hospitality, local trades, logistics, law, real estate: different trades, one principle. Replace manual work with a system.",
       "cases": [
         {
           "tag": "Our product · Hospitality · France",
@@ -913,10 +920,28 @@
           "alt": "Epidom interface"
         },
         {
+          "tag": "Client · Local services · Paris",
+          "name": "Serrurier Paris Express",
+          "body": "A bilingual locksmith site that leads with a public price grid: 68 pages per language and a quote form that reaches the artisan directly.",
+          "alt": "Serrurier Paris Express website"
+        },
+        {
+          "tag": "Client · Home services · Essonne",
+          "name": "GLVitr'Clean",
+          "body": "A cleaning company site built for local search: 224 pages, real before-and-after jobs and a quote form that emails the team.",
+          "alt": "GLVitr'Clean website"
+        },
+        {
           "tag": "Client · Logistics · France",
-          "name": "Expeditoo",
-          "body": "A logistics marketplace that combines bidding and shipment tracking in a single app.",
-          "alt": "Expeditoo interface"
+          "name": "Expedion × Expeditoo",
+          "body": "Two connected apps for one logistics group: auction-invoice reading and fixed quotes for buyers, a bidding board for carriers.",
+          "alt": "Expedion buyer app"
+        },
+        {
+          "tag": "Client · Legal tech · France",
+          "name": "ACTE",
+          "body": "The beta of time tracking and billing for law firms, with per-firm encryption and a privacy-first AI assistant.",
+          "alt": "ACTE dashboard"
         },
         {
           "tag": "Client · Real estate · Australia",
@@ -1010,6 +1035,27 @@
       "Epidom online ordering on a phone: the menu, then checkout for dine-in, takeaway or delivery",
       "Epidom web-based POS: the cashier screen with order queue, dine-in and take-away, and checkout",
       "Epidom customer display: the order and total shown to the customer at the counter"
+    ],
+    "expeditoo": [
+      "Expedion app: choose a quote type. Upload the auction house slip as a PDF and the lots are extracted for you, or fill in the form",
+      "Expedion app: the buyer’s quotes, with their status and a link to track the delivery (test data)",
+      "Expeditoo admin panel: the Expedion bridge with recent quotes, an escalation due and direct requests; client names blurred, test data",
+      "Expeditoo job board for carriers: filter jobs around a place or along a route with an allowed detour, next to a map",
+      "Expeditoo shipment tracking: active runs with route, price, carrier and scheduled time (beta test data)",
+      "Expedion and Expeditoo on phones: the buyer app's homepage and the carrier network's homepage"
+    ],
+    "acte": [
+      "ACTE cases view in the beta: each matter with its hour budget, status and last activity, with synthetic data",
+      "ACTE statistics view in the beta: secured revenue by month, hourly rate, time captured and the breakdown by source, with synthetic data",
+      "ACTE public site: time tracking and billing for law firms, with a dashboard preview labelled as demo data"
+    ],
+    "serrurier-paris-express": [
+      "Serrurier Paris Express price grid: each intervention with its price including and excluding VAT",
+      "Serrurier Paris Express on phones: the homepage with the postcode check, and the price grid"
+    ],
+    "glvitr-clean": [
+      "GLVitr'Clean before-and-after sliders: three real client jobs, a tiled terrace, a veranda glass roof and a paved terrace",
+      "GLVitr'Clean on phones: the homepage and a before-and-after comparison"
     ]
   }
 }

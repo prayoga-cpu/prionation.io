@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.10.3";
+export const CURRENT_VERSION = "3.11.0";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,19 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.11.0",
+    bump: "minor",
+    date: "2026-10-16",
+    title: "Three new case studies; Expeditoo becomes Expedion × Expeditoo",
+    items: [
+      "New showcase pages in English, French and Indonesian: ACTE (time tracking and billing for law firms, in beta), Serrurier Paris Express (a price-first locksmith site in Paris) and GLVitr'Clean (a local cleaning company in Essonne). Each is written from the project's own repository and documents; no business results are claimed where none have been measured yet.",
+      "The Expeditoo case study is rewritten as Expedion × Expeditoo: two connected products for one logistics group (the buyer app that reads auction invoices with a vision model, and the carrier marketplace), at the same URL.",
+      "Replaced the old Expeditoo image, which showed \"15,000+ users\" and \"4.9/5\" figures that could not be backed, with new captures of the live sites. Frames that would show unverified figures are cropped instead.",
+      "ACTE is shown with screens from its beta dashboard (journal, cases, statistics), which runs on synthetic data; Expedion × Expeditoo with the buyer app (quote type, my quotes) and the operator and carrier dashboards (admin overview with client names blurred, job board, shipments), on test data.",
+      "The homepage now shows four projects (Epidom, Expedion × Expeditoo, ACTE, The Lead Agent) with whole 16:10 screenshots; /start shows six, adding the two local-business sites; new client logos in both logo rows.",
+    ],
+  },
   {
     version: "3.10.3",
     bump: "patch",

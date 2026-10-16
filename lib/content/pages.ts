@@ -54,6 +54,14 @@ export const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
 // Epidom: website → phone ordering → POS → customer display, so the tile reads as
 // one all-in-one web app. Its unused raw screenshots (test data / personal
 // details) stay out of the repo in the git-ignored private-assets/epidom/.
+// Serrurier Paris Express and GLVitr'Clean frames, the first and last
+// Expedion × Expeditoo frames and ACTE's last one are captures of public pages
+// (2026-10-16). Sections showing figures that can't be verified (Expeditoo's mock
+// landing stats, Expedion's star line, a response-time badge) are cropped out
+// rather than shown. The app and dashboard frames come from the client builds,
+// on test/synthetic data; the Expeditoo admin frame has the client's name blurred.
+// Shots not used, and why, are listed in the git-ignored
+// private-assets/{acte,expeditoo}/NOTES.md.
 export type ShowcaseImages = readonly [string, ...string[]];
 
 export const SHOWCASE_IMAGES: Record<string, ShowcaseImages> = {
@@ -63,8 +71,32 @@ export const SHOWCASE_IMAGES: Record<string, ShowcaseImages> = {
     "/work/epidom-pos.png",
     "/work/epidom-customer-display.png",
   ],
-  expeditoo: ["/work/expeditoo.png"],
+  expeditoo: [
+    "/work/expedion-expeditoo-buyer.png",
+    "/work/expedion-app-quote-type.png",
+    "/work/expedion-app-my-quotes.png",
+    "/work/expeditoo-dashboard-admin.png",
+    "/work/expeditoo-dashboard-jobs.png",
+    "/work/expeditoo-dashboard-shipments.png",
+    "/work/expedion-expeditoo-mobile.png",
+  ],
   "the-lead-agent": ["/work/lead-agent.png"],
+  acte: [
+    "/work/acte-dashboard-journal.png",
+    "/work/acte-dashboard-cases.png",
+    "/work/acte-dashboard-statistics.png",
+    "/work/acte-home.png",
+  ],
+  "serrurier-paris-express": [
+    "/work/serrurier-home.png",
+    "/work/serrurier-tarifs.png",
+    "/work/serrurier-mobile.png",
+  ],
+  "glvitr-clean": [
+    "/work/glvitrclean-home.png",
+    "/work/glvitrclean-before-after.png",
+    "/work/glvitrclean-mobile.png",
+  ],
 };
 
 export const pages: PageMeta[] = [
@@ -202,20 +234,20 @@ export const pages: PageMeta[] = [
     slug: "expeditoo",
     section: "showcases",
     status: "published",
-    seoTitle: "Expeditoo — marketplace AI, France · PRIONATION",
+    seoTitle: "Expedion × Expeditoo — auction logistics, France · PRIONATION",
     metaDescription:
-      "Building AI for a logistics marketplace: matching, cold start, two-sided data. What PRIONATION shipped for Expeditoo and what it proved.",
-    ogTitle: "Expeditoo — logistics marketplace AI · PRIONATION.io",
+      "Two connected products for one French logistics group: Expedion reads the auction invoice with a vision model and quotes a fixed delivery price; Expeditoo lets verified carriers bid on the jobs the fleet cannot take.",
+    ogTitle: "Expedion × Expeditoo — auction shipping and carrier marketplace · PRIONATION.io",
     audience: "mixed",
     schema: "CaseStudy",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-06-15",
+    updatedAt: "2026-10-16",
     sitemapPriority: 0.9,
     changeFreq: "monthly",
     tier1Keywords: [
-      "logistics marketplace AI features",
-      "multi-sided platform AI implementation",
-      "AI matching engine marketplace",
+      "auction shipping platform France",
+      "LLM document extraction logistics",
+      "carrier marketplace reverse auction",
     ],
     interlinkTo: [
       ANCHOR_PATH,
@@ -247,6 +279,73 @@ export const pages: PageMeta[] = [
       "/intelligence/ai-lead-generation-mid-market",
       "/methodology/evals-before-features",
     ],
+  },
+  {
+    slug: "acte",
+    section: "showcases",
+    status: "published",
+    seoTitle: "ACTE — legal time tracking and billing, France · PRIONATION",
+    metaDescription:
+      "The beta of ACTE, time tracking and billing for French law firms: per-firm encryption, a pseudonymised AI assistant, a correct billing ledger — and an eval set before any AI case matching.",
+    ogTitle: "ACTE — time tracking and billing for law firms · PRIONATION.io",
+    audience: "cto",
+    schema: "CaseStudy",
+    publishedAt: "2026-10-16",
+    updatedAt: "2026-10-16",
+    sitemapPriority: 0.9,
+    changeFreq: "monthly",
+    tier1Keywords: [
+      "legal time tracking software France",
+      "privacy-first AI for law firms",
+      "pseudonymisation before LLM",
+    ],
+    interlinkTo: [
+      ANCHOR_PATH,
+      "/methodology/evals-before-features",
+      "/methodology/owned-infrastructure",
+    ],
+  },
+  {
+    slug: "serrurier-paris-express",
+    section: "showcases",
+    status: "published",
+    seoTitle: "Serrurier Paris Express — locksmith lead site, Paris · PRIONATION",
+    metaDescription:
+      "A bilingual, price-first lead site for an independent Paris locksmith: a public price grid, 68 pages per language for real searches, a hardened quote form and no invented reviews.",
+    ogTitle: "Serrurier Paris Express — price-first locksmith site · PRIONATION.io",
+    audience: "ceo",
+    schema: "CaseStudy",
+    publishedAt: "2026-10-16",
+    updatedAt: "2026-10-16",
+    sitemapPriority: 0.85,
+    changeFreq: "monthly",
+    tier1Keywords: [
+      "local service business website",
+      "transparent pricing lead generation",
+      "local SEO site structure",
+    ],
+    interlinkTo: [ANCHOR_PATH, "/showcases/glvitr-clean"],
+  },
+  {
+    slug: "glvitr-clean",
+    section: "showcases",
+    status: "published",
+    seoTitle: "GLVitr'Clean — local cleaning company site, Essonne · PRIONATION",
+    metaDescription:
+      "GLVitr'Clean's bilingual site: 224 pages for local searches, real before-and-after jobs, a quote form on an edge function, and tax-credit claims that a compliance check keeps honest.",
+    ogTitle: "GLVitr'Clean — local cleaning company site · PRIONATION.io",
+    audience: "ceo",
+    schema: "CaseStudy",
+    publishedAt: "2026-10-16",
+    updatedAt: "2026-10-16",
+    sitemapPriority: 0.85,
+    changeFreq: "monthly",
+    tier1Keywords: [
+      "local SEO service and town pages",
+      "static site quote form edge function",
+      "tax credit claim compliance website",
+    ],
+    interlinkTo: [ANCHOR_PATH, "/showcases/serrurier-paris-express"],
   },
 
   // ── FRAMEWORKS ────────────────────────────────────────────────────────────

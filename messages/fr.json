@@ -362,11 +362,18 @@
         "body": "Développement d'un tableau de bord opérationnel de production pour un opérateur F&B européen. Centralise les données en temps réel sur plusieurs sites, remplaçant le suivi manuel fragmenté par une surface de décision unique pour les opérateurs et managers."
       },
       {
-        "name": "EXPEDITOO",
+        "name": "EXPEDION × EXPEDITOO",
         "geo": "🇫🇷 FRANCE · EUROPE",
-        "tag": "LOGISTIQUE · MARKETPLACE",
-        "year": "2025",
-        "body": "Développement d'une marketplace logistique et d'enchères combinant mécanique d'enchères et suivi des expéditions dans une seule application."
+        "tag": "LOGISTIQUE · IA",
+        "year": "2026",
+        "body": "Développement de deux produits connectés pour un même groupe logistique : une app acheteurs qui lit les bordereaux d'adjudication avec un modèle de vision et chiffre un prix de livraison fixe, et une marketplace de transporteurs qui prend les courses que la flotte ne peut pas assurer, sur une seule base de données."
+      },
+      {
+        "name": "ACTE",
+        "geo": "🇫🇷 FRANCE · EUROPE",
+        "tag": "LEGAL TECH · BÊTA",
+        "year": "2026",
+        "body": "Développement de la bêta d'un outil de suivi du temps et de facturation pour cabinets d'avocats : budgets par dossier, validation en un clic, brouillons de facture, chiffrement par cabinet et assistant IA pseudonymisé. Le rapprochement automatique des dossiers vient ensuite, jeu d'évaluation d'abord."
       },
       {
         "name": "The Lead Agent",
@@ -904,7 +911,7 @@
     "work": {
       "eyebrow": "Projets livrés",
       "title": "Des outils livrés, pas des maquettes.",
-      "intro": "Restauration, logistique, immobilier : trois métiers, un même principe. Remplacer le manuel par un système.",
+      "intro": "Restauration, artisans, logistique, droit, immobilier : des métiers différents, un même principe. Remplacer le manuel par un système.",
       "cases": [
         {
           "tag": "Notre produit · Restauration · France",
@@ -913,10 +920,28 @@
           "alt": "Interface Epidom"
         },
         {
+          "tag": "Client · Dépannage · Paris",
+          "name": "Serrurier Paris Express",
+          "body": "Un site de serrurier bilingue qui met le prix en avant : grille tarifaire publique, 68 pages par langue et un formulaire de devis qui arrive directement chez l'artisan.",
+          "alt": "Site Serrurier Paris Express"
+        },
+        {
+          "tag": "Client · Services à domicile · Essonne",
+          "name": "GLVitr'Clean",
+          "body": "Un site d'entreprise de nettoyage pensé pour la recherche locale : 224 pages, de vrais chantiers avant/après et un formulaire de devis envoyé à l'équipe par e-mail.",
+          "alt": "Site GLVitr'Clean"
+        },
+        {
           "tag": "Client · Logistique · France",
-          "name": "Expeditoo",
-          "body": "Une marketplace logistique qui combine enchères et suivi des expéditions dans une seule application.",
-          "alt": "Interface Expeditoo"
+          "name": "Expedion × Expeditoo",
+          "body": "Deux applications connectées pour un même groupe logistique : lecture des bordereaux et devis à prix fixe pour les acheteurs, tableau d'enchères pour les transporteurs.",
+          "alt": "App acheteurs Expedion"
+        },
+        {
+          "tag": "Client · Legal tech · France",
+          "name": "ACTE",
+          "body": "La bêta d'un outil de suivi du temps et de facturation pour cabinets d'avocats, avec chiffrement par cabinet et un assistant IA respectueux de la confidentialité.",
+          "alt": "Tableau de bord ACTE"
         },
         {
           "tag": "Client · Immobilier · Australie",
@@ -1010,6 +1035,27 @@
       "Commande en ligne Epidom sur mobile : le menu, puis la validation sur place, à emporter ou en livraison",
       "Le POS web d’Epidom : écran de caisse avec file de commandes, sur place ou à emporter, et encaissement",
       "Écran client Epidom : la commande et le total affichés au client au comptoir"
+    ],
+    "expeditoo": [
+      "App Expedion : choix du type de devis. Déposer le bordereau en PDF pour que les lots soient extraits automatiquement, ou remplir le formulaire",
+      "App Expedion : les devis de l’acheteur, avec leur statut et le suivi de livraison (données de test)",
+      "Panneau d’administration Expeditoo : le pont Expedion avec les devis récents, un transfert à faire et les demandes directes ; noms des clients floutés, données de test",
+      "Tableau des missions Expeditoo pour les transporteurs : filtre autour d’un lieu ou le long d’un trajet avec un détour autorisé, à côté d’une carte",
+      "Suivi des expéditions Expeditoo : courses actives avec trajet, prix, transporteur et créneau prévu (données de test de la bêta)",
+      "Expedion et Expeditoo sur mobile : l'accueil de l'app acheteurs et celui du réseau de transporteurs"
+    ],
+    "acte": [
+      "Vue Dossiers de la bêta d’ACTE : chaque affaire avec son budget d’heures, son statut et sa dernière activité, en données de test",
+      "Vue Statistiques de la bêta d’ACTE : revenu sécurisé par mois, taux horaire, temps capté et répartition par source, en données de test",
+      "Site public d’ACTE : suivi du temps et facturation pour cabinets d’avocats, avec un aperçu du tableau de bord signalé comme données de démonstration"
+    ],
+    "serrurier-paris-express": [
+      "Grille tarifaire de Serrurier Paris Express : chaque intervention avec son prix TTC et HT",
+      "Serrurier Paris Express sur mobile : l'accueil avec la vérification du code postal, et la grille tarifaire"
+    ],
+    "glvitr-clean": [
+      "Curseurs avant/après de GLVitr'Clean : trois vrais chantiers clients, une terrasse carrelée, une toiture de véranda et une terrasse pavée",
+      "GLVitr'Clean sur mobile : l'accueil et une comparaison avant/après"
     ]
   }
 }

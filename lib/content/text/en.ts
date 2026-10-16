@@ -1140,119 +1140,98 @@ export const pagesEn: LocalePages = {
     },
 
     "expeditoo": {
-      navLabel: "Expeditoo",
-      seoTitle: "Expeditoo — logistics marketplace, France · PRIONATION",
+      navLabel: "Expedion × Expeditoo",
+      seoTitle: "Expedion × Expeditoo — auction logistics, France · PRIONATION",
       metaDescription:
-        "How PRIONATION engineered a logistics and auction marketplace for Expeditoo — combining bidding and shipment tracking in one production system — and the transferable lesson.",
-      badge: "Showcase · 🇫🇷 France · Marketplace",
-      tldr: "Expeditoo needed a single application that combined auction-style bidding with shipment tracking — two complex systems most teams build separately. PRIONATION engineered them into one production marketplace. This page profiles the engagement and the lesson it holds for two-sided platform operators.",
-      h1: "Expeditoo: a logistics marketplace with bidding and tracking in one system",
+        "How PRIONATION built two connected products for one French logistics group: Expedion reads the auction invoice and quotes a fixed delivery price, Expeditoo lets verified carriers bid on the jobs the fleet cannot take.",
+      badge: "Showcase · 🇫🇷 France · Logistics",
+      tldr: "One French logistics group runs two brands. Expedion ships lots won at auction to the buyer's door; Expeditoo is the carrier network that picks up the jobs the group's own drivers cannot take. PRIONATION built both on one database: an LLM vision model reads the auction invoice, a shared pricing service quotes it, a paid job with no driver after 48 hours is posted automatically to verified carriers, and their delivery updates flow back into the buyer's tracking.",
+      h1: "Expedion × Expeditoo: one logistics group, two products, one source of truth",
       intro: [
-        "Expeditoo is a French logistics marketplace that combines auction mechanics with shipment tracking. The hard part of such a platform is not either feature alone — it is making bidding and operational tracking work as one coherent system rather than two bolted together.",
-        "This page profiles the engagement: the bottleneck, the build approach, and the transferable lesson for anyone building a two-sided logistics platform. Quantified results publish as finalised.",
+        "Expedion and Expeditoo belong to the same French group. Expedion is the buyer side: someone who has just won a lot at an auction house sends the auction invoice (the bordereau d'adjudication), gets a fixed delivery price, pays online and follows the delivery. Expeditoo is the carrier side: a web platform where verified transport companies bid on the jobs the group's own drivers cannot take.",
+        "PRIONATION built both products — the Expedion app in Flutter and the Expeditoo platform in Next.js — and the integration between them. This page covers how the two share one system, where AI actually sits in it, and what was deliberately left out. Business results will be published once the client has measured them.",
       ],
       sections: [
         {
-          h2: "The bottleneck",
+          h2: "Two businesses, one shipment",
           body: [
-            "A logistics marketplace carries two-sided complexity: a bidding layer where price is discovered, and an operational layer where shipments are tracked to completion. Built separately, the two drift apart — the marketplace promises what operations cannot reliably deliver, and the data never lines up.",
-            "For Expeditoo the challenge was unifying these into a single application with consistent business logic across both.",
+            "An auction buyer and a carrier want different things from the same job. The buyer wants one fixed price, a pickup before storage fees start running at the auction house, optional insurance on the lot, and a single place to follow the delivery. The carrier wants a clear brief, a fair price for the run and a guaranteed payment. Expedion serves the first; Expeditoo serves the second.",
+            "The group's own drivers handle what they can. The hard part is the overflow: when the fleet is full or the run is specialised, the job has to reach an outside carrier quickly — without anyone re-typing the order, re-quoting it, or losing track of where the lot is.",
           ],
         },
         {
-          h2: "How PRIONATION approached the build",
+          h2: "Reading the auction invoice with a vision model",
           body: [
-            "The approach was to treat bidding and tracking as one domain with one source of truth, not two integrations. That means defining the shared data model first, then building the bidding and tracking flows on top of it so they stay consistent by construction.",
-            "The result was delivered as a production system the client owns — full-stack, handling the complex business logic a two-sided logistics platform requires.",
+            "The slowest step to do by hand is the first one: working out what was bought, where it sits and what it is from a PDF or a phone photo of the auction invoice. Expedion sends that document to an LLM vision model — OpenAI's GPT-4.1 at temperature 0, constrained to a strict JSON schema — with Gemini as a fallback provider. The buyer then reviews the extracted details on a confirmation screen before any quote is made.",
+            "The model also reports its own confidence. Below a fixed threshold, the upload is treated as not being an auction invoice at all and the buyer is asked for the right document. If the extraction service is unavailable, the request still goes through with a notice and the slip is checked by a person — an outage slows the funnel down instead of closing it.",
           ],
         },
         {
-          h2: "What it changed",
+          h2: "One database, one price, one tracking feed",
           body: [
-            "Instead of two systems to reconcile, Expeditoo runs one application where a bid and the shipment it produces share the same record. The public project summary describes it as demonstrating full-stack capability across complex business logic.",
-            "Operational metrics are being prepared for publication and will appear here and on the transparency page.",
+            "Both products run on the same PostgreSQL database. An Expedion quote and the Expeditoo listing it may become are linked records, not two copies kept in sync — the founding architecture decision, because escalating a job across two databases would have been a distributed transaction waiting to go wrong. Expedion previously ran on Airtable; its 4,656 existing quotes were migrated into the shared database in September 2026.",
+            "Prices come from one place too: Expedion's automatic quote reuses Expeditoo's pricing service, so the two products can never quote the same run differently. And when an outside carrier takes a job, their status updates are written back to Expedion, so the buyer follows one delivery feed whether the driver comes from the group's pool or from the carrier network.",
           ],
         },
         {
-          h2: "The transferable lesson",
+          h2: "Escalation without a dispatcher",
           body: [
-            "For two-sided platforms the lesson is structural: model the shared domain before building either side. Most marketplace pain comes from a bidding system and an operations system that were built separately and never agreed on the data. One source of truth removes a whole category of later problems.",
-            "If your platform's two sides argue about what happened, the fix is usually upstream in the data model, not in either feature.",
+            "When a buyer pays, the quote is stamped with a deadline 48 hours out. Every ten minutes a scheduled job looks for paid quotes that still have no carrier after that deadline and posts each one to Expeditoo as a listing that carries its Expedion reference. Operators can also escalate a job by hand from the admin console, next to assigning a driver, re-pricing a quote or managing storage.",
+            "On Expeditoo, carriers send offers with a price, an ETA and a vehicle, and an operator awards the escalated jobs. Carrier verification is document-based — SIRET number, insurance certificate, transport licence, ID and bank details — and an administrator approves each account before it can bid.",
           ],
         },
         {
-          h2: "Why this bottleneck recurs in two-sided logistics platforms",
+          h2: "Money moves only when a person says so",
           body: [
-            "A logistics marketplace is two businesses wearing one logo. The bidding side behaves like a financial exchange — prices move, offers expire, counterparties commit — while the tracking side behaves like an operations desk, where a shipment is a physical thing moving through real-world states. Most teams staff and build these halves separately because they feel like separate disciplines, and that organisational split quietly becomes an architectural one. The bidding system learns to think in offers and money; the operations system learns to think in legs and milestones; and nothing in the codebase forces them to agree on what a single job actually is.",
-            "The split is rarely a one-off mistake — it is the path of least resistance for a growing platform. A marketplace usually launches with the bidding flow because that is where the demand-side excitement lives, then bolts tracking on once the first shipments need to move. By the time tracking matters, the bidding side has already defined its own vocabulary, and integration becomes a translation problem between two models that were never meant to be one. This is why the pattern recurs across logistics, freight, and procurement platforms regardless of size: the order in which features get built almost guarantees the data drifts.",
-            "The honest framing is that this is not a technology gap. The teams who hit it are competent; the failure is structural, baked in before anyone wrote a line of integration code. That is also why it is fixable — a structural problem responds to a structural decision, made once, about where the truth lives.",
+            "On the buyer side, payment goes through Stripe Checkout, and the server confirms each session with Stripe before reporting the payment to Expeditoo. On the carrier side, Expeditoo keeps a 10% commission and credits the rest to the carrier's balance. A carrier can request a withdrawal from €20; an operator makes the bank transfer and records its reference. Nothing in the platform moves money automatically.",
+            "That rule is deliberate. Automating payouts would have meant choosing a payment rail and a legal framework for paying drivers before the business had settled either — a question that sits with the client's lawyer. A manual step with a recorded reference is slower, but every payout has a person and a bank reference behind it.",
           ],
         },
         {
-          h2: "The engineering reasoning: one record, not two systems talking",
+          h2: "Engineering that holds up in production",
           body: [
-            "The core decision on Expeditoo was to make a single record the spine of the whole platform — the job — and to treat bidding and tracking as two views of that one record rather than two systems exchanging messages about it. When a bid wins, it does not 'create' a shipment in a separate operations database; it transitions the same job into its operational phase. Price, counterparty, route, and status are attributes of one thing with one identity, so there is no synchronisation step that can fail, lag, or disagree.",
-            "This sounds obvious stated plainly, and that is the point — the difficulty is not the idea but the discipline to define the shared domain before either flow is built. The domain model has to anticipate the full lifecycle of a job from open auction through to delivered shipment, including the awkward states in between: a bid accepted but not yet collected, a shipment in transit whose terms are being renegotiated, a job cancelled after award. Getting these states named and owned by one model up front is what lets the two flows stay consistent by construction rather than by reconciliation.",
-            "The payoff is that an entire class of bug simply cannot occur. There is no 'the marketplace says delivered but operations says in transit' incident, because both sentences are reading the same field. Consistency stops being a feature the team maintains and becomes a property of the schema — which is exactly the kind of variance the methodology exists to remove before a fixed price is quoted.",
+            "Expeditoo runs on Next.js with Drizzle and PostgreSQL on Neon, Better Auth, Stripe, Cloudflare R2 for documents and Resend for email, hosted on Vercel; the operator dashboard refreshes from Ably signals rather than polling. Expedion is a Flutter app that signs in through the same auth service with a bearer token — a native app has no browser cookie jar — and keeps a narrow Firebase fallback so accounts created before the migration still work.",
+            "The platform is covered by Vitest and Playwright, with 2,655 unit tests passing in the latest recorded run, and Expeditoo is in production at version 2.63. Small constraints shaped real decisions: uploads are capped at 3 MB to stay under the hosting body limit, HEIC photos are refused because the vision API rejects them, and the escalation sweep runs on GitHub Actions because the hosting plan limits scheduled jobs.",
           ],
         },
         {
           h2: "What was deliberately not built",
           body: [
-            "A two-sided marketplace invites scope in every direction — dynamic pricing engines, carrier rating algorithms, automated route optimisation, in-app messaging, analytics suites. The discipline of an eight-week clock is choosing not to build most of it. The decision rule is the same one applied across every engagement: build the one structural thing that everything else depends on, and refuse the features that can be added later without re-architecting. The shared job model is that structural thing; a recommendation engine is not.",
-            "Several tempting additions were left out on purpose because they belong on top of a stable domain, not inside the foundational build. Sophisticated pricing intelligence, predictive ETAs, and counterparty scoring are all genuinely useful — and all of them are cleaner to build once a single source of truth exists to train and measure them against. Building them first, on an unstable model, is how platforms end up with clever features sitting on data they cannot trust.",
-            "Naming this plainly is part of honest delivery: a marketplace that works is not a marketplace with every feature. The first build's job is to make the platform coherent and ownable, so the operator can decide — with real telemetry, on their own infrastructure — which of the deferred features actually earn their place.",
+            "Expeditoo began in 2025 as a broader marketplace that also auctioned goods. The 2026 rebuild dropped that: no goods auctions and no public marketplace to browse — every job on the board is a real Expedion shipment. Carrier tracking APIs, auction-house integrations, a native iOS app for carriers and other countries were also left for later.",
+            "Several questions stay open on purpose: the commission split on escalated jobs, the vendors for insurance and identity checks, and route publishing and matching. Carriers can already filter the board along a route they drive, but matching comes after bidding by design — bidding is the product, routes make it more efficient later. Each of these is easier to decide once real jobs are flowing through one shared data model.",
           ],
         },
         {
-          h2: "How to tell if the same pattern applies to you",
+          h2: "The transferable lesson",
           body: [
-            "The clearest symptom is an argument about facts. If the people running your demand side and the people running your fulfilment side regularly disagree about the status of the same job — and resolve it by checking two screens and picking one — the platform has two sources of truth and the disagreement is structural, not human. A second tell is the integration job that never quite finishes: a sync process, a nightly reconciliation, or a queue of mismatches someone clears manually. That maintenance tax is the recurring cost of a model that was split too early.",
-            "A more subtle indicator is feature paralysis. When straightforward additions — a status notification, a simple report, a fee adjustment — require touching two systems and reconciling their assumptions, the data model is telling you it was never unified. Operators often misread this as the codebase being 'complex'; more often it is two coherent codebases that disagree at the seam. The cost shows up as slow delivery rather than visible outages, which is why it goes unnamed for so long.",
-            "If these symptoms are familiar, the bottleneck is almost certainly upstream in the domain model, and the highest-leverage move is to map it before building anything new on top. That mapping is precisely what a two-week Diagnostic is for — confirming whether the seam is the real constraint before a single feature is quoted.",
+            "Two products that serve two sides of the same transaction should share a spine, not an integration. Here the spine is one quote record, one pricing service and one tracking feed; the buyer's app, the carrier's board and the operator console are views on top of it.",
+            "The AI sits where a person was doing slow, error-prone transcription, it reports its own confidence, and the funnel keeps working when it fails. That is usually the right shape for a first AI feature in an operations business: narrow, checkable, and never alone on the critical path.",
           ],
         },
       ],
       faq: [
         {
-          q: "What did PRIONATION build for Expeditoo?",
-          a: "A logistics and auction marketplace combining bidding mechanics and shipment tracking into a single production application with consistent business logic across both sides.",
+          q: "What did PRIONATION build for Expedion and Expeditoo?",
+          a: "Both products and the link between them: the Expedion buyer app (Flutter), which reads the auction invoice, quotes a fixed price and tracks the delivery; the Expeditoo carrier platform (Next.js), where verified carriers bid on escalated jobs; and the operator console that runs both.",
         },
         {
-          q: "What makes a logistics marketplace hard to build?",
-          a: "Two-sided complexity: a bidding layer and an operational tracking layer that, built separately, drift apart. The hard part is making them one coherent system with a shared source of truth.",
+          q: "How does the auction-invoice reading work?",
+          a: "An LLM vision model (GPT-4.1, with Gemini as a fallback) extracts the lot and pickup details into a strict JSON schema with a confidence score. The buyer confirms the details; low-confidence uploads are rejected as not being an auction invoice, and if the service is down a person checks the slip.",
         },
         {
-          q: "Where are the detailed metrics?",
-          a: "Operational results are being prepared and will be published here and on the transparency page. This profile describes the engagement and the transferable lesson.",
+          q: "When does a job go to an outside carrier?",
+          a: "When a paid quote still has no driver 48 hours after payment, or when an operator escalates it. A scheduled sweep posts it to Expeditoo automatically, and the carrier's status updates are written back to the buyer's tracking.",
         },
         {
-          q: "What is the transferable lesson?",
-          a: "For any two-sided platform, model the shared domain before building either side — most marketplace pain comes from two systems that never agreed on the data.",
+          q: "Are Expedion and Expeditoo separate companies?",
+          a: "No. Both brands belong to the same French logistics group: Expedion is the front door for auction buyers and Expeditoo is the group's carrier network.",
         },
         {
-          q: "How would a similar build start?",
-          a: "With a two-week Diagnostic to map the domain and define the shared data model before any feature is built.",
-        },
-        {
-          q: "Why do most teams build bidding and tracking as separate systems?",
-          a: "Because they feel like separate disciplines — one resembles a financial exchange, the other an operations desk — and platforms usually ship the bidding flow first, then bolt tracking on later. By then each side has its own vocabulary, so the split becomes architectural. It is the path of least resistance, not a competence failure, which is why the pattern recurs so consistently.",
-        },
-        {
-          q: "What does 'one source of truth' mean for a marketplace, concretely?",
-          a: "A single record — the job — that both the bid and the shipment read from and write to, rather than two databases exchanging messages. When a bid wins, the same record transitions into its operational phase; price, counterparty, and status are attributes of one thing. Consistency becomes a property of the schema instead of a sync process the team has to maintain.",
-        },
-        {
-          q: "What features were deliberately left out of the first build?",
-          a: "Dynamic pricing engines, predictive ETAs, counterparty scoring, route optimisation, and similar additions. They are genuinely useful but belong on top of a stable domain model, not inside the foundational build. The eight-week clock forces building the one structural thing everything else depends on, then deferring features that can be added later without re-architecting.",
-        },
-        {
-          q: "How can I tell if my platform has this two-sources-of-truth problem?",
-          a: "The clearest sign is people arguing about the status of the same job and resolving it by checking two screens. Other tells: a sync or reconciliation process that never quite finishes, and simple changes that require touching two systems. The cost usually shows up as slow delivery rather than outages, which is why it stays unnamed for so long.",
+          q: "Where are the business metrics?",
+          a: "Not published yet. What is documented is engineering-side: 4,656 existing quotes migrated into the shared database, 2,655 unit tests passing, and Expeditoo live in production at version 2.63. Operational results will be added once the client has measured them.",
         },
       ],
     },
-
     "the-lead-agent": {
       navLabel: "The Lead Agent",
       seoTitle: "The Lead Agent — real estate lead gen, Australia · PRIONATION",
@@ -1362,6 +1341,284 @@ export const pagesEn: LocalePages = {
         {
           q: "Why does owning the platform matter for a sales operation specifically?",
           a: "For a sales business the pipeline is the operation — the record of who is in play and what was promised. Owning the platform means the operational history, routing logic, and data stay with the business rather than being rented back. The system becomes leverage the client keeps, not a dependency that turns the pipeline itself into something a vendor holds.",
+        },
+      ],
+    },
+    acte: {
+      navLabel: "ACTE",
+      seoTitle: "ACTE — legal time tracking and billing, France · PRIONATION",
+      metaDescription:
+        "How PRIONATION built the beta of ACTE, time tracking and billing for French law firms: per-firm encryption, a pseudonymised AI assistant, a correct billing ledger — and an eval set before any AI case matching.",
+      badge: "Showcase · 🇫🇷 France · Legal tech",
+      tldr: "ACTE turns a lawyer's working day into validated, billable time linked to the right case. PRIONATION took the founder's prototype to a tested production codebase: a web app and API with per-firm AES-256 encryption, case budgets, one-click validation, CSV export and invoice drafts, and an assistant whose language model only ever sees pseudonymised data. Automatic case matching is the next stage, and it starts with an eval set, not a model. The product is in beta with synthetic data.",
+      h1: "ACTE: billable time for law firms, built privacy-first and eval-first",
+      intro: [
+        "ACTE is time tracking and billing for French law firms. The idea: a lawyer works as usual, ACTE records the work in a daily journal, links each task to the right case with a confidence score, and the lawyer only has to validate. Validated time becomes billable time, CSV exports and invoice drafts.",
+        "PRIONATION builds the product for its founder. This page covers what is built and running in the beta today, how confidentiality shaped the architecture, where AI sits — and where it deliberately does not yet. Results from law-firm pilots will be published once those pilots exist.",
+      ],
+      sections: [
+        {
+          h2: "The problem: billable time that never gets recorded",
+          body: [
+            "Lawyers who bill by the hour lose time in the gap between doing the work and writing it down. Timesheets are filled in from memory at the end of the day or the month, entries get rounded or forgotten, and the case they belong to is reconstructed after the fact. ACTE's answer is to capture the work as it happens and leave the lawyer one job: checking.",
+            "The constraint that shapes everything is confidentiality. A law firm cannot send document contents or client emails to a third party to find out how long someone spent on a case, so the product had to be designed around what never leaves the lawyer's machine.",
+          ],
+        },
+        {
+          h2: "From prototype to production codebase",
+          body: [
+            "ACTE's founder had already designed the product as a detailed HTML prototype of the dashboard. PRIONATION turned it into a production system: a pnpm and Turborepo monorepo with a Next.js 15 web app on React 19, a NestJS API, Drizzle on PostgreSQL, Better Auth, and a shared package of Zod schemas that every payload between the web app and the API is validated against.",
+            "The web app is a faithful port of the prototype's nine views, so the founder's design decisions survived intact. The work went into making them real: firm accounts and invitations, cases with hour budgets and statuses, time entries, one-click and whole-day validation, CSV export, and invoice drafts generated from validated time.",
+          ],
+        },
+        {
+          h2: "Privacy as architecture, not a promise",
+          body: [
+            "Sensitive fields are encrypted in the application with AES-256-GCM, using a random 256-bit key per firm that is itself wrapped by a master key, so one firm's data cannot be read with another firm's key. The marketing site self-hosts its fonts so that visitors' IP addresses are not sent to a font CDN.",
+            "The planned capture layer follows the same rule: raw content stays on the device and only the metadata needed for billing is uploaded, through a local encrypted queue. The beta runs on Vercel with a Neon database in Frankfurt; hosting in France, on Scaleway in Paris, is planned and not yet in place.",
+          ],
+        },
+        {
+          h2: "Where AI is — and where it is not yet",
+          body: [
+            "ACTE's Brain gives the lawyer a summary of the day inside the journal: deterministic insights such as pending tasks and low-confidence entries, plus an optional chat backed by a language model — Mistral's small model, called through a provider-agnostic client so the provider can change by configuration. Before anything reaches the model, names, titles, emails and URLs are pseudonymised; the model only sees aggregates and opaque references. The pseudonymiser alone is covered by around 60 test cases.",
+            "Automatic case matching — the confidence score at the heart of the product — is deliberately not built yet. The plan starts with the eval suite, not the model: more than 200 labelled examples and a weighted rules baseline scored from 0 to 100, with explicit targets (at least 85% of matches correct, and the 90-plus confidence band right at least 90% of the time) before anything more sophisticated is tried. Until then, confidence scores in the beta are demo data, and the product says so.",
+          ],
+        },
+        {
+          h2: "Correct about money before clever about time",
+          body: [
+            "A billing product has to be right about money before it is smart about anything else. Two rules were written into the data model after review: a task keeps the hourly rate it was validated at, so changing a rate never re-prices past work, and a piece of time can appear on only one invoice, so it cannot be billed twice.",
+            "Security got the same treatment. The first version of firm invitations was found unsafe in an adversarial review before it was ever pushed, and was rebuilt so that an invitation is bound to a token rather than to an email address. Email verification became mandatory after a review found that a sign-in link could wipe an unverified account's password. And deploys now run from CI with database migrations applied first, after a manual deploy once shipped code ahead of its schema.",
+          ],
+        },
+        {
+          h2: "Tested end to end",
+          body: [
+            "The beta is covered at every layer: 124 API tests, 21 contract tests, 32 route tests and an end-to-end suite of 40 scenarios, all passing. The full loop works on the live beta with synthetic data — create a firm, open cases, enter time, validate it, export it to CSV and draft an invoice.",
+            "At the last status review, on 1 October 2026, 32 features were working, 14 were partial and 14 were not yet built. No firm has used ACTE with real case data yet; pilots with two or three firms are the next milestone.",
+          ],
+        },
+        {
+          h2: "What was deliberately not built",
+          body: [
+            "The desktop capture app is the centrepiece of the product, and it is the part that was deliberately not rushed. How to capture work — a desktop agent using operating-system APIs, Office add-ins, or a browser extension — is still an open decision, because each option carries different privacy and installation trade-offs for a law firm. The web app already lists a firm's devices and issues activation keys, so the companion app can plug in when it exists.",
+            "Card payments (the subscription screen is a mock), invoice PDFs and sending, account deletion, and connectors to practice-management software such as Secib, Kleos or Jarvis are also outside the first build, along with Factur-X e-invoicing, voice and mobile.",
+          ],
+        },
+        {
+          h2: "The transferable lesson",
+          body: [
+            "When the data is confidential, decide what never leaves the device before deciding what the AI does with the rest. ACTE's order of work — encryption and pseudonymisation first, a correct billing ledger second, an evaluation set for matching third, the model last — is slower to demo but much faster to trust.",
+            "Build the manual path first, too. A lawyer can already run their day in ACTE without automatic capture; automation will make a working path faster instead of replacing a path that never worked.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "What is ACTE?",
+          a: "Time tracking and billing for French law firms: work is recorded in a daily journal, linked to a case with a confidence score, validated by the lawyer and turned into billable time, CSV exports and invoice drafts.",
+        },
+        {
+          q: "What did PRIONATION build?",
+          a: "The production codebase behind the beta: the Next.js web app and public site, the NestJS API, the database and per-firm encryption, authentication and firm invitations, ACTE's Brain with its pseudonymised language-model chat, and the test suites.",
+        },
+        {
+          q: "Does ACTE use AI to match time to cases?",
+          a: "Not yet. Automatic matching is the next stage and starts from an evaluation set of more than 200 labelled examples and a rules baseline with explicit accuracy targets. Confidence scores in today's beta are demo data and are labelled as such.",
+        },
+        {
+          q: "Is client data sent to an AI model?",
+          a: "Only pseudonymised aggregates. Names, titles, emails and URLs are replaced before any text reaches the language model behind ACTE's Brain, and the chat is optional.",
+        },
+        {
+          q: "Is ACTE live?",
+          a: "It is a working beta running on synthetic data. Pilots with law firms are the next milestone; results will be published here once they exist.",
+        },
+      ],
+    },
+    "serrurier-paris-express": {
+      navLabel: "Serrurier Paris Express",
+      seoTitle: "Serrurier Paris Express — locksmith lead site, Paris · PRIONATION",
+      metaDescription:
+        "How PRIONATION built a bilingual, price-first lead site for an independent Paris locksmith: a public price grid, 68 pages per language for real searches, a hardened quote form and no invented reviews.",
+      badge: "Showcase · 🇫🇷 Paris · Local services",
+      tldr: "In emergency locksmithing, customers fear the bill more than the broken lock. PRIONATION built Serrurier Paris Express around that fear: the price grid is public, every price is confirmed in writing before work starts, and no review is invented. The site has 68 pages per language in French and English, a quote form that emails the artisan directly, a postcode and location check, and structured data that search engines and AI assistants can read.",
+      h1: "Serrurier Paris Express: a locksmith site that leads with the price",
+      intro: [
+        "Serrurier Paris Express is an independent locksmith working across Paris and Île-de-France — a direct artisan, not a lead broker reselling calls. The brief was a site that turns urgent searches such as “porte claquée”, “clé cassée dans la serrure” or “serrurier Paris 11” into phone calls and written quote requests.",
+        "This page covers the positioning, the page structure, how leads are captured and protected, and what was kept off the site on purpose. Lead and traffic figures will be published once measurement is in place.",
+      ],
+      sections: [
+        {
+          h2: "The bottleneck: trust, not traffic",
+          body: [
+            "Someone searching for a locksmith in an emergency decides fast, under stress, in a trade known for surprise bills. The usual answers — badges, star widgets, “cheapest in Paris” — are exactly what make people suspicious. The site had to earn trust with something the customer can check.",
+            "So the headline is the thesis: “Serrurier à Paris : le prix d'abord, l'outil ensuite” — the price first, the tools second. Service pages show their price, the full grid is public on the pricing page, and the copy repeats one promise the artisan can keep: the price is agreed by phone and confirmed in writing before any work starts.",
+          ],
+        },
+        {
+          h2: "A public price grid that holds up",
+          body: [
+            "The price grid lives in one file and feeds every page that shows a price, so a change is made once. Prices are stored including VAT, the pre-tax figure is derived from them, and they are rounded up to the nearest ten, never down.",
+            "The figures started from a market reference grid the client supplied, and they were challenged where they did not hold: an €80 door-reinforcement price that contradicted market evidence was reopened and corrected to €1,070 including VAT before launch. A price grid is only a trust signal if it survives a customer's comparison.",
+          ],
+        },
+        {
+          h2: "68 pages per language, each for a real search",
+          body: [
+            "The site is in French and English, with 68 pages in each: seven services (five for households, two for businesses — securing commercial premises and maintenance contracts), five emergency pages written around what people actually type, five guides, and 41 location pages, plus pricing, quote, contact, about and legal pages.",
+            "The location pages follow a hub structure — the 20 Paris arrondissements, the seven Île-de-France départements and eight nearby towns — with real local references on each page rather than one template with the name swapped. Six pages for other French cities are explicitly labelled as covered through a network, so the site never implies the Paris artisan travels there. Pages are prerendered to static HTML; the only server code is the form endpoint.",
+          ],
+        },
+        {
+          h2: "Lead capture that reaches the artisan",
+          body: [
+            "The quote form posts to a single server route that emails the request through Resend to the artisan, with a monitored copy. The customer's confirmation email is sent only once the team's copy has gone out, so nobody is told “we received your request” when nobody did. After submitting, the customer is offered WhatsApp as a faster channel — offered, not forced.",
+            "At the client's request the form has no CAPTCHA; it is protected instead by a hidden honeypot field, a same-origin check, a limit of 15 requests per minute per IP address and a cap of three emails per hour per recipient. A postcode check tells visitors straight away whether they are in Paris, in Île-de-France or outside the zone, and a “use my position” button finds the address through IGN's Géoplateforme, the French national mapping service; the position is used once and not stored.",
+          ],
+        },
+        {
+          h2: "Readable by search engines and AI assistants",
+          body: [
+            "Every page carries structured data: a Locksmith business entity, each service with its price as an Offer, FAQ answers and breadcrumbs, plus a sitemap with French and English alternates. The robots file explicitly allows AI crawlers such as GPTBot, ClaudeBot and PerplexityBot, so an assistant asked what a locksmith costs in Paris can read the real grid.",
+            "What the structured data leaves out matters as much: there is no AggregateRating and no review markup, because there are no verified reviews yet — and the reviews section on the page says exactly that instead of filling the space.",
+          ],
+        },
+        {
+          h2: "Analytics that wait for consent",
+          body: [
+            "Eight conversion events are wired — call clicks, WhatsApp clicks, form submissions, location lookups and others — and they fire only after the visitor accepts cookies, in line with CNIL rules. The tag manager is not connected yet, so nothing is collected today; when it is, the events are already in place.",
+          ],
+        },
+        {
+          h2: "What was kept off the site",
+          body: [
+            "No invented reviews, no rating stars without ratings, no “cheapest in Paris”. Legal details the business has not supplied yet are shown as pending rather than filled with plausible-looking numbers.",
+            "When the client asked to soften the anti-scam tone of the marketing copy, the guides kept their practical advice on avoiding locksmith scams. That content is there to help the reader, not to sell.",
+          ],
+        },
+        {
+          h2: "The transferable lesson",
+          body: [
+            "For a local service business, the most persuasive thing a website can show is what competitors hide. Here it is the price. Publishing it forces the rest of the system to be honest: the grid has to be defensible, the written quote has to match it, and the form has to reach a real person.",
+            "That is also why the build started from content and structure — services, emergencies, locations, prices — before visuals. Pages that answer one specific question are the pages search engines and AI assistants send people to.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "What did PRIONATION build for Serrurier Paris Express?",
+          a: "The whole website in French and English: 68 pages per language covering services, emergencies, locations and guides, the public price grid, the quote form with email delivery and spam protection, the postcode and location check, structured data and consent-based analytics.",
+        },
+        {
+          q: "Why publish prices on a locksmith site?",
+          a: "Because surprise bills are the main fear in this market. A public grid, confirmed in writing before any work, is a trust signal a customer can check — unlike badges or star ratings.",
+        },
+        {
+          q: "How are quote requests delivered?",
+          a: "A server route emails each request to the artisan through Resend and only then confirms receipt to the customer. WhatsApp is offered afterwards as a faster channel.",
+        },
+        {
+          q: "Does the site show customer reviews?",
+          a: "Not yet, and it says so. No reviews or ratings are shown or marked up until verified ones exist.",
+        },
+        {
+          q: "Where are the results?",
+          a: "Search Console and the tag manager are not connected yet. Lead and traffic figures will be published here once they are measured.",
+        },
+      ],
+    },
+    "glvitr-clean": {
+      navLabel: "GLVitr'Clean",
+      seoTitle: "GLVitr'Clean — local cleaning company site, Essonne · PRIONATION",
+      metaDescription:
+        "How PRIONATION built GLVitr'Clean's bilingual site: 224 pages for local searches, real before-and-after jobs, a quote form on an edge function, and tax-credit claims that a compliance check keeps honest.",
+      badge: "Showcase · 🇫🇷 Essonne · Home services",
+      tldr: "GLVitr'Clean cleans windows, terraces, shutters, façades, solar panels and homes in Essonne and Seine-et-Marne. PRIONATION built its site as a static export in French and English — 224 pages, most of them answering “[service] in [town]” — with a quote form on an edge function, real before-and-after photos of client jobs, and a compliance check that only lets the 50% tax-credit claim appear where it is actually allowed. Lighthouse mobile scores 97–99 for performance and 100 for accessibility, best practices and SEO.",
+      h1: "GLVitr'Clean: a local cleaning business, findable town by town",
+      intro: [
+        "GLVitr'Clean is a multi-service cleaning company based in Linas, in Essonne, working for households and businesses in Essonne and Seine-et-Marne: windows, terraces, shutters and doors, façades, solar panels, bins and home cleaning. The site is live at glvitr-clean.com.",
+        "This page covers how the site is structured for local search, how quote requests reach the team, how the tax-credit claim is kept legally safe, and what is still waiting on the client. Lead and traffic figures will be published once they are measured.",
+      ],
+      sections: [
+        {
+          h2: "The bottleneck: being found in the next town",
+          body: [
+            "A local cleaning business is chosen by people searching for a service where they live — “nettoyage de vitres Arpajon”, “nettoyage terrasse Brétigny”. A single homepage cannot answer that for every town and every service, and generic pages with the town name swapped are exactly what search engines learn to ignore.",
+            "So the site was built as a grid of real answers: every service, every commune served, and every combination of the two, each with its own local paragraph.",
+          ],
+        },
+        {
+          h2: "224 pages, none of them invented",
+          body: [
+            "The site is a Next.js static export in French and English: 112 pages in each language. That is a homepage, service and zone hubs, seven service pages, twelve commune pages in Essonne, 84 service-by-commune pages, and pages for the tax credit, professional clients, completed jobs, the quote form and the legal notices.",
+            "The client also serves Seine-et-Marne, but has not yet named the towns there, so no Seine-et-Marne commune pages exist. Inventing them would have meant thin pages and claims nobody had confirmed. They will be added when the client names them.",
+          ],
+        },
+        {
+          h2: "A quote form on an edge function",
+          body: [
+            "A static export has no server, and the email provider's API key must never reach the browser. The quote form therefore posts to a separate Vercel Edge Function that sends the request through Resend to the team's three addresses, then sends the customer a confirmation — only if the team's copy went out.",
+            "The function checks the request origin, rate-limits per IP address and per recipient, rejects bodies over 16 KB and carries a honeypot field. After submitting, the customer can open WhatsApp with a pre-filled message naming the chosen service, so they can send a photo of the job straight away.",
+          ],
+        },
+        {
+          h2: "The tax credit, behind a compliance check",
+          body: [
+            "Household services in France can qualify for a 50% tax credit, which is a strong selling point — and a legal risk when it is claimed for services that do not qualify, since that can amount to a misleading commercial practice. On this site, eligibility is a data field on each service, and the 50% figure renders only on the four eligible services; façades, solar panels, bins and business services never show it.",
+            "A compliance-check script fails the build if the claim leaks onto the wrong page, and the official credential stays in pending mode until the client's registration number exists. The marketing claim is only as strong as the paperwork behind it.",
+          ],
+        },
+        {
+          h2: "Real jobs, labelled stock",
+          body: [
+            "The before-and-after section uses three real client jobs — a tiled terrace, a veranda glass roof and a paved terrace on video — with a draggable comparison slider. Where real photos do not exist yet, in the hero, the about section and the contact block, the stock images are labelled on screen as illustrations, and they will be replaced as the client's photo archive arrives.",
+            "The “write to us” panel is deliberately not a chat widget. It is a static panel offering a phone call, WhatsApp or the form, because a hosted chat would add cookies, does not fit a static export, and would promise live answers that nobody is there to give.",
+          ],
+        },
+        {
+          h2: "Fast, valid and readable",
+          body: [
+            "Lighthouse on mobile scores 97 to 99 for performance and 100 for accessibility, best practices and SEO on every page type measured. Every page has structured data — a home-services business, services with their area served, FAQ answers and breadcrumbs — plus French, English and default language alternates, an llms.txt file and IndexNow pings.",
+            "The domain move showed why checks matter. A stale environment variable had kept every canonical URL on the old domain; after the fix — the site URL is now hard-coded and verified by a host-check script — a live audit on 5 October 2026 counted 224 of 224 pages valid on the new domain, up from zero.",
+          ],
+        },
+        {
+          h2: "What is still waiting on the client",
+          body: [
+            "Review markup stays dormant until verified reviews exist, the professional-insurance details are marked “to be completed”, and no prices are published until the client sets them. The Seine-et-Marne towns and the full photo archive are the other open items.",
+            "None of these gaps is papered over. Each one shows as pending or simply does not render, so the site never claims more than the business can back.",
+          ],
+        },
+        {
+          h2: "The transferable lesson",
+          body: [
+            "For a local service business, the site is mostly structure: the right page for every service in every town, fast and valid, with one clear way to ask for a quote. That structure is what turns a small business into a findable one.",
+            "And claims that carry legal weight — a tax credit, a certification, a review score — belong in data with a check on them, not in copy. A build that fails when a claim leaks is cheaper than a complaint.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "What did PRIONATION build for GLVitr'Clean?",
+          a: "The full bilingual website at glvitr-clean.com: 224 pages for services and communes, the quote form on an edge function with email delivery, the before-and-after gallery, structured data, and the build checks that guard the tax-credit claim and the canonical domain.",
+        },
+        {
+          q: "Why so many pages for a local business?",
+          a: "Because customers search for a service in their town. Each service-by-commune page answers one such search with its own local content, instead of one generic page trying to rank everywhere.",
+        },
+        {
+          q: "How is the tax-credit claim handled?",
+          a: "Eligibility is stored per service and the 50% figure appears only on the four eligible services. A compliance script fails the build if it appears anywhere else, and the official credential stays pending until the client's registration number exists.",
+        },
+        {
+          q: "Are the photos real?",
+          a: "The before-and-after jobs are real client work. Stock images elsewhere are labelled as illustrations on the page and are being replaced as the client's photos arrive.",
+        },
+        {
+          q: "Where are the results?",
+          a: "Technical results are measured: Lighthouse mobile 97–99 for performance and 100 for accessibility, best practices and SEO, and 224 of 224 pages valid after the domain move. Lead and traffic figures will be published once they are measured.",
         },
       ],
     },

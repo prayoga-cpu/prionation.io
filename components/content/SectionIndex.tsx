@@ -13,7 +13,7 @@ const SCHEMA_HUE: Record<string, string> = {
 
 const SECTION_META: Record<PageSection, { label: string; desc: string }> = {
   methodology:  { label: "Methodology", desc: "The four engineering principles that make fixed-price AI production possible." },
-  showcases:    { label: "Showcases", desc: "First-party case studies from production AI engagements." },
+  showcases:    { label: "Showcases", desc: "First-party case studies from real builds: AI products, platforms and local-business sites." },
   frameworks:   { label: "Frameworks", desc: "Decision tools and calculators for AI operators." },
   guides:       { label: "Guides", desc: "Honest answers to the questions buyers ask before signing." },
   intelligence: { label: "Intelligence", desc: "First-party observations from real engagements by vertical." },

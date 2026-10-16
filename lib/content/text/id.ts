@@ -1140,119 +1140,98 @@ export const pagesId: LocalePages = {
     },
 
     "expeditoo": {
-      navLabel: "Expeditoo",
-      seoTitle: "Expeditoo — marketplace logistik, Prancis · PRIONATION",
+      navLabel: "Expedion × Expeditoo",
+      seoTitle: "Expedion × Expeditoo — logistik lelang, Prancis · PRIONATION",
       metaDescription:
-        "Bagaimana PRIONATION merekayasa marketplace logistik dan lelang untuk Expeditoo — menggabungkan penawaran dan pelacakan pengiriman dalam satu sistem produksi — dan pelajaran yang dapat dialihkan.",
-      badge: "Showcase · 🇫🇷 Prancis · Marketplace",
-      tldr: "Expeditoo butuh satu aplikasi yang menggabungkan penawaran ala lelang dengan pelacakan pengiriman — dua sistem kompleks yang kebanyakan tim bangun terpisah. PRIONATION merekayasanya menjadi satu marketplace produksi. Halaman ini memprofilkan proyek dan pelajaran bagi operator platform dua sisi.",
-      h1: "Expeditoo: marketplace logistik dengan penawaran dan pelacakan dalam satu sistem",
+        "Bagaimana PRIONATION membangun dua produk yang saling terhubung untuk satu grup logistik Prancis: Expedion membaca faktur lelang dan memberi penawaran harga pengiriman tetap, Expeditoo memungkinkan pengangkut terverifikasi menawar pekerjaan yang tak bisa diambil armada sendiri.",
+      badge: "Showcase · 🇫🇷 Prancis · Logistik",
+      tldr: "Satu grup logistik Prancis menjalankan dua merek. Expedion mengirim lot yang dimenangkan di lelang sampai ke pintu pembeli; Expeditoo adalah jaringan pengangkut yang mengambil pekerjaan yang tak bisa ditangani pengemudi grup sendiri. PRIONATION membangun keduanya di atas satu basis data: model LLM berkemampuan vision membaca faktur lelang, layanan penetapan harga bersama membuat penawaran harganya, pekerjaan yang sudah dibayar tetapi belum punya pengemudi setelah 48 jam otomatis diteruskan ke pengangkut terverifikasi, dan pembaruan pengiriman mereka mengalir kembali ke pelacakan pembeli.",
+      h1: "Expedion × Expeditoo: satu grup logistik, dua produk, satu sumber kebenaran",
       intro: [
-        "Expeditoo adalah marketplace logistik Prancis yang menggabungkan mekanika lelang dengan pelacakan pengiriman. Bagian sulit dari platform seperti itu bukan salah satu fitur saja — melainkan membuat penawaran dan pelacakan operasional bekerja sebagai satu sistem koheren alih-alih dua yang ditempel.",
-        "Halaman ini memprofilkan proyek: hambatan, pendekatan build, dan pelajaran yang dapat dialihkan bagi siapa pun yang membangun platform logistik dua sisi. Hasil terkuantifikasi dipublikasikan setelah difinalkan.",
+        "Expedion dan Expeditoo milik grup Prancis yang sama. Expedion adalah sisi pembeli: seseorang yang baru saja memenangkan lot di balai lelang mengirim faktur lelangnya (bordereau d'adjudication), mendapat harga pengiriman tetap, membayar online, dan mengikuti pengirimannya. Expeditoo adalah sisi pengangkut: platform web tempat perusahaan transportasi terverifikasi menawar pekerjaan yang tak bisa diambil pengemudi grup sendiri.",
+        "PRIONATION membangun kedua produk — aplikasi Expedion dengan Flutter dan platform Expeditoo dengan Next.js — beserta integrasi di antara keduanya. Halaman ini membahas bagaimana keduanya berbagi satu sistem, di mana AI sebenarnya berada di dalamnya, dan apa yang sengaja ditinggalkan. Hasil bisnis akan dipublikasikan begitu klien telah mengukurnya.",
       ],
       sections: [
         {
-          h2: "Hambatan",
+          h2: "Dua bisnis, satu pengiriman",
           body: [
-            "Marketplace logistik membawa kompleksitas dua sisi: lapisan penawaran tempat harga ditemukan, dan lapisan operasional tempat pengiriman dilacak hingga selesai. Dibangun terpisah, keduanya menyimpang — marketplace menjanjikan apa yang tak bisa diberikan operasi dengan andal, dan datanya tak pernah cocok.",
-            "Bagi Expeditoo, tantangannya menyatukannya menjadi satu aplikasi dengan logika bisnis konsisten di kedua sisi.",
+            "Pembeli lelang dan pengangkut menginginkan hal berbeda dari pekerjaan yang sama. Pembeli menginginkan satu harga tetap, pengambilan sebelum biaya penyimpanan di balai lelang mulai berjalan, asuransi opsional untuk lotnya, dan satu tempat untuk mengikuti pengiriman. Pengangkut menginginkan brief yang jelas, harga yang adil untuk perjalanannya, dan pembayaran yang terjamin. Expedion melayani yang pertama; Expeditoo melayani yang kedua.",
+            "Pengemudi grup sendiri menangani apa yang mereka sanggupi. Bagian sulitnya adalah limpahannya: ketika armada penuh atau perjalanannya bersifat khusus, pekerjaan itu harus cepat sampai ke pengangkut luar — tanpa ada yang mengetik ulang pesanan, menghitung ulang penawaran harganya, atau kehilangan jejak di mana lot itu berada.",
           ],
         },
         {
-          h2: "Bagaimana PRIONATION membangun",
+          h2: "Membaca faktur lelang dengan model vision",
           body: [
-            "Pendekatannya memperlakukan penawaran dan pelacakan sebagai satu domain dengan satu sumber kebenaran, bukan dua integrasi. Itu berarti mendefinisikan model data bersama dulu, lalu membangun alur penawaran dan pelacakan di atasnya agar konsisten secara konstruksi.",
-            "Hasilnya dikirim sebagai sistem produksi yang dimiliki klien — full-stack, menangani logika bisnis kompleks yang dibutuhkan platform logistik dua sisi.",
+            "Langkah yang paling lambat dikerjakan manual adalah yang pertama: memahami apa yang dibeli, di mana letaknya, dan barang apa itu dari PDF atau foto ponsel faktur lelang. Expedion mengirim dokumen itu ke model LLM berkemampuan vision — GPT-4.1 dari OpenAI pada temperature 0, dibatasi pada skema JSON yang ketat — dengan Gemini sebagai penyedia cadangan. Pembeli lalu meninjau detail hasil ekstraksi di layar konfirmasi sebelum penawaran harga apa pun dibuat.",
+            "Model juga melaporkan tingkat keyakinannya sendiri. Di bawah ambang yang tetap, unggahan diperlakukan sebagai bukan faktur lelang sama sekali dan pembeli diminta mengirim dokumen yang benar. Jika layanan ekstraksi tak tersedia, permintaan tetap diteruskan dengan pemberitahuan dan slip lelangnya diperiksa oleh seseorang — gangguan hanya memperlambat funnel, bukan menutupnya.",
           ],
         },
         {
-          h2: "Apa yang berubah",
+          h2: "Satu basis data, satu harga, satu alur pelacakan",
           body: [
-            "Alih-alih dua sistem untuk direkonsiliasi, Expeditoo menjalankan satu aplikasi tempat sebuah penawaran dan pengiriman yang dihasilkannya berbagi catatan yang sama. Ringkasan proyek publik menggambarkannya sebagai menunjukkan kapabilitas full-stack pada logika bisnis kompleks.",
-            "Metrik operasional sedang disiapkan untuk publikasi dan akan muncul di sini dan di halaman transparansi.",
+            "Kedua produk berjalan di atas basis data PostgreSQL yang sama. Penawaran harga Expedion dan listing Expeditoo yang mungkin lahir darinya adalah catatan yang saling terhubung, bukan dua salinan yang dijaga tetap sinkron — keputusan arsitektur yang menjadi fondasinya, karena mengeskalasi pekerjaan lintas dua basis data akan menjadi transaksi terdistribusi yang tinggal menunggu gagal. Sebelumnya Expedion berjalan di Airtable; 4.656 penawaran harga yang sudah ada dimigrasikan ke basis data bersama pada September 2026.",
+            "Harga pun berasal dari satu tempat: penawaran harga otomatis Expedion memakai ulang layanan penetapan harga Expeditoo, sehingga kedua produk tak mungkin memberi harga berbeda untuk perjalanan yang sama. Dan ketika pengangkut luar mengambil sebuah pekerjaan, pembaruan statusnya ditulis kembali ke Expedion, sehingga pembeli mengikuti satu alur pengiriman, baik pengemudinya berasal dari armada grup maupun dari jaringan pengangkut.",
+          ],
+        },
+        {
+          h2: "Eskalasi tanpa dispatcher",
+          body: [
+            "Ketika pembeli membayar, penawaran harganya diberi tenggat 48 jam ke depan. Setiap sepuluh menit, sebuah proses terjadwal mencari penawaran harga yang sudah dibayar tetapi masih belum punya pengangkut setelah tenggat itu, lalu memasang masing-masing ke Expeditoo sebagai listing yang membawa referensi Expedion-nya. Operator juga bisa mengeskalasi pekerjaan secara manual dari konsol admin, di samping menugaskan pengemudi, menetapkan ulang harga penawaran, atau mengelola penyimpanan.",
+            "Di Expeditoo, pengangkut mengirim tawaran berisi harga, ETA, dan kendaraan, lalu operator memutuskan pemenang pekerjaan yang dieskalasi. Verifikasi pengangkut berbasis dokumen — nomor SIRET, sertifikat asuransi, izin transportasi, kartu identitas, dan data rekening bank — dan administrator menyetujui setiap akun sebelum akun itu bisa menawar.",
+          ],
+        },
+        {
+          h2: "Uang hanya berpindah atas keputusan manusia",
+          body: [
+            "Di sisi pembeli, pembayaran berjalan melalui Stripe Checkout, dan server mengonfirmasi setiap sesi ke Stripe sebelum melaporkan pembayaran ke Expeditoo. Di sisi pengangkut, Expeditoo mengambil komisi 10% dan mengkreditkan sisanya ke saldo pengangkut. Pengangkut bisa meminta penarikan mulai dari €20; operator melakukan transfer bank dan mencatat referensinya. Tak ada apa pun di platform yang memindahkan uang secara otomatis.",
+            "Aturan itu disengaja. Mengotomatiskan pencairan dana berarti memilih jalur pembayaran dan kerangka hukum untuk membayar pengemudi sebelum bisnis menetapkan keduanya — pertanyaan yang menjadi ranah pengacara klien. Langkah manual dengan referensi tercatat memang lebih lambat, tetapi setiap pencairan punya seseorang dan referensi bank di baliknya.",
+          ],
+        },
+        {
+          h2: "Rekayasa yang tahan di produksi",
+          body: [
+            "Expeditoo berjalan di Next.js dengan Drizzle dan PostgreSQL di Neon, Better Auth, Stripe, Cloudflare R2 untuk dokumen, dan Resend untuk email, di-hosting di Vercel; dashboard operator diperbarui dari sinyal Ably alih-alih polling. Expedion adalah aplikasi Flutter yang masuk melalui layanan autentikasi yang sama dengan bearer token — aplikasi native tak punya cookie jar browser — dan mempertahankan fallback Firebase yang terbatas agar akun yang dibuat sebelum migrasi tetap berfungsi.",
+            "Platform ini diuji dengan Vitest dan Playwright, dengan 2.655 uji unit lolos pada eksekusi terakhir yang tercatat, dan Expeditoo berjalan di produksi pada versi 2.63. Kendala kecil membentuk keputusan nyata: unggahan dibatasi 3 MB agar tetap di bawah batas ukuran body hosting, foto HEIC ditolak karena API vision menolaknya, dan pemindaian eskalasi berjalan di GitHub Actions karena paket hosting membatasi tugas terjadwal.",
+          ],
+        },
+        {
+          h2: "Apa yang sengaja tidak dibangun",
+          body: [
+            "Expeditoo dimulai pada 2025 sebagai marketplace yang lebih luas yang juga melelang barang. Pembangunan ulang 2026 membuang itu: tak ada lelang barang dan tak ada marketplace publik untuk dijelajahi — setiap pekerjaan di papan adalah pengiriman Expedion yang nyata. API pelacakan pengangkut, integrasi balai lelang, aplikasi iOS native untuk pengangkut, dan negara lain juga ditunda untuk nanti.",
+            "Beberapa pertanyaan sengaja dibiarkan terbuka: pembagian komisi atas pekerjaan yang dieskalasi, vendor untuk asuransi dan pemeriksaan identitas, serta publikasi dan pencocokan rute. Kurir sudah bisa memfilter papan pekerjaan di sepanjang rute yang mereka tempuh, tetapi pencocokan sengaja datang setelah sistem penawaran — penawaran adalah produknya, rute membuatnya lebih efisien kemudian. Masing-masing lebih mudah diputuskan begitu pekerjaan nyata mengalir melalui satu model data bersama.",
           ],
         },
         {
           h2: "Pelajaran yang dapat dialihkan",
           body: [
-            "Untuk platform dua sisi, pelajarannya struktural: modelkan domain bersama sebelum membangun salah satu sisi. Sebagian besar kepedihan marketplace berasal dari sistem penawaran dan sistem operasi yang dibangun terpisah dan tak pernah menyepakati data. Satu sumber kebenaran menghapus seluruh kategori masalah di kemudian hari.",
-            "Jika dua sisi platform Anda berdebat tentang apa yang terjadi, perbaikannya biasanya di hulu pada model data, bukan di salah satu fitur.",
-          ],
-        },
-        {
-          h2: "Mengapa hambatan ini berulang pada platform logistik dua sisi",
-          body: [
-            "Marketplace logistik adalah dua bisnis yang mengenakan satu logo. Sisi penawaran berperilaku seperti bursa keuangan — harga bergerak, tawaran kedaluwarsa, pihak lawan berkomitmen — sementara sisi pelacakan berperilaku seperti meja operasi, tempat sebuah pengiriman adalah benda fisik yang bergerak melewati keadaan dunia nyata. Kebanyakan tim merekrut dan membangun kedua bagian ini terpisah karena terasa seperti disiplin yang berbeda, dan pemisahan organisasional itu diam-diam menjadi pemisahan arsitektural. Sistem penawaran belajar berpikir dalam tawaran dan uang; sistem operasi belajar berpikir dalam etape dan tonggak; dan tak ada apa pun dalam basis kode yang memaksa keduanya sepakat tentang apa sebenarnya satu pekerjaan itu.",
-            "Pemisahan ini jarang merupakan kesalahan sekali jadi — ia adalah jalur dengan hambatan paling kecil bagi platform yang sedang tumbuh. Marketplace biasanya diluncurkan dengan alur penawaran karena di situlah kegembiraan sisi permintaan berada, lalu menempelkan pelacakan begitu pengiriman pertama harus bergerak. Saat pelacakan menjadi penting, sisi penawaran sudah mendefinisikan kosakatanya sendiri, dan integrasi menjadi masalah penerjemahan antara dua model yang tak pernah dimaksudkan menjadi satu. Inilah sebabnya polanya berulang di platform logistik, pengangkutan, dan pengadaan terlepas dari ukurannya: urutan fitur dibangun nyaris menjamin datanya menyimpang.",
-            "Pembingkaian yang jujur adalah ini bukan kesenjangan teknologi. Tim yang menabraknya kompeten; kegagalannya struktural, tertanam sebelum siapa pun menulis satu baris kode integrasi. Itu juga sebabnya ia bisa diperbaiki — masalah struktural merespons keputusan struktural, dibuat sekali, tentang di mana kebenaran itu berada.",
-          ],
-        },
-        {
-          h2: "Penalaran rekayasanya: satu catatan, bukan dua sistem yang berbicara",
-          body: [
-            "Keputusan inti pada Expeditoo adalah menjadikan satu catatan sebagai tulang punggung seluruh platform — pekerjaan itu — dan memperlakukan penawaran dan pelacakan sebagai dua tampilan dari satu catatan itu, bukan dua sistem yang saling bertukar pesan tentangnya. Ketika sebuah penawaran menang, ia tidak 'membuat' pengiriman di basis data operasi terpisah; ia mentransisikan pekerjaan yang sama ke fase operasionalnya. Harga, pihak lawan, rute, dan status adalah atribut dari satu hal dengan satu identitas, sehingga tak ada langkah sinkronisasi yang bisa gagal, tertinggal, atau berselisih.",
-            "Dinyatakan terus terang, ini terdengar jelas, dan itulah intinya — kesulitannya bukan gagasannya melainkan disiplin mendefinisikan domain bersama sebelum salah satu alur dibangun. Model domain harus mengantisipasi seluruh siklus hidup sebuah pekerjaan dari lelang terbuka hingga pengiriman terkirim, termasuk keadaan canggung di antaranya: penawaran diterima tetapi belum diambil, pengiriman dalam perjalanan yang termanya sedang dinegosiasi ulang, pekerjaan dibatalkan setelah penganugerahan. Memberi nama keadaan-keadaan ini dan menyerahkannya kepada satu model sejak awal adalah yang membuat kedua alur tetap konsisten secara konstruksi alih-alih lewat rekonsiliasi.",
-            "Imbalannya adalah seluruh kategori bug sama sekali tak bisa terjadi. Tak ada insiden 'marketplace bilang terkirim tetapi operasi bilang dalam perjalanan', karena kedua kalimat itu membaca bidang yang sama. Konsistensi berhenti menjadi fitur yang dipelihara tim dan menjadi properti skema — persis jenis variansi yang ada untuk dihapus oleh metodologi sebelum harga tetap ditawarkan.",
-          ],
-        },
-        {
-          h2: "Apa yang dengan sengaja tidak dibangun",
-          body: [
-            "Marketplace dua sisi mengundang lingkup ke segala arah — mesin penetapan harga dinamis, algoritma penilaian pengangkut, optimasi rute otomatis, pesan dalam aplikasi, suite analitik. Disiplin sebuah jam delapan minggu adalah memilih untuk tidak membangun sebagian besarnya. Aturan keputusannya sama dengan yang diterapkan di setiap penugasan: bangun satu hal struktural yang menjadi sandaran semua hal lain, dan tolak fitur yang bisa ditambahkan kemudian tanpa merancang ulang arsitektur. Model pekerjaan bersama adalah hal struktural itu; mesin rekomendasi bukan.",
-            "Beberapa tambahan menggoda sengaja ditinggalkan karena tempatnya di atas domain yang stabil, bukan di dalam build fondasi. Kecerdasan penetapan harga yang canggih, ETA prediktif, dan penilaian pihak lawan semuanya benar-benar berguna — dan semuanya lebih bersih dibangun begitu satu sumber kebenaran ada untuk melatih dan mengukurnya. Membangunnya lebih dulu, di atas model yang tak stabil, adalah bagaimana platform berakhir dengan fitur cerdik yang bertumpu pada data yang tak bisa mereka percayai.",
-            "Menyebutkannya terus terang adalah bagian dari penyerahan yang jujur: marketplace yang bekerja bukanlah marketplace dengan setiap fitur. Tugas build pertama adalah membuat platform koheren dan dapat dimiliki, sehingga operator bisa memutuskan — dengan telemetri nyata, di infrastrukturnya sendiri — fitur tertunda mana yang benar-benar layak mendapat tempatnya.",
-          ],
-        },
-        {
-          h2: "Cara mengetahui apakah pola yang sama berlaku bagi Anda",
-          body: [
-            "Gejala paling jelas adalah perdebatan tentang fakta. Jika orang yang menjalankan sisi permintaan dan orang yang menjalankan sisi pemenuhan Anda secara teratur berselisih tentang status pekerjaan yang sama — dan menyelesaikannya dengan memeriksa dua layar lalu memilih salah satu — platform punya dua sumber kebenaran dan perselisihannya struktural, bukan manusiawi. Tanda kedua adalah pekerjaan integrasi yang tak pernah benar-benar selesai: proses sinkronisasi, rekonsiliasi malam hari, atau antrean ketidakcocokan yang dibereskan seseorang secara manual. Pajak pemeliharaan itu adalah biaya berulang dari model yang dipisah terlalu dini.",
-            "Indikator yang lebih halus adalah kelumpuhan fitur. Ketika tambahan sederhana — notifikasi status, laporan sederhana, penyesuaian biaya — menuntut menyentuh dua sistem dan merekonsiliasi asumsi keduanya, model data sedang memberi tahu Anda bahwa ia tak pernah disatukan. Operator sering salah membacanya sebagai basis kode yang 'kompleks'; lebih sering itu adalah dua basis kode koheren yang berselisih di sambungannya. Biayanya muncul sebagai penyerahan yang lambat alih-alih gangguan yang terlihat, itulah sebabnya ia begitu lama tak bernama.",
-            "Jika gejala-gejala ini terasa akrab, hambatannya hampir pasti di hulu pada model domain, dan langkah dengan daya ungkit tertinggi adalah memetakannya sebelum membangun apa pun yang baru di atasnya. Pemetaan itu persis untuk apa Diagnostic dua minggu ada — memastikan apakah sambungan itu kendala sesungguhnya sebelum satu fitur pun dikuotakan.",
+            "Dua produk yang melayani dua sisi dari transaksi yang sama sebaiknya berbagi satu tulang punggung, bukan sekadar sebuah integrasi. Di sini tulang punggungnya adalah satu catatan penawaran harga, satu layanan penetapan harga, dan satu alur pelacakan; aplikasi pembeli, papan pengangkut, dan konsol operator adalah tampilan di atasnya.",
+            "AI ditempatkan di titik tempat seseorang sebelumnya melakukan transkripsi yang lambat dan rawan kesalahan, ia melaporkan tingkat keyakinannya sendiri, dan funnel tetap berjalan ketika ia gagal. Itu biasanya bentuk yang tepat untuk fitur AI pertama di bisnis operasional: sempit, dapat diperiksa, dan tak pernah sendirian di jalur kritis.",
           ],
         },
       ],
       faq: [
         {
-          q: "Apa yang dibangun PRIONATION untuk Expeditoo?",
-          a: "Marketplace logistik dan lelang yang menggabungkan mekanika penawaran dan pelacakan pengiriman menjadi satu aplikasi produksi dengan logika bisnis konsisten di kedua sisi.",
+          q: "Apa yang dibangun PRIONATION untuk Expedion dan Expeditoo?",
+          a: "Kedua produk beserta penghubung di antaranya: aplikasi pembeli Expedion (Flutter), yang membaca faktur lelang, memberi penawaran harga tetap, dan melacak pengiriman; platform pengangkut Expeditoo (Next.js), tempat pengangkut terverifikasi menawar pekerjaan yang dieskalasi; dan konsol operator yang menjalankan keduanya.",
         },
         {
-          q: "Apa yang membuat marketplace logistik sulit dibangun?",
-          a: "Kompleksitas dua sisi: lapisan penawaran dan lapisan pelacakan operasional yang, jika dibangun terpisah, menyimpang. Bagian sulitnya membuat keduanya satu sistem koheren dengan sumber kebenaran bersama.",
+          q: "Bagaimana pembacaan faktur lelang bekerja?",
+          a: "Model LLM berkemampuan vision (GPT-4.1, dengan Gemini sebagai cadangan) mengekstrak detail lot dan pengambilan ke dalam skema JSON yang ketat beserta skor keyakinan. Pembeli mengonfirmasi detailnya; unggahan dengan keyakinan rendah ditolak karena dianggap bukan faktur lelang, dan jika layanannya mati, seseorang memeriksa slip lelangnya.",
         },
         {
-          q: "Di mana metrik terperinci?",
-          a: "Hasil operasional sedang disiapkan dan akan dipublikasikan di sini dan di halaman transparansi. Profil ini menjelaskan proyek dan pelajaran yang dapat dialihkan.",
+          q: "Kapan sebuah pekerjaan diteruskan ke pengangkut luar?",
+          a: "Ketika penawaran harga yang sudah dibayar masih belum punya pengemudi 48 jam setelah pembayaran, atau ketika operator mengeskalasinya. Pemindaian terjadwal memasangnya ke Expeditoo secara otomatis, dan pembaruan status dari pengangkut ditulis kembali ke pelacakan pembeli.",
         },
         {
-          q: "Apa pelajaran yang dapat dialihkan?",
-          a: "Untuk platform dua sisi mana pun, modelkan domain bersama sebelum membangun salah satu sisi — sebagian besar kepedihan marketplace berasal dari dua sistem yang tak pernah menyepakati data.",
+          q: "Apakah Expedion dan Expeditoo perusahaan yang terpisah?",
+          a: "Tidak. Kedua merek milik grup logistik Prancis yang sama: Expedion adalah pintu masuk bagi pembeli lelang dan Expeditoo adalah jaringan pengangkut milik grup.",
         },
         {
-          q: "Bagaimana build serupa dimulai?",
-          a: "Dengan Diagnostic dua minggu untuk memetakan domain dan mendefinisikan model data bersama sebelum fitur apa pun dibangun.",
-        },
-        {
-          q: "Mengapa kebanyakan tim membangun penawaran dan pelacakan sebagai sistem terpisah?",
-          a: "Karena keduanya terasa seperti disiplin yang berbeda — yang satu menyerupai bursa keuangan, yang lain meja operasi — dan platform biasanya merilis alur penawaran lebih dulu, lalu menempelkan pelacakan kemudian. Saat itu tiap sisi sudah punya kosakatanya sendiri, sehingga pemisahan menjadi arsitektural. Itu jalur dengan hambatan paling kecil, bukan kegagalan kompetensi, itulah sebabnya polanya berulang begitu konsisten.",
-        },
-        {
-          q: "Apa arti 'satu sumber kebenaran' bagi marketplace, secara konkret?",
-          a: "Satu catatan — pekerjaan itu — yang dibaca dan ditulis oleh baik penawaran maupun pengiriman, alih-alih dua basis data yang saling bertukar pesan. Ketika sebuah penawaran menang, catatan yang sama bertransisi ke fase operasionalnya; harga, pihak lawan, dan status adalah atribut dari satu hal. Konsistensi menjadi properti skema alih-alih proses sinkronisasi yang harus dipelihara tim.",
-        },
-        {
-          q: "Fitur apa yang dengan sengaja ditinggalkan dari build pertama?",
-          a: "Mesin penetapan harga dinamis, ETA prediktif, penilaian pihak lawan, optimasi rute, dan tambahan sejenis. Semuanya benar-benar berguna tetapi tempatnya di atas model domain yang stabil, bukan di dalam build fondasi. Jam delapan minggu memaksa membangun satu hal struktural yang menjadi sandaran semua hal lain, lalu menunda fitur yang bisa ditambahkan kemudian tanpa merancang ulang arsitektur.",
-        },
-        {
-          q: "Bagaimana saya tahu platform saya punya masalah dua sumber kebenaran ini?",
-          a: "Tanda paling jelas adalah orang berdebat tentang status pekerjaan yang sama dan menyelesaikannya dengan memeriksa dua layar. Tanda lain: proses sinkronisasi atau rekonsiliasi yang tak pernah benar-benar selesai, dan perubahan sederhana yang menuntut menyentuh dua sistem. Biayanya biasanya muncul sebagai penyerahan yang lambat alih-alih gangguan, itulah sebabnya ia tetap tak bernama begitu lama.",
+          q: "Di mana metrik bisnisnya?",
+          a: "Belum dipublikasikan. Yang terdokumentasi ada di sisi rekayasa: 4.656 penawaran harga yang sudah ada dimigrasikan ke basis data bersama, 2.655 uji unit lolos, dan Expeditoo berjalan di produksi pada versi 2.63. Hasil operasional akan ditambahkan begitu klien telah mengukurnya.",
         },
       ],
     },
-
     "the-lead-agent": {
       navLabel: "The Lead Agent",
       seoTitle: "The Lead Agent — lead gen real estate, Australia · PRIONATION",
@@ -1362,6 +1341,284 @@ export const pagesId: LocalePages = {
         {
           q: "Mengapa memiliki platform penting khusus bagi operasi penjualan?",
           a: "Bagi bisnis penjualan, pipeline adalah operasinya — catatan tentang siapa yang sedang bermain dan apa yang dijanjikan. Memiliki platform berarti riwayat operasional, logika perutean, dan data tetap bersama bisnis alih-alih disewakan kembali. Sistemnya menjadi daya ungkit yang dipegang klien, bukan ketergantungan yang mengubah pipeline itu sendiri menjadi sesuatu yang dipegang vendor.",
+        },
+      ],
+    },
+    acte: {
+      navLabel: "ACTE",
+      seoTitle: "ACTE — penagihan waktu firma hukum, Prancis · PRIONATION",
+      metaDescription:
+        "Bagaimana PRIONATION membangun beta ACTE, pelacakan waktu dan penagihan untuk firma hukum Prancis: enkripsi per firma, asisten AI dengan data yang dipseudonimkan, buku besar penagihan yang benar — dan set eval sebelum pencocokan perkara berbasis AI apa pun.",
+      badge: "Showcase · 🇫🇷 Prancis · Legal tech",
+      tldr: "ACTE mengubah hari kerja seorang pengacara menjadi waktu yang tervalidasi dan dapat ditagih, terhubung ke perkara yang tepat. PRIONATION membawa prototipe sang pendiri menjadi basis kode produksi yang teruji: aplikasi web dan API dengan enkripsi AES-256 per firma, anggaran perkara, validasi sekali klik, ekspor CSV dan draf faktur, serta asisten yang model bahasanya hanya pernah melihat data yang dipseudonimkan. Pencocokan perkara otomatis adalah tahap berikutnya, dan ia dimulai dengan set eval, bukan model. Produk ini dalam tahap beta dengan data sintetis.",
+      h1: "ACTE: waktu yang dapat ditagih untuk firma hukum, dibangun dengan privasi dan eval lebih dulu",
+      intro: [
+        "ACTE adalah pelacakan waktu dan penagihan untuk firma hukum Prancis. Gagasannya: pengacara bekerja seperti biasa, ACTE mencatat pekerjaannya dalam jurnal harian, menautkan setiap tugas ke perkara yang tepat dengan skor keyakinan, dan pengacara cukup memvalidasinya. Waktu yang tervalidasi menjadi waktu yang dapat ditagih, ekspor CSV, dan draf faktur.",
+        "PRIONATION membangun produk ini untuk pendirinya. Halaman ini membahas apa yang sudah dibangun dan berjalan di beta saat ini, bagaimana kerahasiaan membentuk arsitekturnya, di mana AI berada — dan di mana ia sengaja belum ada. Hasil dari pilot dengan firma hukum akan dipublikasikan begitu pilot itu ada.",
+      ],
+      sections: [
+        {
+          h2: "Masalahnya: waktu yang dapat ditagih yang tak pernah tercatat",
+          body: [
+            "Pengacara yang menagih per jam kehilangan waktu di celah antara mengerjakan pekerjaan dan mencatatnya. Timesheet diisi dari ingatan di akhir hari atau akhir bulan, entri dibulatkan atau terlupa, dan perkara yang menjadi induknya direkonstruksi belakangan. Jawaban ACTE adalah menangkap pekerjaan saat ia terjadi dan menyisakan satu tugas bagi pengacara: memeriksa.",
+            "Kendala yang membentuk segalanya adalah kerahasiaan. Firma hukum tak bisa mengirim isi dokumen atau email klien ke pihak ketiga hanya untuk mengetahui berapa lama seseorang mengerjakan sebuah perkara, sehingga produk ini harus dirancang di sekitar apa yang tak pernah meninggalkan komputer pengacara.",
+          ],
+        },
+        {
+          h2: "Dari prototipe ke basis kode produksi",
+          body: [
+            "Pendiri ACTE sudah merancang produknya sebagai prototipe HTML dashboard yang terperinci. PRIONATION mengubahnya menjadi sistem produksi: monorepo pnpm dan Turborepo dengan aplikasi web Next.js 15 di React 19, API NestJS, Drizzle di PostgreSQL, Better Auth, dan paket bersama berisi skema Zod yang menjadi acuan validasi setiap payload antara aplikasi web dan API.",
+            "Aplikasi webnya adalah port setia dari sembilan tampilan prototipe, sehingga keputusan desain sang pendiri bertahan utuh. Pekerjaannya tercurah untuk membuatnya nyata: akun firma dan undangan, perkara dengan anggaran jam dan status, entri waktu, validasi sekali klik maupun satu hari penuh, ekspor CSV, dan draf faktur yang dihasilkan dari waktu yang tervalidasi.",
+          ],
+        },
+        {
+          h2: "Privasi sebagai arsitektur, bukan janji",
+          body: [
+            "Kolom data sensitif dienkripsi di level aplikasi dengan AES-256-GCM, menggunakan kunci acak 256-bit per firma yang dibungkus lagi oleh kunci master, sehingga data satu firma tak bisa dibaca dengan kunci firma lain. Situs pemasarannya meng-hosting font sendiri agar alamat IP pengunjung tak dikirim ke CDN font.",
+            "Lapisan penangkapan yang direncanakan mengikuti aturan yang sama: konten mentah tetap di perangkat dan hanya metadata yang diperlukan untuk penagihan yang diunggah, melalui antrean lokal terenkripsi. Beta berjalan di Vercel dengan basis data Neon di Frankfurt; hosting di Prancis, di Scaleway Paris, sudah direncanakan tetapi belum diterapkan.",
+          ],
+        },
+        {
+          h2: "Di mana AI berada — dan di mana ia belum ada",
+          body: [
+            "ACTE's Brain memberi pengacara ringkasan hari itu di dalam jurnal: insight deterministik seperti tugas yang tertunda dan entri berkeyakinan rendah, ditambah chat opsional yang didukung model bahasa — model kecil Mistral, dipanggil melalui klien yang agnostik terhadap penyedia sehingga penyedianya bisa diganti lewat konfigurasi. Sebelum apa pun sampai ke model, nama, judul, email, dan URL dipseudonimkan; model hanya melihat agregat dan referensi opaque. Modul pseudonimisasinya saja dicakup oleh sekitar 60 kasus uji.",
+            "Pencocokan perkara otomatis — skor keyakinan yang menjadi jantung produk — sengaja belum dibangun. Rencananya dimulai dengan suite eval, bukan model: lebih dari 200 contoh berlabel dan baseline aturan berbobot yang memberi skor 0 hingga 100, dengan target eksplisit (setidaknya 85% pencocokan benar, dan rentang keyakinan 90 ke atas benar dalam setidaknya 90% kasus) sebelum apa pun yang lebih canggih dicoba. Sampai saat itu, skor keyakinan di beta adalah data demo, dan produknya menyatakan hal itu.",
+          ],
+        },
+        {
+          h2: "Benar soal uang sebelum pintar soal waktu",
+          body: [
+            "Produk penagihan harus benar soal uang sebelum pintar soal apa pun. Dua aturan dituliskan ke dalam model data setelah peninjauan: sebuah tugas mempertahankan tarif per jam saat ia divalidasi, sehingga mengubah tarif tak pernah mengubah harga pekerjaan yang sudah lalu, dan satu potong waktu hanya bisa muncul di satu faktur, sehingga tak bisa ditagih dua kali.",
+            "Keamanan mendapat perlakuan yang sama. Versi pertama undangan firma ditemukan tak aman dalam tinjauan adversarial sebelum sempat di-push, lalu dibangun ulang sehingga undangan terikat pada token, bukan pada alamat email. Verifikasi email menjadi wajib setelah sebuah tinjauan menemukan bahwa tautan masuk bisa menghapus kata sandi akun yang belum terverifikasi. Dan deploy kini berjalan dari CI dengan migrasi basis data diterapkan lebih dulu, setelah sebuah deploy manual pernah mengirim kode mendahului skemanya.",
+          ],
+        },
+        {
+          h2: "Teruji ujung ke ujung",
+          body: [
+            "Beta ini dicakup di setiap lapisan: 124 uji API, 21 uji kontrak, 32 uji rute, dan rangkaian uji ujung ke ujung berisi 40 skenario, semuanya lolos. Seluruh alur bekerja di beta yang sudah live dengan data sintetis — membuat firma, membuka perkara, memasukkan waktu, memvalidasinya, mengekspornya ke CSV, dan membuat draf faktur.",
+            "Pada tinjauan status terakhir, 1 Oktober 2026, 32 fitur sudah berfungsi, 14 baru sebagian, dan 14 belum dibangun. Belum ada firma yang memakai ACTE dengan data perkara nyata; pilot dengan dua atau tiga firma adalah tonggak berikutnya.",
+          ],
+        },
+        {
+          h2: "Apa yang sengaja tidak dibangun",
+          body: [
+            "Aplikasi penangkapan desktop adalah inti produk, dan justru bagian itulah yang sengaja tidak diburu-buru. Cara menangkap pekerjaan — agen desktop yang memakai API sistem operasi, add-in Office, atau ekstensi browser — masih merupakan keputusan terbuka, karena tiap opsi membawa kompromi privasi dan instalasi yang berbeda bagi firma hukum. Aplikasi web sudah mencantumkan perangkat milik firma dan menerbitkan kunci aktivasi, sehingga aplikasi pendampingnya bisa langsung terhubung begitu ia ada.",
+            "Pembayaran kartu (layar langganan masih berupa mock), PDF faktur dan pengirimannya, penghapusan akun, serta konektor ke perangkat lunak manajemen praktik hukum seperti Secib, Kleos, atau Jarvis juga berada di luar build pertama, begitu pula e-invoicing Factur-X, fitur suara, dan versi seluler.",
+          ],
+        },
+        {
+          h2: "Pelajaran yang dapat dialihkan",
+          body: [
+            "Ketika datanya rahasia, putuskan apa yang tak pernah meninggalkan perangkat sebelum memutuskan apa yang dilakukan AI dengan sisanya. Urutan kerja ACTE — enkripsi dan pseudonimisasi dulu, buku besar penagihan yang benar kedua, set evaluasi untuk pencocokan ketiga, model terakhir — lebih lambat untuk didemokan tetapi jauh lebih cepat untuk dipercaya.",
+            "Bangun juga jalur manualnya lebih dulu. Seorang pengacara sudah bisa menjalankan harinya di ACTE tanpa penangkapan otomatis; otomatisasi akan mempercepat jalur yang sudah bekerja alih-alih menggantikan jalur yang tak pernah bekerja.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Apa itu ACTE?",
+          a: "Pelacakan waktu dan penagihan untuk firma hukum Prancis: pekerjaan dicatat dalam jurnal harian, ditautkan ke perkara dengan skor keyakinan, divalidasi oleh pengacara, lalu diubah menjadi waktu yang dapat ditagih, ekspor CSV, dan draf faktur.",
+        },
+        {
+          q: "Apa yang dibangun PRIONATION?",
+          a: "Basis kode produksi di balik beta: aplikasi web Next.js dan situs publik, API NestJS, basis data dan enkripsi per firma, autentikasi dan undangan firma, ACTE's Brain dengan chat model bahasa berbasis data yang dipseudonimkan, serta rangkaian ujinya.",
+        },
+        {
+          q: "Apakah ACTE memakai AI untuk mencocokkan waktu ke perkara?",
+          a: "Belum. Pencocokan otomatis adalah tahap berikutnya dan dimulai dari set evaluasi berisi lebih dari 200 contoh berlabel serta baseline berbasis aturan dengan target akurasi eksplisit. Skor keyakinan di beta saat ini adalah data demo dan diberi label demikian.",
+        },
+        {
+          q: "Apakah data klien dikirim ke model AI?",
+          a: "Hanya agregat yang dipseudonimkan. Nama, judul, email, dan URL diganti sebelum teks apa pun sampai ke model bahasa di balik ACTE's Brain, dan chat-nya opsional.",
+        },
+        {
+          q: "Apakah ACTE sudah live?",
+          a: "ACTE adalah beta yang berfungsi dan berjalan dengan data sintetis. Pilot dengan firma hukum adalah tonggak berikutnya; hasilnya akan dipublikasikan di sini begitu ada.",
+        },
+      ],
+    },
+    "serrurier-paris-express": {
+      navLabel: "Serrurier Paris Express",
+      seoTitle: "Serrurier Paris Express — situs tukang kunci, Paris · PRIONATION",
+      metaDescription:
+        "Bagaimana PRIONATION membangun situs lead dwibahasa yang mendahulukan harga untuk tukang kunci independen di Paris: tabel harga publik, 68 halaman per bahasa untuk pencarian nyata, formulir penawaran harga yang diperkuat keamanannya, dan tanpa ulasan rekaan.",
+      badge: "Showcase · 🇫🇷 Paris · Layanan lokal",
+      tldr: "Dalam layanan kunci darurat, pelanggan lebih takut pada tagihannya ketimbang pada kunci yang rusak. PRIONATION membangun Serrurier Paris Express di sekitar ketakutan itu: tabel harganya publik, setiap harga dikonfirmasi tertulis sebelum pekerjaan dimulai, dan tak ada ulasan yang direka. Situsnya memiliki 68 halaman per bahasa dalam bahasa Prancis dan Inggris, formulir penawaran harga yang langsung mengirim email ke sang artisan, pengecekan kode pos dan lokasi, serta data terstruktur yang bisa dibaca mesin pencari dan asisten AI.",
+      h1: "Serrurier Paris Express: situs tukang kunci yang mengedepankan harga",
+      intro: [
+        "Serrurier Paris Express adalah tukang kunci independen yang bekerja di seluruh Paris dan Île-de-France — artisan yang bekerja langsung, bukan broker lead yang menjual ulang panggilan. Briefnya adalah situs yang mengubah pencarian mendesak seperti “porte claquée” (pintu terbanting dan terkunci), “clé cassée dans la serrure” (kunci patah di dalam lubang kunci), atau “serrurier Paris 11” menjadi panggilan telepon dan permintaan penawaran harga tertulis.",
+        "Halaman ini membahas positioning, struktur halaman, cara lead ditangkap dan dilindungi, serta apa yang sengaja dijauhkan dari situs. Angka lead dan trafik akan dipublikasikan begitu pengukuran sudah berjalan.",
+      ],
+      sections: [
+        {
+          h2: "Hambatannya: kepercayaan, bukan trafik",
+          body: [
+            "Orang yang mencari tukang kunci dalam keadaan darurat memutuskan dengan cepat, di bawah tekanan, di bidang yang terkenal dengan tagihan mengejutkan. Jawaban yang biasa — lencana, widget bintang, “termurah di Paris” — justru yang membuat orang curiga. Situs ini harus meraih kepercayaan dengan sesuatu yang bisa diperiksa pelanggan.",
+            "Jadi judul utamanya adalah tesisnya: “Serrurier à Paris : le prix d'abord, l'outil ensuite” — harga dulu, perkakas kemudian. Halaman layanan menampilkan harganya, tabel lengkapnya publik di halaman harga, dan teks situsnya mengulang satu janji yang bisa ditepati sang artisan: harga disepakati lewat telepon dan dikonfirmasi tertulis sebelum pekerjaan apa pun dimulai.",
+          ],
+        },
+        {
+          h2: "Tabel harga publik yang bisa dipertanggungjawabkan",
+          body: [
+            "Tabel harga berada di satu file dan memasok setiap halaman yang menampilkan harga, sehingga perubahan cukup dilakukan sekali. Harga disimpan sudah termasuk PPN, angka sebelum pajak diturunkan darinya, dan semuanya dibulatkan ke atas ke puluhan terdekat, tak pernah ke bawah.",
+            "Angka-angkanya bermula dari tabel acuan pasar yang diberikan klien, dan digugat ketika tak bisa dipertahankan: harga penguatan pintu €80 yang bertentangan dengan bukti pasar dibuka kembali dan dikoreksi menjadi €1.070 termasuk PPN sebelum peluncuran. Tabel harga hanya menjadi sinyal kepercayaan jika ia lolos dari perbandingan pelanggan.",
+          ],
+        },
+        {
+          h2: "68 halaman per bahasa, masing-masing untuk pencarian nyata",
+          body: [
+            "Situsnya dalam bahasa Prancis dan Inggris, dengan 68 halaman di masing-masing: tujuh layanan (lima untuk rumah tangga, dua untuk bisnis — pengamanan tempat usaha dan kontrak pemeliharaan), lima halaman darurat yang ditulis berdasarkan apa yang benar-benar diketik orang, lima panduan, dan 41 halaman lokasi, ditambah halaman harga, permintaan penawaran, kontak, tentang kami, dan legal.",
+            "Halaman lokasi mengikuti struktur hub — 20 arrondissement Paris, tujuh département Île-de-France, dan delapan kota terdekat — dengan referensi lokal yang nyata di tiap halaman alih-alih satu template dengan nama yang ditukar. Enam halaman untuk kota-kota Prancis lainnya secara eksplisit diberi label dilayani melalui jaringan, sehingga situs tak pernah menyiratkan bahwa artisan Paris itu sendiri yang datang ke sana. Halaman di-prerender menjadi HTML statis; satu-satunya kode server adalah endpoint formulir.",
+          ],
+        },
+        {
+          h2: "Penangkapan lead yang sampai ke sang artisan",
+          body: [
+            "Formulir penawaran harga mengirim ke satu route server yang meneruskan permintaan lewat email melalui Resend ke sang artisan, dengan salinan yang dipantau. Email konfirmasi untuk pelanggan baru dikirim setelah salinan untuk tim terkirim, sehingga tak ada yang diberi tahu “permintaan Anda sudah kami terima” padahal tak ada yang menerimanya. Setelah mengirim, pelanggan ditawari WhatsApp sebagai saluran yang lebih cepat — ditawarkan, bukan dipaksakan.",
+            "Atas permintaan klien, formulir tidak memakai CAPTCHA; sebagai gantinya ia dilindungi oleh field honeypot tersembunyi, pengecekan same-origin, batas 15 permintaan per menit per alamat IP, dan batas tiga email per jam per penerima. Pengecekan kode pos langsung memberi tahu pengunjung apakah mereka berada di Paris, di Île-de-France, atau di luar zona, dan tombol “gunakan posisi saya” menemukan alamat melalui Géoplateforme milik IGN, layanan pemetaan nasional Prancis; posisinya dipakai sekali dan tidak disimpan.",
+          ],
+        },
+        {
+          h2: "Dapat dibaca mesin pencari dan asisten AI",
+          body: [
+            "Setiap halaman membawa data terstruktur: entitas bisnis Locksmith, setiap layanan beserta harganya sebagai Offer, jawaban FAQ, dan breadcrumb, ditambah sitemap dengan alternatif bahasa Prancis dan Inggris. File robots secara eksplisit mengizinkan crawler AI seperti GPTBot, ClaudeBot, dan PerplexityBot, sehingga asisten yang ditanya berapa biaya tukang kunci di Paris bisa membaca tabel yang sebenarnya.",
+            "Apa yang tidak dimasukkan ke data terstruktur sama pentingnya: tak ada AggregateRating dan tak ada markup ulasan, karena belum ada ulasan terverifikasi — dan bagian ulasan di halaman mengatakan persis itu alih-alih mengisi ruangnya.",
+          ],
+        },
+        {
+          h2: "Analitik yang menunggu persetujuan",
+          body: [
+            "Delapan event konversi sudah dipasang — klik panggilan, klik WhatsApp, pengiriman formulir, pencarian lokasi, dan lainnya — dan semuanya baru aktif setelah pengunjung menerima cookie, sesuai aturan CNIL. Tag manager belum terhubung, jadi saat ini belum ada data yang dikumpulkan; begitu terhubung, event-nya sudah siap.",
+          ],
+        },
+        {
+          h2: "Apa yang dijauhkan dari situs",
+          body: [
+            "Tanpa ulasan rekaan, tanpa bintang rating tanpa rating yang mendasarinya, tanpa “termurah di Paris”. Detail legal yang belum diberikan bisnisnya ditampilkan sebagai tertunda alih-alih diisi angka yang tampak masuk akal.",
+            "Ketika klien meminta nada anti-penipuan dalam teks pemasaran dilunakkan, panduan-panduannya tetap mempertahankan saran praktis untuk menghindari penipuan tukang kunci. Konten itu ada untuk membantu pembaca, bukan untuk berjualan.",
+          ],
+        },
+        {
+          h2: "Pelajaran yang dapat dialihkan",
+          body: [
+            "Bagi bisnis jasa lokal, hal paling meyakinkan yang bisa ditunjukkan sebuah situs adalah apa yang disembunyikan pesaing. Di sini, itu adalah harga. Mempublikasikannya memaksa sisa sistem untuk jujur: tabelnya harus bisa dipertahankan, penawaran tertulis harus sesuai dengannya, dan formulirnya harus sampai ke orang sungguhan.",
+            "Itu juga alasan build dimulai dari konten dan struktur — layanan, keadaan darurat, lokasi, harga — sebelum visual. Halaman yang menjawab satu pertanyaan spesifik adalah halaman ke mana mesin pencari dan asisten AI mengarahkan orang.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Apa yang dibangun PRIONATION untuk Serrurier Paris Express?",
+          a: "Seluruh situs dalam bahasa Prancis dan Inggris: 68 halaman per bahasa yang mencakup layanan, keadaan darurat, lokasi, dan panduan, tabel harga publik, formulir penawaran harga dengan pengiriman email dan perlindungan spam, pengecekan kode pos dan lokasi, data terstruktur, serta analitik berbasis persetujuan.",
+        },
+        {
+          q: "Mengapa mempublikasikan harga di situs tukang kunci?",
+          a: "Karena tagihan mengejutkan adalah ketakutan utama di pasar ini. Tabel publik, yang dikonfirmasi tertulis sebelum pekerjaan apa pun, adalah sinyal kepercayaan yang bisa diperiksa pelanggan — tidak seperti lencana atau rating bintang.",
+        },
+        {
+          q: "Bagaimana permintaan penawaran harga dikirimkan?",
+          a: "Sebuah route server mengirim setiap permintaan lewat email ke sang artisan melalui Resend dan baru setelah itu mengonfirmasi penerimaan kepada pelanggan. WhatsApp ditawarkan sesudahnya sebagai saluran yang lebih cepat.",
+        },
+        {
+          q: "Apakah situs ini menampilkan ulasan pelanggan?",
+          a: "Belum, dan situsnya menyatakan hal itu. Tak ada ulasan atau rating yang ditampilkan atau diberi markup sampai ada ulasan yang terverifikasi.",
+        },
+        {
+          q: "Di mana hasilnya?",
+          a: "Search Console dan tag manager belum terhubung. Angka lead dan trafik akan dipublikasikan di sini begitu sudah diukur.",
+        },
+      ],
+    },
+    "glvitr-clean": {
+      navLabel: "GLVitr'Clean",
+      seoTitle: "GLVitr'Clean — jasa kebersihan Essonne · PRIONATION",
+      metaDescription:
+        "Bagaimana PRIONATION membangun situs dwibahasa GLVitr'Clean: 224 halaman untuk pencarian lokal, pekerjaan sebelum-sesudah yang nyata, formulir penawaran harga di edge function, dan klaim kredit pajak yang dijaga tetap jujur oleh pengecekan kepatuhan.",
+      badge: "Showcase · 🇫🇷 Essonne · Layanan rumah tangga",
+      tldr: "GLVitr'Clean membersihkan jendela, teras, daun jendela, fasad, panel surya, dan rumah di Essonne dan Seine-et-Marne. PRIONATION membangun situsnya sebagai static export dalam bahasa Prancis dan Inggris — 224 halaman, sebagian besar menjawab “[layanan] di [kota]” — dengan formulir penawaran harga di edge function, foto sebelum-sesudah nyata dari pekerjaan klien, dan pengecekan kepatuhan yang hanya membiarkan klaim kredit pajak 50% muncul di tempat yang memang diizinkan. Lighthouse mobile mencetak skor 97–99 untuk performa dan 100 untuk aksesibilitas, best practices, dan SEO.",
+      h1: "GLVitr'Clean: bisnis kebersihan lokal yang mudah ditemukan, kota demi kota",
+      intro: [
+        "GLVitr'Clean adalah perusahaan kebersihan multi-layanan yang berbasis di Linas, Essonne, melayani rumah tangga dan bisnis di Essonne dan Seine-et-Marne: jendela, teras, daun jendela dan pintu, fasad, panel surya, tempat sampah, dan pembersihan rumah. Situsnya live di glvitr-clean.com.",
+        "Halaman ini membahas bagaimana situs disusun untuk pencarian lokal, bagaimana permintaan penawaran harga sampai ke tim, bagaimana klaim kredit pajak dijaga tetap aman secara hukum, dan apa yang masih menunggu dari klien. Angka lead dan trafik akan dipublikasikan begitu sudah diukur.",
+      ],
+      sections: [
+        {
+          h2: "Hambatannya: ditemukan di kota sebelah",
+          body: [
+            "Bisnis kebersihan lokal dipilih oleh orang yang mencari layanan di tempat tinggalnya — “nettoyage de vitres Arpajon” (pembersihan kaca Arpajon), “nettoyage terrasse Brétigny” (pembersihan teras Brétigny). Satu beranda tak bisa menjawab itu untuk setiap kota dan setiap layanan, dan halaman generik dengan nama kota yang ditukar persis jenis halaman yang lama-lama diabaikan mesin pencari.",
+            "Maka situs dibangun sebagai grid jawaban nyata: setiap layanan, setiap commune yang dilayani, dan setiap kombinasi keduanya, masing-masing dengan paragraf lokalnya sendiri.",
+          ],
+        },
+        {
+          h2: "224 halaman, tak satu pun rekaan",
+          body: [
+            "Situs ini adalah static export Next.js dalam bahasa Prancis dan Inggris: 112 halaman di tiap bahasa. Isinya beranda, hub layanan dan zona, tujuh halaman layanan, dua belas halaman commune di Essonne, 84 halaman layanan-per-commune, serta halaman untuk kredit pajak, klien profesional, pekerjaan yang sudah selesai, formulir penawaran harga, dan pemberitahuan legal.",
+            "Klien juga melayani Seine-et-Marne, tetapi belum menyebutkan kota-kotanya di sana, jadi belum ada halaman commune Seine-et-Marne. Mereka-reka halaman itu berarti halaman tipis dan klaim yang belum dikonfirmasi siapa pun. Halaman-halaman itu akan ditambahkan begitu klien menyebutkannya.",
+          ],
+        },
+        {
+          h2: "Formulir penawaran harga di edge function",
+          body: [
+            "Static export tak punya server, dan kunci API penyedia email tak boleh sampai ke browser. Karena itu formulir penawaran harga mengirim ke Vercel Edge Function terpisah yang meneruskan permintaan melalui Resend ke tiga alamat tim, lalu mengirim konfirmasi ke pelanggan — hanya jika salinan untuk tim sudah terkirim.",
+            "Fungsi ini memeriksa origin permintaan, membatasi laju per alamat IP dan per penerima, menolak body di atas 16 KB, dan memuat field honeypot. Setelah mengirim, pelanggan bisa membuka WhatsApp dengan pesan yang sudah terisi yang menyebutkan layanan yang dipilih, sehingga mereka bisa langsung mengirim foto pekerjaannya.",
+          ],
+        },
+        {
+          h2: "Kredit pajak, di balik pengecekan kepatuhan",
+          body: [
+            "Layanan rumah tangga di Prancis bisa memenuhi syarat kredit pajak 50%, yang merupakan nilai jual kuat — dan risiko hukum bila diklaim untuk layanan yang tak memenuhi syarat, karena itu bisa tergolong praktik komersial yang menyesatkan. Di situs ini, kelayakan adalah field data pada setiap layanan, dan angka 50% hanya ditampilkan pada empat layanan yang memenuhi syarat; fasad, panel surya, tempat sampah, dan layanan bisnis tak pernah menampilkannya.",
+            "Skrip pengecekan kepatuhan menggagalkan build jika klaim itu bocor ke halaman yang salah, dan kredensial resminya tetap dalam mode tertunda sampai nomor registrasi klien ada. Klaim pemasaran hanya sekuat dokumen di belakangnya.",
+          ],
+        },
+        {
+          h2: "Pekerjaan nyata, foto stok berlabel",
+          body: [
+            "Bagian sebelum-sesudah memakai tiga pekerjaan klien yang nyata — teras keramik, atap kaca veranda, dan teras paving dalam video — dengan slider perbandingan yang bisa digeser. Di bagian yang belum punya foto nyata, yaitu hero, bagian tentang kami, dan blok kontak, gambar stok diberi label di layar sebagai ilustrasi, dan akan diganti seiring arsip foto klien tiba.",
+            "Panel “tulis kepada kami” sengaja tidak dibuat sebagai widget chat. Ia adalah panel statis yang menawarkan panggilan telepon, WhatsApp, atau formulir, karena chat ter-hosting akan menambah cookie, tak cocok dengan static export, dan akan menjanjikan jawaban langsung padahal tak ada orang yang siap menjawab.",
+          ],
+        },
+        {
+          h2: "Cepat, valid, dan mudah dibaca",
+          body: [
+            "Lighthouse mobile mencetak skor 97 hingga 99 untuk performa dan 100 untuk aksesibilitas, best practices, dan SEO di setiap tipe halaman yang diukur. Setiap halaman memiliki data terstruktur — bisnis layanan rumah tangga, layanan beserta area yang dilayani, jawaban FAQ, dan breadcrumb — ditambah alternatif bahasa Prancis, Inggris, dan default, file llms.txt, dan ping IndexNow.",
+            "Perpindahan domain menunjukkan mengapa pengecekan itu penting. Sebuah environment variable usang membuat setiap URL kanonik tetap di domain lama; setelah perbaikan — URL situs kini di-hardcode dan diverifikasi oleh skrip pengecekan host — audit live pada 5 Oktober 2026 mencatat 224 dari 224 halaman valid di domain baru, naik dari nol.",
+          ],
+        },
+        {
+          h2: "Apa yang masih menunggu dari klien",
+          body: [
+            "Markup ulasan tetap nonaktif sampai ada ulasan terverifikasi, detail asuransi profesional ditandai “akan dilengkapi”, dan tak ada harga yang dipublikasikan sampai klien menetapkannya. Kota-kota di Seine-et-Marne dan arsip foto lengkap adalah item terbuka lainnya.",
+            "Tak satu pun kekosongan ini ditutup-tutupi. Masing-masing tampil sebagai tertunda atau sama sekali tidak dirender, sehingga situs tak pernah mengklaim lebih dari yang bisa dibuktikan bisnisnya.",
+          ],
+        },
+        {
+          h2: "Pelajaran yang dapat dialihkan",
+          body: [
+            "Bagi bisnis jasa lokal, situs sebagian besar adalah soal struktur: halaman yang tepat untuk setiap layanan di setiap kota, cepat dan valid, dengan satu cara jelas untuk meminta penawaran harga. Struktur itulah yang mengubah bisnis kecil menjadi bisnis yang bisa ditemukan.",
+            "Dan klaim yang membawa bobot hukum — kredit pajak, sertifikasi, skor ulasan — tempatnya di data dengan pengecekan atasnya, bukan di teks pemasaran. Build yang gagal ketika sebuah klaim bocor lebih murah daripada sebuah keluhan.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Apa yang dibangun PRIONATION untuk GLVitr'Clean?",
+          a: "Seluruh situs dwibahasa di glvitr-clean.com: 224 halaman untuk layanan dan commune, formulir penawaran harga di edge function dengan pengiriman email, galeri sebelum-sesudah, data terstruktur, dan pengecekan build yang menjaga klaim kredit pajak serta domain kanonik.",
+        },
+        {
+          q: "Mengapa begitu banyak halaman untuk bisnis lokal?",
+          a: "Karena pelanggan mencari layanan di kota mereka. Setiap halaman layanan-per-commune menjawab satu pencarian seperti itu dengan konten lokalnya sendiri, alih-alih satu halaman generik yang mencoba meraih peringkat di mana-mana.",
+        },
+        {
+          q: "Bagaimana klaim kredit pajak ditangani?",
+          a: "Kelayakan disimpan per layanan dan angka 50% hanya muncul di empat layanan yang memenuhi syarat. Skrip kepatuhan menggagalkan build jika angka itu muncul di tempat lain, dan kredensial resmi tetap tertunda sampai nomor registrasi klien ada.",
+        },
+        {
+          q: "Apakah foto-fotonya asli?",
+          a: "Pekerjaan sebelum-sesudah adalah pekerjaan klien yang nyata. Gambar stok di bagian lain diberi label sebagai ilustrasi di halaman dan sedang diganti seiring foto klien tiba.",
+        },
+        {
+          q: "Di mana hasilnya?",
+          a: "Hasil teknis sudah diukur: Lighthouse mobile 97–99 untuk performa dan 100 untuk aksesibilitas, best practices, dan SEO, serta 224 dari 224 halaman valid setelah perpindahan domain. Angka lead dan trafik akan dipublikasikan begitu sudah diukur.",
         },
       ],
     },

@@ -17,7 +17,7 @@ export async function generateMetadata({
   return {
     title: { absolute: "Showcases · PRIONATION.io" },
     description:
-      "First-party case studies from production AI engagements, including Epidom, Expeditoo, and The Lead Agent — real builds, real outcomes.",
+      "First-party case studies from real builds: Epidom, Expedion × Expeditoo, ACTE, The Lead Agent, Serrurier Paris Express and GLVitr'Clean.",
     alternates: {
       canonical: `${SITE_URL}/${locale}/showcases`,
       languages: {

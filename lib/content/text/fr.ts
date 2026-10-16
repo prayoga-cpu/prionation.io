@@ -1140,119 +1140,98 @@ export const pagesFr: LocalePages = {
     },
 
     "expeditoo": {
-      navLabel: "Expeditoo",
-      seoTitle: "Expeditoo — marketplace logistique, France · PRIONATION",
+      navLabel: "Expedion × Expeditoo",
+      seoTitle: "Expedion × Expeditoo — logistique des enchères, France · PRIONATION",
       metaDescription:
-        "Comment PRIONATION a conçu une marketplace logistique et d'enchères pour Expeditoo — combinant enchères et suivi d'expédition dans un seul système de production — et la leçon transférable.",
-      badge: "Réalisation · 🇫🇷 France · Marketplace",
-      tldr: "Expeditoo avait besoin d'une seule application combinant des enchères de type vente aux enchères avec le suivi d'expédition — deux systèmes complexes que la plupart des équipes construisent séparément. PRIONATION les a conçus en une seule marketplace de production. Cette page profile la mission et la leçon pour les opérateurs de plateformes à deux faces.",
-      h1: "Expeditoo : une marketplace logistique avec enchères et suivi dans un seul système",
+        "Comment PRIONATION a construit deux produits connectés pour un même groupe logistique français : Expedion lit le bordereau d'adjudication et propose un prix de livraison fixe, Expeditoo permet à des transporteurs vérifiés d'enchérir sur les missions que la flotte ne peut pas prendre.",
+      badge: "Réalisation · 🇫🇷 France · Logistique",
+      tldr: "Un groupe logistique français exploite deux marques. Expedion livre jusqu'à la porte de l'acheteur les lots remportés aux enchères ; Expeditoo est le réseau de transporteurs qui reprend les missions que les chauffeurs du groupe ne peuvent pas assurer. PRIONATION a construit les deux sur une seule base de données : un modèle de vision LLM lit le bordereau d'adjudication, un service de tarification partagé en établit le devis, une mission payée toujours sans chauffeur au bout de 48 heures est publiée automatiquement auprès de transporteurs vérifiés, et leurs mises à jour de livraison remontent dans le suivi de l'acheteur.",
+      h1: "Expedion × Expeditoo : un groupe logistique, deux produits, une seule source de vérité",
       intro: [
-        "Expeditoo est une marketplace logistique française qui combine la mécanique d'enchères avec le suivi d'expédition. Le difficile dans une telle plateforme n'est aucune des deux fonctionnalités seule — c'est de faire fonctionner enchères et suivi opérationnel comme un seul système cohérent plutôt que deux assemblés.",
-        "Cette page profile la mission : le goulot, l'approche de build, et la leçon transférable pour quiconque construit une plateforme logistique à deux faces. Les résultats chiffrés sont publiés une fois finalisés.",
+        "Expedion et Expeditoo appartiennent au même groupe français. Expedion, c'est le côté acheteur : une personne qui vient de remporter un lot dans une maison de ventes envoie son bordereau d'adjudication, obtient un prix de livraison fixe, paie en ligne et suit la livraison. Expeditoo, c'est le côté transporteur : une plateforme web où des entreprises de transport vérifiées enchérissent sur les missions que les chauffeurs du groupe ne peuvent pas assurer.",
+        "PRIONATION a construit les deux produits — l'application Expedion en Flutter et la plateforme Expeditoo en Next.js — ainsi que l'intégration entre les deux. Cette page explique comment ils partagent un même système, où se trouve réellement l'IA, et ce qui a été délibérément laissé de côté. Les résultats commerciaux seront publiés une fois que le client les aura mesurés.",
       ],
       sections: [
         {
-          h2: "Le goulot d'étranglement",
+          h2: "Deux métiers, une seule expédition",
           body: [
-            "Une marketplace logistique porte une complexité à deux faces : une couche d'enchères où le prix se découvre, et une couche opérationnelle où les expéditions sont suivies jusqu'à leur terme. Construites séparément, les deux divergent — la marketplace promet ce que l'opérationnel ne peut livrer de façon fiable, et les données ne concordent jamais.",
-            "Pour Expeditoo, le défi était de les unifier en une seule application avec une logique métier cohérente des deux côtés.",
+            "Un acheteur aux enchères et un transporteur n'attendent pas la même chose d'une même mission. L'acheteur veut un prix fixe unique, un enlèvement avant que les frais de stockage ne commencent à courir à la maison de ventes, une assurance optionnelle sur le lot, et un seul endroit pour suivre la livraison. Le transporteur veut des consignes claires, un prix juste pour la course et un paiement garanti. Expedion sert le premier ; Expeditoo sert le second.",
+            "Les chauffeurs du groupe prennent en charge ce qu'ils peuvent. Le plus difficile, c'est le débordement : quand la flotte est complète ou que la course est spécialisée, la mission doit parvenir vite à un transporteur extérieur — sans que personne ne ressaisisse la commande, ne refasse le devis ni ne perde la trace du lot.",
           ],
         },
         {
-          h2: "Comment PRIONATION a abordé le build",
+          h2: "Lire le bordereau d'adjudication avec un modèle de vision",
           body: [
-            "L'approche a été de traiter enchères et suivi comme un seul domaine avec une seule source de vérité, pas deux intégrations. Cela signifie définir d'abord le modèle de données partagé, puis construire les flux d'enchères et de suivi par-dessus pour qu'ils restent cohérents par construction.",
-            "Le résultat a été livré comme un système de production que le client possède — full-stack, gérant la logique métier complexe qu'exige une plateforme logistique à deux faces.",
+            "L'étape la plus lente à faire à la main est la première : comprendre, à partir d'un PDF ou d'une photo du bordereau d'adjudication prise au téléphone, ce qui a été acheté, où cela se trouve et de quoi il s'agit. Expedion envoie ce document à un modèle de vision LLM — GPT-4.1 d'OpenAI à température 0, contraint par un schéma JSON strict — avec Gemini comme fournisseur de secours. L'acheteur vérifie ensuite les informations extraites sur un écran de confirmation, avant qu'aucun devis ne soit établi.",
+            "Le modèle indique aussi son propre niveau de confiance. En dessous d'un seuil fixe, le document envoyé est considéré comme n'étant pas du tout un bordereau d'adjudication, et l'acheteur est invité à fournir le bon document. Si le service d'extraction est indisponible, la demande passe quand même, avec un avertissement, et le bordereau est vérifié par une personne — une panne ralentit le tunnel au lieu de le fermer.",
           ],
         },
         {
-          h2: "Ce qui a changé",
+          h2: "Une base de données, un prix, un fil de suivi",
           body: [
-            "Au lieu de deux systèmes à réconcilier, Expeditoo exploite une seule application où une enchère et l'expédition qu'elle produit partagent le même enregistrement. Le résumé public du projet le décrit comme démontrant une capacité full-stack à travers une logique métier complexe.",
-            "Les métriques opérationnelles sont en préparation pour publication et apparaîtront ici et sur la page de transparence.",
+            "Les deux produits tournent sur la même base PostgreSQL. Un devis Expedion et l'annonce Expeditoo qu'il peut devenir sont des enregistrements liés, pas deux copies maintenues synchronisées — la décision d'architecture fondatrice, car faire passer une mission d'une base de données à une autre aurait été une transaction distribuée prête à mal tourner. Expedion fonctionnait auparavant sur Airtable ; ses 4 656 devis existants ont été migrés vers la base partagée en septembre 2026.",
+            "Les prix viennent eux aussi d'un seul endroit : le devis automatique d'Expedion réutilise le service de tarification d'Expeditoo, si bien que les deux produits ne peuvent jamais chiffrer la même course différemment. Et quand un transporteur extérieur prend une mission, ses mises à jour de statut sont réécrites dans Expedion : l'acheteur suit un seul fil de livraison, que le chauffeur fasse partie des équipes du groupe ou vienne du réseau de transporteurs.",
           ],
         },
         {
-          h2: "La leçon transférable",
+          h2: "Le relais vers les transporteurs, sans dispatcheur",
           body: [
-            "Pour les plateformes à deux faces, la leçon est structurelle : modélisez le domaine partagé avant de construire l'un ou l'autre côté. L'essentiel de la douleur des marketplaces vient d'un système d'enchères et d'un système d'opérations construits séparément et n'ayant jamais convenu des données. Une seule source de vérité supprime toute une catégorie de problèmes ultérieurs.",
-            "Si les deux faces de votre plateforme se disputent sur ce qui s'est passé, le correctif est généralement en amont dans le modèle de données, pas dans l'une ou l'autre fonctionnalité.",
+            "Quand un acheteur paie, le devis reçoit une échéance fixée 48 heures plus tard. Toutes les dix minutes, une tâche planifiée recherche les devis payés qui n'ont toujours pas de transporteur après cette échéance et publie chacun d'eux sur Expeditoo sous forme d'annonce portant sa référence Expedion. Les opérateurs peuvent aussi transférer une mission à la main depuis la console d'administration, à côté de l'attribution d'un chauffeur, de la révision du prix d'un devis ou de la gestion du stockage.",
+            "Sur Expeditoo, les transporteurs envoient des offres avec un prix, un ETA et un véhicule, et un opérateur attribue les missions transférées. La vérification des transporteurs repose sur des documents — numéro SIRET, attestation d'assurance, licence de transport, pièce d'identité et coordonnées bancaires — et un administrateur valide chaque compte avant qu'il puisse enchérir.",
           ],
         },
         {
-          h2: "Pourquoi ce goulot d'étranglement revient dans les plateformes logistiques à deux faces",
+          h2: "L'argent ne bouge que lorsqu'une personne le décide",
           body: [
-            "Une marketplace logistique, ce sont deux métiers sous un seul logo. La face enchères se comporte comme une bourse — les prix bougent, les offres expirent, les contreparties s'engagent — tandis que la face suivi se comporte comme un bureau d'opérations, où une expédition est une chose physique qui traverse des états bien réels. La plupart des équipes recrutent et construisent ces deux moitiés séparément parce qu'elles ressemblent à des disciplines distinctes, et cette séparation organisationnelle devient discrètement une séparation architecturale. Le système d'enchères apprend à raisonner en offres et en argent ; le système d'opérations apprend à raisonner en segments et en jalons ; et rien dans le code ne les oblige à s'accorder sur ce qu'est réellement une seule mission.",
-            "Cette séparation est rarement une erreur isolée — c'est la voie de moindre résistance pour une plateforme en croissance. Une marketplace démarre généralement par le flux d'enchères, parce que c'est là que se concentre l'enthousiasme côté demande, puis on greffe le suivi une fois que les premières expéditions doivent bouger. Quand le suivi devient important, la face enchères a déjà défini son propre vocabulaire, et l'intégration devient un problème de traduction entre deux modèles qui n'ont jamais été pensés comme un seul. Voilà pourquoi le schéma revient à travers les plateformes de logistique, de fret et d'achats, quelle que soit leur taille : l'ordre dans lequel les fonctionnalités sont construites garantit presque la dérive des données.",
-            "Le cadrage honnête, c'est que ce n'est pas une lacune technologique. Les équipes qui s'y heurtent sont compétentes ; l'échec est structurel, inscrit avant même qu'on écrive une ligne de code d'intégration. C'est aussi pour cela qu'il est réparable — un problème structurel répond à une décision structurelle, prise une seule fois, sur l'endroit où réside la vérité.",
+            "Côté acheteur, le paiement passe par Stripe Checkout, et le serveur confirme chaque session auprès de Stripe avant de signaler le paiement à Expeditoo. Côté transporteur, Expeditoo conserve une commission de 10 % et crédite le reste sur le solde du transporteur. Un transporteur peut demander un retrait à partir de 20 € ; un opérateur effectue le virement bancaire et en enregistre la référence. Rien dans la plateforme ne déplace d'argent automatiquement.",
+            "Cette règle est délibérée. Automatiser les versements aurait obligé à choisir un circuit de paiement et un cadre juridique pour rémunérer les chauffeurs avant que l'entreprise n'ait tranché l'un ou l'autre — une question qui relève de l'avocat du client. Une étape manuelle avec une référence enregistrée est plus lente, mais derrière chaque versement il y a une personne et une référence bancaire.",
           ],
         },
         {
-          h2: "Le raisonnement d'ingénierie : un seul enregistrement, pas deux systèmes qui dialoguent",
+          h2: "Une ingénierie qui tient en production",
           body: [
-            "La décision centrale sur Expeditoo a été de faire d'un seul enregistrement la colonne vertébrale de toute la plateforme — la mission — et de traiter enchères et suivi comme deux vues de cet unique enregistrement, plutôt que deux systèmes qui échangent des messages à son sujet. Quand une enchère est gagnée, elle ne « crée » pas une expédition dans une base d'opérations distincte ; elle fait passer la même mission dans sa phase opérationnelle. Prix, contrepartie, itinéraire et statut sont des attributs d'une seule chose dotée d'une seule identité : il n'y a donc aucune étape de synchronisation susceptible d'échouer, de prendre du retard ou de diverger.",
-            "Énoncé simplement, cela paraît évident, et c'est tout l'enjeu — la difficulté n'est pas l'idée mais la discipline de définir le domaine partagé avant de construire l'un ou l'autre flux. Le modèle de domaine doit anticiper tout le cycle de vie d'une mission, de l'enchère ouverte jusqu'à l'expédition livrée, y compris les états inconfortables intermédiaires : une enchère acceptée mais pas encore enlevée, une expédition en transit dont les termes se renégocient, une mission annulée après attribution. Nommer ces états et les confier à un seul modèle dès le départ, c'est ce qui permet aux deux flux de rester cohérents par construction plutôt que par réconciliation.",
-            "Le bénéfice, c'est qu'une catégorie entière de bugs ne peut tout simplement pas se produire. Il n'y a pas d'incident « la marketplace dit livré mais l'opérationnel dit en transit », parce que les deux phrases lisent le même champ. La cohérence cesse d'être une fonctionnalité que l'équipe entretient et devient une propriété du schéma — exactement le type de variance que la méthodologie existe pour supprimer avant qu'un prix fixe soit annoncé.",
+            "Expeditoo tourne sur Next.js avec Drizzle et PostgreSQL sur Neon, Better Auth, Stripe, Cloudflare R2 pour les documents et Resend pour l'e-mail, le tout hébergé sur Vercel ; le tableau de bord opérateur se rafraîchit à partir de signaux Ably plutôt que par interrogation périodique. Expedion est une application Flutter qui se connecte via le même service d'authentification avec un jeton bearer — une application native n'a pas de stockage de cookies de navigateur — et conserve un repli Firebase restreint pour que les comptes créés avant la migration fonctionnent toujours.",
+            "La plateforme est couverte par Vitest et Playwright, avec 2 655 tests unitaires au vert lors de la dernière exécution enregistrée, et Expeditoo est en production en version 2.63. De petites contraintes ont guidé de vraies décisions : les envois sont plafonnés à 3 Mo pour rester sous la limite de taille de requête de l'hébergeur, les photos HEIC sont refusées parce que l'API de vision les rejette, et le balayage de transfert tourne sur GitHub Actions parce que l'offre d'hébergement limite les tâches planifiées.",
           ],
         },
         {
           h2: "Ce qui n'a délibérément pas été construit",
           body: [
-            "Une marketplace à deux faces invite à élargir le périmètre dans toutes les directions — moteurs de tarification dynamique, algorithmes de notation des transporteurs, optimisation automatisée d'itinéraires, messagerie intégrée, suites d'analytique. La discipline d'un compteur de huit semaines, c'est de choisir de ne pas construire l'essentiel de tout cela. La règle de décision est la même que pour chaque mission : construire la seule chose structurelle dont tout le reste dépend, et refuser les fonctionnalités qu'on peut ajouter plus tard sans ré-architecturer. Le modèle de mission partagé est cette chose structurelle ; un moteur de recommandation ne l'est pas.",
-            "Plusieurs ajouts tentants ont été écartés à dessein, parce qu'ils se posent sur un domaine stable, pas à l'intérieur du build fondateur. Une intelligence tarifaire sophistiquée, des ETA prédictifs et la notation des contreparties sont tous réellement utiles — et tous plus propres à construire une fois qu'une seule source de vérité existe pour les entraîner et les mesurer. Les construire en premier, sur un modèle instable, c'est ainsi que les plateformes finissent avec des fonctionnalités astucieuses posées sur des données auxquelles elles ne peuvent pas se fier.",
-            "Le dire clairement fait partie d'une livraison honnête : une marketplace qui fonctionne n'est pas une marketplace dotée de toutes les fonctionnalités. Le rôle du premier build est de rendre la plateforme cohérente et appropriable, pour que l'opérateur puisse décider — avec une vraie télémétrie, sur sa propre infrastructure — lesquelles des fonctionnalités différées méritent réellement leur place.",
+            "Expeditoo a démarré en 2025 comme une marketplace plus large qui mettait aussi des marchandises aux enchères. La refonte de 2026 a abandonné cela : plus d'enchères sur des marchandises et plus de marketplace publique à parcourir — chaque mission affichée sur la plateforme est une véritable expédition Expedion. Les API de suivi des transporteurs, les intégrations avec les maisons de ventes, une application iOS native pour les transporteurs et d'autres pays ont aussi été laissés pour plus tard.",
+            "Plusieurs questions restent ouvertes à dessein : la répartition de la commission sur les missions transférées, les prestataires pour l'assurance et la vérification d'identité, et la publication et l'appariement d'itinéraires. Les transporteurs peuvent déjà filtrer le tableau le long d'un trajet qu'ils effectuent, mais l'appariement vient après les enchères, par choix : les enchères sont le produit, les itinéraires le rendront plus efficace ensuite. Chacune de ces questions est plus simple à trancher une fois que de vraies missions circulent dans un seul modèle de données partagé.",
           ],
         },
         {
-          h2: "Comment savoir si le même schéma s'applique à vous",
+          h2: "La leçon transférable",
           body: [
-            "Le symptôme le plus clair est une dispute sur les faits. Si les gens qui pilotent votre côté demande et ceux qui pilotent votre côté exécution sont régulièrement en désaccord sur le statut d'une même mission — et tranchent en regardant deux écrans pour en choisir un — la plateforme a deux sources de vérité et le désaccord est structurel, pas humain. Un deuxième signe est le travail d'intégration qui ne se termine jamais tout à fait : un processus de synchronisation, une réconciliation nocturne, ou une file d'écarts que quelqu'un purge à la main. Cette taxe de maintenance est le coût récurrent d'un modèle séparé trop tôt.",
-            "Un indicateur plus subtil est la paralysie des fonctionnalités. Quand des ajouts simples — une notification de statut, un rapport élémentaire, un ajustement de frais — exigent de toucher à deux systèmes et de réconcilier leurs hypothèses, le modèle de données vous dit qu'il n'a jamais été unifié. Les opérateurs interprètent souvent cela à tort comme un code « complexe » ; le plus souvent, ce sont deux bases de code cohérentes qui divergent à la jointure. Le coût apparaît sous forme de livraison lente plutôt que de pannes visibles, et c'est pourquoi il reste si longtemps sans nom.",
-            "Si ces symptômes vous sont familiers, le goulot d'étranglement se situe presque certainement en amont, dans le modèle de domaine, et le geste à plus fort effet de levier est de le cartographier avant de construire quoi que ce soit par-dessus. Cette cartographie est précisément l'objet d'un Diagnostic de deux semaines — confirmer si la jointure est la vraie contrainte avant qu'une seule fonctionnalité soit chiffrée.",
+            "Deux produits qui servent les deux côtés d'une même transaction doivent partager une colonne vertébrale, pas une intégration. Ici, la colonne vertébrale, c'est un seul enregistrement de devis, un seul service de tarification et un seul fil de suivi ; l'application de l'acheteur, le tableau du transporteur et la console opérateur sont des vues posées dessus.",
+            "L'IA se place là où une personne faisait une transcription lente et sujette aux erreurs, elle indique son propre niveau de confiance, et le tunnel continue de fonctionner quand elle échoue. C'est généralement la bonne forme pour une première fonctionnalité d'IA dans un métier opérationnel : étroite, vérifiable, et jamais seule sur le chemin critique.",
           ],
         },
       ],
       faq: [
         {
-          q: "Qu'a construit PRIONATION pour Expeditoo ?",
-          a: "Une marketplace logistique et d'enchères combinant la mécanique d'enchères et le suivi d'expédition en une seule application de production avec une logique métier cohérente des deux côtés.",
+          q: "Qu'a construit PRIONATION pour Expedion et Expeditoo ?",
+          a: "Les deux produits et le lien entre eux : l'application acheteur Expedion (Flutter), qui lit le bordereau d'adjudication, propose un prix fixe et suit la livraison ; la plateforme transporteurs Expeditoo (Next.js), où des transporteurs vérifiés enchérissent sur les missions transférées ; et la console opérateur qui pilote les deux.",
         },
         {
-          q: "Qu'est-ce qui rend une marketplace logistique difficile à construire ?",
-          a: "La complexité à deux faces : une couche d'enchères et une couche de suivi opérationnel qui, construites séparément, divergent. Le difficile est d'en faire un seul système cohérent avec une source de vérité partagée.",
+          q: "Comment fonctionne la lecture du bordereau d'adjudication ?",
+          a: "Un modèle de vision LLM (GPT-4.1, avec Gemini en secours) extrait les informations du lot et de l'enlèvement dans un schéma JSON strict, accompagnées d'un score de confiance. L'acheteur confirme les informations ; les documents à faible confiance sont rejetés comme n'étant pas un bordereau d'adjudication, et si le service est indisponible, une personne vérifie le bordereau.",
         },
         {
-          q: "Où sont les métriques détaillées ?",
-          a: "Les résultats opérationnels sont en préparation et seront publiés ici et sur la page de transparence. Ce profil décrit la mission et la leçon transférable.",
+          q: "Quand une mission part-elle chez un transporteur extérieur ?",
+          a: "Quand un devis payé n'a toujours pas de chauffeur 48 heures après le paiement, ou quand un opérateur le transfère à la main. Un balayage planifié publie alors la mission automatiquement sur Expeditoo, et les mises à jour de statut du transporteur sont réécrites dans le suivi de l'acheteur.",
         },
         {
-          q: "Quelle est la leçon transférable ?",
-          a: "Pour toute plateforme à deux faces, modélisez le domaine partagé avant de construire l'un ou l'autre côté — l'essentiel de la douleur des marketplaces vient de deux systèmes qui n'ont jamais convenu des données.",
+          q: "Expedion et Expeditoo sont-elles des sociétés distinctes ?",
+          a: "Non. Les deux marques appartiennent au même groupe logistique français : Expedion est la porte d'entrée des acheteurs aux enchères et Expeditoo est le réseau de transporteurs du groupe.",
         },
         {
-          q: "Comment démarrerait un build similaire ?",
-          a: "Par un Diagnostic de deux semaines pour cartographier le domaine et définir le modèle de données partagé avant de construire la moindre fonctionnalité.",
-        },
-        {
-          q: "Pourquoi la plupart des équipes construisent-elles enchères et suivi comme des systèmes séparés ?",
-          a: "Parce qu'ils ressemblent à des disciplines distinctes — l'un évoque une bourse, l'autre un bureau d'opérations — et que les plateformes livrent généralement d'abord le flux d'enchères, puis greffent le suivi plus tard. À ce moment-là, chaque face a son propre vocabulaire, et la séparation devient architecturale. C'est la voie de moindre résistance, pas un échec de compétence, ce qui explique pourquoi le schéma revient si régulièrement.",
-        },
-        {
-          q: "Que signifie concrètement « une seule source de vérité » pour une marketplace ?",
-          a: "Un seul enregistrement — la mission — que l'enchère comme l'expédition lisent et écrivent, plutôt que deux bases de données qui échangent des messages. Quand une enchère est gagnée, le même enregistrement passe dans sa phase opérationnelle ; prix, contrepartie et statut sont des attributs d'une seule chose. La cohérence devient une propriété du schéma au lieu d'un processus de synchronisation que l'équipe doit entretenir.",
-        },
-        {
-          q: "Quelles fonctionnalités ont été délibérément écartées du premier build ?",
-          a: "Moteurs de tarification dynamique, ETA prédictifs, notation des contreparties, optimisation d'itinéraires et ajouts similaires. Ils sont réellement utiles mais se posent sur un modèle de domaine stable, pas à l'intérieur du build fondateur. Le compteur de huit semaines force à construire la seule chose structurelle dont tout le reste dépend, puis à différer les fonctionnalités qu'on peut ajouter plus tard sans ré-architecturer.",
-        },
-        {
-          q: "Comment savoir si ma plateforme a ce problème de deux sources de vérité ?",
-          a: "Le signe le plus clair est que des gens se disputent sur le statut d'une même mission et tranchent en regardant deux écrans. Autres indices : un processus de synchronisation ou de réconciliation qui ne se termine jamais tout à fait, et des changements simples qui exigent de toucher à deux systèmes. Le coût apparaît généralement sous forme de livraison lente plutôt que de pannes, et c'est pourquoi il reste si longtemps sans nom.",
+          q: "Où sont les métriques commerciales ?",
+          a: "Pas encore publiées. Ce qui est documenté relève de l'ingénierie : 4 656 devis existants migrés vers la base partagée, 2 655 tests unitaires au vert, et Expeditoo en production en version 2.63. Les résultats opérationnels seront ajoutés une fois que le client les aura mesurés.",
         },
       ],
     },
-
     "the-lead-agent": {
       navLabel: "The Lead Agent",
       seoTitle:
@@ -1363,6 +1342,284 @@ export const pagesFr: LocalePages = {
         {
           q: "Pourquoi posséder la plateforme importe-t-il spécifiquement pour une opération de vente ?",
           a: "Pour une entreprise de vente, le pipeline est l'opération — le registre de qui est en jeu et de ce qui a été promis. Posséder la plateforme signifie que l'historique opérationnel, la logique de routage et les données restent avec l'entreprise plutôt que d'être loués en retour. Le système devient un levier que le client conserve, pas une dépendance qui transforme le pipeline lui-même en quelque chose détenu par un prestataire.",
+        },
+      ],
+    },
+    acte: {
+      navLabel: "ACTE",
+      seoTitle: "ACTE — temps facturable des avocats, France · PRIONATION",
+      metaDescription:
+        "Comment PRIONATION a construit la bêta d'ACTE, suivi du temps et facturation pour les cabinets d'avocats français : chiffrement par cabinet, assistant IA pseudonymisé, registre de facturation exact — et un jeu d'evals avant tout rattachement des dossiers par l'IA.",
+      badge: "Réalisation · 🇫🇷 France · Legaltech",
+      tldr: "ACTE transforme la journée de travail d'un avocat en temps validé et facturable, rattaché au bon dossier. PRIONATION a fait passer le prototype du fondateur à une base de code de production testée : une application web et une API avec chiffrement AES-256 par cabinet, budgets par dossier, validation en un clic, export CSV et brouillons de factures, et un assistant dont le modèle de langage ne voit jamais que des données pseudonymisées. Le rattachement automatique aux dossiers est l'étape suivante, et il commence par un jeu d'evals, pas par un modèle. Le produit est en bêta, avec des données synthétiques.",
+      h1: "ACTE : le temps facturable des cabinets d'avocats, confidentialité d'abord, evals d'abord",
+      intro: [
+        "ACTE est un outil de suivi du temps et de facturation pour les cabinets d'avocats français. L'idée : l'avocat travaille comme d'habitude, ACTE enregistre le travail dans un journal quotidien, rattache chaque tâche au bon dossier avec un score de confiance, et l'avocat n'a plus qu'à valider. Le temps validé devient du temps facturable, des exports CSV et des brouillons de factures.",
+        "PRIONATION construit le produit pour son fondateur. Cette page couvre ce qui est construit et fonctionne aujourd'hui dans la bêta, comment la confidentialité a façonné l'architecture, où se situe l'IA — et où, délibérément, elle n'est pas encore. Les résultats des pilotes en cabinet seront publiés une fois que ces pilotes existeront.",
+      ],
+      sections: [
+        {
+          h2: "Le problème : un temps facturable qui n'est jamais saisi",
+          body: [
+            "Les avocats qui facturent à l'heure perdent du temps dans l'écart entre le moment où ils font le travail et celui où ils le notent. Les feuilles de temps sont remplies de mémoire en fin de journée ou de mois, les saisies sont arrondies ou oubliées, et le dossier auquel elles se rattachent est reconstitué après coup. La réponse d'ACTE est de capter le travail au moment où il se fait et de ne laisser à l'avocat qu'une seule tâche : vérifier.",
+            "La contrainte qui façonne tout, c'est la confidentialité. Un cabinet d'avocats ne peut pas envoyer le contenu de documents ou les e-mails de ses clients à un tiers pour savoir combien de temps quelqu'un a passé sur un dossier ; le produit a donc dû être conçu autour de ce qui ne quitte jamais la machine de l'avocat.",
+          ],
+        },
+        {
+          h2: "Du prototype à une base de code de production",
+          body: [
+            "Le fondateur d'ACTE avait déjà conçu le produit sous la forme d'un prototype HTML détaillé du tableau de bord. PRIONATION l'a transformé en système de production : un monorepo pnpm et Turborepo avec une application web Next.js 15 sur React 19, une API NestJS, Drizzle sur PostgreSQL, Better Auth, et un package partagé de schémas Zod qui sert à valider chaque donnée échangée entre l'application web et l'API.",
+            "L'application web est un portage fidèle des neuf vues du prototype, si bien que les choix de conception du fondateur sont restés intacts. Le travail a consisté à les rendre réelles : comptes cabinet et invitations, dossiers avec budgets d'heures et statuts, saisies de temps, validation en un clic ou par journée entière, export CSV, et brouillons de factures générés à partir du temps validé.",
+          ],
+        },
+        {
+          h2: "La confidentialité comme architecture, pas comme promesse",
+          body: [
+            "Les champs sensibles sont chiffrés dans l'application en AES-256-GCM, avec une clé aléatoire de 256 bits par cabinet, elle-même chiffrée par une clé maîtresse : les données d'un cabinet ne peuvent donc pas être lues avec la clé d'un autre. Le site marketing héberge lui-même ses polices, pour que les adresses IP des visiteurs ne soient pas envoyées à un CDN de polices.",
+            "La couche de capture prévue suit la même règle : le contenu brut reste sur l'appareil et seules les métadonnées nécessaires à la facturation sont envoyées, via une file d'attente locale chiffrée. La bêta tourne sur Vercel avec une base Neon à Francfort ; l'hébergement en France, chez Scaleway à Paris, est prévu mais pas encore en place.",
+          ],
+        },
+        {
+          h2: "Où se trouve l'IA — et où elle n'est pas encore",
+          body: [
+            "Le Brain d'ACTE donne à l'avocat un résumé de sa journée à l'intérieur du journal : des indications déterministes, comme les tâches en attente et les saisies à faible confiance, plus un chat optionnel adossé à un modèle de langage — le petit modèle de Mistral, appelé via un client indépendant du fournisseur, pour que celui-ci puisse changer par simple configuration. Avant que quoi que ce soit n'atteigne le modèle, les noms, titres, e-mails et URL sont pseudonymisés ; le modèle ne voit que des agrégats et des références opaques. Le pseudonymiseur est à lui seul couvert par environ 60 cas de test.",
+            "Le rattachement automatique aux dossiers — le score de confiance au cœur du produit — n'est délibérément pas encore construit. Le plan commence par la suite d'evals, pas par le modèle : plus de 200 exemples étiquetés et une référence de départ fondée sur des règles pondérées, notée de 0 à 100, avec des cibles explicites (au moins 85 % de rattachements corrects, et la tranche de confiance de 90 et plus juste dans au moins 90 % des cas) avant de tenter quoi que ce soit de plus sophistiqué. D'ici là, les scores de confiance de la bêta sont des données de démonstration, et le produit le dit.",
+          ],
+        },
+        {
+          h2: "Juste sur l'argent avant d'être malin sur le temps",
+          body: [
+            "Un produit de facturation doit être juste sur l'argent avant d'être intelligent sur quoi que ce soit d'autre. Deux règles ont été inscrites dans le modèle de données après revue : une tâche conserve le taux horaire auquel elle a été validée, si bien qu'un changement de taux ne modifie jamais le prix du travail passé, et une portion de temps ne peut figurer que sur une seule facture, si bien qu'elle ne peut pas être facturée deux fois.",
+            "La sécurité a reçu le même traitement. La première version des invitations de cabinet a été jugée non sûre lors d'une revue adversariale, avant même d'être poussée, et a été reconstruite pour qu'une invitation soit liée à un jeton plutôt qu'à une adresse e-mail. La vérification de l'e-mail est devenue obligatoire après qu'une revue a montré qu'un lien de connexion pouvait effacer le mot de passe d'un compte non vérifié. Et les déploiements partent désormais de la CI, avec les migrations de base de données appliquées en premier, après qu'un déploiement manuel a un jour livré du code en avance sur son schéma.",
+          ],
+        },
+        {
+          h2: "Testé de bout en bout",
+          body: [
+            "La bêta est couverte à chaque couche : 124 tests d'API, 21 tests de contrat, 32 tests de routes et une suite de bout en bout de 40 scénarios, tous au vert. La boucle complète fonctionne sur la bêta en ligne avec des données synthétiques — créer un cabinet, ouvrir des dossiers, saisir du temps, le valider, l'exporter en CSV et préparer un brouillon de facture.",
+            "Lors du dernier point d'avancement, le 1er octobre 2026, 32 fonctionnalités étaient opérationnelles, 14 partielles et 14 pas encore construites. Aucun cabinet n'a encore utilisé ACTE avec de vraies données de dossiers ; des pilotes avec deux ou trois cabinets sont la prochaine étape.",
+          ],
+        },
+        {
+          h2: "Ce qui n'a délibérément pas été construit",
+          body: [
+            "L'application de capture pour ordinateur est la pièce maîtresse du produit, et c'est la partie qui n'a délibérément pas été précipitée. La manière de capter le travail — un agent de bureau utilisant les API du système d'exploitation, des compléments Office ou une extension de navigateur — reste une décision ouverte, car chaque option implique pour un cabinet d'avocats des arbitrages différents en matière de confidentialité et d'installation. L'application web liste déjà les appareils d'un cabinet et émet des clés d'activation, pour que l'application compagnon puisse s'y brancher lorsqu'elle existera.",
+            "Le paiement par carte (l'écran d'abonnement est une maquette), les factures en PDF et leur envoi, la suppression de compte, et les connecteurs vers des logiciels de gestion de cabinet comme Secib, Kleos ou Jarvis restent également hors du premier build, tout comme la facturation électronique Factur-X, la voix et le mobile.",
+          ],
+        },
+        {
+          h2: "La leçon transférable",
+          body: [
+            "Quand les données sont confidentielles, décidez ce qui ne quitte jamais l'appareil avant de décider ce que l'IA fait du reste. L'ordre de travail d'ACTE — chiffrement et pseudonymisation d'abord, un registre de facturation exact ensuite, un jeu d'évaluation pour le rattachement en troisième, le modèle en dernier — est plus lent à démontrer, mais gagne la confiance bien plus vite.",
+            "Construisez aussi le parcours manuel en premier. Un avocat peut déjà gérer sa journée dans ACTE sans capture automatique ; l'automatisation accélérera un parcours qui fonctionne, au lieu de remplacer un parcours qui n'a jamais fonctionné.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Qu'est-ce qu'ACTE ?",
+          a: "Un outil de suivi du temps et de facturation pour les cabinets d'avocats français : le travail est enregistré dans un journal quotidien, rattaché à un dossier avec un score de confiance, validé par l'avocat et transformé en temps facturable, en exports CSV et en brouillons de factures.",
+        },
+        {
+          q: "Qu'a construit PRIONATION ?",
+          a: "La base de code de production derrière la bêta : l'application web Next.js et le site public, l'API NestJS, la base de données et le chiffrement par cabinet, l'authentification et les invitations de cabinet, le Brain d'ACTE avec son chat pseudonymisé adossé à un modèle de langage, et les suites de tests.",
+        },
+        {
+          q: "ACTE utilise-t-il l'IA pour rattacher le temps aux dossiers ?",
+          a: "Pas encore. Le rattachement automatique est l'étape suivante et part d'un jeu d'évaluation de plus de 200 exemples étiquetés et d'une référence à base de règles, avec des cibles de précision explicites. Les scores de confiance de la bêta actuelle sont des données de démonstration et sont signalés comme tels.",
+        },
+        {
+          q: "Les données des clients sont-elles envoyées à un modèle d'IA ?",
+          a: "Uniquement des agrégats pseudonymisés. Les noms, titres, e-mails et URL sont remplacés avant que le moindre texte n'atteigne le modèle de langage derrière le Brain d'ACTE, et le chat est optionnel.",
+        },
+        {
+          q: "ACTE est-il en ligne ?",
+          a: "C'est une bêta fonctionnelle qui tourne sur des données synthétiques. Les pilotes avec des cabinets d'avocats sont la prochaine étape ; les résultats seront publiés ici une fois qu'ils existeront.",
+        },
+      ],
+    },
+    "serrurier-paris-express": {
+      navLabel: "Serrurier Paris Express",
+      seoTitle: "Serrurier Paris Express — le prix d'abord, Paris · PRIONATION",
+      metaDescription:
+        "Comment PRIONATION a construit pour un serrurier indépendant à Paris un site bilingue de génération de leads, centré sur le prix : une grille tarifaire publique, 68 pages par langue pour de vraies recherches, un formulaire de devis sécurisé et aucun avis inventé.",
+      badge: "Réalisation · 🇫🇷 Paris · Services de proximité",
+      tldr: "En serrurerie d'urgence, les clients craignent la facture plus que la serrure cassée. PRIONATION a construit Serrurier Paris Express autour de cette crainte : la grille tarifaire est publique, chaque prix est confirmé par écrit avant le début de l'intervention, et aucun avis n'est inventé. Le site compte 68 pages par langue en français et en anglais, un formulaire de devis qui envoie un e-mail directement à l'artisan, une vérification par code postal et par géolocalisation, et des données structurées lisibles par les moteurs de recherche et les assistants IA.",
+      h1: "Serrurier Paris Express : un site de serrurier qui annonce le prix d'emblée",
+      intro: [
+        "Serrurier Paris Express est un serrurier indépendant qui intervient dans tout Paris et en Île-de-France — un artisan en direct, pas un courtier en leads qui revend des appels. Le cahier des charges : un site qui transforme des recherches urgentes comme « porte claquée », « clé cassée dans la serrure » ou « serrurier Paris 11 » en appels téléphoniques et en demandes de devis écrites.",
+        "Cette page couvre le positionnement, la structure des pages, la façon dont les leads sont captés et protégés, et ce qui a été tenu à l'écart du site à dessein. Les chiffres de leads et de trafic seront publiés une fois la mesure en place.",
+      ],
+      sections: [
+        {
+          h2: "Le goulot d'étranglement : la confiance, pas le trafic",
+          body: [
+            "Quelqu'un qui cherche un serrurier en urgence décide vite, sous stress, dans un métier connu pour ses factures surprises. Les réponses habituelles — badges, widgets d'étoiles, « le moins cher de Paris » — sont exactement ce qui rend les gens méfiants. Le site devait gagner la confiance avec quelque chose que le client peut vérifier.",
+            "D'où le titre, qui résume la thèse : « Serrurier à Paris : le prix d'abord, l'outil ensuite ». Les pages de services affichent leur prix, la grille complète est publique sur la page des tarifs, et le texte répète une promesse que l'artisan peut tenir : le prix est convenu par téléphone et confirmé par écrit avant le début de toute intervention.",
+          ],
+        },
+        {
+          h2: "Une grille tarifaire publique qui tient la route",
+          body: [
+            "La grille tarifaire vit dans un seul fichier et alimente toutes les pages qui affichent un prix : une modification se fait donc une seule fois. Les prix sont stockés TTC, le montant HT en est déduit, et ils sont arrondis à la dizaine supérieure, jamais inférieure.",
+            "Les montants sont partis d'une grille de référence du marché fournie par le client, et ont été remis en question là où ils ne tenaient pas : un prix de 80 € pour un renforcement de porte, contredit par les données du marché, a été rouvert et corrigé à 1 070 € TTC avant le lancement. Une grille tarifaire n'est un signal de confiance que si elle résiste à la comparaison d'un client.",
+          ],
+        },
+        {
+          h2: "68 pages par langue, chacune pour une vraie recherche",
+          body: [
+            "Le site est en français et en anglais, avec 68 pages dans chaque langue : sept services (cinq pour les particuliers, deux pour les entreprises — sécurisation de locaux commerciaux et contrats de maintenance), cinq pages d'urgence rédigées autour de ce que les gens tapent réellement, cinq guides et 41 pages de localisation, plus les pages tarifs, devis, contact, à propos et les pages légales.",
+            "Les pages de localisation suivent une structure en hub — les 20 arrondissements de Paris, les sept départements d'Île-de-France et huit villes proches — avec de vraies références locales sur chaque page, plutôt qu'un modèle unique dont on change le nom. Six pages consacrées à d'autres villes françaises sont explicitement présentées comme couvertes via un réseau, pour que le site ne laisse jamais entendre que l'artisan parisien s'y déplace. Les pages sont pré-rendues en HTML statique ; le seul code serveur est le point d'entrée du formulaire.",
+          ],
+        },
+        {
+          h2: "Une captation de leads qui atteint l'artisan",
+          body: [
+            "Le formulaire de devis envoie vers une route serveur unique, qui transmet la demande par e-mail à l'artisan via Resend, avec une copie surveillée. L'e-mail de confirmation au client n'est envoyé qu'une fois la copie destinée à l'équipe partie, pour que personne ne lise « nous avons bien reçu votre demande » alors que personne ne l'a reçue. Après l'envoi, WhatsApp est proposé au client comme canal plus rapide — proposé, pas imposé.",
+            "À la demande du client, le formulaire n'a pas de CAPTCHA ; il est protégé à la place par un champ piège caché (honeypot), une vérification de même origine, une limite de 15 requêtes par minute par adresse IP et un plafond de trois e-mails par heure par destinataire. Une vérification du code postal indique immédiatement aux visiteurs s'ils sont à Paris, en Île-de-France ou hors zone, et un bouton « utiliser ma position » retrouve l'adresse via la Géoplateforme de l'IGN, le service national de cartographie ; la position est utilisée une seule fois et n'est pas conservée.",
+          ],
+        },
+        {
+          h2: "Lisible par les moteurs de recherche et les assistants IA",
+          body: [
+            "Chaque page embarque des données structurées : une entité commerciale Locksmith, chaque service avec son prix sous forme d'Offer, les réponses de la FAQ et le fil d'Ariane, plus un sitemap avec les versions alternatives française et anglaise. Le fichier robots autorise explicitement les robots d'IA comme GPTBot, ClaudeBot et PerplexityBot, pour qu'un assistant à qui l'on demande combien coûte un serrurier à Paris puisse lire la vraie grille.",
+            "Ce que les données structurées laissent de côté compte tout autant : pas d'AggregateRating ni de balisage d'avis, parce qu'il n'existe pas encore d'avis vérifiés — et la section avis de la page dit exactement cela au lieu de combler le vide.",
+          ],
+        },
+        {
+          h2: "Une mesure d'audience qui attend le consentement",
+          body: [
+            "Huit événements de conversion sont branchés — clics d'appel, clics WhatsApp, envois de formulaire, recherches de localisation, entre autres — et ils ne se déclenchent qu'après que le visiteur a accepté les cookies, conformément aux règles de la CNIL. Le gestionnaire de balises n'est pas encore connecté, donc rien n'est collecté aujourd'hui ; quand il le sera, les événements seront déjà en place.",
+          ],
+        },
+        {
+          h2: "Ce qui a été tenu à l'écart du site",
+          body: [
+            "Aucun avis inventé, aucune étoile de notation sans notes, aucun « le moins cher de Paris ». Les informations légales que l'entreprise n'a pas encore fournies sont affichées comme en attente plutôt que remplies avec des chiffres d'apparence plausible.",
+            "Quand le client a demandé d'adoucir le ton anti-arnaque du texte marketing, les guides ont conservé leurs conseils pratiques pour éviter les arnaques au serrurier. Ce contenu est là pour aider le lecteur, pas pour vendre.",
+          ],
+        },
+        {
+          h2: "La leçon transférable",
+          body: [
+            "Pour une entreprise de services de proximité, la chose la plus convaincante qu'un site puisse montrer, c'est ce que les concurrents cachent. Ici, c'est le prix. Le publier oblige le reste du système à être honnête : la grille doit être défendable, le devis écrit doit lui correspondre, et le formulaire doit atteindre une vraie personne.",
+            "C'est aussi pourquoi le build est parti du contenu et de la structure — services, urgences, localisations, prix — avant le visuel. Les pages qui répondent à une question précise sont celles vers lesquelles les moteurs de recherche et les assistants IA envoient les gens.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Qu'a construit PRIONATION pour Serrurier Paris Express ?",
+          a: "Le site complet en français et en anglais : 68 pages par langue couvrant services, urgences, localisations et guides, la grille tarifaire publique, le formulaire de devis avec envoi par e-mail et protection anti-spam, la vérification par code postal et par géolocalisation, les données structurées et une mesure d'audience soumise au consentement.",
+        },
+        {
+          q: "Pourquoi publier les prix sur un site de serrurier ?",
+          a: "Parce que les factures surprises sont la principale crainte sur ce marché. Une grille publique, confirmée par écrit avant toute intervention, est un signal de confiance que le client peut vérifier — contrairement aux badges ou aux notes en étoiles.",
+        },
+        {
+          q: "Comment les demandes de devis sont-elles transmises ?",
+          a: "Une route serveur envoie chaque demande par e-mail à l'artisan via Resend, et ce n'est qu'ensuite qu'elle confirme la réception au client. WhatsApp est proposé ensuite comme canal plus rapide.",
+        },
+        {
+          q: "Le site affiche-t-il des avis clients ?",
+          a: "Pas encore, et il le dit. Aucun avis ni aucune note n'est affiché ou balisé tant qu'il n'en existe pas de vérifiés.",
+        },
+        {
+          q: "Où sont les résultats ?",
+          a: "La Search Console et le gestionnaire de balises ne sont pas encore connectés. Les chiffres de leads et de trafic seront publiés ici une fois mesurés.",
+        },
+      ],
+    },
+    "glvitr-clean": {
+      navLabel: "GLVitr'Clean",
+      seoTitle: "GLVitr'Clean — nettoyage en Essonne · PRIONATION",
+      metaDescription:
+        "Comment PRIONATION a construit le site bilingue de GLVitr'Clean : 224 pages pour les recherches locales, de vrais chantiers avant/après, un formulaire de devis sur une edge function, et des mentions de crédit d'impôt qu'un contrôle de conformité garde honnêtes.",
+      badge: "Réalisation · 🇫🇷 Essonne · Services à domicile",
+      tldr: "GLVitr'Clean nettoie vitres, terrasses, volets, façades, panneaux solaires et logements en Essonne et en Seine-et-Marne. PRIONATION a construit son site en export statique en français et en anglais — 224 pages, dont la plupart répondent à « [service] à [ville] » — avec un formulaire de devis sur une edge function, de vraies photos avant/après de chantiers clients, et un contrôle de conformité qui ne laisse apparaître la mention du crédit d'impôt de 50 % que là où elle est réellement autorisée. Lighthouse mobile affiche 97–99 en performance et 100 en accessibilité, bonnes pratiques et SEO.",
+      h1: "GLVitr'Clean : une entreprise de nettoyage locale, trouvable ville par ville",
+      intro: [
+        "GLVitr'Clean est une entreprise de nettoyage multiservice basée à Linas, en Essonne, qui travaille pour les particuliers et les entreprises en Essonne et en Seine-et-Marne : vitres, terrasses, volets et portes, façades, panneaux solaires, poubelles et ménage à domicile. Le site est en ligne sur glvitr-clean.com.",
+        "Cette page explique comment le site est structuré pour la recherche locale, comment les demandes de devis parviennent à l'équipe, comment la mention du crédit d'impôt reste juridiquement sûre, et ce qui dépend encore du client. Les chiffres de leads et de trafic seront publiés une fois mesurés.",
+      ],
+      sections: [
+        {
+          h2: "Le goulot d'étranglement : être trouvé dans la ville d'à côté",
+          body: [
+            "Une entreprise de nettoyage locale est choisie par des gens qui cherchent un service là où ils habitent — « nettoyage de vitres Arpajon », « nettoyage terrasse Brétigny ». Une seule page d'accueil ne peut pas répondre à cela pour chaque ville et chaque service, et des pages génériques où l'on change simplement le nom de la ville sont exactement ce que les moteurs de recherche apprennent à ignorer.",
+            "Le site a donc été construit comme une grille de vraies réponses : chaque service, chaque commune desservie, et chaque combinaison des deux, chacune avec son propre paragraphe local.",
+          ],
+        },
+        {
+          h2: "224 pages, aucune inventée",
+          body: [
+            "Le site est un export statique Next.js en français et en anglais : 112 pages dans chaque langue. Soit une page d'accueil, des hubs services et zones, sept pages de services, douze pages de communes en Essonne, 84 pages service par commune, et des pages pour le crédit d'impôt, les clients professionnels, les réalisations, le formulaire de devis et les mentions légales.",
+            "Le client intervient aussi en Seine-et-Marne, mais n'a pas encore indiqué les villes concernées : il n'existe donc aucune page de commune en Seine-et-Marne. Les inventer aurait produit des pages creuses et des affirmations que personne n'avait confirmées. Elles seront ajoutées quand le client les aura nommées.",
+          ],
+        },
+        {
+          h2: "Un formulaire de devis sur une edge function",
+          body: [
+            "Un export statique n'a pas de serveur, et la clé d'API du fournisseur d'e-mail ne doit jamais atteindre le navigateur. Le formulaire de devis envoie donc vers une Vercel Edge Function distincte, qui transmet la demande via Resend aux trois adresses de l'équipe, puis envoie une confirmation au client — uniquement si la copie de l'équipe est bien partie.",
+            "La fonction vérifie l'origine de la requête, limite le débit par adresse IP et par destinataire, rejette les contenus de plus de 16 Ko et comporte un champ piège (honeypot). Après l'envoi, le client peut ouvrir WhatsApp avec un message pré-rempli mentionnant le service choisi, pour envoyer tout de suite une photo du chantier.",
+          ],
+        },
+        {
+          h2: "Le crédit d'impôt, derrière un contrôle de conformité",
+          body: [
+            "En France, les services à la personne peuvent ouvrir droit à un crédit d'impôt de 50 %, ce qui est un argument de vente fort — et un risque juridique lorsqu'il est revendiqué pour des services non éligibles, puisque cela peut constituer une pratique commerciale trompeuse. Sur ce site, l'éligibilité est un champ de données propre à chaque service, et le chiffre de 50 % ne s'affiche que sur les quatre services éligibles ; façades, panneaux solaires, poubelles et services aux entreprises ne l'affichent jamais.",
+            "Un script de contrôle de conformité fait échouer le build si la mention apparaît sur la mauvaise page, et le justificatif officiel reste en mode « en attente » tant que le numéro d'enregistrement du client n'existe pas. L'argument marketing ne vaut que ce que valent les papiers qui le soutiennent.",
+          ],
+        },
+        {
+          h2: "De vrais chantiers, des illustrations signalées",
+          body: [
+            "La section avant/après présente trois vrais chantiers clients — une terrasse carrelée, une verrière de véranda et une terrasse pavée en vidéo — avec un curseur de comparaison à faire glisser. Là où il n'existe pas encore de vraies photos, dans le visuel d'en-tête, la section à propos et le bloc contact, les images de banque d'images sont signalées à l'écran comme des illustrations, et elles seront remplacées à mesure qu'arrivera l'archive photo du client.",
+            "Le panneau « écrivez-nous » n'est délibérément pas un widget de chat. C'est un panneau statique qui propose un appel, WhatsApp ou le formulaire, parce qu'un chat hébergé ajouterait des cookies, ne convient pas à un export statique, et promettrait des réponses en direct que personne n'est là pour donner.",
+          ],
+        },
+        {
+          h2: "Rapide, valide et lisible",
+          body: [
+            "Lighthouse sur mobile affiche de 97 à 99 en performance et 100 en accessibilité, bonnes pratiques et SEO sur chaque type de page mesuré. Chaque page porte des données structurées — une entreprise de services à domicile, les services avec leur zone desservie, les réponses de la FAQ et le fil d'Ariane — plus des versions alternatives en français, en anglais et par défaut, un fichier llms.txt et des pings IndexNow.",
+            "Le changement de domaine a montré pourquoi les contrôles comptent. Une variable d'environnement périmée avait maintenu chaque URL canonique sur l'ancien domaine ; après la correction — l'URL du site est désormais codée en dur et vérifiée par un script de contrôle de l'hôte —, un audit en production le 5 octobre 2026 a compté 224 pages valides sur 224 sur le nouveau domaine, contre zéro auparavant.",
+          ],
+        },
+        {
+          h2: "Ce qui dépend encore du client",
+          body: [
+            "Le balisage des avis reste en sommeil tant qu'il n'existe pas d'avis vérifiés, les informations d'assurance professionnelle sont marquées « à compléter », et aucun prix n'est publié tant que le client ne les a pas fixés. Les villes de Seine-et-Marne et l'archive photo complète sont les autres points ouverts.",
+            "Aucune de ces lacunes n'est maquillée. Chacune s'affiche comme en attente ou ne s'affiche tout simplement pas, pour que le site n'affirme jamais plus que ce que l'entreprise peut étayer.",
+          ],
+        },
+        {
+          h2: "La leçon transférable",
+          body: [
+            "Pour une entreprise de services de proximité, le site est surtout une affaire de structure : la bonne page pour chaque service dans chaque ville, rapide et valide, avec un moyen clair de demander un devis. C'est cette structure qui fait d'une petite entreprise une entreprise qu'on trouve.",
+            "Et les affirmations qui ont un poids juridique — un crédit d'impôt, une certification, une note d'avis — ont leur place dans les données, avec un contrôle, pas dans le texte. Un build qui échoue quand une affirmation déborde coûte moins cher qu'une plainte.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          q: "Qu'a construit PRIONATION pour GLVitr'Clean ?",
+          a: "Le site bilingue complet sur glvitr-clean.com : 224 pages pour les services et les communes, le formulaire de devis sur une edge function avec envoi par e-mail, la galerie avant/après, les données structurées, et les contrôles de build qui protègent la mention du crédit d'impôt et le domaine canonique.",
+        },
+        {
+          q: "Pourquoi autant de pages pour une entreprise locale ?",
+          a: "Parce que les clients cherchent un service dans leur ville. Chaque page service par commune répond à une de ces recherches avec son propre contenu local, au lieu d'une page générique qui tente de se positionner partout.",
+        },
+        {
+          q: "Comment la mention du crédit d'impôt est-elle gérée ?",
+          a: "L'éligibilité est enregistrée par service et le chiffre de 50 % n'apparaît que sur les quatre services éligibles. Un script de conformité fait échouer le build s'il apparaît ailleurs, et le justificatif officiel reste en attente tant que le numéro d'enregistrement du client n'existe pas.",
+        },
+        {
+          q: "Les photos sont-elles réelles ?",
+          a: "Les chantiers avant/après sont de vraies réalisations pour des clients. Ailleurs, les images de banque d'images sont signalées comme illustrations sur la page et sont remplacées à mesure qu'arrivent les photos du client.",
+        },
+        {
+          q: "Où sont les résultats ?",
+          a: "Les résultats techniques sont mesurés : Lighthouse mobile 97–99 en performance et 100 en accessibilité, bonnes pratiques et SEO, et 224 pages valides sur 224 après le changement de domaine. Les chiffres de leads et de trafic seront publiés une fois mesurés.",
         },
       ],
     },

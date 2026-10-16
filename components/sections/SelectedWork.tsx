@@ -16,12 +16,15 @@ type CaseData = {
   body: string;
 };
 
-const CASE_SLUGS = ["epidom", "expeditoo", "the-lead-agent"];
-// null = no public demo. The Expeditoo deployment was removed (it returned
-// DEPLOYMENT_NOT_FOUND on 2026-10-14), so its tile links only to the case study.
+// Homepage = product and platform work. The local-business sites (Serrurier Paris
+// Express, GLVitr'Clean) are shown on /start and /showcases instead.
+const CASE_SLUGS = ["epidom", "expeditoo", "acte", "the-lead-agent"];
+// null = no public demo. The "expeditoo" slug is the Expedion × Expeditoo case;
+// its demo is the buyer app, which links on to the carrier platform.
 const CASE_DEMOS: (string | null)[] = [
   "https://epidom-eight.vercel.app/",
-  null,
+  "https://expedion-encheres.vercel.app/",
+  "https://acte-web.vercel.app/",
   "https://lead-agent-lac.vercel.app/",
 ];
 
@@ -34,17 +37,18 @@ function CaseTile({
     <m.div
       variants={fadeUp}
       whileHover={{ y: -8, transition: { type: "spring", stiffness: 320, damping: 22 } }}
-      className="bg-card rounded-[24px] p-5 md:p-6 flex flex-col gap-4 min-h-[380px] h-full relative overflow-hidden isolate border border-line transition-colors duration-300 hover:bg-card-soft hover:border-soft hover:shadow-[0_24px_50px_rgba(0,0,0,0.5)] group lg:col-span-3"
+      className="bg-card rounded-[24px] p-5 md:p-6 flex flex-col gap-4 min-h-[380px] h-full relative overflow-hidden isolate border border-line transition-colors duration-300 hover:bg-card-soft hover:border-soft hover:shadow-[0_24px_50px_rgba(0,0,0,0.5)] group"
     >
       {/* primary CTA → internal case study, stretched over the whole card (keeps
           ranking signals on our own domain); demo link below opts out via z-index */}
       <Link href={`/showcases/${slug}`} aria-label={`${c.name} — ${viewLabel}`} className="absolute inset-0 z-20 rounded-[24px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent" />
 
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-start gap-3">
         <span className="font-pixel text-[8px] md:text-[9px] tracking-[0.15em] text-accent uppercase">{c.tag}</span>
         <span className="text-muted font-pixel text-[8px] md:text-[9px] tracking-[0.15em]">{c.year}</span>
       </div>
-      <div className="rounded-xl flex-1 min-h-[160px] relative overflow-hidden bg-card-soft border border-line-soft">
+      {/* 16:10, the shape of the public/work frames, so each shows whole */}
+      <div className="rounded-xl aspect-[16/10] shrink-0 relative overflow-hidden bg-card-soft border border-line-soft">
         <ShowcaseSlideshow slug={slug} alt={c.name} sizes="(min-width: 1024px) 33vw, 100vw" className="transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 z-10 pointer-events-none" />
       </div>
@@ -123,7 +127,7 @@ export function SelectedWork() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="hidden md:grid grid-cols-1 lg:grid-cols-[repeat(9,1fr)] gap-5 mt-10"
+        className="hidden md:grid md:grid-cols-2 gap-5 mt-10"
       >
         {caseCards}
       </m.div>

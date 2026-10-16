@@ -362,11 +362,18 @@
         "body": "Membangun dasbor operasional produksi untuk operator F&B Eropa. Memusatkan data real-time lintas lokasi, menggantikan pelacakan manual yang terfragmentasi dengan satu antarmuka keputusan untuk operator dan manajer."
       },
       {
-        "name": "EXPEDITOO",
+        "name": "EXPEDION × EXPEDITOO",
         "geo": "🇫🇷 PRANCIS · EROPA",
-        "tag": "LOGISTIK · MARKETPLACE",
-        "year": "2025",
-        "body": "Membangun marketplace logistik dan lelang yang menggabungkan mekanik penawaran dan pelacakan pengiriman dalam satu aplikasi."
+        "tag": "LOGISTIK · AI",
+        "year": "2026",
+        "body": "Membangun dua produk yang terhubung untuk satu grup logistik: aplikasi pembeli yang membaca faktur lelang dengan model vision dan memberi harga pengiriman tetap, serta marketplace kurir yang mengambil order yang tidak bisa ditangani armada, di atas satu database bersama."
+      },
+      {
+        "name": "ACTE",
+        "geo": "🇫🇷 PRANCIS · EROPA",
+        "tag": "LEGAL TECH · BETA",
+        "year": "2026",
+        "body": "Membangun versi beta pelacakan waktu dan penagihan untuk firma hukum di Prancis: anggaran per perkara, validasi sekali klik, draf faktur, enkripsi per firma, dan asisten AI dengan data yang dipseudonimkan. Pencocokan perkara otomatis menyusul, dimulai dari set evaluasi."
       },
       {
         "name": "The Lead Agent",
@@ -904,7 +911,7 @@
     "work": {
       "eyebrow": "Proyek yang sudah selesai",
       "title": "Alat yang sudah diserahkan, bukan maket.",
-      "intro": "Restoran, logistik, properti: tiga industri, satu prinsip. Mengganti pekerjaan manual dengan sistem.",
+      "intro": "Restoran, jasa lokal, logistik, hukum, properti: bidang berbeda, satu prinsip. Mengganti pekerjaan manual dengan sistem.",
       "cases": [
         {
           "tag": "Produk kami · Restoran · Prancis",
@@ -913,10 +920,28 @@
           "alt": "Tampilan Epidom"
         },
         {
+          "tag": "Klien · Jasa lokal · Paris",
+          "name": "Serrurier Paris Express",
+          "body": "Situs tukang kunci dua bahasa yang menonjolkan harga: daftar harga publik, 68 halaman per bahasa, dan formulir penawaran yang langsung sampai ke tukangnya.",
+          "alt": "Situs Serrurier Paris Express"
+        },
+        {
+          "tag": "Klien · Jasa rumah tangga · Essonne",
+          "name": "GLVitr'Clean",
+          "body": "Situs perusahaan kebersihan yang dibangun untuk pencarian lokal: 224 halaman, foto sebelum-sesudah dari pekerjaan nyata, dan formulir penawaran yang dikirim ke tim lewat email.",
+          "alt": "Situs GLVitr'Clean"
+        },
+        {
           "tag": "Klien · Logistik · Prancis",
-          "name": "Expeditoo",
-          "body": "Marketplace logistik yang menggabungkan lelang dan pelacakan pengiriman dalam satu aplikasi.",
-          "alt": "Tampilan Expeditoo"
+          "name": "Expedion × Expeditoo",
+          "body": "Dua aplikasi yang terhubung untuk satu grup logistik: pembacaan faktur lelang dan harga tetap untuk pembeli, papan penawaran untuk kurir.",
+          "alt": "Aplikasi pembeli Expedion"
+        },
+        {
+          "tag": "Klien · Legal tech · Prancis",
+          "name": "ACTE",
+          "body": "Versi beta pelacakan waktu dan penagihan untuk firma hukum, dengan enkripsi per firma dan asisten AI yang menjaga kerahasiaan.",
+          "alt": "Dasbor ACTE"
         },
         {
           "tag": "Klien · Properti · Australia",
@@ -1010,6 +1035,27 @@
       "Pemesanan online Epidom di ponsel: menu, lalu checkout untuk makan di tempat, dibawa pulang, atau diantar",
       "POS berbasis web Epidom: layar kasir dengan antrean pesanan, makan di tempat atau dibawa pulang, dan pembayaran",
       "Layar pelanggan Epidom: pesanan dan total yang ditampilkan ke pelanggan di kasir"
+    ],
+    "expeditoo": [
+      "Aplikasi Expedion: pilih jenis penawaran harga. Unggah bordereau balai lelang dalam PDF agar lot diekstrak otomatis, atau isi formulir",
+      "Aplikasi Expedion: daftar penawaran harga pembeli, dengan status dan tautan pelacakan pengiriman (data uji)",
+      "Panel admin Expeditoo: jembatan Expedion dengan penawaran harga terbaru, eskalasi yang jatuh tempo, dan permintaan langsung; nama klien diburamkan, data uji",
+      "Papan pekerjaan Expeditoo untuk kurir: filter pekerjaan di sekitar lokasi atau di sepanjang rute dengan batas jalan memutar, di samping peta",
+      "Pelacakan pengiriman Expeditoo: perjalanan aktif dengan rute, harga, kurir, dan jadwal (data uji beta)",
+      "Expedion dan Expeditoo di ponsel: beranda aplikasi pembeli dan beranda jaringan kurir"
+    ],
+    "acte": [
+      "Tampilan Perkara di versi beta ACTE: setiap perkara dengan anggaran jam, status, dan aktivitas terakhirnya, dengan data sintetis",
+      "Tampilan Statistik di versi beta ACTE: pendapatan yang diamankan per bulan, tarif per jam, waktu yang tercatat, dan rincian per sumber, dengan data sintetis",
+      "Situs publik ACTE: pelacakan waktu dan penagihan untuk firma hukum, dengan pratinjau dasbor yang diberi label data demo"
+    ],
+    "serrurier-paris-express": [
+      "Daftar harga Serrurier Paris Express: setiap layanan dengan harga termasuk dan belum termasuk PPN",
+      "Serrurier Paris Express di ponsel: beranda dengan pengecekan kode pos, dan daftar harga"
+    ],
+    "glvitr-clean": [
+      "Slider sebelum-sesudah GLVitr'Clean: tiga pekerjaan nyata, teras keramik, atap kaca beranda, dan teras paving",
+      "GLVitr'Clean di ponsel: beranda dan perbandingan sebelum-sesudah"
     ]
   }
 }

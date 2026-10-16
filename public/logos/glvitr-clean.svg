@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="33 35 660 150" role="img" aria-label="GLVITR'CLEAN">
+  <!-- Geometry from glvitrclean/public/assets/brand/lockup-on-brand.svg, without the
+       background plate. The ring gap and the "GL" letters are mask holes so they
+       stay readable under the white-silhouette filter used in the logo rows. -->
+  <defs>
+    <mask id="ring-gap">
+      <rect x="0" y="0" width="900" height="220" fill="#fff"/>
+      <circle cx="155.09" cy="57.41" r="18.25" fill="#000"/>
+    </mask>
+    <mask id="gl">
+      <rect x="0" y="0" width="900" height="220" fill="#fff"/>
+      <text x="112.52" y="132" fill="#000" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="52.85" text-anchor="middle">GL</text>
+    </mask>
+  </defs>
+  <circle cx="108.5" cy="110" r="73" fill="none" stroke="#1B3A9C" stroke-width="8.01" mask="url(#ring-gap)"/>
+  <circle cx="108.5" cy="110" r="57.44" fill="#1B3A9C" mask="url(#gl)"/>
+  <circle cx="155.09" cy="57.41" r="14.24" fill="#F7C53F"/>
+  <text x="216.3" y="132" font-family="Georgia, 'Times New Roman', serif" font-size="66" textLength="472" lengthAdjust="spacingAndGlyphs" fill="#1B3A9C">GLVITR’CLEAN</text>
+</svg>

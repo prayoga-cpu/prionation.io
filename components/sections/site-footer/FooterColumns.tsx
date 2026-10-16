@@ -266,7 +266,7 @@ export function FooterColumns() {
               </li>
               <li>
                 <SectionLink isHome={isHome} id="selected-work">
-                  Expeditoo
+                  Expedion × Expeditoo
                 </SectionLink>
               </li>
               <li>

@@ -94,14 +94,46 @@ const MANIFEST = [
       "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
     keywords: ["Epidom", "F&B operations", "POS", "customer display", "PRIONATION showcase", "France"],
   },
-  {
-    // lib/content/text/en.ts → showcases.expeditoo.seoTitle / metaDescription
-    file: "public/work/expeditoo.png",
-    title: "Expeditoo — logistics marketplace, France · PRIONATION",
+  // lib/content/text/en.ts → showcases.expeditoo (Expedion × Expeditoo) — buyer site and app, operator and carrier dashboards, both on phones
+  ...[
+    "expedion-expeditoo-buyer",
+    "expedion-app-quote-type",
+    "expedion-app-my-quotes",
+    "expeditoo-dashboard-admin",
+    "expeditoo-dashboard-jobs",
+    "expeditoo-dashboard-shipments",
+    "expedion-expeditoo-mobile",
+  ].map((name) => ({
+    file: `public/work/${name}.png`,
+    title: "Expedion × Expeditoo — auction logistics, France · PRIONATION",
     description:
-      "How PRIONATION engineered a logistics and auction marketplace for Expeditoo — combining bidding and shipment tracking in one production system — and the transferable lesson.",
-    keywords: ["Expeditoo", "logistics marketplace", "auction bidding", "shipment tracking", "PRIONATION showcase", "France"],
-  },
+      "How PRIONATION built two connected products for one French logistics group: Expedion reads the auction invoice and quotes a fixed delivery price, Expeditoo lets verified carriers bid on the jobs the fleet cannot take.",
+    keywords: ["Expedion", "Expeditoo", "auction shipping", "carrier marketplace", "LLM document extraction", "PRIONATION showcase", "France"],
+  })),
+  // lib/content/text/en.ts → showcases.acte — beta dashboard (journal, cases, statistics; synthetic data), public site
+  ...["acte-dashboard-journal", "acte-dashboard-cases", "acte-dashboard-statistics", "acte-home"].map((name) => ({
+    file: `public/work/${name}.png`,
+    title: "ACTE — legal time tracking and billing, France · PRIONATION",
+    description:
+      "How PRIONATION built the beta of ACTE, time tracking and billing for French law firms: per-firm encryption, a pseudonymised AI assistant, a correct billing ledger — and an eval set before any AI case matching.",
+    keywords: ["ACTE", "legal tech", "time tracking", "law firm billing", "privacy-first AI", "PRIONATION showcase", "France"],
+  })),
+  // lib/content/text/en.ts → showcases["serrurier-paris-express"] — home, price grid, phones
+  ...["serrurier-home", "serrurier-tarifs", "serrurier-mobile"].map((name) => ({
+    file: `public/work/${name}.png`,
+    title: "Serrurier Paris Express — locksmith lead site, Paris · PRIONATION",
+    description:
+      "How PRIONATION built a bilingual, price-first lead site for an independent Paris locksmith: a public price grid, 68 pages per language for real searches, a hardened quote form and no invented reviews.",
+    keywords: ["Serrurier Paris Express", "locksmith Paris", "local services", "lead generation", "PRIONATION showcase", "France"],
+  })),
+  // lib/content/text/en.ts → showcases["glvitr-clean"] — home, before/after (real client jobs), phones
+  ...["glvitrclean-home", "glvitrclean-before-after", "glvitrclean-mobile"].map((name) => ({
+    file: `public/work/${name}.png`,
+    title: "GLVitr'Clean — local cleaning company site, Essonne · PRIONATION",
+    description:
+      "How PRIONATION built GLVitr'Clean's bilingual site: 224 pages for local searches, real before-and-after jobs, a quote form on an edge function, and tax-credit claims that a compliance check keeps honest.",
+    keywords: ["GLVitr'Clean", "cleaning company", "local SEO", "Essonne", "PRIONATION showcase", "France"],
+  })),
   {
     // lib/content/text/en.ts → showcases["the-lead-agent"].seoTitle / metaDescription
     file: "public/work/lead-agent.png",
