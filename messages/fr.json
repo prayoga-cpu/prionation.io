@@ -353,6 +353,8 @@
     "link": "Voir les archives",
     "view_project": "VOIR LE PROJET",
     "live_demo": "DÉMO EN DIRECT",
+    "view_more": "Voir plus",
+    "view_less": "Voir moins",
     "cases": [
       {
         "name": "EPIDOM",
@@ -381,6 +383,20 @@
         "tag": "IMMOBILIER · GÉNÉRATION DE LEADS",
         "year": "2026",
         "body": "Création d'une plateforme complète de génération de leads et de prise de rendez-vous pour une agence immobilière australienne."
+      },
+      {
+        "name": "SERRURIER PARIS EXPRESS",
+        "geo": "🇫🇷 PARIS · FRANCE",
+        "tag": "DÉPANNAGE · GÉNÉRATION DE LEADS",
+        "year": "2026",
+        "body": "Développement d'un site de serrurier bilingue qui met le prix en avant : grille tarifaire publique, 68 pages par langue pour de vraies recherches, un formulaire de devis protégé et aucun avis inventé."
+      },
+      {
+        "name": "GLVITR'CLEAN",
+        "geo": "🇫🇷 ESSONNE · FRANCE",
+        "tag": "SERVICES À DOMICILE · SEO LOCAL",
+        "year": "2026",
+        "body": "Développement du site bilingue d'une entreprise de nettoyage en Essonne : 224 pages pour la recherche locale, de vrais chantiers avant/après, un formulaire de devis sur une fonction edge et un contrôle de conformité sur le crédit d'impôt."
       }
     ]
   },

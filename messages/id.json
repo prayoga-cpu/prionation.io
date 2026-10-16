@@ -353,6 +353,8 @@
     "link": "Lihat arsip",
     "view_project": "LIHAT PROYEK",
     "live_demo": "DEMO LANGSUNG",
+    "view_more": "Lihat lebih banyak",
+    "view_less": "Lihat lebih sedikit",
     "cases": [
       {
         "name": "EPIDOM",
@@ -381,6 +383,20 @@
         "tag": "PROPERTI · GENERASI PROSPEK",
         "year": "2026",
         "body": "Membangun platform lengkap untuk generasi prospek dan pengaturan janji untuk agen properti Australia."
+      },
+      {
+        "name": "SERRURIER PARIS EXPRESS",
+        "geo": "🇫🇷 PARIS · PRANCIS",
+        "tag": "JASA LOKAL · GENERASI PROSPEK",
+        "year": "2026",
+        "body": "Membangun situs tukang kunci dua bahasa yang menonjolkan harga: daftar harga publik, 68 halaman per bahasa untuk pencarian nyata, formulir penawaran yang aman, dan tanpa ulasan karangan."
+      },
+      {
+        "name": "GLVITR'CLEAN",
+        "geo": "🇫🇷 ESSONNE · PRANCIS",
+        "tag": "JASA RUMAH TANGGA · SEO LOKAL",
+        "year": "2026",
+        "body": "Membangun situs dua bahasa untuk perusahaan kebersihan di Essonne: 224 halaman untuk pencarian lokal, foto sebelum-sesudah dari pekerjaan nyata, formulir penawaran di edge function, dan pemeriksaan kepatuhan atas klaim kredit pajak."
       }
     ]
   },

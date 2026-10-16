@@ -353,6 +353,8 @@
     "link": "View archive",
     "view_project": "VIEW PROJECT",
     "live_demo": "LIVE DEMO",
+    "view_more": "View more",
+    "view_less": "View less",
     "cases": [
       {
         "name": "EPIDOM",
@@ -381,6 +383,20 @@
         "tag": "REAL ESTATE · LEAD GEN",
         "year": "2026",
         "body": "Built a full lead generation and appointment-setting platform for a real estate agency. Delivered a client-facing web system that automates pipeline management for ambitious estate agents operating across AU."
+      },
+      {
+        "name": "SERRURIER PARIS EXPRESS",
+        "geo": "🇫🇷 PARIS · FRANCE",
+        "tag": "LOCAL SERVICES · LEAD GEN",
+        "year": "2026",
+        "body": "Built a bilingual, price-first lead site for an independent Paris locksmith: a public price grid, 68 pages per language for real searches, a hardened quote form and no invented reviews."
+      },
+      {
+        "name": "GLVITR'CLEAN",
+        "geo": "🇫🇷 ESSONNE · FRANCE",
+        "tag": "HOME SERVICES · LOCAL SEO",
+        "year": "2026",
+        "body": "Built a bilingual site for a cleaning company in Essonne: 224 pages for local searches, real before-and-after jobs, a quote form on an edge function and a compliance check on tax-credit claims."
       }
     ]
   },

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
 import { SectionHead } from "../ui/Atoms";
@@ -16,9 +16,11 @@ type CaseData = {
   body: string;
 };
 
-// Homepage = product and platform work. The local-business sites (Serrurier Paris
-// Express, GLVitr'Clean) are shown on /start and /showcases instead.
-const CASE_SLUGS = ["epidom", "expeditoo", "acte", "the-lead-agent"];
+// Index-aligned with messages/*.json → SelectedWork.cases. On desktop the first
+// VISIBLE_CASES (product and platform work) show; the rest (the local-business
+// sites) sit behind the "View more" toggle. The phone carousel shows them all.
+const CASE_SLUGS = ["epidom", "expeditoo", "acte", "the-lead-agent", "serrurier-paris-express", "glvitr-clean"];
+const VISIBLE_CASES = 4;
 // null = no public demo. The "expeditoo" slug is the Expedion × Expeditoo case;
 // its demo is the buyer app, which links on to the carrier platform.
 const CASE_DEMOS: (string | null)[] = [
@@ -26,6 +28,8 @@ const CASE_DEMOS: (string | null)[] = [
   "https://expedion-encheres.vercel.app/",
   "https://acte-web.vercel.app/",
   "https://lead-agent-lac.vercel.app/",
+  "https://serrurier-paris-theta.vercel.app/",
+  "https://www.glvitr-clean.com/",
 ];
 
 function CaseTile({
@@ -117,10 +121,21 @@ export function SelectedWork() {
     <CaseTile key={i} c={c} slug={CASE_SLUGS[i]} demo={CASE_DEMOS[i]} viewLabel={t("view_project")} demoLabel={t("live_demo")} />
   ));
 
+  // `open` drives the reveal; `settled` lifts the clipping once the row has fully
+  // opened, so the tiles' hover lift and shadow aren't cut off.
+  const [open, setOpen] = useState(false);
+  const [settled, setSettled] = useState(false);
+  const toggle = () => {
+    const next = !open;
+    setOpen(next);
+    // With reduced motion there is no transition, so no transitionend to wait for.
+    setSettled(next && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  };
+
   return (
     <section id="selected-work" className="relative px-page-x py-[140px] max-w-max-w mx-auto">
       <SectionHead n="03" label={t("label")} title={t("title")} link={t("link")} linkHref="/showcases" />
-      
+
       {/* Desktop Grid */}
       <m.div
         variants={staggerSlow}
@@ -129,8 +144,54 @@ export function SelectedWork() {
         viewport={{ once: true, margin: "-80px" }}
         className="hidden md:grid md:grid-cols-2 gap-5 mt-10"
       >
-        {caseCards}
+        {caseCards.slice(0, VISIBLE_CASES)}
       </m.div>
+
+      {/* Desktop "View more": the remaining tiles stay in the DOM (crawlable) but
+          collapsed and inert until opened; the 0fr→1fr grid row animates the height. */}
+      <div
+        id="selected-work-more"
+        inert={!open}
+        onTransitionEnd={(e) => {
+          if (e.target === e.currentTarget && e.propertyName === "grid-template-rows") setSettled(open);
+        }}
+        className={`hidden md:grid transition-[grid-template-rows,opacity] duration-500 ease-out motion-reduce:transition-none ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+      >
+        <div className={`min-h-0 ${settled ? "overflow-visible" : "overflow-hidden"}`}>
+          <m.div
+            variants={staggerSlow}
+            initial="hidden"
+            animate={open ? "visible" : "hidden"}
+            className="grid md:grid-cols-2 gap-5 pt-5"
+          >
+            {caseCards.slice(VISIBLE_CASES)}
+          </m.div>
+        </div>
+      </div>
+
+      <div className="hidden md:flex justify-center mt-8">
+        <button
+          type="button"
+          onClick={toggle}
+          aria-expanded={open}
+          aria-controls="selected-work-more"
+          className={`group inline-flex items-center gap-2 rounded-full px-4 py-2 font-sans text-[12px] font-bold uppercase tracking-[0.14em] text-muted transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${open ? "" : "view-more-pulse"}`}
+        >
+          {open ? t("view_less") : t("view_more")}
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? "rotate-180" : "view-more-bob"}`}
+          >
+            <path d="M12 5v14M6 13l6 6 6-6" />
+          </svg>
+        </button>
+      </div>
 
       {/* Mobile Carousel */}
       <MobileCarousel>

@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.11.0";
+export const CURRENT_VERSION = "3.11.1";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,16 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.11.1",
+    bump: "patch",
+    date: "2026-10-16",
+    title: "Homepage: \"View more\" for the rest of the work",
+    items: [
+      "The homepage's selected work keeps its four tiles, with a small \"View more\" toggle under them that opens a third row with Serrurier Paris Express and GLVitr'Clean (and \"View less\" to close it). The label pulses from grey to the accent colour; the pulse stops for visitors who ask for reduced motion.",
+      "On phones, the swipe carousel now holds all six projects.",
+    ],
+  },
   {
     version: "3.11.0",
     bump: "minor",

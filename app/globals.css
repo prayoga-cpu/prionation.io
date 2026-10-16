@@ -123,6 +123,45 @@ select option {
   }
 }
 
+/* Homepage Selected Work "View more" toggle (components/sections/SelectedWork.tsx):
+   the label breathes from grey to the accent and back, the arrow bobs in step.
+   Hover pins it to the accent. */
+@keyframes view-more-pulse {
+  0%,
+  100% {
+    color: var(--c-muted);
+    text-shadow: none;
+  }
+  50% {
+    color: var(--c-accent);
+    text-shadow: 0 0 14px var(--c-accent-glow);
+  }
+}
+@keyframes view-more-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+.view-more-pulse {
+  animation: view-more-pulse 2.4s ease-in-out infinite;
+}
+.view-more-pulse:hover {
+  animation: none;
+}
+.view-more-bob {
+  animation: view-more-bob 2.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .view-more-pulse,
+  .view-more-bob {
+    animation: none;
+  }
+}
+
 /* Legacy fade class, used by AppShell IntersectionObserver fallback */
 [data-fade] {
   opacity: 0;
