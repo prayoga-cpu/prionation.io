@@ -1,8 +1,9 @@
 import "server-only";
 
-// Server-side Cal.com API v2 client. The API key never reaches the browser:
-// the site's own routes (/api/cal/slots, /api/forms/booking) call Cal.com for
-// the visitor. Docs: https://cal.com/docs/api-reference/v2/introduction
+// Server-side Cal.com API v2 client: the site's own routes (/api/cal/slots,
+// /api/forms/booking) call Cal.com on the visitor's behalf, so the browser never
+// talks to Cal.com and its own rate limit applies per server, not per visitor.
+// Docs: https://cal.com/docs/api-reference/v2/introduction
 //
 // `cal-api-version` is required per endpoint family (a wrong or missing value
 // silently falls back to an older schema), hence one constant per family.
@@ -26,8 +27,13 @@ export class CalError extends Error {
   }
 }
 
+// Slots and booking creation are public Cal.com endpoints (the same calls the
+// cal.com booking page makes), so they are sent WITHOUT the API key on purpose:
+// Cal.com validates an Authorization header whenever one is present, so a
+// revoked or rotated key would otherwise turn every visitor booking into a 401.
+// CAL_API_KEY is only for account management (e.g. registering the webhook).
 export function calConfigured(): boolean {
-  return Boolean(process.env.CAL_API_KEY && process.env.CAL_EVENT_TYPE_ID);
+  return Boolean(process.env.CAL_EVENT_TYPE_ID);
 }
 
 function eventTypeId(): number {
@@ -37,13 +43,9 @@ function eventTypeId(): number {
 }
 
 async function calFetch<T>(path: string, version: string, init: RequestInit = {}): Promise<T> {
-  const key = process.env.CAL_API_KEY;
-  if (!key) throw new CalError("CAL_API_KEY is not set", 500);
-
   const res = await fetch(`${BASE}${path}`, {
     ...init,
     headers: {
-      Authorization: `Bearer ${key}`,
       "cal-api-version": version,
       "Content-Type": "application/json",
       ...init.headers,

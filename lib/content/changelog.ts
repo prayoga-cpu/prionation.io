@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.12.0";
+export const CURRENT_VERSION = "3.12.1";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,16 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.12.1",
+    bump: "patch",
+    date: "2026-11-25",
+    title: "Meet Us booking no longer depends on a Cal.com API key",
+    items: [
+      "Right after 3.12.0 shipped, Cal.com started rejecting the API key the site was sending (HTTP 401), which made every booking attempt fail with a generic error while the calendar still showed slots. Slots and booking creation are public Cal.com endpoints (the same calls the cal.com booking page makes), and Cal.com validates an Authorization header whenever one is present, so the site now sends none for those calls. A revoked or rotated key can no longer break visitor bookings.",
+      "CAL_API_KEY is now only needed for account management, such as registering the webhook, and CAL_EVENT_TYPE_ID is the one variable the booking flow requires.",
+    ],
+  },
   {
     version: "3.12.0",
     bump: "minor",
