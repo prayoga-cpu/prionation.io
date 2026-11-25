@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse, after } from 'next/server';
 import { bookingSchema } from '@/lib/forms/schemas';
 import { bookingToNotionProperties } from '@/lib/notion/mappers';
 import { notion } from '@/lib/notion/client';
@@ -118,16 +118,28 @@ export async function POST(req: NextRequest) {
       console.error('[booking] Notion/Redis write failed (booking exists on Cal.com)', cal.uid, e);
     }
 
-    // 8. Notify team + confirm to submitter
-    sendBookingNotification(p, cal).catch((e) =>
-      console.error('[booking] Notification failed', e)
-    );
-    sendBookingConfirmation(p, cal).catch((e) =>
-      console.error('[booking] Confirmation failed', e)
-    );
-    sendBookingToDiscord(p, cal).catch((e) =>
-      console.error('[booking] Discord notification failed', e)
-    );
+    // 8. Notify team + confirm to submitter. Run inside after() so the response
+    // goes out at once but Vercel keeps the function alive until the sends end:
+    // un-awaited promises get frozen with the instance after the response (seen
+    // in production as Discord "other side closed" errors surfacing on a later
+    // request). Resend reports failures as a returned `error`, not a throw.
+    after(async () => {
+      const sends = {
+        notification: sendBookingNotification(p, cal),
+        confirmation: sendBookingConfirmation(p, cal),
+        discord: sendBookingToDiscord(p, cal),
+      };
+      for (const [name, pending] of Object.entries(sends)) {
+        try {
+          const res = await pending;
+          if (res && typeof res === 'object' && 'error' in res && res.error) {
+            console.error(`[booking] ${name} failed`, res.error);
+          }
+        } catch (e) {
+          console.error(`[booking] ${name} failed`, e);
+        }
+      }
+    });
 
     return NextResponse.json({ success: true, meetingUrl: cal.meetingUrl, manageUrl: cal.manageUrl });
   } catch (error) {

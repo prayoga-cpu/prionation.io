@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.12.1";
+export const CURRENT_VERSION = "3.12.2";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,15 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.12.2",
+    bump: "patch",
+    date: "2026-11-25",
+    title: "Booking notifications are no longer dropped after the response",
+    items: [
+      "Production logs showed the Discord alert for two real bookings failing with \"other side closed\". The booking route sent the team email, the visitor's confirmation and the Discord post without waiting for them, and Vercel can freeze the function as soon as the response is sent, cutting those requests off. They now run inside Next's after(), which keeps the function alive until they finish, and a failure reported by the email provider is now logged instead of being silently ignored.",
+    ],
+  },
   {
     version: "3.12.1",
     bump: "patch",
