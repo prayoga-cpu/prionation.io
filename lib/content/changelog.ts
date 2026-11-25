@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.11.2";
+export const CURRENT_VERSION = "3.12.0";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,18 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.12.0",
+    bump: "minor",
+    date: "2026-11-25",
+    title: "Meet Us now books real meetings through Cal.com",
+    items: [
+      "The Meet Us calendar showed the same five hardcoded times every weekday and never checked anyone's availability. It now lists the real free slots of our Cal.com calendar, in the visitor's own time zone, and booking one creates the meeting there: Cal.com adds it to our calendar, creates the Cal Video link and emails the visitor the invitation.",
+      "The confirmation screen and email now say what actually happened (confirmed, with the video link and a reschedule / cancel link) instead of promising an invitation that was never sent. A time that was taken in the meantime sends the visitor back to the calendar with fresh availability.",
+      "A new webhook route (/api/webhooks/cal, signature-verified) keeps the PN_Bookings row in step when a meeting is cancelled, rescheduled or finished, and logs bookings made straight on the public Cal.com link in Notion and Discord. Notion shows the exact start time, and new Status values (Cancelled, Rescheduled, Completed) appear as meetings change.",
+      "Booking attempts are capped per IP per day even while the production security flag is off, since each one now lands on the real calendar. The Cal.com API key stays server-side (new env vars CAL_API_KEY, CAL_EVENT_TYPE_ID and CAL_WEBHOOK_SECRET), and the privacy policy now lists Cal.com as a processor in all three languages.",
+    ],
+  },
   {
     version: "3.11.2",
     bump: "patch",

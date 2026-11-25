@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { isValidTimeZone } from '@/lib/cal/format';
 
 const turnstileToken = z.string().min(1, 'Turnstile token required');
 const honeypot = z.string().max(0, 'Bot detected').optional();
@@ -37,9 +38,21 @@ export const bookingSchema = z.object({
   email: z.string().email(),
   countryCode: z.string().regex(/^\+\d{1,4}$/, 'Country code must be +XX format'),
   whatsapp: z.string().regex(/^\d{6,15}$/, 'WhatsApp number digits only'),
+  // Exact slot start as returned by /api/cal/slots (ISO 8601 with offset). This
+  // is what actually gets booked on Cal.com; selectedDate/selectedTime are the
+  // same instant rendered in the visitor's zone and are re-derived server-side.
+  slotStart: z.string().datetime({ offset: true }),
   selectedDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'ISO date format'),
   selectedTime: z.string().min(1).max(40),
-  timezone: z.string().min(1).max(60),
+  timezone: z
+    .string()
+    .min(1)
+    .max(60)
+    .refine((tz) => isValidTimeZone(tz), 'Unknown time zone'),
+  // Machine attribution (lib/analytics/attribution), forwarded to Cal.com metadata.
+  channel: z.string().max(40).optional(),
+  utmSource: z.string().max(200).optional(),
+  utmCampaign: z.string().max(200).optional(),
   turnstileToken,
   honeypot,
 });

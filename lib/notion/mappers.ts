@@ -41,7 +41,8 @@ export function bookingToNotionProperties(p: BookingPayload) {
     'Full Name': { title: [{ text: { content: p.fullName } }] },
     'Email': { email: p.email },
     'WhatsApp': { phone_number: `${p.countryCode}${p.whatsapp}` },
-    'Session Date': { date: { start: p.selectedDate } },
+    // Full ISO start (with the visitor's offset) so Notion shows the exact time.
+    'Session Date': { date: { start: p.slotStart } },
     'Session Time': { rich_text: [{ text: { content: p.selectedTime } }] },
     'Timezone': { rich_text: [{ text: { content: p.timezone } }] },
     'Status': { select: { name: 'New' } },

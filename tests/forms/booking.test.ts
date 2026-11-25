@@ -7,6 +7,7 @@ const VALID_BASE = {
   email: 'marco@bianchi.it',
   countryCode: '+39',
   whatsapp: '812345678',
+  slotStart: '2026-06-02T14:00:00.000+02:00',
   selectedDate: '2026-06-02',
   selectedTime: '14:00',
   timezone: 'Europe/Rome',
@@ -52,6 +53,24 @@ describe('bookingSchema', () => {
 
   it('rejects missing timezone', () => {
     expect(bookingSchema.safeParse({ ...VALID_BASE, timezone: '' }).success).toBe(false);
+  });
+
+  it('rejects an unknown timezone', () => {
+    expect(bookingSchema.safeParse({ ...VALID_BASE, timezone: 'Mars/Olympus' }).success).toBe(false);
+  });
+
+  it('rejects a missing or malformed slotStart', () => {
+    const { slotStart: _omit, ...withoutSlot } = VALID_BASE;
+    void _omit;
+    expect(bookingSchema.safeParse(withoutSlot).success).toBe(false);
+    expect(bookingSchema.safeParse({ ...VALID_BASE, slotStart: '2026-06-02 14:00' }).success).toBe(false);
+    // no offset: ambiguous instant, must be rejected
+    expect(bookingSchema.safeParse({ ...VALID_BASE, slotStart: '2026-06-02T14:00:00' }).success).toBe(false);
+  });
+
+  it('accepts optional attribution fields', () => {
+    const r = bookingSchema.safeParse({ ...VALID_BASE, channel: 'paid', utmSource: 'meta', utmCampaign: 'paris' });
+    expect(r.success).toBe(true);
   });
 
   it('rejects honeypot with content', () => {

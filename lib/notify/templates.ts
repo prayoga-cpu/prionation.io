@@ -1,6 +1,7 @@
 import { resend, FROM, FROM_NOTIFY, REPLY_TO, TO } from "./resend";
 import { CURRENT_VERSION } from "@/lib/content/changelog";
 import { CALLBACK_SLOT_LABELS } from "@/lib/notion/mappers";
+import type { CalBookingRef } from "@/lib/cal/types";
 import type {
   IntakePayload,
   BookingPayload,
@@ -221,23 +222,28 @@ export async function sendIntakeNotification(p: IntakePayload) {
   });
 }
 
-export async function sendBookingNotification(p: BookingPayload) {
+export async function sendBookingNotification(p: BookingPayload, cal?: CalBookingRef) {
   const html = shell(
     "[BOOKING]",
     `
-    ${sectionHead("Request")}
-    ${field("Name", p.fullName, true)}
-    ${field("Email", p.email)}
+    ${sectionHead(cal ? "Booked on Cal.com" : "Request")}
+    ${field("Name", esc(p.fullName), true)}
+    ${field("Email", esc(p.email))}
     ${field("WhatsApp", `${p.countryCode}${p.whatsapp}`)}
     ${divider()}
     ${sectionHead("Session")}
     ${field("Date", p.selectedDate)}
     ${field("Time", p.selectedTime)}
-    ${field("Timezone", p.timezone)}
+    ${field("Timezone", esc(p.timezone))}
+    ${cal?.meetingUrl ? field("Video link", `<a href="${esc(cal.meetingUrl)}" style="color:${T.accent};">${esc(cal.meetingUrl)}</a>`) : ""}
     <tr>
       <td colspan="2" style="padding:16px 0 0;">
         <div style="background:${T.accentDim};border:1px solid ${T.accentBdr};border-radius:10px;padding:14px 16px;">
-          <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:13px;color:${T.soft};">Action: confirm by replying to this email or messaging WhatsApp directly.</p>
+          <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:13px;color:${T.soft};">${
+            cal
+              ? "Already confirmed: the slot is on the calendar and the visitor received the invitation. Nothing to do unless they write in."
+              : "Action: confirm by replying to this email or messaging WhatsApp directly."
+          }</p>
         </div>
       </td>
     </tr>
@@ -251,13 +257,14 @@ export async function sendBookingNotification(p: BookingPayload) {
     subject: `[Booking] ${p.fullName}, ${p.selectedDate} ${p.selectedTime}`,
     html,
     text: txt([
-      "New booking request.",
+      cal ? "New meeting booked (confirmed on Cal.com)." : "New booking request.",
       "",
       `Name: ${p.fullName} <${p.email}>`,
       `WhatsApp: ${p.countryCode}${p.whatsapp}`,
       `When: ${p.selectedDate} at ${p.selectedTime} (${p.timezone})`,
+      ...(cal?.meetingUrl ? [`Video link: ${cal.meetingUrl}`] : []),
       "",
-      "Action: confirm by replying or messaging WhatsApp.",
+      cal ? "Already confirmed: no action needed." : "Action: confirm by replying or messaging WhatsApp.",
     ]),
   });
 }
@@ -430,33 +437,43 @@ export async function sendIntakeConfirmation(p: IntakePayload) {
   });
 }
 
-export async function sendBookingConfirmation(p: BookingPayload) {
+export async function sendBookingConfirmation(p: BookingPayload, cal?: CalBookingRef) {
+  const confirmed = Boolean(cal);
   const html = shell(
     "[CONFIRMED]",
     `
-    ${sectionHead("Request received")}
+    ${sectionHead(confirmed ? "Meeting confirmed" : "Request received")}
     <tr>
       <td colspan="2" style="padding:0 0 20px;">
         <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:15px;color:${T.white};line-height:1.6;">
-          Hi <strong>${p.fullName}</strong>, your meeting request is in.
+          Hi <strong>${esc(p.fullName)}</strong>, ${confirmed ? "your meeting is confirmed." : "your meeting request is in."}
         </p>
       </td>
     </tr>
     <tr>
       <td colspan="2" style="padding:0 0 20px;">
         <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:13px;color:${T.soft};line-height:1.7;">
-          We'll confirm your session shortly. If the time needs adjusting, we'll reach out via email or WhatsApp before the scheduled date.
+          ${
+            confirmed
+              ? "A calendar invitation from Cal.com is on its way to this address, with the video link. This email is our own copy of the details."
+              : "We'll confirm your session shortly. If the time needs adjusting, we'll reach out via email or WhatsApp before the scheduled date."
+          }
         </p>
       </td>
     </tr>
     ${divider()}
     ${field("Date", p.selectedDate)}
-    ${field("Time", `${p.selectedTime} (${p.timezone})`)}
+    ${field("Time", `${p.selectedTime} (${esc(p.timezone)})`)}
     ${field("WhatsApp", `${p.countryCode}${p.whatsapp}`)}
+    ${cal?.meetingUrl ? field("Video link", `<a href="${esc(cal.meetingUrl)}" style="color:${T.accent};">${esc(cal.meetingUrl)}</a>`) : ""}
     <tr>
       <td colspan="2" style="padding:16px 0 0;">
         <div style="background:${T.accentDim};border:1px solid ${T.accentBdr};border-radius:10px;padding:14px 16px;">
-          <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:12px;color:${T.muted};line-height:1.6;">Need to reschedule? Reply to this email or message us on WhatsApp at <strong style="color:${T.white};">${p.countryCode}${p.whatsapp}</strong></p>
+          <p style="margin:0;font-family:'Rubik',system-ui,sans-serif;font-size:12px;color:${T.muted};line-height:1.6;">${
+            cal
+              ? `Need to change the time? <a href="${esc(cal.manageUrl)}" style="color:${T.accent};">Reschedule or cancel here</a>, or message us on WhatsApp at <strong style="color:${T.white};">${p.countryCode}${p.whatsapp}</strong>.`
+              : `Need to reschedule? Reply to this email or message us on WhatsApp at <strong style="color:${T.white};">${p.countryCode}${p.whatsapp}</strong>`
+          }</p>
         </div>
       </td>
     </tr>
@@ -467,17 +484,20 @@ export async function sendBookingConfirmation(p: BookingPayload) {
     from: FROM,
     to: p.email,
     replyTo: REPLY_TO,
-    subject: `Booking request received, ${p.selectedDate} ${p.selectedTime}`,
+    subject: `${confirmed ? "Meeting confirmed" : "Booking request received"}, ${p.selectedDate} ${p.selectedTime}`,
     headers: { 'List-Unsubscribe': `<mailto:${REPLY_TO}?subject=Unsubscribe>` },
     html,
     text: txt([
       `Hi ${p.fullName},`,
       "",
-      "Your meeting request is in.",
+      confirmed ? "Your meeting is confirmed." : "Your meeting request is in.",
       "",
       `Date: ${p.selectedDate} at ${p.selectedTime} (${p.timezone})`,
+      ...(cal?.meetingUrl ? [`Video link: ${cal.meetingUrl}`] : []),
       "",
-      "We'll confirm your session shortly. If the time needs adjusting, we'll reach out via email or WhatsApp.",
+      cal
+        ? `A calendar invitation from Cal.com is on its way. Need to change the time? Reschedule or cancel: ${cal.manageUrl}`
+        : "We'll confirm your session shortly. If the time needs adjusting, we'll reach out via email or WhatsApp.",
       "",
       "— PRIONATION.io",
     ]),

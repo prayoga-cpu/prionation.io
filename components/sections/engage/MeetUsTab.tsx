@@ -11,12 +11,25 @@ import { getAttribution } from "@/lib/analytics/attribution";
 const isDev = process.env.NODE_ENV !== "production";
 const securityEnabled = process.env.NEXT_PUBLIC_SECURITY_ENABLED !== "false";
 
+// Local calendar-day key (YYYY-MM-DD) — never via toISOString(), which shifts
+// the day for anyone east or west of UTC.
+const pad = (n: number) => String(n).padStart(2, "0");
+const dayKey = (d: Date) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+
 export function MeetUsTab() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  // The chosen slot: the exact ISO start returned by /api/cal/slots.
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [step, setStep] = useState<"calendar" | "details" | "confirmed">(
     "calendar",
   );
+  // Live availability from Cal.com, grouped by day, in the selected time zone.
+  const [slotsByDay, setSlotsByDay] = useState<Record<string, string[]>>({});
+  const [slotsLoading, setSlotsLoading] = useState(false);
+  const [slotsError, setSlotsError] = useState("");
+  const [slotsReload, setSlotsReload] = useState(0);
+  const [meetingUrl, setMeetingUrl] = useState<string | null>(null);
+  const [manageUrl, setManageUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState("");
   const [timezone, setTimezone] = useState("");
@@ -40,6 +53,50 @@ export function MeetUsTab() {
 
   const [currentMonth, setCurrentMonth] = useState(new Date());
 
+  // Load the month's real availability whenever the month or time zone changes.
+  useEffect(() => {
+    if (!timezone) return;
+    const y = currentMonth.getFullYear();
+    const m = currentMonth.getMonth();
+    const monthStart = `${y}-${pad(m + 1)}-01`;
+    const monthEnd = `${y}-${pad(m + 1)}-${pad(new Date(y, m + 1, 0).getDate())}`;
+    const todayInZone = new Intl.DateTimeFormat("en-CA", { timeZone: timezone }).format(new Date());
+    const start = monthStart > todayInZone ? monthStart : todayInZone;
+    if (monthEnd < start) return;
+
+    const ctrl = new AbortController();
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- loading flag for the fetch started right below
+    setSlotsLoading(true);
+    setSlotsError("");
+    fetch(`/api/cal/slots?${new URLSearchParams({ start, end: monthEnd, timeZone: timezone })}`, {
+      signal: ctrl.signal,
+    })
+      .then(async (res) => {
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error ?? "Could not load availability.");
+        setSlotsByDay(data.slots ?? {});
+      })
+      .catch((e) => {
+        if (e?.name === "AbortError") return;
+        setSlotsByDay({});
+        setSlotsError(e?.message ?? "Could not load availability.");
+      })
+      .finally(() => {
+        if (!ctrl.signal.aborted) setSlotsLoading(false);
+      });
+    return () => ctrl.abort();
+  }, [currentMonth, timezone, slotsReload]);
+
+  const selectedKey = selectedDate ? dayKey(selectedDate) : null;
+  const times = selectedKey ? (slotsByDay[selectedKey] ?? []) : [];
+  const timeLabel = (iso: string) =>
+    new Intl.DateTimeFormat("en-US", {
+      timeZone: timezone || undefined,
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    }).format(new Date(iso));
+
   const dates = useMemo(() => {
     const year = currentMonth.getFullYear();
     const month = currentMonth.getMonth();
@@ -58,19 +115,18 @@ export function MeetUsTab() {
 
     for (let i = 1; i <= lastDayOfMonth.getDate(); i++) {
       const d = new Date(year, month, i);
-      const isPast = d.setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0);
-      const isWeekend = d.getDay() === 0 || d.getDay() === 6;
 
       days.push({
         dateObj: d,
         date: i,
-        active: !isPast && !isWeekend,
+        // A day is bookable only if Cal.com returned at least one free slot.
+        active: (slotsByDay[dayKey(d)]?.length ?? 0) > 0,
         empty: false,
       });
     }
 
     return days;
-  }, [currentMonth]);
+  }, [currentMonth, slotsByDay]);
 
   const currentMonthYear = currentMonth.toLocaleDateString("en-US", {
     month: "long",
@@ -103,8 +159,6 @@ export function MeetUsTab() {
     { label: "EST (New York), GMT-5", value: "America/New_York" },
   ];
 
-  const times = ["09:00 AM", "09:30 AM", "11:00 AM", "02:00 PM", "04:30 PM"];
-
   const validateForm = () => {
     const errs: Record<string, boolean> = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -119,14 +173,13 @@ export function MeetUsTab() {
 
   const confirmBooking = async () => {
     if (!validateForm()) return;
-    if (!selectedDate || !selectedTime) return;
+    if (!selectedDate || !selectedTime || !selectedKey) return;
     setApiError("");
     setLoading(true);
     try {
-      // Format date as YYYY-MM-DD
-      const isoDate = selectedDate.toISOString().slice(0, 10);
       // Strip non-digits from WhatsApp
       const whatsappDigits = formData.whatsapp.replace(/\D/g, "");
+      const attribution = getAttribution();
 
       const res = await fetch("/api/forms/booking", {
         method: "POST",
@@ -137,9 +190,15 @@ export function MeetUsTab() {
           email: formData.email,
           countryCode: formData.countryCode,
           whatsapp: whatsappDigits,
-          selectedDate: isoDate,
-          selectedTime,
+          // slotStart is what gets booked; the date/time strings are display
+          // copies that the server re-derives from it.
+          slotStart: selectedTime,
+          selectedDate: selectedKey,
+          selectedTime: timeLabel(selectedTime),
           timezone,
+          channel: attribution.channel,
+          utmSource: attribution.utmSource,
+          utmCampaign: attribution.utmCampaign,
           turnstileToken,
           honeypot,
         }),
@@ -150,10 +209,19 @@ export function MeetUsTab() {
         setApiError(data.error ?? "Submission failed. Please try again.");
         turnstileRef.current?.reset();
         setTurnstileToken(isDev ? "dev-bypass" : "");
+        if (res.status === 409) {
+          // Someone else took the slot: back to the calendar with fresh availability.
+          setSelectedTime(null);
+          setStep("calendar");
+          setSlotsReload((n) => n + 1);
+        }
         return;
       }
 
-      trackEvent("booking_submit", { channel: getAttribution().channel ?? "unknown" });
+      const data = await res.json().catch(() => ({}));
+      setMeetingUrl(typeof data.meetingUrl === "string" ? data.meetingUrl : null);
+      setManageUrl(typeof data.manageUrl === "string" ? data.manageUrl : null);
+      trackEvent("booking_submit", { channel: attribution.channel ?? "unknown" });
       setStep("confirmed");
     } catch {
       setApiError("Network error. Please try again.");
@@ -173,16 +241,42 @@ export function MeetUsTab() {
         <h2 className="font-sans font-extrabold text-[clamp(28px,3.4vw,40px)] tracking-[-0.024em] leading-[1.08] text-white m-0">
           Meeting confirmed.
         </h2>
-        <p className="m-[18px_auto_32px] max-w-[52ch] text-soft text-[15px] leading-[1.6]">
-          A calendar invitation has been sent to your email. We look forward to
-          our conversation.
+        <p className="m-[18px_auto_20px] max-w-[52ch] text-soft text-[15px] leading-[1.6]">
+          A calendar invitation with the video link has been sent to your
+          email. We look forward to our conversation.
         </p>
+        {(meetingUrl || manageUrl) && (
+          <p className="m-[0_auto_32px] flex justify-center gap-6 flex-wrap text-[13px]">
+            {meetingUrl && (
+              <a
+                href={meetingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent font-semibold hover:underline"
+              >
+                Open the video link
+              </a>
+            )}
+            {manageUrl && (
+              <a
+                href={manageUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-soft font-semibold hover:text-white"
+              >
+                Reschedule or cancel
+              </a>
+            )}
+          </p>
+        )}
         <button
           className="bg-transparent border-0 p-0 cursor-pointer text-soft font-sans font-semibold text-[13px] inline-flex items-center gap-2 hover:text-white"
           onClick={() => {
             setStep("calendar");
             setSelectedDate(null);
             setSelectedTime(null);
+            setMeetingUrl(null);
+            setManageUrl(null);
             setCurrentMonth(new Date());
             setFormData({
               fullName: "",
@@ -271,9 +365,11 @@ export function MeetUsTab() {
                       return (
                         <button
                           key={`date-${i}`}
-                          onClick={() =>
-                            d.active && d.dateObj && setSelectedDate(d.dateObj)
-                          }
+                          onClick={() => {
+                            if (!d.active || !d.dateObj) return;
+                            setSelectedDate(d.dateObj);
+                            setSelectedTime(null); // a slot belongs to one day
+                          }}
                           disabled={!d.active}
                           className={`aspect-square rounded-lg sm:rounded-xl flex items-center justify-center font-sans text-[11px] sm:text-[13px] font-medium transition-all duration-fast ${
                             !d.active
@@ -299,9 +395,25 @@ export function MeetUsTab() {
                   : "Select a date first"}
               </h4>
               <div className="flex flex-col gap-2 h-[260px] overflow-y-auto pr-2 custom-scrollbar">
-                {!selectedDate ? (
+                {slotsError ? (
+                  <div className="text-[13px] h-full flex flex-col items-center justify-center gap-3 text-center border border-dashed border-line-soft rounded-xl px-4">
+                    <span className="text-accent">{slotsError}</span>
+                    <button
+                      onClick={() => setSlotsReload((n) => n + 1)}
+                      className="text-soft hover:text-white underline underline-offset-4 cursor-pointer"
+                    >
+                      Try again
+                    </button>
+                  </div>
+                ) : slotsLoading && !selectedDate ? (
                   <div className="text-muted text-[13px] h-full flex items-center justify-center border border-dashed border-line-soft rounded-xl">
-                    Choose a date to see times
+                    Loading availability…
+                  </div>
+                ) : !selectedDate ? (
+                  <div className="text-muted text-[13px] h-full flex items-center justify-center border border-dashed border-line-soft rounded-xl text-center px-4">
+                    {Object.keys(slotsByDay).length === 0
+                      ? "No open times this month. Try next month."
+                      : "Choose a date to see times"}
                   </div>
                 ) : (
                   times.map((t) => (
@@ -314,7 +426,7 @@ export function MeetUsTab() {
                           : "border-line-soft bg-transparent text-soft hover:border-soft hover:text-white"
                       }`}
                     >
-                      {t}
+                      {timeLabel(t)}
                     </button>
                   ))
                 )}
@@ -356,7 +468,7 @@ export function MeetUsTab() {
                     year: "numeric",
                   })
                 : ""}{" "}
-              at {selectedTime} (30 mins)
+              at {selectedTime ? timeLabel(selectedTime) : ""} (30 mins)
             </div>
 
             {/* Honeypot */}
@@ -489,7 +601,13 @@ export function MeetUsTab() {
           <div className="relative group">
             <select
               value={timezone}
-              onChange={(e) => setTimezone(e.target.value)}
+              onChange={(e) => {
+                // Slots are listed per time zone, so the old pick no longer applies.
+                setTimezone(e.target.value);
+                setSelectedDate(null);
+                setSelectedTime(null);
+                if (step === "details") setStep("calendar");
+              }}
               aria-label="Timezone"
               className="bg-transparent text-muted text-[11px] font-sans outline-none border-0 cursor-pointer hover:text-white transition-colors"
             >

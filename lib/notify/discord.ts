@@ -1,3 +1,4 @@
+import type { CalBookingRef } from "@/lib/cal/types";
 import type {
   IntakePayload,
   BookingPayload,
@@ -91,10 +92,10 @@ export function sendIntakeToDiscord(p: IntakePayload) {
   );
 }
 
-export function sendBookingToDiscord(p: BookingPayload) {
+export function sendBookingToDiscord(p: BookingPayload, cal?: CalBookingRef) {
   return postEmbed(
     base(
-      "📅 New Booking Request",
+      cal ? "📅 New meeting booked" : "📅 New Booking Request",
       [
         { name: "Name", value: p.fullName, inline: true },
         { name: "Email", value: p.email, inline: true },
@@ -102,13 +103,21 @@ export function sendBookingToDiscord(p: BookingPayload) {
         { name: "Date", value: p.selectedDate, inline: true },
         { name: "Time", value: p.selectedTime, inline: true },
         { name: "Timezone", value: p.timezone, inline: true },
+        ...(cal?.meetingUrl ? [{ name: "Video link", value: cal.meetingUrl }] : []),
       ],
       {
-        description:
-          "Confirm by replying to the email or messaging WhatsApp directly.",
+        description: cal
+          ? "Confirmed on Cal.com: the slot is on the calendar and the invitation was sent."
+          : "Confirm by replying to the email or messaging WhatsApp directly.",
       },
     ),
   );
+}
+
+// Lifecycle updates pushed by Cal.com webhooks (cancelled, rescheduled, a
+// booking made straight on the public cal.com link, …).
+export function sendCalUpdateToDiscord(title: string, fields: DiscordField[], description?: string) {
+  return postEmbed(base(title, fields, description ? { description } : undefined));
 }
 
 // Fast alert for Evan. The phone number stays out of Discord: it is in the team

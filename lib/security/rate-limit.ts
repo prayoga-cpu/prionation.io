@@ -9,6 +9,8 @@ const limiters: Record<string, Ratelimit> = {
   callback: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(3, '1 h') }),
   career: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(3, '1 h') }),
   waitlist: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(5, '1 h') }),
+  // Calendar browsing: one visitor changing month/time zone a few times.
+  slots: new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(60, '10 m') }),
   // Keyed by role (not IP) — see lib/finance/auth/otp.ts. Caps OTP requests
   // for a given role globally, regardless of who's asking.
   'finance-otp-request': new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(3, '15 m') }),
@@ -17,4 +19,13 @@ const limiters: Record<string, Ratelimit> = {
 export async function rateLimit(form: keyof typeof limiters, ip: string) {
   if (process.env.SECURITY_ENABLED === 'false') return { success: true };
   return limiters[form].limit(`${form}:${ip}`);
+}
+
+// Per-IP cap on bookings that land on the real Cal.com calendar. Unlike
+// rateLimit() it ignores SECURITY_ENABLED: production runs with that flag off
+// (no Turnstile yet), and without a cap a script could fill every slot.
+const calendarLimiter = new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(3, '1 d') });
+
+export async function calendarBookingLimit(ip: string) {
+  return calendarLimiter.limit(`calendar-booking:${ip}`);
 }

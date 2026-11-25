@@ -30,6 +30,7 @@ const booking = {
   email: "marco@bianchi.it",
   countryCode: "+39",
   whatsapp: "812345678",
+  slotStart: "2026-06-02T14:00:00.000+02:00",
   selectedDate: "2026-06-02",
   selectedTime: "14:00",
   timezone: "Europe/Rome",

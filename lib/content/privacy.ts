@@ -67,6 +67,7 @@ export const PRIVACY: Record<PrivacyLocale, PrivacyDoc> = {
             list: [
               "Notion — stores form submissions and our sales pipeline.",
               "Resend — sends confirmation and notification emails.",
+              "Cal.com — schedules the meetings you book with us (your name, email, time zone and chosen slot are sent to it, and it emails you the calendar invitation).",
               "Supabase — stores CV files uploaded with career applications.",
               "Cloudflare Turnstile and Upstash — anti-bot protection and rate limiting (may process your IP address); Upstash also stores the anonymous counters described above.",
               "WhatsApp (Meta) — when you choose to message us on WhatsApp.",
@@ -148,6 +149,7 @@ export const PRIVACY: Record<PrivacyLocale, PrivacyDoc> = {
             list: [
               "Notion — stocke les soumissions de formulaires et notre pipeline commercial.",
               "Resend — envoie les e-mails de confirmation et de notification.",
+              "Cal.com — planifie les rendez-vous que vous réservez avec nous (votre nom, e-mail, fuseau horaire et créneau choisi lui sont transmis, et il vous envoie l'invitation de calendrier).",
               "Supabase — stocke les fichiers de CV envoyés avec les candidatures.",
               "Cloudflare Turnstile et Upstash — protection anti-robots et limitation de débit (peuvent traiter votre adresse IP) ; Upstash conserve aussi les compteurs anonymes décrits ci-dessus.",
               "WhatsApp (Meta) — lorsque vous choisissez de nous écrire sur WhatsApp.",
@@ -229,6 +231,7 @@ export const PRIVACY: Record<PrivacyLocale, PrivacyDoc> = {
             list: [
               "Notion — menyimpan kiriman formulir dan pipeline penjualan kami.",
               "Resend — mengirim email konfirmasi dan notifikasi.",
+              "Cal.com — menjadwalkan pertemuan yang Anda pesan bersama kami (nama, email, zona waktu, dan slot yang dipilih dikirim ke Cal.com, yang juga mengirim undangan kalender kepada Anda).",
               "Supabase — menyimpan berkas CV yang diunggah pada lamaran karier.",
               "Cloudflare Turnstile dan Upstash — perlindungan anti-bot dan pembatasan laju (dapat memproses alamat IP Anda); Upstash juga menyimpan penghitung anonim yang dijelaskan di atas.",
               "WhatsApp (Meta) — saat Anda memilih untuk mengirim pesan WhatsApp kepada kami.",
