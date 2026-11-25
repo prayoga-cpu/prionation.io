@@ -1027,135 +1027,122 @@ export const pagesEn: LocalePages = {
   showcases: {
     epidom: {
       navLabel: "Epidom",
-      seoTitle: "Epidom — F&B operations dashboard · PRIONATION",
+      seoTitle: "Epidom — online ordering, POS and a Claude connector for cafés · PRIONATION",
       metaDescription:
-        "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
-      badge: "Showcase · 🇫🇷 France · F&B",
-      tldr: "Epidom, a European F&B operator, ran multi-location inventory on manual processes that did not scale. PRIONATION built a centralised production system to track inventory across locations and cut the operational overhead of doing it by hand. This is the profile of the engagement and the transferable lesson for multi-site operators.",
-      h1: "Epidom — F&B operations dashboard",
+        "Epidom is PRIONATION's own product: online ordering, a web POS, stock, staff and finance for cafés and restaurants, in four languages, with a Claude connector that answers from the store's own data.",
+      badge: "Showcase · 🇫🇷 France · F&B · Our product",
+      tldr: "Epidom is PRIONATION's own product, not a client engagement: an all-in-one system for cafés, restaurants and bakeries that starts with a free ordering page and grows into a web POS, kitchen display, stock, staff scheduling and finance reports. Our team builds it and runs it in production — 44 releases between mid-October and late November 2026 alone — and since November 2026 an owner can connect it to their own Claude and ask about sales, stock, staff and finance in plain words.",
+      h1: "Epidom: building and running our own F&B product",
       intro: [
-        "Epidom is a European food-and-beverage operator running inventory across multiple locations. Like most multi-site operators, its constraint was not strategy — it was the manual, fragmented process of keeping stock visible and accurate everywhere at once.",
-        "This page profiles the engagement: the operational bottleneck, how PRIONATION approached the build, what changed, and the lesson that transfers to any multi-location operation. Quantified results will be published as they are finalised.",
+        "Epidom is the product PRIONATION builds and operates for itself. Its entry point today is a free public ordering page for food and beverage businesses — one link that replaces a link-in-bio page, a PDF menu and ordering over WhatsApp — and behind it sits a full operating system: a web POS that keeps selling offline, kitchen and customer displays, recipe-level stock, staff rosters with clock-in, and finance reports across outlets. It is live at epidom.fr, for France first, then Indonesia, and since November 2026 in Thai as well.",
+        "Because Epidom is ours, this page is not a client profile. It shows what it takes to ship and operate a production product end to end: the architecture, where AI sits in it, the compliance work, and what was deliberately kept out. No customer results are claimed here; usage figures will be published only when they can be checked.",
       ],
       sections: [
         {
-          h2: "The bottleneck",
+          h2: "What Epidom is",
           body: [
-            "Multi-location inventory done manually fails in a predictable way: each site keeps its own view, the numbers drift, and reconciling them consumes time that scales with every new location. The cost is not one big failure but a constant operational tax — overhead, stockouts, and decisions made on stale data.",
-            "For Epidom the bottleneck was exactly this: a manual, multi-location tracking process that could not keep pace with the operation.",
+            "Epidom is sold as a ladder rather than a suite. The free tier is the storefront: a page at epidom.fr/@name with the menu, photos, opening hours, links and a printable QR code. The POS plan adds ordering from that page, the cashier, the order queue, a kitchen display, tables, receipts and a customer-facing display. The Operations plan adds products, materials, recipes and suppliers, stock movements, staff scheduling and the finance reports, for up to three outlets. Beyond that, Enterprise is a service: a group of four or more outlets, or a business that wants its own system built, is scoped with the PRIONATION team.",
+            "Each layer replaces a job the merchant already does by hand. The storefront replaces a scattered link-in-bio and a PDF menu; the POS replaces a notebook and a calculator; Operations replaces the spreadsheet where someone works out what a dish really costs. The product's own documentation names the trigger for each upgrade — a cashier hired, a second shift, a second outlet, ingredient costs that start to hurt — so the pricing follows the operation rather than a feature list.",
           ],
         },
         {
-          h2: "How PRIONATION approached the build",
+          h2: "One order, from the customer's phone to the margin",
           body: [
-            "The work followed the standard method: map the operation before building, define what a correct, current inventory view means in measurable terms, and build the smallest production system that delivers it — centralised tracking that replaces the manual process rather than layering on top of it.",
-            "As with every engagement, the system was built to be owned and operated by the client, so the capability stays in-house after delivery.",
+            "The core of Epidom is a single order flow. A customer orders from the storefront on their phone and pays at the counter; the order lands in the same queue as a walk-in sale rung up on the till, goes to the kitchen display by department, and is marked delivered when it leaves the pass. Orders from delivery apps can join that queue too: Epidom reads the aggregator's order e-mails with a language model and tags each order with its channel. That is a first version; direct partner integrations are not built.",
+            "When an order is delivered, stock is drawn inside one serializable database transaction. Each product declares how it is stocked: a croissant baked in batches draws from a counted balance, a latte made to order explodes its recipe into milk, coffee and cup, and some items are not tracked at all. Every unit moves through one ledger — purchase, production, sale, adjustment, waste, return — tagged with the order or batch that caused it, and a nightly job reconciles the balances so drift is caught before the merchant notices it. The finance reports read the same data: revenue, cost of goods and margin by item, by shift, by payment method and by channel, with delivery-app commission priced in.",
           ],
         },
         {
-          h2: "What it changed",
+          h2: "Claude as a way into the store's data",
           body: [
-            "The manual, per-location process was replaced by a single centralised system, removing the reconciliation overhead and giving the operation one accurate view of inventory across sites. In the words of the public project summary, it cut operational overhead.",
-            "The detailed before-and-after metrics are being prepared for publication and will appear here and on the transparency page.",
+            "Since November 2026 an owner can add Epidom as a connector in their own Claude — on claude.ai, in the desktop and mobile apps or in Claude Code — and ask in plain words how last week compared with the week before, what is running low, who works on Saturday or which dishes earn the most. Epidom exposes the store through a Model Context Protocol (MCP) server, and the AI runs on the owner's own Claude plan, not on ours. The connector is in beta.",
+            "Access was the hard part, so it was designed first. When someone connects, Epidom asks what Claude may do: reading is the default and comes with the Operations plan; changes — menu items, stock adjustments and waste, supplier orders, rosters, expenses and customers — need the Enterprise plan and an explicit tick. Staff who connect see only what their own access at the store allows. Every menu change can be previewed before it is made, up to 50 items change at once or not at all, and each change is kept with what it looked like before, so it can be undone for 30 days — and the undo is refused if anything touched the same items since. Payments, refunds, the till and clocking in stay in the Epidom app, and every change made from Claude appears in the store's activity log.",
           ],
         },
         {
-          h2: "The transferable lesson",
+          h2: "Where else AI sits",
           body: [
-            "The lesson generalises to any multi-site operator: the highest-ROI first build is rarely the flashy one — it is the one that removes the manual reconciliation tax that grows with every location. Centralise the source of truth first; everything else compounds from there.",
-            "If your operation runs critical numbers in spreadsheets that each location maintains separately, that is usually the bottleneck worth mapping first.",
+            "AI shows up in Epidom where a merchant would otherwise spend an evening typing. Smart import reads a messy menu or stock spreadsheet, proposes how each column maps onto Epidom's data model, and remembers the merchant's corrections for next time; it also recognises build-your-own menus — a base, a protein, a sauce — and turns them into numbered choice steps.",
+            "None of these features writes anything on its own. An import is a proposal the merchant confirms, a parsed delivery-app order is tagged with where it came from, and Claude asks before each change. That is the rule across the product: the AI fills the form, a person presses the button.",
           ],
         },
         {
-          h2: "Why multi-site inventory keeps breaking the same way",
+          h2: "Compliance, and the unglamorous work that keeps it running",
           body: [
-            "In food and beverage the inventory problem is structurally harder than in most multi-location retail, because the stock is perishable, the unit of measure shifts as ingredients move from delivery to prep to plate, and waste is a real line item rather than a rounding error. Each site develops its own conventions — what a 'case' means, how part-used stock is counted, when a count happens — and those conventions are invisible until someone tries to add the numbers up. The drift is not carelessness; it is the predictable result of every location optimising its own day while no shared definition exists above them.",
-            "The reason this recurs across operators is that the manual approach works perfectly at one or two sites and fails silently at five or ten. A founder who could hold the whole operation in their head simply cannot once it spans locations, and the spreadsheet that scaled the first expansion becomes the thing that caps the next one. By the time the overhead is felt as a tax, the operation has usually already routed real money — over-ordering, emergency top-ups, write-offs — through the gap between what each site thinks it has and what it actually has.",
-            "Recognising this pattern matters because it tells you where the first build should go. The instinct is often to chase a forecasting or demand-prediction system — the visibly clever project. But a forecast built on numbers that do not reconcile is a confident wrong answer. The honest sequencing is to make the current view correct and shared before attempting to predict anything from it, which is exactly why a centralised source of truth, not a model, is the right first build for an operator at this stage.",
+            "A till sold in France has to meet the anti-fraud VAT law (article 286 of the French tax code). Epidom records every paid sale, refund and cancellation in a fiscal journal where each record is signed and chained to the one before; a correction is always a new record, never an edit. Days, months and years are closed into signed archives, the whole journal can be re-verified on demand, and it is kept for six years even if the account is closed. The publisher's attestation that proves it is announced but not yet available, so this page does not call the till certified.",
+            "The rest is operations work that never makes a feature list: a nightly database backup with a freshness alarm, an uptime monitor added after a database quota outage on 21 November 2026 that now checks the sign-in path every 15 minutes, a separate development database for previews, and an audit log of sensitive owner and admin actions. Epidom runs on Next.js 16 and React 19 with PostgreSQL and Prisma, Better Auth, Stripe for subscriptions, Inngest for background jobs and Resend for e-mail, hosted on Vercel. It has more than 600 test files, and version 3.52.0 shipped on 22 November 2026.",
           ],
         },
         {
-          h2: "The engineering reasoning: one model, not many integrations",
+          h2: "Four languages, 156 currencies, one codebase",
           body: [
-            "The tempting way to centralise multi-site inventory is to leave each location's process in place and build connectors that pull every site's numbers into a dashboard. It demos well and changes little — because a dashboard over inconsistent data inherits the inconsistency. If two sites count part-used stock differently, no amount of aggregation reconciles them; the dashboard simply displays the disagreement in higher resolution. The work that actually removes the overhead is upstream: agreeing one definition of an item, a count, and a location, and making every site record against that single model rather than translating into it after the fact.",
-            "This is why the Diagnostic for a build like this spends its effort on the domain before any screen is designed. The questions that decide the outcome are unglamorous — what is the canonical unit for each ingredient, what event constitutes stock leaving inventory, how is a transfer between sites represented so it is not double-counted — and they are far cheaper to answer on paper than to discover in production. Defining 'a correct, current inventory view' in measurable terms is what turns an open-ended dashboard project into a bounded build with a clear test for done.",
-            "The payoff of getting the model right is that consistency becomes a property of the system rather than a discipline the staff have to maintain. When every location writes to the same definitions, reconciliation stops being a recurring task because there is nothing to reconcile — the numbers were never allowed to diverge. That is the difference between software that reports the problem and software that removes it, and it is the reason the build replaces the manual process rather than sitting alongside it.",
+            "Epidom's market is France first and Indonesia second, and since 22 November 2026 it also speaks Thai. Every screen, e-mail and error message exists in French, Indonesian, Thai and English, and a test fails the build when a text exists in one language but not in the others, or when a placeholder is lost in translation. Prices are stored in a base currency and shown in any of 156 ISO currencies; outlets that sell in different currencies are reported side by side and never added together.",
+            "Some of the hardest localisation bugs were physical rather than linguistic. Thermal receipt printers cannot print Thai letters as text, so Thai store and item names came out as question marks; each printer now has an opt-in switch that prints non-Latin text as an image, off by default until the merchant has run a test print. The till itself works offline — sales queue on the device and sync when the network returns — because a shop that loses its connection still has customers at the counter.",
           ],
         },
         {
           h2: "What was deliberately not built",
           body: [
-            "The discipline of a fixed eight-week clock is mostly the discipline of saying no, and a build like this has an obvious list of things to refuse. Automated reordering, supplier integrations, demand forecasting, and dynamic menu costing are all reasonable ambitions for a mature inventory system — and all of them are downstream of having one accurate, shared view of stock, which did not exist yet. Building them first would have meant building sophistication on top of numbers that still drifted, which is how AI projects acquire impressive features that no one trusts enough to act on.",
-            "The deliberate scope was the smallest production system that makes the current inventory view correct and shared across sites, with the telemetry to know it is staying correct. That restraint is not caution for its own sake; it is what lets the operation prove the foundation works before any decision is automated on top of it. An owner who can finally trust a single number across all locations is in a far better position to scope the next build — and to do so against real usage rather than a wishlist written before the foundation existed.",
-            "Naming the boundary is also honest about sequencing rather than capability. Forecasting and automated reordering are genuinely valuable, and a multi-site operator will likely want them — later, as a second build scoped against telemetry from the first. The transferable point is that the order is the whole game: the centralised source of truth is the asset that makes everything after it possible, and attempting the clever layer first is the most common way the foundation never gets built at all.",
+            "Some things were left out on purpose. Online card payment on the storefront is built but switched off: customers order from their phone and pay at the counter, which keeps money handling in one place while the order flow proves itself. Direct integrations with the delivery apps are not built — their orders arrive through e-mail parsing instead — and custom domains and white-label storefronts are still on the list.",
+            "The Claude connector cannot take payments, issue refunds, run the till or clock anyone in, and it cannot draw charts yet. Those limits are written into the product itself, on the connector's settings page, rather than left for the merchant to discover. The pattern is the same everywhere in Epidom: ship the narrow, checkable version first, and widen it once real stores have used it.",
           ],
         },
         {
-          h2: "How to tell if this pattern is yours — and what software cannot fix",
+          h2: "The transferable lesson",
           body: [
-            "There are a few honest signals that an operation has the Epidom-shaped bottleneck. Stock counts live in per-site spreadsheets that someone consolidates by hand. The same item is described differently depending on who entered it. A question as basic as 'how much of this do we have across all locations right now?' takes hours and produces an answer people quietly distrust. And the time spent reconciling grows every time a location is added, rather than staying flat. If two or more of those are true, the manual reconciliation tax is real and is almost certainly the highest-return thing to map first.",
-            "The honest limit is that a centralised system fixes the structure of the problem, not the inputs to it. If counts are entered carelessly, or stock physically walks out the back door, no model will make the numbers true — software enforces one definition of a count, but it cannot enforce that the count was done honestly. What the system does is make discrepancies visible and attributable, which is often enough to change behaviour, but the discipline of accurate entry remains a human responsibility the software supports rather than replaces.",
-            "It is also worth saying plainly what this class of build does not deliver: it does not, on its own, reduce waste, cut supplier cost, or improve margin. It removes the overhead of keeping the numbers straight and gives the operation a trustworthy base to make those decisions from. The margin improvement is something the operator earns by acting on a clear view — the build's job is to make sure the view is finally worth acting on.",
+            "Running our own product changes how we build for clients. Every engagement PRIONATION scopes benefits from problems already paid for on Epidom: sales that must survive a dropped connection, stock that has to match the till, a tax-law journal, four languages kept in step, and AI that touches real business data without being trusted blindly.",
+            "The specific lesson from the Claude connector is that the interesting work is not the model. It is the permission model, the preview, the undo and the audit trail around it. An AI that can change a menu is only useful if the owner can see what it will do, say no, and take it back.",
           ],
         },
       ],
       faq: [
         {
-          q: "What did PRIONATION build for Epidom?",
-          a: "A centralised inventory management system for a European F&B operator, designed for multi-location tracking, replacing manual processes with a single production system that cut operational overhead.",
+          q: "Is Epidom a PRIONATION client?",
+          a: "No. Epidom is PRIONATION's own product: our team builds it and runs it in production at epidom.fr. It appears here as a showcase of the work, not as a client result.",
         },
         {
-          q: "What industry and market is Epidom?",
-          a: "Food and beverage, operating in France and Europe. The engagement addressed multi-location inventory operations.",
+          q: "What does Epidom do?",
+          a: "It is an all-in-one system for cafés, restaurants and bakeries: a free ordering page with a QR code, a web POS with kitchen and customer displays that keeps working offline, recipe-level stock, staff scheduling with clock-in, and finance reports across outlets.",
         },
         {
-          q: "Where are the detailed results and metrics?",
-          a: "Quantified before-and-after results are being prepared and will be published here and on the transparency page. This profile describes the engagement and the transferable lesson.",
+          q: "What is the Epidom Claude connector?",
+          a: "An MCP server that lets an owner add Epidom to their own Claude and ask about sales, stock, staff and finance in plain words. Reading comes with the Operations plan; changes need the Enterprise plan, are previewed first, and menu changes can be undone for 30 days. It is in beta.",
         },
         {
-          q: "What is the transferable lesson for other operators?",
-          a: "For multi-site operations, the first build with the highest ROI is usually the one that removes the manual reconciliation tax that grows with every location — centralise the source of truth before anything else.",
+          q: "Which languages and markets does Epidom support?",
+          a: "France first, then Indonesia, and Thailand since November 2026. The product is in French, Indonesian, Thai and English, and prices can be shown in 156 currencies.",
         },
         {
-          q: "How would a similar build start?",
-          a: "With a two-week Diagnostic that maps the operational bottleneck and defines the measurable target before any system is built.",
+          q: "Does the Epidom till meet the French anti-fraud VAT rules?",
+          a: "It keeps the fiscal journal that article 286 of the French tax code calls for: signed, chained records, signed closures for each day, month and year, and six-year retention. The publisher's attestation is announced but not yet available, so certification is not claimed here.",
         },
         {
-          q: "Why centralise the data instead of just adding a reporting dashboard over the existing spreadsheets?",
-          a: "A dashboard over inconsistent data inherits the inconsistency — it shows the disagreement between sites in higher resolution rather than resolving it. The fix is upstream: agree one definition of an item, a count, and a location, then have every site record against that model. Consistency becomes a property of the system rather than a discipline staff must maintain by hand.",
+          q: "Where are the usage numbers?",
+          a: "Not published yet. This page only states what can be checked in the product and its release history; usage figures will be added once they can be verified.",
         },
         {
-          q: "Why is multi-location inventory harder in food and beverage specifically?",
-          a: "Stock is perishable, the unit of measure shifts as ingredients move from delivery to prep to plate, and waste is a real line item. Each site develops its own counting conventions, which stay invisible until someone tries to add the numbers up. The drift is not carelessness — it is every location optimising its own day with no shared definition above them.",
-        },
-        {
-          q: "Why not build forecasting or automated reordering at the same time?",
-          a: "Because both are downstream of having one accurate, shared view of stock, which did not exist yet. A forecast built on numbers that do not reconcile is a confident wrong answer. The honest sequence is to make the current view correct and shared first, then scope forecasting or reordering as a later build against real telemetry — not to stack the clever layer on a drifting foundation.",
-        },
-        {
-          q: "How can I tell if my operation has this same bottleneck?",
-          a: "Watch for a few signals: stock counts live in per-site spreadsheets someone consolidates by hand, the same item is described differently by different people, a question like 'how much do we have across all sites right now?' takes hours and yields an answer people distrust, and reconciliation time grows with every new location. If two or more are true, this is likely your highest-return first build.",
+          q: "How would a similar build start for my business?",
+          a: "With a two-week Diagnostic that maps the operation before anything is built. A group of four or more outlets, or a business that needs its own system, can also start from Epidom's Enterprise plan, which is scoped with the PRIONATION team.",
         },
       ],
     },
-
     "expeditoo": {
-      navLabel: "Expedion × Expeditoo",
-      seoTitle: "Expedion × Expeditoo — auction logistics, France · PRIONATION",
+      navLabel: "Expedion × Expeditop",
+      seoTitle: "Expedion × Expeditop — auction logistics and transport marketplace · PRIONATION",
       metaDescription:
-        "How PRIONATION built two connected products for one French logistics group: Expedion reads the auction invoice and quotes a fixed delivery price, Expeditoo lets verified carriers bid on the jobs the fleet cannot take.",
+        "Two connected products for one French logistics group: Expedion reads the auction invoice with a vision model and quotes a fixed price; Expeditop, formerly Expeditoo, is a transport marketplace where vetted carriers send offers.",
       badge: "Showcase · 🇫🇷 France · Logistics",
-      tldr: "One French logistics group runs two brands. Expedion ships lots won at auction to the buyer's door; Expeditoo is the carrier network that picks up the jobs the group's own drivers cannot take. PRIONATION built both on one database: an LLM vision model reads the auction invoice, a shared pricing service quotes it, a paid job with no driver after 48 hours is posted automatically to verified carriers, and their delivery updates flow back into the buyer's tracking.",
-      h1: "Expedion × Expeditoo: one logistics group, two products, one source of truth",
+      tldr: "One French logistics group runs two brands. Expedion ships lots won at auction to the buyer's door. Expeditop — called Expeditoo until November 2026 — is a transport marketplace where anyone can post an item, furniture or a home move and vetted carriers send offers, and where the group's paid auction jobs go when its own drivers cannot take them. PRIONATION built both on one database: an LLM vision model reads the auction invoice, a shared pricing service quotes it, a paid job with no driver after 48 hours is posted to the marketplace automatically, and a second model turns a one-sentence request into a filled-in form.",
+      h1: "Expedion × Expeditop: one logistics group, two products, one source of truth",
       intro: [
-        "Expedion and Expeditoo belong to the same French group. Expedion is the buyer side: someone who has just won a lot at an auction house sends the auction invoice (the bordereau d'adjudication), gets a fixed delivery price, pays online and follows the delivery. Expeditoo is the carrier side: a web platform where verified transport companies bid on the jobs the group's own drivers cannot take.",
-        "PRIONATION built both products — the Expedion app in Flutter and the Expeditoo platform in Next.js — and the integration between them. This page covers how the two share one system, where AI actually sits in it, and what was deliberately left out. Business results will be published once the client has measured them.",
+        "Expedion and Expeditop belong to the same French group. Expedion is the auction side: someone who has just won a lot at an auction house sends the auction invoice (the bordereau d'adjudication), gets a fixed delivery price, pays online and follows the delivery. Expeditop is the open side: a web marketplace at expeditop.fr where anyone describes what needs moving, in France or abroad, and vetted carriers send their price. It was called Expeditoo until 20 November 2026, when it was renamed and moved to its own domain.",
+        "PRIONATION built both products — the Expedion app in Flutter and the Expeditop platform in Next.js — and the integration between them. This page covers how the two share one system, where AI actually sits in it, and what was deliberately left out. Business results will be published once the client has measured them.",
       ],
       sections: [
         {
           h2: "Two businesses, one shipment",
           body: [
-            "An auction buyer and a carrier want different things from the same job. The buyer wants one fixed price, a pickup before storage fees start running at the auction house, optional insurance on the lot, and a single place to follow the delivery. The carrier wants a clear brief, a fair price for the run and a guaranteed payment. Expedion serves the first; Expeditoo serves the second.",
+            "An auction buyer wants one fixed price, a pickup before storage fees start running at the auction house, optional insurance on the lot, and a single place to follow the delivery. Someone moving a sofa across the country wants to describe it once and compare prices. A carrier wants a clear brief, a fair price for the run and a guaranteed payment. Expedion serves the first; Expeditop serves the other two.",
             "The group's own drivers handle what they can. The hard part is the overflow: when the fleet is full or the run is specialised, the job has to reach an outside carrier quickly — without anyone re-typing the order, re-quoting it, or losing track of where the lot is.",
           ],
         },
@@ -1167,68 +1154,83 @@ export const pagesEn: LocalePages = {
           ],
         },
         {
+          h2: "Describing a request in one sentence",
+          body: [
+            "Requests posted directly on Expeditop start with a second, smaller model. At the top of the request form, a signed-in customer types or dictates what needs moving — « un canapé 3 places de Lyon à Bordeaux » — and an OpenAI model (gpt-4o-mini, with dictation transcribed by gpt-4o-mini-transcribe) shows what it understood: the item, an estimated size and weight, the towns and the dates. If something is missing, it asks for it, and the answer is added to what was already said.",
+            "The assistant never posts anything. It fills the form; the customer checks each step — dates, addresses, budget — and presses Publish, and the size and weight are estimates they can correct. The privacy notice says the text or dictation is read by an AI service. It is the same shape as the invoice reader: the model does the transcription, a person keeps the decision.",
+          ],
+        },
+        {
           h2: "One database, one price, one tracking feed",
           body: [
-            "Both products run on the same PostgreSQL database. An Expedion quote and the Expeditoo listing it may become are linked records, not two copies kept in sync — the founding architecture decision, because escalating a job across two databases would have been a distributed transaction waiting to go wrong. Expedion previously ran on Airtable; its 4,656 existing quotes were migrated into the shared database in September 2026.",
-            "Prices come from one place too: Expedion's automatic quote reuses Expeditoo's pricing service, so the two products can never quote the same run differently. And when an outside carrier takes a job, their status updates are written back to Expedion, so the buyer follows one delivery feed whether the driver comes from the group's pool or from the carrier network.",
+            "Both products run on the same PostgreSQL database. An Expedion quote and the Expeditop listing it may become are linked records, not two copies kept in sync — the founding architecture decision, because escalating a job across two databases would have been a distributed transaction waiting to go wrong. Expedion previously ran on Airtable; its 4,656 existing quotes were migrated into the shared database in September 2026.",
+            "Prices come from one place too: Expedion's automatic quote reuses Expeditop's pricing service, so the two products can never quote the same run differently. And when an outside carrier takes a job, their status updates are written back to Expedion, so the buyer follows one delivery feed whether the driver comes from the group's pool or from the marketplace.",
           ],
         },
         {
           h2: "Escalation without a dispatcher",
           body: [
-            "When a buyer pays, the quote is stamped with a deadline 48 hours out. Every ten minutes a scheduled job looks for paid quotes that still have no carrier after that deadline and posts each one to Expeditoo as a listing that carries its Expedion reference. Operators can also escalate a job by hand from the admin console, next to assigning a driver, re-pricing a quote or managing storage.",
-            "On Expeditoo, carriers send offers with a price, an ETA and a vehicle, and an operator awards the escalated jobs. Carrier verification is document-based — SIRET number, insurance certificate, transport licence, ID and bank details — and an administrator approves each account before it can bid.",
+            "When a buyer pays, the quote is stamped with a deadline 48 hours out. Every ten minutes a scheduled job looks for paid quotes that still have no carrier after that deadline and posts each one to Expeditop as a listing that carries its Expedion reference. Operators can also escalate a job by hand from the admin console, next to assigning a driver, re-pricing a quote or managing storage.",
+            "On Expeditop, carriers send offers with a price, time slots and a vehicle. An operator awards the escalated Expedion jobs; on a request posted directly, the customer chooses — the cheapest offer does not win automatically — and can propose another price. Drivers come in two kinds: in-house drivers, who are assigned runs and never see a price, and outside carriers, who send offers and are paid. A person approves every driver before they start, and carriers send their company number, insurance certificate, transport licence, ID and bank details; since November 2026 companies registered outside France can apply too.",
           ],
         },
         {
           h2: "Money moves only when a person says so",
           body: [
-            "On the buyer side, payment goes through Stripe Checkout, and the server confirms each session with Stripe before reporting the payment to Expeditoo. On the carrier side, Expeditoo keeps a 10% commission and credits the rest to the carrier's balance. A carrier can request a withdrawal from €20; an operator makes the bank transfer and records its reference. Nothing in the platform moves money automatically.",
-            "That rule is deliberate. Automating payouts would have meant choosing a payment rail and a legal framework for paying drivers before the business had settled either — a question that sits with the client's lawyer. A manual step with a recorded reference is slower, but every payout has a person and a bank reference behind it.",
+            "On Expedion, payment goes through Stripe Checkout, and the server confirms each session with Stripe before reporting the payment to Expeditop. On a request posted directly, nothing is charged until the customer accepts an offer; the payment is taken at that moment, and a job cancelled before pickup is refunded. On the carrier side, Expeditop keeps a 10% commission and credits the rest to the carrier's balance. A carrier can request a withdrawal from €20; an operator makes the bank transfer and records its reference.",
+            "That last rule is deliberate. Automatic payouts are built but switched off: turning them on means choosing a payment rail and a legal framework for paying drivers, a question that sits with the client's lawyer. Until then, a manual step with a recorded reference is slower, but every payout has a person and a bank reference behind it.",
           ],
         },
         {
           h2: "Engineering that holds up in production",
           body: [
-            "Expeditoo runs on Next.js with Drizzle and PostgreSQL on Neon, Better Auth, Stripe, Cloudflare R2 for documents and Resend for email, hosted on Vercel; the operator dashboard refreshes from Ably signals rather than polling. Expedion is a Flutter app that signs in through the same auth service with a bearer token — a native app has no browser cookie jar — and keeps a narrow Firebase fallback so accounts created before the migration still work.",
-            "The platform is covered by Vitest and Playwright, with 2,655 unit tests passing in the latest recorded run, and Expeditoo is in production at version 2.63. Small constraints shaped real decisions: uploads are capped at 3 MB to stay under the hosting body limit, HEIC photos are refused because the vision API rejects them, and the escalation sweep runs on GitHub Actions because the hosting plan limits scheduled jobs.",
+            "Expeditop runs on Next.js with Drizzle and PostgreSQL on Neon, Better Auth, Stripe, Cloudflare R2 for documents and Resend for email, hosted on Vercel; the operator dashboard refreshes from Ably signals rather than polling. Expedion is a Flutter app that signs in through the same auth service with a bearer token — a native app has no browser cookie jar — and keeps a narrow Firebase fallback so accounts created before the migration still work.",
+            "The platform is covered by Vitest and Playwright, with 3,541 unit tests passing in the latest full recorded run, and Expeditop is in production at version 2.98.0. Since November 2026 every change runs on a separate test site first, and reaches production through a gated launch that applies its own database migrations. Small constraints shaped real decisions: uploads are capped at 3 MB to stay under the hosting body limit, HEIC photos are refused because the vision API rejects them, and the escalation sweep runs on GitHub Actions because the hosting plan limits scheduled jobs.",
           ],
         },
         {
           h2: "What was deliberately not built",
           body: [
-            "Expeditoo began in 2025 as a broader marketplace that also auctioned goods. The 2026 rebuild dropped that: no goods auctions and no public marketplace to browse — every job on the board is a real Expedion shipment. Carrier tracking APIs, auction-house integrations, a native iOS app for carriers and other countries were also left for later.",
-            "Several questions stay open on purpose: the commission split on escalated jobs, the vendors for insurance and identity checks, and route publishing and matching. Carriers can already filter the board along a route they drive, but matching comes after bidding by design — bidding is the product, routes make it more efficient later. Each of these is easier to decide once real jobs are flowing through one shared data model.",
+            "Expeditop began in 2025 as a broader marketplace that also auctioned goods. The 2026 rebuild dropped that: there are no goods auctions, only the reverse auction on transport, where carriers compete on price. Carrier tracking APIs, auction-house integrations and a native iOS app for carriers were left for later, and while a pickup or a delivery can now be anywhere in the world, customs paperwork is not handled.",
+            "Several questions stay open on purpose: the commission split on escalated jobs, the vendors for insurance and identity checks, and automatic route matching. Carriers can declare the trips they already make, search the board along a route and plan a multi-stop run with its distance and driving time, but the platform does not match jobs to routes by itself — bidding is the product, routes make it more efficient later. And the rebuilt Expedion app, which no longer depends on Airtable or n8n for any flow, has not yet been deployed in place of the client's current app.",
           ],
         },
         {
           h2: "The transferable lesson",
           body: [
-            "Two products that serve two sides of the same transaction should share a spine, not an integration. Here the spine is one quote record, one pricing service and one tracking feed; the buyer's app, the carrier's board and the operator console are views on top of it.",
-            "The AI sits where a person was doing slow, error-prone transcription, it reports its own confidence, and the funnel keeps working when it fails. That is usually the right shape for a first AI feature in an operations business: narrow, checkable, and never alone on the critical path.",
+            "Two products that serve two sides of the same transaction should share a spine, not an integration. Here the spine is one quote record, one pricing service and one tracking feed; the buyer's app, the marketplace and the operator console are views on top of it.",
+            "The AI sits where a person was doing slow, error-prone transcription — an auction invoice, or a customer's description of a sofa. It reports what it understood, a person confirms it, and the funnel keeps working when it fails. That is usually the right shape for a first AI feature in an operations business: narrow, checkable, and never alone on the critical path.",
           ],
         },
       ],
       faq: [
         {
-          q: "What did PRIONATION build for Expedion and Expeditoo?",
-          a: "Both products and the link between them: the Expedion buyer app (Flutter), which reads the auction invoice, quotes a fixed price and tracks the delivery; the Expeditoo carrier platform (Next.js), where verified carriers bid on escalated jobs; and the operator console that runs both.",
+          q: "What did PRIONATION build for Expedion and Expeditop?",
+          a: "Both products and the link between them: the Expedion buyer app (Flutter), which reads the auction invoice, quotes a fixed price and tracks the delivery; the Expeditop marketplace (Next.js), where customers post transport requests and vetted carriers send offers, escalated Expedion jobs included; and the operator console that runs both.",
         },
         {
           q: "How does the auction-invoice reading work?",
           a: "An LLM vision model (GPT-4.1, with Gemini as a fallback) extracts the lot and pickup details into a strict JSON schema with a confidence score. The buyer confirms the details; low-confidence uploads are rejected as not being an auction invoice, and if the service is down a person checks the slip.",
         },
         {
-          q: "When does a job go to an outside carrier?",
-          a: "When a paid quote still has no driver 48 hours after payment, or when an operator escalates it. A scheduled sweep posts it to Expeditoo automatically, and the carrier's status updates are written back to the buyer's tracking.",
+          q: "What does the request assistant do?",
+          a: "A customer describes the job in one sentence, typed or dictated, and an OpenAI model fills in the request form: the item, an estimated size and weight, the towns and the dates. It asks for what is missing and never posts on its own; the customer checks every step and publishes.",
         },
         {
-          q: "Are Expedion and Expeditoo separate companies?",
-          a: "No. Both brands belong to the same French logistics group: Expedion is the front door for auction buyers and Expeditoo is the group's carrier network.",
+          q: "When does a job go to an outside carrier?",
+          a: "When a paid Expedion quote still has no driver 48 hours after payment, or when an operator escalates it. A scheduled sweep posts it to Expeditop automatically, and the carrier's status updates are written back to the buyer's tracking.",
+        },
+        {
+          q: "Is Expeditop the same platform as Expeditoo?",
+          a: "Yes. The platform was called Expeditoo until 20 November 2026, when it was renamed Expeditop and moved to www.expeditop.fr. Accounts, jobs and offers carried over unchanged.",
+        },
+        {
+          q: "Are Expedion and Expeditop separate companies?",
+          a: "No. Both brands belong to the same French logistics group: Expedion is the front door for auction buyers, and Expeditop is the group's open transport marketplace and carrier network.",
         },
         {
           q: "Where are the business metrics?",
-          a: "Not published yet. What is documented is engineering-side: 4,656 existing quotes migrated into the shared database, 2,655 unit tests passing, and Expeditoo live in production at version 2.63. Operational results will be added once the client has measured them.",
+          a: "Not published yet. What is documented is engineering-side: 4,656 existing quotes migrated into the shared database, 3,541 unit tests passing in the latest full recorded run, and Expeditop live in production at version 2.98.0. Operational results will be added once the client has measured them.",
         },
       ],
     },

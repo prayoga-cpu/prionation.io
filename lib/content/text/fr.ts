@@ -1027,135 +1027,123 @@ export const pagesFr: LocalePages = {
   showcases: {
     epidom: {
       navLabel: "Epidom",
-      seoTitle: "Epidom — opérations d'inventaire, France · PRIONATION",
+      seoTitle: "Epidom — commande en ligne, caisse et connecteur Claude pour les cafés · PRIONATION",
       metaDescription:
-        "Comment PRIONATION a remplacé le suivi d'inventaire manuel multi-sites par un système de production centralisé pour Epidom, un opérateur F&B européen — et la leçon transférable.",
-      badge: "Réalisation · 🇫🇷 France · F&B",
-      tldr: "Epidom, un opérateur F&B européen, gérait son inventaire multi-sites par des processus manuels qui ne passaient pas à l'échelle. PRIONATION a construit un système de production centralisé pour suivre l'inventaire entre les sites et réduire la charge opérationnelle de le faire à la main. Voici le profil de la mission et la leçon transférable pour les opérateurs multi-sites.",
-      h1: "Epidom : centraliser les opérations d'inventaire multi-sites",
+        "Epidom est le produit maison de PRIONATION : commande en ligne, caisse web, stock, personnel et finances pour les cafés et restaurants, en quatre langues, avec un connecteur Claude qui répond à partir des données de l'établissement.",
+      badge: "Réalisation · 🇫🇷 France · F&B · Notre produit",
+      tldr: "Epidom est le produit maison de PRIONATION, pas une mission client : un système tout-en-un pour les cafés, restaurants et boulangeries, qui commence par une page de commande gratuite et s'étend à une caisse web, un écran cuisine, la gestion du stock, les plannings du personnel et des rapports financiers. Notre équipe le développe et l'exploite en production — 44 versions publiées rien qu'entre mi-octobre et fin novembre 2026 — et depuis novembre 2026, un propriétaire peut le connecter à son propre Claude et l'interroger en langage courant sur les ventes, le stock, le personnel et les finances.",
+      h1: "Epidom : construire et exploiter notre propre produit F&B",
       intro: [
-        "Epidom est un opérateur européen de l'agroalimentaire qui gère son inventaire sur plusieurs sites. Comme la plupart des opérateurs multi-sites, sa contrainte n'était pas la stratégie — c'était le processus manuel et fragmenté pour garder le stock visible et exact partout à la fois.",
-        "Cette page profile la mission : le goulot d'étranglement opérationnel, l'approche de build de PRIONATION, ce qui a changé, et la leçon qui se transfère à toute opération multi-sites. Les résultats chiffrés seront publiés à mesure qu'ils sont finalisés.",
+        "Epidom est le produit que PRIONATION développe et exploite pour son propre compte. Son point d'entrée aujourd'hui est une page de commande publique et gratuite pour les commerces de restauration — un seul lien qui remplace une page « link in bio », un menu en PDF et les commandes par WhatsApp — et derrière elle se trouve un système de gestion complet : une caisse web qui continue de vendre hors ligne, des écrans cuisine et client, un stock suivi jusqu'à la recette, des plannings du personnel avec pointage, et des rapports financiers sur l'ensemble des points de vente. Il est en ligne sur epidom.fr, d'abord pour la France, puis pour l'Indonésie, et depuis novembre 2026 en thaï également.",
+        "Comme Epidom nous appartient, cette page n'est pas un profil client. Elle montre ce qu'implique le fait de livrer et d'exploiter un produit en production de bout en bout : l'architecture, la place qu'y occupe l'IA, le travail de conformité, et ce qui a été délibérément laissé de côté. Aucun résultat client n'est revendiqué ici ; les chiffres d'utilisation ne seront publiés que lorsqu'ils pourront être vérifiés.",
       ],
       sections: [
         {
-          h2: "Le goulot d'étranglement",
+          h2: "Ce qu'est Epidom",
           body: [
-            "L'inventaire multi-sites fait à la main échoue de façon prévisible : chaque site garde sa propre vue, les chiffres dérivent, et les réconcilier consomme un temps qui croît avec chaque nouveau site. Le coût n'est pas un grand échec mais une taxe opérationnelle constante — surcharge, ruptures de stock, et décisions prises sur des données périmées.",
-            "Pour Epidom, le goulot était exactement cela : un processus de suivi manuel et multi-sites qui ne pouvait suivre le rythme de l'opération.",
+            "Epidom se vend comme une échelle plutôt que comme une suite. La formule gratuite, c'est la vitrine : une page à l'adresse epidom.fr/@nom avec le menu, les photos, les horaires d'ouverture, des liens et un QR code imprimable. L'offre POS ajoute la commande depuis cette page, la caisse, la file des commandes, un écran cuisine, la gestion des tables, les tickets de caisse et un écran côté client. L'offre Operations ajoute les produits, les matières premières, les recettes et les fournisseurs, les mouvements de stock, les plannings du personnel et les rapports financiers, jusqu'à trois points de vente. Au-delà, Enterprise est un service : un groupe de quatre points de vente ou plus, ou une entreprise qui veut faire construire son propre système, est cadré avec l'équipe PRIONATION.",
+            "Chaque niveau remplace une tâche que le commerçant fait déjà à la main. La vitrine remplace une page « link in bio » éparpillée et un menu en PDF ; l'offre POS remplace un carnet et une calculatrice ; Operations remplace le tableur dans lequel quelqu'un calcule ce que coûte réellement un plat. La documentation du produit nomme elle-même le déclencheur de chaque montée en gamme — un caissier embauché, un deuxième service, un deuxième point de vente, des coûts d'ingrédients qui commencent à peser — si bien que le tarif suit l'activité plutôt qu'une liste de fonctionnalités.",
           ],
         },
         {
-          h2: "Comment PRIONATION a abordé le build",
+          h2: "Une commande, du téléphone du client jusqu'à la marge",
           body: [
-            "Le travail a suivi la méthode standard : cartographier l'opération avant de construire, définir en termes mesurables ce qu'est une vue d'inventaire correcte et à jour, et construire le plus petit système de production qui la délivre — un suivi centralisé qui remplace le processus manuel au lieu de s'y superposer.",
-            "Comme pour chaque mission, le système a été construit pour être possédé et exploité par le client, afin que la capacité reste en interne après livraison.",
+            "Le cœur d'Epidom est un flux de commande unique. Un client commande depuis la vitrine sur son téléphone et paie au comptoir ; la commande arrive dans la même file qu'une vente au comptoir saisie en caisse, part vers l'écran cuisine poste par poste, et est marquée comme livrée quand elle quitte le passe. Les commandes des applications de livraison peuvent aussi rejoindre cette file : Epidom lit les e-mails de commande de l'agrégateur avec un modèle de langage et étiquette chaque commande avec son canal. C'est une première version ; les intégrations directes avec les partenaires ne sont pas construites.",
+            "Quand une commande est livrée, le stock est déduit dans une seule transaction de base de données sérialisable. Chaque produit déclare comment il est stocké : un croissant cuit par fournées puise dans un solde compté, un latte préparé à la commande décompose sa recette en lait, café et gobelet, et certains articles ne sont pas suivis du tout. Chaque unité passe par un registre unique — achat, production, vente, ajustement, perte, retour — étiquetée avec la commande ou la fournée qui en est à l'origine, et une tâche nocturne rapproche les soldes pour que les écarts soient repérés avant que le commerçant ne les remarque. Les rapports financiers lisent les mêmes données : chiffre d'affaires, coût des marchandises et marge par article, par service, par moyen de paiement et par canal, commission des applications de livraison comprise.",
           ],
         },
         {
-          h2: "Ce qui a changé",
+          h2: "Claude, une porte d'entrée vers les données de l'établissement",
           body: [
-            "Le processus manuel, site par site, a été remplacé par un système centralisé unique, supprimant la charge de réconciliation et donnant à l'opération une vue exacte de l'inventaire entre les sites. Selon le résumé public du projet, cela a réduit la charge opérationnelle.",
-            "Les métriques détaillées avant/après sont en préparation pour publication et apparaîtront ici et sur la page de transparence.",
+            "Depuis novembre 2026, un propriétaire peut ajouter Epidom comme connecteur dans son propre Claude — sur claude.ai, dans les applications de bureau et mobiles ou dans Claude Code — et demander en langage courant comment la semaine dernière se compare à la précédente, ce qui commence à manquer, qui travaille samedi ou quels plats rapportent le plus. Epidom expose l'établissement via un serveur Model Context Protocol (MCP), et l'IA tourne sur l'abonnement Claude du propriétaire, pas sur le nôtre. Le connecteur est en bêta.",
+            "Les droits d'accès étaient la partie difficile ; ils ont donc été conçus en premier. Quand quelqu'un se connecte, Epidom demande ce que Claude a le droit de faire : la lecture est le réglage par défaut et est incluse dans l'offre Operations ; les modifications — articles du menu, ajustements de stock et pertes, commandes fournisseurs, plannings, dépenses et clients — nécessitent l'offre Enterprise et une case cochée explicitement. Les membres du personnel qui se connectent ne voient que ce que leur propre accès à l'établissement autorise. Chaque modification du menu peut être prévisualisée avant d'être appliquée, jusqu'à 50 articles changent en une seule fois ou pas du tout, et chaque modification est conservée avec l'état qui la précédait, si bien qu'elle peut être annulée pendant 30 jours — et l'annulation est refusée si quoi que ce soit a touché les mêmes articles entre-temps. Les paiements, les remboursements, la caisse et le pointage restent dans l'application Epidom, et chaque modification faite depuis Claude apparaît dans le journal d'activité de l'établissement.",
           ],
         },
         {
-          h2: "La leçon transférable",
+          h2: "Où l'IA intervient ailleurs",
           body: [
-            "La leçon se généralise à tout opérateur multi-sites : le premier build au ROI le plus élevé est rarement le plus spectaculaire — c'est celui qui supprime la taxe de réconciliation manuelle qui croît avec chaque site. Centralisez d'abord la source de vérité ; tout le reste se compose à partir de là.",
-            "Si votre opération gère des chiffres critiques dans des tableurs que chaque site maintient séparément, c'est généralement le goulot à cartographier en premier.",
+            "L'IA apparaît dans Epidom là où un commerçant passerait sinon une soirée à tout saisir. L'import intelligent lit un tableur de menu ou de stock désordonné, propose la correspondance de chaque colonne avec le modèle de données d'Epidom, et retient les corrections du commerçant pour la fois suivante ; il reconnaît aussi les menus à composer — une base, une protéine, une sauce — et les transforme en étapes de choix numérotées.",
+            "Aucune de ces fonctionnalités n'écrit quoi que ce soit d'elle-même. Un import est une proposition que le commerçant confirme, une commande d'application de livraison analysée est étiquetée avec sa provenance, et Claude demande avant chaque modification. C'est la règle dans tout le produit : l'IA remplit le formulaire, une personne appuie sur le bouton.",
           ],
         },
         {
-          h2: "Pourquoi l'inventaire multi-sites casse toujours de la même façon",
+          h2: "La conformité, et le travail ingrat qui fait tourner le produit",
           body: [
-            "Dans l'agroalimentaire, le problème d'inventaire est structurellement plus difficile que dans la plupart du commerce multi-sites, parce que le stock est périssable, l'unité de mesure se déplace à mesure que les ingrédients passent de la livraison à la préparation puis à l'assiette, et que le gaspillage est une véritable ligne de compte plutôt qu'une erreur d'arrondi. Chaque site développe ses propres conventions — ce qu'est une « caisse », comment on compte un stock entamé, à quel moment a lieu un comptage — et ces conventions restent invisibles jusqu'à ce que quelqu'un tente d'additionner les chiffres. La dérive n'est pas de la négligence ; c'est le résultat prévisible de chaque site qui optimise sa propre journée alors qu'aucune définition partagée n'existe au-dessus d'eux.",
-            "Si cela se répète d'un opérateur à l'autre, c'est que l'approche manuelle fonctionne parfaitement à un ou deux sites et échoue silencieusement à cinq ou dix. Un fondateur qui pouvait tenir toute l'opération en tête ne le peut tout simplement plus dès qu'elle s'étend à plusieurs sites, et le tableur qui a porté la première expansion devient ce qui plafonne la suivante. Au moment où la charge se fait sentir comme une taxe, l'opération a généralement déjà fait transiter de l'argent réel — surcommande, dépannages d'urgence, pertes comptabilisées — par l'écart entre ce que chaque site croit avoir et ce qu'il a réellement.",
-            "Reconnaître ce schéma compte, parce qu'il indique où doit aller le premier build. L'instinct pousse souvent à courir après un système de prévision ou de prédiction de la demande — le projet visiblement intelligent. Mais une prévision bâtie sur des chiffres qui ne se réconcilient pas est une réponse fausse pleine d'assurance. Le séquencement honnête consiste à rendre la vue actuelle correcte et partagée avant de tenter d'en prédire quoi que ce soit, et c'est exactement pourquoi une source de vérité centralisée, et non un modèle, est le bon premier build pour un opérateur à ce stade.",
+            "Une caisse vendue en France doit respecter la loi anti-fraude à la TVA (article 286 du Code général des impôts). Epidom enregistre chaque vente payée, chaque remboursement et chaque annulation dans un journal fiscal où chaque enregistrement est signé et chaîné au précédent ; une correction est toujours un nouvel enregistrement, jamais une modification. Les journées, les mois et les années sont clôturés dans des archives signées, l'ensemble du journal peut être revérifié à la demande, et il est conservé six ans même si le compte est fermé. L'attestation de l'éditeur qui le prouve est annoncée mais pas encore disponible ; cette page ne présente donc pas la caisse comme certifiée.",
+            "Le reste est un travail d'exploitation qui ne figure jamais dans une liste de fonctionnalités : une sauvegarde nocturne de la base de données avec une alerte de fraîcheur, une surveillance de disponibilité ajoutée après une panne liée au quota de la base de données le 21 novembre 2026, qui vérifie désormais le parcours de connexion toutes les 15 minutes, une base de développement séparée pour les prévisualisations, et un journal d'audit des actions sensibles des propriétaires et des administrateurs. Epidom tourne sur Next.js 16 et React 19 avec PostgreSQL et Prisma, Better Auth, Stripe pour les abonnements, Inngest pour les tâches en arrière-plan et Resend pour l'e-mail, le tout hébergé sur Vercel. Il compte plus de 600 fichiers de test, et la version 3.52.0 a été livrée le 22 novembre 2026.",
           ],
         },
         {
-          h2: "Le raisonnement d'ingénierie : un seul modèle, pas une multitude d'intégrations",
+          h2: "Quatre langues, 156 devises, une seule base de code",
           body: [
-            "La façon tentante de centraliser l'inventaire multi-sites est de laisser en place le processus de chaque site et de construire des connecteurs qui font remonter les chiffres de tous les sites dans un tableau de bord. Cela fait une belle démo et ne change presque rien — parce qu'un tableau de bord posé sur des données incohérentes hérite de l'incohérence. Si deux sites comptent différemment le stock entamé, aucune agrégation ne les réconcilie ; le tableau de bord ne fait qu'afficher le désaccord en plus haute résolution. Le travail qui supprime réellement la charge se situe en amont : convenir d'une seule définition d'un article, d'un comptage et d'un site, et faire en sorte que chaque site enregistre selon ce modèle unique plutôt que de le traduire après coup.",
-            "C'est pourquoi le Diagnostic d'un build de ce genre consacre son effort au domaine avant qu'aucun écran ne soit conçu. Les questions qui décident du résultat sont sans éclat — quelle est l'unité canonique de chaque ingrédient, quel événement constitue une sortie de stock, comment représenter un transfert entre sites pour qu'il ne soit pas compté deux fois — et il est bien moins coûteux d'y répondre sur le papier que de les découvrir en production. Définir « une vue d'inventaire correcte et à jour » en termes mesurables est ce qui transforme un projet de tableau de bord sans limites en un build borné, doté d'un critère clair pour savoir quand c'est fini.",
-            "Le bénéfice d'un modèle bien posé est que la cohérence devient une propriété du système plutôt qu'une discipline que le personnel doit entretenir. Quand chaque site écrit selon les mêmes définitions, la réconciliation cesse d'être une tâche récurrente parce qu'il n'y a plus rien à réconcilier — les chiffres n'ont jamais eu la possibilité de diverger. C'est la différence entre un logiciel qui signale le problème et un logiciel qui le supprime, et c'est la raison pour laquelle le build remplace le processus manuel au lieu de se poser à côté.",
+            "Le marché d'Epidom, c'est d'abord la France, ensuite l'Indonésie, et depuis le 22 novembre 2026, Epidom parle aussi thaï. Chaque écran, chaque e-mail et chaque message d'erreur existe en français, en indonésien, en thaï et en anglais, et un test fait échouer le build quand un texte existe dans une langue mais pas dans les autres, ou quand une variable se perd à la traduction. Les prix sont stockés dans une devise de base et affichés dans n'importe laquelle des 156 devises ISO ; les points de vente qui vendent dans des devises différentes sont présentés côte à côte et jamais additionnés.",
+            "Certains des bugs de localisation les plus difficiles étaient physiques plutôt que linguistiques. Les imprimantes thermiques de tickets ne savent pas imprimer les caractères thaïs sous forme de texte, si bien que les noms d'établissements et d'articles en thaï sortaient en points d'interrogation ; chaque imprimante dispose désormais d'une option à activer qui imprime le texte non latin sous forme d'image, désactivée par défaut tant que le commerçant n'a pas fait d'impression test. La caisse elle-même fonctionne hors ligne — les ventes sont mises en file d'attente sur l'appareil et se synchronisent au retour du réseau — parce qu'une boutique qui perd sa connexion a toujours des clients au comptoir.",
           ],
         },
         {
           h2: "Ce qui n'a délibérément pas été construit",
           body: [
-            "La discipline d'une horloge fixe de huit semaines est surtout la discipline de savoir dire non, et un build de ce genre a une liste évidente de choses à refuser. Le réapprovisionnement automatisé, les intégrations fournisseurs, la prévision de la demande et le calcul dynamique du coût des menus sont tous des ambitions raisonnables pour un système d'inventaire mature — et tous se situent en aval d'une vue de stock unique, exacte et partagée, qui n'existait pas encore. Les construire d'abord aurait signifié bâtir de la sophistication sur des chiffres qui dérivaient encore, ce qui est la manière dont les projets d'IA se dotent de fonctionnalités impressionnantes auxquelles personne ne fait assez confiance pour agir.",
-            "Le périmètre délibéré était le plus petit système de production qui rend la vue d'inventaire actuelle correcte et partagée entre les sites, avec la télémétrie permettant de savoir qu'elle le reste. Cette retenue n'est pas de la prudence pour la prudence ; c'est ce qui permet à l'opération de prouver que la fondation fonctionne avant d'automatiser la moindre décision par-dessus. Un dirigeant qui peut enfin faire confiance à un seul chiffre sur tous les sites est en bien meilleure position pour cadrer le build suivant — et pour le faire face à un usage réel plutôt qu'à une liste de souhaits écrite avant que la fondation n'existe.",
-            "Nommer la frontière est aussi une façon honnête de parler de séquencement plutôt que de capacité. La prévision et le réapprovisionnement automatisé ont une réelle valeur, et un opérateur multi-sites les voudra sans doute — plus tard, comme un second build cadré à partir de la télémétrie du premier. Le point transférable est que l'ordre est tout l'enjeu : la source de vérité centralisée est l'actif qui rend possible tout ce qui vient après, et tenter d'abord la couche intelligente est la manière la plus courante de ne jamais construire la fondation.",
+            "Certaines choses ont été laissées de côté à dessein. Le paiement en ligne par carte sur la vitrine est construit mais désactivé : les clients commandent depuis leur téléphone et paient au comptoir, ce qui garde la gestion de l'argent en un seul endroit le temps que le flux de commande fasse ses preuves. Les intégrations directes avec les applications de livraison ne sont pas construites — leurs commandes arrivent plutôt par l'analyse des e-mails — et les domaines personnalisés et les vitrines en marque blanche figurent encore sur la liste.",
+            "Le connecteur Claude ne peut ni encaisser de paiements, ni effectuer de remboursements, ni faire fonctionner la caisse, ni pointer qui que ce soit, et il ne sait pas encore tracer de graphiques. Ces limites sont inscrites dans le produit lui-même, sur la page de réglages du connecteur, au lieu d'être laissées à la découverte du commerçant. Le principe est le même partout dans Epidom : livrer d'abord la version étroite et vérifiable, puis l'élargir une fois que de vrais établissements l'ont utilisée.",
           ],
         },
         {
-          h2: "Comment savoir si ce schéma est le vôtre — et ce que le logiciel ne peut pas régler",
+          h2: "La leçon transférable",
           body: [
-            "Il existe quelques signaux honnêtes qu'une opération a le goulot en forme d'Epidom. Les comptages de stock vivent dans des tableurs par site que quelqu'un consolide à la main. Le même article est décrit différemment selon qui l'a saisi. Une question aussi élémentaire que « combien en avons-nous sur tous les sites en ce moment ? » prend des heures et produit une réponse que les gens, en silence, ne croient pas. Et le temps passé à réconcilier croît chaque fois qu'un site est ajouté, au lieu de rester stable. Si deux de ces signaux ou plus sont vrais, la taxe de réconciliation manuelle est réelle et constitue presque certainement ce qu'il faut cartographier en premier pour le meilleur rendement.",
-            "La limite honnête est qu'un système centralisé règle la structure du problème, pas ses entrées. Si les comptages sont saisis sans soin, ou si du stock sort physiquement par la porte de derrière, aucun modèle ne rendra les chiffres vrais — le logiciel impose une seule définition d'un comptage, mais il ne peut imposer que le comptage ait été fait honnêtement. Ce que le système fait, c'est rendre les écarts visibles et attribuables, ce qui suffit souvent à changer les comportements, mais la discipline d'une saisie exacte demeure une responsabilité humaine que le logiciel soutient plutôt qu'il ne la remplace.",
-            "Il vaut aussi la peine de dire clairement ce que cette catégorie de build ne livre pas : à elle seule, elle ne réduit pas le gaspillage, ne diminue pas le coût fournisseur et n'améliore pas la marge. Elle supprime la charge de tenir les chiffres au carré et donne à l'opération une base fiable pour prendre ces décisions. L'amélioration de marge est quelque chose que l'opérateur gagne en agissant sur une vue claire — le travail du build est de s'assurer que la vue vaut enfin la peine qu'on agisse dessus.",
+            "Exploiter notre propre produit change la façon dont nous construisons pour nos clients. Chaque mission que PRIONATION cadre bénéficie de problèmes dont le prix a déjà été payé sur Epidom : des ventes qui doivent survivre à une coupure de connexion, un stock qui doit correspondre à la caisse, un journal imposé par la loi fiscale, quatre langues tenues à jour ensemble, et une IA qui touche de vraies données métier sans qu'on lui fasse aveuglément confiance.",
+            "La leçon propre au connecteur Claude, c'est que le travail intéressant n'est pas le modèle. C'est le modèle de permissions, la prévisualisation, l'annulation et la piste d'audit qui l'entourent. Une IA capable de modifier un menu n'est utile que si le propriétaire peut voir ce qu'elle va faire, dire non, et revenir en arrière.",
           ],
         },
       ],
       faq: [
         {
-          q: "Qu'a construit PRIONATION pour Epidom ?",
-          a: "Un système de gestion d'inventaire centralisé pour un opérateur F&B européen, conçu pour le suivi multi-sites, remplaçant les processus manuels par un système de production unique qui a réduit la charge opérationnelle.",
+          q: "Epidom est-il un client de PRIONATION ?",
+          a: "Non. Epidom est le produit maison de PRIONATION : notre équipe le développe et l'exploite en production sur epidom.fr. Il figure ici comme une illustration de notre travail, pas comme un résultat client.",
         },
         {
-          q: "Quel secteur et quel marché est Epidom ?",
-          a: "Agroalimentaire, opérant en France et en Europe. La mission portait sur les opérations d'inventaire multi-sites.",
+          q: "Que fait Epidom ?",
+          a: "C'est un système tout-en-un pour les cafés, restaurants et boulangeries : une page de commande gratuite avec un QR code, une caisse web avec écrans cuisine et client qui continue de fonctionner hors ligne, un stock suivi jusqu'à la recette, les plannings du personnel avec pointage, et des rapports financiers sur l'ensemble des points de vente.",
         },
         {
-          q: "Où sont les résultats et métriques détaillés ?",
-          a: "Les résultats chiffrés avant/après sont en préparation et seront publiés ici et sur la page de transparence. Ce profil décrit la mission et la leçon transférable.",
+          q: "Qu'est-ce que le connecteur Claude d'Epidom ?",
+          a: "Un serveur MCP qui permet à un propriétaire d'ajouter Epidom à son propre Claude et de l'interroger en langage courant sur les ventes, le stock, le personnel et les finances. La lecture est incluse dans l'offre Operations ; les modifications nécessitent l'offre Enterprise, sont d'abord prévisualisées, et les modifications du menu peuvent être annulées pendant 30 jours. Il est en bêta.",
         },
         {
-          q: "Quelle est la leçon transférable pour d'autres opérateurs ?",
-          a: "Pour les opérations multi-sites, le premier build au ROI le plus élevé est généralement celui qui supprime la taxe de réconciliation manuelle qui croît avec chaque site — centralisez la source de vérité avant tout.",
+          q: "Quelles langues et quels marchés Epidom prend-il en charge ?",
+          a: "D'abord la France, puis l'Indonésie, et la Thaïlande depuis novembre 2026. Le produit est disponible en français, en indonésien, en thaï et en anglais, et les prix peuvent être affichés dans 156 devises.",
         },
         {
-          q: "Comment démarrerait un build similaire ?",
-          a: "Par un Diagnostic de deux semaines qui cartographie le goulot opérationnel et définit la cible mesurable avant de construire le moindre système.",
+          q: "La caisse Epidom respecte-t-elle les règles françaises anti-fraude à la TVA ?",
+          a: "Elle tient le journal fiscal que prévoit l'article 286 du Code général des impôts : des enregistrements signés et chaînés, des clôtures signées pour chaque jour, mois et année, et une conservation de six ans. L'attestation de l'éditeur est annoncée mais pas encore disponible ; aucune certification n'est donc revendiquée ici.",
         },
         {
-          q: "Pourquoi centraliser les données plutôt que d'ajouter simplement un tableau de bord de reporting par-dessus les tableurs existants ?",
-          a: "Un tableau de bord posé sur des données incohérentes hérite de l'incohérence — il montre le désaccord entre les sites en plus haute résolution au lieu de le résoudre. Le correctif est en amont : convenir d'une seule définition d'un article, d'un comptage et d'un site, puis faire en sorte que chaque site enregistre selon ce modèle. La cohérence devient une propriété du système plutôt qu'une discipline que le personnel doit entretenir à la main.",
+          q: "Où sont les chiffres d'utilisation ?",
+          a: "Pas encore publiés. Cette page n'indique que ce qui peut être vérifié dans le produit et dans son historique de versions ; les chiffres d'utilisation seront ajoutés dès qu'ils pourront être vérifiés.",
         },
         {
-          q: "Pourquoi l'inventaire multi-sites est-il plus difficile spécifiquement dans l'agroalimentaire ?",
-          a: "Le stock est périssable, l'unité de mesure se déplace à mesure que les ingrédients passent de la livraison à la préparation puis à l'assiette, et le gaspillage est une véritable ligne de compte. Chaque site développe ses propres conventions de comptage, qui restent invisibles jusqu'à ce que quelqu'un tente d'additionner les chiffres. La dérive n'est pas de la négligence — c'est chaque site qui optimise sa propre journée sans définition partagée au-dessus d'eux.",
-        },
-        {
-          q: "Pourquoi ne pas construire la prévision ou le réapprovisionnement automatisé en même temps ?",
-          a: "Parce que les deux se situent en aval d'une vue de stock unique, exacte et partagée, qui n'existait pas encore. Une prévision bâtie sur des chiffres qui ne se réconcilient pas est une réponse fausse pleine d'assurance. La séquence honnête consiste à rendre d'abord la vue actuelle correcte et partagée, puis à cadrer la prévision ou le réapprovisionnement comme un build ultérieur face à une télémétrie réelle — et non à empiler la couche intelligente sur une fondation qui dérive.",
-        },
-        {
-          q: "Comment savoir si mon opération a ce même goulot ?",
-          a: "Surveillez quelques signaux : les comptages de stock vivent dans des tableurs par site que quelqu'un consolide à la main, le même article est décrit différemment selon les personnes, une question comme « combien en avons-nous sur tous les sites en ce moment ? » prend des heures et produit une réponse que les gens ne croient pas, et le temps de réconciliation croît à chaque nouveau site. Si deux de ces signaux ou plus sont vrais, c'est probablement votre premier build au meilleur rendement.",
+          q: "Comment démarrerait un build similaire pour mon entreprise ?",
+          a: "Par un Diagnostic de deux semaines qui cartographie l'activité avant que quoi que ce soit ne soit construit. Un groupe de quatre points de vente ou plus, ou une entreprise qui a besoin de son propre système, peut aussi partir de l'offre Enterprise d'Epidom, cadrée avec l'équipe PRIONATION.",
         },
       ],
     },
 
     "expeditoo": {
-      navLabel: "Expedion × Expeditoo",
-      seoTitle: "Expedion × Expeditoo — logistique des enchères, France · PRIONATION",
+      navLabel: "Expedion × Expeditop",
+      seoTitle: "Expedion × Expeditop — logistique des enchères et marketplace de transport · PRIONATION",
       metaDescription:
-        "Comment PRIONATION a construit deux produits connectés pour un même groupe logistique français : Expedion lit le bordereau d'adjudication et propose un prix de livraison fixe, Expeditoo permet à des transporteurs vérifiés d'enchérir sur les missions que la flotte ne peut pas prendre.",
+        "Deux produits connectés pour un même groupe logistique français : Expedion lit le bordereau d'adjudication avec un modèle de vision et propose un prix fixe ; Expeditop, anciennement Expeditoo, est une marketplace de transport où des transporteurs vérifiés envoient leurs offres.",
       badge: "Réalisation · 🇫🇷 France · Logistique",
-      tldr: "Un groupe logistique français exploite deux marques. Expedion livre jusqu'à la porte de l'acheteur les lots remportés aux enchères ; Expeditoo est le réseau de transporteurs qui reprend les missions que les chauffeurs du groupe ne peuvent pas assurer. PRIONATION a construit les deux sur une seule base de données : un modèle de vision LLM lit le bordereau d'adjudication, un service de tarification partagé en établit le devis, une mission payée toujours sans chauffeur au bout de 48 heures est publiée automatiquement auprès de transporteurs vérifiés, et leurs mises à jour de livraison remontent dans le suivi de l'acheteur.",
-      h1: "Expedion × Expeditoo : un groupe logistique, deux produits, une seule source de vérité",
+      tldr: "Un groupe logistique français exploite deux marques. Expedion livre jusqu'à la porte de l'acheteur les lots remportés aux enchères. Expeditop — qui s'appelait Expeditoo jusqu'en novembre 2026 — est une marketplace de transport où chacun peut publier un objet, un meuble ou un déménagement et où des transporteurs vérifiés envoient leurs offres ; c'est aussi là que partent les missions d'enchères payées du groupe quand ses propres chauffeurs ne peuvent pas les prendre. PRIONATION a construit les deux sur une seule base de données : un modèle de vision LLM lit le bordereau d'adjudication, un service de tarification partagé en établit le devis, une mission payée toujours sans chauffeur au bout de 48 heures est publiée automatiquement sur la marketplace, et un second modèle transforme une demande d'une phrase en formulaire rempli.",
+      h1: "Expedion × Expeditop : un groupe logistique, deux produits, une seule source de vérité",
       intro: [
-        "Expedion et Expeditoo appartiennent au même groupe français. Expedion, c'est le côté acheteur : une personne qui vient de remporter un lot dans une maison de ventes envoie son bordereau d'adjudication, obtient un prix de livraison fixe, paie en ligne et suit la livraison. Expeditoo, c'est le côté transporteur : une plateforme web où des entreprises de transport vérifiées enchérissent sur les missions que les chauffeurs du groupe ne peuvent pas assurer.",
-        "PRIONATION a construit les deux produits — l'application Expedion en Flutter et la plateforme Expeditoo en Next.js — ainsi que l'intégration entre les deux. Cette page explique comment ils partagent un même système, où se trouve réellement l'IA, et ce qui a été délibérément laissé de côté. Les résultats commerciaux seront publiés une fois que le client les aura mesurés.",
+        "Expedion et Expeditop appartiennent au même groupe français. Expedion, c'est le côté enchères : une personne qui vient de remporter un lot dans une maison de ventes envoie son bordereau d'adjudication, obtient un prix de livraison fixe, paie en ligne et suit la livraison. Expeditop, c'est le côté ouvert : une marketplace web, sur expeditop.fr, où chacun décrit ce qu'il faut transporter, en France ou à l'étranger, et où des transporteurs vérifiés proposent leur prix. Elle s'appelait Expeditoo jusqu'au 20 novembre 2026, date à laquelle elle a été renommée et a migré vers son propre nom de domaine.",
+        "PRIONATION a construit les deux produits — l'application Expedion en Flutter et la plateforme Expeditop en Next.js — ainsi que l'intégration entre les deux. Cette page explique comment ils partagent un même système, où se trouve réellement l'IA, et ce qui a été délibérément laissé de côté. Les résultats commerciaux seront publiés une fois que le client les aura mesurés.",
       ],
       sections: [
         {
           h2: "Deux métiers, une seule expédition",
           body: [
-            "Un acheteur aux enchères et un transporteur n'attendent pas la même chose d'une même mission. L'acheteur veut un prix fixe unique, un enlèvement avant que les frais de stockage ne commencent à courir à la maison de ventes, une assurance optionnelle sur le lot, et un seul endroit pour suivre la livraison. Le transporteur veut des consignes claires, un prix juste pour la course et un paiement garanti. Expedion sert le premier ; Expeditoo sert le second.",
+            "Un acheteur aux enchères veut un prix fixe unique, un enlèvement avant que les frais de stockage ne commencent à courir à la maison de ventes, une assurance optionnelle sur le lot, et un seul endroit pour suivre la livraison. Une personne qui fait traverser le pays à un canapé veut le décrire une seule fois et comparer les prix. Un transporteur veut des consignes claires, un prix juste pour la course et un paiement garanti. Expedion sert le premier ; Expeditop sert les deux autres.",
             "Les chauffeurs du groupe prennent en charge ce qu'ils peuvent. Le plus difficile, c'est le débordement : quand la flotte est complète ou que la course est spécialisée, la mission doit parvenir vite à un transporteur extérieur — sans que personne ne ressaisisse la commande, ne refasse le devis ni ne perde la trace du lot.",
           ],
         },
@@ -1167,68 +1155,83 @@ export const pagesFr: LocalePages = {
           ],
         },
         {
+          h2: "Décrire une demande en une phrase",
+          body: [
+            "Les demandes publiées directement sur Expeditop commencent par un second modèle, plus petit. En haut du formulaire de demande, un client connecté tape ou dicte ce qu'il faut transporter — « un canapé 3 places de Lyon à Bordeaux » — et un modèle d'OpenAI (gpt-4o-mini, la dictée étant transcrite par gpt-4o-mini-transcribe) affiche ce qu'il a compris : l'objet, une estimation de la taille et du poids, les villes et les dates. S'il manque quelque chose, il le demande, et la réponse s'ajoute à ce qui a déjà été dit.",
+            "L'assistant ne publie jamais rien. Il remplit le formulaire ; le client vérifie chaque étape — dates, adresses, budget — puis appuie sur Publier, et la taille et le poids sont des estimations qu'il peut corriger. La politique de confidentialité indique que le texte ou la dictée est lu par un service d'IA. C'est la même logique que pour la lecture du bordereau : le modèle fait la transcription, une personne garde la décision.",
+          ],
+        },
+        {
           h2: "Une base de données, un prix, un fil de suivi",
           body: [
-            "Les deux produits tournent sur la même base PostgreSQL. Un devis Expedion et l'annonce Expeditoo qu'il peut devenir sont des enregistrements liés, pas deux copies maintenues synchronisées — la décision d'architecture fondatrice, car faire passer une mission d'une base de données à une autre aurait été une transaction distribuée prête à mal tourner. Expedion fonctionnait auparavant sur Airtable ; ses 4 656 devis existants ont été migrés vers la base partagée en septembre 2026.",
-            "Les prix viennent eux aussi d'un seul endroit : le devis automatique d'Expedion réutilise le service de tarification d'Expeditoo, si bien que les deux produits ne peuvent jamais chiffrer la même course différemment. Et quand un transporteur extérieur prend une mission, ses mises à jour de statut sont réécrites dans Expedion : l'acheteur suit un seul fil de livraison, que le chauffeur fasse partie des équipes du groupe ou vienne du réseau de transporteurs.",
+            "Les deux produits tournent sur la même base PostgreSQL. Un devis Expedion et l'annonce Expeditop qu'il peut devenir sont des enregistrements liés, pas deux copies maintenues synchronisées — la décision d'architecture fondatrice, car faire passer une mission d'une base de données à une autre aurait été une transaction distribuée prête à mal tourner. Expedion fonctionnait auparavant sur Airtable ; ses 4 656 devis existants ont été migrés vers la base partagée en septembre 2026.",
+            "Les prix viennent eux aussi d'un seul endroit : le devis automatique d'Expedion réutilise le service de tarification d'Expeditop, si bien que les deux produits ne peuvent jamais chiffrer la même course différemment. Et quand un transporteur extérieur prend une mission, ses mises à jour de statut sont réécrites dans Expedion : l'acheteur suit un seul fil de livraison, que le chauffeur fasse partie des équipes du groupe ou vienne de la marketplace.",
           ],
         },
         {
           h2: "Le relais vers les transporteurs, sans dispatcheur",
           body: [
-            "Quand un acheteur paie, le devis reçoit une échéance fixée 48 heures plus tard. Toutes les dix minutes, une tâche planifiée recherche les devis payés qui n'ont toujours pas de transporteur après cette échéance et publie chacun d'eux sur Expeditoo sous forme d'annonce portant sa référence Expedion. Les opérateurs peuvent aussi transférer une mission à la main depuis la console d'administration, à côté de l'attribution d'un chauffeur, de la révision du prix d'un devis ou de la gestion du stockage.",
-            "Sur Expeditoo, les transporteurs envoient des offres avec un prix, un ETA et un véhicule, et un opérateur attribue les missions transférées. La vérification des transporteurs repose sur des documents — numéro SIRET, attestation d'assurance, licence de transport, pièce d'identité et coordonnées bancaires — et un administrateur valide chaque compte avant qu'il puisse enchérir.",
+            "Quand un acheteur paie, le devis reçoit une échéance fixée 48 heures plus tard. Toutes les dix minutes, une tâche planifiée recherche les devis payés qui n'ont toujours pas de transporteur après cette échéance et publie chacun d'eux sur Expeditop sous forme d'annonce portant sa référence Expedion. Les opérateurs peuvent aussi transférer une mission à la main depuis la console d'administration, à côté de l'attribution d'un chauffeur, de la révision du prix d'un devis ou de la gestion du stockage.",
+            "Sur Expeditop, les transporteurs envoient des offres avec un prix, des créneaux et un véhicule. Un opérateur attribue les missions Expedion transférées ; sur une demande publiée directement, c'est le client qui choisit — l'offre la moins chère ne l'emporte pas automatiquement — et il peut proposer un autre prix. Les chauffeurs sont de deux types : les chauffeurs internes, à qui l'on attribue des courses et qui ne voient jamais de prix, et les transporteurs extérieurs, qui envoient des offres et sont rémunérés. Une personne valide chaque chauffeur avant qu'il ne commence, et les transporteurs fournissent leur numéro d'immatriculation, leur attestation d'assurance, leur licence de transport, une pièce d'identité et leurs coordonnées bancaires ; depuis novembre 2026, les entreprises immatriculées hors de France peuvent aussi postuler.",
           ],
         },
         {
           h2: "L'argent ne bouge que lorsqu'une personne le décide",
           body: [
-            "Côté acheteur, le paiement passe par Stripe Checkout, et le serveur confirme chaque session auprès de Stripe avant de signaler le paiement à Expeditoo. Côté transporteur, Expeditoo conserve une commission de 10 % et crédite le reste sur le solde du transporteur. Un transporteur peut demander un retrait à partir de 20 € ; un opérateur effectue le virement bancaire et en enregistre la référence. Rien dans la plateforme ne déplace d'argent automatiquement.",
-            "Cette règle est délibérée. Automatiser les versements aurait obligé à choisir un circuit de paiement et un cadre juridique pour rémunérer les chauffeurs avant que l'entreprise n'ait tranché l'un ou l'autre — une question qui relève de l'avocat du client. Une étape manuelle avec une référence enregistrée est plus lente, mais derrière chaque versement il y a une personne et une référence bancaire.",
+            "Sur Expedion, le paiement passe par Stripe Checkout, et le serveur confirme chaque session auprès de Stripe avant de signaler le paiement à Expeditop. Sur une demande publiée directement, rien n'est prélevé tant que le client n'a pas accepté une offre ; le paiement est encaissé à ce moment-là, et une mission annulée avant l'enlèvement est remboursée. Côté transporteur, Expeditop conserve une commission de 10 % et crédite le reste sur le solde du transporteur. Un transporteur peut demander un retrait à partir de 20 € ; un opérateur effectue le virement bancaire et en enregistre la référence.",
+            "Cette dernière règle est délibérée. Les versements automatiques sont construits mais désactivés : les activer suppose de choisir un circuit de paiement et un cadre juridique pour rémunérer les chauffeurs, une question qui relève de l'avocat du client. D'ici là, une étape manuelle avec une référence enregistrée est plus lente, mais derrière chaque versement il y a une personne et une référence bancaire.",
           ],
         },
         {
           h2: "Une ingénierie qui tient en production",
           body: [
-            "Expeditoo tourne sur Next.js avec Drizzle et PostgreSQL sur Neon, Better Auth, Stripe, Cloudflare R2 pour les documents et Resend pour l'e-mail, le tout hébergé sur Vercel ; le tableau de bord opérateur se rafraîchit à partir de signaux Ably plutôt que par interrogation périodique. Expedion est une application Flutter qui se connecte via le même service d'authentification avec un jeton bearer — une application native n'a pas de stockage de cookies de navigateur — et conserve un repli Firebase restreint pour que les comptes créés avant la migration fonctionnent toujours.",
-            "La plateforme est couverte par Vitest et Playwright, avec 2 655 tests unitaires au vert lors de la dernière exécution enregistrée, et Expeditoo est en production en version 2.63. De petites contraintes ont guidé de vraies décisions : les envois sont plafonnés à 3 Mo pour rester sous la limite de taille de requête de l'hébergeur, les photos HEIC sont refusées parce que l'API de vision les rejette, et le balayage de transfert tourne sur GitHub Actions parce que l'offre d'hébergement limite les tâches planifiées.",
+            "Expeditop tourne sur Next.js avec Drizzle et PostgreSQL sur Neon, Better Auth, Stripe, Cloudflare R2 pour les documents et Resend pour l'e-mail, le tout hébergé sur Vercel ; le tableau de bord opérateur se rafraîchit à partir de signaux Ably plutôt que par interrogation périodique. Expedion est une application Flutter qui se connecte via le même service d'authentification avec un jeton bearer — une application native n'a pas de stockage de cookies de navigateur — et conserve un repli Firebase restreint pour que les comptes créés avant la migration fonctionnent toujours.",
+            "La plateforme est couverte par Vitest et Playwright, avec 3 541 tests unitaires au vert lors de la dernière exécution complète enregistrée, et Expeditop est en production en version 2.98.0. Depuis novembre 2026, chaque modification passe d'abord par un site de test séparé, et n'atteint la production qu'au terme d'un lancement contrôlé qui applique ses propres migrations de base de données. De petites contraintes ont guidé de vraies décisions : les envois sont plafonnés à 3 Mo pour rester sous la limite de taille de requête de l'hébergeur, les photos HEIC sont refusées parce que l'API de vision les rejette, et le balayage de transfert tourne sur GitHub Actions parce que l'offre d'hébergement limite les tâches planifiées.",
           ],
         },
         {
           h2: "Ce qui n'a délibérément pas été construit",
           body: [
-            "Expeditoo a démarré en 2025 comme une marketplace plus large qui mettait aussi des marchandises aux enchères. La refonte de 2026 a abandonné cela : plus d'enchères sur des marchandises et plus de marketplace publique à parcourir — chaque mission affichée sur la plateforme est une véritable expédition Expedion. Les API de suivi des transporteurs, les intégrations avec les maisons de ventes, une application iOS native pour les transporteurs et d'autres pays ont aussi été laissés pour plus tard.",
-            "Plusieurs questions restent ouvertes à dessein : la répartition de la commission sur les missions transférées, les prestataires pour l'assurance et la vérification d'identité, et la publication et l'appariement d'itinéraires. Les transporteurs peuvent déjà filtrer le tableau le long d'un trajet qu'ils effectuent, mais l'appariement vient après les enchères, par choix : les enchères sont le produit, les itinéraires le rendront plus efficace ensuite. Chacune de ces questions est plus simple à trancher une fois que de vraies missions circulent dans un seul modèle de données partagé.",
+            "Expeditop a démarré en 2025 comme une marketplace plus large qui mettait aussi des marchandises aux enchères. La refonte de 2026 a abandonné cela : il n'y a plus d'enchères sur des marchandises, seulement l'enchère inversée sur le transport, où les transporteurs se font concurrence sur le prix. Les API de suivi des transporteurs, les intégrations avec les maisons de ventes et une application iOS native pour les transporteurs ont été laissées pour plus tard, et si un enlèvement ou une livraison peut désormais avoir lieu n'importe où dans le monde, les formalités douanières ne sont pas prises en charge.",
+            "Plusieurs questions restent ouvertes à dessein : la répartition de la commission sur les missions transférées, les prestataires pour l'assurance et la vérification d'identité, et l'appariement automatique des itinéraires. Les transporteurs peuvent déclarer les trajets qu'ils effectuent déjà, chercher sur le tableau le long d'un itinéraire et planifier une tournée à plusieurs arrêts avec sa distance et son temps de conduite, mais la plateforme n'associe pas d'elle-même les missions aux itinéraires — les enchères sont le produit, les itinéraires le rendront plus efficace ensuite. Enfin, l'application Expedion reconstruite, qui ne dépend plus d'Airtable ni de n8n pour aucun flux, n'a pas encore été déployée à la place de l'application actuelle du client.",
           ],
         },
         {
           h2: "La leçon transférable",
           body: [
-            "Deux produits qui servent les deux côtés d'une même transaction doivent partager une colonne vertébrale, pas une intégration. Ici, la colonne vertébrale, c'est un seul enregistrement de devis, un seul service de tarification et un seul fil de suivi ; l'application de l'acheteur, le tableau du transporteur et la console opérateur sont des vues posées dessus.",
-            "L'IA se place là où une personne faisait une transcription lente et sujette aux erreurs, elle indique son propre niveau de confiance, et le tunnel continue de fonctionner quand elle échoue. C'est généralement la bonne forme pour une première fonctionnalité d'IA dans un métier opérationnel : étroite, vérifiable, et jamais seule sur le chemin critique.",
+            "Deux produits qui servent les deux côtés d'une même transaction doivent partager une colonne vertébrale, pas une intégration. Ici, la colonne vertébrale, c'est un seul enregistrement de devis, un seul service de tarification et un seul fil de suivi ; l'application de l'acheteur, la marketplace et la console opérateur sont des vues posées dessus.",
+            "L'IA se place là où une personne faisait une transcription lente et sujette aux erreurs — un bordereau d'adjudication, ou la description d'un canapé par un client. Elle indique ce qu'elle a compris, une personne le confirme, et le tunnel continue de fonctionner quand elle échoue. C'est généralement la bonne forme pour une première fonctionnalité d'IA dans un métier opérationnel : étroite, vérifiable, et jamais seule sur le chemin critique.",
           ],
         },
       ],
       faq: [
         {
-          q: "Qu'a construit PRIONATION pour Expedion et Expeditoo ?",
-          a: "Les deux produits et le lien entre eux : l'application acheteur Expedion (Flutter), qui lit le bordereau d'adjudication, propose un prix fixe et suit la livraison ; la plateforme transporteurs Expeditoo (Next.js), où des transporteurs vérifiés enchérissent sur les missions transférées ; et la console opérateur qui pilote les deux.",
+          q: "Qu'a construit PRIONATION pour Expedion et Expeditop ?",
+          a: "Les deux produits et le lien entre eux : l'application acheteur Expedion (Flutter), qui lit le bordereau d'adjudication, propose un prix fixe et suit la livraison ; la marketplace Expeditop (Next.js), où les clients publient des demandes de transport et où des transporteurs vérifiés envoient leurs offres, missions Expedion transférées comprises ; et la console opérateur qui pilote les deux.",
         },
         {
           q: "Comment fonctionne la lecture du bordereau d'adjudication ?",
           a: "Un modèle de vision LLM (GPT-4.1, avec Gemini en secours) extrait les informations du lot et de l'enlèvement dans un schéma JSON strict, accompagnées d'un score de confiance. L'acheteur confirme les informations ; les documents à faible confiance sont rejetés comme n'étant pas un bordereau d'adjudication, et si le service est indisponible, une personne vérifie le bordereau.",
         },
         {
-          q: "Quand une mission part-elle chez un transporteur extérieur ?",
-          a: "Quand un devis payé n'a toujours pas de chauffeur 48 heures après le paiement, ou quand un opérateur le transfère à la main. Un balayage planifié publie alors la mission automatiquement sur Expeditoo, et les mises à jour de statut du transporteur sont réécrites dans le suivi de l'acheteur.",
+          q: "Que fait l'assistant de demande ?",
+          a: "Un client décrit sa demande en une phrase, tapée ou dictée, et un modèle d'OpenAI remplit le formulaire de demande : l'objet, une estimation de la taille et du poids, les villes et les dates. Il demande ce qui manque et ne publie jamais de lui-même ; le client vérifie chaque étape et publie.",
         },
         {
-          q: "Expedion et Expeditoo sont-elles des sociétés distinctes ?",
-          a: "Non. Les deux marques appartiennent au même groupe logistique français : Expedion est la porte d'entrée des acheteurs aux enchères et Expeditoo est le réseau de transporteurs du groupe.",
+          q: "Quand une mission part-elle chez un transporteur extérieur ?",
+          a: "Quand un devis Expedion payé n'a toujours pas de chauffeur 48 heures après le paiement, ou quand un opérateur le transfère. Un balayage planifié le publie automatiquement sur Expeditop, et les mises à jour de statut du transporteur sont réécrites dans le suivi de l'acheteur.",
+        },
+        {
+          q: "Expeditop est-elle la même plateforme qu'Expeditoo ?",
+          a: "Oui. La plateforme s'appelait Expeditoo jusqu'au 20 novembre 2026, date à laquelle elle a été renommée Expeditop et a migré vers www.expeditop.fr. Les comptes, les missions et les offres ont été repris sans changement.",
+        },
+        {
+          q: "Expedion et Expeditop sont-elles des sociétés distinctes ?",
+          a: "Non. Les deux marques appartiennent au même groupe logistique français : Expedion est la porte d'entrée des acheteurs aux enchères, et Expeditop est la marketplace de transport ouverte et le réseau de transporteurs du groupe.",
         },
         {
           q: "Où sont les métriques commerciales ?",
-          a: "Pas encore publiées. Ce qui est documenté relève de l'ingénierie : 4 656 devis existants migrés vers la base partagée, 2 655 tests unitaires au vert, et Expeditoo en production en version 2.63. Les résultats opérationnels seront ajoutés une fois que le client les aura mesurés.",
+          a: "Pas encore publiées. Ce qui est documenté relève de l'ingénierie : 4 656 devis existants migrés vers la base partagée, 3 541 tests unitaires au vert lors de la dernière exécution complète enregistrée, et Expeditop en production en version 2.98.0. Les résultats opérationnels seront ajoutés une fois que le client les aura mesurés.",
         },
       ],
     },

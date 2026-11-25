@@ -14,7 +14,7 @@
 // whenever a meaningful change ships. CURRENT_VERSION must match the top
 // entry's `version` and package.json's `version` field.
 
-export const CURRENT_VERSION = "3.11.1";
+export const CURRENT_VERSION = "3.11.2";
 
 export type SemverBump = "minor" | "patch";
 
@@ -28,6 +28,19 @@ export type ChangelogEntry = {
 
 // Newest first.
 export const V3_ENTRIES: ChangelogEntry[] = [
+  {
+    version: "3.11.2",
+    bump: "patch",
+    date: "2026-11-25",
+    title: "Epidom and Expedion × Expeditop case studies brought up to date",
+    items: [
+      "The Epidom case study is rewritten in English, French and Indonesian. It described Epidom as a client, a European F&B operator; Epidom is our own product, as the homepage and /start already said. The page now covers what Epidom is (online ordering, a web POS, stock, staff and finance for cafés), its Claude connector (an MCP server with read access by default, previews and a 30-day undo for menu changes), the fiscal journal for French anti-fraud VAT rules, the four languages and what was deliberately not built. An unsourced \"8 weeks\" claim and the logistics keywords copied from another case study are gone.",
+      "Expeditoo was renamed Expeditop by the client on 20 November 2026 and now lives at www.expeditop.fr. The case study, homepage tile, /start card, footer, logo and image descriptions use the new name, at the same URL (/showcases/expeditoo).",
+      "The Expedion × Expeditop page no longer says that every job on the board is an Expedion shipment: Expeditop is now also an open transport marketplace where anyone can post a request. It adds the request assistant (one sentence, typed or dictated, fills in the form; it never posts on its own), the two kinds of driver, pickups and deliveries in any country (customs not handled), and the current figures (version 2.98.0, 3,541 unit tests in the latest full recorded run). It also says the rebuilt Expedion app has not yet replaced the client's current one.",
+      "New screenshots, captured from the live sites on 25 November 2026: Epidom's homepage, ordering page, POS, Store Dashboard and Claude connector page (its read-only demo café, sample data), and the Expeditop homepage and app screens (the client's demo account, fictional names). Expedion's banner that still names Expeditoo, its star rating line and Epidom's \"24h support\" line are left out of the frames.",
+      "Fixed the homepage's Epidom \"Live demo\" link, which led to a paused deployment (HTTP 503); it now opens the demo café on epidom.fr. The Expedion × Expeditop demo link now opens www.expeditop.fr.",
+    ],
+  },
   {
     version: "3.11.1",
     bump: "patch",

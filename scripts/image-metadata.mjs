@@ -61,54 +61,39 @@ const MANIFEST = [
       "8 weeks to production",
     ],
   },
-  {
-    // lib/content/text/en.ts → showcases.epidom.seoTitle / metaDescription (also the /start hero)
-    file: "public/work/epidom-home.png",
-    title: "Epidom — F&B operations dashboard · PRIONATION",
-    description:
-      "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
-    keywords: ["Epidom", "F&B operations", "inventory management", "production dashboard", "PRIONATION showcase", "France"],
-  },
-  {
-    // lib/content/text/en.ts → showcases.epidom (same source as epidom-home.png) — POS frame of the Epidom slideshow
-    file: "public/work/epidom-pos.png",
-    title: "Epidom — F&B operations dashboard · PRIONATION",
-    description:
-      "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
-    keywords: ["Epidom", "F&B operations", "POS", "inventory management", "production dashboard", "PRIONATION showcase", "France"],
-  },
-  {
-    // lib/content/text/en.ts → showcases.epidom — phone-ordering frame of the Epidom slideshow
-    // (composited from private-assets/epidom/epidom-mobile-{menu,checkout}.png)
-    file: "public/work/epidom-mobile-ordering.png",
-    title: "Epidom — F&B operations dashboard · PRIONATION",
-    description:
-      "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
-    keywords: ["Epidom", "F&B operations", "online ordering", "mobile ordering", "PRIONATION showcase", "France"],
-  },
-  {
-    // lib/content/text/en.ts → showcases.epidom — customer-display frame of the Epidom slideshow
-    file: "public/work/epidom-customer-display.png",
-    title: "Epidom — F&B operations dashboard · PRIONATION",
-    description:
-      "How PRIONATION replaced manual, multi-location inventory tracking with a centralised production system for Epidom, a European F&B operator — and the transferable lesson.",
-    keywords: ["Epidom", "F&B operations", "POS", "customer display", "PRIONATION showcase", "France"],
-  },
-  // lib/content/text/en.ts → showcases.expeditoo (Expedion × Expeditoo) — buyer site and app, operator and carrier dashboards, both on phones
+  // lib/content/text/en.ts → showcases.epidom (our own product) — site, phone ordering, POS,
+  // Store Dashboard and Claude connector frames, captured from epidom.fr and its read-only
+  // demo café on 2026-11-25. epidom-home-2026-11.png is also the /start hero.
   ...[
-    "expedion-expeditoo-buyer",
+    ["epidom-home-2026-11", ["online ordering", "POS"]],
+    ["epidom-phone-orders-2026-11", ["online ordering", "mobile ordering", "QR menu"]],
+    ["epidom-pos-2026-11", ["POS", "web POS"]],
+    ["epidom-store-dashboard-2026-11", ["Store Dashboard", "back office"]],
+    ["epidom-claude-connector-2026-11", ["Claude connector", "MCP"]],
+  ].map(([name, extra]) => ({
+    file: `public/work/${name}.png`,
+    title: "Epidom — online ordering, POS and a Claude connector for cafés · PRIONATION",
+    description:
+      "Epidom is PRIONATION's own product: online ordering, a web POS, stock, staff and finance for cafés and restaurants, in four languages, with a Claude connector that answers from the store's own data.",
+    keywords: ["Epidom", "F&B software", ...extra, "PRIONATION showcase", "France"],
+  })),
+  // lib/content/text/en.ts → showcases.expeditoo (Expedion × Expeditop; Expeditoo until 2026-11-20) —
+  // marketplace homepage and app screens, Expedion homepage and app, both on phones
+  ...[
+    "expeditop-home-2026-11",
+    "expeditop-app-request-2026-11",
+    "expeditop-app-offers-2026-11",
+    "expeditop-app-admin-2026-11",
+    "expedion-home-2026-11",
     "expedion-app-quote-type",
     "expedion-app-my-quotes",
-    "expeditoo-dashboard-admin",
-    "expeditoo-dashboard-jobs",
-    "expeditoo-dashboard-shipments",
-    "expedion-expeditoo-mobile",
+    "expedion-expeditop-mobile-2026-11",
   ].map((name) => ({
     file: `public/work/${name}.png`,
-    title: "Expedion × Expeditoo — auction logistics, France · PRIONATION",
+    title: "Expedion × Expeditop — auction logistics and transport marketplace · PRIONATION",
     description:
-      "How PRIONATION built two connected products for one French logistics group: Expedion reads the auction invoice and quotes a fixed delivery price, Expeditoo lets verified carriers bid on the jobs the fleet cannot take.",
-    keywords: ["Expedion", "Expeditoo", "auction shipping", "carrier marketplace", "LLM document extraction", "PRIONATION showcase", "France"],
+      "Two connected products for one French logistics group: Expedion reads the auction invoice with a vision model and quotes a fixed price; Expeditop, formerly Expeditoo, is a transport marketplace where vetted carriers send offers.",
+    keywords: ["Expedion", "Expeditop", "auction shipping", "transport marketplace", "LLM document extraction", "PRIONATION showcase", "France"],
   })),
   // lib/content/text/en.ts → showcases.acte — beta dashboard (journal, cases, statistics; synthetic data), public site
   ...["acte-dashboard-journal", "acte-dashboard-cases", "acte-dashboard-statistics", "acte-home"].map((name) => ({

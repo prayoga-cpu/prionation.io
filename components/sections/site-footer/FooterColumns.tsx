@@ -63,14 +63,23 @@ function EngageLink({
   );
 }
 
+// Brand names that title-casing the slug gets wrong. The "expeditoo" slug is
+// kept for its URL, but the brand is Expeditop since 2026-11-20.
+const LINK_LABELS: Record<string, string> = {
+  expeditoo: "Expedion × Expeditop",
+  acte: "ACTE",
+  "glvitr-clean": "GLVitr'Clean",
+};
+
 function publishedLinks(section: PageSection) {
   return getPublishedPages(section).map((p) => (
     <li key={p.slug}>
       <Link href={`/${section}/${p.slug}`} className={LINK_CLS}>
-        {p.slug
-          .split("-")
-          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-          .join(" ")}
+        {LINK_LABELS[p.slug] ??
+          p.slug
+            .split("-")
+            .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(" ")}
       </Link>
     </li>
   ));
@@ -266,7 +275,7 @@ export function FooterColumns() {
               </li>
               <li>
                 <SectionLink isHome={isHome} id="selected-work">
-                  Expedion × Expeditoo
+                  Expedion × Expeditop
                 </SectionLink>
               </li>
               <li>

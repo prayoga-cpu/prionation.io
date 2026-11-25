@@ -51,34 +51,38 @@ export const ANCHOR_PATH = "/ai-product-engineering-for-mid-market-companies";
 // More than one image turns the showcase into a slideshow
 // (components/ui/ShowcaseSlideshow.tsx), in this order; alt text for every image
 // after the first lives in messages/*.json → ShowcaseImages.<slug>.
-// Epidom: website → phone ordering → POS → customer display, so the tile reads as
-// one all-in-one web app. Its unused raw screenshots (test data / personal
-// details) stay out of the repo in the git-ignored private-assets/epidom/.
-// Serrurier Paris Express and GLVitr'Clean frames, the first and last
-// Expedion × Expeditoo frames and ACTE's last one are captures of public pages
-// (2026-10-16). Sections showing figures that can't be verified (Expeditoo's mock
-// landing stats, Expedion's star line, a response-time badge) are cropped out
-// rather than shown. The app and dashboard frames come from the client builds,
-// on test/synthetic data; the Expeditoo admin frame has the client's name blurred.
-// Shots not used, and why, are listed in the git-ignored
-// private-assets/{acte,expeditoo}/NOTES.md.
+// Epidom (our own product): website → phone ordering → POS → Store Dashboard →
+// Claude connector, captured from epidom.fr and its read-only demo café (sample
+// data) on 2026-11-25. Expedion × Expeditop: the Expeditop homepage and three
+// "Inside the app" frames from expeditop.fr (the client's demo account, fictional
+// names), the Expedion homepage, two Expedion app frames from the client build
+// (test data) and both homepages on phones, captured on 2026-11-25 except the
+// app frames (2026-10-16). Serrurier Paris Express and GLVitr'Clean frames and
+// ACTE's last one are captures of public pages (2026-10-16). Sections showing
+// figures or claims that can't be verified (Expedion's star line and its banner
+// still naming Expeditoo, Epidom's "24h support" line, a response-time badge)
+// are cropped out or hidden rather than shown. Raw shots, and why some were not
+// used, are listed in the git-ignored private-assets/<slug>/NOTES.md.
 export type ShowcaseImages = readonly [string, ...string[]];
 
 export const SHOWCASE_IMAGES: Record<string, ShowcaseImages> = {
   epidom: [
-    "/work/epidom-home.png",
-    "/work/epidom-mobile-ordering.png",
-    "/work/epidom-pos.png",
-    "/work/epidom-customer-display.png",
+    "/work/epidom-home-2026-11.png",
+    "/work/epidom-phone-orders-2026-11.png",
+    "/work/epidom-pos-2026-11.png",
+    "/work/epidom-store-dashboard-2026-11.png",
+    "/work/epidom-claude-connector-2026-11.png",
   ],
+  // Slug stays "expeditoo" (URL /showcases/expeditoo) though the brand is Expeditop since 2026-11-20.
   expeditoo: [
-    "/work/expedion-expeditoo-buyer.png",
+    "/work/expeditop-home-2026-11.png",
+    "/work/expeditop-app-request-2026-11.png",
+    "/work/expeditop-app-offers-2026-11.png",
+    "/work/expeditop-app-admin-2026-11.png",
+    "/work/expedion-home-2026-11.png",
     "/work/expedion-app-quote-type.png",
     "/work/expedion-app-my-quotes.png",
-    "/work/expeditoo-dashboard-admin.png",
-    "/work/expeditoo-dashboard-jobs.png",
-    "/work/expeditoo-dashboard-shipments.png",
-    "/work/expedion-expeditoo-mobile.png",
+    "/work/expedion-expeditop-mobile-2026-11.png",
   ],
   "the-lead-agent": ["/work/lead-agent.png"],
   acte: [
@@ -209,24 +213,24 @@ export const pages: PageMeta[] = [
     slug: "epidom",
     section: "showcases",
     status: "published",
-    seoTitle: "Epidom — F&B operations dashboard, France · PRIONATION",
+    seoTitle: "Epidom — online ordering, POS and Claude connector for cafés, France · PRIONATION",
     metaDescription:
-      "How PRIONATION shipped production AI into Epidom's F&B operations — a unified dashboard for menu, POS, and inventory across locations — in 8 weeks. Bottleneck, build, result, and the transferable lesson.",
-    ogTitle: "Epidom — F&B operations dashboard · PRIONATION.io",
+      "Epidom is PRIONATION's own product: online ordering, a web POS, stock, staff and finance for cafés and restaurants, in four languages, with a Claude connector (MCP) that answers from the store's own data.",
+    ogTitle: "Epidom — our own F&B product, with a Claude connector · PRIONATION.io",
     audience: "mixed",
     schema: "CaseStudy",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-06-15",
+    updatedAt: "2026-11-25",
     sitemapPriority: 0.9,
     changeFreq: "monthly",
     tier1Keywords: [
-      "logistics AI implementation France mid-market",
-      "operations bottleneck AI case study",
-      "logistics workflow automation real ROI",
+      "restaurant POS and online ordering software France",
+      "MCP connector for POS data Claude",
+      "AI product engineering production SaaS",
     ],
     interlinkTo: [
       ANCHOR_PATH,
-      "/intelligence/ai-bottlenecks-mid-market-logistics",
+      "/methodology/owned-infrastructure",
       "/methodology/evals-before-features",
     ],
   },
@@ -234,20 +238,20 @@ export const pages: PageMeta[] = [
     slug: "expeditoo",
     section: "showcases",
     status: "published",
-    seoTitle: "Expedion × Expeditoo — auction logistics, France · PRIONATION",
+    seoTitle: "Expedion × Expeditop — auction logistics and transport marketplace, France · PRIONATION",
     metaDescription:
-      "Two connected products for one French logistics group: Expedion reads the auction invoice with a vision model and quotes a fixed delivery price; Expeditoo lets verified carriers bid on the jobs the fleet cannot take.",
-    ogTitle: "Expedion × Expeditoo — auction shipping and carrier marketplace · PRIONATION.io",
+      "Two connected products for one French logistics group: Expedion reads the auction invoice with a vision model and quotes a fixed delivery price; Expeditop (formerly Expeditoo) is a transport marketplace where vetted carriers send offers.",
+    ogTitle: "Expedion × Expeditop — auction shipping and transport marketplace · PRIONATION.io",
     audience: "mixed",
     schema: "CaseStudy",
     publishedAt: "2026-05-31",
-    updatedAt: "2026-10-16",
+    updatedAt: "2026-11-25",
     sitemapPriority: 0.9,
     changeFreq: "monthly",
     tier1Keywords: [
       "auction shipping platform France",
       "LLM document extraction logistics",
-      "carrier marketplace reverse auction",
+      "transport marketplace carrier offers France",
     ],
     interlinkTo: [
       ANCHOR_PATH,
@@ -510,7 +514,7 @@ export const pages: PageMeta[] = [
     status: "published",
     seoTitle: "AI bottlenecks in mid-market logistics · PRIONATION",
     metaDescription:
-      "The 4 operational bottlenecks AI consistently breaks in mid-market logistics. First-party observations from the Expeditoo engagement.",
+      "The 4 operational bottlenecks AI consistently breaks in mid-market logistics. First-party observations from the Expedion × Expeditop engagement.",
     ogTitle: "AI bottlenecks in mid-market logistics · PRIONATION.io",
     audience: "coo",
     schema: "Article",

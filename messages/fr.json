@@ -359,16 +359,16 @@
       {
         "name": "EPIDOM",
         "geo": "🇫🇷 FRANCE · EUROPE",
-        "tag": "F&B · TABLEAU DE BORD",
+        "tag": "F&B · NOTRE PRODUIT",
         "year": "2026",
-        "body": "Développement d'un tableau de bord opérationnel de production pour un opérateur F&B européen. Centralise les données en temps réel sur plusieurs sites, remplaçant le suivi manuel fragmenté par une surface de décision unique pour les opérateurs et managers."
+        "body": "Notre propre produit, construit et exploité par notre équipe : commande en ligne, caisse web qui continue de fonctionner hors ligne, stock, personnel et finances pour les cafés et restaurants, en quatre langues, avec un connecteur Claude qui répond à partir des données de l'établissement."
       },
       {
-        "name": "EXPEDION × EXPEDITOO",
+        "name": "EXPEDION × EXPEDITOP",
         "geo": "🇫🇷 FRANCE · EUROPE",
         "tag": "LOGISTIQUE · IA",
         "year": "2026",
-        "body": "Développement de deux produits connectés pour un même groupe logistique : une app acheteurs qui lit les bordereaux d'adjudication avec un modèle de vision et chiffre un prix de livraison fixe, et une marketplace de transporteurs qui prend les courses que la flotte ne peut pas assurer, sur une seule base de données."
+        "body": "Développement de deux produits connectés pour un même groupe logistique : une app acheteurs qui lit les bordereaux d'adjudication avec un modèle de vision et chiffre un prix de livraison fixe, et Expeditop, une marketplace de transport où des transporteurs vérifiés envoient leurs offres — sur une seule base de données."
       },
       {
         "name": "ACTE",
@@ -932,7 +932,7 @@
         {
           "tag": "Notre produit · Restauration · France",
           "name": "Epidom",
-          "body": "Commande en ligne, caisse et écran client pour la restauration, dans un seul outil. Construit et exploité par notre équipe.",
+          "body": "Commande en ligne, caisse, stock et connecteur Claude pour les cafés et restaurants, dans un seul outil. Construit et exploité par notre équipe.",
           "alt": "Interface Epidom"
         },
         {
@@ -949,8 +949,8 @@
         },
         {
           "tag": "Client · Logistique · France",
-          "name": "Expedion × Expeditoo",
-          "body": "Deux applications connectées pour un même groupe logistique : lecture des bordereaux et devis à prix fixe pour les acheteurs, tableau d'enchères pour les transporteurs.",
+          "name": "Expedion × Expeditop",
+          "body": "Deux applications connectées pour un même groupe logistique : lecture des bordereaux et devis à prix fixe pour les acheteurs, et une marketplace de transport où des transporteurs vérifiés envoient leurs offres.",
           "alt": "App acheteurs Expedion"
         },
         {
@@ -1048,17 +1048,19 @@
   },
   "ShowcaseImages": {
     "epidom": [
-      "Commande en ligne Epidom sur mobile : le menu, puis la validation sur place, à emporter ou en livraison",
-      "Le POS web d’Epidom : écran de caisse avec file de commandes, sur place ou à emporter, et encaissement",
-      "Écran client Epidom : la commande et le total affichés au client au comptoir"
+      "Commande en ligne Epidom sur mobile : la page de commande du café de démonstration, puis son menu avec photos et prix (données d’exemple)",
+      "Le POS web d’Epidom : l’écran de caisse avec le menu des pâtisseries, une commande de trois articles et la file de commandes (café de démonstration, données d’exemple)",
+      "Accueil du Store Dashboard d’Epidom dans la démo en ligne en lecture seule : actions rapides pour vendre, gérer et analyser (données d’exemple)",
+      "Page du connecteur Claude d’Epidom : interroger Claude sur les ventes, le stock, le personnel et les finances, avec des réponses tirées des données de l’établissement (bêta)"
     ],
     "expeditoo": [
+      "Formulaire de demande Expeditop : décrire sa demande en une phrase, tapée ou dictée, et l’assistant remplit le formulaire (compte de démonstration, noms fictifs)",
+      "Offres Expeditop : prix, créneaux et véhicules des transporteurs côte à côte, avec la contre-proposition du client (compte de démonstration, noms fictifs)",
+      "Panneau d’administration Expeditop : la liste des chauffeurs et des candidatures pour les opérateurs, sur ordinateur et sur mobile (compte de démonstration, noms fictifs)",
+      "Page d’accueil d’Expedion : envoyer le bordereau de la maison de ventes et obtenir un prix de livraison fixe",
       "App Expedion : choix du type de devis. Déposer le bordereau en PDF pour que les lots soient extraits automatiquement, ou remplir le formulaire",
       "App Expedion : les devis de l’acheteur, avec leur statut et le suivi de livraison (données de test)",
-      "Panneau d’administration Expeditoo : le pont Expedion avec les devis récents, un transfert à faire et les demandes directes ; noms des clients floutés, données de test",
-      "Tableau des missions Expeditoo pour les transporteurs : filtre autour d’un lieu ou le long d’un trajet avec un détour autorisé, à côté d’une carte",
-      "Suivi des expéditions Expeditoo : courses actives avec trajet, prix, transporteur et créneau prévu (données de test de la bêta)",
-      "Expedion et Expeditoo sur mobile : l'accueil de l'app acheteurs et celui du réseau de transporteurs"
+      "Expedion et Expeditop sur mobile : l’accueil de l’app des acheteurs aux enchères et celui de la marketplace de transport"
     ],
     "acte": [
       "Vue Dossiers de la bêta d’ACTE : chaque affaire avec son budget d’heures, son statut et sa dernière activité, en données de test",

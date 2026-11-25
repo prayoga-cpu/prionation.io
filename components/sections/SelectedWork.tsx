@@ -21,11 +21,14 @@ type CaseData = {
 // sites) sit behind the "View more" toggle. The phone carousel shows them all.
 const CASE_SLUGS = ["epidom", "expeditoo", "acte", "the-lead-agent", "serrurier-paris-express", "glvitr-clean"];
 const VISIBLE_CASES = 4;
-// null = no public demo. The "expeditoo" slug is the Expedion × Expeditoo case;
-// its demo is the buyer app, which links on to the carrier platform.
+// null = no public demo. The "expeditoo" slug is the Expedion × Expeditop case
+// (Expeditoo was renamed Expeditop on 2026-11-20); its demo is the live
+// marketplace at www.expeditop.fr, which leads its slideshow.
+// Epidom's demo is its read-only live demo café on epidom.fr (the old
+// epidom-eight.vercel.app deployment was paused when Epidom moved hosting).
 const CASE_DEMOS: (string | null)[] = [
-  "https://epidom-eight.vercel.app/",
-  "https://expedion-encheres.vercel.app/",
+  "https://www.epidom.fr/@your-cafe",
+  "https://www.expeditop.fr/",
   "https://acte-web.vercel.app/",
   "https://lead-agent-lac.vercel.app/",
   "https://serrurier-paris-theta.vercel.app/",

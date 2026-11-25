@@ -20,7 +20,7 @@ const LOGOS: Logo[] = [
   { name: "Vercel", src: "/logos/vercel.svg", sizeClass: "h-6" },
   { name: "The Lead Agent", src: "/logos/the-lead-agent.svg" },
   { name: "Expedion", src: "/logos/expedion.svg", sizeClass: "h-6" },
-  { name: "Expeditoo", src: "/logos/expeditoo.svg" },
+  { name: "Expeditop", src: "/logos/expeditop.svg" },
   { name: "Serrurier Paris Express", src: "/logos/serrurier-paris-express.svg", sizeClass: "h-8" },
   { name: "GLVitr'Clean", src: "/logos/glvitr-clean.svg", sizeClass: "h-8" },
   { name: "Stripe", src: "/logos/stripe.svg" },

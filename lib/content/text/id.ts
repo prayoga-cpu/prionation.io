@@ -1027,135 +1027,123 @@ export const pagesId: LocalePages = {
   showcases: {
     epidom: {
       navLabel: "Epidom",
-      seoTitle: "Epidom — operasi inventaris, Prancis · PRIONATION",
+      seoTitle: "Epidom — pemesanan online, POS, dan konektor Claude untuk kafe · PRIONATION",
       metaDescription:
-        "Bagaimana PRIONATION mengganti pelacakan inventaris manual multi-lokasi dengan sistem produksi terpusat untuk Epidom, operator F&B Eropa — dan pelajaran yang dapat dialihkan.",
-      badge: "Showcase · 🇫🇷 Prancis · F&B",
-      tldr: "Epidom, operator F&B Eropa, menjalankan inventaris multi-lokasi dengan proses manual yang tak menskala. PRIONATION membangun sistem produksi terpusat untuk melacak inventaris antar lokasi dan memangkas beban operasional melakukannya secara manual. Ini profil proyek dan pelajaran yang dapat dialihkan untuk operator multi-lokasi.",
-      h1: "Epidom: memusatkan operasi inventaris multi-lokasi",
+        "Epidom adalah produk milik PRIONATION sendiri: pemesanan online, POS web, stok, staf, dan keuangan untuk kafe dan restoran, dalam empat bahasa, dengan konektor Claude yang menjawab dari data toko itu sendiri.",
+      badge: "Showcase · 🇫🇷 Prancis · F&B · Produk kami",
+      tldr: "Epidom adalah produk milik PRIONATION sendiri, bukan proyek klien: sistem serba ada untuk kafe, restoran, dan toko roti yang dimulai dari halaman pemesanan gratis dan bisa berkembang menjadi POS web, layar dapur, stok, penjadwalan staf, dan laporan keuangan. Tim kami membangunnya dan menjalankannya di produksi — 44 rilis antara pertengahan Oktober dan akhir November 2026 saja — dan sejak November 2026 pemilik usaha bisa menghubungkannya ke Claude miliknya sendiri lalu bertanya tentang penjualan, stok, staf, dan keuangan dengan bahasa sehari-hari.",
+      h1: "Epidom: membangun dan menjalankan produk F&B kami sendiri",
       intro: [
-        "Epidom adalah operator makanan dan minuman Eropa yang menjalankan inventaris di banyak lokasi. Seperti kebanyakan operator multi-lokasi, kendalanya bukan strategi — melainkan proses manual dan terfragmentasi untuk menjaga stok terlihat dan akurat di semua tempat sekaligus.",
-        "Halaman ini memprofilkan proyek: hambatan operasional, bagaimana PRIONATION membangun, apa yang berubah, dan pelajaran yang dialihkan ke operasi multi-lokasi mana pun. Hasil terkuantifikasi akan dipublikasikan begitu difinalkan.",
+        "Epidom adalah produk yang dibangun dan dioperasikan PRIONATION untuk dirinya sendiri. Pintu masuknya saat ini adalah halaman pemesanan publik gratis untuk bisnis makanan dan minuman — satu tautan yang menggantikan halaman link-in-bio, menu PDF, dan pemesanan lewat WhatsApp — dan di baliknya ada sistem operasional lengkap: POS web yang tetap bisa berjualan saat offline, layar dapur dan layar pelanggan, stok hingga level resep, jadwal staf dengan absensi, dan laporan keuangan lintas outlet. Epidom sudah live di epidom.fr, pertama untuk Prancis, lalu Indonesia, dan sejak November 2026 juga dalam bahasa Thai.",
+        "Karena Epidom milik kami sendiri, halaman ini bukan profil klien. Halaman ini menunjukkan apa yang dibutuhkan untuk merilis dan mengoperasikan produk produksi dari ujung ke ujung: arsitekturnya, di mana AI berada di dalamnya, pekerjaan kepatuhannya, dan apa yang sengaja ditinggalkan. Tak ada hasil pelanggan yang diklaim di sini; angka pemakaian baru akan dipublikasikan bila sudah bisa diperiksa.",
       ],
       sections: [
         {
-          h2: "Hambatan",
+          h2: "Apa itu Epidom",
           body: [
-            "Inventaris multi-lokasi yang dikerjakan manual gagal dengan cara yang dapat diprediksi: tiap lokasi punya pandangannya sendiri, angka-angka menyimpang, dan merekonsiliasinya menghabiskan waktu yang membengkak seiring tiap lokasi baru. Biayanya bukan satu kegagalan besar melainkan pajak operasional konstan — beban, kehabisan stok, dan keputusan atas data usang.",
-            "Bagi Epidom, hambatannya persis ini: proses pelacakan manual multi-lokasi yang tak bisa mengimbangi laju operasi.",
+            "Epidom dijual sebagai tangga, bukan sebagai satu paket besar. Tingkat gratisnya adalah storefront: halaman di epidom.fr/@nama dengan menu, foto, jam buka, tautan, dan kode QR yang bisa dicetak. Paket POS menambahkan pemesanan dari halaman itu, kasir, antrean pesanan, layar dapur, meja, struk, dan layar untuk pelanggan. Paket Operations menambahkan produk, bahan, resep dan pemasok, pergerakan stok, penjadwalan staf, serta laporan keuangan, untuk hingga tiga outlet. Di atas itu, Enterprise adalah layanan: grup dengan empat outlet atau lebih, atau bisnis yang ingin sistemnya sendiri dibangun, cakupannya disusun bersama tim PRIONATION.",
+            "Setiap lapisan menggantikan pekerjaan yang sudah dilakukan merchant secara manual. Storefront menggantikan link-in-bio yang tercecer dan menu PDF; POS menggantikan buku catatan dan kalkulator; Operations menggantikan spreadsheet tempat seseorang menghitung berapa sebenarnya biaya sebuah hidangan. Dokumentasi produknya sendiri menyebutkan pemicu untuk setiap upgrade — kasir yang baru direkrut, shift kedua, outlet kedua, biaya bahan yang mulai terasa berat — sehingga harganya mengikuti operasinya, bukan daftar fitur.",
           ],
         },
         {
-          h2: "Bagaimana PRIONATION membangun",
+          h2: "Satu pesanan, dari ponsel pelanggan sampai ke margin",
           body: [
-            "Pekerjaan mengikuti metode standar: memetakan operasi sebelum membangun, mendefinisikan apa arti pandangan inventaris yang benar dan terkini secara terukur, dan membangun sistem produksi terkecil yang memberikannya — pelacakan terpusat yang menggantikan proses manual alih-alih menumpuk di atasnya.",
-            "Seperti tiap proyek, sistem dibangun untuk dimiliki dan dioperasikan klien, sehingga kapabilitasnya tetap internal setelah pengiriman.",
+            "Inti Epidom adalah satu alur pesanan. Pelanggan memesan dari storefront di ponselnya dan membayar di kasir; pesanan masuk ke antrean yang sama dengan penjualan untuk pelanggan yang datang langsung dan diinput di mesin kasir, diteruskan ke layar dapur per bagian, dan ditandai sudah diantar saat keluar dari meja saji dapur. Pesanan dari aplikasi pesan-antar juga bisa masuk ke antrean itu: Epidom membaca email pesanan dari agregator dengan model bahasa dan menandai setiap pesanan dengan salurannya. Itu versi pertama; integrasi langsung dengan mitra belum dibangun.",
+            "Saat pesanan diantar, stok dipotong di dalam satu transaksi basis data serializable. Setiap produk menyatakan cara stoknya dikelola: croissant yang dipanggang per batch mengambil dari saldo yang dihitung, latte yang dibuat sesuai pesanan memecah resepnya menjadi susu, kopi, dan gelas, dan sebagian item sama sekali tidak dilacak. Setiap unit bergerak melalui satu buku besar — pembelian, produksi, penjualan, penyesuaian, limbah, retur — yang ditandai dengan pesanan atau batch penyebabnya, dan proses setiap malam merekonsiliasi saldo sehingga selisih tertangkap sebelum merchant menyadarinya. Laporan keuangan membaca data yang sama: pendapatan, harga pokok penjualan, dan margin per item, per shift, per metode pembayaran, dan per saluran, dengan komisi aplikasi pesan-antar sudah diperhitungkan.",
           ],
         },
         {
-          h2: "Apa yang berubah",
+          h2: "Claude sebagai pintu masuk ke data toko",
           body: [
-            "Proses manual per lokasi diganti satu sistem terpusat, menghapus beban rekonsiliasi dan memberi operasi satu pandangan akurat atas inventaris antar lokasi. Dalam kata-kata ringkasan proyek publik, ia memangkas beban operasional.",
-            "Metrik sebelum-sesudah yang terperinci sedang disiapkan untuk publikasi dan akan muncul di sini dan di halaman transparansi.",
+            "Sejak November 2026, pemilik usaha bisa menambahkan Epidom sebagai konektor di Claude miliknya sendiri — di claude.ai, di aplikasi desktop dan seluler, atau di Claude Code — lalu bertanya dengan bahasa sehari-hari bagaimana minggu lalu dibandingkan minggu sebelumnya, apa yang hampir habis, siapa yang bekerja hari Sabtu, atau hidangan mana yang paling menghasilkan. Epidom membuka akses ke toko melalui server Model Context Protocol (MCP), dan AI-nya berjalan di paket Claude milik pemilik sendiri, bukan di paket kami. Konektor ini masih dalam tahap beta.",
+            "Akses adalah bagian tersulit, jadi bagian itulah yang dirancang pertama. Saat seseorang menghubungkan akunnya, Epidom menanyakan apa yang boleh dilakukan Claude: membaca adalah bawaan dan tersedia dengan paket Operations; perubahan — item menu, penyesuaian stok dan limbah, pesanan ke pemasok, jadwal staf, pengeluaran, dan pelanggan — membutuhkan paket Enterprise dan centang yang eksplisit. Staf yang terhubung hanya melihat apa yang diizinkan oleh akses mereka sendiri di toko itu. Setiap perubahan menu bisa dipratinjau sebelum dibuat, hingga 50 item berubah sekaligus atau tidak sama sekali, dan setiap perubahan disimpan bersama kondisi sebelumnya, sehingga bisa dibatalkan selama 30 hari — dan pembatalan ditolak jika ada yang mengubah item yang sama sejak itu. Pembayaran, refund, mesin kasir, dan absensi tetap di aplikasi Epidom, dan setiap perubahan yang dibuat dari Claude muncul di log aktivitas toko.",
           ],
         },
         {
-          h2: "Pelajaran yang dapat dialihkan",
+          h2: "Di mana lagi AI berada",
           body: [
-            "Pelajaran ini berlaku umum untuk operator multi-lokasi mana pun: build pertama dengan ROI tertinggi jarang yang mencolok — melainkan yang menghapus pajak rekonsiliasi manual yang tumbuh seiring tiap lokasi. Pusatkan sumber kebenaran dulu; selebihnya berlipat dari situ.",
-            "Jika operasi Anda menjalankan angka kritis di spreadsheet yang dipelihara terpisah tiap lokasi, itu biasanya hambatan yang layak dipetakan pertama.",
+            "AI muncul di Epidom di titik tempat merchant biasanya harus menghabiskan satu malam untuk mengetik. Smart import membaca spreadsheet menu atau stok yang berantakan, mengusulkan bagaimana setiap kolom dipetakan ke model data Epidom, dan mengingat koreksi merchant untuk kali berikutnya; ia juga mengenali menu racik sendiri (build-your-own) — dasar, protein, saus — dan mengubahnya menjadi langkah pilihan bernomor.",
+            "Tak satu pun fitur ini menulis apa pun dengan sendirinya. Impor adalah usulan yang dikonfirmasi merchant, pesanan aplikasi pesan-antar yang sudah diurai ditandai dengan asalnya, dan Claude bertanya sebelum setiap perubahan. Itulah aturan di seluruh produk: AI mengisi formulir, manusia yang menekan tombolnya.",
           ],
         },
         {
-          h2: "Mengapa inventaris multi-lokasi terus rusak dengan cara yang sama",
+          h2: "Kepatuhan, dan pekerjaan tak mencolok yang menjaganya tetap berjalan",
           body: [
-            "Di makanan dan minuman, masalah inventaris secara struktural lebih sulit ketimbang di kebanyakan ritel multi-lokasi, karena stoknya mudah rusak, satuan ukurnya bergeser saat bahan berpindah dari pengiriman ke persiapan ke piring, dan limbah adalah pos biaya nyata, bukan kesalahan pembulatan. Tiap lokasi mengembangkan konvensinya sendiri — apa arti sebuah 'krat', bagaimana stok terpakai sebagian dihitung, kapan penghitungan dilakukan — dan konvensi itu tak terlihat sampai seseorang mencoba menjumlahkan angka-angkanya. Penyimpangan ini bukan kelalaian; ia hasil yang dapat diprediksi dari tiap lokasi yang mengoptimalkan harinya sendiri sementara tak ada definisi bersama di atas mereka.",
-            "Alasan ini berulang di banyak operator adalah karena pendekatan manual bekerja sempurna di satu atau dua lokasi dan gagal diam-diam di lima atau sepuluh. Pendiri yang bisa menampung seluruh operasi di kepalanya jelas tak bisa lagi begitu operasi membentang ke banyak lokasi, dan spreadsheet yang menskalakan ekspansi pertama berubah menjadi hal yang membatasi ekspansi berikutnya. Saat bebannya terasa sebagai pajak, operasi biasanya sudah menyalurkan uang sungguhan — pemesanan berlebih, isi ulang darurat, penghapusan — lewat selisih antara apa yang dikira dimiliki tiap lokasi dan apa yang benar-benar dimilikinya.",
-            "Mengenali pola ini penting karena ia menunjukkan ke mana build pertama harus diarahkan. Naluri sering mengejar sistem peramalan atau prediksi permintaan — proyek yang tampak cerdas. Tapi peramalan yang dibangun atas angka yang tak terekonsiliasi adalah jawaban salah yang penuh percaya diri. Pengurutan yang jujur adalah membuat pandangan saat ini benar dan bersama sebelum mencoba meramalkan apa pun darinya, dan itulah persis mengapa sumber kebenaran terpusat, bukan sebuah model, adalah build pertama yang tepat bagi operator pada tahap ini.",
+            "Mesin kasir yang dijual di Prancis harus memenuhi undang-undang antipenipuan PPN (pasal 286 kode pajak Prancis). Epidom mencatat setiap penjualan yang dibayar, refund, dan pembatalan dalam jurnal fiskal tempat setiap catatan ditandatangani dan dirantai ke catatan sebelumnya; koreksi selalu berupa catatan baru, tak pernah suntingan. Hari, bulan, dan tahun ditutup menjadi arsip bertanda tangan, seluruh jurnal bisa diverifikasi ulang kapan saja diminta, dan jurnal disimpan selama enam tahun meskipun akunnya ditutup. Atestasi penerbit yang membuktikannya sudah diumumkan tetapi belum tersedia, sehingga halaman ini tidak menyebut mesin kasirnya bersertifikat.",
+            "Sisanya adalah pekerjaan operasional yang tak pernah masuk daftar fitur: backup basis data setiap malam dengan alarm yang memantau kebaruan backup, monitor uptime yang ditambahkan setelah gangguan kuota basis data pada 21 November 2026 dan kini memeriksa alur masuk (sign-in) setiap 15 menit, basis data pengembangan terpisah untuk pratinjau, serta log audit untuk tindakan sensitif pemilik dan admin. Epidom berjalan di Next.js 16 dan React 19 dengan PostgreSQL dan Prisma, Better Auth, Stripe untuk langganan, Inngest untuk background job, dan Resend untuk email, di-hosting di Vercel. Ia memiliki lebih dari 600 file uji, dan versi 3.52.0 dirilis pada 22 November 2026.",
           ],
         },
         {
-          h2: "Penalaran rekayasanya: satu model, bukan banyak integrasi",
+          h2: "Empat bahasa, 156 mata uang, satu basis kode",
           body: [
-            "Cara yang menggoda untuk memusatkan inventaris multi-lokasi adalah membiarkan proses tiap lokasi tetap pada tempatnya dan membangun konektor yang menarik angka tiap lokasi ke dalam dashboard. Ia berdemo dengan baik dan mengubah sedikit — karena dashboard di atas data yang tak konsisten mewarisi ketidakkonsistenannya. Jika dua lokasi menghitung stok terpakai sebagian secara berbeda, agregasi sebanyak apa pun tak merekonsiliasinya; dashboard hanya menampilkan ketidaksepakatan itu dalam resolusi lebih tinggi. Pekerjaan yang benar-benar menghapus beban ada di hulu: menyepakati satu definisi sebuah item, sebuah penghitungan, dan sebuah lokasi, dan membuat tiap lokasi mencatat menurut model tunggal itu alih-alih menerjemahkannya setelah kejadian.",
-            "Inilah mengapa Diagnostic untuk build seperti ini mencurahkan upayanya pada domain sebelum layar apa pun dirancang. Pertanyaan yang menentukan hasil justru tak megah — apa satuan kanonik untuk tiap bahan, peristiwa apa yang dianggap stok keluar dari inventaris, bagaimana transfer antar lokasi direpresentasikan agar tak terhitung ganda — dan jauh lebih murah menjawabnya di atas kertas ketimbang menemukannya di produksi. Mendefinisikan 'pandangan inventaris yang benar dan terkini' dalam istilah terukur adalah yang mengubah proyek dashboard tanpa batas menjadi build berbatas dengan uji yang jelas untuk kata selesai.",
-            "Imbalan dari memodelkan dengan benar adalah konsistensi menjadi properti sistem alih-alih disiplin yang harus dipelihara staf. Saat tiap lokasi menulis menurut definisi yang sama, rekonsiliasi berhenti menjadi tugas berulang karena tak ada yang perlu direkonsiliasi — angka-angka tak pernah dibiarkan menyimpang. Itulah perbedaan antara perangkat lunak yang melaporkan masalah dan perangkat lunak yang menghapusnya, dan itulah alasan build menggantikan proses manual alih-alih duduk di sampingnya.",
+            "Pasar Epidom adalah Prancis lebih dulu dan Indonesia kedua, dan sejak 22 November 2026 ia juga berbahasa Thai. Setiap layar, email, dan pesan galat tersedia dalam bahasa Prancis, Indonesia, Thai, dan Inggris, dan sebuah uji menggagalkan build ketika sebuah teks ada dalam satu bahasa tetapi tidak di bahasa lain, atau ketika sebuah placeholder hilang dalam terjemahan. Harga disimpan dalam mata uang dasar dan ditampilkan dalam salah satu dari 156 mata uang ISO; outlet yang berjualan dalam mata uang berbeda dilaporkan berdampingan dan tak pernah dijumlahkan.",
+            "Sebagian bug lokalisasi tersulit justru bersifat fisik, bukan linguistik. Printer struk termal tak bisa mencetak huruf Thai sebagai teks, sehingga nama toko dan item berbahasa Thai tercetak sebagai tanda tanya; kini setiap printer punya sakelar opsional yang mencetak teks non-Latin sebagai gambar, nonaktif secara bawaan sampai merchant menjalankan cetak uji. Mesin kasirnya sendiri bekerja offline — penjualan diantrekan di perangkat dan disinkronkan saat jaringan kembali — karena toko yang kehilangan koneksi tetap punya pelanggan di depan kasir.",
           ],
         },
         {
           h2: "Apa yang sengaja tidak dibangun",
           body: [
-            "Disiplin jam delapan minggu yang tetap sebagian besar adalah disiplin mengatakan tidak, dan build seperti ini punya daftar jelas hal-hal untuk ditolak. Pemesanan ulang otomatis, integrasi pemasok, peramalan permintaan, dan penghitungan biaya menu dinamis semuanya ambisi yang masuk akal untuk sistem inventaris matang — dan semuanya berada di hilir dari satu pandangan stok yang akurat dan bersama, yang belum ada. Membangunnya lebih dulu berarti membangun kecanggihan di atas angka yang masih menyimpang, yang merupakan cara proyek AI memperoleh fitur mengesankan yang tak cukup dipercaya siapa pun untuk ditindaklanjuti.",
-            "Cakupan yang disengaja adalah sistem produksi terkecil yang membuat pandangan inventaris saat ini benar dan bersama antar lokasi, dengan telemetri untuk mengetahui ia tetap benar. Pengekangan itu bukan kehati-hatian demi kehati-hatian; ia yang memungkinkan operasi membuktikan fondasinya bekerja sebelum keputusan apa pun diotomatiskan di atasnya. Pemilik yang akhirnya bisa memercayai satu angka di semua lokasi berada di posisi jauh lebih baik untuk mencakup build berikutnya — dan untuk melakukannya berdasar pemakaian nyata alih-alih daftar keinginan yang ditulis sebelum fondasinya ada.",
-            "Menamai batasnya juga jujur soal pengurutan ketimbang kapabilitas. Peramalan dan pemesanan ulang otomatis benar-benar berharga, dan operator multi-lokasi kemungkinan akan menginginkannya — nanti, sebagai build kedua yang dicakup berdasar telemetri dari yang pertama. Poin yang dapat dialihkan adalah bahwa urutannya itulah seluruh permainannya: sumber kebenaran terpusat adalah aset yang memungkinkan segala sesuatu sesudahnya, dan mencoba lapisan cerdas lebih dulu adalah cara paling umum fondasinya sama sekali tak pernah terbangun.",
+            "Beberapa hal sengaja ditinggalkan. Pembayaran kartu online di storefront sudah dibangun tetapi dinonaktifkan: pelanggan memesan dari ponselnya dan membayar di kasir, sehingga penanganan uang tetap di satu tempat selagi alur pesanannya membuktikan diri. Integrasi langsung dengan aplikasi pesan-antar belum dibangun — pesanan dari sana masuk lewat penguraian email — dan domain kustom serta storefront white-label masih ada di daftar.",
+            "Konektor Claude tidak bisa menerima pembayaran, menerbitkan refund, menjalankan mesin kasir, atau mencatat absensi siapa pun, dan belum bisa membuat grafik. Batasan itu dituliskan di produknya sendiri, di halaman pengaturan konektor, alih-alih dibiarkan untuk ditemukan sendiri oleh merchant. Polanya sama di seluruh Epidom: rilis versi yang sempit dan dapat diperiksa lebih dulu, lalu perluas begitu toko-toko nyata sudah memakainya.",
           ],
         },
         {
-          h2: "Cara mengetahui apakah pola ini milik Anda — dan apa yang tak bisa diperbaiki perangkat lunak",
+          h2: "Pelajaran yang dapat dialihkan",
           body: [
-            "Ada beberapa sinyal jujur bahwa sebuah operasi punya hambatan berbentuk Epidom. Penghitungan stok hidup di spreadsheet per lokasi yang dikonsolidasi seseorang dengan tangan. Item yang sama dideskripsikan berbeda tergantung siapa yang memasukkannya. Pertanyaan sedasar 'berapa banyak yang kita punya di semua lokasi saat ini?' butuh berjam-jam dan menghasilkan jawaban yang diam-diam tak dipercaya orang. Dan waktu yang dihabiskan untuk merekonsiliasi tumbuh tiap kali sebuah lokasi ditambahkan, alih-alih tetap datar. Jika dua atau lebih dari itu benar, pajak rekonsiliasi manual itu nyata dan hampir pasti hal dengan imbal hasil tertinggi untuk dipetakan pertama.",
-            "Batas jujurnya adalah sistem terpusat memperbaiki struktur masalahnya, bukan masukannya. Jika penghitungan dimasukkan sembarangan, atau stok secara fisik keluar lewat pintu belakang, tak ada model yang akan membuat angka-angkanya benar — perangkat lunak menegakkan satu definisi sebuah penghitungan, tapi ia tak bisa menegakkan bahwa penghitungan itu dilakukan dengan jujur. Yang dilakukan sistem adalah membuat selisih terlihat dan dapat diatribusikan, yang sering cukup untuk mengubah perilaku, tapi disiplin pemasukan yang akurat tetap tanggung jawab manusia yang didukung perangkat lunak alih-alih digantikannya.",
-            "Layak pula dikatakan terus terang apa yang tak diberikan kelas build ini: dengan sendirinya, ia tak mengurangi limbah, tak memangkas biaya pemasok, atau memperbaiki margin. Ia menghapus beban menjaga angka tetap lurus dan memberi operasi basis tepercaya untuk membuat keputusan-keputusan itu. Perbaikan margin adalah sesuatu yang diperoleh operator dengan bertindak atas pandangan yang jernih — tugas build adalah memastikan pandangannya akhirnya layak ditindaklanjuti.",
+            "Menjalankan produk sendiri mengubah cara kami membangun untuk klien. Setiap proyek yang dicakup PRIONATION mendapat manfaat dari masalah yang harganya sudah dibayar di Epidom: penjualan yang harus bertahan saat koneksi putus, stok yang harus cocok dengan kasir, jurnal yang diwajibkan hukum pajak, empat bahasa yang dijaga tetap selaras, dan AI yang menyentuh data bisnis nyata tanpa dipercaya secara buta.",
+            "Pelajaran khusus dari konektor Claude adalah bahwa pekerjaan yang menarik bukanlah modelnya. Pekerjaan itu ada pada model izin, pratinjau, pembatalan, dan jejak audit di sekelilingnya. AI yang bisa mengubah menu hanya berguna jika pemiliknya bisa melihat apa yang akan dilakukannya, menolaknya, dan menariknya kembali.",
           ],
         },
       ],
       faq: [
         {
-          q: "Apa yang dibangun PRIONATION untuk Epidom?",
-          a: "Sistem manajemen inventaris terpusat untuk operator F&B Eropa, dirancang untuk pelacakan multi-lokasi, mengganti proses manual dengan satu sistem produksi yang memangkas beban operasional.",
+          q: "Apakah Epidom klien PRIONATION?",
+          a: "Bukan. Epidom adalah produk milik PRIONATION sendiri: tim kami membangunnya dan menjalankannya di produksi di epidom.fr. Ia tampil di sini sebagai showcase pekerjaan kami, bukan sebagai hasil klien.",
         },
         {
-          q: "Industri dan pasar apa Epidom?",
-          a: "Makanan dan minuman, beroperasi di Prancis dan Eropa. Proyek ini menangani operasi inventaris multi-lokasi.",
+          q: "Apa yang dilakukan Epidom?",
+          a: "Epidom adalah sistem serba ada untuk kafe, restoran, dan toko roti: halaman pemesanan gratis dengan kode QR, POS web dengan layar dapur dan layar pelanggan yang tetap berfungsi saat offline, stok hingga level resep, penjadwalan staf dengan absensi, dan laporan keuangan lintas outlet.",
         },
         {
-          q: "Di mana hasil dan metrik terperinci?",
-          a: "Hasil terkuantifikasi sebelum-sesudah sedang disiapkan dan akan dipublikasikan di sini dan di halaman transparansi. Profil ini menjelaskan proyek dan pelajaran yang dapat dialihkan.",
+          q: "Apa itu konektor Claude Epidom?",
+          a: "Server MCP yang memungkinkan pemilik usaha menambahkan Epidom ke Claude miliknya sendiri dan bertanya tentang penjualan, stok, staf, dan keuangan dengan bahasa sehari-hari. Akses baca tersedia dengan paket Operations; perubahan membutuhkan paket Enterprise, dipratinjau lebih dulu, dan perubahan menu bisa dibatalkan selama 30 hari. Konektor ini masih dalam tahap beta.",
         },
         {
-          q: "Apa pelajaran yang dapat dialihkan untuk operator lain?",
-          a: "Untuk operasi multi-lokasi, build pertama dengan ROI tertinggi biasanya yang menghapus pajak rekonsiliasi manual yang tumbuh seiring tiap lokasi — pusatkan sumber kebenaran sebelum apa pun.",
+          q: "Bahasa dan pasar apa saja yang didukung Epidom?",
+          a: "Prancis lebih dulu, lalu Indonesia, dan Thailand sejak November 2026. Produknya tersedia dalam bahasa Prancis, Indonesia, Thai, dan Inggris, dan harga bisa ditampilkan dalam 156 mata uang.",
         },
         {
-          q: "Bagaimana build serupa dimulai?",
-          a: "Dengan Diagnostic dua minggu yang memetakan hambatan operasional dan mendefinisikan target terukur sebelum sistem apa pun dibangun.",
+          q: "Apakah mesin kasir Epidom memenuhi aturan antipenipuan PPN Prancis?",
+          a: "Mesin kasir Epidom menyimpan jurnal fiskal yang diwajibkan pasal 286 kode pajak Prancis: catatan yang ditandatangani dan dirantai, penutupan bertanda tangan untuk setiap hari, bulan, dan tahun, serta penyimpanan selama enam tahun. Atestasi penerbit sudah diumumkan tetapi belum tersedia, sehingga sertifikasi tidak diklaim di sini.",
         },
         {
-          q: "Mengapa memusatkan data alih-alih sekadar menambahkan dashboard pelaporan di atas spreadsheet yang ada?",
-          a: "Dashboard di atas data yang tak konsisten mewarisi ketidakkonsistenannya — ia menunjukkan ketidaksepakatan antar lokasi dalam resolusi lebih tinggi alih-alih menyelesaikannya. Perbaikannya di hulu: sepakati satu definisi sebuah item, sebuah penghitungan, dan sebuah lokasi, lalu buat tiap lokasi mencatat menurut model itu. Konsistensi menjadi properti sistem alih-alih disiplin yang harus dipelihara staf dengan tangan.",
+          q: "Di mana angka pemakaiannya?",
+          a: "Belum dipublikasikan. Halaman ini hanya menyatakan apa yang bisa diperiksa di produk dan riwayat rilisnya; angka pemakaian akan ditambahkan begitu bisa diverifikasi.",
         },
         {
-          q: "Mengapa inventaris multi-lokasi lebih sulit khususnya di makanan dan minuman?",
-          a: "Stoknya mudah rusak, satuan ukurnya bergeser saat bahan berpindah dari pengiriman ke persiapan ke piring, dan limbah adalah pos biaya nyata. Tiap lokasi mengembangkan konvensi penghitungannya sendiri, yang tetap tak terlihat sampai seseorang mencoba menjumlahkan angka-angkanya. Penyimpangannya bukan kelalaian — ia tiap lokasi yang mengoptimalkan harinya sendiri tanpa definisi bersama di atas mereka.",
-        },
-        {
-          q: "Mengapa tidak membangun peramalan atau pemesanan ulang otomatis sekaligus?",
-          a: "Karena keduanya berada di hilir dari satu pandangan stok yang akurat dan bersama, yang belum ada. Peramalan yang dibangun atas angka yang tak terekonsiliasi adalah jawaban salah yang penuh percaya diri. Urutan yang jujur adalah membuat pandangan saat ini benar dan bersama dulu, lalu mencakup peramalan atau pemesanan ulang sebagai build kemudian berdasar telemetri nyata — bukan menumpuk lapisan cerdas di atas fondasi yang menyimpang.",
-        },
-        {
-          q: "Bagaimana saya tahu apakah operasi saya punya hambatan yang sama ini?",
-          a: "Perhatikan beberapa sinyal: penghitungan stok hidup di spreadsheet per lokasi yang dikonsolidasi seseorang dengan tangan, item yang sama dideskripsikan berbeda oleh orang berbeda, pertanyaan seperti 'berapa banyak yang kita punya di semua lokasi saat ini?' butuh berjam-jam dan menghasilkan jawaban yang tak dipercaya orang, dan waktu rekonsiliasi tumbuh tiap ada lokasi baru. Jika dua atau lebih benar, ini kemungkinan build pertama Anda dengan imbal hasil tertinggi.",
+          q: "Bagaimana build serupa dimulai untuk bisnis saya?",
+          a: "Dengan Diagnostic dua minggu yang memetakan operasi sebelum apa pun dibangun. Grup dengan empat outlet atau lebih, atau bisnis yang membutuhkan sistemnya sendiri, juga bisa memulai dari paket Enterprise Epidom, yang cakupannya disusun bersama tim PRIONATION.",
         },
       ],
     },
 
     "expeditoo": {
-      navLabel: "Expedion × Expeditoo",
-      seoTitle: "Expedion × Expeditoo — logistik lelang, Prancis · PRIONATION",
+      navLabel: "Expedion × Expeditop",
+      seoTitle: "Expedion × Expeditop — logistik lelang dan marketplace transportasi · PRIONATION",
       metaDescription:
-        "Bagaimana PRIONATION membangun dua produk yang saling terhubung untuk satu grup logistik Prancis: Expedion membaca faktur lelang dan memberi penawaran harga pengiriman tetap, Expeditoo memungkinkan pengangkut terverifikasi menawar pekerjaan yang tak bisa diambil armada sendiri.",
+        "Dua produk yang saling terhubung untuk satu grup logistik Prancis: Expedion membaca faktur lelang dengan model vision dan memberi penawaran harga tetap; Expeditop, sebelumnya Expeditoo, adalah marketplace transportasi tempat pengangkut terverifikasi mengirim tawaran.",
       badge: "Showcase · 🇫🇷 Prancis · Logistik",
-      tldr: "Satu grup logistik Prancis menjalankan dua merek. Expedion mengirim lot yang dimenangkan di lelang sampai ke pintu pembeli; Expeditoo adalah jaringan pengangkut yang mengambil pekerjaan yang tak bisa ditangani pengemudi grup sendiri. PRIONATION membangun keduanya di atas satu basis data: model LLM berkemampuan vision membaca faktur lelang, layanan penetapan harga bersama membuat penawaran harganya, pekerjaan yang sudah dibayar tetapi belum punya pengemudi setelah 48 jam otomatis diteruskan ke pengangkut terverifikasi, dan pembaruan pengiriman mereka mengalir kembali ke pelacakan pembeli.",
-      h1: "Expedion × Expeditoo: satu grup logistik, dua produk, satu sumber kebenaran",
+      tldr: "Satu grup logistik Prancis menjalankan dua merek. Expedion mengirim lot yang dimenangkan di lelang sampai ke pintu pembeli. Expeditop — bernama Expeditoo hingga November 2026 — adalah marketplace transportasi tempat siapa pun bisa memasang permintaan untuk sebuah barang, perabot, atau pindahan rumah lalu pengangkut terverifikasi mengirim tawaran, sekaligus tempat pekerjaan lelang grup yang sudah dibayar diteruskan ketika pengemudi grup sendiri tak bisa mengambilnya. PRIONATION membangun keduanya di atas satu basis data: model LLM berkemampuan vision membaca faktur lelang, layanan penetapan harga bersama membuat penawaran harganya, pekerjaan yang sudah dibayar tetapi belum punya pengemudi setelah 48 jam otomatis dipasang ke marketplace, dan model kedua mengubah permintaan satu kalimat menjadi formulir yang sudah terisi.",
+      h1: "Expedion × Expeditop: satu grup logistik, dua produk, satu sumber kebenaran",
       intro: [
-        "Expedion dan Expeditoo milik grup Prancis yang sama. Expedion adalah sisi pembeli: seseorang yang baru saja memenangkan lot di balai lelang mengirim faktur lelangnya (bordereau d'adjudication), mendapat harga pengiriman tetap, membayar online, dan mengikuti pengirimannya. Expeditoo adalah sisi pengangkut: platform web tempat perusahaan transportasi terverifikasi menawar pekerjaan yang tak bisa diambil pengemudi grup sendiri.",
-        "PRIONATION membangun kedua produk — aplikasi Expedion dengan Flutter dan platform Expeditoo dengan Next.js — beserta integrasi di antara keduanya. Halaman ini membahas bagaimana keduanya berbagi satu sistem, di mana AI sebenarnya berada di dalamnya, dan apa yang sengaja ditinggalkan. Hasil bisnis akan dipublikasikan begitu klien telah mengukurnya.",
+        "Expedion dan Expeditop milik grup Prancis yang sama. Expedion adalah sisi lelang: seseorang yang baru saja memenangkan lot di balai lelang mengirim faktur lelangnya (bordereau d'adjudication), mendapat harga pengiriman tetap, membayar online, dan mengikuti pengirimannya. Expeditop adalah sisi terbuka: marketplace web di expeditop.fr tempat siapa pun menjelaskan apa yang perlu dipindahkan, di Prancis maupun di luar negeri, dan pengangkut terverifikasi mengirim harganya. Platform ini bernama Expeditoo hingga 20 November 2026, ketika namanya diganti dan dipindahkan ke domainnya sendiri.",
+        "PRIONATION membangun kedua produk — aplikasi Expedion dengan Flutter dan platform Expeditop dengan Next.js — beserta integrasi di antara keduanya. Halaman ini membahas bagaimana keduanya berbagi satu sistem, di mana AI sebenarnya berada di dalamnya, dan apa yang sengaja ditinggalkan. Hasil bisnis akan dipublikasikan begitu klien telah mengukurnya.",
       ],
       sections: [
         {
           h2: "Dua bisnis, satu pengiriman",
           body: [
-            "Pembeli lelang dan pengangkut menginginkan hal berbeda dari pekerjaan yang sama. Pembeli menginginkan satu harga tetap, pengambilan sebelum biaya penyimpanan di balai lelang mulai berjalan, asuransi opsional untuk lotnya, dan satu tempat untuk mengikuti pengiriman. Pengangkut menginginkan brief yang jelas, harga yang adil untuk perjalanannya, dan pembayaran yang terjamin. Expedion melayani yang pertama; Expeditoo melayani yang kedua.",
+            "Pembeli lelang menginginkan satu harga tetap, pengambilan sebelum biaya penyimpanan di balai lelang mulai berjalan, asuransi opsional untuk lotnya, dan satu tempat untuk mengikuti pengiriman. Seseorang yang memindahkan sofa ke ujung lain negeri ingin menjelaskannya sekali saja lalu membandingkan harga. Pengangkut menginginkan brief yang jelas, harga yang adil untuk perjalanannya, dan pembayaran yang terjamin. Expedion melayani yang pertama; Expeditop melayani dua lainnya.",
             "Pengemudi grup sendiri menangani apa yang mereka sanggupi. Bagian sulitnya adalah limpahannya: ketika armada penuh atau perjalanannya bersifat khusus, pekerjaan itu harus cepat sampai ke pengangkut luar — tanpa ada yang mengetik ulang pesanan, menghitung ulang penawaran harganya, atau kehilangan jejak di mana lot itu berada.",
           ],
         },
@@ -1167,68 +1155,83 @@ export const pagesId: LocalePages = {
           ],
         },
         {
+          h2: "Menjelaskan permintaan dalam satu kalimat",
+          body: [
+            "Permintaan yang dipasang langsung di Expeditop dimulai dengan model kedua yang lebih kecil. Di bagian atas formulir permintaan, pelanggan yang sudah masuk ke akunnya mengetik atau mendiktekan apa yang perlu dipindahkan — « un canapé 3 places de Lyon à Bordeaux » (sofa tiga dudukan dari Lyon ke Bordeaux) — dan sebuah model OpenAI (gpt-4o-mini, dengan dikte yang ditranskripsi oleh gpt-4o-mini-transcribe) menampilkan apa yang dipahaminya: barangnya, perkiraan ukuran dan berat, kota-kotanya, dan tanggalnya. Jika ada yang kurang, model menanyakannya, dan jawabannya ditambahkan ke apa yang sudah disampaikan.",
+            "Asisten ini tak pernah memasang apa pun. Ia mengisi formulir; pelanggan memeriksa setiap langkah — tanggal, alamat, anggaran — lalu menekan tombol publikasi, dan ukuran serta beratnya adalah perkiraan yang bisa mereka koreksi. Pemberitahuan privasi menyebutkan bahwa teks atau dikte dibaca oleh layanan AI. Bentuknya sama dengan pembaca faktur: model mengerjakan transkripsinya, manusia tetap memegang keputusannya.",
+          ],
+        },
+        {
           h2: "Satu basis data, satu harga, satu alur pelacakan",
           body: [
-            "Kedua produk berjalan di atas basis data PostgreSQL yang sama. Penawaran harga Expedion dan listing Expeditoo yang mungkin lahir darinya adalah catatan yang saling terhubung, bukan dua salinan yang dijaga tetap sinkron — keputusan arsitektur yang menjadi fondasinya, karena mengeskalasi pekerjaan lintas dua basis data akan menjadi transaksi terdistribusi yang tinggal menunggu gagal. Sebelumnya Expedion berjalan di Airtable; 4.656 penawaran harga yang sudah ada dimigrasikan ke basis data bersama pada September 2026.",
-            "Harga pun berasal dari satu tempat: penawaran harga otomatis Expedion memakai ulang layanan penetapan harga Expeditoo, sehingga kedua produk tak mungkin memberi harga berbeda untuk perjalanan yang sama. Dan ketika pengangkut luar mengambil sebuah pekerjaan, pembaruan statusnya ditulis kembali ke Expedion, sehingga pembeli mengikuti satu alur pengiriman, baik pengemudinya berasal dari armada grup maupun dari jaringan pengangkut.",
+            "Kedua produk berjalan di atas basis data PostgreSQL yang sama. Penawaran harga Expedion dan listing Expeditop yang mungkin lahir darinya adalah catatan yang saling terhubung, bukan dua salinan yang dijaga tetap sinkron — keputusan arsitektur yang menjadi fondasinya, karena mengeskalasi pekerjaan lintas dua basis data akan menjadi transaksi terdistribusi yang tinggal menunggu gagal. Sebelumnya Expedion berjalan di Airtable; 4.656 penawaran harga yang sudah ada dimigrasikan ke basis data bersama pada September 2026.",
+            "Harga pun berasal dari satu tempat: penawaran harga otomatis Expedion memakai ulang layanan penetapan harga Expeditop, sehingga kedua produk tak mungkin memberi harga berbeda untuk perjalanan yang sama. Dan ketika pengangkut luar mengambil sebuah pekerjaan, pembaruan statusnya ditulis kembali ke Expedion, sehingga pembeli mengikuti satu alur pengiriman, baik pengemudinya berasal dari armada grup maupun dari marketplace.",
           ],
         },
         {
           h2: "Eskalasi tanpa dispatcher",
           body: [
-            "Ketika pembeli membayar, penawaran harganya diberi tenggat 48 jam ke depan. Setiap sepuluh menit, sebuah proses terjadwal mencari penawaran harga yang sudah dibayar tetapi masih belum punya pengangkut setelah tenggat itu, lalu memasang masing-masing ke Expeditoo sebagai listing yang membawa referensi Expedion-nya. Operator juga bisa mengeskalasi pekerjaan secara manual dari konsol admin, di samping menugaskan pengemudi, menetapkan ulang harga penawaran, atau mengelola penyimpanan.",
-            "Di Expeditoo, pengangkut mengirim tawaran berisi harga, ETA, dan kendaraan, lalu operator memutuskan pemenang pekerjaan yang dieskalasi. Verifikasi pengangkut berbasis dokumen — nomor SIRET, sertifikat asuransi, izin transportasi, kartu identitas, dan data rekening bank — dan administrator menyetujui setiap akun sebelum akun itu bisa menawar.",
+            "Ketika pembeli membayar, penawaran harganya diberi tenggat 48 jam ke depan. Setiap sepuluh menit, sebuah proses terjadwal mencari penawaran harga yang sudah dibayar tetapi masih belum punya pengangkut setelah tenggat itu, lalu memasang masing-masing ke Expeditop sebagai listing yang membawa referensi Expedion-nya. Operator juga bisa mengeskalasi pekerjaan secara manual dari konsol admin, di samping menugaskan pengemudi, menetapkan ulang harga penawaran, atau mengelola penyimpanan.",
+            "Di Expeditop, pengangkut mengirim tawaran berisi harga, slot waktu, dan kendaraan. Operator menentukan pemenang untuk pekerjaan Expedion yang dieskalasi; pada permintaan yang dipasang langsung, pelanggan yang memilih — tawaran termurah tidak otomatis menang — dan bisa mengusulkan harga lain. Pengemudi ada dua jenis: pengemudi internal, yang ditugaskan ke perjalanan dan tak pernah melihat harga, dan pengangkut luar, yang mengirim tawaran dan dibayar. Seseorang menyetujui setiap pengemudi sebelum mereka mulai bekerja, dan pengangkut mengirim nomor registrasi perusahaan, sertifikat asuransi, izin transportasi, kartu identitas, dan data rekening bank; sejak November 2026 perusahaan yang terdaftar di luar Prancis juga bisa mendaftar.",
           ],
         },
         {
           h2: "Uang hanya berpindah atas keputusan manusia",
           body: [
-            "Di sisi pembeli, pembayaran berjalan melalui Stripe Checkout, dan server mengonfirmasi setiap sesi ke Stripe sebelum melaporkan pembayaran ke Expeditoo. Di sisi pengangkut, Expeditoo mengambil komisi 10% dan mengkreditkan sisanya ke saldo pengangkut. Pengangkut bisa meminta penarikan mulai dari €20; operator melakukan transfer bank dan mencatat referensinya. Tak ada apa pun di platform yang memindahkan uang secara otomatis.",
-            "Aturan itu disengaja. Mengotomatiskan pencairan dana berarti memilih jalur pembayaran dan kerangka hukum untuk membayar pengemudi sebelum bisnis menetapkan keduanya — pertanyaan yang menjadi ranah pengacara klien. Langkah manual dengan referensi tercatat memang lebih lambat, tetapi setiap pencairan punya seseorang dan referensi bank di baliknya.",
+            "Di Expedion, pembayaran berjalan melalui Stripe Checkout, dan server mengonfirmasi setiap sesi ke Stripe sebelum melaporkan pembayaran ke Expeditop. Pada permintaan yang dipasang langsung, tak ada yang ditagih sampai pelanggan menerima sebuah tawaran; pembayaran diambil pada saat itu, dan pekerjaan yang dibatalkan sebelum pengambilan dikembalikan dananya. Di sisi pengangkut, Expeditop mengambil komisi 10% dan mengkreditkan sisanya ke saldo pengangkut. Pengangkut bisa meminta penarikan mulai dari €20; operator melakukan transfer bank dan mencatat referensinya.",
+            "Aturan terakhir itu disengaja. Pencairan dana otomatis sudah dibangun tetapi dinonaktifkan: mengaktifkannya berarti memilih jalur pembayaran dan kerangka hukum untuk membayar pengemudi, pertanyaan yang menjadi ranah pengacara klien. Sampai saat itu, langkah manual dengan referensi tercatat memang lebih lambat, tetapi setiap pencairan punya seseorang dan referensi bank di baliknya.",
           ],
         },
         {
           h2: "Rekayasa yang tahan di produksi",
           body: [
-            "Expeditoo berjalan di Next.js dengan Drizzle dan PostgreSQL di Neon, Better Auth, Stripe, Cloudflare R2 untuk dokumen, dan Resend untuk email, di-hosting di Vercel; dashboard operator diperbarui dari sinyal Ably alih-alih polling. Expedion adalah aplikasi Flutter yang masuk melalui layanan autentikasi yang sama dengan bearer token — aplikasi native tak punya cookie jar browser — dan mempertahankan fallback Firebase yang terbatas agar akun yang dibuat sebelum migrasi tetap berfungsi.",
-            "Platform ini diuji dengan Vitest dan Playwright, dengan 2.655 uji unit lolos pada eksekusi terakhir yang tercatat, dan Expeditoo berjalan di produksi pada versi 2.63. Kendala kecil membentuk keputusan nyata: unggahan dibatasi 3 MB agar tetap di bawah batas ukuran body hosting, foto HEIC ditolak karena API vision menolaknya, dan pemindaian eskalasi berjalan di GitHub Actions karena paket hosting membatasi tugas terjadwal.",
+            "Expeditop berjalan di Next.js dengan Drizzle dan PostgreSQL di Neon, Better Auth, Stripe, Cloudflare R2 untuk dokumen, dan Resend untuk email, di-hosting di Vercel; dashboard operator diperbarui dari sinyal Ably alih-alih polling. Expedion adalah aplikasi Flutter yang masuk melalui layanan autentikasi yang sama dengan bearer token — aplikasi native tak punya cookie jar browser — dan mempertahankan fallback Firebase yang terbatas agar akun yang dibuat sebelum migrasi tetap berfungsi.",
+            "Platform ini diuji dengan Vitest dan Playwright, dengan 3.541 uji unit lolos pada eksekusi lengkap terakhir yang tercatat, dan Expeditop berjalan di produksi pada versi 2.98.0. Sejak November 2026 setiap perubahan dijalankan lebih dulu di situs uji terpisah, lalu sampai ke produksi melalui peluncuran bergerbang yang menerapkan migrasi basis datanya sendiri. Kendala kecil membentuk keputusan nyata: unggahan dibatasi 3 MB agar tetap di bawah batas ukuran body hosting, foto HEIC ditolak karena API vision menolaknya, dan pemindaian eskalasi berjalan di GitHub Actions karena paket hosting membatasi tugas terjadwal.",
           ],
         },
         {
           h2: "Apa yang sengaja tidak dibangun",
           body: [
-            "Expeditoo dimulai pada 2025 sebagai marketplace yang lebih luas yang juga melelang barang. Pembangunan ulang 2026 membuang itu: tak ada lelang barang dan tak ada marketplace publik untuk dijelajahi — setiap pekerjaan di papan adalah pengiriman Expedion yang nyata. API pelacakan pengangkut, integrasi balai lelang, aplikasi iOS native untuk pengangkut, dan negara lain juga ditunda untuk nanti.",
-            "Beberapa pertanyaan sengaja dibiarkan terbuka: pembagian komisi atas pekerjaan yang dieskalasi, vendor untuk asuransi dan pemeriksaan identitas, serta publikasi dan pencocokan rute. Kurir sudah bisa memfilter papan pekerjaan di sepanjang rute yang mereka tempuh, tetapi pencocokan sengaja datang setelah sistem penawaran — penawaran adalah produknya, rute membuatnya lebih efisien kemudian. Masing-masing lebih mudah diputuskan begitu pekerjaan nyata mengalir melalui satu model data bersama.",
+            "Expeditop dimulai pada 2025 sebagai marketplace yang lebih luas yang juga melelang barang. Pembangunan ulang 2026 membuang itu: tak ada lelang barang, hanya lelang terbalik untuk jasa transportasi, tempat pengangkut bersaing soal harga. API pelacakan pengangkut, integrasi balai lelang, dan aplikasi iOS native untuk pengangkut ditunda untuk nanti, dan meskipun lokasi pengambilan atau pengiriman kini bisa di mana saja di dunia, dokumen kepabeanan tidak ditangani.",
+            "Beberapa pertanyaan sengaja dibiarkan terbuka: pembagian komisi atas pekerjaan yang dieskalasi, vendor untuk asuransi dan pemeriksaan identitas, serta pencocokan rute otomatis. Pengangkut bisa mendeklarasikan perjalanan yang memang sudah mereka lakukan, mencari di papan pekerjaan di sepanjang sebuah rute, dan merencanakan perjalanan multi-perhentian beserta jarak dan waktu tempuhnya, tetapi platform tidak mencocokkan pekerjaan dengan rute secara otomatis — sistem tawaran adalah produknya, rute membuatnya lebih efisien kemudian. Dan aplikasi Expedion yang dibangun ulang, yang tak lagi bergantung pada Airtable atau n8n untuk alur apa pun, belum di-deploy untuk menggantikan aplikasi klien yang sekarang.",
           ],
         },
         {
           h2: "Pelajaran yang dapat dialihkan",
           body: [
-            "Dua produk yang melayani dua sisi dari transaksi yang sama sebaiknya berbagi satu tulang punggung, bukan sekadar sebuah integrasi. Di sini tulang punggungnya adalah satu catatan penawaran harga, satu layanan penetapan harga, dan satu alur pelacakan; aplikasi pembeli, papan pengangkut, dan konsol operator adalah tampilan di atasnya.",
-            "AI ditempatkan di titik tempat seseorang sebelumnya melakukan transkripsi yang lambat dan rawan kesalahan, ia melaporkan tingkat keyakinannya sendiri, dan funnel tetap berjalan ketika ia gagal. Itu biasanya bentuk yang tepat untuk fitur AI pertama di bisnis operasional: sempit, dapat diperiksa, dan tak pernah sendirian di jalur kritis.",
+            "Dua produk yang melayani dua sisi dari transaksi yang sama sebaiknya berbagi satu tulang punggung, bukan sekadar sebuah integrasi. Di sini tulang punggungnya adalah satu catatan penawaran harga, satu layanan penetapan harga, dan satu alur pelacakan; aplikasi pembeli, marketplace, dan konsol operator adalah tampilan di atasnya.",
+            "AI ditempatkan di titik tempat seseorang sebelumnya melakukan transkripsi yang lambat dan rawan kesalahan — faktur lelang, atau deskripsi sofa dari seorang pelanggan. Ia melaporkan apa yang dipahaminya, seseorang mengonfirmasinya, dan funnel tetap berjalan ketika ia gagal. Itu biasanya bentuk yang tepat untuk fitur AI pertama di bisnis operasional: sempit, dapat diperiksa, dan tak pernah sendirian di jalur kritis.",
           ],
         },
       ],
       faq: [
         {
-          q: "Apa yang dibangun PRIONATION untuk Expedion dan Expeditoo?",
-          a: "Kedua produk beserta penghubung di antaranya: aplikasi pembeli Expedion (Flutter), yang membaca faktur lelang, memberi penawaran harga tetap, dan melacak pengiriman; platform pengangkut Expeditoo (Next.js), tempat pengangkut terverifikasi menawar pekerjaan yang dieskalasi; dan konsol operator yang menjalankan keduanya.",
+          q: "Apa yang dibangun PRIONATION untuk Expedion dan Expeditop?",
+          a: "Kedua produk beserta penghubung di antaranya: aplikasi pembeli Expedion (Flutter), yang membaca faktur lelang, memberi penawaran harga tetap, dan melacak pengiriman; marketplace Expeditop (Next.js), tempat pelanggan memasang permintaan transportasi dan pengangkut terverifikasi mengirim tawaran, termasuk untuk pekerjaan Expedion yang dieskalasi; dan konsol operator yang menjalankan keduanya.",
         },
         {
           q: "Bagaimana pembacaan faktur lelang bekerja?",
           a: "Model LLM berkemampuan vision (GPT-4.1, dengan Gemini sebagai cadangan) mengekstrak detail lot dan pengambilan ke dalam skema JSON yang ketat beserta skor keyakinan. Pembeli mengonfirmasi detailnya; unggahan dengan keyakinan rendah ditolak karena dianggap bukan faktur lelang, dan jika layanannya mati, seseorang memeriksa slip lelangnya.",
         },
         {
-          q: "Kapan sebuah pekerjaan diteruskan ke pengangkut luar?",
-          a: "Ketika penawaran harga yang sudah dibayar masih belum punya pengemudi 48 jam setelah pembayaran, atau ketika operator mengeskalasinya. Pemindaian terjadwal memasangnya ke Expeditoo secara otomatis, dan pembaruan status dari pengangkut ditulis kembali ke pelacakan pembeli.",
+          q: "Apa yang dilakukan asisten permintaan?",
+          a: "Pelanggan menjelaskan pekerjaannya dalam satu kalimat, diketik atau didiktekan, dan sebuah model OpenAI mengisi formulir permintaan: barangnya, perkiraan ukuran dan berat, kota-kotanya, dan tanggalnya. Ia menanyakan apa yang kurang dan tak pernah memasang apa pun dengan sendirinya; pelanggan memeriksa setiap langkah lalu memublikasikannya.",
         },
         {
-          q: "Apakah Expedion dan Expeditoo perusahaan yang terpisah?",
-          a: "Tidak. Kedua merek milik grup logistik Prancis yang sama: Expedion adalah pintu masuk bagi pembeli lelang dan Expeditoo adalah jaringan pengangkut milik grup.",
+          q: "Kapan sebuah pekerjaan diteruskan ke pengangkut luar?",
+          a: "Ketika penawaran harga Expedion yang sudah dibayar masih belum punya pengemudi 48 jam setelah pembayaran, atau ketika operator mengeskalasinya. Pemindaian terjadwal memasangnya ke Expeditop secara otomatis, dan pembaruan status dari pengangkut ditulis kembali ke pelacakan pembeli.",
+        },
+        {
+          q: "Apakah Expeditop platform yang sama dengan Expeditoo?",
+          a: "Ya. Platform ini bernama Expeditoo hingga 20 November 2026, ketika namanya diganti menjadi Expeditop dan dipindahkan ke www.expeditop.fr. Akun, pekerjaan, dan tawaran terbawa tanpa perubahan.",
+        },
+        {
+          q: "Apakah Expedion dan Expeditop perusahaan yang terpisah?",
+          a: "Tidak. Kedua merek milik grup logistik Prancis yang sama: Expedion adalah pintu masuk bagi pembeli lelang, dan Expeditop adalah marketplace transportasi terbuka sekaligus jaringan pengangkut milik grup.",
         },
         {
           q: "Di mana metrik bisnisnya?",
-          a: "Belum dipublikasikan. Yang terdokumentasi ada di sisi rekayasa: 4.656 penawaran harga yang sudah ada dimigrasikan ke basis data bersama, 2.655 uji unit lolos, dan Expeditoo berjalan di produksi pada versi 2.63. Hasil operasional akan ditambahkan begitu klien telah mengukurnya.",
+          a: "Belum dipublikasikan. Yang terdokumentasi ada di sisi rekayasa: 4.656 penawaran harga yang sudah ada dimigrasikan ke basis data bersama, 3.541 uji unit lolos pada eksekusi lengkap terakhir yang tercatat, dan Expeditop berjalan di produksi pada versi 2.98.0. Hasil operasional akan ditambahkan begitu klien telah mengukurnya.",
         },
       ],
     },

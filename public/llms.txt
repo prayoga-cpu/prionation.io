@@ -23,8 +23,8 @@ We are not a consultancy. Engagements start with a two-week Diagnostic that maps
 ## Showcases (case studies)
 
 - [Showcases overview](https://www.prionation.io/en/showcases): Selected client work
-- [Epidom](https://www.prionation.io/en/showcases/epidom): F&B operations dashboard — menu, POS & inventory across locations (France)
-- [Expedion × Expeditoo](https://www.prionation.io/en/showcases/expeditoo): Auction shipping app with LLM invoice reading, plus the group's carrier marketplace, on one database (France)
+- [Epidom](https://www.prionation.io/en/showcases/epidom): PRIONATION's own product — online ordering, web POS, stock, staff and finance for cafés, with a Claude connector (MCP); France, Indonesia, Thailand
+- [Expedion × Expeditop](https://www.prionation.io/en/showcases/expeditoo): Auction shipping app with LLM invoice reading, plus Expeditop (formerly Expeditoo), the group's transport marketplace, on one database (France)
 - [The Lead Agent](https://www.prionation.io/en/showcases/the-lead-agent): Real-estate lead-generation AI (Australia)
 - [ACTE](https://www.prionation.io/en/showcases/acte): Time tracking and billing for law firms — beta with per-firm encryption and a pseudonymised AI assistant (France)
 - [Serrurier Paris Express](https://www.prionation.io/en/showcases/serrurier-paris-express): Price-first, bilingual lead site for an independent Paris locksmith (France)

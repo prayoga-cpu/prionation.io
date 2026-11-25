@@ -40,12 +40,12 @@ const CLIENT_LOGOS = [
   { name: "Serrurier Paris Express", src: "/logos/serrurier-paris-express.svg", h: "h-[30px]" },
   { name: "GLVitr'Clean", src: "/logos/glvitr-clean.svg", h: "h-[30px]" },
   { name: "Expedion", src: "/logos/expedion.svg", h: "h-6" },
-  { name: "Expeditoo", src: "/logos/expeditoo.svg", h: "h-[26px]" },
+  { name: "Expeditop", src: "/logos/expeditop.svg", h: "h-[26px]" },
   { name: "The Lead Agent", src: "/logos/the-lead-agent.svg", h: "h-6" },
 ];
 const OWN_LOGOS = [{ name: "Epidom", src: "/logos/epidom.svg", h: "h-[26px]" }];
 
-// Index-aligned with messages/*.json → Sales.work.cases ("expeditoo" = Expedion × Expeditoo).
+// Index-aligned with messages/*.json → Sales.work.cases ("expeditoo" = Expedion × Expeditop).
 const CASE_SLUGS = ["epidom", "serrurier-paris-express", "glvitr-clean", "expeditoo", "acte", "the-lead-agent"];
 
 // ─── Shared class strings ──────────────────────────────────────────────────
