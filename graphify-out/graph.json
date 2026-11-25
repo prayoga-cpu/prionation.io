@@ -234,14 +234,14 @@
       "norm_label": "readme.md"
     },
     {
-      "label": "PRIONATION.io \u2014 v.3.12.1",
+      "label": "PRIONATION.io \u2014 v.3.12.2",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "readme_prionation_io_v_3_12_1",
+      "id": "readme_prionation_io_v_3_12_2",
       "community": 27,
-      "norm_label": "prionation.io \u2014 v.3.12.1"
+      "norm_label": "prionation.io \u2014 v.3.12.2"
     },
     {
       "label": "What's in this repo",
@@ -574,114 +574,24 @@
       "norm_label": "2026-07-29 \u2014 bing webmaster tools audit (d11)"
     },
     {
-      "label": "client.ts",
+      "label": "route.ts",
       "file_type": "code",
-      "source_file": "lib/cal/client.ts",
+      "source_file": "app/api/forms/booking/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "cal_client",
+      "id": "booking_route",
       "community": 19,
-      "norm_label": "client.ts"
+      "norm_label": "route.ts"
     },
     {
-      "label": "CalError",
+      "label": "POST()",
       "file_type": "code",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L20",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L17",
       "_origin": "ast",
-      "id": "cal_client_calerror",
+      "id": "booking_route_post",
       "community": 19,
-      "norm_label": "calerror"
-    },
-    {
-      "label": ".constructor()",
-      "file_type": "code",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L21",
-      "_origin": "ast",
-      "id": "cal_client_calerror_constructor",
-      "community": 19,
-      "norm_label": ".constructor()"
-    },
-    {
-      "label": "calConfigured()",
-      "file_type": "code",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L35",
-      "_origin": "ast",
-      "id": "cal_client_calconfigured",
-      "community": 19,
-      "norm_label": "calconfigured()"
-    },
-    {
-      "label": "eventTypeId()",
-      "file_type": "code",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L39",
-      "_origin": "ast",
-      "id": "cal_client_eventtypeid",
-      "community": 19,
-      "norm_label": "eventtypeid()"
-    },
-    {
-      "label": "calFetch()",
-      "file_type": "code",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L45",
-      "_origin": "ast",
-      "id": "cal_client_calfetch",
-      "community": 19,
-      "norm_label": "calfetch()"
-    },
-    {
-      "label": "SlotsByDay",
-      "file_type": "code",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L71",
-      "_origin": "ast",
-      "id": "cal_client_slotsbyday",
-      "community": 19,
-      "norm_label": "slotsbyday"
-    },
-    {
-      "label": "getSlots()",
-      "file_type": "code",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L73",
-      "_origin": "ast",
-      "id": "cal_client_getslots",
-      "community": 19,
-      "norm_label": "getslots()"
-    },
-    {
-      "label": "CalBooking",
-      "file_type": "code",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L98",
-      "_origin": "ast",
-      "id": "cal_client_calbooking",
-      "community": 19,
-      "norm_label": "calbooking"
-    },
-    {
-      "label": "createBooking()",
-      "file_type": "code",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L106",
-      "_origin": "ast",
-      "id": "cal_client_createbooking",
-      "community": 19,
-      "norm_label": "createbooking()"
-    },
-    {
-      "label": "bookingManageUrl()",
-      "file_type": "code",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L137",
-      "_origin": "ast",
-      "id": "cal_client_bookingmanageurl",
-      "community": 19,
-      "norm_label": "bookingmanageurl()"
+      "norm_label": "post()"
     },
     {
       "label": "changelog.ts",
@@ -727,7 +637,7 @@
       "label": "ArchivedVersion",
       "file_type": "code",
       "source_file": "lib/content/changelog.ts",
-      "source_location": "L350",
+      "source_location": "L359",
       "_origin": "ast",
       "id": "content_changelog_archivedversion",
       "community": 61,
@@ -737,7 +647,7 @@
       "label": "ARCHIVED_VERSIONS",
       "file_type": "code",
       "source_file": "lib/content/changelog.ts",
-      "source_location": "L359",
+      "source_location": "L368",
       "_origin": "ast",
       "id": "content_changelog_archived_versions",
       "community": 61,
@@ -1184,6 +1094,116 @@
       "norm_label": "vitest"
     },
     {
+      "label": "client.ts",
+      "file_type": "code",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "client.ts",
+      "id": "cal_client"
+    },
+    {
+      "label": "CalError",
+      "file_type": "code",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "calerror",
+      "id": "cal_client_calerror"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": ".constructor()",
+      "id": "cal_client_calerror_constructor"
+    },
+    {
+      "label": "calConfigured()",
+      "file_type": "code",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "calconfigured()",
+      "id": "cal_client_calconfigured"
+    },
+    {
+      "label": "eventTypeId()",
+      "file_type": "code",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L39",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "eventtypeid()",
+      "id": "cal_client_eventtypeid"
+    },
+    {
+      "label": "calFetch()",
+      "file_type": "code",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L45",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "calfetch()",
+      "id": "cal_client_calfetch"
+    },
+    {
+      "label": "SlotsByDay",
+      "file_type": "code",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L71",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "slotsbyday",
+      "id": "cal_client_slotsbyday"
+    },
+    {
+      "label": "getSlots()",
+      "file_type": "code",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L73",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "getslots()",
+      "id": "cal_client_getslots"
+    },
+    {
+      "label": "CalBooking",
+      "file_type": "code",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L98",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "calbooking",
+      "id": "cal_client_calbooking"
+    },
+    {
+      "label": "createBooking()",
+      "file_type": "code",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L106",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "createbooking()",
+      "id": "cal_client_createbooking"
+    },
+    {
+      "label": "bookingManageUrl()",
+      "file_type": "code",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L137",
+      "_origin": "ast",
+      "community": 19,
+      "norm_label": "bookingmanageurl()",
+      "id": "cal_client_bookingmanageurl"
+    },
+    {
       "label": "route.ts",
       "file_type": "code",
       "source_file": "app/api/cal/slots/route.ts",
@@ -1212,26 +1232,6 @@
       "community": 19,
       "norm_label": "get()",
       "id": "slots_route_get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "route.ts",
-      "id": "booking_route"
-    },
-    {
-      "label": "POST()",
-      "file_type": "code",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 19,
-      "norm_label": "post()",
-      "id": "booking_route_post"
     },
     {
       "label": "route.ts",
@@ -11350,7 +11350,7 @@
       "source_location": "L1",
       "weight": 1.0,
       "source": "readme",
-      "target": "readme_prionation_io_v_3_12_1",
+      "target": "readme_prionation_io_v_3_12_2",
       "confidence_score": 1.0
     },
     {
@@ -11359,7 +11359,7 @@
       "source_file": "README.md",
       "source_location": "L198",
       "weight": 1.0,
-      "source": "readme_prionation_io_v_3_12_1",
+      "source": "readme_prionation_io_v_3_12_2",
       "target": "readme_form_pipelines",
       "confidence_score": 1.0
     },
@@ -11369,7 +11369,7 @@
       "source_file": "README.md",
       "source_location": "L101",
       "weight": 1.0,
-      "source": "readme_prionation_io_v_3_12_1",
+      "source": "readme_prionation_io_v_3_12_2",
       "target": "readme_getting_started",
       "confidence_score": 1.0
     },
@@ -11379,7 +11379,7 @@
       "source_file": "README.md",
       "source_location": "L49",
       "weight": 1.0,
-      "source": "readme_prionation_io_v_3_12_1",
+      "source": "readme_prionation_io_v_3_12_2",
       "target": "readme_project_structure",
       "confidence_score": 1.0
     },
@@ -11389,7 +11389,7 @@
       "source_file": "README.md",
       "source_location": "L29",
       "weight": 1.0,
-      "source": "readme_prionation_io_v_3_12_1",
+      "source": "readme_prionation_io_v_3_12_2",
       "target": "readme_tech_stack",
       "confidence_score": 1.0
     },
@@ -11399,7 +11399,7 @@
       "source_file": "README.md",
       "source_location": "L211",
       "weight": 1.0,
-      "source": "readme_prionation_io_v_3_12_1",
+      "source": "readme_prionation_io_v_3_12_2",
       "target": "readme_the_foundation",
       "confidence_score": 1.0
     },
@@ -11409,7 +11409,7 @@
       "source_file": "README.md",
       "source_location": "L9",
       "weight": 1.0,
-      "source": "readme_prionation_io_v_3_12_1",
+      "source": "readme_prionation_io_v_3_12_2",
       "target": "readme_what_s_in_this_repo",
       "confidence_score": 1.0
     },
@@ -11674,6 +11674,16 @@
       "target": "todo_your_action_items_everything_that_needs_you_in_order"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "booking_route_post"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11685,159 +11695,290 @@
       "target": "cal_client"
     },
     {
-      "relation": "contains",
+      "relation": "imports",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L135",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "cal_client",
+      "source": "booking_route",
       "target": "cal_client_bookingmanageurl"
     },
     {
-      "relation": "contains",
+      "relation": "imports",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L96",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "cal_client",
-      "target": "cal_client_calbooking"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "cal_client",
+      "source": "booking_route",
       "target": "cal_client_calconfigured"
     },
     {
-      "relation": "contains",
+      "relation": "imports",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L19",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "cal_client",
+      "source": "booking_route",
       "target": "cal_client_calerror"
     },
     {
-      "relation": "contains",
+      "relation": "imports",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L39",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "cal_client",
-      "target": "cal_client_calfetch"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L104",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "cal_client",
+      "source": "booking_route",
       "target": "cal_client_createbooking"
     },
     {
-      "relation": "contains",
+      "relation": "imports_from",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L33",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "cal_client",
-      "target": "cal_client_eventtypeid"
+      "source": "booking_route",
+      "target": "cal_format"
     },
     {
-      "relation": "contains",
+      "relation": "imports",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L71",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "cal_client",
-      "target": "cal_client_getslots"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "cal_client",
-      "target": "cal_client_slotsbyday"
+      "source": "booking_route",
+      "target": "cal_format_formatslot"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/api/webhooks/cal/route.ts",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "cal_store"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "cal_store_rememberbookingpage"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "forms_schemas"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "forms_schemas_bookingschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "notify_discord"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "notify_discord_sendbookingtodiscord"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "notify_templates"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "notify_templates_sendbookingconfirmation"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "notify_templates_sendbookingnotification"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "cal_route",
-      "target": "cal_client"
+      "source": "booking_route",
+      "target": "notion_client_notion"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/api/cal/slots/route.ts",
-      "source_location": "L3",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "slots_route",
-      "target": "cal_client"
+      "source": "booking_route",
+      "target": "notion_databases"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L10",
+      "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "booking_route",
-      "target": "cal_client_calerror"
+      "target": "notion_databases_db"
     },
     {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "cal_client_calerror",
-      "target": "cal_client_calerror_constructor"
-    },
-    {
-      "relation": "imports",
+      "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/api/cal/slots/route.ts",
+      "source_file": "app/api/forms/booking/route.ts",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "slots_route",
-      "target": "cal_client_calerror"
+      "source": "booking_route",
+      "target": "notion_mappers"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L10",
+      "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "booking_route",
-      "target": "cal_client_calconfigured"
+      "target": "notion_mappers_bookingtonotionproperties"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "security_rate_limit"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "security_rate_limit_calendarbookinglimit"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "security_rate_limit_ratelimit"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "security_turnstile"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "booking_route",
+      "target": "security_turnstile_verifyturnstile"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "booking_route_post",
+      "target": "cal_client_bookingmanageurl"
     },
     {
       "relation": "calls",
@@ -11851,83 +11992,6 @@
       "target": "cal_client_calconfigured"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/cal/slots/route.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "slots_route",
-      "target": "cal_client_calconfigured"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/cal/slots/route.ts",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "slots_route_get",
-      "target": "cal_client_calconfigured"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L120",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "cal_client_createbooking",
-      "target": "cal_client_eventtypeid"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/cal/client.ts",
-      "source_location": "L79",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "cal_client_getslots",
-      "target": "cal_client_eventtypeid"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/cal/slots/route.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "slots_route",
-      "target": "cal_client_getslots"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/cal/slots/route.ts",
-      "source_location": "L44",
-      "weight": 1.0,
-      "source": "slots_route_get",
-      "target": "cal_client_getslots"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "cal_client_createbooking"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -11939,15 +12003,15 @@
       "target": "cal_client_createbooking"
     },
     {
-      "relation": "imports",
-      "context": "import",
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L10",
-      "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "cal_client_bookingmanageurl"
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "booking_route_post",
+      "target": "cal_format_formatslot"
     },
     {
       "relation": "calls",
@@ -11955,10 +12019,87 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L106",
+      "source_location": "L116",
       "weight": 1.0,
       "source": "booking_route_post",
-      "target": "cal_client_bookingmanageurl"
+      "target": "cal_store_rememberbookingpage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "booking_route_post",
+      "target": "notify_discord_sendbookingtodiscord"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "booking_route_post",
+      "target": "notify_templates_sendbookingconfirmation"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "booking_route_post",
+      "target": "notify_templates_sendbookingnotification"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "booking_route_post",
+      "target": "notion_mappers_bookingtonotionproperties"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "booking_route_post",
+      "target": "security_rate_limit_calendarbookinglimit"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "booking_route_post",
+      "target": "security_rate_limit_ratelimit"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/forms/booking/route.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "booking_route_post",
+      "target": "security_turnstile_verifyturnstile"
     },
     {
       "relation": "imports_from",
@@ -12507,6 +12648,205 @@
       "target": "package_devdependencies_vitest"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L135",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client",
+      "target": "cal_client_bookingmanageurl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client",
+      "target": "cal_client_calbooking"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client",
+      "target": "cal_client_calconfigured"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client",
+      "target": "cal_client_calerror"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client",
+      "target": "cal_client_calfetch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L104",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client",
+      "target": "cal_client_createbooking"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client",
+      "target": "cal_client_eventtypeid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client",
+      "target": "cal_client_getslots"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client",
+      "target": "cal_client_slotsbyday"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/webhooks/cal/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_route",
+      "target": "cal_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/cal/slots/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "slots_route",
+      "target": "cal_client"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client_calerror",
+      "target": "cal_client_calerror_constructor"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/cal/slots/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "slots_route",
+      "target": "cal_client_calerror"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/cal/slots/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "slots_route",
+      "target": "cal_client_calconfigured"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/cal/slots/route.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "slots_route_get",
+      "target": "cal_client_calconfigured"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L120",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client_createbooking",
+      "target": "cal_client_eventtypeid"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/cal/client.ts",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "cal_client_getslots",
+      "target": "cal_client_eventtypeid"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/cal/slots/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "slots_route",
+      "target": "cal_client_getslots"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/cal/slots/route.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "slots_route_get",
+      "target": "cal_client_getslots"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -12591,346 +12931,6 @@
       "weight": 1.0,
       "source": "slots_route_get",
       "target": "security_rate_limit_ratelimit"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "booking_route_post"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "cal_format"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "cal_format_formatslot"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "cal_store"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "cal_store_rememberbookingpage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "forms_schemas"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "forms_schemas_bookingschema"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "notify_discord"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "notify_discord_sendbookingtodiscord"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "notify_templates"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "notify_templates_sendbookingconfirmation"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "notify_templates_sendbookingnotification"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "notion_client_notion"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "notion_databases"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "notion_databases_db"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "notion_mappers"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "notion_mappers_bookingtonotionproperties"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "security_rate_limit"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "security_rate_limit_calendarbookinglimit"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "security_rate_limit_ratelimit"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "security_turnstile"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "booking_route",
-      "target": "security_turnstile_verifyturnstile"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L66",
-      "weight": 1.0,
-      "source": "booking_route_post",
-      "target": "cal_format_formatslot"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L116",
-      "weight": 1.0,
-      "source": "booking_route_post",
-      "target": "cal_store_rememberbookingpage"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L60",
-      "weight": 1.0,
-      "source": "booking_route_post",
-      "target": "notify_discord_sendbookingtodiscord"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L57",
-      "weight": 1.0,
-      "source": "booking_route_post",
-      "target": "notify_templates_sendbookingconfirmation"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L54",
-      "weight": 1.0,
-      "source": "booking_route_post",
-      "target": "notify_templates_sendbookingnotification"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "booking_route_post",
-      "target": "notion_mappers_bookingtonotionproperties"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "booking_route_post",
-      "target": "security_rate_limit_calendarbookinglimit"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "booking_route_post",
-      "target": "security_rate_limit_ratelimit"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/api/forms/booking/route.ts",
-      "source_location": "L42",
-      "weight": 1.0,
-      "source": "booking_route_post",
-      "target": "security_turnstile_verifyturnstile"
     },
     {
       "relation": "imports_from",
@@ -35575,5 +35575,5 @@
       "source_file": "public/work/expeditoo.png"
     }
   ],
-  "built_at_commit": "f86df0a5174ff180909aaa1e0b545f9ce04adb6c"
+  "built_at_commit": "c1b79353f398bf40237be7c82a55445be3bf2a53"
 }

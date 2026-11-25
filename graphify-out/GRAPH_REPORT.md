@@ -1,7 +1,7 @@
 # Graph Report - prionation.io  (2026-11-25)
 
 ## Corpus Check
-- 224 files · ~514,073 words
+- 224 files · ~514,270 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f86df0a5`
+- Built from commit: `c1b79353`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -227,7 +227,7 @@ Nodes (3): pad(), run(), THRESHOLDS
 
 ### Community 27 - "Founders & Foundation"
 Cohesion: 0.17
-Nodes (11): Analytics & consent, Environment variables, Features, Form pipelines, Getting started, Notion setup, PRIONATION.io — v.3.12.1, Project structure (+3 more)
+Nodes (11): Analytics & consent, Environment variables, Features, Form pipelines, Getting started, Notion setup, PRIONATION.io — v.3.12.2, Project structure (+3 more)
 
 ### Community 33 - "Community 33"
 Cohesion: 0.07
@@ -326,7 +326,7 @@ Nodes (4): DiagnosticTab(), fadeIn, slideUp, Tab
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `T` connect `Community 15` to `Community 35`, `Community 4`, `Community 6`, `Header, Modal & Motion Library`, `Community 12`, `Community 14`, `Community 49`, `Community 18`, `Community 51`, `Hero Section & Animations`, `Community 54`, `Community 23`, `Community 53`, `Community 58`, `Community 59`?**
-  _High betweenness centrality (0.114) - this node is a cross-community bridge._
+  _High betweenness centrality (0.120) - this node is a cross-community bridge._
 - **Why does `PillLogo()` connect `Community 43` to `Community 35`?**
   _High betweenness centrality (0.047) - this node is a cross-community bridge._
 - **Why does `verifyFinanceSession()` connect `Community 43` to `Community 33`?**
